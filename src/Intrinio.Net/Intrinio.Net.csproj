@@ -5,13 +5,13 @@
 	<Company>MILL5</Company>
     <Copyright>Copyright 2021</Copyright>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/ChiefInnovator/Intrinio.Net</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/ChiefInnovator/Intrinio.Net</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MILL5/Intrinio.Net</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MILL5/Intrinio.Net</PackageProjectUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>This is an initial release recompiled for .NET Standard 2.x.</PackageReleaseNotes>
     <Authors>Richard Crane</Authors>
 	<Description>This is a port of the Intrinio.SDK to .NET Standard so that it can be used across .NET Framework, .NET Core, and the new .NET 5.0.</Description>
-	<PackageLicenseUrl>https://www.gnu.org/licenses/gpl-3.0.en.html</PackageLicenseUrl>
+    <PackageLicenseUrl>https://www.gnu.org/licenses/gpl-3.0.en.html</PackageLicenseUrl>
 	<PackageTags>intrinio;api;data;stock;price;</PackageTags>
 	<PackageIcon>intrinio.png</PackageIcon>
   </PropertyGroup>
