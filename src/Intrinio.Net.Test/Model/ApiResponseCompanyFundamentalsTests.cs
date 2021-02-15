@@ -7,13 +7,13 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-using Intrinio.SDK.Api;
-using Intrinio.SDK.Model;
-using Intrinio.SDK.Client;
+using Intrinio.Net.Api;
+using Intrinio.Net.Model;
+using Intrinio.Net.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Intrinio.SDK.Test
+namespace Intrinio.Net.Test
 {
     /// <summary>
     ///  Class for testing ApiResponseCompanyFundamentals

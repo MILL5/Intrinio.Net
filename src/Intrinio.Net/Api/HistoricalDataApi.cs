@@ -6,10 +6,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using RestSharp;
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
 
-namespace Intrinio.SDK.Api
+namespace Intrinio.Net.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,7 +23,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns historical values for the given &#x60;tag&#x60; and the entity represented by the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -42,7 +42,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns historical values for the given &#x60;tag&#x60; and the entity represented by the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -62,7 +62,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns historical values for the given &#x60;tag&#x60; and the entity represented by the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -81,7 +81,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns historical values for the given &#x60;tag&#x60; and the entity represented by the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -101,7 +101,7 @@ namespace Intrinio.SDK.Api
     /// </summary>
     public partial class HistoricalDataApi : IHistoricalDataApi
     {
-        private Intrinio.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HistoricalDataApi"/> class.
@@ -111,7 +111,7 @@ namespace Intrinio.SDK.Api
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Intrinio.SDK.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.SDK.Client.ExceptionFactory ExceptionFactory
+        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -196,7 +196,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Historical Data Returns historical values for the given &#x60;tag&#x60; and the entity represented by the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -216,7 +216,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Historical Data Returns historical values for the given &#x60;tag&#x60; and the entity represented by the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -297,7 +297,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Historical Data Returns historical values for the given &#x60;tag&#x60; and the entity represented by the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -318,7 +318,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Historical Data Returns historical values for the given &#x60;tag&#x60; and the entity represented by the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An identifier for an entity such as a Company, Security, Index, etc (Ticker, FIGI, ISIN, CUSIP, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>

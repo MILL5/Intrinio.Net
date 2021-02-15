@@ -12,9 +12,9 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.SDK.Client.SwaggerDateConverter;
+using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
-namespace Intrinio.SDK.Model
+namespace Intrinio.Net.Model
 {
     /// <summary>
     /// A snapshot of ratings data compared with previous timeframes. This includes mean percentiles for comparing one security to the universe of securities covered by Zacks analyst ratings, at a specific point in time.

@@ -9,11 +9,11 @@ using System.Reflection;
 using RestSharp;
 using NUnit.Framework;
 
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Api;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Client;
+using Intrinio.Net.Api;
+using Intrinio.Net.Model;
 
-namespace Intrinio.SDK.Test
+namespace Intrinio.Net.Test
 {
     /// <summary>
     ///  Class for testing BulkDownloadsApi

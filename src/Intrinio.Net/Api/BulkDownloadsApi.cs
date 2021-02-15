@@ -6,10 +6,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using RestSharp;
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
 
-namespace Intrinio.SDK.Api
+namespace Intrinio.Net.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,7 +23,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all active bulk downloads for your account with links to download.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponseBulkDownloadLinks</returns>
         ApiResponseBulkDownloadLinks GetBulkDownloadLinks ();
 
@@ -33,7 +33,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all active bulk downloads for your account with links to download.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ApiResponseBulkDownloadLinks</returns>
         ApiResponse<ApiResponseBulkDownloadLinks> GetBulkDownloadLinksWithHttpInfo ();
         #endregion Synchronous Operations
@@ -44,7 +44,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all active bulk downloads for your account with links to download.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponseBulkDownloadLinks</returns>
         System.Threading.Tasks.Task<ApiResponseBulkDownloadLinks> GetBulkDownloadLinksAsync ();
 
@@ -54,7 +54,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all active bulk downloads for your account with links to download.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ApiResponseBulkDownloadLinks)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApiResponseBulkDownloadLinks>> GetBulkDownloadLinksAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
@@ -65,7 +65,7 @@ namespace Intrinio.SDK.Api
     /// </summary>
     public partial class BulkDownloadsApi : IBulkDownloadsApi
     {
-        private Intrinio.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkDownloadsApi"/> class.
@@ -75,7 +75,7 @@ namespace Intrinio.SDK.Api
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Intrinio.SDK.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.SDK.Client.ExceptionFactory ExceptionFactory
+        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -160,7 +160,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Links Returns all active bulk downloads for your account with links to download.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponseBulkDownloadLinks</returns>
         public ApiResponseBulkDownloadLinks GetBulkDownloadLinks ()
         {
@@ -171,7 +171,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Links Returns all active bulk downloads for your account with links to download.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ApiResponseBulkDownloadLinks</returns>
         
         
@@ -228,7 +228,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Links Returns all active bulk downloads for your account with links to download.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponseBulkDownloadLinks</returns>
         public async System.Threading.Tasks.Task<ApiResponseBulkDownloadLinks> GetBulkDownloadLinksAsync ()
         {
@@ -240,7 +240,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Links Returns all active bulk downloads for your account with links to download.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ApiResponseBulkDownloadLinks)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ApiResponseBulkDownloadLinks>> GetBulkDownloadLinksAsyncWithHttpInfo ()
         {

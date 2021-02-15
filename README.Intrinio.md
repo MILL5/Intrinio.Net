@@ -18,7 +18,7 @@ Welcome to the Intrinio API! Through our Financial Data Marketplace, we offer a 
 Use NuGet to include the client DLL in your project.
 
 ```
-Install-Package Intrinio.SDK
+Install-Package Intrinio.Net
 ```
 
 Alternatively, you can download the required DLLs from the [Releases page](https://github.com/intrinio/csharp-sdk/releases).
@@ -47,9 +47,9 @@ Run the following command to generate the DLL
 
 Then include the DLL (under the `bin` folder) in the C# project, and use the namespaces:
 ```csharp
-using Intrinio.SDK.Api;
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Api;
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
 ```
 <a name="packaging"></a>
 ## Packaging
@@ -59,7 +59,7 @@ A `.nuspec` is included with the project.
 This `.nuspec` uses placeholders from the `.csproj`, so build the `.csproj` directly:
 
 ```
-nuget pack -Build -OutputDirectory out Intrinio.SDK.csproj
+nuget pack -Build -OutputDirectory out Intrinio.Net.csproj
 ```
 
 Then, publish to a [local feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/local-feeds) or [other host](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview) and consume the new package via Nuget as usual.
@@ -71,9 +71,9 @@ Then, publish to a [local feed](https://docs.microsoft.com/en-us/nuget/hosting-p
 ```csharp
 using System;
 using System.Diagnostics;
-using Intrinio.SDK.Api;
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Api;
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
 
 namespace Example
 {

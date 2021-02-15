@@ -12,9 +12,9 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.SDK.Client.SwaggerDateConverter;
+using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
-namespace Intrinio.SDK.Model
+namespace Intrinio.Net.Model
 {
     /// <summary>
     /// A record of a company&#39;s initial public offering (IPO). The act of \&quot;going public\&quot; is initiated by an IPO, at which point the company&#39;s stock trades on a major stock exchange (such as NYSE or NASDAQ)

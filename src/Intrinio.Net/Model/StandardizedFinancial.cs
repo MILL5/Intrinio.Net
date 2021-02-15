@@ -12,9 +12,9 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.SDK.Client.SwaggerDateConverter;
+using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
-namespace Intrinio.SDK.Model
+namespace Intrinio.Net.Model
 {
     /// <summary>
     /// Professional-grade historical financial data for a Company. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies fundamentals. For example, it is possible to compare total revenues between two companies as of a certain point in time, or within a single company across multiple time periods. This is not possible using the as-reported financial statements because of the inherent complexity of reporting standards.

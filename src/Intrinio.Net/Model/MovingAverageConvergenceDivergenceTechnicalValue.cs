@@ -12,9 +12,9 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.SDK.Client.SwaggerDateConverter;
+using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
-namespace Intrinio.SDK.Model
+namespace Intrinio.Net.Model
 {
     /// <summary>
     /// The date_time, macd_histogram, macd_line, and signal_line values of a Moving Average Convergence Divergence technical indicator calculation

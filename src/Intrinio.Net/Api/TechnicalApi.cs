@@ -6,10 +6,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using RestSharp;
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
 
-namespace Intrinio.SDK.Api
+namespace Intrinio.Net.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,7 +23,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -38,7 +38,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -52,7 +52,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -68,7 +68,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -83,7 +83,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -99,7 +99,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -114,7 +114,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -131,7 +131,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -147,7 +147,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -163,7 +163,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -178,7 +178,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -196,7 +196,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -213,7 +213,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -230,7 +230,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -246,7 +246,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -262,7 +262,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -277,7 +277,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -294,7 +294,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -310,7 +310,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -327,7 +327,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -343,7 +343,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -359,7 +359,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -374,7 +374,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -389,7 +389,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -403,7 +403,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -421,7 +421,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -438,7 +438,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -454,7 +454,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -469,7 +469,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -493,7 +493,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -516,7 +516,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -535,7 +535,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -553,7 +553,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -569,7 +569,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -584,7 +584,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -601,7 +601,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -617,7 +617,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -632,7 +632,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -646,7 +646,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -661,7 +661,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -675,7 +675,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -691,7 +691,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -706,7 +706,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -723,7 +723,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -739,7 +739,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -756,7 +756,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -772,7 +772,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -789,7 +789,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -805,7 +805,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -821,7 +821,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -836,7 +836,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -854,7 +854,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -871,7 +871,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -892,7 +892,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -912,7 +912,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -928,7 +928,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -943,7 +943,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -958,7 +958,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -972,7 +972,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -987,7 +987,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1001,7 +1001,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1017,7 +1017,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1034,7 +1034,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1049,7 +1049,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1063,7 +1063,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1079,7 +1079,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1094,7 +1094,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1110,7 +1110,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1125,7 +1125,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -1142,7 +1142,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -1158,7 +1158,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1174,7 +1174,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1189,7 +1189,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -1207,7 +1207,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -1224,7 +1224,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -1241,7 +1241,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -1257,7 +1257,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1273,7 +1273,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1288,7 +1288,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -1305,7 +1305,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -1321,7 +1321,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -1338,7 +1338,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -1354,7 +1354,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1370,7 +1370,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1385,7 +1385,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1400,7 +1400,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1414,7 +1414,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -1432,7 +1432,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -1449,7 +1449,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1465,7 +1465,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1480,7 +1480,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -1504,7 +1504,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -1527,7 +1527,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -1546,7 +1546,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -1564,7 +1564,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1580,7 +1580,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1595,7 +1595,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -1612,7 +1612,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -1628,7 +1628,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1643,7 +1643,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1657,7 +1657,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1672,7 +1672,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1686,7 +1686,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1702,7 +1702,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1717,7 +1717,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -1734,7 +1734,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -1750,7 +1750,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -1767,7 +1767,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -1783,7 +1783,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -1800,7 +1800,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -1816,7 +1816,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1832,7 +1832,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1847,7 +1847,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -1865,7 +1865,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -1882,7 +1882,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -1903,7 +1903,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -1923,7 +1923,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1939,7 +1939,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1954,7 +1954,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1969,7 +1969,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1983,7 +1983,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1998,7 +1998,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -2012,7 +2012,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2028,7 +2028,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2045,7 +2045,7 @@ namespace Intrinio.SDK.Api
     /// </summary>
     public partial class TechnicalApi : ITechnicalApi
     {
-        private Intrinio.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TechnicalApi"/> class.
@@ -2055,7 +2055,7 @@ namespace Intrinio.SDK.Api
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -2071,7 +2071,7 @@ namespace Intrinio.SDK.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -2102,7 +2102,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.SDK.Client.ExceptionFactory ExceptionFactory
+        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -2140,7 +2140,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Accumulation/Distribution Index Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -2156,7 +2156,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Accumulation/Distribution Index Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -2226,7 +2226,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Accumulation/Distribution Index Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -2243,7 +2243,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Accumulation/Distribution Index Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -2311,7 +2311,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Average Daily Trading Volume Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2328,7 +2328,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Average Daily Trading Volume Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2400,7 +2400,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Average Daily Trading Volume Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2418,7 +2418,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Average Daily Trading Volume Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2488,7 +2488,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Average Directional Index Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2505,7 +2505,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Average Directional Index Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2577,7 +2577,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Average Directional Index Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2595,7 +2595,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Average Directional Index Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2665,7 +2665,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Awesome Oscillator Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -2683,7 +2683,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Awesome Oscillator Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -2757,7 +2757,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Awesome Oscillator Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -2776,7 +2776,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Awesome Oscillator Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -2848,7 +2848,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Average True Range Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2865,7 +2865,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Average True Range Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2937,7 +2937,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Average True Range Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2955,7 +2955,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Average True Range Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -3025,7 +3025,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Bollinger Bands Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -3044,7 +3044,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Bollinger Bands Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -3120,7 +3120,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Bollinger Bands Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -3140,7 +3140,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Bollinger Bands Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -3214,7 +3214,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Commodity Channel Index Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -3232,7 +3232,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Commodity Channel Index Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -3306,7 +3306,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Commodity Channel Index Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -3325,7 +3325,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Commodity Channel Index Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -3397,7 +3397,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Chaikin Money Flow Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -3414,7 +3414,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Chaikin Money Flow Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -3486,7 +3486,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Chaikin Money Flow Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -3504,7 +3504,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Chaikin Money Flow Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -3574,7 +3574,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Donchian Channel Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -3592,7 +3592,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Donchian Channel Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -3666,7 +3666,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Donchian Channel Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -3685,7 +3685,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Donchian Channel Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -3757,7 +3757,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Detrended Price Oscillator Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -3775,7 +3775,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Detrended Price Oscillator Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -3849,7 +3849,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Detrended Price Oscillator Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -3868,7 +3868,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Detrended Price Oscillator Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -3940,7 +3940,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Ease of Movement Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -3957,7 +3957,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Ease of Movement Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -4029,7 +4029,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Ease of Movement Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -4047,7 +4047,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Ease of Movement Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -4117,7 +4117,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Force Index Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -4133,7 +4133,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Force Index Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -4203,7 +4203,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Force Index Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -4220,7 +4220,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Force Index Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -4288,7 +4288,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Ichimoku Kinko Hyo Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -4307,7 +4307,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Ichimoku Kinko Hyo Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -4383,7 +4383,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Ichimoku Kinko Hyo Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -4403,7 +4403,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Ichimoku Kinko Hyo Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -4477,7 +4477,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Keltner Channel Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -4494,7 +4494,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Keltner Channel Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -4566,7 +4566,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Keltner Channel Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -4584,7 +4584,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Keltner Channel Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -4654,7 +4654,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Know Sure Thing Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -4679,7 +4679,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Know Sure Thing Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -4767,7 +4767,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Know Sure Thing Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -4793,7 +4793,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Know Sure Thing Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -4879,7 +4879,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Moving Average Convergence Divergence Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -4899,7 +4899,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Moving Average Convergence Divergence Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -4977,7 +4977,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Moving Average Convergence Divergence Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -4998,7 +4998,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Moving Average Convergence Divergence Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -5074,7 +5074,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Money Flow Index Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5091,7 +5091,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Money Flow Index Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5163,7 +5163,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Money Flow Index Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5181,7 +5181,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Money Flow Index Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5251,7 +5251,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Mass Index Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -5269,7 +5269,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Mass Index Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -5343,7 +5343,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Mass Index Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -5362,7 +5362,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Mass Index Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -5434,7 +5434,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Negative Volume Index Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5450,7 +5450,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Negative Volume Index Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5520,7 +5520,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Negative Volume Index Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5537,7 +5537,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Negative Volume Index Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5605,7 +5605,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// On-balance Volume Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5621,7 +5621,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// On-balance Volume Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5691,7 +5691,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// On-balance Volume Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5708,7 +5708,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// On-balance Volume Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5776,7 +5776,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// On-balance Volume Mean Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5793,7 +5793,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// On-balance Volume Mean Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5865,7 +5865,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// On-balance Volume Mean Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5883,7 +5883,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// On-balance Volume Mean Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5953,7 +5953,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Relative Strength Index Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -5971,7 +5971,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Relative Strength Index Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -6045,7 +6045,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Relative Strength Index Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -6064,7 +6064,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Relative Strength Index Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -6136,7 +6136,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Simple Moving Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -6154,7 +6154,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Simple Moving Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -6228,7 +6228,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Simple Moving Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -6247,7 +6247,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Simple Moving Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -6319,7 +6319,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Stochastic Oscillator Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -6337,7 +6337,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Stochastic Oscillator Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -6411,7 +6411,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Stochastic Oscillator Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -6430,7 +6430,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Stochastic Oscillator Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -6502,7 +6502,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Triple Exponential Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -6519,7 +6519,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Triple Exponential Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -6591,7 +6591,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Triple Exponential Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -6609,7 +6609,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Triple Exponential Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -6679,7 +6679,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// True Strength Index Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -6698,7 +6698,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// True Strength Index Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -6774,7 +6774,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// True Strength Index Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -6794,7 +6794,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// True Strength Index Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -6868,7 +6868,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Ultimate Oscillator Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -6890,7 +6890,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Ultimate Oscillator Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -6972,7 +6972,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Ultimate Oscillator Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -6995,7 +6995,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Ultimate Oscillator Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -7075,7 +7075,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Vortex Indicator Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7092,7 +7092,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Vortex Indicator Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7164,7 +7164,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Vortex Indicator Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7182,7 +7182,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Vortex Indicator Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7252,7 +7252,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Volume-price Trend Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7268,7 +7268,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Volume-price Trend Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7338,7 +7338,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Volume-price Trend Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7355,7 +7355,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Volume-price Trend Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7423,7 +7423,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Volume Weighted Average Price Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7439,7 +7439,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Volume Weighted Average Price Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7509,7 +7509,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Volume Weighted Average Price Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7526,7 +7526,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Volume Weighted Average Price Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7594,7 +7594,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Williams %R Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7611,7 +7611,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Williams %R Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7683,7 +7683,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Williams %R Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7701,7 +7701,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Williams %R Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>

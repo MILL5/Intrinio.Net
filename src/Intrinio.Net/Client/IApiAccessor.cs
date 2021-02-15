@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 
-namespace Intrinio.SDK.Client
+namespace Intrinio.Net.Client
 {
     /// <summary>
     /// Represents configuration aspects required to interact with the API endpoints.

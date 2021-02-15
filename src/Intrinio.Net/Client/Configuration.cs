@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Intrinio.SDK.Client
+namespace Intrinio.Net.Client
 {
     /// <summary>
     /// Represents a set of configuration settings
@@ -418,7 +418,7 @@ namespace Intrinio.SDK.Client
         /// </summary>
         public static String ToDebugReport()
         {
-            String report = "C# SDK (Intrinio.SDK) Debug Report:\n";
+            String report = "C# SDK (Intrinio.Net) Debug Report:\n";
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 2.18.0\n";

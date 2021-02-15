@@ -6,10 +6,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using RestSharp;
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
 
-namespace Intrinio.SDK.Api
+namespace Intrinio.Net.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,7 +23,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Companies. When parameters are specified, returns matching companies.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="latestFilingDate">Return companies whose latest 10-Q or 10-K was filed on or after this date (optional)</param>
         /// <param name="sic">Return companies with the given Standard Industrial Classification code (optional)</param>
         /// <param name="template">Return companies with the given financial statement template (optional)</param>
@@ -43,7 +43,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Companies. When parameters are specified, returns matching companies.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="latestFilingDate">Return companies whose latest 10-Q or 10-K was filed on or after this date (optional)</param>
         /// <param name="sic">Return companies with the given Standard Industrial Classification code (optional)</param>
         /// <param name="template">Return companies with the given financial statement template (optional)</param>
@@ -62,7 +62,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all News for all Companies
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponseNews</returns>
@@ -74,7 +74,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all News for all Companies
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseNews</returns>
@@ -85,7 +85,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <returns>Company</returns>
         Company GetCompany (string identifier);
@@ -96,7 +96,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <returns>ApiResponse of Company</returns>
         ApiResponse<Company> GetCompanyWithHttpInfo (string identifier);
@@ -106,7 +106,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a numeric value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>decimal?</returns>
@@ -118,7 +118,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a numeric value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>ApiResponse of decimal?</returns>
@@ -129,7 +129,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a text value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>string</returns>
@@ -141,7 +141,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a text value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>ApiResponse of string</returns>
@@ -152,7 +152,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a complete list of SEC filings for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -168,7 +168,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a complete list of SEC filings for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -183,7 +183,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Fundamentals for the Company with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="filedAfter">Filed on or after this date (optional)</param>
         /// <param name="filedBefore">Filed on or before this date (optional)</param>
@@ -204,7 +204,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Fundamentals for the Company with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="filedAfter">Filed on or after this date (optional)</param>
         /// <param name="filedBefore">Filed on or before this date (optional)</param>
@@ -224,7 +224,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns historical values for the given &#x60;tag&#x60; and the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -243,7 +243,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns historical values for the given &#x60;tag&#x60; and the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -261,7 +261,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns initial public offerings (IPOs). An IPO is a public offering of private company stock. The act of \&quot;going public\&quot; is initiated by an IPO, at which point the company&#39;s stock trades on a major stock exchange (such as NYSE or NASDAQ). Intrinio covers all upcoming and recent IPOs for US exchanges.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return IPOs with the given ticker (typically the IPO for the company) (optional)</param>
         /// <param name="status">Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand (optional)</param>
         /// <param name="startDate">Return IPOs on or after the given date (optional)</param>
@@ -279,7 +279,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns initial public offerings (IPOs). An IPO is a public offering of private company stock. The act of \&quot;going public\&quot; is initiated by an IPO, at which point the company&#39;s stock trades on a major stock exchange (such as NYSE or NASDAQ). Intrinio covers all upcoming and recent IPOs for US exchanges.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return IPOs with the given ticker (typically the IPO for the company) (optional)</param>
         /// <param name="status">Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand (optional)</param>
         /// <param name="startDate">Return IPOs on or after the given date (optional)</param>
@@ -296,7 +296,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns news for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -309,7 +309,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns news for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -321,7 +321,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Securities for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponseCompanySecurities</returns>
@@ -333,7 +333,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Securities for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseCompanySecurities</returns>
@@ -344,7 +344,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalPeriod">The fiscal period</param>
@@ -358,7 +358,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalPeriod">The fiscal period</param>
@@ -371,7 +371,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Searches for Companies matching the text &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search parameters</param>
         /// <param name="active">When true, return companies that are actively traded (having stock prices within the past 14 days). When false, return companies that are not actively traded or never have been traded. (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -384,7 +384,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Searches for Companies matching the text &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search parameters</param>
         /// <param name="active">When true, return companies that are actively traded (having stock prices within the past 14 days). When false, return companies that are not actively traded or never have been traded. (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -398,7 +398,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Companies. When parameters are specified, returns matching companies.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="latestFilingDate">Return companies whose latest 10-Q or 10-K was filed on or after this date (optional)</param>
         /// <param name="sic">Return companies with the given Standard Industrial Classification code (optional)</param>
         /// <param name="template">Return companies with the given financial statement template (optional)</param>
@@ -418,7 +418,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Companies. When parameters are specified, returns matching companies.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="latestFilingDate">Return companies whose latest 10-Q or 10-K was filed on or after this date (optional)</param>
         /// <param name="sic">Return companies with the given Standard Industrial Classification code (optional)</param>
         /// <param name="template">Return companies with the given financial statement template (optional)</param>
@@ -437,7 +437,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all News for all Companies
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>Task of ApiResponseNews</returns>
@@ -449,7 +449,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all News for all Companies
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>Task of ApiResponse (ApiResponseNews)</returns>
@@ -460,7 +460,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <returns>Task of Company</returns>
         System.Threading.Tasks.Task<Company> GetCompanyAsync (string identifier);
@@ -471,7 +471,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <returns>Task of ApiResponse (Company)</returns>
         System.Threading.Tasks.Task<ApiResponse<Company>> GetCompanyAsyncWithHttpInfo (string identifier);
@@ -481,7 +481,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a numeric value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>Task of decimal?</returns>
@@ -493,7 +493,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a numeric value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>Task of ApiResponse (decimal?)</returns>
@@ -504,7 +504,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a text value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>Task of string</returns>
@@ -516,7 +516,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a text value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>Task of ApiResponse (string)</returns>
@@ -527,7 +527,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a complete list of SEC filings for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -543,7 +543,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a complete list of SEC filings for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -558,7 +558,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Fundamentals for the Company with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="filedAfter">Filed on or after this date (optional)</param>
         /// <param name="filedBefore">Filed on or before this date (optional)</param>
@@ -579,7 +579,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Fundamentals for the Company with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="filedAfter">Filed on or after this date (optional)</param>
         /// <param name="filedBefore">Filed on or before this date (optional)</param>
@@ -599,7 +599,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns historical values for the given &#x60;tag&#x60; and the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -618,7 +618,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns historical values for the given &#x60;tag&#x60; and the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -636,7 +636,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns initial public offerings (IPOs). An IPO is a public offering of private company stock. The act of \&quot;going public\&quot; is initiated by an IPO, at which point the company&#39;s stock trades on a major stock exchange (such as NYSE or NASDAQ). Intrinio covers all upcoming and recent IPOs for US exchanges.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return IPOs with the given ticker (typically the IPO for the company) (optional)</param>
         /// <param name="status">Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand (optional)</param>
         /// <param name="startDate">Return IPOs on or after the given date (optional)</param>
@@ -654,7 +654,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns initial public offerings (IPOs). An IPO is a public offering of private company stock. The act of \&quot;going public\&quot; is initiated by an IPO, at which point the company&#39;s stock trades on a major stock exchange (such as NYSE or NASDAQ). Intrinio covers all upcoming and recent IPOs for US exchanges.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return IPOs with the given ticker (typically the IPO for the company) (optional)</param>
         /// <param name="status">Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand (optional)</param>
         /// <param name="startDate">Return IPOs on or after the given date (optional)</param>
@@ -671,7 +671,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns news for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -684,7 +684,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns news for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -696,7 +696,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Securities for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>Task of ApiResponseCompanySecurities</returns>
@@ -708,7 +708,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Securities for the Company with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>Task of ApiResponse (ApiResponseCompanySecurities)</returns>
@@ -719,7 +719,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalPeriod">The fiscal period</param>
@@ -733,7 +733,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalPeriod">The fiscal period</param>
@@ -746,7 +746,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Searches for Companies matching the text &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search parameters</param>
         /// <param name="active">When true, return companies that are actively traded (having stock prices within the past 14 days). When false, return companies that are not actively traded or never have been traded. (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -759,7 +759,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Searches for Companies matching the text &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search parameters</param>
         /// <param name="active">When true, return companies that are actively traded (having stock prices within the past 14 days). When false, return companies that are not actively traded or never have been traded. (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -773,7 +773,7 @@ namespace Intrinio.SDK.Api
     /// </summary>
     public partial class CompanyApi : ICompanyApi
     {
-        private Intrinio.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyApi"/> class.
@@ -783,7 +783,7 @@ namespace Intrinio.SDK.Api
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -799,7 +799,7 @@ namespace Intrinio.SDK.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -830,7 +830,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.SDK.Client.ExceptionFactory ExceptionFactory
+        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -868,7 +868,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Companies Returns all Companies. When parameters are specified, returns matching companies.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="latestFilingDate">Return companies whose latest 10-Q or 10-K was filed on or after this date (optional)</param>
         /// <param name="sic">Return companies with the given Standard Industrial Classification code (optional)</param>
         /// <param name="template">Return companies with the given financial statement template (optional)</param>
@@ -889,7 +889,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Companies Returns all Companies. When parameters are specified, returns matching companies.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="latestFilingDate">Return companies whose latest 10-Q or 10-K was filed on or after this date (optional)</param>
         /// <param name="sic">Return companies with the given Standard Industrial Classification code (optional)</param>
         /// <param name="template">Return companies with the given financial statement template (optional)</param>
@@ -966,7 +966,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Companies Returns all Companies. When parameters are specified, returns matching companies.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="latestFilingDate">Return companies whose latest 10-Q or 10-K was filed on or after this date (optional)</param>
         /// <param name="sic">Return companies with the given Standard Industrial Classification code (optional)</param>
         /// <param name="template">Return companies with the given financial statement template (optional)</param>
@@ -988,7 +988,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Companies Returns all Companies. When parameters are specified, returns matching companies.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="latestFilingDate">Return companies whose latest 10-Q or 10-K was filed on or after this date (optional)</param>
         /// <param name="sic">Return companies with the given Standard Industrial Classification code (optional)</param>
         /// <param name="template">Return companies with the given financial statement template (optional)</param>
@@ -1063,7 +1063,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All News Returns all News for all Companies
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponseNews</returns>
@@ -1076,7 +1076,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All News Returns all News for all Companies
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseNews</returns>
@@ -1137,7 +1137,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All News Returns all News for all Companies
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>Task of ApiResponseNews</returns>
@@ -1151,7 +1151,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All News Returns all News for all Companies
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>Task of ApiResponse (ApiResponseNews)</returns>
@@ -1210,7 +1210,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Company Returns the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <returns>Company</returns>
         public Company GetCompany (string identifier)
@@ -1222,7 +1222,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Company Returns the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <returns>ApiResponse of Company</returns>
         
@@ -1284,7 +1284,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Company Returns the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <returns>Task of Company</returns>
         public async System.Threading.Tasks.Task<Company> GetCompanyAsync (string identifier)
@@ -1297,7 +1297,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Company Returns the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <returns>Task of ApiResponse (Company)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Company>> GetCompanyAsyncWithHttpInfo (string identifier)
@@ -1357,7 +1357,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Data Point (Number) for Company Returns a numeric value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>decimal?</returns>
@@ -1370,7 +1370,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Data Point (Number) for Company Returns a numeric value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>ApiResponse of decimal?</returns>
@@ -1437,7 +1437,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Data Point (Number) for Company Returns a numeric value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>Task of decimal?</returns>
@@ -1451,7 +1451,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Data Point (Number) for Company Returns a numeric value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>Task of ApiResponse (decimal?)</returns>
@@ -1516,7 +1516,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Data Point (Text) for Company Returns a text value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>string</returns>
@@ -1529,7 +1529,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Data Point (Text) for Company Returns a text value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>ApiResponse of string</returns>
@@ -1596,7 +1596,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Data Point (Text) for Company Returns a text value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>Task of string</returns>
@@ -1610,7 +1610,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Data Point (Text) for Company Returns a text value for the given &#x60;tag&#x60; for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <returns>Task of ApiResponse (string)</returns>
@@ -1675,7 +1675,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Filings by Company Returns a complete list of SEC filings for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -1692,7 +1692,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Filings by Company Returns a complete list of SEC filings for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -1764,7 +1764,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Filings by Company Returns a complete list of SEC filings for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -1782,7 +1782,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Filings by Company Returns a complete list of SEC filings for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;. Separate values with commas to return multiple report types. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -1852,7 +1852,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Fundamentals by Company Returns all Fundamentals for the Company with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="filedAfter">Filed on or after this date (optional)</param>
         /// <param name="filedBefore">Filed on or before this date (optional)</param>
@@ -1874,7 +1874,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Fundamentals by Company Returns all Fundamentals for the Company with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="filedAfter">Filed on or after this date (optional)</param>
         /// <param name="filedBefore">Filed on or before this date (optional)</param>
@@ -1956,7 +1956,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Fundamentals by Company Returns all Fundamentals for the Company with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="filedAfter">Filed on or after this date (optional)</param>
         /// <param name="filedBefore">Filed on or before this date (optional)</param>
@@ -1979,7 +1979,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Fundamentals by Company Returns all Fundamentals for the Company with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="filedAfter">Filed on or after this date (optional)</param>
         /// <param name="filedBefore">Filed on or before this date (optional)</param>
@@ -2059,7 +2059,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Historical Data for Company Returns historical values for the given &#x60;tag&#x60; and the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -2079,7 +2079,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Historical Data for Company Returns historical values for the given &#x60;tag&#x60; and the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -2160,7 +2160,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Historical Data for Company Returns historical values for the given &#x60;tag&#x60; and the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -2181,7 +2181,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Historical Data for Company Returns historical values for the given &#x60;tag&#x60; and the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="tag">An Intrinio data tag ID or code (&lt;a href&#x3D;&#39;https://data.intrinio.com/data-tags&#39;&gt;reference&lt;/a&gt;)</param>
         /// <param name="frequency">Return historical data in the given frequency (optional, default to daily)</param>
@@ -2260,7 +2260,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// IPOs Returns initial public offerings (IPOs). An IPO is a public offering of private company stock. The act of \&quot;going public\&quot; is initiated by an IPO, at which point the company&#39;s stock trades on a major stock exchange (such as NYSE or NASDAQ). Intrinio covers all upcoming and recent IPOs for US exchanges.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return IPOs with the given ticker (typically the IPO for the company) (optional)</param>
         /// <param name="status">Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand (optional)</param>
         /// <param name="startDate">Return IPOs on or after the given date (optional)</param>
@@ -2279,7 +2279,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// IPOs Returns initial public offerings (IPOs). An IPO is a public offering of private company stock. The act of \&quot;going public\&quot; is initiated by an IPO, at which point the company&#39;s stock trades on a major stock exchange (such as NYSE or NASDAQ). Intrinio covers all upcoming and recent IPOs for US exchanges.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return IPOs with the given ticker (typically the IPO for the company) (optional)</param>
         /// <param name="status">Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand (optional)</param>
         /// <param name="startDate">Return IPOs on or after the given date (optional)</param>
@@ -2352,7 +2352,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// IPOs Returns initial public offerings (IPOs). An IPO is a public offering of private company stock. The act of \&quot;going public\&quot; is initiated by an IPO, at which point the company&#39;s stock trades on a major stock exchange (such as NYSE or NASDAQ). Intrinio covers all upcoming and recent IPOs for US exchanges.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return IPOs with the given ticker (typically the IPO for the company) (optional)</param>
         /// <param name="status">Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand (optional)</param>
         /// <param name="startDate">Return IPOs on or after the given date (optional)</param>
@@ -2372,7 +2372,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// IPOs Returns initial public offerings (IPOs). An IPO is a public offering of private company stock. The act of \&quot;going public\&quot; is initiated by an IPO, at which point the company&#39;s stock trades on a major stock exchange (such as NYSE or NASDAQ). Intrinio covers all upcoming and recent IPOs for US exchanges.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return IPOs with the given ticker (typically the IPO for the company) (optional)</param>
         /// <param name="status">Return IPOs with the given status. Upcoming IPOs are scheduled to occur in the future. Priced IPOs have occured and the company should be trading publicly. Withdrawn IPOs were planned to occurr but were withdrawn beforehand (optional)</param>
         /// <param name="startDate">Return IPOs on or after the given date (optional)</param>
@@ -2443,7 +2443,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All News by Company Returns news for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -2457,7 +2457,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All News by Company Returns news for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -2523,7 +2523,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All News by Company Returns news for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -2538,7 +2538,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All News by Company Returns news for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -2602,7 +2602,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Securities by Company Returns Securities for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponseCompanySecurities</returns>
@@ -2615,7 +2615,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Securities by Company Returns Securities for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseCompanySecurities</returns>
@@ -2679,7 +2679,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Securities by Company Returns Securities for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>Task of ApiResponseCompanySecurities</returns>
@@ -2693,7 +2693,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Securities by Company Returns Securities for the Company with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>Task of ApiResponse (ApiResponseCompanySecurities)</returns>
@@ -2755,7 +2755,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Fundamental by Company Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalPeriod">The fiscal period</param>
@@ -2770,7 +2770,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Fundamental by Company Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalPeriod">The fiscal period</param>
@@ -2847,7 +2847,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Fundamental by Company Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalPeriod">The fiscal period</param>
@@ -2863,7 +2863,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Fundamental by Company Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalPeriod">The fiscal period</param>
@@ -2938,7 +2938,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Search Companies Searches for Companies matching the text &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search parameters</param>
         /// <param name="active">When true, return companies that are actively traded (having stock prices within the past 14 days). When false, return companies that are not actively traded or never have been traded. (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -2952,7 +2952,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Search Companies Searches for Companies matching the text &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search parameters</param>
         /// <param name="active">When true, return companies that are actively traded (having stock prices within the past 14 days). When false, return companies that are not actively traded or never have been traded. (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -3018,7 +3018,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Search Companies Searches for Companies matching the text &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search parameters</param>
         /// <param name="active">When true, return companies that are actively traded (having stock prices within the past 14 days). When false, return companies that are not actively traded or never have been traded. (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -3033,7 +3033,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Search Companies Searches for Companies matching the text &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search parameters</param>
         /// <param name="active">When true, return companies that are actively traded (having stock prices within the past 14 days). When false, return companies that are not actively traded or never have been traded. (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>

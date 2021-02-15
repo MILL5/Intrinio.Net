@@ -12,9 +12,9 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.SDK.Client.SwaggerDateConverter;
+using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
-namespace Intrinio.SDK.Model
+namespace Intrinio.Net.Model
 {
     /// <summary>
     /// The date_time, chikou_span, kijun_sen, senkou_span_a, senkou_span_b, and tenkan_sen values of a Ichimoku Kinko Hyo technical indicator calculation

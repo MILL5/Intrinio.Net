@@ -15,7 +15,7 @@ using Newtonsoft.Json.Linq;
 using RestSharp;
 using Polly;
 
-namespace Intrinio.SDK.Client
+namespace Intrinio.Net.Client
 {
     /// <summary>
     /// API client is mainly responsible for making the HTTP call to the API backend.
@@ -48,7 +48,7 @@ namespace Intrinio.SDK.Client
         /// </summary>
         public ApiClient()
         {
-            Configuration = Intrinio.SDK.Client.Configuration.Default;
+            Configuration = Intrinio.Net.Client.Configuration.Default;
             RestClient = new RestClient("https://api-v2.intrinio.com");
         }
 
@@ -59,7 +59,7 @@ namespace Intrinio.SDK.Client
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
         {
-            Configuration = config ?? Intrinio.SDK.Client.Configuration.Default;
+            Configuration = config ?? Intrinio.Net.Client.Configuration.Default;
 
             RestClient = new RestClient(Configuration.BasePath);
         }
@@ -170,7 +170,7 @@ namespace Intrinio.SDK.Client
             // set user agent
             RestClient.UserAgent = Configuration.UserAgent;
 
-            var allowRetries = Intrinio.SDK.Client.Configuration.Default.AllowRetries;
+            var allowRetries = Intrinio.Net.Client.Configuration.Default.AllowRetries;
             var retryCount = 0;
             if (allowRetries is true)
                 retryCount = 4;
@@ -240,7 +240,7 @@ namespace Intrinio.SDK.Client
                 path, method, queryParams, postBody, headerParams, formParams, fileParams,
                 pathParams, contentType);
             
-            var retryCount = Intrinio.SDK.Client.Configuration.Default.AllowRetries ? 4 : 0;
+            var retryCount = Intrinio.Net.Client.Configuration.Default.AllowRetries ? 4 : 0;
             
             var retryPolicy = Policy
               .HandleResult<IRestResponse>((result) =>

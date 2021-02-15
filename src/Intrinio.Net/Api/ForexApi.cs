@@ -6,10 +6,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using RestSharp;
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
 
-namespace Intrinio.SDK.Api
+namespace Intrinio.Net.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,7 +23,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a list of forex currencies for which prices are available.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponseForexCurrencies</returns>
         ApiResponseForexCurrencies GetForexCurrencies ();
 
@@ -33,7 +33,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a list of forex currencies for which prices are available.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ApiResponseForexCurrencies</returns>
         ApiResponse<ApiResponseForexCurrencies> GetForexCurrenciesWithHttpInfo ();
         /// <summary>
@@ -42,7 +42,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a list of currency pairs used to request foreign exchange (forex) market price data. The currency that is used as the reference is called quote currency and the currency that is quoted in relation is called the base currency. For example, in the pair code “EURGBP” with a price of 0.88, one Euro (base currency) can be exchanged for 0.88 British Pounds (quote currency).
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponseForexPairs</returns>
         ApiResponseForexPairs GetForexPairs ();
 
@@ -52,7 +52,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a list of currency pairs used to request foreign exchange (forex) market price data. The currency that is used as the reference is called quote currency and the currency that is quoted in relation is called the base currency. For example, in the pair code “EURGBP” with a price of 0.88, one Euro (base currency) can be exchanged for 0.88 British Pounds (quote currency).
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ApiResponseForexPairs</returns>
         ApiResponse<ApiResponseForexPairs> GetForexPairsWithHttpInfo ();
         /// <summary>
@@ -61,7 +61,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Provides a list of forex price quotes for a given forex currency pair and timeframe.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pair">The Forex Currency Pair code</param>
         /// <param name="timeframe">The time interval for the quotes</param>
         /// <param name="timezone">Returns trading times in this timezone (optional, default to UTC)</param>
@@ -80,7 +80,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Provides a list of forex price quotes for a given forex currency pair and timeframe.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pair">The Forex Currency Pair code</param>
         /// <param name="timeframe">The time interval for the quotes</param>
         /// <param name="timezone">Returns trading times in this timezone (optional, default to UTC)</param>
@@ -100,7 +100,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a list of forex currencies for which prices are available.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponseForexCurrencies</returns>
         System.Threading.Tasks.Task<ApiResponseForexCurrencies> GetForexCurrenciesAsync ();
 
@@ -110,7 +110,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a list of forex currencies for which prices are available.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ApiResponseForexCurrencies)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApiResponseForexCurrencies>> GetForexCurrenciesAsyncWithHttpInfo ();
         /// <summary>
@@ -119,7 +119,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a list of currency pairs used to request foreign exchange (forex) market price data. The currency that is used as the reference is called quote currency and the currency that is quoted in relation is called the base currency. For example, in the pair code “EURGBP” with a price of 0.88, one Euro (base currency) can be exchanged for 0.88 British Pounds (quote currency).
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponseForexPairs</returns>
         System.Threading.Tasks.Task<ApiResponseForexPairs> GetForexPairsAsync ();
 
@@ -129,7 +129,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a list of currency pairs used to request foreign exchange (forex) market price data. The currency that is used as the reference is called quote currency and the currency that is quoted in relation is called the base currency. For example, in the pair code “EURGBP” with a price of 0.88, one Euro (base currency) can be exchanged for 0.88 British Pounds (quote currency).
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ApiResponseForexPairs)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApiResponseForexPairs>> GetForexPairsAsyncWithHttpInfo ();
         /// <summary>
@@ -138,7 +138,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Provides a list of forex price quotes for a given forex currency pair and timeframe.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pair">The Forex Currency Pair code</param>
         /// <param name="timeframe">The time interval for the quotes</param>
         /// <param name="timezone">Returns trading times in this timezone (optional, default to UTC)</param>
@@ -157,7 +157,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Provides a list of forex price quotes for a given forex currency pair and timeframe.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pair">The Forex Currency Pair code</param>
         /// <param name="timeframe">The time interval for the quotes</param>
         /// <param name="timezone">Returns trading times in this timezone (optional, default to UTC)</param>
@@ -177,7 +177,7 @@ namespace Intrinio.SDK.Api
     /// </summary>
     public partial class ForexApi : IForexApi
     {
-        private Intrinio.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ForexApi"/> class.
@@ -187,7 +187,7 @@ namespace Intrinio.SDK.Api
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Intrinio.SDK.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.SDK.Client.ExceptionFactory ExceptionFactory
+        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -272,7 +272,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Forex Currencies Returns a list of forex currencies for which prices are available.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponseForexCurrencies</returns>
         public ApiResponseForexCurrencies GetForexCurrencies ()
         {
@@ -283,7 +283,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Forex Currencies Returns a list of forex currencies for which prices are available.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ApiResponseForexCurrencies</returns>
         
         
@@ -340,7 +340,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Forex Currencies Returns a list of forex currencies for which prices are available.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponseForexCurrencies</returns>
         public async System.Threading.Tasks.Task<ApiResponseForexCurrencies> GetForexCurrenciesAsync ()
         {
@@ -352,7 +352,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Forex Currencies Returns a list of forex currencies for which prices are available.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ApiResponseForexCurrencies)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ApiResponseForexCurrencies>> GetForexCurrenciesAsyncWithHttpInfo ()
         {
@@ -407,7 +407,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Forex Currency Pairs Returns a list of currency pairs used to request foreign exchange (forex) market price data. The currency that is used as the reference is called quote currency and the currency that is quoted in relation is called the base currency. For example, in the pair code “EURGBP” with a price of 0.88, one Euro (base currency) can be exchanged for 0.88 British Pounds (quote currency).
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponseForexPairs</returns>
         public ApiResponseForexPairs GetForexPairs ()
         {
@@ -418,7 +418,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Forex Currency Pairs Returns a list of currency pairs used to request foreign exchange (forex) market price data. The currency that is used as the reference is called quote currency and the currency that is quoted in relation is called the base currency. For example, in the pair code “EURGBP” with a price of 0.88, one Euro (base currency) can be exchanged for 0.88 British Pounds (quote currency).
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ApiResponseForexPairs</returns>
         
         
@@ -475,7 +475,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Forex Currency Pairs Returns a list of currency pairs used to request foreign exchange (forex) market price data. The currency that is used as the reference is called quote currency and the currency that is quoted in relation is called the base currency. For example, in the pair code “EURGBP” with a price of 0.88, one Euro (base currency) can be exchanged for 0.88 British Pounds (quote currency).
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponseForexPairs</returns>
         public async System.Threading.Tasks.Task<ApiResponseForexPairs> GetForexPairsAsync ()
         {
@@ -487,7 +487,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Forex Currency Pairs Returns a list of currency pairs used to request foreign exchange (forex) market price data. The currency that is used as the reference is called quote currency and the currency that is quoted in relation is called the base currency. For example, in the pair code “EURGBP” with a price of 0.88, one Euro (base currency) can be exchanged for 0.88 British Pounds (quote currency).
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (ApiResponseForexPairs)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ApiResponseForexPairs>> GetForexPairsAsyncWithHttpInfo ()
         {
@@ -542,7 +542,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Forex Currency Prices Provides a list of forex price quotes for a given forex currency pair and timeframe.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pair">The Forex Currency Pair code</param>
         /// <param name="timeframe">The time interval for the quotes</param>
         /// <param name="timezone">Returns trading times in this timezone (optional, default to UTC)</param>
@@ -562,7 +562,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Forex Currency Prices Provides a list of forex price quotes for a given forex currency pair and timeframe.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pair">The Forex Currency Pair code</param>
         /// <param name="timeframe">The time interval for the quotes</param>
         /// <param name="timezone">Returns trading times in this timezone (optional, default to UTC)</param>
@@ -666,7 +666,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Forex Currency Prices Provides a list of forex price quotes for a given forex currency pair and timeframe.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pair">The Forex Currency Pair code</param>
         /// <param name="timeframe">The time interval for the quotes</param>
         /// <param name="timezone">Returns trading times in this timezone (optional, default to UTC)</param>
@@ -687,7 +687,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Forex Currency Prices Provides a list of forex price quotes for a given forex currency pair and timeframe.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pair">The Forex Currency Pair code</param>
         /// <param name="timeframe">The time interval for the quotes</param>
         /// <param name="timezone">Returns trading times in this timezone (optional, default to UTC)</param>

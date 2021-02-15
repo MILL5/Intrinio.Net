@@ -6,10 +6,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using RestSharp;
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
 
-namespace Intrinio.SDK.Api
+namespace Intrinio.Net.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,7 +23,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns detailed fundamental data for the given &#x60;id&#x60;.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID for the Fundamental</param>
         /// <returns>Fundamental</returns>
         Fundamental GetFundamentalById (string id);
@@ -34,7 +34,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns detailed fundamental data for the given &#x60;id&#x60;.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID for the Fundamental</param>
         /// <returns>ApiResponse of Fundamental</returns>
         ApiResponse<Fundamental> GetFundamentalByIdWithHttpInfo (string id);
@@ -44,7 +44,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the As-Reported Financials directly from the financial statements of the XBRL filings from the company
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>ApiResponseReportedFinancials</returns>
         ApiResponseReportedFinancials GetFundamentalReportedFinancials (string id);
@@ -55,7 +55,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the As-Reported Financials directly from the financial statements of the XBRL filings from the company
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>ApiResponse of ApiResponseReportedFinancials</returns>
         ApiResponse<ApiResponseReportedFinancials> GetFundamentalReportedFinancialsWithHttpInfo (string id);
@@ -65,7 +65,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns professional-grade historical financial data. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies&#39; fundamentals.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>ApiResponseStandardizedFinancials</returns>
         ApiResponseStandardizedFinancials GetFundamentalStandardizedFinancials (string id);
@@ -76,7 +76,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns professional-grade historical financial data. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies&#39; fundamentals.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>ApiResponse of ApiResponseStandardizedFinancials</returns>
         ApiResponse<ApiResponseStandardizedFinancials> GetFundamentalStandardizedFinancialsWithHttpInfo (string id);
@@ -86,7 +86,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalYear">The fiscal year</param>
@@ -100,7 +100,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalYear">The fiscal year</param>
@@ -115,7 +115,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns detailed fundamental data for the given &#x60;id&#x60;.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID for the Fundamental</param>
         /// <returns>Task of Fundamental</returns>
         System.Threading.Tasks.Task<Fundamental> GetFundamentalByIdAsync (string id);
@@ -126,7 +126,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns detailed fundamental data for the given &#x60;id&#x60;.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID for the Fundamental</param>
         /// <returns>Task of ApiResponse (Fundamental)</returns>
         System.Threading.Tasks.Task<ApiResponse<Fundamental>> GetFundamentalByIdAsyncWithHttpInfo (string id);
@@ -136,7 +136,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the As-Reported Financials directly from the financial statements of the XBRL filings from the company
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>Task of ApiResponseReportedFinancials</returns>
         System.Threading.Tasks.Task<ApiResponseReportedFinancials> GetFundamentalReportedFinancialsAsync (string id);
@@ -147,7 +147,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the As-Reported Financials directly from the financial statements of the XBRL filings from the company
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>Task of ApiResponse (ApiResponseReportedFinancials)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApiResponseReportedFinancials>> GetFundamentalReportedFinancialsAsyncWithHttpInfo (string id);
@@ -157,7 +157,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns professional-grade historical financial data. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies&#39; fundamentals.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>Task of ApiResponseStandardizedFinancials</returns>
         System.Threading.Tasks.Task<ApiResponseStandardizedFinancials> GetFundamentalStandardizedFinancialsAsync (string id);
@@ -168,7 +168,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns professional-grade historical financial data. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies&#39; fundamentals.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>Task of ApiResponse (ApiResponseStandardizedFinancials)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApiResponseStandardizedFinancials>> GetFundamentalStandardizedFinancialsAsyncWithHttpInfo (string id);
@@ -178,7 +178,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalYear">The fiscal year</param>
@@ -192,7 +192,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalYear">The fiscal year</param>
@@ -207,7 +207,7 @@ namespace Intrinio.SDK.Api
     /// </summary>
     public partial class FundamentalsApi : IFundamentalsApi
     {
-        private Intrinio.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FundamentalsApi"/> class.
@@ -217,7 +217,7 @@ namespace Intrinio.SDK.Api
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace Intrinio.SDK.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -264,7 +264,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.SDK.Client.ExceptionFactory ExceptionFactory
+        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -302,7 +302,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Fundamental by ID Returns detailed fundamental data for the given &#x60;id&#x60;.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID for the Fundamental</param>
         /// <returns>Fundamental</returns>
         public Fundamental GetFundamentalById (string id)
@@ -314,7 +314,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Fundamental by ID Returns detailed fundamental data for the given &#x60;id&#x60;.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID for the Fundamental</param>
         /// <returns>ApiResponse of Fundamental</returns>
         
@@ -376,7 +376,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Fundamental by ID Returns detailed fundamental data for the given &#x60;id&#x60;.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID for the Fundamental</param>
         /// <returns>Task of Fundamental</returns>
         public async System.Threading.Tasks.Task<Fundamental> GetFundamentalByIdAsync (string id)
@@ -389,7 +389,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Fundamental by ID Returns detailed fundamental data for the given &#x60;id&#x60;.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID for the Fundamental</param>
         /// <returns>Task of ApiResponse (Fundamental)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Fundamental>> GetFundamentalByIdAsyncWithHttpInfo (string id)
@@ -449,7 +449,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Reported Financials Returns the As-Reported Financials directly from the financial statements of the XBRL filings from the company
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>ApiResponseReportedFinancials</returns>
         public ApiResponseReportedFinancials GetFundamentalReportedFinancials (string id)
@@ -461,7 +461,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Reported Financials Returns the As-Reported Financials directly from the financial statements of the XBRL filings from the company
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>ApiResponse of ApiResponseReportedFinancials</returns>
         
@@ -523,7 +523,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Reported Financials Returns the As-Reported Financials directly from the financial statements of the XBRL filings from the company
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>Task of ApiResponseReportedFinancials</returns>
         public async System.Threading.Tasks.Task<ApiResponseReportedFinancials> GetFundamentalReportedFinancialsAsync (string id)
@@ -536,7 +536,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Reported Financials Returns the As-Reported Financials directly from the financial statements of the XBRL filings from the company
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>Task of ApiResponse (ApiResponseReportedFinancials)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ApiResponseReportedFinancials>> GetFundamentalReportedFinancialsAsyncWithHttpInfo (string id)
@@ -596,7 +596,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Standardized Financials Returns professional-grade historical financial data. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies&#39; fundamentals.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>ApiResponseStandardizedFinancials</returns>
         public ApiResponseStandardizedFinancials GetFundamentalStandardizedFinancials (string id)
@@ -608,7 +608,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Standardized Financials Returns professional-grade historical financial data. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies&#39; fundamentals.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>ApiResponse of ApiResponseStandardizedFinancials</returns>
         
@@ -670,7 +670,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Standardized Financials Returns professional-grade historical financial data. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies&#39; fundamentals.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>Task of ApiResponseStandardizedFinancials</returns>
         public async System.Threading.Tasks.Task<ApiResponseStandardizedFinancials> GetFundamentalStandardizedFinancialsAsync (string id)
@@ -683,7 +683,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Standardized Financials Returns professional-grade historical financial data. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies&#39; fundamentals.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID or lookup code (ticker-statement-year-period) for the Fundamental</param>
         /// <returns>Task of ApiResponse (ApiResponseStandardizedFinancials)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ApiResponseStandardizedFinancials>> GetFundamentalStandardizedFinancialsAsyncWithHttpInfo (string id)
@@ -743,7 +743,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Fundamental Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalYear">The fiscal year</param>
@@ -758,7 +758,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Fundamental Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalYear">The fiscal year</param>
@@ -835,7 +835,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Fundamental Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalYear">The fiscal year</param>
@@ -851,7 +851,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Fundamental Returns the Fundamental for the Company with the given &#x60;identifier&#x60; and with the given parameters
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalYear">The fiscal year</param>

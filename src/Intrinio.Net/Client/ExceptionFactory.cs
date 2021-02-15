@@ -4,7 +4,7 @@
 using System;
 using RestSharp;
 
-namespace Intrinio.SDK.Client
+namespace Intrinio.Net.Client
 {
     /// <summary>
     /// A delegate to ExceptionFactory method

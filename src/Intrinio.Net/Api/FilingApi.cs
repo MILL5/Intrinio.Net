@@ -6,10 +6,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using RestSharp;
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
 
-namespace Intrinio.SDK.Api
+namespace Intrinio.Net.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,7 +23,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Filings. Returns Filings matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -41,7 +41,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Filings. Returns Filings matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -58,7 +58,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Return all Notes from all Filings, most-recent first. Returns notes matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="reportType">Notes contained in filings that match the given &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt; (optional)</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
@@ -76,7 +76,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Return all Notes from all Filings, most-recent first. Returns notes matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="reportType">Notes contained in filings that match the given &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt; (optional)</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
@@ -93,7 +93,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Filing with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID of the Filing</param>
         /// <returns>Filing</returns>
         Filing GetFilingById (string id);
@@ -104,7 +104,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Filing with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID of the Filing</param>
         /// <returns>ApiResponse of Filing</returns>
         ApiResponse<Filing> GetFilingByIdWithHttpInfo (string id);
@@ -114,7 +114,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Fundamentals for the SEC Filing with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <param name="statementCode">Filters fundamentals by statement code (optional)</param>
         /// <param name="type">Filters fundamentals by type (optional)</param>
@@ -132,7 +132,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Fundamentals for the SEC Filing with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <param name="statementCode">Filters fundamentals by statement code (optional)</param>
         /// <param name="type">Filters fundamentals by type (optional)</param>
@@ -149,7 +149,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>string</returns>
         string GetFilingHtml (string identifier);
@@ -160,7 +160,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>ApiResponse of string</returns>
         ApiResponse<string> GetFilingHtmlWithHttpInfo (string identifier);
@@ -170,7 +170,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>string</returns>
         string GetFilingText (string identifier);
@@ -181,7 +181,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>ApiResponse of string</returns>
         ApiResponse<string> GetFilingTextWithHttpInfo (string identifier);
@@ -191,7 +191,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <param name="contentFormat">Returns content in html (as filed) or plain text (optional, default to text)</param>
         /// <returns>FilingNote</returns>
@@ -203,7 +203,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <param name="contentFormat">Returns content in html (as filed) or plain text (optional, default to text)</param>
         /// <returns>ApiResponse of FilingNote</returns>
@@ -214,7 +214,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>string</returns>
         string GetNoteHtml (string identifier);
@@ -225,7 +225,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>ApiResponse of string</returns>
         ApiResponse<string> GetNoteHtmlWithHttpInfo (string identifier);
@@ -235,7 +235,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>string</returns>
         string GetNoteText (string identifier);
@@ -246,7 +246,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>ApiResponse of string</returns>
         ApiResponse<string> GetNoteTextWithHttpInfo (string identifier);
@@ -256,7 +256,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Searches for Filing Notes using the &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search for notes that contain all or parts of this text</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
         /// <param name="filingEndDate">Limit search to filings on or before this date (optional)</param>
@@ -270,7 +270,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Searches for Filing Notes using the &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search for notes that contain all or parts of this text</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
         /// <param name="filingEndDate">Limit search to filings on or before this date (optional)</param>
@@ -285,7 +285,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Filings. Returns Filings matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -303,7 +303,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Filings. Returns Filings matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -320,7 +320,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Return all Notes from all Filings, most-recent first. Returns notes matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="reportType">Notes contained in filings that match the given &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt; (optional)</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
@@ -338,7 +338,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Return all Notes from all Filings, most-recent first. Returns notes matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="reportType">Notes contained in filings that match the given &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt; (optional)</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
@@ -355,7 +355,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Filing with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID of the Filing</param>
         /// <returns>Task of Filing</returns>
         System.Threading.Tasks.Task<Filing> GetFilingByIdAsync (string id);
@@ -366,7 +366,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Filing with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID of the Filing</param>
         /// <returns>Task of ApiResponse (Filing)</returns>
         System.Threading.Tasks.Task<ApiResponse<Filing>> GetFilingByIdAsyncWithHttpInfo (string id);
@@ -376,7 +376,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Fundamentals for the SEC Filing with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <param name="statementCode">Filters fundamentals by statement code (optional)</param>
         /// <param name="type">Filters fundamentals by type (optional)</param>
@@ -394,7 +394,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Fundamentals for the SEC Filing with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <param name="statementCode">Filters fundamentals by statement code (optional)</param>
         /// <param name="type">Filters fundamentals by type (optional)</param>
@@ -411,7 +411,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>Task of string</returns>
         System.Threading.Tasks.Task<string> GetFilingHtmlAsync (string identifier);
@@ -422,7 +422,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>Task of ApiResponse (string)</returns>
         System.Threading.Tasks.Task<ApiResponse<string>> GetFilingHtmlAsyncWithHttpInfo (string identifier);
@@ -432,7 +432,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>Task of string</returns>
         System.Threading.Tasks.Task<string> GetFilingTextAsync (string identifier);
@@ -443,7 +443,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>Task of ApiResponse (string)</returns>
         System.Threading.Tasks.Task<ApiResponse<string>> GetFilingTextAsyncWithHttpInfo (string identifier);
@@ -453,7 +453,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <param name="contentFormat">Returns content in html (as filed) or plain text (optional, default to text)</param>
         /// <returns>Task of FilingNote</returns>
@@ -465,7 +465,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <param name="contentFormat">Returns content in html (as filed) or plain text (optional, default to text)</param>
         /// <returns>Task of ApiResponse (FilingNote)</returns>
@@ -476,7 +476,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>Task of string</returns>
         System.Threading.Tasks.Task<string> GetNoteHtmlAsync (string identifier);
@@ -487,7 +487,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>Task of ApiResponse (string)</returns>
         System.Threading.Tasks.Task<ApiResponse<string>> GetNoteHtmlAsyncWithHttpInfo (string identifier);
@@ -497,7 +497,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>Task of string</returns>
         System.Threading.Tasks.Task<string> GetNoteTextAsync (string identifier);
@@ -508,7 +508,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>Task of ApiResponse (string)</returns>
         System.Threading.Tasks.Task<ApiResponse<string>> GetNoteTextAsyncWithHttpInfo (string identifier);
@@ -518,7 +518,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Searches for Filing Notes using the &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search for notes that contain all or parts of this text</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
         /// <param name="filingEndDate">Limit search to filings on or before this date (optional)</param>
@@ -532,7 +532,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Searches for Filing Notes using the &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search for notes that contain all or parts of this text</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
         /// <param name="filingEndDate">Limit search to filings on or before this date (optional)</param>
@@ -547,7 +547,7 @@ namespace Intrinio.SDK.Api
     /// </summary>
     public partial class FilingApi : IFilingApi
     {
-        private Intrinio.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FilingApi"/> class.
@@ -557,7 +557,7 @@ namespace Intrinio.SDK.Api
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -573,7 +573,7 @@ namespace Intrinio.SDK.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -604,7 +604,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.SDK.Client.ExceptionFactory ExceptionFactory
+        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -642,7 +642,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Filings Returns all Filings. Returns Filings matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -661,7 +661,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Filings Returns all Filings. Returns Filings matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -737,7 +737,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Filings Returns all Filings. Returns Filings matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -757,7 +757,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Filings Returns all Filings. Returns Filings matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="reportType">Filter by report type. Separate values with commas to return multiple The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report types&lt;/a&gt;. (optional)</param>
         /// <param name="startDate">Filed on or after the given date (optional)</param>
@@ -831,7 +831,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Filing Notes Return all Notes from all Filings, most-recent first. Returns notes matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="reportType">Notes contained in filings that match the given &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt; (optional)</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
@@ -850,7 +850,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Filing Notes Return all Notes from all Filings, most-recent first. Returns notes matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="reportType">Notes contained in filings that match the given &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt; (optional)</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
@@ -923,7 +923,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Filing Notes Return all Notes from all Filings, most-recent first. Returns notes matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="reportType">Notes contained in filings that match the given &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt; (optional)</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
@@ -943,7 +943,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Filing Notes Return all Notes from all Filings, most-recent first. Returns notes matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="reportType">Notes contained in filings that match the given &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt; (optional)</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
@@ -1014,7 +1014,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Filing Returns the Filing with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID of the Filing</param>
         /// <returns>Filing</returns>
         public Filing GetFilingById (string id)
@@ -1026,7 +1026,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Filing Returns the Filing with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID of the Filing</param>
         /// <returns>ApiResponse of Filing</returns>
         
@@ -1088,7 +1088,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Filing Returns the Filing with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID of the Filing</param>
         /// <returns>Task of Filing</returns>
         public async System.Threading.Tasks.Task<Filing> GetFilingByIdAsync (string id)
@@ -1101,7 +1101,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup Filing Returns the Filing with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The Intrinio ID of the Filing</param>
         /// <returns>Task of ApiResponse (Filing)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Filing>> GetFilingByIdAsyncWithHttpInfo (string id)
@@ -1161,7 +1161,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Fundamentals by Filing Returns all Fundamentals for the SEC Filing with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <param name="statementCode">Filters fundamentals by statement code (optional)</param>
         /// <param name="type">Filters fundamentals by type (optional)</param>
@@ -1180,7 +1180,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Fundamentals by Filing Returns all Fundamentals for the SEC Filing with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <param name="statementCode">Filters fundamentals by statement code (optional)</param>
         /// <param name="type">Filters fundamentals by type (optional)</param>
@@ -1256,7 +1256,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Fundamentals by Filing Returns all Fundamentals for the SEC Filing with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <param name="statementCode">Filters fundamentals by statement code (optional)</param>
         /// <param name="type">Filters fundamentals by type (optional)</param>
@@ -1276,7 +1276,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Fundamentals by Filing Returns all Fundamentals for the SEC Filing with the given &#x60;identifier&#x60;. Returns Fundamentals matching parameters when supplied.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <param name="statementCode">Filters fundamentals by statement code (optional)</param>
         /// <param name="type">Filters fundamentals by type (optional)</param>
@@ -1350,7 +1350,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Html 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>string</returns>
         public string GetFilingHtml (string identifier)
@@ -1362,7 +1362,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Html 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>ApiResponse of string</returns>
         
@@ -1424,7 +1424,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Html 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>Task of string</returns>
         public async System.Threading.Tasks.Task<string> GetFilingHtmlAsync (string identifier)
@@ -1437,7 +1437,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Html 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>Task of ApiResponse (string)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<string>> GetFilingHtmlAsyncWithHttpInfo (string identifier)
@@ -1497,7 +1497,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Text 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>string</returns>
         public string GetFilingText (string identifier)
@@ -1509,7 +1509,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Text 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>ApiResponse of string</returns>
         
@@ -1571,7 +1571,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Text 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>Task of string</returns>
         public async System.Threading.Tasks.Task<string> GetFilingTextAsync (string identifier)
@@ -1584,7 +1584,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Text 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Filing identifier</param>
         /// <returns>Task of ApiResponse (string)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<string>> GetFilingTextAsyncWithHttpInfo (string identifier)
@@ -1644,7 +1644,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Note by ID 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <param name="contentFormat">Returns content in html (as filed) or plain text (optional, default to text)</param>
         /// <returns>FilingNote</returns>
@@ -1657,7 +1657,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Note by ID 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <param name="contentFormat">Returns content in html (as filed) or plain text (optional, default to text)</param>
         /// <returns>ApiResponse of FilingNote</returns>
@@ -1721,7 +1721,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Note by ID 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <param name="contentFormat">Returns content in html (as filed) or plain text (optional, default to text)</param>
         /// <returns>Task of FilingNote</returns>
@@ -1735,7 +1735,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Note by ID 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <param name="contentFormat">Returns content in html (as filed) or plain text (optional, default to text)</param>
         /// <returns>Task of ApiResponse (FilingNote)</returns>
@@ -1797,7 +1797,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Note HTML 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>string</returns>
         public string GetNoteHtml (string identifier)
@@ -1809,7 +1809,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Note HTML 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>ApiResponse of string</returns>
         
@@ -1871,7 +1871,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Note HTML 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>Task of string</returns>
         public async System.Threading.Tasks.Task<string> GetNoteHtmlAsync (string identifier)
@@ -1884,7 +1884,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Note HTML 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>Task of ApiResponse (string)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<string>> GetNoteHtmlAsyncWithHttpInfo (string identifier)
@@ -1944,7 +1944,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Note Text 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>string</returns>
         public string GetNoteText (string identifier)
@@ -1956,7 +1956,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Note Text 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>ApiResponse of string</returns>
         
@@ -2018,7 +2018,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Note Text 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>Task of string</returns>
         public async System.Threading.Tasks.Task<string> GetNoteTextAsync (string identifier)
@@ -2031,7 +2031,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Filing Note Text 
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID of the filing note</param>
         /// <returns>Task of ApiResponse (string)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<string>> GetNoteTextAsyncWithHttpInfo (string identifier)
@@ -2091,7 +2091,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Search Filing Notes Searches for Filing Notes using the &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search for notes that contain all or parts of this text</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
         /// <param name="filingEndDate">Limit search to filings on or before this date (optional)</param>
@@ -2106,7 +2106,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Search Filing Notes Searches for Filing Notes using the &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search for notes that contain all or parts of this text</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
         /// <param name="filingEndDate">Limit search to filings on or before this date (optional)</param>
@@ -2174,7 +2174,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Search Filing Notes Searches for Filing Notes using the &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search for notes that contain all or parts of this text</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
         /// <param name="filingEndDate">Limit search to filings on or before this date (optional)</param>
@@ -2190,7 +2190,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Search Filing Notes Searches for Filing Notes using the &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query">Search for notes that contain all or parts of this text</param>
         /// <param name="filingStartDate">Limit search to filings on or after this date (optional)</param>
         /// <param name="filingEndDate">Limit search to filings on or before this date (optional)</param>

@@ -6,10 +6,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using RestSharp;
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
 
-namespace Intrinio.SDK.Api
+namespace Intrinio.Net.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,7 +23,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns buy, sell, and hold recommendations from analysts at brokerages for all companies in the Zacks universe. Zack’s storied research team aggregates and validates the ratings from professional analysts.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit ratings to those on or after this date (optional)</param>
         /// <param name="endDate">Limit ratings to those on or before this date (optional)</param>
@@ -52,7 +52,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns buy, sell, and hold recommendations from analysts at brokerages for all companies in the Zacks universe. Zack’s storied research team aggregates and validates the ratings from professional analysts.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit ratings to those on or after this date (optional)</param>
         /// <param name="endDate">Limit ratings to those on or before this date (optional)</param>
@@ -80,7 +80,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks consensus earnings-per-share (EPS) data for all Companies.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit EPS estimates to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS estimates to those on or before this date (optional)</param>
@@ -99,7 +99,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks consensus earnings-per-share (EPS) data for all Companies.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit EPS estimates to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS estimates to those on or before this date (optional)</param>
@@ -117,7 +117,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the latest Zacks EPS growth rates
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupName">Return only growth rates for companies in the given Zacks industry group name (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
@@ -132,7 +132,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the latest Zacks EPS growth rates
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupName">Return only growth rates for companies in the given Zacks industry group name (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
@@ -146,7 +146,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks eps surprise data for all Securities.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit EPS surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS surprises to those on or before this date (optional)</param>
         /// <param name="epsActualGreater">Return only records with an actual EPS higher than this value (optional)</param>
@@ -172,7 +172,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks eps surprise data for all Securities.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit EPS surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS surprises to those on or before this date (optional)</param>
         /// <param name="epsActualGreater">Return only records with an actual EPS higher than this value (optional)</param>
@@ -197,7 +197,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks ETF holdings data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="etfTicker">Return holdings of the ETF with the given ticker (optional)</param>
         /// <param name="holdingSymbol">Return holdings where the instrument being held has the given trading symbol (optional)</param>
         /// <param name="weightGreater">Return on the holdings with a weight greater than (optional)</param>
@@ -213,7 +213,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks ETF holdings data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="etfTicker">Return holdings of the ETF with the given ticker (optional)</param>
         /// <param name="holdingSymbol">Return holdings where the instrument being held has the given trading symbol (optional)</param>
         /// <param name="weightGreater">Return on the holdings with a weight greater than (optional)</param>
@@ -228,7 +228,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks institutional holding companies data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return companies with the given ticker (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -241,7 +241,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks institutional holding companies data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return companies with the given ticker (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -253,7 +253,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks institutional holding owners data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cik">Return owners with the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -266,7 +266,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks institutional holding owners data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cik">Return owners with the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -278,7 +278,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks institutional holdings data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return holdings where the company being held has the given ticker (optional)</param>
         /// <param name="ownerCik">Return holdings where the owner/holder has the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -292,7 +292,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks institutional holdings data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return holdings where the company being held has the given ticker (optional)</param>
         /// <param name="ownerCik">Return holdings where the owner/holder has the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -305,7 +305,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the latest Zacks long term growth rates
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -318,7 +318,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the latest Zacks long term growth rates
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -330,7 +330,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks sales surprise data for all Securities.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit sales surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit sales surprises to those on or before this date (optional)</param>
         /// <param name="salesActualGreater">Return only records with an actual sales higher than this value (optional)</param>
@@ -356,7 +356,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks sales surprise data for all Securities.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit sales surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit sales surprises to those on or before this date (optional)</param>
         /// <param name="salesActualGreater">Return only records with an actual sales higher than this value (optional)</param>
@@ -381,7 +381,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the latest Zacks target price consensus data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -395,7 +395,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the latest Zacks target price consensus data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -410,7 +410,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns buy, sell, and hold recommendations from analysts at brokerages for all companies in the Zacks universe. Zack’s storied research team aggregates and validates the ratings from professional analysts.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit ratings to those on or after this date (optional)</param>
         /// <param name="endDate">Limit ratings to those on or before this date (optional)</param>
@@ -439,7 +439,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns buy, sell, and hold recommendations from analysts at brokerages for all companies in the Zacks universe. Zack’s storied research team aggregates and validates the ratings from professional analysts.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit ratings to those on or after this date (optional)</param>
         /// <param name="endDate">Limit ratings to those on or before this date (optional)</param>
@@ -467,7 +467,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks consensus earnings-per-share (EPS) data for all Companies.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit EPS estimates to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS estimates to those on or before this date (optional)</param>
@@ -486,7 +486,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks consensus earnings-per-share (EPS) data for all Companies.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit EPS estimates to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS estimates to those on or before this date (optional)</param>
@@ -504,7 +504,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the latest Zacks EPS growth rates
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupName">Return only growth rates for companies in the given Zacks industry group name (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
@@ -519,7 +519,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the latest Zacks EPS growth rates
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupName">Return only growth rates for companies in the given Zacks industry group name (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
@@ -533,7 +533,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks eps surprise data for all Securities.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit EPS surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS surprises to those on or before this date (optional)</param>
         /// <param name="epsActualGreater">Return only records with an actual EPS higher than this value (optional)</param>
@@ -559,7 +559,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks eps surprise data for all Securities.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit EPS surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS surprises to those on or before this date (optional)</param>
         /// <param name="epsActualGreater">Return only records with an actual EPS higher than this value (optional)</param>
@@ -584,7 +584,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks ETF holdings data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="etfTicker">Return holdings of the ETF with the given ticker (optional)</param>
         /// <param name="holdingSymbol">Return holdings where the instrument being held has the given trading symbol (optional)</param>
         /// <param name="weightGreater">Return on the holdings with a weight greater than (optional)</param>
@@ -600,7 +600,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks ETF holdings data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="etfTicker">Return holdings of the ETF with the given ticker (optional)</param>
         /// <param name="holdingSymbol">Return holdings where the instrument being held has the given trading symbol (optional)</param>
         /// <param name="weightGreater">Return on the holdings with a weight greater than (optional)</param>
@@ -615,7 +615,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks institutional holding companies data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return companies with the given ticker (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -628,7 +628,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks institutional holding companies data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return companies with the given ticker (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -640,7 +640,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks institutional holding owners data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cik">Return owners with the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -653,7 +653,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks institutional holding owners data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cik">Return owners with the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -665,7 +665,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks institutional holdings data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return holdings where the company being held has the given ticker (optional)</param>
         /// <param name="ownerCik">Return holdings where the owner/holder has the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -679,7 +679,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks institutional holdings data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return holdings where the company being held has the given ticker (optional)</param>
         /// <param name="ownerCik">Return holdings where the owner/holder has the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -692,7 +692,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the latest Zacks long term growth rates
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -705,7 +705,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the latest Zacks long term growth rates
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -717,7 +717,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks sales surprise data for all Securities.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit sales surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit sales surprises to those on or before this date (optional)</param>
         /// <param name="salesActualGreater">Return only records with an actual sales higher than this value (optional)</param>
@@ -743,7 +743,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns Zacks sales surprise data for all Securities.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit sales surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit sales surprises to those on or before this date (optional)</param>
         /// <param name="salesActualGreater">Return only records with an actual sales higher than this value (optional)</param>
@@ -768,7 +768,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the latest Zacks target price consensus data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -782,7 +782,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the latest Zacks target price consensus data
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -797,7 +797,7 @@ namespace Intrinio.SDK.Api
     /// </summary>
     public partial class ZacksApi : IZacksApi
     {
-        private Intrinio.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ZacksApi"/> class.
@@ -807,7 +807,7 @@ namespace Intrinio.SDK.Api
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -823,7 +823,7 @@ namespace Intrinio.SDK.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -854,7 +854,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.SDK.Client.ExceptionFactory ExceptionFactory
+        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -892,7 +892,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Analyst Ratings Returns buy, sell, and hold recommendations from analysts at brokerages for all companies in the Zacks universe. Zack’s storied research team aggregates and validates the ratings from professional analysts.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit ratings to those on or after this date (optional)</param>
         /// <param name="endDate">Limit ratings to those on or before this date (optional)</param>
@@ -922,7 +922,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Analyst Ratings Returns buy, sell, and hold recommendations from analysts at brokerages for all companies in the Zacks universe. Zack’s storied research team aggregates and validates the ratings from professional analysts.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit ratings to those on or after this date (optional)</param>
         /// <param name="endDate">Limit ratings to those on or before this date (optional)</param>
@@ -1017,7 +1017,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Analyst Ratings Returns buy, sell, and hold recommendations from analysts at brokerages for all companies in the Zacks universe. Zack’s storied research team aggregates and validates the ratings from professional analysts.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit ratings to those on or after this date (optional)</param>
         /// <param name="endDate">Limit ratings to those on or before this date (optional)</param>
@@ -1048,7 +1048,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Analyst Ratings Returns buy, sell, and hold recommendations from analysts at brokerages for all companies in the Zacks universe. Zack’s storied research team aggregates and validates the ratings from professional analysts.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit ratings to those on or after this date (optional)</param>
         /// <param name="endDate">Limit ratings to those on or before this date (optional)</param>
@@ -1141,7 +1141,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks EPS Estimates Returns Zacks consensus earnings-per-share (EPS) data for all Companies.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit EPS estimates to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS estimates to those on or before this date (optional)</param>
@@ -1161,7 +1161,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks EPS Estimates Returns Zacks consensus earnings-per-share (EPS) data for all Companies.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit EPS estimates to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS estimates to those on or before this date (optional)</param>
@@ -1236,7 +1236,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks EPS Estimates Returns Zacks consensus earnings-per-share (EPS) data for all Companies.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit EPS estimates to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS estimates to those on or before this date (optional)</param>
@@ -1257,7 +1257,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks EPS Estimates Returns Zacks consensus earnings-per-share (EPS) data for all Companies.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="startDate">Limit EPS estimates to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS estimates to those on or before this date (optional)</param>
@@ -1330,7 +1330,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks EPS Growth Rates Returns the latest Zacks EPS growth rates
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupName">Return only growth rates for companies in the given Zacks industry group name (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
@@ -1346,7 +1346,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks EPS Growth Rates Returns the latest Zacks EPS growth rates
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupName">Return only growth rates for companies in the given Zacks industry group name (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
@@ -1413,7 +1413,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks EPS Growth Rates Returns the latest Zacks EPS growth rates
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupName">Return only growth rates for companies in the given Zacks industry group name (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
@@ -1430,7 +1430,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks EPS Growth Rates Returns the latest Zacks EPS growth rates
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="company">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupName">Return only growth rates for companies in the given Zacks industry group name (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
@@ -1495,7 +1495,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks EPS Surprises Returns Zacks eps surprise data for all Securities.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit EPS surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS surprises to those on or before this date (optional)</param>
         /// <param name="epsActualGreater">Return only records with an actual EPS higher than this value (optional)</param>
@@ -1522,7 +1522,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks EPS Surprises Returns Zacks eps surprise data for all Securities.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit EPS surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS surprises to those on or before this date (optional)</param>
         /// <param name="epsActualGreater">Return only records with an actual EPS higher than this value (optional)</param>
@@ -1611,7 +1611,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks EPS Surprises Returns Zacks eps surprise data for all Securities.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit EPS surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS surprises to those on or before this date (optional)</param>
         /// <param name="epsActualGreater">Return only records with an actual EPS higher than this value (optional)</param>
@@ -1639,7 +1639,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks EPS Surprises Returns Zacks eps surprise data for all Securities.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit EPS surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit EPS surprises to those on or before this date (optional)</param>
         /// <param name="epsActualGreater">Return only records with an actual EPS higher than this value (optional)</param>
@@ -1726,7 +1726,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks ETF Holdings Returns Zacks ETF holdings data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="etfTicker">Return holdings of the ETF with the given ticker (optional)</param>
         /// <param name="holdingSymbol">Return holdings where the instrument being held has the given trading symbol (optional)</param>
         /// <param name="weightGreater">Return on the holdings with a weight greater than (optional)</param>
@@ -1743,7 +1743,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks ETF Holdings Returns Zacks ETF holdings data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="etfTicker">Return holdings of the ETF with the given ticker (optional)</param>
         /// <param name="holdingSymbol">Return holdings where the instrument being held has the given trading symbol (optional)</param>
         /// <param name="weightGreater">Return on the holdings with a weight greater than (optional)</param>
@@ -1812,7 +1812,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks ETF Holdings Returns Zacks ETF holdings data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="etfTicker">Return holdings of the ETF with the given ticker (optional)</param>
         /// <param name="holdingSymbol">Return holdings where the instrument being held has the given trading symbol (optional)</param>
         /// <param name="weightGreater">Return on the holdings with a weight greater than (optional)</param>
@@ -1830,7 +1830,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks ETF Holdings Returns Zacks ETF holdings data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="etfTicker">Return holdings of the ETF with the given ticker (optional)</param>
         /// <param name="holdingSymbol">Return holdings where the instrument being held has the given trading symbol (optional)</param>
         /// <param name="weightGreater">Return on the holdings with a weight greater than (optional)</param>
@@ -1897,7 +1897,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Institutional Holding Companies Returns Zacks institutional holding companies data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return companies with the given ticker (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -1911,7 +1911,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Institutional Holding Companies Returns Zacks institutional holding companies data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return companies with the given ticker (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -1974,7 +1974,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Institutional Holding Companies Returns Zacks institutional holding companies data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return companies with the given ticker (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -1989,7 +1989,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Institutional Holding Companies Returns Zacks institutional holding companies data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return companies with the given ticker (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -2050,7 +2050,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Institutional Holding Owners Returns Zacks institutional holding owners data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cik">Return owners with the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -2064,7 +2064,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Institutional Holding Owners Returns Zacks institutional holding owners data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cik">Return owners with the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -2127,7 +2127,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Institutional Holding Owners Returns Zacks institutional holding owners data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cik">Return owners with the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -2142,7 +2142,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Institutional Holding Owners Returns Zacks institutional holding owners data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cik">Return owners with the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -2203,7 +2203,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Institutional Holdings Returns Zacks institutional holdings data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return holdings where the company being held has the given ticker (optional)</param>
         /// <param name="ownerCik">Return holdings where the owner/holder has the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -2218,7 +2218,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Institutional Holdings Returns Zacks institutional holdings data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return holdings where the company being held has the given ticker (optional)</param>
         /// <param name="ownerCik">Return holdings where the owner/holder has the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -2283,7 +2283,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Institutional Holdings Returns Zacks institutional holdings data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return holdings where the company being held has the given ticker (optional)</param>
         /// <param name="ownerCik">Return holdings where the owner/holder has the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -2299,7 +2299,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Institutional Holdings Returns Zacks institutional holdings data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="ticker">Return holdings where the company being held has the given ticker (optional)</param>
         /// <param name="ownerCik">Return holdings where the owner/holder has the given Central Index Key (CIK) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -2362,7 +2362,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Long Term Growth Rates Returns the latest Zacks long term growth rates
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -2376,7 +2376,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Long Term Growth Rates Returns the latest Zacks long term growth rates
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -2439,7 +2439,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Long Term Growth Rates Returns the latest Zacks long term growth rates
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -2454,7 +2454,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Long Term Growth Rates Returns the latest Zacks long term growth rates
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID) (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -2515,7 +2515,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Sales Surprises Returns Zacks sales surprise data for all Securities.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit sales surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit sales surprises to those on or before this date (optional)</param>
         /// <param name="salesActualGreater">Return only records with an actual sales higher than this value (optional)</param>
@@ -2542,7 +2542,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Sales Surprises Returns Zacks sales surprise data for all Securities.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit sales surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit sales surprises to those on or before this date (optional)</param>
         /// <param name="salesActualGreater">Return only records with an actual sales higher than this value (optional)</param>
@@ -2631,7 +2631,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Sales Surprises Returns Zacks sales surprise data for all Securities.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit sales surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit sales surprises to those on or before this date (optional)</param>
         /// <param name="salesActualGreater">Return only records with an actual sales higher than this value (optional)</param>
@@ -2659,7 +2659,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Sales Surprises Returns Zacks sales surprise data for all Securities.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Limit sales surprises to those on or after this date (optional)</param>
         /// <param name="endDate">Limit sales surprises to those on or before this date (optional)</param>
         /// <param name="salesActualGreater">Return only records with an actual sales higher than this value (optional)</param>
@@ -2746,7 +2746,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Target Price Consensuses Returns the latest Zacks target price consensus data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -2761,7 +2761,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Target Price Consensuses Returns the latest Zacks target price consensus data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -2826,7 +2826,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Target Price Consensuses Returns the latest Zacks target price consensus data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
@@ -2842,7 +2842,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Zacks Target Price Consensuses Returns the latest Zacks target price consensus data
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">Filings for the given &#x60;company&#x60; identifier (ticker, CIK, LEI, Intrinio ID) (optional)</param>
         /// <param name="industryGroupNumber">Return only growth rates for companies in the given Zacks industry group number (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>

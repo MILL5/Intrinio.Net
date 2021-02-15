@@ -6,10 +6,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using RestSharp;
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
 
-namespace Intrinio.SDK.Api
+namespace Intrinio.Net.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,7 +23,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -46,7 +46,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -68,7 +68,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>Municipality</returns>
         Municipality GetMunicipalityById (string id);
@@ -79,7 +79,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>ApiResponse of Municipality</returns>
         ApiResponse<Municipality> GetMunicipalityByIdWithHttpInfo (string id);
@@ -89,7 +89,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns financial statement data for the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>ApiResponseMunicipalitiyFinancials</returns>
@@ -101,7 +101,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns financial statement data for the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>ApiResponse of ApiResponseMunicipalitiyFinancials</returns>
@@ -114,7 +114,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -137,7 +137,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -159,7 +159,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>Task of Municipality</returns>
         System.Threading.Tasks.Task<Municipality> GetMunicipalityByIdAsync (string id);
@@ -170,7 +170,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>Task of ApiResponse (Municipality)</returns>
         System.Threading.Tasks.Task<ApiResponse<Municipality>> GetMunicipalityByIdAsyncWithHttpInfo (string id);
@@ -180,7 +180,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns financial statement data for the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>Task of ApiResponseMunicipalitiyFinancials</returns>
@@ -192,7 +192,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns financial statement data for the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>Task of ApiResponse (ApiResponseMunicipalitiyFinancials)</returns>
@@ -205,7 +205,7 @@ namespace Intrinio.SDK.Api
     /// </summary>
     public partial class MunicipalityApi : IMunicipalityApi
     {
-        private Intrinio.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MunicipalityApi"/> class.
@@ -215,7 +215,7 @@ namespace Intrinio.SDK.Api
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -231,7 +231,7 @@ namespace Intrinio.SDK.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -262,7 +262,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.SDK.Client.ExceptionFactory ExceptionFactory
+        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -300,7 +300,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Municipalities Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -324,7 +324,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Municipalities Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -407,7 +407,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Municipalities Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -432,7 +432,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All Municipalities Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -513,7 +513,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Municipality by ID Returns the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>Municipality</returns>
         public Municipality GetMunicipalityById (string id)
@@ -525,7 +525,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Municipality by ID Returns the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>ApiResponse of Municipality</returns>
         
@@ -587,7 +587,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Municipality by ID Returns the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>Task of Municipality</returns>
         public async System.Threading.Tasks.Task<Municipality> GetMunicipalityByIdAsync (string id)
@@ -600,7 +600,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Municipality by ID Returns the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>Task of ApiResponse (Municipality)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Municipality>> GetMunicipalityByIdAsyncWithHttpInfo (string id)
@@ -660,7 +660,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Financials for a Municipality Returns financial statement data for the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>ApiResponseMunicipalitiyFinancials</returns>
@@ -673,7 +673,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Financials for a Municipality Returns financial statement data for the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>ApiResponse of ApiResponseMunicipalitiyFinancials</returns>
@@ -737,7 +737,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Financials for a Municipality Returns financial statement data for the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>Task of ApiResponseMunicipalitiyFinancials</returns>
@@ -751,7 +751,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Financials for a Municipality Returns financial statement data for the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>Task of ApiResponse (ApiResponseMunicipalitiyFinancials)</returns>

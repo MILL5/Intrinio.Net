@@ -6,10 +6,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using RestSharp;
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
 
-namespace Intrinio.SDK.Api
+namespace Intrinio.Net.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,7 +23,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a list of Exchange Traded Funds (ETFs) sourced from FirstBridge
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchange"> (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -36,7 +36,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a list of Exchange Traded Funds (ETFs) sourced from FirstBridge
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchange"> (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -48,7 +48,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Exchange Traded Fund (ETF) with the given identifier
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>ETF</returns>
         ETF GetEtf (string identifier);
@@ -59,7 +59,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Exchange Traded Fund (ETF) with the given identifier
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>ApiResponse of ETF</returns>
         ApiResponse<ETF> GetEtfWithHttpInfo (string identifier);
@@ -69,7 +69,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns analytics for the Exchange Traded Fund (ETF) including volume, market cap, 52 week high, and 52 week low
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>ETFAnalytics</returns>
         ETFAnalytics GetEtfAnalytics (string identifier);
@@ -80,7 +80,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns analytics for the Exchange Traded Fund (ETF) including volume, market cap, 52 week high, and 52 week low
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>ApiResponse of ETFAnalytics</returns>
         ApiResponse<ETFAnalytics> GetEtfAnalyticsWithHttpInfo (string identifier);
@@ -90,7 +90,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the holdings sorted by weight descending and the Exchange Traded Fund (ETF) summary
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -103,7 +103,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the holdings sorted by weight descending and the Exchange Traded Fund (ETF) summary
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -115,7 +115,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns daily stats for the Exchange Traded Fund (ETF) including net asset value, beta vs spy, returns, and volatility
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>ETFStats</returns>
         ETFStats GetEtfStats (string identifier);
@@ -126,7 +126,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns daily stats for the Exchange Traded Fund (ETF) including net asset value, beta vs spy, returns, and volatility
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>ApiResponse of ETFStats</returns>
         ApiResponse<ETFStats> GetEtfStatsWithHttpInfo (string identifier);
@@ -136,7 +136,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Searches for Exchange Traded Funds (ETFs) matching the text &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <returns>ApiResponseETFs</returns>
         ApiResponseETFs SearchEtfs (string query);
@@ -147,7 +147,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Searches for Exchange Traded Funds (ETFs) matching the text &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <returns>ApiResponse of ApiResponseETFs</returns>
         ApiResponse<ApiResponseETFs> SearchEtfsWithHttpInfo (string query);
@@ -159,7 +159,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a list of Exchange Traded Funds (ETFs) sourced from FirstBridge
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchange"> (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -172,7 +172,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns a list of Exchange Traded Funds (ETFs) sourced from FirstBridge
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchange"> (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -184,7 +184,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Exchange Traded Fund (ETF) with the given identifier
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>Task of ETF</returns>
         System.Threading.Tasks.Task<ETF> GetEtfAsync (string identifier);
@@ -195,7 +195,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the Exchange Traded Fund (ETF) with the given identifier
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>Task of ApiResponse (ETF)</returns>
         System.Threading.Tasks.Task<ApiResponse<ETF>> GetEtfAsyncWithHttpInfo (string identifier);
@@ -205,7 +205,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns analytics for the Exchange Traded Fund (ETF) including volume, market cap, 52 week high, and 52 week low
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>Task of ETFAnalytics</returns>
         System.Threading.Tasks.Task<ETFAnalytics> GetEtfAnalyticsAsync (string identifier);
@@ -216,7 +216,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns analytics for the Exchange Traded Fund (ETF) including volume, market cap, 52 week high, and 52 week low
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>Task of ApiResponse (ETFAnalytics)</returns>
         System.Threading.Tasks.Task<ApiResponse<ETFAnalytics>> GetEtfAnalyticsAsyncWithHttpInfo (string identifier);
@@ -226,7 +226,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the holdings sorted by weight descending and the Exchange Traded Fund (ETF) summary
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -239,7 +239,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the holdings sorted by weight descending and the Exchange Traded Fund (ETF) summary
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -251,7 +251,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns daily stats for the Exchange Traded Fund (ETF) including net asset value, beta vs spy, returns, and volatility
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>Task of ETFStats</returns>
         System.Threading.Tasks.Task<ETFStats> GetEtfStatsAsync (string identifier);
@@ -262,7 +262,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns daily stats for the Exchange Traded Fund (ETF) including net asset value, beta vs spy, returns, and volatility
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>Task of ApiResponse (ETFStats)</returns>
         System.Threading.Tasks.Task<ApiResponse<ETFStats>> GetEtfStatsAsyncWithHttpInfo (string identifier);
@@ -272,7 +272,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Searches for Exchange Traded Funds (ETFs) matching the text &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <returns>Task of ApiResponseETFs</returns>
         System.Threading.Tasks.Task<ApiResponseETFs> SearchEtfsAsync (string query);
@@ -283,7 +283,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Searches for Exchange Traded Funds (ETFs) matching the text &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <returns>Task of ApiResponse (ApiResponseETFs)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApiResponseETFs>> SearchEtfsAsyncWithHttpInfo (string query);
@@ -295,7 +295,7 @@ namespace Intrinio.SDK.Api
     /// </summary>
     public partial class ETFsApi : IETFsApi
     {
-        private Intrinio.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ETFsApi"/> class.
@@ -305,7 +305,7 @@ namespace Intrinio.SDK.Api
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -321,7 +321,7 @@ namespace Intrinio.SDK.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -352,7 +352,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.SDK.Client.ExceptionFactory ExceptionFactory
+        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -390,7 +390,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All ETFs Returns a list of Exchange Traded Funds (ETFs) sourced from FirstBridge
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchange"> (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -404,7 +404,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All ETFs Returns a list of Exchange Traded Funds (ETFs) sourced from FirstBridge
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchange"> (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -467,7 +467,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All ETFs Returns a list of Exchange Traded Funds (ETFs) sourced from FirstBridge
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchange"> (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -482,7 +482,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// All ETFs Returns a list of Exchange Traded Funds (ETFs) sourced from FirstBridge
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchange"> (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -543,7 +543,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup ETF Returns the Exchange Traded Fund (ETF) with the given identifier
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>ETF</returns>
         public ETF GetEtf (string identifier)
@@ -555,7 +555,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup ETF Returns the Exchange Traded Fund (ETF) with the given identifier
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>ApiResponse of ETF</returns>
         
@@ -617,7 +617,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup ETF Returns the Exchange Traded Fund (ETF) with the given identifier
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>Task of ETF</returns>
         public async System.Threading.Tasks.Task<ETF> GetEtfAsync (string identifier)
@@ -630,7 +630,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Lookup ETF Returns the Exchange Traded Fund (ETF) with the given identifier
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>Task of ApiResponse (ETF)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ETF>> GetEtfAsyncWithHttpInfo (string identifier)
@@ -690,7 +690,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// ETF Analytics Returns analytics for the Exchange Traded Fund (ETF) including volume, market cap, 52 week high, and 52 week low
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>ETFAnalytics</returns>
         public ETFAnalytics GetEtfAnalytics (string identifier)
@@ -702,7 +702,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// ETF Analytics Returns analytics for the Exchange Traded Fund (ETF) including volume, market cap, 52 week high, and 52 week low
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>ApiResponse of ETFAnalytics</returns>
         
@@ -764,7 +764,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// ETF Analytics Returns analytics for the Exchange Traded Fund (ETF) including volume, market cap, 52 week high, and 52 week low
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>Task of ETFAnalytics</returns>
         public async System.Threading.Tasks.Task<ETFAnalytics> GetEtfAnalyticsAsync (string identifier)
@@ -777,7 +777,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// ETF Analytics Returns analytics for the Exchange Traded Fund (ETF) including volume, market cap, 52 week high, and 52 week low
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>Task of ApiResponse (ETFAnalytics)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ETFAnalytics>> GetEtfAnalyticsAsyncWithHttpInfo (string identifier)
@@ -837,7 +837,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// ETF Holdings Returns the holdings sorted by weight descending and the Exchange Traded Fund (ETF) summary
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -851,7 +851,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// ETF Holdings Returns the holdings sorted by weight descending and the Exchange Traded Fund (ETF) summary
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -917,7 +917,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// ETF Holdings Returns the holdings sorted by weight descending and the Exchange Traded Fund (ETF) summary
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -932,7 +932,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// ETF Holdings Returns the holdings sorted by weight descending and the Exchange Traded Fund (ETF) summary
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
@@ -996,7 +996,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Exchange Traded Fund (ETF) stats Returns daily stats for the Exchange Traded Fund (ETF) including net asset value, beta vs spy, returns, and volatility
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>ETFStats</returns>
         public ETFStats GetEtfStats (string identifier)
@@ -1008,7 +1008,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Exchange Traded Fund (ETF) stats Returns daily stats for the Exchange Traded Fund (ETF) including net asset value, beta vs spy, returns, and volatility
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>ApiResponse of ETFStats</returns>
         
@@ -1070,7 +1070,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Exchange Traded Fund (ETF) stats Returns daily stats for the Exchange Traded Fund (ETF) including net asset value, beta vs spy, returns, and volatility
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>Task of ETFStats</returns>
         public async System.Threading.Tasks.Task<ETFStats> GetEtfStatsAsync (string identifier)
@@ -1083,7 +1083,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Exchange Traded Fund (ETF) stats Returns daily stats for the Exchange Traded Fund (ETF) including net asset value, beta vs spy, returns, and volatility
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">An ETF identifier (Ticker, Figi Ticker, ISIN, RIC, Intrinio ID)</param>
         /// <returns>Task of ApiResponse (ETFStats)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ETFStats>> GetEtfStatsAsyncWithHttpInfo (string identifier)
@@ -1143,7 +1143,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Search ETFs Searches for Exchange Traded Funds (ETFs) matching the text &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <returns>ApiResponseETFs</returns>
         public ApiResponseETFs SearchEtfs (string query)
@@ -1155,7 +1155,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Search ETFs Searches for Exchange Traded Funds (ETFs) matching the text &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <returns>ApiResponse of ApiResponseETFs</returns>
         
@@ -1217,7 +1217,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Search ETFs Searches for Exchange Traded Funds (ETFs) matching the text &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <returns>Task of ApiResponseETFs</returns>
         public async System.Threading.Tasks.Task<ApiResponseETFs> SearchEtfsAsync (string query)
@@ -1230,7 +1230,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Search ETFs Searches for Exchange Traded Funds (ETFs) matching the text &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <returns>Task of ApiResponse (ApiResponseETFs)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ApiResponseETFs>> SearchEtfsAsyncWithHttpInfo (string query)

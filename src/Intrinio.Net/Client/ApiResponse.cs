@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Intrinio.SDK.Client
+namespace Intrinio.Net.Client
 {
     /// <summary>
     /// API Response

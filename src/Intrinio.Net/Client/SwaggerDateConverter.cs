@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json.Converters;
 
-namespace Intrinio.SDK.Client
+namespace Intrinio.Net.Client
 {
     /// <summary>
     /// Formatter for 'date' swagger formats ss defined by full-date - RFC3339

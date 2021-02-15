@@ -9,10 +9,10 @@ using System.Reflection;
 using RestSharp;
 using NUnit.Framework;
 
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Api;
+using Intrinio.Net.Client;
+using Intrinio.Net.Api;
 
-namespace Intrinio.SDK.Test
+namespace Intrinio.Net.Test
 {
     /// <summary>
     ///  Class for testing DataPointApi

@@ -6,10 +6,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text.RegularExpressions;
 using RestSharp;
-using Intrinio.SDK.Client;
-using Intrinio.SDK.Model;
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
 
-namespace Intrinio.SDK.Api
+namespace Intrinio.Net.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,7 +23,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the master list of option contracts for a given symbol.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="type">The option contract type. (optional)</param>
         /// <param name="strike">The strike price of the option contract. This will return options contracts with strike price equal to this price. (optional)</param>
@@ -43,7 +43,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the master list of option contracts for a given symbol.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="type">The option contract type. (optional)</param>
         /// <param name="strike">The strike price of the option contract. This will return options contracts with strike price equal to this price. (optional)</param>
@@ -62,7 +62,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all options contracts and their prices for the given symbol and expiration date.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="date">The date of the option price. Returns option prices on this date. (optional)</param>
@@ -81,7 +81,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all options contracts and their prices for the given symbol and expiration date.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="date">The date of the option price. Returns option prices on this date. (optional)</param>
@@ -99,7 +99,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all realtime options contracts and their prices for the given symbol and expiration date.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
@@ -121,7 +121,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all realtime options contracts and their prices for the given symbol and expiration date.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
@@ -142,7 +142,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option contract expiration dates for a given symbol.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="after">Return option contract expiration dates after this date. (optional)</param>
         /// <param name="before">Return option contract expiration dates before this date. (optional)</param>
@@ -155,7 +155,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option contract expiration dates for a given symbol.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="after">Return option contract expiration dates after this date. (optional)</param>
         /// <param name="before">Return option contract expiration dates before this date. (optional)</param>
@@ -167,7 +167,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option prices for a given option contract identifier.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="startDate">Return option contract prices on or after this date. (optional)</param>
         /// <param name="endDate">Return option contract prices on or before this date. (optional)</param>
@@ -182,7 +182,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option prices for a given option contract identifier.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="startDate">Return option contract prices on or after this date. (optional)</param>
         /// <param name="endDate">Return option contract prices on or before this date. (optional)</param>
@@ -196,7 +196,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option prices for a given option contract identifier.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>ApiResponseOptionsPriceRealtime</returns>
@@ -208,7 +208,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option prices for a given option contract identifier.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>ApiResponse of ApiResponseOptionsPriceRealtime</returns>
@@ -219,7 +219,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option stats (greeks and implied volatility) and factors used to calculate them, for a given option contract identifier.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>ApiResponseOptionsStatsRealtime</returns>
@@ -231,7 +231,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option stats (greeks and implied volatility) and factors used to calculate them, for a given option contract identifier.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>ApiResponse of ApiResponseOptionsStatsRealtime</returns>
@@ -244,7 +244,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the master list of option contracts for a given symbol.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="type">The option contract type. (optional)</param>
         /// <param name="strike">The strike price of the option contract. This will return options contracts with strike price equal to this price. (optional)</param>
@@ -264,7 +264,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns the master list of option contracts for a given symbol.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="type">The option contract type. (optional)</param>
         /// <param name="strike">The strike price of the option contract. This will return options contracts with strike price equal to this price. (optional)</param>
@@ -283,7 +283,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all options contracts and their prices for the given symbol and expiration date.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="date">The date of the option price. Returns option prices on this date. (optional)</param>
@@ -302,7 +302,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all options contracts and their prices for the given symbol and expiration date.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="date">The date of the option price. Returns option prices on this date. (optional)</param>
@@ -320,7 +320,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all realtime options contracts and their prices for the given symbol and expiration date.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
@@ -342,7 +342,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all realtime options contracts and their prices for the given symbol and expiration date.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
@@ -363,7 +363,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option contract expiration dates for a given symbol.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="after">Return option contract expiration dates after this date. (optional)</param>
         /// <param name="before">Return option contract expiration dates before this date. (optional)</param>
@@ -376,7 +376,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option contract expiration dates for a given symbol.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="after">Return option contract expiration dates after this date. (optional)</param>
         /// <param name="before">Return option contract expiration dates before this date. (optional)</param>
@@ -388,7 +388,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option prices for a given option contract identifier.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="startDate">Return option contract prices on or after this date. (optional)</param>
         /// <param name="endDate">Return option contract prices on or before this date. (optional)</param>
@@ -403,7 +403,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option prices for a given option contract identifier.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="startDate">Return option contract prices on or after this date. (optional)</param>
         /// <param name="endDate">Return option contract prices on or before this date. (optional)</param>
@@ -417,7 +417,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option prices for a given option contract identifier.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>Task of ApiResponseOptionsPriceRealtime</returns>
@@ -429,7 +429,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option prices for a given option contract identifier.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>Task of ApiResponse (ApiResponseOptionsPriceRealtime)</returns>
@@ -440,7 +440,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option stats (greeks and implied volatility) and factors used to calculate them, for a given option contract identifier.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>Task of ApiResponseOptionsStatsRealtime</returns>
@@ -452,7 +452,7 @@ namespace Intrinio.SDK.Api
         /// <remarks>
         /// Returns all option stats (greeks and implied volatility) and factors used to calculate them, for a given option contract identifier.
         /// </remarks>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>Task of ApiResponse (ApiResponseOptionsStatsRealtime)</returns>
@@ -465,7 +465,7 @@ namespace Intrinio.SDK.Api
     /// </summary>
     public partial class OptionsApi : IOptionsApi
     {
-        private Intrinio.SDK.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OptionsApi"/> class.
@@ -475,7 +475,7 @@ namespace Intrinio.SDK.Api
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -491,7 +491,7 @@ namespace Intrinio.SDK.Api
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = Intrinio.SDK.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -522,7 +522,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.SDK.Client.ExceptionFactory ExceptionFactory
+        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -560,7 +560,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Returns the master list of option contracts for a given symbol.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="type">The option contract type. (optional)</param>
         /// <param name="strike">The strike price of the option contract. This will return options contracts with strike price equal to this price. (optional)</param>
@@ -581,7 +581,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Returns the master list of option contracts for a given symbol.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="type">The option contract type. (optional)</param>
         /// <param name="strike">The strike price of the option contract. This will return options contracts with strike price equal to this price. (optional)</param>
@@ -661,7 +661,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Returns the master list of option contracts for a given symbol.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="type">The option contract type. (optional)</param>
         /// <param name="strike">The strike price of the option contract. This will return options contracts with strike price equal to this price. (optional)</param>
@@ -683,7 +683,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Returns the master list of option contracts for a given symbol.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="type">The option contract type. (optional)</param>
         /// <param name="strike">The strike price of the option contract. This will return options contracts with strike price equal to this price. (optional)</param>
@@ -761,7 +761,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Chain Returns all options contracts and their prices for the given symbol and expiration date.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="date">The date of the option price. Returns option prices on this date. (optional)</param>
@@ -781,7 +781,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Chain Returns all options contracts and their prices for the given symbol and expiration date.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="date">The date of the option price. Returns option prices on this date. (optional)</param>
@@ -862,7 +862,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Chain Returns all options contracts and their prices for the given symbol and expiration date.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="date">The date of the option price. Returns option prices on this date. (optional)</param>
@@ -883,7 +883,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Chain Returns all options contracts and their prices for the given symbol and expiration date.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="date">The date of the option price. Returns option prices on this date. (optional)</param>
@@ -962,7 +962,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Chain Realtime Returns all realtime options contracts and their prices for the given symbol and expiration date.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
@@ -985,7 +985,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Chain Realtime Returns all realtime options contracts and their prices for the given symbol and expiration date.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
@@ -1072,7 +1072,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Chain Realtime Returns all realtime options contracts and their prices for the given symbol and expiration date.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
@@ -1096,7 +1096,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Chain Realtime Returns all realtime options contracts and their prices for the given symbol and expiration date.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="expiration">The expiration date of the options contract</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
@@ -1181,7 +1181,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Expirations Returns all option contract expiration dates for a given symbol.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="after">Return option contract expiration dates after this date. (optional)</param>
         /// <param name="before">Return option contract expiration dates before this date. (optional)</param>
@@ -1195,7 +1195,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Expirations Returns all option contract expiration dates for a given symbol.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="after">Return option contract expiration dates after this date. (optional)</param>
         /// <param name="before">Return option contract expiration dates before this date. (optional)</param>
@@ -1261,7 +1261,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Expirations Returns all option contract expiration dates for a given symbol.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="after">Return option contract expiration dates after this date. (optional)</param>
         /// <param name="before">Return option contract expiration dates before this date. (optional)</param>
@@ -1276,7 +1276,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Options Expirations Returns all option contract expiration dates for a given symbol.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbol">The option symbol, corresponding to the underlying security.</param>
         /// <param name="after">Return option contract expiration dates after this date. (optional)</param>
         /// <param name="before">Return option contract expiration dates before this date. (optional)</param>
@@ -1340,7 +1340,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Option Prices Returns all option prices for a given option contract identifier.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="startDate">Return option contract prices on or after this date. (optional)</param>
         /// <param name="endDate">Return option contract prices on or before this date. (optional)</param>
@@ -1356,7 +1356,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Option Prices Returns all option prices for a given option contract identifier.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="startDate">Return option contract prices on or after this date. (optional)</param>
         /// <param name="endDate">Return option contract prices on or before this date. (optional)</param>
@@ -1426,7 +1426,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Option Prices Returns all option prices for a given option contract identifier.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="startDate">Return option contract prices on or after this date. (optional)</param>
         /// <param name="endDate">Return option contract prices on or before this date. (optional)</param>
@@ -1443,7 +1443,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Option Prices Returns all option prices for a given option contract identifier.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="startDate">Return option contract prices on or after this date. (optional)</param>
         /// <param name="endDate">Return option contract prices on or before this date. (optional)</param>
@@ -1511,7 +1511,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Option Prices Realtime Returns all option prices for a given option contract identifier.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>ApiResponseOptionsPriceRealtime</returns>
@@ -1524,7 +1524,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Option Prices Realtime Returns all option prices for a given option contract identifier.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>ApiResponse of ApiResponseOptionsPriceRealtime</returns>
@@ -1588,7 +1588,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Option Prices Realtime Returns all option prices for a given option contract identifier.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>Task of ApiResponseOptionsPriceRealtime</returns>
@@ -1602,7 +1602,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Option Prices Realtime Returns all option prices for a given option contract identifier.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>Task of ApiResponse (ApiResponseOptionsPriceRealtime)</returns>
@@ -1664,7 +1664,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Option Stats Realtime Returns all option stats (greeks and implied volatility) and factors used to calculate them, for a given option contract identifier.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>ApiResponseOptionsStatsRealtime</returns>
@@ -1677,7 +1677,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Option Stats Realtime Returns all option stats (greeks and implied volatility) and factors used to calculate them, for a given option contract identifier.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>ApiResponse of ApiResponseOptionsStatsRealtime</returns>
@@ -1741,7 +1741,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Option Stats Realtime Returns all option stats (greeks and implied volatility) and factors used to calculate them, for a given option contract identifier.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>Task of ApiResponseOptionsStatsRealtime</returns>
@@ -1755,7 +1755,7 @@ namespace Intrinio.SDK.Api
         /// <summary>
         /// Option Stats Realtime Returns all option stats (greeks and implied volatility) and factors used to calculate them, for a given option contract identifier.
         /// </summary>
-        /// <exception cref="Intrinio.SDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or code of the options contract to request prices for.</param>
         /// <param name="source">Realtime or 15-minute delayed contracts. (optional)</param>
         /// <returns>Task of ApiResponse (ApiResponseOptionsStatsRealtime)</returns>

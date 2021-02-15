@@ -2,7 +2,7 @@
 
 using System;
 
-namespace Intrinio.SDK.Client
+namespace Intrinio.Net.Client
 {
     /// <summary>
     /// API Exception
