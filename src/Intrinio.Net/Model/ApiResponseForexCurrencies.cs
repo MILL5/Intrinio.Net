@@ -66,7 +66,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ApiResponseForexCurrencies);
+            return Equals(input as ApiResponseForexCurrencies);
         }
 
         /// <summary>
@@ -81,9 +81,9 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Currencies == input.Currencies ||
-                    this.Currencies != null &&
-                    this.Currencies.SequenceEqual(input.Currencies)
+                    Currencies == input.Currencies ||
+                    Currencies != null &&
+                    Currencies.SequenceEqual(input.Currencies)
                 );
         }
 
@@ -96,8 +96,8 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Currencies != null)
-                    hashCode = hashCode * 59 + this.Currencies.GetHashCode();
+                if (Currencies != null)
+                    hashCode = hashCode * 59 + Currencies.GetHashCode();
                 return hashCode;
             }
         }
@@ -107,7 +107,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

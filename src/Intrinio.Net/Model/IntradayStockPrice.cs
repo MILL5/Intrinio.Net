@@ -137,7 +137,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as IntradayStockPrice);
+            return Equals(input as IntradayStockPrice);
         }
 
         /// <summary>
@@ -152,44 +152,44 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
+                    Time == input.Time ||
+                    (Time != null &&
+                    Time.Equals(input.Time))
                 ) && 
                 (
-                    this.LastPrice == input.LastPrice ||
-                    (this.LastPrice != null &&
-                    this.LastPrice.Equals(input.LastPrice))
+                    LastPrice == input.LastPrice ||
+                    (LastPrice != null &&
+                    LastPrice.Equals(input.LastPrice))
                 ) && 
                 (
-                    this.AskPrice == input.AskPrice ||
-                    (this.AskPrice != null &&
-                    this.AskPrice.Equals(input.AskPrice))
+                    AskPrice == input.AskPrice ||
+                    (AskPrice != null &&
+                    AskPrice.Equals(input.AskPrice))
                 ) && 
                 (
-                    this.AskSize == input.AskSize ||
-                    (this.AskSize != null &&
-                    this.AskSize.Equals(input.AskSize))
+                    AskSize == input.AskSize ||
+                    (AskSize != null &&
+                    AskSize.Equals(input.AskSize))
                 ) && 
                 (
-                    this.BidPrice == input.BidPrice ||
-                    (this.BidPrice != null &&
-                    this.BidPrice.Equals(input.BidPrice))
+                    BidPrice == input.BidPrice ||
+                    (BidPrice != null &&
+                    BidPrice.Equals(input.BidPrice))
                 ) && 
                 (
-                    this.BidSize == input.BidSize ||
-                    (this.BidSize != null &&
-                    this.BidSize.Equals(input.BidSize))
+                    BidSize == input.BidSize ||
+                    (BidSize != null &&
+                    BidSize.Equals(input.BidSize))
                 ) && 
                 (
-                    this.Volume == input.Volume ||
-                    (this.Volume != null &&
-                    this.Volume.Equals(input.Volume))
+                    Volume == input.Volume ||
+                    (Volume != null &&
+                    Volume.Equals(input.Volume))
                 ) && 
                 (
-                    this.Source == input.Source ||
-                    (this.Source != null &&
-                    this.Source.Equals(input.Source))
+                    Source == input.Source ||
+                    (Source != null &&
+                    Source.Equals(input.Source))
                 );
         }
 
@@ -202,22 +202,22 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.LastPrice != null)
-                    hashCode = hashCode * 59 + this.LastPrice.GetHashCode();
-                if (this.AskPrice != null)
-                    hashCode = hashCode * 59 + this.AskPrice.GetHashCode();
-                if (this.AskSize != null)
-                    hashCode = hashCode * 59 + this.AskSize.GetHashCode();
-                if (this.BidPrice != null)
-                    hashCode = hashCode * 59 + this.BidPrice.GetHashCode();
-                if (this.BidSize != null)
-                    hashCode = hashCode * 59 + this.BidSize.GetHashCode();
-                if (this.Volume != null)
-                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
-                if (this.Source != null)
-                    hashCode = hashCode * 59 + this.Source.GetHashCode();
+                if (Time != null)
+                    hashCode = hashCode * 59 + Time.GetHashCode();
+                if (LastPrice != null)
+                    hashCode = hashCode * 59 + LastPrice.GetHashCode();
+                if (AskPrice != null)
+                    hashCode = hashCode * 59 + AskPrice.GetHashCode();
+                if (AskSize != null)
+                    hashCode = hashCode * 59 + AskSize.GetHashCode();
+                if (BidPrice != null)
+                    hashCode = hashCode * 59 + BidPrice.GetHashCode();
+                if (BidSize != null)
+                    hashCode = hashCode * 59 + BidSize.GetHashCode();
+                if (Volume != null)
+                    hashCode = hashCode * 59 + Volume.GetHashCode();
+                if (Source != null)
+                    hashCode = hashCode * 59 + Source.GetHashCode();
                 return hashCode;
             }
         }
@@ -227,7 +227,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

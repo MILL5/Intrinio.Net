@@ -117,7 +117,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as IchimokuKinkoHyoTechnicalValue);
+            return Equals(input as IchimokuKinkoHyoTechnicalValue);
         }
 
         /// <summary>
@@ -132,34 +132,34 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.DateTime == input.DateTime ||
-                    (this.DateTime != null &&
-                    this.DateTime.Equals(input.DateTime))
+                    DateTime == input.DateTime ||
+                    (DateTime != null &&
+                    DateTime.Equals(input.DateTime))
                 ) && 
                 (
-                    this.ChikouSpan == input.ChikouSpan ||
-                    (this.ChikouSpan != null &&
-                    this.ChikouSpan.Equals(input.ChikouSpan))
+                    ChikouSpan == input.ChikouSpan ||
+                    (ChikouSpan != null &&
+                    ChikouSpan.Equals(input.ChikouSpan))
                 ) && 
                 (
-                    this.KijunSen == input.KijunSen ||
-                    (this.KijunSen != null &&
-                    this.KijunSen.Equals(input.KijunSen))
+                    KijunSen == input.KijunSen ||
+                    (KijunSen != null &&
+                    KijunSen.Equals(input.KijunSen))
                 ) && 
                 (
-                    this.SenkouSpanA == input.SenkouSpanA ||
-                    (this.SenkouSpanA != null &&
-                    this.SenkouSpanA.Equals(input.SenkouSpanA))
+                    SenkouSpanA == input.SenkouSpanA ||
+                    (SenkouSpanA != null &&
+                    SenkouSpanA.Equals(input.SenkouSpanA))
                 ) && 
                 (
-                    this.SenkouSpanB == input.SenkouSpanB ||
-                    (this.SenkouSpanB != null &&
-                    this.SenkouSpanB.Equals(input.SenkouSpanB))
+                    SenkouSpanB == input.SenkouSpanB ||
+                    (SenkouSpanB != null &&
+                    SenkouSpanB.Equals(input.SenkouSpanB))
                 ) && 
                 (
-                    this.TenkanSen == input.TenkanSen ||
-                    (this.TenkanSen != null &&
-                    this.TenkanSen.Equals(input.TenkanSen))
+                    TenkanSen == input.TenkanSen ||
+                    (TenkanSen != null &&
+                    TenkanSen.Equals(input.TenkanSen))
                 );
         }
 
@@ -172,18 +172,18 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DateTime != null)
-                    hashCode = hashCode * 59 + this.DateTime.GetHashCode();
-                if (this.ChikouSpan != null)
-                    hashCode = hashCode * 59 + this.ChikouSpan.GetHashCode();
-                if (this.KijunSen != null)
-                    hashCode = hashCode * 59 + this.KijunSen.GetHashCode();
-                if (this.SenkouSpanA != null)
-                    hashCode = hashCode * 59 + this.SenkouSpanA.GetHashCode();
-                if (this.SenkouSpanB != null)
-                    hashCode = hashCode * 59 + this.SenkouSpanB.GetHashCode();
-                if (this.TenkanSen != null)
-                    hashCode = hashCode * 59 + this.TenkanSen.GetHashCode();
+                if (DateTime != null)
+                    hashCode = hashCode * 59 + DateTime.GetHashCode();
+                if (ChikouSpan != null)
+                    hashCode = hashCode * 59 + ChikouSpan.GetHashCode();
+                if (KijunSen != null)
+                    hashCode = hashCode * 59 + KijunSen.GetHashCode();
+                if (SenkouSpanA != null)
+                    hashCode = hashCode * 59 + SenkouSpanA.GetHashCode();
+                if (SenkouSpanB != null)
+                    hashCode = hashCode * 59 + SenkouSpanB.GetHashCode();
+                if (TenkanSen != null)
+                    hashCode = hashCode * 59 + TenkanSen.GetHashCode();
                 return hashCode;
             }
         }
@@ -193,7 +193,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

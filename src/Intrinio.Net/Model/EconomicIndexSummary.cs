@@ -169,7 +169,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as EconomicIndexSummary);
+            return Equals(input as EconomicIndexSummary);
         }
 
         /// <summary>
@@ -184,59 +184,59 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Symbol == input.Symbol ||
-                    (this.Symbol != null &&
-                    this.Symbol.Equals(input.Symbol))
+                    Symbol == input.Symbol ||
+                    (Symbol != null &&
+                    Symbol.Equals(input.Symbol))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Continent == input.Continent ||
-                    (this.Continent != null &&
-                    this.Continent.Equals(input.Continent))
+                    Continent == input.Continent ||
+                    (Continent != null &&
+                    Continent.Equals(input.Continent))
                 ) && 
                 (
-                    this.Country == input.Country ||
-                    (this.Country != null &&
-                    this.Country.Equals(input.Country))
+                    Country == input.Country ||
+                    (Country != null &&
+                    Country.Equals(input.Country))
                 ) && 
                 (
-                    this.UpdateFrequency == input.UpdateFrequency ||
-                    (this.UpdateFrequency != null &&
-                    this.UpdateFrequency.Equals(input.UpdateFrequency))
+                    UpdateFrequency == input.UpdateFrequency ||
+                    (UpdateFrequency != null &&
+                    UpdateFrequency.Equals(input.UpdateFrequency))
                 ) && 
                 (
-                    this.LastUpdated == input.LastUpdated ||
-                    (this.LastUpdated != null &&
-                    this.LastUpdated.Equals(input.LastUpdated))
+                    LastUpdated == input.LastUpdated ||
+                    (LastUpdated != null &&
+                    LastUpdated.Equals(input.LastUpdated))
                 ) && 
                 (
-                    this.ObservationStart == input.ObservationStart ||
-                    (this.ObservationStart != null &&
-                    this.ObservationStart.Equals(input.ObservationStart))
+                    ObservationStart == input.ObservationStart ||
+                    (ObservationStart != null &&
+                    ObservationStart.Equals(input.ObservationStart))
                 ) && 
                 (
-                    this.ObservationEnd == input.ObservationEnd ||
-                    (this.ObservationEnd != null &&
-                    this.ObservationEnd.Equals(input.ObservationEnd))
+                    ObservationEnd == input.ObservationEnd ||
+                    (ObservationEnd != null &&
+                    ObservationEnd.Equals(input.ObservationEnd))
                 ) && 
                 (
-                    this.SeasonalAdjustment == input.SeasonalAdjustment ||
-                    (this.SeasonalAdjustment != null &&
-                    this.SeasonalAdjustment.Equals(input.SeasonalAdjustment))
+                    SeasonalAdjustment == input.SeasonalAdjustment ||
+                    (SeasonalAdjustment != null &&
+                    SeasonalAdjustment.Equals(input.SeasonalAdjustment))
                 ) && 
                 (
-                    this.Units == input.Units ||
-                    (this.Units != null &&
-                    this.Units.Equals(input.Units))
+                    Units == input.Units ||
+                    (Units != null &&
+                    Units.Equals(input.Units))
                 );
         }
 
@@ -249,28 +249,28 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Symbol != null)
-                    hashCode = hashCode * 59 + this.Symbol.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Continent != null)
-                    hashCode = hashCode * 59 + this.Continent.GetHashCode();
-                if (this.Country != null)
-                    hashCode = hashCode * 59 + this.Country.GetHashCode();
-                if (this.UpdateFrequency != null)
-                    hashCode = hashCode * 59 + this.UpdateFrequency.GetHashCode();
-                if (this.LastUpdated != null)
-                    hashCode = hashCode * 59 + this.LastUpdated.GetHashCode();
-                if (this.ObservationStart != null)
-                    hashCode = hashCode * 59 + this.ObservationStart.GetHashCode();
-                if (this.ObservationEnd != null)
-                    hashCode = hashCode * 59 + this.ObservationEnd.GetHashCode();
-                if (this.SeasonalAdjustment != null)
-                    hashCode = hashCode * 59 + this.SeasonalAdjustment.GetHashCode();
-                if (this.Units != null)
-                    hashCode = hashCode * 59 + this.Units.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (Symbol != null)
+                    hashCode = hashCode * 59 + Symbol.GetHashCode();
+                if (Name != null)
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                if (Continent != null)
+                    hashCode = hashCode * 59 + Continent.GetHashCode();
+                if (Country != null)
+                    hashCode = hashCode * 59 + Country.GetHashCode();
+                if (UpdateFrequency != null)
+                    hashCode = hashCode * 59 + UpdateFrequency.GetHashCode();
+                if (LastUpdated != null)
+                    hashCode = hashCode * 59 + LastUpdated.GetHashCode();
+                if (ObservationStart != null)
+                    hashCode = hashCode * 59 + ObservationStart.GetHashCode();
+                if (ObservationEnd != null)
+                    hashCode = hashCode * 59 + ObservationEnd.GetHashCode();
+                if (SeasonalAdjustment != null)
+                    hashCode = hashCode * 59 + SeasonalAdjustment.GetHashCode();
+                if (Units != null)
+                    hashCode = hashCode * 59 + Units.GetHashCode();
                 return hashCode;
             }
         }
@@ -280,7 +280,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

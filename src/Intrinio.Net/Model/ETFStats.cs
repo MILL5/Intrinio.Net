@@ -366,7 +366,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ETFStats);
+            return Equals(input as ETFStats);
         }
 
         /// <summary>
@@ -381,159 +381,159 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
+                    Date == input.Date ||
+                    (Date != null &&
+                    Date.Equals(input.Date))
                 ) && 
                 (
-                    this.NetAssetValue == input.NetAssetValue ||
-                    (this.NetAssetValue != null &&
-                    this.NetAssetValue.Equals(input.NetAssetValue))
+                    NetAssetValue == input.NetAssetValue ||
+                    (NetAssetValue != null &&
+                    NetAssetValue.Equals(input.NetAssetValue))
                 ) && 
                 (
-                    this.BetaVsSpy == input.BetaVsSpy ||
-                    (this.BetaVsSpy != null &&
-                    this.BetaVsSpy.Equals(input.BetaVsSpy))
+                    BetaVsSpy == input.BetaVsSpy ||
+                    (BetaVsSpy != null &&
+                    BetaVsSpy.Equals(input.BetaVsSpy))
                 ) && 
                 (
-                    this.TrailingOneMonthReturnSplitAndDividend == input.TrailingOneMonthReturnSplitAndDividend ||
-                    (this.TrailingOneMonthReturnSplitAndDividend != null &&
-                    this.TrailingOneMonthReturnSplitAndDividend.Equals(input.TrailingOneMonthReturnSplitAndDividend))
+                    TrailingOneMonthReturnSplitAndDividend == input.TrailingOneMonthReturnSplitAndDividend ||
+                    (TrailingOneMonthReturnSplitAndDividend != null &&
+                    TrailingOneMonthReturnSplitAndDividend.Equals(input.TrailingOneMonthReturnSplitAndDividend))
                 ) && 
                 (
-                    this.TrailingOneMonthReturnSplitOnly == input.TrailingOneMonthReturnSplitOnly ||
-                    (this.TrailingOneMonthReturnSplitOnly != null &&
-                    this.TrailingOneMonthReturnSplitOnly.Equals(input.TrailingOneMonthReturnSplitOnly))
+                    TrailingOneMonthReturnSplitOnly == input.TrailingOneMonthReturnSplitOnly ||
+                    (TrailingOneMonthReturnSplitOnly != null &&
+                    TrailingOneMonthReturnSplitOnly.Equals(input.TrailingOneMonthReturnSplitOnly))
                 ) && 
                 (
-                    this.TrailingOneYearReturnSplitAndDividend == input.TrailingOneYearReturnSplitAndDividend ||
-                    (this.TrailingOneYearReturnSplitAndDividend != null &&
-                    this.TrailingOneYearReturnSplitAndDividend.Equals(input.TrailingOneYearReturnSplitAndDividend))
+                    TrailingOneYearReturnSplitAndDividend == input.TrailingOneYearReturnSplitAndDividend ||
+                    (TrailingOneYearReturnSplitAndDividend != null &&
+                    TrailingOneYearReturnSplitAndDividend.Equals(input.TrailingOneYearReturnSplitAndDividend))
                 ) && 
                 (
-                    this.TrailingOneYearReturnSplitOnly == input.TrailingOneYearReturnSplitOnly ||
-                    (this.TrailingOneYearReturnSplitOnly != null &&
-                    this.TrailingOneYearReturnSplitOnly.Equals(input.TrailingOneYearReturnSplitOnly))
+                    TrailingOneYearReturnSplitOnly == input.TrailingOneYearReturnSplitOnly ||
+                    (TrailingOneYearReturnSplitOnly != null &&
+                    TrailingOneYearReturnSplitOnly.Equals(input.TrailingOneYearReturnSplitOnly))
                 ) && 
                 (
-                    this.TrailingOneYearVolatilityAnnualized == input.TrailingOneYearVolatilityAnnualized ||
-                    (this.TrailingOneYearVolatilityAnnualized != null &&
-                    this.TrailingOneYearVolatilityAnnualized.Equals(input.TrailingOneYearVolatilityAnnualized))
+                    TrailingOneYearVolatilityAnnualized == input.TrailingOneYearVolatilityAnnualized ||
+                    (TrailingOneYearVolatilityAnnualized != null &&
+                    TrailingOneYearVolatilityAnnualized.Equals(input.TrailingOneYearVolatilityAnnualized))
                 ) && 
                 (
-                    this.TrailingThreeYearAnnualizedReturnSplitAndDividend == input.TrailingThreeYearAnnualizedReturnSplitAndDividend ||
-                    (this.TrailingThreeYearAnnualizedReturnSplitAndDividend != null &&
-                    this.TrailingThreeYearAnnualizedReturnSplitAndDividend.Equals(input.TrailingThreeYearAnnualizedReturnSplitAndDividend))
+                    TrailingThreeYearAnnualizedReturnSplitAndDividend == input.TrailingThreeYearAnnualizedReturnSplitAndDividend ||
+                    (TrailingThreeYearAnnualizedReturnSplitAndDividend != null &&
+                    TrailingThreeYearAnnualizedReturnSplitAndDividend.Equals(input.TrailingThreeYearAnnualizedReturnSplitAndDividend))
                 ) && 
                 (
-                    this.TrailingThreeYearAnnualizedReturnSplitOnly == input.TrailingThreeYearAnnualizedReturnSplitOnly ||
-                    (this.TrailingThreeYearAnnualizedReturnSplitOnly != null &&
-                    this.TrailingThreeYearAnnualizedReturnSplitOnly.Equals(input.TrailingThreeYearAnnualizedReturnSplitOnly))
+                    TrailingThreeYearAnnualizedReturnSplitOnly == input.TrailingThreeYearAnnualizedReturnSplitOnly ||
+                    (TrailingThreeYearAnnualizedReturnSplitOnly != null &&
+                    TrailingThreeYearAnnualizedReturnSplitOnly.Equals(input.TrailingThreeYearAnnualizedReturnSplitOnly))
                 ) && 
                 (
-                    this.TrailingThreeYearVolatilityAnnualized == input.TrailingThreeYearVolatilityAnnualized ||
-                    (this.TrailingThreeYearVolatilityAnnualized != null &&
-                    this.TrailingThreeYearVolatilityAnnualized.Equals(input.TrailingThreeYearVolatilityAnnualized))
+                    TrailingThreeYearVolatilityAnnualized == input.TrailingThreeYearVolatilityAnnualized ||
+                    (TrailingThreeYearVolatilityAnnualized != null &&
+                    TrailingThreeYearVolatilityAnnualized.Equals(input.TrailingThreeYearVolatilityAnnualized))
                 ) && 
                 (
-                    this.TrailingFiveYearAnnualizedReturnSplitAndDividend == input.TrailingFiveYearAnnualizedReturnSplitAndDividend ||
-                    (this.TrailingFiveYearAnnualizedReturnSplitAndDividend != null &&
-                    this.TrailingFiveYearAnnualizedReturnSplitAndDividend.Equals(input.TrailingFiveYearAnnualizedReturnSplitAndDividend))
+                    TrailingFiveYearAnnualizedReturnSplitAndDividend == input.TrailingFiveYearAnnualizedReturnSplitAndDividend ||
+                    (TrailingFiveYearAnnualizedReturnSplitAndDividend != null &&
+                    TrailingFiveYearAnnualizedReturnSplitAndDividend.Equals(input.TrailingFiveYearAnnualizedReturnSplitAndDividend))
                 ) && 
                 (
-                    this.TrailingFiveYearAnnualizedReturnSplitOnly == input.TrailingFiveYearAnnualizedReturnSplitOnly ||
-                    (this.TrailingFiveYearAnnualizedReturnSplitOnly != null &&
-                    this.TrailingFiveYearAnnualizedReturnSplitOnly.Equals(input.TrailingFiveYearAnnualizedReturnSplitOnly))
+                    TrailingFiveYearAnnualizedReturnSplitOnly == input.TrailingFiveYearAnnualizedReturnSplitOnly ||
+                    (TrailingFiveYearAnnualizedReturnSplitOnly != null &&
+                    TrailingFiveYearAnnualizedReturnSplitOnly.Equals(input.TrailingFiveYearAnnualizedReturnSplitOnly))
                 ) && 
                 (
-                    this.TrailingFiveYearVolatilityAnnualized == input.TrailingFiveYearVolatilityAnnualized ||
-                    (this.TrailingFiveYearVolatilityAnnualized != null &&
-                    this.TrailingFiveYearVolatilityAnnualized.Equals(input.TrailingFiveYearVolatilityAnnualized))
+                    TrailingFiveYearVolatilityAnnualized == input.TrailingFiveYearVolatilityAnnualized ||
+                    (TrailingFiveYearVolatilityAnnualized != null &&
+                    TrailingFiveYearVolatilityAnnualized.Equals(input.TrailingFiveYearVolatilityAnnualized))
                 ) && 
                 (
-                    this.TrailingTenYearAnnualizedReturnSplitAndDividend == input.TrailingTenYearAnnualizedReturnSplitAndDividend ||
-                    (this.TrailingTenYearAnnualizedReturnSplitAndDividend != null &&
-                    this.TrailingTenYearAnnualizedReturnSplitAndDividend.Equals(input.TrailingTenYearAnnualizedReturnSplitAndDividend))
+                    TrailingTenYearAnnualizedReturnSplitAndDividend == input.TrailingTenYearAnnualizedReturnSplitAndDividend ||
+                    (TrailingTenYearAnnualizedReturnSplitAndDividend != null &&
+                    TrailingTenYearAnnualizedReturnSplitAndDividend.Equals(input.TrailingTenYearAnnualizedReturnSplitAndDividend))
                 ) && 
                 (
-                    this.TrailingTenYearAnnualizedReturnSplitOnly == input.TrailingTenYearAnnualizedReturnSplitOnly ||
-                    (this.TrailingTenYearAnnualizedReturnSplitOnly != null &&
-                    this.TrailingTenYearAnnualizedReturnSplitOnly.Equals(input.TrailingTenYearAnnualizedReturnSplitOnly))
+                    TrailingTenYearAnnualizedReturnSplitOnly == input.TrailingTenYearAnnualizedReturnSplitOnly ||
+                    (TrailingTenYearAnnualizedReturnSplitOnly != null &&
+                    TrailingTenYearAnnualizedReturnSplitOnly.Equals(input.TrailingTenYearAnnualizedReturnSplitOnly))
                 ) && 
                 (
-                    this.InceptionAnnualizedReturnSplitAndDividend == input.InceptionAnnualizedReturnSplitAndDividend ||
-                    (this.InceptionAnnualizedReturnSplitAndDividend != null &&
-                    this.InceptionAnnualizedReturnSplitAndDividend.Equals(input.InceptionAnnualizedReturnSplitAndDividend))
+                    InceptionAnnualizedReturnSplitAndDividend == input.InceptionAnnualizedReturnSplitAndDividend ||
+                    (InceptionAnnualizedReturnSplitAndDividend != null &&
+                    InceptionAnnualizedReturnSplitAndDividend.Equals(input.InceptionAnnualizedReturnSplitAndDividend))
                 ) && 
                 (
-                    this.InceptionAnnualizedReturnSplitOnly == input.InceptionAnnualizedReturnSplitOnly ||
-                    (this.InceptionAnnualizedReturnSplitOnly != null &&
-                    this.InceptionAnnualizedReturnSplitOnly.Equals(input.InceptionAnnualizedReturnSplitOnly))
+                    InceptionAnnualizedReturnSplitOnly == input.InceptionAnnualizedReturnSplitOnly ||
+                    (InceptionAnnualizedReturnSplitOnly != null &&
+                    InceptionAnnualizedReturnSplitOnly.Equals(input.InceptionAnnualizedReturnSplitOnly))
                 ) && 
                 (
-                    this.CalendarYear5ReturnSplitAndDividend == input.CalendarYear5ReturnSplitAndDividend ||
-                    (this.CalendarYear5ReturnSplitAndDividend != null &&
-                    this.CalendarYear5ReturnSplitAndDividend.Equals(input.CalendarYear5ReturnSplitAndDividend))
+                    CalendarYear5ReturnSplitAndDividend == input.CalendarYear5ReturnSplitAndDividend ||
+                    (CalendarYear5ReturnSplitAndDividend != null &&
+                    CalendarYear5ReturnSplitAndDividend.Equals(input.CalendarYear5ReturnSplitAndDividend))
                 ) && 
                 (
-                    this.CalendarYear5ReturnSplitOnly == input.CalendarYear5ReturnSplitOnly ||
-                    (this.CalendarYear5ReturnSplitOnly != null &&
-                    this.CalendarYear5ReturnSplitOnly.Equals(input.CalendarYear5ReturnSplitOnly))
+                    CalendarYear5ReturnSplitOnly == input.CalendarYear5ReturnSplitOnly ||
+                    (CalendarYear5ReturnSplitOnly != null &&
+                    CalendarYear5ReturnSplitOnly.Equals(input.CalendarYear5ReturnSplitOnly))
                 ) && 
                 (
-                    this.CalendarYear4ReturnSplitAndDividend == input.CalendarYear4ReturnSplitAndDividend ||
-                    (this.CalendarYear4ReturnSplitAndDividend != null &&
-                    this.CalendarYear4ReturnSplitAndDividend.Equals(input.CalendarYear4ReturnSplitAndDividend))
+                    CalendarYear4ReturnSplitAndDividend == input.CalendarYear4ReturnSplitAndDividend ||
+                    (CalendarYear4ReturnSplitAndDividend != null &&
+                    CalendarYear4ReturnSplitAndDividend.Equals(input.CalendarYear4ReturnSplitAndDividend))
                 ) && 
                 (
-                    this.CalendarYear4ReturnSplitOnly == input.CalendarYear4ReturnSplitOnly ||
-                    (this.CalendarYear4ReturnSplitOnly != null &&
-                    this.CalendarYear4ReturnSplitOnly.Equals(input.CalendarYear4ReturnSplitOnly))
+                    CalendarYear4ReturnSplitOnly == input.CalendarYear4ReturnSplitOnly ||
+                    (CalendarYear4ReturnSplitOnly != null &&
+                    CalendarYear4ReturnSplitOnly.Equals(input.CalendarYear4ReturnSplitOnly))
                 ) && 
                 (
-                    this.CalendarYear3ReturnSplitAndDividend == input.CalendarYear3ReturnSplitAndDividend ||
-                    (this.CalendarYear3ReturnSplitAndDividend != null &&
-                    this.CalendarYear3ReturnSplitAndDividend.Equals(input.CalendarYear3ReturnSplitAndDividend))
+                    CalendarYear3ReturnSplitAndDividend == input.CalendarYear3ReturnSplitAndDividend ||
+                    (CalendarYear3ReturnSplitAndDividend != null &&
+                    CalendarYear3ReturnSplitAndDividend.Equals(input.CalendarYear3ReturnSplitAndDividend))
                 ) && 
                 (
-                    this.CalendarYear3ReturnSplitOnly == input.CalendarYear3ReturnSplitOnly ||
-                    (this.CalendarYear3ReturnSplitOnly != null &&
-                    this.CalendarYear3ReturnSplitOnly.Equals(input.CalendarYear3ReturnSplitOnly))
+                    CalendarYear3ReturnSplitOnly == input.CalendarYear3ReturnSplitOnly ||
+                    (CalendarYear3ReturnSplitOnly != null &&
+                    CalendarYear3ReturnSplitOnly.Equals(input.CalendarYear3ReturnSplitOnly))
                 ) && 
                 (
-                    this.CalendarYear2ReturnSplitAndDividend == input.CalendarYear2ReturnSplitAndDividend ||
-                    (this.CalendarYear2ReturnSplitAndDividend != null &&
-                    this.CalendarYear2ReturnSplitAndDividend.Equals(input.CalendarYear2ReturnSplitAndDividend))
+                    CalendarYear2ReturnSplitAndDividend == input.CalendarYear2ReturnSplitAndDividend ||
+                    (CalendarYear2ReturnSplitAndDividend != null &&
+                    CalendarYear2ReturnSplitAndDividend.Equals(input.CalendarYear2ReturnSplitAndDividend))
                 ) && 
                 (
-                    this.CalendarYear2ReturnSplitOnly == input.CalendarYear2ReturnSplitOnly ||
-                    (this.CalendarYear2ReturnSplitOnly != null &&
-                    this.CalendarYear2ReturnSplitOnly.Equals(input.CalendarYear2ReturnSplitOnly))
+                    CalendarYear2ReturnSplitOnly == input.CalendarYear2ReturnSplitOnly ||
+                    (CalendarYear2ReturnSplitOnly != null &&
+                    CalendarYear2ReturnSplitOnly.Equals(input.CalendarYear2ReturnSplitOnly))
                 ) && 
                 (
-                    this.CalendarYear1ReturnSplitAndDividend == input.CalendarYear1ReturnSplitAndDividend ||
-                    (this.CalendarYear1ReturnSplitAndDividend != null &&
-                    this.CalendarYear1ReturnSplitAndDividend.Equals(input.CalendarYear1ReturnSplitAndDividend))
+                    CalendarYear1ReturnSplitAndDividend == input.CalendarYear1ReturnSplitAndDividend ||
+                    (CalendarYear1ReturnSplitAndDividend != null &&
+                    CalendarYear1ReturnSplitAndDividend.Equals(input.CalendarYear1ReturnSplitAndDividend))
                 ) && 
                 (
-                    this.CalendarYear1ReturnSplitOnly == input.CalendarYear1ReturnSplitOnly ||
-                    (this.CalendarYear1ReturnSplitOnly != null &&
-                    this.CalendarYear1ReturnSplitOnly.Equals(input.CalendarYear1ReturnSplitOnly))
+                    CalendarYear1ReturnSplitOnly == input.CalendarYear1ReturnSplitOnly ||
+                    (CalendarYear1ReturnSplitOnly != null &&
+                    CalendarYear1ReturnSplitOnly.Equals(input.CalendarYear1ReturnSplitOnly))
                 ) && 
                 (
-                    this.CalendarYearToDateReturnSplitAndDividend == input.CalendarYearToDateReturnSplitAndDividend ||
-                    (this.CalendarYearToDateReturnSplitAndDividend != null &&
-                    this.CalendarYearToDateReturnSplitAndDividend.Equals(input.CalendarYearToDateReturnSplitAndDividend))
+                    CalendarYearToDateReturnSplitAndDividend == input.CalendarYearToDateReturnSplitAndDividend ||
+                    (CalendarYearToDateReturnSplitAndDividend != null &&
+                    CalendarYearToDateReturnSplitAndDividend.Equals(input.CalendarYearToDateReturnSplitAndDividend))
                 ) && 
                 (
-                    this.CalendarYearToDateReturnSplitOnly == input.CalendarYearToDateReturnSplitOnly ||
-                    (this.CalendarYearToDateReturnSplitOnly != null &&
-                    this.CalendarYearToDateReturnSplitOnly.Equals(input.CalendarYearToDateReturnSplitOnly))
+                    CalendarYearToDateReturnSplitOnly == input.CalendarYearToDateReturnSplitOnly ||
+                    (CalendarYearToDateReturnSplitOnly != null &&
+                    CalendarYearToDateReturnSplitOnly.Equals(input.CalendarYearToDateReturnSplitOnly))
                 ) && 
                 (
-                    this.Etf == input.Etf ||
-                    (this.Etf != null &&
-                    this.Etf.Equals(input.Etf))
+                    Etf == input.Etf ||
+                    (Etf != null &&
+                    Etf.Equals(input.Etf))
                 );
         }
 
@@ -546,68 +546,68 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.NetAssetValue != null)
-                    hashCode = hashCode * 59 + this.NetAssetValue.GetHashCode();
-                if (this.BetaVsSpy != null)
-                    hashCode = hashCode * 59 + this.BetaVsSpy.GetHashCode();
-                if (this.TrailingOneMonthReturnSplitAndDividend != null)
-                    hashCode = hashCode * 59 + this.TrailingOneMonthReturnSplitAndDividend.GetHashCode();
-                if (this.TrailingOneMonthReturnSplitOnly != null)
-                    hashCode = hashCode * 59 + this.TrailingOneMonthReturnSplitOnly.GetHashCode();
-                if (this.TrailingOneYearReturnSplitAndDividend != null)
-                    hashCode = hashCode * 59 + this.TrailingOneYearReturnSplitAndDividend.GetHashCode();
-                if (this.TrailingOneYearReturnSplitOnly != null)
-                    hashCode = hashCode * 59 + this.TrailingOneYearReturnSplitOnly.GetHashCode();
-                if (this.TrailingOneYearVolatilityAnnualized != null)
-                    hashCode = hashCode * 59 + this.TrailingOneYearVolatilityAnnualized.GetHashCode();
-                if (this.TrailingThreeYearAnnualizedReturnSplitAndDividend != null)
-                    hashCode = hashCode * 59 + this.TrailingThreeYearAnnualizedReturnSplitAndDividend.GetHashCode();
-                if (this.TrailingThreeYearAnnualizedReturnSplitOnly != null)
-                    hashCode = hashCode * 59 + this.TrailingThreeYearAnnualizedReturnSplitOnly.GetHashCode();
-                if (this.TrailingThreeYearVolatilityAnnualized != null)
-                    hashCode = hashCode * 59 + this.TrailingThreeYearVolatilityAnnualized.GetHashCode();
-                if (this.TrailingFiveYearAnnualizedReturnSplitAndDividend != null)
-                    hashCode = hashCode * 59 + this.TrailingFiveYearAnnualizedReturnSplitAndDividend.GetHashCode();
-                if (this.TrailingFiveYearAnnualizedReturnSplitOnly != null)
-                    hashCode = hashCode * 59 + this.TrailingFiveYearAnnualizedReturnSplitOnly.GetHashCode();
-                if (this.TrailingFiveYearVolatilityAnnualized != null)
-                    hashCode = hashCode * 59 + this.TrailingFiveYearVolatilityAnnualized.GetHashCode();
-                if (this.TrailingTenYearAnnualizedReturnSplitAndDividend != null)
-                    hashCode = hashCode * 59 + this.TrailingTenYearAnnualizedReturnSplitAndDividend.GetHashCode();
-                if (this.TrailingTenYearAnnualizedReturnSplitOnly != null)
-                    hashCode = hashCode * 59 + this.TrailingTenYearAnnualizedReturnSplitOnly.GetHashCode();
-                if (this.InceptionAnnualizedReturnSplitAndDividend != null)
-                    hashCode = hashCode * 59 + this.InceptionAnnualizedReturnSplitAndDividend.GetHashCode();
-                if (this.InceptionAnnualizedReturnSplitOnly != null)
-                    hashCode = hashCode * 59 + this.InceptionAnnualizedReturnSplitOnly.GetHashCode();
-                if (this.CalendarYear5ReturnSplitAndDividend != null)
-                    hashCode = hashCode * 59 + this.CalendarYear5ReturnSplitAndDividend.GetHashCode();
-                if (this.CalendarYear5ReturnSplitOnly != null)
-                    hashCode = hashCode * 59 + this.CalendarYear5ReturnSplitOnly.GetHashCode();
-                if (this.CalendarYear4ReturnSplitAndDividend != null)
-                    hashCode = hashCode * 59 + this.CalendarYear4ReturnSplitAndDividend.GetHashCode();
-                if (this.CalendarYear4ReturnSplitOnly != null)
-                    hashCode = hashCode * 59 + this.CalendarYear4ReturnSplitOnly.GetHashCode();
-                if (this.CalendarYear3ReturnSplitAndDividend != null)
-                    hashCode = hashCode * 59 + this.CalendarYear3ReturnSplitAndDividend.GetHashCode();
-                if (this.CalendarYear3ReturnSplitOnly != null)
-                    hashCode = hashCode * 59 + this.CalendarYear3ReturnSplitOnly.GetHashCode();
-                if (this.CalendarYear2ReturnSplitAndDividend != null)
-                    hashCode = hashCode * 59 + this.CalendarYear2ReturnSplitAndDividend.GetHashCode();
-                if (this.CalendarYear2ReturnSplitOnly != null)
-                    hashCode = hashCode * 59 + this.CalendarYear2ReturnSplitOnly.GetHashCode();
-                if (this.CalendarYear1ReturnSplitAndDividend != null)
-                    hashCode = hashCode * 59 + this.CalendarYear1ReturnSplitAndDividend.GetHashCode();
-                if (this.CalendarYear1ReturnSplitOnly != null)
-                    hashCode = hashCode * 59 + this.CalendarYear1ReturnSplitOnly.GetHashCode();
-                if (this.CalendarYearToDateReturnSplitAndDividend != null)
-                    hashCode = hashCode * 59 + this.CalendarYearToDateReturnSplitAndDividend.GetHashCode();
-                if (this.CalendarYearToDateReturnSplitOnly != null)
-                    hashCode = hashCode * 59 + this.CalendarYearToDateReturnSplitOnly.GetHashCode();
-                if (this.Etf != null)
-                    hashCode = hashCode * 59 + this.Etf.GetHashCode();
+                if (Date != null)
+                    hashCode = hashCode * 59 + Date.GetHashCode();
+                if (NetAssetValue != null)
+                    hashCode = hashCode * 59 + NetAssetValue.GetHashCode();
+                if (BetaVsSpy != null)
+                    hashCode = hashCode * 59 + BetaVsSpy.GetHashCode();
+                if (TrailingOneMonthReturnSplitAndDividend != null)
+                    hashCode = hashCode * 59 + TrailingOneMonthReturnSplitAndDividend.GetHashCode();
+                if (TrailingOneMonthReturnSplitOnly != null)
+                    hashCode = hashCode * 59 + TrailingOneMonthReturnSplitOnly.GetHashCode();
+                if (TrailingOneYearReturnSplitAndDividend != null)
+                    hashCode = hashCode * 59 + TrailingOneYearReturnSplitAndDividend.GetHashCode();
+                if (TrailingOneYearReturnSplitOnly != null)
+                    hashCode = hashCode * 59 + TrailingOneYearReturnSplitOnly.GetHashCode();
+                if (TrailingOneYearVolatilityAnnualized != null)
+                    hashCode = hashCode * 59 + TrailingOneYearVolatilityAnnualized.GetHashCode();
+                if (TrailingThreeYearAnnualizedReturnSplitAndDividend != null)
+                    hashCode = hashCode * 59 + TrailingThreeYearAnnualizedReturnSplitAndDividend.GetHashCode();
+                if (TrailingThreeYearAnnualizedReturnSplitOnly != null)
+                    hashCode = hashCode * 59 + TrailingThreeYearAnnualizedReturnSplitOnly.GetHashCode();
+                if (TrailingThreeYearVolatilityAnnualized != null)
+                    hashCode = hashCode * 59 + TrailingThreeYearVolatilityAnnualized.GetHashCode();
+                if (TrailingFiveYearAnnualizedReturnSplitAndDividend != null)
+                    hashCode = hashCode * 59 + TrailingFiveYearAnnualizedReturnSplitAndDividend.GetHashCode();
+                if (TrailingFiveYearAnnualizedReturnSplitOnly != null)
+                    hashCode = hashCode * 59 + TrailingFiveYearAnnualizedReturnSplitOnly.GetHashCode();
+                if (TrailingFiveYearVolatilityAnnualized != null)
+                    hashCode = hashCode * 59 + TrailingFiveYearVolatilityAnnualized.GetHashCode();
+                if (TrailingTenYearAnnualizedReturnSplitAndDividend != null)
+                    hashCode = hashCode * 59 + TrailingTenYearAnnualizedReturnSplitAndDividend.GetHashCode();
+                if (TrailingTenYearAnnualizedReturnSplitOnly != null)
+                    hashCode = hashCode * 59 + TrailingTenYearAnnualizedReturnSplitOnly.GetHashCode();
+                if (InceptionAnnualizedReturnSplitAndDividend != null)
+                    hashCode = hashCode * 59 + InceptionAnnualizedReturnSplitAndDividend.GetHashCode();
+                if (InceptionAnnualizedReturnSplitOnly != null)
+                    hashCode = hashCode * 59 + InceptionAnnualizedReturnSplitOnly.GetHashCode();
+                if (CalendarYear5ReturnSplitAndDividend != null)
+                    hashCode = hashCode * 59 + CalendarYear5ReturnSplitAndDividend.GetHashCode();
+                if (CalendarYear5ReturnSplitOnly != null)
+                    hashCode = hashCode * 59 + CalendarYear5ReturnSplitOnly.GetHashCode();
+                if (CalendarYear4ReturnSplitAndDividend != null)
+                    hashCode = hashCode * 59 + CalendarYear4ReturnSplitAndDividend.GetHashCode();
+                if (CalendarYear4ReturnSplitOnly != null)
+                    hashCode = hashCode * 59 + CalendarYear4ReturnSplitOnly.GetHashCode();
+                if (CalendarYear3ReturnSplitAndDividend != null)
+                    hashCode = hashCode * 59 + CalendarYear3ReturnSplitAndDividend.GetHashCode();
+                if (CalendarYear3ReturnSplitOnly != null)
+                    hashCode = hashCode * 59 + CalendarYear3ReturnSplitOnly.GetHashCode();
+                if (CalendarYear2ReturnSplitAndDividend != null)
+                    hashCode = hashCode * 59 + CalendarYear2ReturnSplitAndDividend.GetHashCode();
+                if (CalendarYear2ReturnSplitOnly != null)
+                    hashCode = hashCode * 59 + CalendarYear2ReturnSplitOnly.GetHashCode();
+                if (CalendarYear1ReturnSplitAndDividend != null)
+                    hashCode = hashCode * 59 + CalendarYear1ReturnSplitAndDividend.GetHashCode();
+                if (CalendarYear1ReturnSplitOnly != null)
+                    hashCode = hashCode * 59 + CalendarYear1ReturnSplitOnly.GetHashCode();
+                if (CalendarYearToDateReturnSplitAndDividend != null)
+                    hashCode = hashCode * 59 + CalendarYearToDateReturnSplitAndDividend.GetHashCode();
+                if (CalendarYearToDateReturnSplitOnly != null)
+                    hashCode = hashCode * 59 + CalendarYearToDateReturnSplitOnly.GetHashCode();
+                if (Etf != null)
+                    hashCode = hashCode * 59 + Etf.GetHashCode();
                 return hashCode;
             }
         }
@@ -617,7 +617,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

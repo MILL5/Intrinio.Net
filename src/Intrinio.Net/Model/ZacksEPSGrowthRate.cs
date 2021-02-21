@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -286,7 +277,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ZacksEPSGrowthRate);
+            return Equals(input as ZacksEPSGrowthRate);
         }
 
         /// <summary>
@@ -301,119 +292,119 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Ticker == input.Ticker ||
-                    (this.Ticker != null &&
-                    this.Ticker.Equals(input.Ticker))
+                    Ticker == input.Ticker ||
+                    (Ticker != null &&
+                    Ticker.Equals(input.Ticker))
                 ) && 
                 (
-                    this.CompanyName == input.CompanyName ||
-                    (this.CompanyName != null &&
-                    this.CompanyName.Equals(input.CompanyName))
+                    CompanyName == input.CompanyName ||
+                    (CompanyName != null &&
+                    CompanyName.Equals(input.CompanyName))
                 ) && 
                 (
-                    this.IndustryGroupNumber == input.IndustryGroupNumber ||
-                    (this.IndustryGroupNumber != null &&
-                    this.IndustryGroupNumber.Equals(input.IndustryGroupNumber))
+                    IndustryGroupNumber == input.IndustryGroupNumber ||
+                    (IndustryGroupNumber != null &&
+                    IndustryGroupNumber.Equals(input.IndustryGroupNumber))
                 ) && 
                 (
-                    this.IndustryGroupName == input.IndustryGroupName ||
-                    (this.IndustryGroupName != null &&
-                    this.IndustryGroupName.Equals(input.IndustryGroupName))
+                    IndustryGroupName == input.IndustryGroupName ||
+                    (IndustryGroupName != null &&
+                    IndustryGroupName.Equals(input.IndustryGroupName))
                 ) && 
                 (
-                    this.FiscalYear0 == input.FiscalYear0 ||
-                    (this.FiscalYear0 != null &&
-                    this.FiscalYear0.Equals(input.FiscalYear0))
+                    FiscalYear0 == input.FiscalYear0 ||
+                    (FiscalYear0 != null &&
+                    FiscalYear0.Equals(input.FiscalYear0))
                 ) && 
                 (
-                    this.FiscalYear1 == input.FiscalYear1 ||
-                    (this.FiscalYear1 != null &&
-                    this.FiscalYear1.Equals(input.FiscalYear1))
+                    FiscalYear1 == input.FiscalYear1 ||
+                    (FiscalYear1 != null &&
+                    FiscalYear1.Equals(input.FiscalYear1))
                 ) && 
                 (
-                    this.FiscalYear2 == input.FiscalYear2 ||
-                    (this.FiscalYear2 != null &&
-                    this.FiscalYear2.Equals(input.FiscalYear2))
+                    FiscalYear2 == input.FiscalYear2 ||
+                    (FiscalYear2 != null &&
+                    FiscalYear2.Equals(input.FiscalYear2))
                 ) && 
                 (
-                    this.CompanyLast5YearActual == input.CompanyLast5YearActual ||
-                    (this.CompanyLast5YearActual != null &&
-                    this.CompanyLast5YearActual.Equals(input.CompanyLast5YearActual))
+                    CompanyLast5YearActual == input.CompanyLast5YearActual ||
+                    (CompanyLast5YearActual != null &&
+                    CompanyLast5YearActual.Equals(input.CompanyLast5YearActual))
                 ) && 
                 (
-                    this.CompanyFiscalYear1VsFiscalYear0 == input.CompanyFiscalYear1VsFiscalYear0 ||
-                    (this.CompanyFiscalYear1VsFiscalYear0 != null &&
-                    this.CompanyFiscalYear1VsFiscalYear0.Equals(input.CompanyFiscalYear1VsFiscalYear0))
+                    CompanyFiscalYear1VsFiscalYear0 == input.CompanyFiscalYear1VsFiscalYear0 ||
+                    (CompanyFiscalYear1VsFiscalYear0 != null &&
+                    CompanyFiscalYear1VsFiscalYear0.Equals(input.CompanyFiscalYear1VsFiscalYear0))
                 ) && 
                 (
-                    this.CompanyFiscalYear2VsFiscalYear1 == input.CompanyFiscalYear2VsFiscalYear1 ||
-                    (this.CompanyFiscalYear2VsFiscalYear1 != null &&
-                    this.CompanyFiscalYear2VsFiscalYear1.Equals(input.CompanyFiscalYear2VsFiscalYear1))
+                    CompanyFiscalYear2VsFiscalYear1 == input.CompanyFiscalYear2VsFiscalYear1 ||
+                    (CompanyFiscalYear2VsFiscalYear1 != null &&
+                    CompanyFiscalYear2VsFiscalYear1.Equals(input.CompanyFiscalYear2VsFiscalYear1))
                 ) && 
                 (
-                    this.CompanyLongTermGrowthMean == input.CompanyLongTermGrowthMean ||
-                    (this.CompanyLongTermGrowthMean != null &&
-                    this.CompanyLongTermGrowthMean.Equals(input.CompanyLongTermGrowthMean))
+                    CompanyLongTermGrowthMean == input.CompanyLongTermGrowthMean ||
+                    (CompanyLongTermGrowthMean != null &&
+                    CompanyLongTermGrowthMean.Equals(input.CompanyLongTermGrowthMean))
                 ) && 
                 (
-                    this.CompanyFiscalYear1ForwardPriceToEarnings == input.CompanyFiscalYear1ForwardPriceToEarnings ||
-                    (this.CompanyFiscalYear1ForwardPriceToEarnings != null &&
-                    this.CompanyFiscalYear1ForwardPriceToEarnings.Equals(input.CompanyFiscalYear1ForwardPriceToEarnings))
+                    CompanyFiscalYear1ForwardPriceToEarnings == input.CompanyFiscalYear1ForwardPriceToEarnings ||
+                    (CompanyFiscalYear1ForwardPriceToEarnings != null &&
+                    CompanyFiscalYear1ForwardPriceToEarnings.Equals(input.CompanyFiscalYear1ForwardPriceToEarnings))
                 ) && 
                 (
-                    this.IndustryLast5YearActual == input.IndustryLast5YearActual ||
-                    (this.IndustryLast5YearActual != null &&
-                    this.IndustryLast5YearActual.Equals(input.IndustryLast5YearActual))
+                    IndustryLast5YearActual == input.IndustryLast5YearActual ||
+                    (IndustryLast5YearActual != null &&
+                    IndustryLast5YearActual.Equals(input.IndustryLast5YearActual))
                 ) && 
                 (
-                    this.IndustryFiscalYear1VsFiscalYear0 == input.IndustryFiscalYear1VsFiscalYear0 ||
-                    (this.IndustryFiscalYear1VsFiscalYear0 != null &&
-                    this.IndustryFiscalYear1VsFiscalYear0.Equals(input.IndustryFiscalYear1VsFiscalYear0))
+                    IndustryFiscalYear1VsFiscalYear0 == input.IndustryFiscalYear1VsFiscalYear0 ||
+                    (IndustryFiscalYear1VsFiscalYear0 != null &&
+                    IndustryFiscalYear1VsFiscalYear0.Equals(input.IndustryFiscalYear1VsFiscalYear0))
                 ) && 
                 (
-                    this.IndustryFiscalYear2VsFiscalYear1 == input.IndustryFiscalYear2VsFiscalYear1 ||
-                    (this.IndustryFiscalYear2VsFiscalYear1 != null &&
-                    this.IndustryFiscalYear2VsFiscalYear1.Equals(input.IndustryFiscalYear2VsFiscalYear1))
+                    IndustryFiscalYear2VsFiscalYear1 == input.IndustryFiscalYear2VsFiscalYear1 ||
+                    (IndustryFiscalYear2VsFiscalYear1 != null &&
+                    IndustryFiscalYear2VsFiscalYear1.Equals(input.IndustryFiscalYear2VsFiscalYear1))
                 ) && 
                 (
-                    this.IndustryLongTermGrowthMean == input.IndustryLongTermGrowthMean ||
-                    (this.IndustryLongTermGrowthMean != null &&
-                    this.IndustryLongTermGrowthMean.Equals(input.IndustryLongTermGrowthMean))
+                    IndustryLongTermGrowthMean == input.IndustryLongTermGrowthMean ||
+                    (IndustryLongTermGrowthMean != null &&
+                    IndustryLongTermGrowthMean.Equals(input.IndustryLongTermGrowthMean))
                 ) && 
                 (
-                    this.IndustryFiscalYear1ForwardPriceToEarnings == input.IndustryFiscalYear1ForwardPriceToEarnings ||
-                    (this.IndustryFiscalYear1ForwardPriceToEarnings != null &&
-                    this.IndustryFiscalYear1ForwardPriceToEarnings.Equals(input.IndustryFiscalYear1ForwardPriceToEarnings))
+                    IndustryFiscalYear1ForwardPriceToEarnings == input.IndustryFiscalYear1ForwardPriceToEarnings ||
+                    (IndustryFiscalYear1ForwardPriceToEarnings != null &&
+                    IndustryFiscalYear1ForwardPriceToEarnings.Equals(input.IndustryFiscalYear1ForwardPriceToEarnings))
                 ) && 
                 (
-                    this.Sp500Last5YearActual == input.Sp500Last5YearActual ||
-                    (this.Sp500Last5YearActual != null &&
-                    this.Sp500Last5YearActual.Equals(input.Sp500Last5YearActual))
+                    Sp500Last5YearActual == input.Sp500Last5YearActual ||
+                    (Sp500Last5YearActual != null &&
+                    Sp500Last5YearActual.Equals(input.Sp500Last5YearActual))
                 ) && 
                 (
-                    this.Sp500FiscalYear1VsFiscalYear0 == input.Sp500FiscalYear1VsFiscalYear0 ||
-                    (this.Sp500FiscalYear1VsFiscalYear0 != null &&
-                    this.Sp500FiscalYear1VsFiscalYear0.Equals(input.Sp500FiscalYear1VsFiscalYear0))
+                    Sp500FiscalYear1VsFiscalYear0 == input.Sp500FiscalYear1VsFiscalYear0 ||
+                    (Sp500FiscalYear1VsFiscalYear0 != null &&
+                    Sp500FiscalYear1VsFiscalYear0.Equals(input.Sp500FiscalYear1VsFiscalYear0))
                 ) && 
                 (
-                    this.Sp500FiscalYear2VsFiscalYear1 == input.Sp500FiscalYear2VsFiscalYear1 ||
-                    (this.Sp500FiscalYear2VsFiscalYear1 != null &&
-                    this.Sp500FiscalYear2VsFiscalYear1.Equals(input.Sp500FiscalYear2VsFiscalYear1))
+                    Sp500FiscalYear2VsFiscalYear1 == input.Sp500FiscalYear2VsFiscalYear1 ||
+                    (Sp500FiscalYear2VsFiscalYear1 != null &&
+                    Sp500FiscalYear2VsFiscalYear1.Equals(input.Sp500FiscalYear2VsFiscalYear1))
                 ) && 
                 (
-                    this.Sp500LongTermGrowth == input.Sp500LongTermGrowth ||
-                    (this.Sp500LongTermGrowth != null &&
-                    this.Sp500LongTermGrowth.Equals(input.Sp500LongTermGrowth))
+                    Sp500LongTermGrowth == input.Sp500LongTermGrowth ||
+                    (Sp500LongTermGrowth != null &&
+                    Sp500LongTermGrowth.Equals(input.Sp500LongTermGrowth))
                 ) && 
                 (
-                    this.Sp500FiscalYear1PriceToEarnings == input.Sp500FiscalYear1PriceToEarnings ||
-                    (this.Sp500FiscalYear1PriceToEarnings != null &&
-                    this.Sp500FiscalYear1PriceToEarnings.Equals(input.Sp500FiscalYear1PriceToEarnings))
+                    Sp500FiscalYear1PriceToEarnings == input.Sp500FiscalYear1PriceToEarnings ||
+                    (Sp500FiscalYear1PriceToEarnings != null &&
+                    Sp500FiscalYear1PriceToEarnings.Equals(input.Sp500FiscalYear1PriceToEarnings))
                 ) && 
                 (
-                    this.Company == input.Company ||
-                    (this.Company != null &&
-                    this.Company.Equals(input.Company))
+                    Company == input.Company ||
+                    (Company != null &&
+                    Company.Equals(input.Company))
                 );
         }
 
@@ -426,52 +417,52 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Ticker != null)
-                    hashCode = hashCode * 59 + this.Ticker.GetHashCode();
-                if (this.CompanyName != null)
-                    hashCode = hashCode * 59 + this.CompanyName.GetHashCode();
-                if (this.IndustryGroupNumber != null)
-                    hashCode = hashCode * 59 + this.IndustryGroupNumber.GetHashCode();
-                if (this.IndustryGroupName != null)
-                    hashCode = hashCode * 59 + this.IndustryGroupName.GetHashCode();
-                if (this.FiscalYear0 != null)
-                    hashCode = hashCode * 59 + this.FiscalYear0.GetHashCode();
-                if (this.FiscalYear1 != null)
-                    hashCode = hashCode * 59 + this.FiscalYear1.GetHashCode();
-                if (this.FiscalYear2 != null)
-                    hashCode = hashCode * 59 + this.FiscalYear2.GetHashCode();
-                if (this.CompanyLast5YearActual != null)
-                    hashCode = hashCode * 59 + this.CompanyLast5YearActual.GetHashCode();
-                if (this.CompanyFiscalYear1VsFiscalYear0 != null)
-                    hashCode = hashCode * 59 + this.CompanyFiscalYear1VsFiscalYear0.GetHashCode();
-                if (this.CompanyFiscalYear2VsFiscalYear1 != null)
-                    hashCode = hashCode * 59 + this.CompanyFiscalYear2VsFiscalYear1.GetHashCode();
-                if (this.CompanyLongTermGrowthMean != null)
-                    hashCode = hashCode * 59 + this.CompanyLongTermGrowthMean.GetHashCode();
-                if (this.CompanyFiscalYear1ForwardPriceToEarnings != null)
-                    hashCode = hashCode * 59 + this.CompanyFiscalYear1ForwardPriceToEarnings.GetHashCode();
-                if (this.IndustryLast5YearActual != null)
-                    hashCode = hashCode * 59 + this.IndustryLast5YearActual.GetHashCode();
-                if (this.IndustryFiscalYear1VsFiscalYear0 != null)
-                    hashCode = hashCode * 59 + this.IndustryFiscalYear1VsFiscalYear0.GetHashCode();
-                if (this.IndustryFiscalYear2VsFiscalYear1 != null)
-                    hashCode = hashCode * 59 + this.IndustryFiscalYear2VsFiscalYear1.GetHashCode();
-                if (this.IndustryLongTermGrowthMean != null)
-                    hashCode = hashCode * 59 + this.IndustryLongTermGrowthMean.GetHashCode();
-                if (this.IndustryFiscalYear1ForwardPriceToEarnings != null)
-                    hashCode = hashCode * 59 + this.IndustryFiscalYear1ForwardPriceToEarnings.GetHashCode();
-                if (this.Sp500Last5YearActual != null)
-                    hashCode = hashCode * 59 + this.Sp500Last5YearActual.GetHashCode();
-                if (this.Sp500FiscalYear1VsFiscalYear0 != null)
-                    hashCode = hashCode * 59 + this.Sp500FiscalYear1VsFiscalYear0.GetHashCode();
-                if (this.Sp500FiscalYear2VsFiscalYear1 != null)
-                    hashCode = hashCode * 59 + this.Sp500FiscalYear2VsFiscalYear1.GetHashCode();
-                if (this.Sp500LongTermGrowth != null)
-                    hashCode = hashCode * 59 + this.Sp500LongTermGrowth.GetHashCode();
-                if (this.Sp500FiscalYear1PriceToEarnings != null)
-                    hashCode = hashCode * 59 + this.Sp500FiscalYear1PriceToEarnings.GetHashCode();
-                if (this.Company != null)
-                    hashCode = hashCode * 59 + this.Company.GetHashCode();
+                if (Ticker != null)
+                    hashCode = hashCode * 59 + Ticker.GetHashCode();
+                if (CompanyName != null)
+                    hashCode = hashCode * 59 + CompanyName.GetHashCode();
+                if (IndustryGroupNumber != null)
+                    hashCode = hashCode * 59 + IndustryGroupNumber.GetHashCode();
+                if (IndustryGroupName != null)
+                    hashCode = hashCode * 59 + IndustryGroupName.GetHashCode();
+                if (FiscalYear0 != null)
+                    hashCode = hashCode * 59 + FiscalYear0.GetHashCode();
+                if (FiscalYear1 != null)
+                    hashCode = hashCode * 59 + FiscalYear1.GetHashCode();
+                if (FiscalYear2 != null)
+                    hashCode = hashCode * 59 + FiscalYear2.GetHashCode();
+                if (CompanyLast5YearActual != null)
+                    hashCode = hashCode * 59 + CompanyLast5YearActual.GetHashCode();
+                if (CompanyFiscalYear1VsFiscalYear0 != null)
+                    hashCode = hashCode * 59 + CompanyFiscalYear1VsFiscalYear0.GetHashCode();
+                if (CompanyFiscalYear2VsFiscalYear1 != null)
+                    hashCode = hashCode * 59 + CompanyFiscalYear2VsFiscalYear1.GetHashCode();
+                if (CompanyLongTermGrowthMean != null)
+                    hashCode = hashCode * 59 + CompanyLongTermGrowthMean.GetHashCode();
+                if (CompanyFiscalYear1ForwardPriceToEarnings != null)
+                    hashCode = hashCode * 59 + CompanyFiscalYear1ForwardPriceToEarnings.GetHashCode();
+                if (IndustryLast5YearActual != null)
+                    hashCode = hashCode * 59 + IndustryLast5YearActual.GetHashCode();
+                if (IndustryFiscalYear1VsFiscalYear0 != null)
+                    hashCode = hashCode * 59 + IndustryFiscalYear1VsFiscalYear0.GetHashCode();
+                if (IndustryFiscalYear2VsFiscalYear1 != null)
+                    hashCode = hashCode * 59 + IndustryFiscalYear2VsFiscalYear1.GetHashCode();
+                if (IndustryLongTermGrowthMean != null)
+                    hashCode = hashCode * 59 + IndustryLongTermGrowthMean.GetHashCode();
+                if (IndustryFiscalYear1ForwardPriceToEarnings != null)
+                    hashCode = hashCode * 59 + IndustryFiscalYear1ForwardPriceToEarnings.GetHashCode();
+                if (Sp500Last5YearActual != null)
+                    hashCode = hashCode * 59 + Sp500Last5YearActual.GetHashCode();
+                if (Sp500FiscalYear1VsFiscalYear0 != null)
+                    hashCode = hashCode * 59 + Sp500FiscalYear1VsFiscalYear0.GetHashCode();
+                if (Sp500FiscalYear2VsFiscalYear1 != null)
+                    hashCode = hashCode * 59 + Sp500FiscalYear2VsFiscalYear1.GetHashCode();
+                if (Sp500LongTermGrowth != null)
+                    hashCode = hashCode * 59 + Sp500LongTermGrowth.GetHashCode();
+                if (Sp500FiscalYear1PriceToEarnings != null)
+                    hashCode = hashCode * 59 + Sp500FiscalYear1PriceToEarnings.GetHashCode();
+                if (Company != null)
+                    hashCode = hashCode * 59 + Company.GetHashCode();
                 return hashCode;
             }
         }
@@ -481,7 +472,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

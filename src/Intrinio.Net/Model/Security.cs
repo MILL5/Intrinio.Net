@@ -341,7 +341,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Security);
+            return Equals(input as Security);
         }
 
         /// <summary>
@@ -356,144 +356,144 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.CompanyId == input.CompanyId ||
-                    (this.CompanyId != null &&
-                    this.CompanyId.Equals(input.CompanyId))
+                    CompanyId == input.CompanyId ||
+                    (CompanyId != null &&
+                    CompanyId.Equals(input.CompanyId))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    Type == input.Type ||
+                    (Type != null &&
+                    Type.Equals(input.Type))
                 ) && 
                 (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
+                    Code == input.Code ||
+                    (Code != null &&
+                    Code.Equals(input.Code))
                 ) && 
                 (
-                    this.ShareClass == input.ShareClass ||
-                    (this.ShareClass != null &&
-                    this.ShareClass.Equals(input.ShareClass))
+                    ShareClass == input.ShareClass ||
+                    (ShareClass != null &&
+                    ShareClass.Equals(input.ShareClass))
                 ) && 
                 (
-                    this.Currency == input.Currency ||
-                    (this.Currency != null &&
-                    this.Currency.Equals(input.Currency))
+                    Currency == input.Currency ||
+                    (Currency != null &&
+                    Currency.Equals(input.Currency))
                 ) && 
                 (
-                    this.RoundLotSize == input.RoundLotSize ||
-                    (this.RoundLotSize != null &&
-                    this.RoundLotSize.Equals(input.RoundLotSize))
+                    RoundLotSize == input.RoundLotSize ||
+                    (RoundLotSize != null &&
+                    RoundLotSize.Equals(input.RoundLotSize))
                 ) && 
                 (
-                    this.Ticker == input.Ticker ||
-                    (this.Ticker != null &&
-                    this.Ticker.Equals(input.Ticker))
+                    Ticker == input.Ticker ||
+                    (Ticker != null &&
+                    Ticker.Equals(input.Ticker))
                 ) && 
                 (
-                    this.ExchangeTicker == input.ExchangeTicker ||
-                    (this.ExchangeTicker != null &&
-                    this.ExchangeTicker.Equals(input.ExchangeTicker))
+                    ExchangeTicker == input.ExchangeTicker ||
+                    (ExchangeTicker != null &&
+                    ExchangeTicker.Equals(input.ExchangeTicker))
                 ) && 
                 (
-                    this.CompositeTicker == input.CompositeTicker ||
-                    (this.CompositeTicker != null &&
-                    this.CompositeTicker.Equals(input.CompositeTicker))
+                    CompositeTicker == input.CompositeTicker ||
+                    (CompositeTicker != null &&
+                    CompositeTicker.Equals(input.CompositeTicker))
                 ) && 
                 (
-                    this.AlternateTickers == input.AlternateTickers ||
-                    this.AlternateTickers != null &&
-                    this.AlternateTickers.SequenceEqual(input.AlternateTickers)
+                    AlternateTickers == input.AlternateTickers ||
+                    AlternateTickers != null &&
+                    AlternateTickers.SequenceEqual(input.AlternateTickers)
                 ) && 
                 (
-                    this.Figi == input.Figi ||
-                    (this.Figi != null &&
-                    this.Figi.Equals(input.Figi))
+                    Figi == input.Figi ||
+                    (Figi != null &&
+                    Figi.Equals(input.Figi))
                 ) && 
                 (
-                    this.Cik == input.Cik ||
-                    (this.Cik != null &&
-                    this.Cik.Equals(input.Cik))
+                    Cik == input.Cik ||
+                    (Cik != null &&
+                    Cik.Equals(input.Cik))
                 ) && 
                 (
-                    this.CompositeFigi == input.CompositeFigi ||
-                    (this.CompositeFigi != null &&
-                    this.CompositeFigi.Equals(input.CompositeFigi))
+                    CompositeFigi == input.CompositeFigi ||
+                    (CompositeFigi != null &&
+                    CompositeFigi.Equals(input.CompositeFigi))
                 ) && 
                 (
-                    this.ShareClassFigi == input.ShareClassFigi ||
-                    (this.ShareClassFigi != null &&
-                    this.ShareClassFigi.Equals(input.ShareClassFigi))
+                    ShareClassFigi == input.ShareClassFigi ||
+                    (ShareClassFigi != null &&
+                    ShareClassFigi.Equals(input.ShareClassFigi))
                 ) && 
                 (
-                    this.FigiUniqueid == input.FigiUniqueid ||
-                    (this.FigiUniqueid != null &&
-                    this.FigiUniqueid.Equals(input.FigiUniqueid))
+                    FigiUniqueid == input.FigiUniqueid ||
+                    (FigiUniqueid != null &&
+                    FigiUniqueid.Equals(input.FigiUniqueid))
                 ) && 
                 (
-                    this.Active == input.Active ||
-                    (this.Active != null &&
-                    this.Active.Equals(input.Active))
+                    Active == input.Active ||
+                    (Active != null &&
+                    Active.Equals(input.Active))
                 ) && 
                 (
-                    this.Etf == input.Etf ||
-                    (this.Etf != null &&
-                    this.Etf.Equals(input.Etf))
+                    Etf == input.Etf ||
+                    (Etf != null &&
+                    Etf.Equals(input.Etf))
                 ) && 
                 (
-                    this.Delisted == input.Delisted ||
-                    (this.Delisted != null &&
-                    this.Delisted.Equals(input.Delisted))
+                    Delisted == input.Delisted ||
+                    (Delisted != null &&
+                    Delisted.Equals(input.Delisted))
                 ) && 
                 (
-                    this.PrimaryListing == input.PrimaryListing ||
-                    (this.PrimaryListing != null &&
-                    this.PrimaryListing.Equals(input.PrimaryListing))
+                    PrimaryListing == input.PrimaryListing ||
+                    (PrimaryListing != null &&
+                    PrimaryListing.Equals(input.PrimaryListing))
                 ) && 
                 (
-                    this.PrimarySecurity == input.PrimarySecurity ||
-                    (this.PrimarySecurity != null &&
-                    this.PrimarySecurity.Equals(input.PrimarySecurity))
+                    PrimarySecurity == input.PrimarySecurity ||
+                    (PrimarySecurity != null &&
+                    PrimarySecurity.Equals(input.PrimarySecurity))
                 ) && 
                 (
-                    this.FirstStockPrice == input.FirstStockPrice ||
-                    (this.FirstStockPrice != null &&
-                    this.FirstStockPrice.Equals(input.FirstStockPrice))
+                    FirstStockPrice == input.FirstStockPrice ||
+                    (FirstStockPrice != null &&
+                    FirstStockPrice.Equals(input.FirstStockPrice))
                 ) && 
                 (
-                    this.LastStockPrice == input.LastStockPrice ||
-                    (this.LastStockPrice != null &&
-                    this.LastStockPrice.Equals(input.LastStockPrice))
+                    LastStockPrice == input.LastStockPrice ||
+                    (LastStockPrice != null &&
+                    LastStockPrice.Equals(input.LastStockPrice))
                 ) && 
                 (
-                    this.LastStockPriceAdjustment == input.LastStockPriceAdjustment ||
-                    (this.LastStockPriceAdjustment != null &&
-                    this.LastStockPriceAdjustment.Equals(input.LastStockPriceAdjustment))
+                    LastStockPriceAdjustment == input.LastStockPriceAdjustment ||
+                    (LastStockPriceAdjustment != null &&
+                    LastStockPriceAdjustment.Equals(input.LastStockPriceAdjustment))
                 ) && 
                 (
-                    this.LastCorporateAction == input.LastCorporateAction ||
-                    (this.LastCorporateAction != null &&
-                    this.LastCorporateAction.Equals(input.LastCorporateAction))
+                    LastCorporateAction == input.LastCorporateAction ||
+                    (LastCorporateAction != null &&
+                    LastCorporateAction.Equals(input.LastCorporateAction))
                 ) && 
                 (
-                    this.PreviousTickers == input.PreviousTickers ||
-                    this.PreviousTickers != null &&
-                    this.PreviousTickers.SequenceEqual(input.PreviousTickers)
+                    PreviousTickers == input.PreviousTickers ||
+                    PreviousTickers != null &&
+                    PreviousTickers.SequenceEqual(input.PreviousTickers)
                 ) && 
                 (
-                    this.ListingExchangeMic == input.ListingExchangeMic ||
-                    (this.ListingExchangeMic != null &&
-                    this.ListingExchangeMic.Equals(input.ListingExchangeMic))
+                    ListingExchangeMic == input.ListingExchangeMic ||
+                    (ListingExchangeMic != null &&
+                    ListingExchangeMic.Equals(input.ListingExchangeMic))
                 );
         }
 
@@ -506,62 +506,62 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.CompanyId != null)
-                    hashCode = hashCode * 59 + this.CompanyId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.ShareClass != null)
-                    hashCode = hashCode * 59 + this.ShareClass.GetHashCode();
-                if (this.Currency != null)
-                    hashCode = hashCode * 59 + this.Currency.GetHashCode();
-                if (this.RoundLotSize != null)
-                    hashCode = hashCode * 59 + this.RoundLotSize.GetHashCode();
-                if (this.Ticker != null)
-                    hashCode = hashCode * 59 + this.Ticker.GetHashCode();
-                if (this.ExchangeTicker != null)
-                    hashCode = hashCode * 59 + this.ExchangeTicker.GetHashCode();
-                if (this.CompositeTicker != null)
-                    hashCode = hashCode * 59 + this.CompositeTicker.GetHashCode();
-                if (this.AlternateTickers != null)
-                    hashCode = hashCode * 59 + this.AlternateTickers.GetHashCode();
-                if (this.Figi != null)
-                    hashCode = hashCode * 59 + this.Figi.GetHashCode();
-                if (this.Cik != null)
-                    hashCode = hashCode * 59 + this.Cik.GetHashCode();
-                if (this.CompositeFigi != null)
-                    hashCode = hashCode * 59 + this.CompositeFigi.GetHashCode();
-                if (this.ShareClassFigi != null)
-                    hashCode = hashCode * 59 + this.ShareClassFigi.GetHashCode();
-                if (this.FigiUniqueid != null)
-                    hashCode = hashCode * 59 + this.FigiUniqueid.GetHashCode();
-                if (this.Active != null)
-                    hashCode = hashCode * 59 + this.Active.GetHashCode();
-                if (this.Etf != null)
-                    hashCode = hashCode * 59 + this.Etf.GetHashCode();
-                if (this.Delisted != null)
-                    hashCode = hashCode * 59 + this.Delisted.GetHashCode();
-                if (this.PrimaryListing != null)
-                    hashCode = hashCode * 59 + this.PrimaryListing.GetHashCode();
-                if (this.PrimarySecurity != null)
-                    hashCode = hashCode * 59 + this.PrimarySecurity.GetHashCode();
-                if (this.FirstStockPrice != null)
-                    hashCode = hashCode * 59 + this.FirstStockPrice.GetHashCode();
-                if (this.LastStockPrice != null)
-                    hashCode = hashCode * 59 + this.LastStockPrice.GetHashCode();
-                if (this.LastStockPriceAdjustment != null)
-                    hashCode = hashCode * 59 + this.LastStockPriceAdjustment.GetHashCode();
-                if (this.LastCorporateAction != null)
-                    hashCode = hashCode * 59 + this.LastCorporateAction.GetHashCode();
-                if (this.PreviousTickers != null)
-                    hashCode = hashCode * 59 + this.PreviousTickers.GetHashCode();
-                if (this.ListingExchangeMic != null)
-                    hashCode = hashCode * 59 + this.ListingExchangeMic.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (CompanyId != null)
+                    hashCode = hashCode * 59 + CompanyId.GetHashCode();
+                if (Name != null)
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                if (Type != null)
+                    hashCode = hashCode * 59 + Type.GetHashCode();
+                if (Code != null)
+                    hashCode = hashCode * 59 + Code.GetHashCode();
+                if (ShareClass != null)
+                    hashCode = hashCode * 59 + ShareClass.GetHashCode();
+                if (Currency != null)
+                    hashCode = hashCode * 59 + Currency.GetHashCode();
+                if (RoundLotSize != null)
+                    hashCode = hashCode * 59 + RoundLotSize.GetHashCode();
+                if (Ticker != null)
+                    hashCode = hashCode * 59 + Ticker.GetHashCode();
+                if (ExchangeTicker != null)
+                    hashCode = hashCode * 59 + ExchangeTicker.GetHashCode();
+                if (CompositeTicker != null)
+                    hashCode = hashCode * 59 + CompositeTicker.GetHashCode();
+                if (AlternateTickers != null)
+                    hashCode = hashCode * 59 + AlternateTickers.GetHashCode();
+                if (Figi != null)
+                    hashCode = hashCode * 59 + Figi.GetHashCode();
+                if (Cik != null)
+                    hashCode = hashCode * 59 + Cik.GetHashCode();
+                if (CompositeFigi != null)
+                    hashCode = hashCode * 59 + CompositeFigi.GetHashCode();
+                if (ShareClassFigi != null)
+                    hashCode = hashCode * 59 + ShareClassFigi.GetHashCode();
+                if (FigiUniqueid != null)
+                    hashCode = hashCode * 59 + FigiUniqueid.GetHashCode();
+                if (Active != null)
+                    hashCode = hashCode * 59 + Active.GetHashCode();
+                if (Etf != null)
+                    hashCode = hashCode * 59 + Etf.GetHashCode();
+                if (Delisted != null)
+                    hashCode = hashCode * 59 + Delisted.GetHashCode();
+                if (PrimaryListing != null)
+                    hashCode = hashCode * 59 + PrimaryListing.GetHashCode();
+                if (PrimarySecurity != null)
+                    hashCode = hashCode * 59 + PrimarySecurity.GetHashCode();
+                if (FirstStockPrice != null)
+                    hashCode = hashCode * 59 + FirstStockPrice.GetHashCode();
+                if (LastStockPrice != null)
+                    hashCode = hashCode * 59 + LastStockPrice.GetHashCode();
+                if (LastStockPriceAdjustment != null)
+                    hashCode = hashCode * 59 + LastStockPriceAdjustment.GetHashCode();
+                if (LastCorporateAction != null)
+                    hashCode = hashCode * 59 + LastCorporateAction.GetHashCode();
+                if (PreviousTickers != null)
+                    hashCode = hashCode * 59 + PreviousTickers.GetHashCode();
+                if (ListingExchangeMic != null)
+                    hashCode = hashCode * 59 + ListingExchangeMic.GetHashCode();
                 return hashCode;
             }
         }
@@ -571,7 +571,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

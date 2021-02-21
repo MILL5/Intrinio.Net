@@ -117,7 +117,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as StockPriceInterval);
+            return Equals(input as StockPriceInterval);
         }
 
         /// <summary>
@@ -132,34 +132,34 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
+                    Time == input.Time ||
+                    (Time != null &&
+                    Time.Equals(input.Time))
                 ) && 
                 (
-                    this.Open == input.Open ||
-                    (this.Open != null &&
-                    this.Open.Equals(input.Open))
+                    Open == input.Open ||
+                    (Open != null &&
+                    Open.Equals(input.Open))
                 ) && 
                 (
-                    this.Close == input.Close ||
-                    (this.Close != null &&
-                    this.Close.Equals(input.Close))
+                    Close == input.Close ||
+                    (Close != null &&
+                    Close.Equals(input.Close))
                 ) && 
                 (
-                    this.High == input.High ||
-                    (this.High != null &&
-                    this.High.Equals(input.High))
+                    High == input.High ||
+                    (High != null &&
+                    High.Equals(input.High))
                 ) && 
                 (
-                    this.Low == input.Low ||
-                    (this.Low != null &&
-                    this.Low.Equals(input.Low))
+                    Low == input.Low ||
+                    (Low != null &&
+                    Low.Equals(input.Low))
                 ) && 
                 (
-                    this.Volume == input.Volume ||
-                    (this.Volume != null &&
-                    this.Volume.Equals(input.Volume))
+                    Volume == input.Volume ||
+                    (Volume != null &&
+                    Volume.Equals(input.Volume))
                 );
         }
 
@@ -172,18 +172,18 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Open != null)
-                    hashCode = hashCode * 59 + this.Open.GetHashCode();
-                if (this.Close != null)
-                    hashCode = hashCode * 59 + this.Close.GetHashCode();
-                if (this.High != null)
-                    hashCode = hashCode * 59 + this.High.GetHashCode();
-                if (this.Low != null)
-                    hashCode = hashCode * 59 + this.Low.GetHashCode();
-                if (this.Volume != null)
-                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
+                if (Time != null)
+                    hashCode = hashCode * 59 + Time.GetHashCode();
+                if (Open != null)
+                    hashCode = hashCode * 59 + Open.GetHashCode();
+                if (Close != null)
+                    hashCode = hashCode * 59 + Close.GetHashCode();
+                if (High != null)
+                    hashCode = hashCode * 59 + High.GetHashCode();
+                if (Low != null)
+                    hashCode = hashCode * 59 + Low.GetHashCode();
+                if (Volume != null)
+                    hashCode = hashCode * 59 + Volume.GetHashCode();
                 return hashCode;
             }
         }
@@ -193,7 +193,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

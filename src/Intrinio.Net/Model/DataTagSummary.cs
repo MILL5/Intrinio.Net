@@ -137,7 +137,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DataTagSummary);
+            return Equals(input as DataTagSummary);
         }
 
         /// <summary>
@@ -152,44 +152,44 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Tag == input.Tag ||
-                    (this.Tag != null &&
-                    this.Tag.Equals(input.Tag))
+                    Tag == input.Tag ||
+                    (Tag != null &&
+                    Tag.Equals(input.Tag))
                 ) && 
                 (
-                    this.Parent == input.Parent ||
-                    (this.Parent != null &&
-                    this.Parent.Equals(input.Parent))
+                    Parent == input.Parent ||
+                    (Parent != null &&
+                    Parent.Equals(input.Parent))
                 ) && 
                 (
-                    this.Sequence == input.Sequence ||
-                    (this.Sequence != null &&
-                    this.Sequence.Equals(input.Sequence))
+                    Sequence == input.Sequence ||
+                    (Sequence != null &&
+                    Sequence.Equals(input.Sequence))
                 ) && 
                 (
-                    this.Factor == input.Factor ||
-                    (this.Factor != null &&
-                    this.Factor.Equals(input.Factor))
+                    Factor == input.Factor ||
+                    (Factor != null &&
+                    Factor.Equals(input.Factor))
                 ) && 
                 (
-                    this.Balance == input.Balance ||
-                    (this.Balance != null &&
-                    this.Balance.Equals(input.Balance))
+                    Balance == input.Balance ||
+                    (Balance != null &&
+                    Balance.Equals(input.Balance))
                 ) && 
                 (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
+                    Unit == input.Unit ||
+                    (Unit != null &&
+                    Unit.Equals(input.Unit))
                 );
         }
 
@@ -202,22 +202,22 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Tag != null)
-                    hashCode = hashCode * 59 + this.Tag.GetHashCode();
-                if (this.Parent != null)
-                    hashCode = hashCode * 59 + this.Parent.GetHashCode();
-                if (this.Sequence != null)
-                    hashCode = hashCode * 59 + this.Sequence.GetHashCode();
-                if (this.Factor != null)
-                    hashCode = hashCode * 59 + this.Factor.GetHashCode();
-                if (this.Balance != null)
-                    hashCode = hashCode * 59 + this.Balance.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (Name != null)
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                if (Tag != null)
+                    hashCode = hashCode * 59 + Tag.GetHashCode();
+                if (Parent != null)
+                    hashCode = hashCode * 59 + Parent.GetHashCode();
+                if (Sequence != null)
+                    hashCode = hashCode * 59 + Sequence.GetHashCode();
+                if (Factor != null)
+                    hashCode = hashCode * 59 + Factor.GetHashCode();
+                if (Balance != null)
+                    hashCode = hashCode * 59 + Balance.GetHashCode();
+                if (Unit != null)
+                    hashCode = hashCode * 59 + Unit.GetHashCode();
                 return hashCode;
             }
         }
@@ -227,7 +227,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

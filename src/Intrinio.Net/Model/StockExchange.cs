@@ -159,7 +159,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as StockExchange);
+            return Equals(input as StockExchange);
         }
 
         /// <summary>
@@ -174,54 +174,54 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Mic == input.Mic ||
-                    (this.Mic != null &&
-                    this.Mic.Equals(input.Mic))
+                    Mic == input.Mic ||
+                    (Mic != null &&
+                    Mic.Equals(input.Mic))
                 ) && 
                 (
-                    this.Acronym == input.Acronym ||
-                    (this.Acronym != null &&
-                    this.Acronym.Equals(input.Acronym))
+                    Acronym == input.Acronym ||
+                    (Acronym != null &&
+                    Acronym.Equals(input.Acronym))
                 ) && 
                 (
-                    this.City == input.City ||
-                    (this.City != null &&
-                    this.City.Equals(input.City))
+                    City == input.City ||
+                    (City != null &&
+                    City.Equals(input.City))
                 ) && 
                 (
-                    this.Country == input.Country ||
-                    (this.Country != null &&
-                    this.Country.Equals(input.Country))
+                    Country == input.Country ||
+                    (Country != null &&
+                    Country.Equals(input.Country))
                 ) && 
                 (
-                    this.CountryCode == input.CountryCode ||
-                    (this.CountryCode != null &&
-                    this.CountryCode.Equals(input.CountryCode))
+                    CountryCode == input.CountryCode ||
+                    (CountryCode != null &&
+                    CountryCode.Equals(input.CountryCode))
                 ) && 
                 (
-                    this.Website == input.Website ||
-                    (this.Website != null &&
-                    this.Website.Equals(input.Website))
+                    Website == input.Website ||
+                    (Website != null &&
+                    Website.Equals(input.Website))
                 ) && 
                 (
-                    this.FirstStockPriceDate == input.FirstStockPriceDate ||
-                    (this.FirstStockPriceDate != null &&
-                    this.FirstStockPriceDate.Equals(input.FirstStockPriceDate))
+                    FirstStockPriceDate == input.FirstStockPriceDate ||
+                    (FirstStockPriceDate != null &&
+                    FirstStockPriceDate.Equals(input.FirstStockPriceDate))
                 ) && 
                 (
-                    this.LastStockPriceDate == input.LastStockPriceDate ||
-                    (this.LastStockPriceDate != null &&
-                    this.LastStockPriceDate.Equals(input.LastStockPriceDate))
+                    LastStockPriceDate == input.LastStockPriceDate ||
+                    (LastStockPriceDate != null &&
+                    LastStockPriceDate.Equals(input.LastStockPriceDate))
                 );
         }
 
@@ -234,26 +234,26 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Mic != null)
-                    hashCode = hashCode * 59 + this.Mic.GetHashCode();
-                if (this.Acronym != null)
-                    hashCode = hashCode * 59 + this.Acronym.GetHashCode();
-                if (this.City != null)
-                    hashCode = hashCode * 59 + this.City.GetHashCode();
-                if (this.Country != null)
-                    hashCode = hashCode * 59 + this.Country.GetHashCode();
-                if (this.CountryCode != null)
-                    hashCode = hashCode * 59 + this.CountryCode.GetHashCode();
-                if (this.Website != null)
-                    hashCode = hashCode * 59 + this.Website.GetHashCode();
-                if (this.FirstStockPriceDate != null)
-                    hashCode = hashCode * 59 + this.FirstStockPriceDate.GetHashCode();
-                if (this.LastStockPriceDate != null)
-                    hashCode = hashCode * 59 + this.LastStockPriceDate.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (Name != null)
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                if (Mic != null)
+                    hashCode = hashCode * 59 + Mic.GetHashCode();
+                if (Acronym != null)
+                    hashCode = hashCode * 59 + Acronym.GetHashCode();
+                if (City != null)
+                    hashCode = hashCode * 59 + City.GetHashCode();
+                if (Country != null)
+                    hashCode = hashCode * 59 + Country.GetHashCode();
+                if (CountryCode != null)
+                    hashCode = hashCode * 59 + CountryCode.GetHashCode();
+                if (Website != null)
+                    hashCode = hashCode * 59 + Website.GetHashCode();
+                if (FirstStockPriceDate != null)
+                    hashCode = hashCode * 59 + FirstStockPriceDate.GetHashCode();
+                if (LastStockPriceDate != null)
+                    hashCode = hashCode * 59 + LastStockPriceDate.GetHashCode();
                 return hashCode;
             }
         }
@@ -263,7 +263,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

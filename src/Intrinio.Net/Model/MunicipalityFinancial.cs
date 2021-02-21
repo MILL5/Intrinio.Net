@@ -477,7 +477,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as MunicipalityFinancial);
+            return Equals(input as MunicipalityFinancial);
         }
 
         /// <summary>
@@ -492,214 +492,214 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.FiscalYear == input.FiscalYear ||
-                    (this.FiscalYear != null &&
-                    this.FiscalYear.Equals(input.FiscalYear))
+                    FiscalYear == input.FiscalYear ||
+                    (FiscalYear != null &&
+                    FiscalYear.Equals(input.FiscalYear))
                 ) && 
                 (
-                    this.CurrentAssets == input.CurrentAssets ||
-                    (this.CurrentAssets != null &&
-                    this.CurrentAssets.Equals(input.CurrentAssets))
+                    CurrentAssets == input.CurrentAssets ||
+                    (CurrentAssets != null &&
+                    CurrentAssets.Equals(input.CurrentAssets))
                 ) && 
                 (
-                    this.NonCurrentAssets == input.NonCurrentAssets ||
-                    (this.NonCurrentAssets != null &&
-                    this.NonCurrentAssets.Equals(input.NonCurrentAssets))
+                    NonCurrentAssets == input.NonCurrentAssets ||
+                    (NonCurrentAssets != null &&
+                    NonCurrentAssets.Equals(input.NonCurrentAssets))
                 ) && 
                 (
-                    this.DeferredOutflows == input.DeferredOutflows ||
-                    (this.DeferredOutflows != null &&
-                    this.DeferredOutflows.Equals(input.DeferredOutflows))
+                    DeferredOutflows == input.DeferredOutflows ||
+                    (DeferredOutflows != null &&
+                    DeferredOutflows.Equals(input.DeferredOutflows))
                 ) && 
                 (
-                    this.TotalAssets == input.TotalAssets ||
-                    (this.TotalAssets != null &&
-                    this.TotalAssets.Equals(input.TotalAssets))
+                    TotalAssets == input.TotalAssets ||
+                    (TotalAssets != null &&
+                    TotalAssets.Equals(input.TotalAssets))
                 ) && 
                 (
-                    this.TotalAssetsPlusDeferredOutflows == input.TotalAssetsPlusDeferredOutflows ||
-                    (this.TotalAssetsPlusDeferredOutflows != null &&
-                    this.TotalAssetsPlusDeferredOutflows.Equals(input.TotalAssetsPlusDeferredOutflows))
+                    TotalAssetsPlusDeferredOutflows == input.TotalAssetsPlusDeferredOutflows ||
+                    (TotalAssetsPlusDeferredOutflows != null &&
+                    TotalAssetsPlusDeferredOutflows.Equals(input.TotalAssetsPlusDeferredOutflows))
                 ) && 
                 (
-                    this.CurrentLiabilities == input.CurrentLiabilities ||
-                    (this.CurrentLiabilities != null &&
-                    this.CurrentLiabilities.Equals(input.CurrentLiabilities))
+                    CurrentLiabilities == input.CurrentLiabilities ||
+                    (CurrentLiabilities != null &&
+                    CurrentLiabilities.Equals(input.CurrentLiabilities))
                 ) && 
                 (
-                    this.CurrentPortionOfLongTermDebt == input.CurrentPortionOfLongTermDebt ||
-                    (this.CurrentPortionOfLongTermDebt != null &&
-                    this.CurrentPortionOfLongTermDebt.Equals(input.CurrentPortionOfLongTermDebt))
+                    CurrentPortionOfLongTermDebt == input.CurrentPortionOfLongTermDebt ||
+                    (CurrentPortionOfLongTermDebt != null &&
+                    CurrentPortionOfLongTermDebt.Equals(input.CurrentPortionOfLongTermDebt))
                 ) && 
                 (
-                    this.NetPensionLiability == input.NetPensionLiability ||
-                    (this.NetPensionLiability != null &&
-                    this.NetPensionLiability.Equals(input.NetPensionLiability))
+                    NetPensionLiability == input.NetPensionLiability ||
+                    (NetPensionLiability != null &&
+                    NetPensionLiability.Equals(input.NetPensionLiability))
                 ) && 
                 (
-                    this.NetOpebLiability == input.NetOpebLiability ||
-                    (this.NetOpebLiability != null &&
-                    this.NetOpebLiability.Equals(input.NetOpebLiability))
+                    NetOpebLiability == input.NetOpebLiability ||
+                    (NetOpebLiability != null &&
+                    NetOpebLiability.Equals(input.NetOpebLiability))
                 ) && 
                 (
-                    this.AllOtherLongTermDebt == input.AllOtherLongTermDebt ||
-                    (this.AllOtherLongTermDebt != null &&
-                    this.AllOtherLongTermDebt.Equals(input.AllOtherLongTermDebt))
+                    AllOtherLongTermDebt == input.AllOtherLongTermDebt ||
+                    (AllOtherLongTermDebt != null &&
+                    AllOtherLongTermDebt.Equals(input.AllOtherLongTermDebt))
                 ) && 
                 (
-                    this.TotalLiabilities == input.TotalLiabilities ||
-                    (this.TotalLiabilities != null &&
-                    this.TotalLiabilities.Equals(input.TotalLiabilities))
+                    TotalLiabilities == input.TotalLiabilities ||
+                    (TotalLiabilities != null &&
+                    TotalLiabilities.Equals(input.TotalLiabilities))
                 ) && 
                 (
-                    this.DeferredInflows == input.DeferredInflows ||
-                    (this.DeferredInflows != null &&
-                    this.DeferredInflows.Equals(input.DeferredInflows))
+                    DeferredInflows == input.DeferredInflows ||
+                    (DeferredInflows != null &&
+                    DeferredInflows.Equals(input.DeferredInflows))
                 ) && 
                 (
-                    this.TotalLiabilitiesPlusDeferredInflows == input.TotalLiabilitiesPlusDeferredInflows ||
-                    (this.TotalLiabilitiesPlusDeferredInflows != null &&
-                    this.TotalLiabilitiesPlusDeferredInflows.Equals(input.TotalLiabilitiesPlusDeferredInflows))
+                    TotalLiabilitiesPlusDeferredInflows == input.TotalLiabilitiesPlusDeferredInflows ||
+                    (TotalLiabilitiesPlusDeferredInflows != null &&
+                    TotalLiabilitiesPlusDeferredInflows.Equals(input.TotalLiabilitiesPlusDeferredInflows))
                 ) && 
                 (
-                    this.TotalNetPosition == input.TotalNetPosition ||
-                    (this.TotalNetPosition != null &&
-                    this.TotalNetPosition.Equals(input.TotalNetPosition))
+                    TotalNetPosition == input.TotalNetPosition ||
+                    (TotalNetPosition != null &&
+                    TotalNetPosition.Equals(input.TotalNetPosition))
                 ) && 
                 (
-                    this.TotalUnrestrictedNetPosition == input.TotalUnrestrictedNetPosition ||
-                    (this.TotalUnrestrictedNetPosition != null &&
-                    this.TotalUnrestrictedNetPosition.Equals(input.TotalUnrestrictedNetPosition))
+                    TotalUnrestrictedNetPosition == input.TotalUnrestrictedNetPosition ||
+                    (TotalUnrestrictedNetPosition != null &&
+                    TotalUnrestrictedNetPosition.Equals(input.TotalUnrestrictedNetPosition))
                 ) && 
                 (
-                    this.TotalExpenses == input.TotalExpenses ||
-                    (this.TotalExpenses != null &&
-                    this.TotalExpenses.Equals(input.TotalExpenses))
+                    TotalExpenses == input.TotalExpenses ||
+                    (TotalExpenses != null &&
+                    TotalExpenses.Equals(input.TotalExpenses))
                 ) && 
                 (
-                    this.ChargesForServices == input.ChargesForServices ||
-                    (this.ChargesForServices != null &&
-                    this.ChargesForServices.Equals(input.ChargesForServices))
+                    ChargesForServices == input.ChargesForServices ||
+                    (ChargesForServices != null &&
+                    ChargesForServices.Equals(input.ChargesForServices))
                 ) && 
                 (
-                    this.OperatingGrantsAndContributions == input.OperatingGrantsAndContributions ||
-                    (this.OperatingGrantsAndContributions != null &&
-                    this.OperatingGrantsAndContributions.Equals(input.OperatingGrantsAndContributions))
+                    OperatingGrantsAndContributions == input.OperatingGrantsAndContributions ||
+                    (OperatingGrantsAndContributions != null &&
+                    OperatingGrantsAndContributions.Equals(input.OperatingGrantsAndContributions))
                 ) && 
                 (
-                    this.CapitalGrantsAndContributions == input.CapitalGrantsAndContributions ||
-                    (this.CapitalGrantsAndContributions != null &&
-                    this.CapitalGrantsAndContributions.Equals(input.CapitalGrantsAndContributions))
+                    CapitalGrantsAndContributions == input.CapitalGrantsAndContributions ||
+                    (CapitalGrantsAndContributions != null &&
+                    CapitalGrantsAndContributions.Equals(input.CapitalGrantsAndContributions))
                 ) && 
                 (
-                    this.GeneralRevenues == input.GeneralRevenues ||
-                    (this.GeneralRevenues != null &&
-                    this.GeneralRevenues.Equals(input.GeneralRevenues))
+                    GeneralRevenues == input.GeneralRevenues ||
+                    (GeneralRevenues != null &&
+                    GeneralRevenues.Equals(input.GeneralRevenues))
                 ) && 
                 (
-                    this.OtherRevenues == input.OtherRevenues ||
-                    (this.OtherRevenues != null &&
-                    this.OtherRevenues.Equals(input.OtherRevenues))
+                    OtherRevenues == input.OtherRevenues ||
+                    (OtherRevenues != null &&
+                    OtherRevenues.Equals(input.OtherRevenues))
                 ) && 
                 (
-                    this.TotalRevenues == input.TotalRevenues ||
-                    (this.TotalRevenues != null &&
-                    this.TotalRevenues.Equals(input.TotalRevenues))
+                    TotalRevenues == input.TotalRevenues ||
+                    (TotalRevenues != null &&
+                    TotalRevenues.Equals(input.TotalRevenues))
                 ) && 
                 (
-                    this.ChangeInNetAssets == input.ChangeInNetAssets ||
-                    (this.ChangeInNetAssets != null &&
-                    this.ChangeInNetAssets.Equals(input.ChangeInNetAssets))
+                    ChangeInNetAssets == input.ChangeInNetAssets ||
+                    (ChangeInNetAssets != null &&
+                    ChangeInNetAssets.Equals(input.ChangeInNetAssets))
                 ) && 
                 (
-                    this.NonSpendableGeneralFundBalance == input.NonSpendableGeneralFundBalance ||
-                    (this.NonSpendableGeneralFundBalance != null &&
-                    this.NonSpendableGeneralFundBalance.Equals(input.NonSpendableGeneralFundBalance))
+                    NonSpendableGeneralFundBalance == input.NonSpendableGeneralFundBalance ||
+                    (NonSpendableGeneralFundBalance != null &&
+                    NonSpendableGeneralFundBalance.Equals(input.NonSpendableGeneralFundBalance))
                 ) && 
                 (
-                    this.RestrictedGeneralFundBalance == input.RestrictedGeneralFundBalance ||
-                    (this.RestrictedGeneralFundBalance != null &&
-                    this.RestrictedGeneralFundBalance.Equals(input.RestrictedGeneralFundBalance))
+                    RestrictedGeneralFundBalance == input.RestrictedGeneralFundBalance ||
+                    (RestrictedGeneralFundBalance != null &&
+                    RestrictedGeneralFundBalance.Equals(input.RestrictedGeneralFundBalance))
                 ) && 
                 (
-                    this.CommittedGeneralFundBalance == input.CommittedGeneralFundBalance ||
-                    (this.CommittedGeneralFundBalance != null &&
-                    this.CommittedGeneralFundBalance.Equals(input.CommittedGeneralFundBalance))
+                    CommittedGeneralFundBalance == input.CommittedGeneralFundBalance ||
+                    (CommittedGeneralFundBalance != null &&
+                    CommittedGeneralFundBalance.Equals(input.CommittedGeneralFundBalance))
                 ) && 
                 (
-                    this.UnassignedGeneralFundBalance == input.UnassignedGeneralFundBalance ||
-                    (this.UnassignedGeneralFundBalance != null &&
-                    this.UnassignedGeneralFundBalance.Equals(input.UnassignedGeneralFundBalance))
+                    UnassignedGeneralFundBalance == input.UnassignedGeneralFundBalance ||
+                    (UnassignedGeneralFundBalance != null &&
+                    UnassignedGeneralFundBalance.Equals(input.UnassignedGeneralFundBalance))
                 ) && 
                 (
-                    this.AssignedGeneralFundBalance == input.AssignedGeneralFundBalance ||
-                    (this.AssignedGeneralFundBalance != null &&
-                    this.AssignedGeneralFundBalance.Equals(input.AssignedGeneralFundBalance))
+                    AssignedGeneralFundBalance == input.AssignedGeneralFundBalance ||
+                    (AssignedGeneralFundBalance != null &&
+                    AssignedGeneralFundBalance.Equals(input.AssignedGeneralFundBalance))
                 ) && 
                 (
-                    this.TotalGeneralFundBalance == input.TotalGeneralFundBalance ||
-                    (this.TotalGeneralFundBalance != null &&
-                    this.TotalGeneralFundBalance.Equals(input.TotalGeneralFundBalance))
+                    TotalGeneralFundBalance == input.TotalGeneralFundBalance ||
+                    (TotalGeneralFundBalance != null &&
+                    TotalGeneralFundBalance.Equals(input.TotalGeneralFundBalance))
                 ) && 
                 (
-                    this.NonSpendableGovernmentalFundBalance == input.NonSpendableGovernmentalFundBalance ||
-                    (this.NonSpendableGovernmentalFundBalance != null &&
-                    this.NonSpendableGovernmentalFundBalance.Equals(input.NonSpendableGovernmentalFundBalance))
+                    NonSpendableGovernmentalFundBalance == input.NonSpendableGovernmentalFundBalance ||
+                    (NonSpendableGovernmentalFundBalance != null &&
+                    NonSpendableGovernmentalFundBalance.Equals(input.NonSpendableGovernmentalFundBalance))
                 ) && 
                 (
-                    this.RestrictedGovernmentalFundBalance == input.RestrictedGovernmentalFundBalance ||
-                    (this.RestrictedGovernmentalFundBalance != null &&
-                    this.RestrictedGovernmentalFundBalance.Equals(input.RestrictedGovernmentalFundBalance))
+                    RestrictedGovernmentalFundBalance == input.RestrictedGovernmentalFundBalance ||
+                    (RestrictedGovernmentalFundBalance != null &&
+                    RestrictedGovernmentalFundBalance.Equals(input.RestrictedGovernmentalFundBalance))
                 ) && 
                 (
-                    this.CommittedGovernmentalFundBalance == input.CommittedGovernmentalFundBalance ||
-                    (this.CommittedGovernmentalFundBalance != null &&
-                    this.CommittedGovernmentalFundBalance.Equals(input.CommittedGovernmentalFundBalance))
+                    CommittedGovernmentalFundBalance == input.CommittedGovernmentalFundBalance ||
+                    (CommittedGovernmentalFundBalance != null &&
+                    CommittedGovernmentalFundBalance.Equals(input.CommittedGovernmentalFundBalance))
                 ) && 
                 (
-                    this.UnassignedGovernmentalFundBalance == input.UnassignedGovernmentalFundBalance ||
-                    (this.UnassignedGovernmentalFundBalance != null &&
-                    this.UnassignedGovernmentalFundBalance.Equals(input.UnassignedGovernmentalFundBalance))
+                    UnassignedGovernmentalFundBalance == input.UnassignedGovernmentalFundBalance ||
+                    (UnassignedGovernmentalFundBalance != null &&
+                    UnassignedGovernmentalFundBalance.Equals(input.UnassignedGovernmentalFundBalance))
                 ) && 
                 (
-                    this.AssignedGovernmentalFundBalance == input.AssignedGovernmentalFundBalance ||
-                    (this.AssignedGovernmentalFundBalance != null &&
-                    this.AssignedGovernmentalFundBalance.Equals(input.AssignedGovernmentalFundBalance))
+                    AssignedGovernmentalFundBalance == input.AssignedGovernmentalFundBalance ||
+                    (AssignedGovernmentalFundBalance != null &&
+                    AssignedGovernmentalFundBalance.Equals(input.AssignedGovernmentalFundBalance))
                 ) && 
                 (
-                    this.TotalGovernmentalFundBalance == input.TotalGovernmentalFundBalance ||
-                    (this.TotalGovernmentalFundBalance != null &&
-                    this.TotalGovernmentalFundBalance.Equals(input.TotalGovernmentalFundBalance))
+                    TotalGovernmentalFundBalance == input.TotalGovernmentalFundBalance ||
+                    (TotalGovernmentalFundBalance != null &&
+                    TotalGovernmentalFundBalance.Equals(input.TotalGovernmentalFundBalance))
                 ) && 
                 (
-                    this.GeneralFundRevenues == input.GeneralFundRevenues ||
-                    (this.GeneralFundRevenues != null &&
-                    this.GeneralFundRevenues.Equals(input.GeneralFundRevenues))
+                    GeneralFundRevenues == input.GeneralFundRevenues ||
+                    (GeneralFundRevenues != null &&
+                    GeneralFundRevenues.Equals(input.GeneralFundRevenues))
                 ) && 
                 (
-                    this.GeneralFundExpenditures == input.GeneralFundExpenditures ||
-                    (this.GeneralFundExpenditures != null &&
-                    this.GeneralFundExpenditures.Equals(input.GeneralFundExpenditures))
+                    GeneralFundExpenditures == input.GeneralFundExpenditures ||
+                    (GeneralFundExpenditures != null &&
+                    GeneralFundExpenditures.Equals(input.GeneralFundExpenditures))
                 ) && 
                 (
-                    this.GeneralFundRevenuesOverUnderExpenditure == input.GeneralFundRevenuesOverUnderExpenditure ||
-                    (this.GeneralFundRevenuesOverUnderExpenditure != null &&
-                    this.GeneralFundRevenuesOverUnderExpenditure.Equals(input.GeneralFundRevenuesOverUnderExpenditure))
+                    GeneralFundRevenuesOverUnderExpenditure == input.GeneralFundRevenuesOverUnderExpenditure ||
+                    (GeneralFundRevenuesOverUnderExpenditure != null &&
+                    GeneralFundRevenuesOverUnderExpenditure.Equals(input.GeneralFundRevenuesOverUnderExpenditure))
                 ) && 
                 (
-                    this.GovernmentalFundRevenues == input.GovernmentalFundRevenues ||
-                    (this.GovernmentalFundRevenues != null &&
-                    this.GovernmentalFundRevenues.Equals(input.GovernmentalFundRevenues))
+                    GovernmentalFundRevenues == input.GovernmentalFundRevenues ||
+                    (GovernmentalFundRevenues != null &&
+                    GovernmentalFundRevenues.Equals(input.GovernmentalFundRevenues))
                 ) && 
                 (
-                    this.GovernmentalFundExpenditures == input.GovernmentalFundExpenditures ||
-                    (this.GovernmentalFundExpenditures != null &&
-                    this.GovernmentalFundExpenditures.Equals(input.GovernmentalFundExpenditures))
+                    GovernmentalFundExpenditures == input.GovernmentalFundExpenditures ||
+                    (GovernmentalFundExpenditures != null &&
+                    GovernmentalFundExpenditures.Equals(input.GovernmentalFundExpenditures))
                 ) && 
                 (
-                    this.GovernmentalFundRevenuesOverUnderExpenditure == input.GovernmentalFundRevenuesOverUnderExpenditure ||
-                    (this.GovernmentalFundRevenuesOverUnderExpenditure != null &&
-                    this.GovernmentalFundRevenuesOverUnderExpenditure.Equals(input.GovernmentalFundRevenuesOverUnderExpenditure))
+                    GovernmentalFundRevenuesOverUnderExpenditure == input.GovernmentalFundRevenuesOverUnderExpenditure ||
+                    (GovernmentalFundRevenuesOverUnderExpenditure != null &&
+                    GovernmentalFundRevenuesOverUnderExpenditure.Equals(input.GovernmentalFundRevenuesOverUnderExpenditure))
                 );
         }
 
@@ -712,90 +712,90 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.FiscalYear != null)
-                    hashCode = hashCode * 59 + this.FiscalYear.GetHashCode();
-                if (this.CurrentAssets != null)
-                    hashCode = hashCode * 59 + this.CurrentAssets.GetHashCode();
-                if (this.NonCurrentAssets != null)
-                    hashCode = hashCode * 59 + this.NonCurrentAssets.GetHashCode();
-                if (this.DeferredOutflows != null)
-                    hashCode = hashCode * 59 + this.DeferredOutflows.GetHashCode();
-                if (this.TotalAssets != null)
-                    hashCode = hashCode * 59 + this.TotalAssets.GetHashCode();
-                if (this.TotalAssetsPlusDeferredOutflows != null)
-                    hashCode = hashCode * 59 + this.TotalAssetsPlusDeferredOutflows.GetHashCode();
-                if (this.CurrentLiabilities != null)
-                    hashCode = hashCode * 59 + this.CurrentLiabilities.GetHashCode();
-                if (this.CurrentPortionOfLongTermDebt != null)
-                    hashCode = hashCode * 59 + this.CurrentPortionOfLongTermDebt.GetHashCode();
-                if (this.NetPensionLiability != null)
-                    hashCode = hashCode * 59 + this.NetPensionLiability.GetHashCode();
-                if (this.NetOpebLiability != null)
-                    hashCode = hashCode * 59 + this.NetOpebLiability.GetHashCode();
-                if (this.AllOtherLongTermDebt != null)
-                    hashCode = hashCode * 59 + this.AllOtherLongTermDebt.GetHashCode();
-                if (this.TotalLiabilities != null)
-                    hashCode = hashCode * 59 + this.TotalLiabilities.GetHashCode();
-                if (this.DeferredInflows != null)
-                    hashCode = hashCode * 59 + this.DeferredInflows.GetHashCode();
-                if (this.TotalLiabilitiesPlusDeferredInflows != null)
-                    hashCode = hashCode * 59 + this.TotalLiabilitiesPlusDeferredInflows.GetHashCode();
-                if (this.TotalNetPosition != null)
-                    hashCode = hashCode * 59 + this.TotalNetPosition.GetHashCode();
-                if (this.TotalUnrestrictedNetPosition != null)
-                    hashCode = hashCode * 59 + this.TotalUnrestrictedNetPosition.GetHashCode();
-                if (this.TotalExpenses != null)
-                    hashCode = hashCode * 59 + this.TotalExpenses.GetHashCode();
-                if (this.ChargesForServices != null)
-                    hashCode = hashCode * 59 + this.ChargesForServices.GetHashCode();
-                if (this.OperatingGrantsAndContributions != null)
-                    hashCode = hashCode * 59 + this.OperatingGrantsAndContributions.GetHashCode();
-                if (this.CapitalGrantsAndContributions != null)
-                    hashCode = hashCode * 59 + this.CapitalGrantsAndContributions.GetHashCode();
-                if (this.GeneralRevenues != null)
-                    hashCode = hashCode * 59 + this.GeneralRevenues.GetHashCode();
-                if (this.OtherRevenues != null)
-                    hashCode = hashCode * 59 + this.OtherRevenues.GetHashCode();
-                if (this.TotalRevenues != null)
-                    hashCode = hashCode * 59 + this.TotalRevenues.GetHashCode();
-                if (this.ChangeInNetAssets != null)
-                    hashCode = hashCode * 59 + this.ChangeInNetAssets.GetHashCode();
-                if (this.NonSpendableGeneralFundBalance != null)
-                    hashCode = hashCode * 59 + this.NonSpendableGeneralFundBalance.GetHashCode();
-                if (this.RestrictedGeneralFundBalance != null)
-                    hashCode = hashCode * 59 + this.RestrictedGeneralFundBalance.GetHashCode();
-                if (this.CommittedGeneralFundBalance != null)
-                    hashCode = hashCode * 59 + this.CommittedGeneralFundBalance.GetHashCode();
-                if (this.UnassignedGeneralFundBalance != null)
-                    hashCode = hashCode * 59 + this.UnassignedGeneralFundBalance.GetHashCode();
-                if (this.AssignedGeneralFundBalance != null)
-                    hashCode = hashCode * 59 + this.AssignedGeneralFundBalance.GetHashCode();
-                if (this.TotalGeneralFundBalance != null)
-                    hashCode = hashCode * 59 + this.TotalGeneralFundBalance.GetHashCode();
-                if (this.NonSpendableGovernmentalFundBalance != null)
-                    hashCode = hashCode * 59 + this.NonSpendableGovernmentalFundBalance.GetHashCode();
-                if (this.RestrictedGovernmentalFundBalance != null)
-                    hashCode = hashCode * 59 + this.RestrictedGovernmentalFundBalance.GetHashCode();
-                if (this.CommittedGovernmentalFundBalance != null)
-                    hashCode = hashCode * 59 + this.CommittedGovernmentalFundBalance.GetHashCode();
-                if (this.UnassignedGovernmentalFundBalance != null)
-                    hashCode = hashCode * 59 + this.UnassignedGovernmentalFundBalance.GetHashCode();
-                if (this.AssignedGovernmentalFundBalance != null)
-                    hashCode = hashCode * 59 + this.AssignedGovernmentalFundBalance.GetHashCode();
-                if (this.TotalGovernmentalFundBalance != null)
-                    hashCode = hashCode * 59 + this.TotalGovernmentalFundBalance.GetHashCode();
-                if (this.GeneralFundRevenues != null)
-                    hashCode = hashCode * 59 + this.GeneralFundRevenues.GetHashCode();
-                if (this.GeneralFundExpenditures != null)
-                    hashCode = hashCode * 59 + this.GeneralFundExpenditures.GetHashCode();
-                if (this.GeneralFundRevenuesOverUnderExpenditure != null)
-                    hashCode = hashCode * 59 + this.GeneralFundRevenuesOverUnderExpenditure.GetHashCode();
-                if (this.GovernmentalFundRevenues != null)
-                    hashCode = hashCode * 59 + this.GovernmentalFundRevenues.GetHashCode();
-                if (this.GovernmentalFundExpenditures != null)
-                    hashCode = hashCode * 59 + this.GovernmentalFundExpenditures.GetHashCode();
-                if (this.GovernmentalFundRevenuesOverUnderExpenditure != null)
-                    hashCode = hashCode * 59 + this.GovernmentalFundRevenuesOverUnderExpenditure.GetHashCode();
+                if (FiscalYear != null)
+                    hashCode = hashCode * 59 + FiscalYear.GetHashCode();
+                if (CurrentAssets != null)
+                    hashCode = hashCode * 59 + CurrentAssets.GetHashCode();
+                if (NonCurrentAssets != null)
+                    hashCode = hashCode * 59 + NonCurrentAssets.GetHashCode();
+                if (DeferredOutflows != null)
+                    hashCode = hashCode * 59 + DeferredOutflows.GetHashCode();
+                if (TotalAssets != null)
+                    hashCode = hashCode * 59 + TotalAssets.GetHashCode();
+                if (TotalAssetsPlusDeferredOutflows != null)
+                    hashCode = hashCode * 59 + TotalAssetsPlusDeferredOutflows.GetHashCode();
+                if (CurrentLiabilities != null)
+                    hashCode = hashCode * 59 + CurrentLiabilities.GetHashCode();
+                if (CurrentPortionOfLongTermDebt != null)
+                    hashCode = hashCode * 59 + CurrentPortionOfLongTermDebt.GetHashCode();
+                if (NetPensionLiability != null)
+                    hashCode = hashCode * 59 + NetPensionLiability.GetHashCode();
+                if (NetOpebLiability != null)
+                    hashCode = hashCode * 59 + NetOpebLiability.GetHashCode();
+                if (AllOtherLongTermDebt != null)
+                    hashCode = hashCode * 59 + AllOtherLongTermDebt.GetHashCode();
+                if (TotalLiabilities != null)
+                    hashCode = hashCode * 59 + TotalLiabilities.GetHashCode();
+                if (DeferredInflows != null)
+                    hashCode = hashCode * 59 + DeferredInflows.GetHashCode();
+                if (TotalLiabilitiesPlusDeferredInflows != null)
+                    hashCode = hashCode * 59 + TotalLiabilitiesPlusDeferredInflows.GetHashCode();
+                if (TotalNetPosition != null)
+                    hashCode = hashCode * 59 + TotalNetPosition.GetHashCode();
+                if (TotalUnrestrictedNetPosition != null)
+                    hashCode = hashCode * 59 + TotalUnrestrictedNetPosition.GetHashCode();
+                if (TotalExpenses != null)
+                    hashCode = hashCode * 59 + TotalExpenses.GetHashCode();
+                if (ChargesForServices != null)
+                    hashCode = hashCode * 59 + ChargesForServices.GetHashCode();
+                if (OperatingGrantsAndContributions != null)
+                    hashCode = hashCode * 59 + OperatingGrantsAndContributions.GetHashCode();
+                if (CapitalGrantsAndContributions != null)
+                    hashCode = hashCode * 59 + CapitalGrantsAndContributions.GetHashCode();
+                if (GeneralRevenues != null)
+                    hashCode = hashCode * 59 + GeneralRevenues.GetHashCode();
+                if (OtherRevenues != null)
+                    hashCode = hashCode * 59 + OtherRevenues.GetHashCode();
+                if (TotalRevenues != null)
+                    hashCode = hashCode * 59 + TotalRevenues.GetHashCode();
+                if (ChangeInNetAssets != null)
+                    hashCode = hashCode * 59 + ChangeInNetAssets.GetHashCode();
+                if (NonSpendableGeneralFundBalance != null)
+                    hashCode = hashCode * 59 + NonSpendableGeneralFundBalance.GetHashCode();
+                if (RestrictedGeneralFundBalance != null)
+                    hashCode = hashCode * 59 + RestrictedGeneralFundBalance.GetHashCode();
+                if (CommittedGeneralFundBalance != null)
+                    hashCode = hashCode * 59 + CommittedGeneralFundBalance.GetHashCode();
+                if (UnassignedGeneralFundBalance != null)
+                    hashCode = hashCode * 59 + UnassignedGeneralFundBalance.GetHashCode();
+                if (AssignedGeneralFundBalance != null)
+                    hashCode = hashCode * 59 + AssignedGeneralFundBalance.GetHashCode();
+                if (TotalGeneralFundBalance != null)
+                    hashCode = hashCode * 59 + TotalGeneralFundBalance.GetHashCode();
+                if (NonSpendableGovernmentalFundBalance != null)
+                    hashCode = hashCode * 59 + NonSpendableGovernmentalFundBalance.GetHashCode();
+                if (RestrictedGovernmentalFundBalance != null)
+                    hashCode = hashCode * 59 + RestrictedGovernmentalFundBalance.GetHashCode();
+                if (CommittedGovernmentalFundBalance != null)
+                    hashCode = hashCode * 59 + CommittedGovernmentalFundBalance.GetHashCode();
+                if (UnassignedGovernmentalFundBalance != null)
+                    hashCode = hashCode * 59 + UnassignedGovernmentalFundBalance.GetHashCode();
+                if (AssignedGovernmentalFundBalance != null)
+                    hashCode = hashCode * 59 + AssignedGovernmentalFundBalance.GetHashCode();
+                if (TotalGovernmentalFundBalance != null)
+                    hashCode = hashCode * 59 + TotalGovernmentalFundBalance.GetHashCode();
+                if (GeneralFundRevenues != null)
+                    hashCode = hashCode * 59 + GeneralFundRevenues.GetHashCode();
+                if (GeneralFundExpenditures != null)
+                    hashCode = hashCode * 59 + GeneralFundExpenditures.GetHashCode();
+                if (GeneralFundRevenuesOverUnderExpenditure != null)
+                    hashCode = hashCode * 59 + GeneralFundRevenuesOverUnderExpenditure.GetHashCode();
+                if (GovernmentalFundRevenues != null)
+                    hashCode = hashCode * 59 + GovernmentalFundRevenues.GetHashCode();
+                if (GovernmentalFundExpenditures != null)
+                    hashCode = hashCode * 59 + GovernmentalFundExpenditures.GetHashCode();
+                if (GovernmentalFundRevenuesOverUnderExpenditure != null)
+                    hashCode = hashCode * 59 + GovernmentalFundRevenuesOverUnderExpenditure.GetHashCode();
                 return hashCode;
             }
         }
@@ -805,7 +805,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

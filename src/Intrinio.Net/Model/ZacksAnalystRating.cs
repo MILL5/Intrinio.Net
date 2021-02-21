@@ -158,7 +158,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ZacksAnalystRating);
+            return Equals(input as ZacksAnalystRating);
         }
 
         /// <summary>
@@ -173,54 +173,54 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
+                    Date == input.Date ||
+                    (Date != null &&
+                    Date.Equals(input.Date))
                 ) && 
                 (
-                    this.Mean == input.Mean ||
-                    (this.Mean != null &&
-                    this.Mean.Equals(input.Mean))
+                    Mean == input.Mean ||
+                    (Mean != null &&
+                    Mean.Equals(input.Mean))
                 ) && 
                 (
-                    this.StrongBuys == input.StrongBuys ||
-                    (this.StrongBuys != null &&
-                    this.StrongBuys.Equals(input.StrongBuys))
+                    StrongBuys == input.StrongBuys ||
+                    (StrongBuys != null &&
+                    StrongBuys.Equals(input.StrongBuys))
                 ) && 
                 (
-                    this.Buys == input.Buys ||
-                    (this.Buys != null &&
-                    this.Buys.Equals(input.Buys))
+                    Buys == input.Buys ||
+                    (Buys != null &&
+                    Buys.Equals(input.Buys))
                 ) && 
                 (
-                    this.Holds == input.Holds ||
-                    (this.Holds != null &&
-                    this.Holds.Equals(input.Holds))
+                    Holds == input.Holds ||
+                    (Holds != null &&
+                    Holds.Equals(input.Holds))
                 ) && 
                 (
-                    this.Sells == input.Sells ||
-                    (this.Sells != null &&
-                    this.Sells.Equals(input.Sells))
+                    Sells == input.Sells ||
+                    (Sells != null &&
+                    Sells.Equals(input.Sells))
                 ) && 
                 (
-                    this.StrongSells == input.StrongSells ||
-                    (this.StrongSells != null &&
-                    this.StrongSells.Equals(input.StrongSells))
+                    StrongSells == input.StrongSells ||
+                    (StrongSells != null &&
+                    StrongSells.Equals(input.StrongSells))
                 ) && 
                 (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
+                    Total == input.Total ||
+                    (Total != null &&
+                    Total.Equals(input.Total))
                 ) && 
                 (
-                    this.Security == input.Security ||
-                    (this.Security != null &&
-                    this.Security.Equals(input.Security))
+                    Security == input.Security ||
+                    (Security != null &&
+                    Security.Equals(input.Security))
                 );
         }
 
@@ -233,26 +233,26 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.Mean != null)
-                    hashCode = hashCode * 59 + this.Mean.GetHashCode();
-                if (this.StrongBuys != null)
-                    hashCode = hashCode * 59 + this.StrongBuys.GetHashCode();
-                if (this.Buys != null)
-                    hashCode = hashCode * 59 + this.Buys.GetHashCode();
-                if (this.Holds != null)
-                    hashCode = hashCode * 59 + this.Holds.GetHashCode();
-                if (this.Sells != null)
-                    hashCode = hashCode * 59 + this.Sells.GetHashCode();
-                if (this.StrongSells != null)
-                    hashCode = hashCode * 59 + this.StrongSells.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Security != null)
-                    hashCode = hashCode * 59 + this.Security.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (Date != null)
+                    hashCode = hashCode * 59 + Date.GetHashCode();
+                if (Mean != null)
+                    hashCode = hashCode * 59 + Mean.GetHashCode();
+                if (StrongBuys != null)
+                    hashCode = hashCode * 59 + StrongBuys.GetHashCode();
+                if (Buys != null)
+                    hashCode = hashCode * 59 + Buys.GetHashCode();
+                if (Holds != null)
+                    hashCode = hashCode * 59 + Holds.GetHashCode();
+                if (Sells != null)
+                    hashCode = hashCode * 59 + Sells.GetHashCode();
+                if (StrongSells != null)
+                    hashCode = hashCode * 59 + StrongSells.GetHashCode();
+                if (Total != null)
+                    hashCode = hashCode * 59 + Total.GetHashCode();
+                if (Security != null)
+                    hashCode = hashCode * 59 + Security.GetHashCode();
                 return hashCode;
             }
         }
@@ -262,7 +262,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

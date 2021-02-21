@@ -1,13 +1,10 @@
-
-
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text.RegularExpressions;
-using RestSharp;
-using Intrinio.Net.Client;
-using Intrinio.Net.Model;
 
 namespace Intrinio.Net.Api
 {
@@ -23,7 +20,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -46,7 +43,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -68,7 +65,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>Municipality</returns>
         Municipality GetMunicipalityById (string id);
@@ -79,7 +76,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>ApiResponse of Municipality</returns>
         ApiResponse<Municipality> GetMunicipalityByIdWithHttpInfo (string id);
@@ -89,7 +86,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns financial statement data for the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>ApiResponseMunicipalitiyFinancials</returns>
@@ -101,7 +98,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns financial statement data for the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>ApiResponse of ApiResponseMunicipalitiyFinancials</returns>
@@ -114,7 +111,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -137,7 +134,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -159,7 +156,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>Task of Municipality</returns>
         System.Threading.Tasks.Task<Municipality> GetMunicipalityByIdAsync (string id);
@@ -170,7 +167,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>Task of ApiResponse (Municipality)</returns>
         System.Threading.Tasks.Task<ApiResponse<Municipality>> GetMunicipalityByIdAsyncWithHttpInfo (string id);
@@ -180,7 +177,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns financial statement data for the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>Task of ApiResponseMunicipalitiyFinancials</returns>
@@ -192,7 +189,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns financial statement data for the Municipality with the given ID
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>Task of ApiResponse (ApiResponseMunicipalitiyFinancials)</returns>
@@ -205,17 +202,17 @@ namespace Intrinio.Net.Api
     /// </summary>
     public partial class MunicipalityApi : IMunicipalityApi
     {
-        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MunicipalityApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public MunicipalityApi(String basePath)
+        public MunicipalityApi(string basePath)
         {
-            this.Configuration = new Configuration { BasePath = basePath };
+            Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -227,20 +224,20 @@ namespace Intrinio.Net.Api
         public MunicipalityApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = Configuration.Default;
+                Configuration = Configuration.Default;
             else
-                this.Configuration = configuration;
+                Configuration = configuration;
 
-            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
-            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+            return Configuration.ApiClient.RestClient.BaseUrl.ToString();
         }
 
         /// <summary>
@@ -248,7 +245,7 @@ namespace Intrinio.Net.Api
         /// </summary>
         /// <value>The base path</value>
         [Obsolete("SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             // do nothing
         }
@@ -262,7 +259,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -280,9 +277,9 @@ namespace Intrinio.Net.Api
         /// </summary>
         /// <returns>Dictionary of HTTP header</returns>
         [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<String, String> DefaultHeader()
+        public IDictionary<string, string> DefaultHeader()
         {
-            return new ReadOnlyDictionary<string, string>(this.Configuration.DefaultHeader);
+            return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
         }
 
         /// <summary>
@@ -294,13 +291,13 @@ namespace Intrinio.Net.Api
         [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
         public void AddDefaultHeader(string key, string value)
         {
-            this.Configuration.AddDefaultHeader(key, value);
+            Configuration.AddDefaultHeader(key, value);
         }
 
         /// <summary>
         /// All Municipalities Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -324,7 +321,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// All Municipalities Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -339,29 +336,29 @@ namespace Intrinio.Net.Api
         /// <param name="enrollmentLessThan">Return municipalities with an enrollment less than the given number (optional)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseMunicipalities</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseMunicipalities > GetAllMunicipalitiesWithHttpInfo (bool? hasFinancials = null, string governmentName = null, string governmentType = null, string areaName = null, string areaType = null, string city = null, string state = null, decimal? zipcode = null, decimal? populationGreaterThan = null, decimal? populationLessThan = null, decimal? enrollmentGreaterThan = null, decimal? enrollmentLessThan = null, string nextPage = null)
         {
 
             var localVarPath = "/municipalities";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -381,7 +378,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -407,7 +404,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// All Municipalities Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -432,7 +429,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// All Municipalities Returns all Municipalities. When parameters are specified, returns matching municipalities.
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="hasFinancials">Return municipalities with financials (optional)</param>
         /// <param name="governmentName">Return municipalities with a government name matching the given query (optional)</param>
         /// <param name="governmentType">Return municipalities with the given government type (optional)</param>
@@ -451,23 +448,23 @@ namespace Intrinio.Net.Api
         {
 
             var localVarPath = "/municipalities";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -487,7 +484,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -513,7 +510,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Municipality by ID Returns the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>Municipality</returns>
         public Municipality GetMunicipalityById (string id)
@@ -525,11 +522,11 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Municipality by ID Returns the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>ApiResponse of Municipality</returns>
-        
-        
+
+
         public ApiResponse< Municipality > GetMunicipalityByIdWithHttpInfo (string id)
         {
             // verify the required parameter 'id' is set
@@ -537,23 +534,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'id' when calling MunicipalityApi->GetMunicipalityById");
 
             var localVarPath = "/municipalities/{id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -561,7 +558,7 @@ namespace Intrinio.Net.Api
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -587,7 +584,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Municipality by ID Returns the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>Task of Municipality</returns>
         public async System.Threading.Tasks.Task<Municipality> GetMunicipalityByIdAsync (string id)
@@ -600,7 +597,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Municipality by ID Returns the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <returns>Task of ApiResponse (Municipality)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Municipality>> GetMunicipalityByIdAsyncWithHttpInfo (string id)
@@ -610,23 +607,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'id' when calling MunicipalityApi->GetMunicipalityById");
 
             var localVarPath = "/municipalities/{id}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -634,7 +631,7 @@ namespace Intrinio.Net.Api
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -660,7 +657,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Financials for a Municipality Returns financial statement data for the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>ApiResponseMunicipalitiyFinancials</returns>
@@ -673,12 +670,12 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Financials for a Municipality Returns financial statement data for the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>ApiResponse of ApiResponseMunicipalitiyFinancials</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseMunicipalitiyFinancials > GetMunicipalityFinancialsWithHttpInfo (string id, decimal? fiscalYear = null)
         {
             // verify the required parameter 'id' is set
@@ -686,23 +683,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'id' when calling MunicipalityApi->GetMunicipalityFinancials");
 
             var localVarPath = "/municipalities/{id}/financials";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -711,7 +708,7 @@ namespace Intrinio.Net.Api
             if (fiscalYear != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "fiscal_year", fiscalYear)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -737,7 +734,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Financials for a Municipality Returns financial statement data for the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>Task of ApiResponseMunicipalitiyFinancials</returns>
@@ -751,7 +748,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Financials for a Municipality Returns financial statement data for the Municipality with the given ID
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">An Intrinio ID of a Municipality</param>
         /// <param name="fiscalYear">Return financials for the given fiscal year (optional)</param>
         /// <returns>Task of ApiResponse (ApiResponseMunicipalitiyFinancials)</returns>
@@ -762,23 +759,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'id' when calling MunicipalityApi->GetMunicipalityFinancials");
 
             var localVarPath = "/municipalities/{id}/financials";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -787,7 +784,7 @@ namespace Intrinio.Net.Api
             if (fiscalYear != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "fiscal_year", fiscalYear)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }

@@ -137,7 +137,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ETFSummary);
+            return Equals(input as ETFSummary);
         }
 
         /// <summary>
@@ -152,44 +152,44 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Ticker == input.Ticker ||
-                    (this.Ticker != null &&
-                    this.Ticker.Equals(input.Ticker))
+                    Ticker == input.Ticker ||
+                    (Ticker != null &&
+                    Ticker.Equals(input.Ticker))
                 ) && 
                 (
-                    this.FigiTicker == input.FigiTicker ||
-                    (this.FigiTicker != null &&
-                    this.FigiTicker.Equals(input.FigiTicker))
+                    FigiTicker == input.FigiTicker ||
+                    (FigiTicker != null &&
+                    FigiTicker.Equals(input.FigiTicker))
                 ) && 
                 (
-                    this.Ric == input.Ric ||
-                    (this.Ric != null &&
-                    this.Ric.Equals(input.Ric))
+                    Ric == input.Ric ||
+                    (Ric != null &&
+                    Ric.Equals(input.Ric))
                 ) && 
                 (
-                    this.Isin == input.Isin ||
-                    (this.Isin != null &&
-                    this.Isin.Equals(input.Isin))
+                    Isin == input.Isin ||
+                    (Isin != null &&
+                    Isin.Equals(input.Isin))
                 ) && 
                 (
-                    this.Sedol == input.Sedol ||
-                    (this.Sedol != null &&
-                    this.Sedol.Equals(input.Sedol))
+                    Sedol == input.Sedol ||
+                    (Sedol != null &&
+                    Sedol.Equals(input.Sedol))
                 ) && 
                 (
-                    this.ExchangeMic == input.ExchangeMic ||
-                    (this.ExchangeMic != null &&
-                    this.ExchangeMic.Equals(input.ExchangeMic))
+                    ExchangeMic == input.ExchangeMic ||
+                    (ExchangeMic != null &&
+                    ExchangeMic.Equals(input.ExchangeMic))
                 );
         }
 
@@ -202,22 +202,22 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Ticker != null)
-                    hashCode = hashCode * 59 + this.Ticker.GetHashCode();
-                if (this.FigiTicker != null)
-                    hashCode = hashCode * 59 + this.FigiTicker.GetHashCode();
-                if (this.Ric != null)
-                    hashCode = hashCode * 59 + this.Ric.GetHashCode();
-                if (this.Isin != null)
-                    hashCode = hashCode * 59 + this.Isin.GetHashCode();
-                if (this.Sedol != null)
-                    hashCode = hashCode * 59 + this.Sedol.GetHashCode();
-                if (this.ExchangeMic != null)
-                    hashCode = hashCode * 59 + this.ExchangeMic.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (Name != null)
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                if (Ticker != null)
+                    hashCode = hashCode * 59 + Ticker.GetHashCode();
+                if (FigiTicker != null)
+                    hashCode = hashCode * 59 + FigiTicker.GetHashCode();
+                if (Ric != null)
+                    hashCode = hashCode * 59 + Ric.GetHashCode();
+                if (Isin != null)
+                    hashCode = hashCode * 59 + Isin.GetHashCode();
+                if (Sedol != null)
+                    hashCode = hashCode * 59 + Sedol.GetHashCode();
+                if (ExchangeMic != null)
+                    hashCode = hashCode * 59 + ExchangeMic.GetHashCode();
                 return hashCode;
             }
         }
@@ -227,7 +227,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

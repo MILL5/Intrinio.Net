@@ -149,7 +149,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as FilingSummary);
+            return Equals(input as FilingSummary);
         }
 
         /// <summary>
@@ -164,49 +164,49 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.FilingDate == input.FilingDate ||
-                    (this.FilingDate != null &&
-                    this.FilingDate.Equals(input.FilingDate))
+                    FilingDate == input.FilingDate ||
+                    (FilingDate != null &&
+                    FilingDate.Equals(input.FilingDate))
                 ) && 
                 (
-                    this.AcceptedDate == input.AcceptedDate ||
-                    (this.AcceptedDate != null &&
-                    this.AcceptedDate.Equals(input.AcceptedDate))
+                    AcceptedDate == input.AcceptedDate ||
+                    (AcceptedDate != null &&
+                    AcceptedDate.Equals(input.AcceptedDate))
                 ) && 
                 (
-                    this.PeriodEndDate == input.PeriodEndDate ||
-                    (this.PeriodEndDate != null &&
-                    this.PeriodEndDate.Equals(input.PeriodEndDate))
+                    PeriodEndDate == input.PeriodEndDate ||
+                    (PeriodEndDate != null &&
+                    PeriodEndDate.Equals(input.PeriodEndDate))
                 ) && 
                 (
-                    this.ReportType == input.ReportType ||
-                    (this.ReportType != null &&
-                    this.ReportType.Equals(input.ReportType))
+                    ReportType == input.ReportType ||
+                    (ReportType != null &&
+                    ReportType.Equals(input.ReportType))
                 ) && 
                 (
-                    this.SecUniqueId == input.SecUniqueId ||
-                    (this.SecUniqueId != null &&
-                    this.SecUniqueId.Equals(input.SecUniqueId))
+                    SecUniqueId == input.SecUniqueId ||
+                    (SecUniqueId != null &&
+                    SecUniqueId.Equals(input.SecUniqueId))
                 ) && 
                 (
-                    this.FilingUrl == input.FilingUrl ||
-                    (this.FilingUrl != null &&
-                    this.FilingUrl.Equals(input.FilingUrl))
+                    FilingUrl == input.FilingUrl ||
+                    (FilingUrl != null &&
+                    FilingUrl.Equals(input.FilingUrl))
                 ) && 
                 (
-                    this.ReportUrl == input.ReportUrl ||
-                    (this.ReportUrl != null &&
-                    this.ReportUrl.Equals(input.ReportUrl))
+                    ReportUrl == input.ReportUrl ||
+                    (ReportUrl != null &&
+                    ReportUrl.Equals(input.ReportUrl))
                 ) && 
                 (
-                    this.InstanceUrl == input.InstanceUrl ||
-                    (this.InstanceUrl != null &&
-                    this.InstanceUrl.Equals(input.InstanceUrl))
+                    InstanceUrl == input.InstanceUrl ||
+                    (InstanceUrl != null &&
+                    InstanceUrl.Equals(input.InstanceUrl))
                 );
         }
 
@@ -219,24 +219,24 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.FilingDate != null)
-                    hashCode = hashCode * 59 + this.FilingDate.GetHashCode();
-                if (this.AcceptedDate != null)
-                    hashCode = hashCode * 59 + this.AcceptedDate.GetHashCode();
-                if (this.PeriodEndDate != null)
-                    hashCode = hashCode * 59 + this.PeriodEndDate.GetHashCode();
-                if (this.ReportType != null)
-                    hashCode = hashCode * 59 + this.ReportType.GetHashCode();
-                if (this.SecUniqueId != null)
-                    hashCode = hashCode * 59 + this.SecUniqueId.GetHashCode();
-                if (this.FilingUrl != null)
-                    hashCode = hashCode * 59 + this.FilingUrl.GetHashCode();
-                if (this.ReportUrl != null)
-                    hashCode = hashCode * 59 + this.ReportUrl.GetHashCode();
-                if (this.InstanceUrl != null)
-                    hashCode = hashCode * 59 + this.InstanceUrl.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (FilingDate != null)
+                    hashCode = hashCode * 59 + FilingDate.GetHashCode();
+                if (AcceptedDate != null)
+                    hashCode = hashCode * 59 + AcceptedDate.GetHashCode();
+                if (PeriodEndDate != null)
+                    hashCode = hashCode * 59 + PeriodEndDate.GetHashCode();
+                if (ReportType != null)
+                    hashCode = hashCode * 59 + ReportType.GetHashCode();
+                if (SecUniqueId != null)
+                    hashCode = hashCode * 59 + SecUniqueId.GetHashCode();
+                if (FilingUrl != null)
+                    hashCode = hashCode * 59 + FilingUrl.GetHashCode();
+                if (ReportUrl != null)
+                    hashCode = hashCode * 59 + ReportUrl.GetHashCode();
+                if (InstanceUrl != null)
+                    hashCode = hashCode * 59 + InstanceUrl.GetHashCode();
                 return hashCode;
             }
         }
@@ -246,7 +246,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

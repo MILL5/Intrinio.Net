@@ -97,7 +97,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BollingerBandsTechnicalValue);
+            return Equals(input as BollingerBandsTechnicalValue);
         }
 
         /// <summary>
@@ -112,24 +112,24 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.DateTime == input.DateTime ||
-                    (this.DateTime != null &&
-                    this.DateTime.Equals(input.DateTime))
+                    DateTime == input.DateTime ||
+                    (DateTime != null &&
+                    DateTime.Equals(input.DateTime))
                 ) && 
                 (
-                    this.LowerBand == input.LowerBand ||
-                    (this.LowerBand != null &&
-                    this.LowerBand.Equals(input.LowerBand))
+                    LowerBand == input.LowerBand ||
+                    (LowerBand != null &&
+                    LowerBand.Equals(input.LowerBand))
                 ) && 
                 (
-                    this.MiddleBand == input.MiddleBand ||
-                    (this.MiddleBand != null &&
-                    this.MiddleBand.Equals(input.MiddleBand))
+                    MiddleBand == input.MiddleBand ||
+                    (MiddleBand != null &&
+                    MiddleBand.Equals(input.MiddleBand))
                 ) && 
                 (
-                    this.UpperBand == input.UpperBand ||
-                    (this.UpperBand != null &&
-                    this.UpperBand.Equals(input.UpperBand))
+                    UpperBand == input.UpperBand ||
+                    (UpperBand != null &&
+                    UpperBand.Equals(input.UpperBand))
                 );
         }
 
@@ -142,14 +142,14 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DateTime != null)
-                    hashCode = hashCode * 59 + this.DateTime.GetHashCode();
-                if (this.LowerBand != null)
-                    hashCode = hashCode * 59 + this.LowerBand.GetHashCode();
-                if (this.MiddleBand != null)
-                    hashCode = hashCode * 59 + this.MiddleBand.GetHashCode();
-                if (this.UpperBand != null)
-                    hashCode = hashCode * 59 + this.UpperBand.GetHashCode();
+                if (DateTime != null)
+                    hashCode = hashCode * 59 + DateTime.GetHashCode();
+                if (LowerBand != null)
+                    hashCode = hashCode * 59 + LowerBand.GetHashCode();
+                if (MiddleBand != null)
+                    hashCode = hashCode * 59 + MiddleBand.GetHashCode();
+                if (UpperBand != null)
+                    hashCode = hashCode * 59 + UpperBand.GetHashCode();
                 return hashCode;
             }
         }
@@ -159,7 +159,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

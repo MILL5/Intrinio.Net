@@ -197,7 +197,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OptionPrice);
+            return Equals(input as OptionPrice);
         }
 
         /// <summary>
@@ -212,74 +212,74 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
+                    Date == input.Date ||
+                    (Date != null &&
+                    Date.Equals(input.Date))
                 ) && 
                 (
-                    this.Close == input.Close ||
-                    (this.Close != null &&
-                    this.Close.Equals(input.Close))
+                    Close == input.Close ||
+                    (Close != null &&
+                    Close.Equals(input.Close))
                 ) && 
                 (
-                    this.CloseBid == input.CloseBid ||
-                    (this.CloseBid != null &&
-                    this.CloseBid.Equals(input.CloseBid))
+                    CloseBid == input.CloseBid ||
+                    (CloseBid != null &&
+                    CloseBid.Equals(input.CloseBid))
                 ) && 
                 (
-                    this.CloseAsk == input.CloseAsk ||
-                    (this.CloseAsk != null &&
-                    this.CloseAsk.Equals(input.CloseAsk))
+                    CloseAsk == input.CloseAsk ||
+                    (CloseAsk != null &&
+                    CloseAsk.Equals(input.CloseAsk))
                 ) && 
                 (
-                    this.Volume == input.Volume ||
-                    (this.Volume != null &&
-                    this.Volume.Equals(input.Volume))
+                    Volume == input.Volume ||
+                    (Volume != null &&
+                    Volume.Equals(input.Volume))
                 ) && 
                 (
-                    this.VolumeBid == input.VolumeBid ||
-                    (this.VolumeBid != null &&
-                    this.VolumeBid.Equals(input.VolumeBid))
+                    VolumeBid == input.VolumeBid ||
+                    (VolumeBid != null &&
+                    VolumeBid.Equals(input.VolumeBid))
                 ) && 
                 (
-                    this.VolumeAsk == input.VolumeAsk ||
-                    (this.VolumeAsk != null &&
-                    this.VolumeAsk.Equals(input.VolumeAsk))
+                    VolumeAsk == input.VolumeAsk ||
+                    (VolumeAsk != null &&
+                    VolumeAsk.Equals(input.VolumeAsk))
                 ) && 
                 (
-                    this.Trades == input.Trades ||
-                    (this.Trades != null &&
-                    this.Trades.Equals(input.Trades))
+                    Trades == input.Trades ||
+                    (Trades != null &&
+                    Trades.Equals(input.Trades))
                 ) && 
                 (
-                    this.OpenInterest == input.OpenInterest ||
-                    (this.OpenInterest != null &&
-                    this.OpenInterest.Equals(input.OpenInterest))
+                    OpenInterest == input.OpenInterest ||
+                    (OpenInterest != null &&
+                    OpenInterest.Equals(input.OpenInterest))
                 ) && 
                 (
-                    this.OpenInterestChange == input.OpenInterestChange ||
-                    (this.OpenInterestChange != null &&
-                    this.OpenInterestChange.Equals(input.OpenInterestChange))
+                    OpenInterestChange == input.OpenInterestChange ||
+                    (OpenInterestChange != null &&
+                    OpenInterestChange.Equals(input.OpenInterestChange))
                 ) && 
                 (
-                    this.NextDayOpenInterest == input.NextDayOpenInterest ||
-                    (this.NextDayOpenInterest != null &&
-                    this.NextDayOpenInterest.Equals(input.NextDayOpenInterest))
+                    NextDayOpenInterest == input.NextDayOpenInterest ||
+                    (NextDayOpenInterest != null &&
+                    NextDayOpenInterest.Equals(input.NextDayOpenInterest))
                 ) && 
                 (
-                    this.ImpliedVolatility == input.ImpliedVolatility ||
-                    (this.ImpliedVolatility != null &&
-                    this.ImpliedVolatility.Equals(input.ImpliedVolatility))
+                    ImpliedVolatility == input.ImpliedVolatility ||
+                    (ImpliedVolatility != null &&
+                    ImpliedVolatility.Equals(input.ImpliedVolatility))
                 ) && 
                 (
-                    this.ImpliedVolatilityChange == input.ImpliedVolatilityChange ||
-                    (this.ImpliedVolatilityChange != null &&
-                    this.ImpliedVolatilityChange.Equals(input.ImpliedVolatilityChange))
+                    ImpliedVolatilityChange == input.ImpliedVolatilityChange ||
+                    (ImpliedVolatilityChange != null &&
+                    ImpliedVolatilityChange.Equals(input.ImpliedVolatilityChange))
                 ) && 
                 (
-                    this.Delta == input.Delta ||
-                    (this.Delta != null &&
-                    this.Delta.Equals(input.Delta))
+                    Delta == input.Delta ||
+                    (Delta != null &&
+                    Delta.Equals(input.Delta))
                 );
         }
 
@@ -292,34 +292,34 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.Close != null)
-                    hashCode = hashCode * 59 + this.Close.GetHashCode();
-                if (this.CloseBid != null)
-                    hashCode = hashCode * 59 + this.CloseBid.GetHashCode();
-                if (this.CloseAsk != null)
-                    hashCode = hashCode * 59 + this.CloseAsk.GetHashCode();
-                if (this.Volume != null)
-                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
-                if (this.VolumeBid != null)
-                    hashCode = hashCode * 59 + this.VolumeBid.GetHashCode();
-                if (this.VolumeAsk != null)
-                    hashCode = hashCode * 59 + this.VolumeAsk.GetHashCode();
-                if (this.Trades != null)
-                    hashCode = hashCode * 59 + this.Trades.GetHashCode();
-                if (this.OpenInterest != null)
-                    hashCode = hashCode * 59 + this.OpenInterest.GetHashCode();
-                if (this.OpenInterestChange != null)
-                    hashCode = hashCode * 59 + this.OpenInterestChange.GetHashCode();
-                if (this.NextDayOpenInterest != null)
-                    hashCode = hashCode * 59 + this.NextDayOpenInterest.GetHashCode();
-                if (this.ImpliedVolatility != null)
-                    hashCode = hashCode * 59 + this.ImpliedVolatility.GetHashCode();
-                if (this.ImpliedVolatilityChange != null)
-                    hashCode = hashCode * 59 + this.ImpliedVolatilityChange.GetHashCode();
-                if (this.Delta != null)
-                    hashCode = hashCode * 59 + this.Delta.GetHashCode();
+                if (Date != null)
+                    hashCode = hashCode * 59 + Date.GetHashCode();
+                if (Close != null)
+                    hashCode = hashCode * 59 + Close.GetHashCode();
+                if (CloseBid != null)
+                    hashCode = hashCode * 59 + CloseBid.GetHashCode();
+                if (CloseAsk != null)
+                    hashCode = hashCode * 59 + CloseAsk.GetHashCode();
+                if (Volume != null)
+                    hashCode = hashCode * 59 + Volume.GetHashCode();
+                if (VolumeBid != null)
+                    hashCode = hashCode * 59 + VolumeBid.GetHashCode();
+                if (VolumeAsk != null)
+                    hashCode = hashCode * 59 + VolumeAsk.GetHashCode();
+                if (Trades != null)
+                    hashCode = hashCode * 59 + Trades.GetHashCode();
+                if (OpenInterest != null)
+                    hashCode = hashCode * 59 + OpenInterest.GetHashCode();
+                if (OpenInterestChange != null)
+                    hashCode = hashCode * 59 + OpenInterestChange.GetHashCode();
+                if (NextDayOpenInterest != null)
+                    hashCode = hashCode * 59 + NextDayOpenInterest.GetHashCode();
+                if (ImpliedVolatility != null)
+                    hashCode = hashCode * 59 + ImpliedVolatility.GetHashCode();
+                if (ImpliedVolatilityChange != null)
+                    hashCode = hashCode * 59 + ImpliedVolatilityChange.GetHashCode();
+                if (Delta != null)
+                    hashCode = hashCode * 59 + Delta.GetHashCode();
                 return hashCode;
             }
         }
@@ -329,7 +329,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

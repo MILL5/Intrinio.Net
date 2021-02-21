@@ -268,7 +268,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ZacksInstitutionalHoldingOwnerDetail);
+            return Equals(input as ZacksInstitutionalHoldingOwnerDetail);
         }
 
         /// <summary>
@@ -283,109 +283,109 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Cik == input.Cik ||
-                    (this.Cik != null &&
-                    this.Cik.Equals(input.Cik))
+                    Cik == input.Cik ||
+                    (Cik != null &&
+                    Cik.Equals(input.Cik))
                 ) && 
                 (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
+                    Address == input.Address ||
+                    (Address != null &&
+                    Address.Equals(input.Address))
                 ) && 
                 (
-                    this.CityState == input.CityState ||
-                    (this.CityState != null &&
-                    this.CityState.Equals(input.CityState))
+                    CityState == input.CityState ||
+                    (CityState != null &&
+                    CityState.Equals(input.CityState))
                 ) && 
                 (
-                    this.LocationCode == input.LocationCode ||
-                    (this.LocationCode != null &&
-                    this.LocationCode.Equals(input.LocationCode))
+                    LocationCode == input.LocationCode ||
+                    (LocationCode != null &&
+                    LocationCode.Equals(input.LocationCode))
                 ) && 
                 (
-                    this.PhoneNumber == input.PhoneNumber ||
-                    (this.PhoneNumber != null &&
-                    this.PhoneNumber.Equals(input.PhoneNumber))
+                    PhoneNumber == input.PhoneNumber ||
+                    (PhoneNumber != null &&
+                    PhoneNumber.Equals(input.PhoneNumber))
                 ) && 
                 (
-                    this.PostalCode == input.PostalCode ||
-                    (this.PostalCode != null &&
-                    this.PostalCode.Equals(input.PostalCode))
+                    PostalCode == input.PostalCode ||
+                    (PostalCode != null &&
+                    PostalCode.Equals(input.PostalCode))
                 ) && 
                 (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
+                    Url == input.Url ||
+                    (Url != null &&
+                    Url.Equals(input.Url))
                 ) && 
                 (
-                    this.InvestmentStyle == input.InvestmentStyle ||
-                    (this.InvestmentStyle != null &&
-                    this.InvestmentStyle.Equals(input.InvestmentStyle))
+                    InvestmentStyle == input.InvestmentStyle ||
+                    (InvestmentStyle != null &&
+                    InvestmentStyle.Equals(input.InvestmentStyle))
                 ) && 
                 (
-                    this.NumberOfHoldings == input.NumberOfHoldings ||
-                    (this.NumberOfHoldings != null &&
-                    this.NumberOfHoldings.Equals(input.NumberOfHoldings))
+                    NumberOfHoldings == input.NumberOfHoldings ||
+                    (NumberOfHoldings != null &&
+                    NumberOfHoldings.Equals(input.NumberOfHoldings))
                 ) && 
                 (
-                    this.TotalHoldingsValue == input.TotalHoldingsValue ||
-                    (this.TotalHoldingsValue != null &&
-                    this.TotalHoldingsValue.Equals(input.TotalHoldingsValue))
+                    TotalHoldingsValue == input.TotalHoldingsValue ||
+                    (TotalHoldingsValue != null &&
+                    TotalHoldingsValue.Equals(input.TotalHoldingsValue))
                 ) && 
                 (
-                    this.PortfolioTurnoverPercent == input.PortfolioTurnoverPercent ||
-                    (this.PortfolioTurnoverPercent != null &&
-                    this.PortfolioTurnoverPercent.Equals(input.PortfolioTurnoverPercent))
+                    PortfolioTurnoverPercent == input.PortfolioTurnoverPercent ||
+                    (PortfolioTurnoverPercent != null &&
+                    PortfolioTurnoverPercent.Equals(input.PortfolioTurnoverPercent))
                 ) && 
                 (
-                    this.IsFund == input.IsFund ||
-                    (this.IsFund != null &&
-                    this.IsFund.Equals(input.IsFund))
+                    IsFund == input.IsFund ||
+                    (IsFund != null &&
+                    IsFund.Equals(input.IsFund))
                 ) && 
                 (
-                    this.FundTicker == input.FundTicker ||
-                    (this.FundTicker != null &&
-                    this.FundTicker.Equals(input.FundTicker))
+                    FundTicker == input.FundTicker ||
+                    (FundTicker != null &&
+                    FundTicker.Equals(input.FundTicker))
                 ) && 
                 (
-                    this.HasFundManager == input.HasFundManager ||
-                    (this.HasFundManager != null &&
-                    this.HasFundManager.Equals(input.HasFundManager))
+                    HasFundManager == input.HasFundManager ||
+                    (HasFundManager != null &&
+                    HasFundManager.Equals(input.HasFundManager))
                 ) && 
                 (
-                    this.FundManagerCity == input.FundManagerCity ||
-                    (this.FundManagerCity != null &&
-                    this.FundManagerCity.Equals(input.FundManagerCity))
+                    FundManagerCity == input.FundManagerCity ||
+                    (FundManagerCity != null &&
+                    FundManagerCity.Equals(input.FundManagerCity))
                 ) && 
                 (
-                    this.FundManagerName == input.FundManagerName ||
-                    (this.FundManagerName != null &&
-                    this.FundManagerName.Equals(input.FundManagerName))
+                    FundManagerName == input.FundManagerName ||
+                    (FundManagerName != null &&
+                    FundManagerName.Equals(input.FundManagerName))
                 ) && 
                 (
-                    this.FundManagerState == input.FundManagerState ||
-                    (this.FundManagerState != null &&
-                    this.FundManagerState.Equals(input.FundManagerState))
+                    FundManagerState == input.FundManagerState ||
+                    (FundManagerState != null &&
+                    FundManagerState.Equals(input.FundManagerState))
                 ) && 
                 (
-                    this.Files13f == input.Files13f ||
-                    (this.Files13f != null &&
-                    this.Files13f.Equals(input.Files13f))
+                    Files13f == input.Files13f ||
+                    (Files13f != null &&
+                    Files13f.Equals(input.Files13f))
                 ) && 
                 (
-                    this.IsEtf == input.IsEtf ||
-                    (this.IsEtf != null &&
-                    this.IsEtf.Equals(input.IsEtf))
+                    IsEtf == input.IsEtf ||
+                    (IsEtf != null &&
+                    IsEtf.Equals(input.IsEtf))
                 ) && 
                 (
-                    this.LastUpdatedOn == input.LastUpdatedOn ||
-                    (this.LastUpdatedOn != null &&
-                    this.LastUpdatedOn.Equals(input.LastUpdatedOn))
+                    LastUpdatedOn == input.LastUpdatedOn ||
+                    (LastUpdatedOn != null &&
+                    LastUpdatedOn.Equals(input.LastUpdatedOn))
                 );
         }
 
@@ -398,48 +398,48 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Cik != null)
-                    hashCode = hashCode * 59 + this.Cik.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.CityState != null)
-                    hashCode = hashCode * 59 + this.CityState.GetHashCode();
-                if (this.LocationCode != null)
-                    hashCode = hashCode * 59 + this.LocationCode.GetHashCode();
-                if (this.PhoneNumber != null)
-                    hashCode = hashCode * 59 + this.PhoneNumber.GetHashCode();
-                if (this.PostalCode != null)
-                    hashCode = hashCode * 59 + this.PostalCode.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.InvestmentStyle != null)
-                    hashCode = hashCode * 59 + this.InvestmentStyle.GetHashCode();
-                if (this.NumberOfHoldings != null)
-                    hashCode = hashCode * 59 + this.NumberOfHoldings.GetHashCode();
-                if (this.TotalHoldingsValue != null)
-                    hashCode = hashCode * 59 + this.TotalHoldingsValue.GetHashCode();
-                if (this.PortfolioTurnoverPercent != null)
-                    hashCode = hashCode * 59 + this.PortfolioTurnoverPercent.GetHashCode();
-                if (this.IsFund != null)
-                    hashCode = hashCode * 59 + this.IsFund.GetHashCode();
-                if (this.FundTicker != null)
-                    hashCode = hashCode * 59 + this.FundTicker.GetHashCode();
-                if (this.HasFundManager != null)
-                    hashCode = hashCode * 59 + this.HasFundManager.GetHashCode();
-                if (this.FundManagerCity != null)
-                    hashCode = hashCode * 59 + this.FundManagerCity.GetHashCode();
-                if (this.FundManagerName != null)
-                    hashCode = hashCode * 59 + this.FundManagerName.GetHashCode();
-                if (this.FundManagerState != null)
-                    hashCode = hashCode * 59 + this.FundManagerState.GetHashCode();
-                if (this.Files13f != null)
-                    hashCode = hashCode * 59 + this.Files13f.GetHashCode();
-                if (this.IsEtf != null)
-                    hashCode = hashCode * 59 + this.IsEtf.GetHashCode();
-                if (this.LastUpdatedOn != null)
-                    hashCode = hashCode * 59 + this.LastUpdatedOn.GetHashCode();
+                if (Name != null)
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                if (Cik != null)
+                    hashCode = hashCode * 59 + Cik.GetHashCode();
+                if (Address != null)
+                    hashCode = hashCode * 59 + Address.GetHashCode();
+                if (CityState != null)
+                    hashCode = hashCode * 59 + CityState.GetHashCode();
+                if (LocationCode != null)
+                    hashCode = hashCode * 59 + LocationCode.GetHashCode();
+                if (PhoneNumber != null)
+                    hashCode = hashCode * 59 + PhoneNumber.GetHashCode();
+                if (PostalCode != null)
+                    hashCode = hashCode * 59 + PostalCode.GetHashCode();
+                if (Url != null)
+                    hashCode = hashCode * 59 + Url.GetHashCode();
+                if (InvestmentStyle != null)
+                    hashCode = hashCode * 59 + InvestmentStyle.GetHashCode();
+                if (NumberOfHoldings != null)
+                    hashCode = hashCode * 59 + NumberOfHoldings.GetHashCode();
+                if (TotalHoldingsValue != null)
+                    hashCode = hashCode * 59 + TotalHoldingsValue.GetHashCode();
+                if (PortfolioTurnoverPercent != null)
+                    hashCode = hashCode * 59 + PortfolioTurnoverPercent.GetHashCode();
+                if (IsFund != null)
+                    hashCode = hashCode * 59 + IsFund.GetHashCode();
+                if (FundTicker != null)
+                    hashCode = hashCode * 59 + FundTicker.GetHashCode();
+                if (HasFundManager != null)
+                    hashCode = hashCode * 59 + HasFundManager.GetHashCode();
+                if (FundManagerCity != null)
+                    hashCode = hashCode * 59 + FundManagerCity.GetHashCode();
+                if (FundManagerName != null)
+                    hashCode = hashCode * 59 + FundManagerName.GetHashCode();
+                if (FundManagerState != null)
+                    hashCode = hashCode * 59 + FundManagerState.GetHashCode();
+                if (Files13f != null)
+                    hashCode = hashCode * 59 + Files13f.GetHashCode();
+                if (IsEtf != null)
+                    hashCode = hashCode * 59 + IsEtf.GetHashCode();
+                if (LastUpdatedOn != null)
+                    hashCode = hashCode * 59 + LastUpdatedOn.GetHashCode();
                 return hashCode;
             }
         }
@@ -449,7 +449,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

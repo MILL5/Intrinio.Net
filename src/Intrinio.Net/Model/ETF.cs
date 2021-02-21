@@ -1252,7 +1252,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ETF);
+            return Equals(input as ETF);
         }
 
         /// <summary>
@@ -1267,599 +1267,599 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Ticker == input.Ticker ||
-                    (this.Ticker != null &&
-                    this.Ticker.Equals(input.Ticker))
+                    Ticker == input.Ticker ||
+                    (Ticker != null &&
+                    Ticker.Equals(input.Ticker))
                 ) && 
                 (
-                    this.FigiTicker == input.FigiTicker ||
-                    (this.FigiTicker != null &&
-                    this.FigiTicker.Equals(input.FigiTicker))
+                    FigiTicker == input.FigiTicker ||
+                    (FigiTicker != null &&
+                    FigiTicker.Equals(input.FigiTicker))
                 ) && 
                 (
-                    this.Ric == input.Ric ||
-                    (this.Ric != null &&
-                    this.Ric.Equals(input.Ric))
+                    Ric == input.Ric ||
+                    (Ric != null &&
+                    Ric.Equals(input.Ric))
                 ) && 
                 (
-                    this.Isin == input.Isin ||
-                    (this.Isin != null &&
-                    this.Isin.Equals(input.Isin))
+                    Isin == input.Isin ||
+                    (Isin != null &&
+                    Isin.Equals(input.Isin))
                 ) && 
                 (
-                    this.Sedol == input.Sedol ||
-                    (this.Sedol != null &&
-                    this.Sedol.Equals(input.Sedol))
+                    Sedol == input.Sedol ||
+                    (Sedol != null &&
+                    Sedol.Equals(input.Sedol))
                 ) && 
                 (
-                    this.ExchangeMic == input.ExchangeMic ||
-                    (this.ExchangeMic != null &&
-                    this.ExchangeMic.Equals(input.ExchangeMic))
+                    ExchangeMic == input.ExchangeMic ||
+                    (ExchangeMic != null &&
+                    ExchangeMic.Equals(input.ExchangeMic))
                 ) && 
                 (
-                    this.Sponsor == input.Sponsor ||
-                    (this.Sponsor != null &&
-                    this.Sponsor.Equals(input.Sponsor))
+                    Sponsor == input.Sponsor ||
+                    (Sponsor != null &&
+                    Sponsor.Equals(input.Sponsor))
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    Type == input.Type ||
+                    (Type != null &&
+                    Type.Equals(input.Type))
                 ) && 
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
+                    Description == input.Description ||
+                    (Description != null &&
+                    Description.Equals(input.Description))
                 ) && 
                 (
-                    this.InceptionDate == input.InceptionDate ||
-                    (this.InceptionDate != null &&
-                    this.InceptionDate.Equals(input.InceptionDate))
+                    InceptionDate == input.InceptionDate ||
+                    (InceptionDate != null &&
+                    InceptionDate.Equals(input.InceptionDate))
                 ) && 
                 (
-                    this.DataChangeDate == input.DataChangeDate ||
-                    (this.DataChangeDate != null &&
-                    this.DataChangeDate.Equals(input.DataChangeDate))
+                    DataChangeDate == input.DataChangeDate ||
+                    (DataChangeDate != null &&
+                    DataChangeDate.Equals(input.DataChangeDate))
                 ) && 
                 (
-                    this.CloseDate == input.CloseDate ||
-                    (this.CloseDate != null &&
-                    this.CloseDate.Equals(input.CloseDate))
+                    CloseDate == input.CloseDate ||
+                    (CloseDate != null &&
+                    CloseDate.Equals(input.CloseDate))
                 ) && 
                 (
-                    this.IsLiveListed == input.IsLiveListed ||
-                    (this.IsLiveListed != null &&
-                    this.IsLiveListed.Equals(input.IsLiveListed))
+                    IsLiveListed == input.IsLiveListed ||
+                    (IsLiveListed != null &&
+                    IsLiveListed.Equals(input.IsLiveListed))
                 ) && 
                 (
-                    this.LegalStructure == input.LegalStructure ||
-                    (this.LegalStructure != null &&
-                    this.LegalStructure.Equals(input.LegalStructure))
+                    LegalStructure == input.LegalStructure ||
+                    (LegalStructure != null &&
+                    LegalStructure.Equals(input.LegalStructure))
                 ) && 
                 (
-                    this.IntradayNavTicker == input.IntradayNavTicker ||
-                    (this.IntradayNavTicker != null &&
-                    this.IntradayNavTicker.Equals(input.IntradayNavTicker))
+                    IntradayNavTicker == input.IntradayNavTicker ||
+                    (IntradayNavTicker != null &&
+                    IntradayNavTicker.Equals(input.IntradayNavTicker))
                 ) && 
                 (
-                    this.PrimaryTicker == input.PrimaryTicker ||
-                    (this.PrimaryTicker != null &&
-                    this.PrimaryTicker.Equals(input.PrimaryTicker))
+                    PrimaryTicker == input.PrimaryTicker ||
+                    (PrimaryTicker != null &&
+                    PrimaryTicker.Equals(input.PrimaryTicker))
                 ) && 
                 (
-                    this.PrimaryTickerCountryCode == input.PrimaryTickerCountryCode ||
-                    (this.PrimaryTickerCountryCode != null &&
-                    this.PrimaryTickerCountryCode.Equals(input.PrimaryTickerCountryCode))
+                    PrimaryTickerCountryCode == input.PrimaryTickerCountryCode ||
+                    (PrimaryTickerCountryCode != null &&
+                    PrimaryTickerCountryCode.Equals(input.PrimaryTickerCountryCode))
                 ) && 
                 (
-                    this.PrimaryListingRegion == input.PrimaryListingRegion ||
-                    (this.PrimaryListingRegion != null &&
-                    this.PrimaryListingRegion.Equals(input.PrimaryListingRegion))
+                    PrimaryListingRegion == input.PrimaryListingRegion ||
+                    (PrimaryListingRegion != null &&
+                    PrimaryListingRegion.Equals(input.PrimaryListingRegion))
                 ) && 
                 (
-                    this.NetExpenseRatio == input.NetExpenseRatio ||
-                    (this.NetExpenseRatio != null &&
-                    this.NetExpenseRatio.Equals(input.NetExpenseRatio))
+                    NetExpenseRatio == input.NetExpenseRatio ||
+                    (NetExpenseRatio != null &&
+                    NetExpenseRatio.Equals(input.NetExpenseRatio))
                 ) && 
                 (
-                    this.AssetClass == input.AssetClass ||
-                    (this.AssetClass != null &&
-                    this.AssetClass.Equals(input.AssetClass))
+                    AssetClass == input.AssetClass ||
+                    (AssetClass != null &&
+                    AssetClass.Equals(input.AssetClass))
                 ) && 
                 (
-                    this.OtherAssetTypes == input.OtherAssetTypes ||
-                    (this.OtherAssetTypes != null &&
-                    this.OtherAssetTypes.Equals(input.OtherAssetTypes))
+                    OtherAssetTypes == input.OtherAssetTypes ||
+                    (OtherAssetTypes != null &&
+                    OtherAssetTypes.Equals(input.OtherAssetTypes))
                 ) && 
                 (
-                    this.MarketCapRange == input.MarketCapRange ||
-                    (this.MarketCapRange != null &&
-                    this.MarketCapRange.Equals(input.MarketCapRange))
+                    MarketCapRange == input.MarketCapRange ||
+                    (MarketCapRange != null &&
+                    MarketCapRange.Equals(input.MarketCapRange))
                 ) && 
                 (
-                    this.HoldsOnlyNyseStocks == input.HoldsOnlyNyseStocks ||
-                    (this.HoldsOnlyNyseStocks != null &&
-                    this.HoldsOnlyNyseStocks.Equals(input.HoldsOnlyNyseStocks))
+                    HoldsOnlyNyseStocks == input.HoldsOnlyNyseStocks ||
+                    (HoldsOnlyNyseStocks != null &&
+                    HoldsOnlyNyseStocks.Equals(input.HoldsOnlyNyseStocks))
                 ) && 
                 (
-                    this.HoldsOnlyNasdaqStocks == input.HoldsOnlyNasdaqStocks ||
-                    (this.HoldsOnlyNasdaqStocks != null &&
-                    this.HoldsOnlyNasdaqStocks.Equals(input.HoldsOnlyNasdaqStocks))
+                    HoldsOnlyNasdaqStocks == input.HoldsOnlyNasdaqStocks ||
+                    (HoldsOnlyNasdaqStocks != null &&
+                    HoldsOnlyNasdaqStocks.Equals(input.HoldsOnlyNasdaqStocks))
                 ) && 
                 (
-                    this.GrowthValueTilt == input.GrowthValueTilt ||
-                    (this.GrowthValueTilt != null &&
-                    this.GrowthValueTilt.Equals(input.GrowthValueTilt))
+                    GrowthValueTilt == input.GrowthValueTilt ||
+                    (GrowthValueTilt != null &&
+                    GrowthValueTilt.Equals(input.GrowthValueTilt))
                 ) && 
                 (
-                    this.GrowthType == input.GrowthType ||
-                    (this.GrowthType != null &&
-                    this.GrowthType.Equals(input.GrowthType))
+                    GrowthType == input.GrowthType ||
+                    (GrowthType != null &&
+                    GrowthType.Equals(input.GrowthType))
                 ) && 
                 (
-                    this.ValueType == input.ValueType ||
-                    (this.ValueType != null &&
-                    this.ValueType.Equals(input.ValueType))
+                    ValueType == input.ValueType ||
+                    (ValueType != null &&
+                    ValueType.Equals(input.ValueType))
                 ) && 
                 (
-                    this.Sector == input.Sector ||
-                    (this.Sector != null &&
-                    this.Sector.Equals(input.Sector))
+                    Sector == input.Sector ||
+                    (Sector != null &&
+                    Sector.Equals(input.Sector))
                 ) && 
                 (
-                    this.Industry == input.Industry ||
-                    (this.Industry != null &&
-                    this.Industry.Equals(input.Industry))
+                    Industry == input.Industry ||
+                    (Industry != null &&
+                    Industry.Equals(input.Industry))
                 ) && 
                 (
-                    this.SubIndustry == input.SubIndustry ||
-                    (this.SubIndustry != null &&
-                    this.SubIndustry.Equals(input.SubIndustry))
+                    SubIndustry == input.SubIndustry ||
+                    (SubIndustry != null &&
+                    SubIndustry.Equals(input.SubIndustry))
                 ) && 
                 (
-                    this.CrossSectorTheme == input.CrossSectorTheme ||
-                    (this.CrossSectorTheme != null &&
-                    this.CrossSectorTheme.Equals(input.CrossSectorTheme))
+                    CrossSectorTheme == input.CrossSectorTheme ||
+                    (CrossSectorTheme != null &&
+                    CrossSectorTheme.Equals(input.CrossSectorTheme))
                 ) && 
                 (
-                    this.NaturalResourcesType == input.NaturalResourcesType ||
-                    (this.NaturalResourcesType != null &&
-                    this.NaturalResourcesType.Equals(input.NaturalResourcesType))
+                    NaturalResourcesType == input.NaturalResourcesType ||
+                    (NaturalResourcesType != null &&
+                    NaturalResourcesType.Equals(input.NaturalResourcesType))
                 ) && 
                 (
-                    this.ExcludesFinancials == input.ExcludesFinancials ||
-                    (this.ExcludesFinancials != null &&
-                    this.ExcludesFinancials.Equals(input.ExcludesFinancials))
+                    ExcludesFinancials == input.ExcludesFinancials ||
+                    (ExcludesFinancials != null &&
+                    ExcludesFinancials.Equals(input.ExcludesFinancials))
                 ) && 
                 (
-                    this.ExcludesTechnology == input.ExcludesTechnology ||
-                    (this.ExcludesTechnology != null &&
-                    this.ExcludesTechnology.Equals(input.ExcludesTechnology))
+                    ExcludesTechnology == input.ExcludesTechnology ||
+                    (ExcludesTechnology != null &&
+                    ExcludesTechnology.Equals(input.ExcludesTechnology))
                 ) && 
                 (
-                    this.UsOrExcludesUs == input.UsOrExcludesUs ||
-                    (this.UsOrExcludesUs != null &&
-                    this.UsOrExcludesUs.Equals(input.UsOrExcludesUs))
+                    UsOrExcludesUs == input.UsOrExcludesUs ||
+                    (UsOrExcludesUs != null &&
+                    UsOrExcludesUs.Equals(input.UsOrExcludesUs))
                 ) && 
                 (
-                    this.DevelopedEmerging == input.DevelopedEmerging ||
-                    (this.DevelopedEmerging != null &&
-                    this.DevelopedEmerging.Equals(input.DevelopedEmerging))
+                    DevelopedEmerging == input.DevelopedEmerging ||
+                    (DevelopedEmerging != null &&
+                    DevelopedEmerging.Equals(input.DevelopedEmerging))
                 ) && 
                 (
-                    this.SpecializedRegion == input.SpecializedRegion ||
-                    (this.SpecializedRegion != null &&
-                    this.SpecializedRegion.Equals(input.SpecializedRegion))
+                    SpecializedRegion == input.SpecializedRegion ||
+                    (SpecializedRegion != null &&
+                    SpecializedRegion.Equals(input.SpecializedRegion))
                 ) && 
                 (
-                    this.Continent == input.Continent ||
-                    (this.Continent != null &&
-                    this.Continent.Equals(input.Continent))
+                    Continent == input.Continent ||
+                    (Continent != null &&
+                    Continent.Equals(input.Continent))
                 ) && 
                 (
-                    this.LatinAmericaSubGroup == input.LatinAmericaSubGroup ||
-                    (this.LatinAmericaSubGroup != null &&
-                    this.LatinAmericaSubGroup.Equals(input.LatinAmericaSubGroup))
+                    LatinAmericaSubGroup == input.LatinAmericaSubGroup ||
+                    (LatinAmericaSubGroup != null &&
+                    LatinAmericaSubGroup.Equals(input.LatinAmericaSubGroup))
                 ) && 
                 (
-                    this.EuropeSubGroup == input.EuropeSubGroup ||
-                    (this.EuropeSubGroup != null &&
-                    this.EuropeSubGroup.Equals(input.EuropeSubGroup))
+                    EuropeSubGroup == input.EuropeSubGroup ||
+                    (EuropeSubGroup != null &&
+                    EuropeSubGroup.Equals(input.EuropeSubGroup))
                 ) && 
                 (
-                    this.AsiaSubGroup == input.AsiaSubGroup ||
-                    (this.AsiaSubGroup != null &&
-                    this.AsiaSubGroup.Equals(input.AsiaSubGroup))
+                    AsiaSubGroup == input.AsiaSubGroup ||
+                    (AsiaSubGroup != null &&
+                    AsiaSubGroup.Equals(input.AsiaSubGroup))
                 ) && 
                 (
-                    this.SpecificCountry == input.SpecificCountry ||
-                    (this.SpecificCountry != null &&
-                    this.SpecificCountry.Equals(input.SpecificCountry))
+                    SpecificCountry == input.SpecificCountry ||
+                    (SpecificCountry != null &&
+                    SpecificCountry.Equals(input.SpecificCountry))
                 ) && 
                 (
-                    this.ChinaListingLocation == input.ChinaListingLocation ||
-                    (this.ChinaListingLocation != null &&
-                    this.ChinaListingLocation.Equals(input.ChinaListingLocation))
+                    ChinaListingLocation == input.ChinaListingLocation ||
+                    (ChinaListingLocation != null &&
+                    ChinaListingLocation.Equals(input.ChinaListingLocation))
                 ) && 
                 (
-                    this.UsState == input.UsState ||
-                    (this.UsState != null &&
-                    this.UsState.Equals(input.UsState))
+                    UsState == input.UsState ||
+                    (UsState != null &&
+                    UsState.Equals(input.UsState))
                 ) && 
                 (
-                    this.RealEstate == input.RealEstate ||
-                    (this.RealEstate != null &&
-                    this.RealEstate.Equals(input.RealEstate))
+                    RealEstate == input.RealEstate ||
+                    (RealEstate != null &&
+                    RealEstate.Equals(input.RealEstate))
                 ) && 
                 (
-                    this.IndexWeightingScheme == input.IndexWeightingScheme ||
-                    (this.IndexWeightingScheme != null &&
-                    this.IndexWeightingScheme.Equals(input.IndexWeightingScheme))
+                    IndexWeightingScheme == input.IndexWeightingScheme ||
+                    (IndexWeightingScheme != null &&
+                    IndexWeightingScheme.Equals(input.IndexWeightingScheme))
                 ) && 
                 (
-                    this.MarketCapWeightingType == input.MarketCapWeightingType ||
-                    (this.MarketCapWeightingType != null &&
-                    this.MarketCapWeightingType.Equals(input.MarketCapWeightingType))
+                    MarketCapWeightingType == input.MarketCapWeightingType ||
+                    (MarketCapWeightingType != null &&
+                    MarketCapWeightingType.Equals(input.MarketCapWeightingType))
                 ) && 
                 (
-                    this.FundamentalWeightingType == input.FundamentalWeightingType ||
-                    (this.FundamentalWeightingType != null &&
-                    this.FundamentalWeightingType.Equals(input.FundamentalWeightingType))
+                    FundamentalWeightingType == input.FundamentalWeightingType ||
+                    (FundamentalWeightingType != null &&
+                    FundamentalWeightingType.Equals(input.FundamentalWeightingType))
                 ) && 
                 (
-                    this.DividendWeightingType == input.DividendWeightingType ||
-                    (this.DividendWeightingType != null &&
-                    this.DividendWeightingType.Equals(input.DividendWeightingType))
+                    DividendWeightingType == input.DividendWeightingType ||
+                    (DividendWeightingType != null &&
+                    DividendWeightingType.Equals(input.DividendWeightingType))
                 ) && 
                 (
-                    this.BondType == input.BondType ||
-                    (this.BondType != null &&
-                    this.BondType.Equals(input.BondType))
+                    BondType == input.BondType ||
+                    (BondType != null &&
+                    BondType.Equals(input.BondType))
                 ) && 
                 (
-                    this.GovernmentBondTypes == input.GovernmentBondTypes ||
-                    (this.GovernmentBondTypes != null &&
-                    this.GovernmentBondTypes.Equals(input.GovernmentBondTypes))
+                    GovernmentBondTypes == input.GovernmentBondTypes ||
+                    (GovernmentBondTypes != null &&
+                    GovernmentBondTypes.Equals(input.GovernmentBondTypes))
                 ) && 
                 (
-                    this.MunicipalBondRegion == input.MunicipalBondRegion ||
-                    (this.MunicipalBondRegion != null &&
-                    this.MunicipalBondRegion.Equals(input.MunicipalBondRegion))
+                    MunicipalBondRegion == input.MunicipalBondRegion ||
+                    (MunicipalBondRegion != null &&
+                    MunicipalBondRegion.Equals(input.MunicipalBondRegion))
                 ) && 
                 (
-                    this.MunicipalVrdo == input.MunicipalVrdo ||
-                    (this.MunicipalVrdo != null &&
-                    this.MunicipalVrdo.Equals(input.MunicipalVrdo))
+                    MunicipalVrdo == input.MunicipalVrdo ||
+                    (MunicipalVrdo != null &&
+                    MunicipalVrdo.Equals(input.MunicipalVrdo))
                 ) && 
                 (
-                    this.MortgageBondTypes == input.MortgageBondTypes ||
-                    (this.MortgageBondTypes != null &&
-                    this.MortgageBondTypes.Equals(input.MortgageBondTypes))
+                    MortgageBondTypes == input.MortgageBondTypes ||
+                    (MortgageBondTypes != null &&
+                    MortgageBondTypes.Equals(input.MortgageBondTypes))
                 ) && 
                 (
-                    this.BondTaxStatus == input.BondTaxStatus ||
-                    (this.BondTaxStatus != null &&
-                    this.BondTaxStatus.Equals(input.BondTaxStatus))
+                    BondTaxStatus == input.BondTaxStatus ||
+                    (BondTaxStatus != null &&
+                    BondTaxStatus.Equals(input.BondTaxStatus))
                 ) && 
                 (
-                    this.CreditQuality == input.CreditQuality ||
-                    (this.CreditQuality != null &&
-                    this.CreditQuality.Equals(input.CreditQuality))
+                    CreditQuality == input.CreditQuality ||
+                    (CreditQuality != null &&
+                    CreditQuality.Equals(input.CreditQuality))
                 ) && 
                 (
-                    this.AverageMaturity == input.AverageMaturity ||
-                    (this.AverageMaturity != null &&
-                    this.AverageMaturity.Equals(input.AverageMaturity))
+                    AverageMaturity == input.AverageMaturity ||
+                    (AverageMaturity != null &&
+                    AverageMaturity.Equals(input.AverageMaturity))
                 ) && 
                 (
-                    this.SpecificMaturityYear == input.SpecificMaturityYear ||
-                    (this.SpecificMaturityYear != null &&
-                    this.SpecificMaturityYear.Equals(input.SpecificMaturityYear))
+                    SpecificMaturityYear == input.SpecificMaturityYear ||
+                    (SpecificMaturityYear != null &&
+                    SpecificMaturityYear.Equals(input.SpecificMaturityYear))
                 ) && 
                 (
-                    this.BondCurrencyDenomination == input.BondCurrencyDenomination ||
-                    (this.BondCurrencyDenomination != null &&
-                    this.BondCurrencyDenomination.Equals(input.BondCurrencyDenomination))
+                    BondCurrencyDenomination == input.BondCurrencyDenomination ||
+                    (BondCurrencyDenomination != null &&
+                    BondCurrencyDenomination.Equals(input.BondCurrencyDenomination))
                 ) && 
                 (
-                    this.Laddered == input.Laddered ||
-                    (this.Laddered != null &&
-                    this.Laddered.Equals(input.Laddered))
+                    Laddered == input.Laddered ||
+                    (Laddered != null &&
+                    Laddered.Equals(input.Laddered))
                 ) && 
                 (
-                    this.ZeroCoupon == input.ZeroCoupon ||
-                    (this.ZeroCoupon != null &&
-                    this.ZeroCoupon.Equals(input.ZeroCoupon))
+                    ZeroCoupon == input.ZeroCoupon ||
+                    (ZeroCoupon != null &&
+                    ZeroCoupon.Equals(input.ZeroCoupon))
                 ) && 
                 (
-                    this.FloatingRate == input.FloatingRate ||
-                    (this.FloatingRate != null &&
-                    this.FloatingRate.Equals(input.FloatingRate))
+                    FloatingRate == input.FloatingRate ||
+                    (FloatingRate != null &&
+                    FloatingRate.Equals(input.FloatingRate))
                 ) && 
                 (
-                    this.BuildAmericaBonds == input.BuildAmericaBonds ||
-                    (this.BuildAmericaBonds != null &&
-                    this.BuildAmericaBonds.Equals(input.BuildAmericaBonds))
+                    BuildAmericaBonds == input.BuildAmericaBonds ||
+                    (BuildAmericaBonds != null &&
+                    BuildAmericaBonds.Equals(input.BuildAmericaBonds))
                 ) && 
                 (
-                    this.CommodityTypes == input.CommodityTypes ||
-                    (this.CommodityTypes != null &&
-                    this.CommodityTypes.Equals(input.CommodityTypes))
+                    CommodityTypes == input.CommodityTypes ||
+                    (CommodityTypes != null &&
+                    CommodityTypes.Equals(input.CommodityTypes))
                 ) && 
                 (
-                    this.EnergyType == input.EnergyType ||
-                    (this.EnergyType != null &&
-                    this.EnergyType.Equals(input.EnergyType))
+                    EnergyType == input.EnergyType ||
+                    (EnergyType != null &&
+                    EnergyType.Equals(input.EnergyType))
                 ) && 
                 (
-                    this.AgriculturalType == input.AgriculturalType ||
-                    (this.AgriculturalType != null &&
-                    this.AgriculturalType.Equals(input.AgriculturalType))
+                    AgriculturalType == input.AgriculturalType ||
+                    (AgriculturalType != null &&
+                    AgriculturalType.Equals(input.AgriculturalType))
                 ) && 
                 (
-                    this.MetalType == input.MetalType ||
-                    (this.MetalType != null &&
-                    this.MetalType.Equals(input.MetalType))
+                    MetalType == input.MetalType ||
+                    (MetalType != null &&
+                    MetalType.Equals(input.MetalType))
                 ) && 
                 (
-                    this.InverseLeveraged == input.InverseLeveraged ||
-                    (this.InverseLeveraged != null &&
-                    this.InverseLeveraged.Equals(input.InverseLeveraged))
+                    InverseLeveraged == input.InverseLeveraged ||
+                    (InverseLeveraged != null &&
+                    InverseLeveraged.Equals(input.InverseLeveraged))
                 ) && 
                 (
-                    this.TargetDateMultiAssetType == input.TargetDateMultiAssetType ||
-                    (this.TargetDateMultiAssetType != null &&
-                    this.TargetDateMultiAssetType.Equals(input.TargetDateMultiAssetType))
+                    TargetDateMultiAssetType == input.TargetDateMultiAssetType ||
+                    (TargetDateMultiAssetType != null &&
+                    TargetDateMultiAssetType.Equals(input.TargetDateMultiAssetType))
                 ) && 
                 (
-                    this.CurrencyHedged == input.CurrencyHedged ||
-                    (this.CurrencyHedged != null &&
-                    this.CurrencyHedged.Equals(input.CurrencyHedged))
+                    CurrencyHedged == input.CurrencyHedged ||
+                    (CurrencyHedged != null &&
+                    CurrencyHedged.Equals(input.CurrencyHedged))
                 ) && 
                 (
-                    this.CurrencyPair == input.CurrencyPair ||
-                    (this.CurrencyPair != null &&
-                    this.CurrencyPair.Equals(input.CurrencyPair))
+                    CurrencyPair == input.CurrencyPair ||
+                    (CurrencyPair != null &&
+                    CurrencyPair.Equals(input.CurrencyPair))
                 ) && 
                 (
-                    this.SocialEnvironmentalType == input.SocialEnvironmentalType ||
-                    (this.SocialEnvironmentalType != null &&
-                    this.SocialEnvironmentalType.Equals(input.SocialEnvironmentalType))
+                    SocialEnvironmentalType == input.SocialEnvironmentalType ||
+                    (SocialEnvironmentalType != null &&
+                    SocialEnvironmentalType.Equals(input.SocialEnvironmentalType))
                 ) && 
                 (
-                    this.CleanEnergyType == input.CleanEnergyType ||
-                    (this.CleanEnergyType != null &&
-                    this.CleanEnergyType.Equals(input.CleanEnergyType))
+                    CleanEnergyType == input.CleanEnergyType ||
+                    (CleanEnergyType != null &&
+                    CleanEnergyType.Equals(input.CleanEnergyType))
                 ) && 
                 (
-                    this.DividendType == input.DividendType ||
-                    (this.DividendType != null &&
-                    this.DividendType.Equals(input.DividendType))
+                    DividendType == input.DividendType ||
+                    (DividendType != null &&
+                    DividendType.Equals(input.DividendType))
                 ) && 
                 (
-                    this.RegularDividendPayorType == input.RegularDividendPayorType ||
-                    (this.RegularDividendPayorType != null &&
-                    this.RegularDividendPayorType.Equals(input.RegularDividendPayorType))
+                    RegularDividendPayorType == input.RegularDividendPayorType ||
+                    (RegularDividendPayorType != null &&
+                    RegularDividendPayorType.Equals(input.RegularDividendPayorType))
                 ) && 
                 (
-                    this.HoldsMlPs == input.HoldsMlPs ||
-                    (this.HoldsMlPs != null &&
-                    this.HoldsMlPs.Equals(input.HoldsMlPs))
+                    HoldsMlPs == input.HoldsMlPs ||
+                    (HoldsMlPs != null &&
+                    HoldsMlPs.Equals(input.HoldsMlPs))
                 ) && 
                 (
-                    this.HoldsPreferredStock == input.HoldsPreferredStock ||
-                    (this.HoldsPreferredStock != null &&
-                    this.HoldsPreferredStock.Equals(input.HoldsPreferredStock))
+                    HoldsPreferredStock == input.HoldsPreferredStock ||
+                    (HoldsPreferredStock != null &&
+                    HoldsPreferredStock.Equals(input.HoldsPreferredStock))
                 ) && 
                 (
-                    this.HoldsClosedEndFunds == input.HoldsClosedEndFunds ||
-                    (this.HoldsClosedEndFunds != null &&
-                    this.HoldsClosedEndFunds.Equals(input.HoldsClosedEndFunds))
+                    HoldsClosedEndFunds == input.HoldsClosedEndFunds ||
+                    (HoldsClosedEndFunds != null &&
+                    HoldsClosedEndFunds.Equals(input.HoldsClosedEndFunds))
                 ) && 
                 (
-                    this.QuantStrategiesType == input.QuantStrategiesType ||
-                    (this.QuantStrategiesType != null &&
-                    this.QuantStrategiesType.Equals(input.QuantStrategiesType))
+                    QuantStrategiesType == input.QuantStrategiesType ||
+                    (QuantStrategiesType != null &&
+                    QuantStrategiesType.Equals(input.QuantStrategiesType))
                 ) && 
                 (
-                    this.OtherQuantModels == input.OtherQuantModels ||
-                    (this.OtherQuantModels != null &&
-                    this.OtherQuantModels.Equals(input.OtherQuantModels))
+                    OtherQuantModels == input.OtherQuantModels ||
+                    (OtherQuantModels != null &&
+                    OtherQuantModels.Equals(input.OtherQuantModels))
                 ) && 
                 (
-                    this.HedgeFundType == input.HedgeFundType ||
-                    (this.HedgeFundType != null &&
-                    this.HedgeFundType.Equals(input.HedgeFundType))
+                    HedgeFundType == input.HedgeFundType ||
+                    (HedgeFundType != null &&
+                    HedgeFundType.Equals(input.HedgeFundType))
                 ) && 
                 (
-                    this.DerivativesBased == input.DerivativesBased ||
-                    (this.DerivativesBased != null &&
-                    this.DerivativesBased.Equals(input.DerivativesBased))
+                    DerivativesBased == input.DerivativesBased ||
+                    (DerivativesBased != null &&
+                    DerivativesBased.Equals(input.DerivativesBased))
                 ) && 
                 (
-                    this.HoldsAdRs == input.HoldsAdRs ||
-                    (this.HoldsAdRs != null &&
-                    this.HoldsAdRs.Equals(input.HoldsAdRs))
+                    HoldsAdRs == input.HoldsAdRs ||
+                    (HoldsAdRs != null &&
+                    HoldsAdRs.Equals(input.HoldsAdRs))
                 ) && 
                 (
-                    this.IndexLinked == input.IndexLinked ||
-                    (this.IndexLinked != null &&
-                    this.IndexLinked.Equals(input.IndexLinked))
+                    IndexLinked == input.IndexLinked ||
+                    (IndexLinked != null &&
+                    IndexLinked.Equals(input.IndexLinked))
                 ) && 
                 (
-                    this.IncludesShortExposure == input.IncludesShortExposure ||
-                    (this.IncludesShortExposure != null &&
-                    this.IncludesShortExposure.Equals(input.IncludesShortExposure))
+                    IncludesShortExposure == input.IncludesShortExposure ||
+                    (IncludesShortExposure != null &&
+                    IncludesShortExposure.Equals(input.IncludesShortExposure))
                 ) && 
                 (
-                    this.IndexName == input.IndexName ||
-                    (this.IndexName != null &&
-                    this.IndexName.Equals(input.IndexName))
+                    IndexName == input.IndexName ||
+                    (IndexName != null &&
+                    IndexName.Equals(input.IndexName))
                 ) && 
                 (
-                    this.ParentIndex == input.ParentIndex ||
-                    (this.ParentIndex != null &&
-                    this.ParentIndex.Equals(input.ParentIndex))
+                    ParentIndex == input.ParentIndex ||
+                    (ParentIndex != null &&
+                    ParentIndex.Equals(input.ParentIndex))
                 ) && 
                 (
-                    this.IndexFamily == input.IndexFamily ||
-                    (this.IndexFamily != null &&
-                    this.IndexFamily.Equals(input.IndexFamily))
+                    IndexFamily == input.IndexFamily ||
+                    (IndexFamily != null &&
+                    IndexFamily.Equals(input.IndexFamily))
                 ) && 
                 (
-                    this.BroaderIndexFamily == input.BroaderIndexFamily ||
-                    (this.BroaderIndexFamily != null &&
-                    this.BroaderIndexFamily.Equals(input.BroaderIndexFamily))
+                    BroaderIndexFamily == input.BroaderIndexFamily ||
+                    (BroaderIndexFamily != null &&
+                    BroaderIndexFamily.Equals(input.BroaderIndexFamily))
                 ) && 
                 (
-                    this.IndexProvider == input.IndexProvider ||
-                    (this.IndexProvider != null &&
-                    this.IndexProvider.Equals(input.IndexProvider))
+                    IndexProvider == input.IndexProvider ||
+                    (IndexProvider != null &&
+                    IndexProvider.Equals(input.IndexProvider))
                 ) && 
                 (
-                    this.FundFamily == input.FundFamily ||
-                    (this.FundFamily != null &&
-                    this.FundFamily.Equals(input.FundFamily))
+                    FundFamily == input.FundFamily ||
+                    (FundFamily != null &&
+                    FundFamily.Equals(input.FundFamily))
                 ) && 
                 (
-                    this.IndexTicker == input.IndexTicker ||
-                    (this.IndexTicker != null &&
-                    this.IndexTicker.Equals(input.IndexTicker))
+                    IndexTicker == input.IndexTicker ||
+                    (IndexTicker != null &&
+                    IndexTicker.Equals(input.IndexTicker))
                 ) && 
                 (
-                    this.EtnIssuingBank == input.EtnIssuingBank ||
-                    (this.EtnIssuingBank != null &&
-                    this.EtnIssuingBank.Equals(input.EtnIssuingBank))
+                    EtnIssuingBank == input.EtnIssuingBank ||
+                    (EtnIssuingBank != null &&
+                    EtnIssuingBank.Equals(input.EtnIssuingBank))
                 ) && 
                 (
-                    this.EtnMaturityDate == input.EtnMaturityDate ||
-                    (this.EtnMaturityDate != null &&
-                    this.EtnMaturityDate.Equals(input.EtnMaturityDate))
+                    EtnMaturityDate == input.EtnMaturityDate ||
+                    (EtnMaturityDate != null &&
+                    EtnMaturityDate.Equals(input.EtnMaturityDate))
                 ) && 
                 (
-                    this.Livestock == input.Livestock ||
-                    (this.Livestock != null &&
-                    this.Livestock.Equals(input.Livestock))
+                    Livestock == input.Livestock ||
+                    (Livestock != null &&
+                    Livestock.Equals(input.Livestock))
                 ) && 
                 (
-                    this.DynamicFuturesRoll == input.DynamicFuturesRoll ||
-                    (this.DynamicFuturesRoll != null &&
-                    this.DynamicFuturesRoll.Equals(input.DynamicFuturesRoll))
+                    DynamicFuturesRoll == input.DynamicFuturesRoll ||
+                    (DynamicFuturesRoll != null &&
+                    DynamicFuturesRoll.Equals(input.DynamicFuturesRoll))
                 ) && 
                 (
-                    this.IndexProviderCode == input.IndexProviderCode ||
-                    (this.IndexProviderCode != null &&
-                    this.IndexProviderCode.Equals(input.IndexProviderCode))
+                    IndexProviderCode == input.IndexProviderCode ||
+                    (IndexProviderCode != null &&
+                    IndexProviderCode.Equals(input.IndexProviderCode))
                 ) && 
                 (
-                    this.SingleCategoryDesignation == input.SingleCategoryDesignation ||
-                    (this.SingleCategoryDesignation != null &&
-                    this.SingleCategoryDesignation.Equals(input.SingleCategoryDesignation))
+                    SingleCategoryDesignation == input.SingleCategoryDesignation ||
+                    (SingleCategoryDesignation != null &&
+                    SingleCategoryDesignation.Equals(input.SingleCategoryDesignation))
                 ) && 
                 (
-                    this.RegisteredCountries == input.RegisteredCountries ||
-                    (this.RegisteredCountries != null &&
-                    this.RegisteredCountries.Equals(input.RegisteredCountries))
+                    RegisteredCountries == input.RegisteredCountries ||
+                    (RegisteredCountries != null &&
+                    RegisteredCountries.Equals(input.RegisteredCountries))
                 ) && 
                 (
-                    this.IssuingEntityCountryCode == input.IssuingEntityCountryCode ||
-                    (this.IssuingEntityCountryCode != null &&
-                    this.IssuingEntityCountryCode.Equals(input.IssuingEntityCountryCode))
+                    IssuingEntityCountryCode == input.IssuingEntityCountryCode ||
+                    (IssuingEntityCountryCode != null &&
+                    IssuingEntityCountryCode.Equals(input.IssuingEntityCountryCode))
                 ) && 
                 (
-                    this.Ucits == input.Ucits ||
-                    (this.Ucits != null &&
-                    this.Ucits.Equals(input.Ucits))
+                    Ucits == input.Ucits ||
+                    (Ucits != null &&
+                    Ucits.Equals(input.Ucits))
                 ) && 
                 (
-                    this.ReplicationStructure == input.ReplicationStructure ||
-                    (this.ReplicationStructure != null &&
-                    this.ReplicationStructure.Equals(input.ReplicationStructure))
+                    ReplicationStructure == input.ReplicationStructure ||
+                    (ReplicationStructure != null &&
+                    ReplicationStructure.Equals(input.ReplicationStructure))
                 ) && 
                 (
-                    this.Domicile == input.Domicile ||
-                    (this.Domicile != null &&
-                    this.Domicile.Equals(input.Domicile))
+                    Domicile == input.Domicile ||
+                    (Domicile != null &&
+                    Domicile.Equals(input.Domicile))
                 ) && 
                 (
-                    this.BaseCurrency == input.BaseCurrency ||
-                    (this.BaseCurrency != null &&
-                    this.BaseCurrency.Equals(input.BaseCurrency))
+                    BaseCurrency == input.BaseCurrency ||
+                    (BaseCurrency != null &&
+                    BaseCurrency.Equals(input.BaseCurrency))
                 ) && 
                 (
-                    this.ListingCurrency == input.ListingCurrency ||
-                    (this.ListingCurrency != null &&
-                    this.ListingCurrency.Equals(input.ListingCurrency))
+                    ListingCurrency == input.ListingCurrency ||
+                    (ListingCurrency != null &&
+                    ListingCurrency.Equals(input.ListingCurrency))
                 ) && 
                 (
-                    this.FundListingDate == input.FundListingDate ||
-                    (this.FundListingDate != null &&
-                    this.FundListingDate.Equals(input.FundListingDate))
+                    FundListingDate == input.FundListingDate ||
+                    (FundListingDate != null &&
+                    FundListingDate.Equals(input.FundListingDate))
                 ) && 
                 (
-                    this.ListingCountryCode == input.ListingCountryCode ||
-                    (this.ListingCountryCode != null &&
-                    this.ListingCountryCode.Equals(input.ListingCountryCode))
+                    ListingCountryCode == input.ListingCountryCode ||
+                    (ListingCountryCode != null &&
+                    ListingCountryCode.Equals(input.ListingCountryCode))
                 ) && 
                 (
-                    this.ListingRegion == input.ListingRegion ||
-                    (this.ListingRegion != null &&
-                    this.ListingRegion.Equals(input.ListingRegion))
+                    ListingRegion == input.ListingRegion ||
+                    (ListingRegion != null &&
+                    ListingRegion.Equals(input.ListingRegion))
                 ) && 
                 (
-                    this.SmartvsTraditionalBeta == input.SmartvsTraditionalBeta ||
-                    (this.SmartvsTraditionalBeta != null &&
-                    this.SmartvsTraditionalBeta.Equals(input.SmartvsTraditionalBeta))
+                    SmartvsTraditionalBeta == input.SmartvsTraditionalBeta ||
+                    (SmartvsTraditionalBeta != null &&
+                    SmartvsTraditionalBeta.Equals(input.SmartvsTraditionalBeta))
                 ) && 
                 (
-                    this.SmartvsTraditionalBetaLevel2 == input.SmartvsTraditionalBetaLevel2 ||
-                    (this.SmartvsTraditionalBetaLevel2 != null &&
-                    this.SmartvsTraditionalBetaLevel2.Equals(input.SmartvsTraditionalBetaLevel2))
+                    SmartvsTraditionalBetaLevel2 == input.SmartvsTraditionalBetaLevel2 ||
+                    (SmartvsTraditionalBetaLevel2 != null &&
+                    SmartvsTraditionalBetaLevel2.Equals(input.SmartvsTraditionalBetaLevel2))
                 ) && 
                 (
-                    this.IncomeCategory == input.IncomeCategory ||
-                    (this.IncomeCategory != null &&
-                    this.IncomeCategory.Equals(input.IncomeCategory))
+                    IncomeCategory == input.IncomeCategory ||
+                    (IncomeCategory != null &&
+                    IncomeCategory.Equals(input.IncomeCategory))
                 ) && 
                 (
-                    this.EtpStructureType == input.EtpStructureType ||
-                    (this.EtpStructureType != null &&
-                    this.EtpStructureType.Equals(input.EtpStructureType))
+                    EtpStructureType == input.EtpStructureType ||
+                    (EtpStructureType != null &&
+                    EtpStructureType.Equals(input.EtpStructureType))
                 ) && 
                 (
-                    this.MonthEndAssets == input.MonthEndAssets ||
-                    (this.MonthEndAssets != null &&
-                    this.MonthEndAssets.Equals(input.MonthEndAssets))
+                    MonthEndAssets == input.MonthEndAssets ||
+                    (MonthEndAssets != null &&
+                    MonthEndAssets.Equals(input.MonthEndAssets))
                 ) && 
                 (
-                    this.EtfPortfolioTurnover == input.EtfPortfolioTurnover ||
-                    (this.EtfPortfolioTurnover != null &&
-                    this.EtfPortfolioTurnover.Equals(input.EtfPortfolioTurnover))
+                    EtfPortfolioTurnover == input.EtfPortfolioTurnover ||
+                    (EtfPortfolioTurnover != null &&
+                    EtfPortfolioTurnover.Equals(input.EtfPortfolioTurnover))
                 ) && 
                 (
-                    this.FirstbridgeId == input.FirstbridgeId ||
-                    (this.FirstbridgeId != null &&
-                    this.FirstbridgeId.Equals(input.FirstbridgeId))
+                    FirstbridgeId == input.FirstbridgeId ||
+                    (FirstbridgeId != null &&
+                    FirstbridgeId.Equals(input.FirstbridgeId))
                 ) && 
                 (
-                    this.FirstbridgeParentId == input.FirstbridgeParentId ||
-                    (this.FirstbridgeParentId != null &&
-                    this.FirstbridgeParentId.Equals(input.FirstbridgeParentId))
+                    FirstbridgeParentId == input.FirstbridgeParentId ||
+                    (FirstbridgeParentId != null &&
+                    FirstbridgeParentId.Equals(input.FirstbridgeParentId))
                 ) && 
                 (
-                    this.NumberOfHoldings == input.NumberOfHoldings ||
-                    (this.NumberOfHoldings != null &&
-                    this.NumberOfHoldings.Equals(input.NumberOfHoldings))
+                    NumberOfHoldings == input.NumberOfHoldings ||
+                    (NumberOfHoldings != null &&
+                    NumberOfHoldings.Equals(input.NumberOfHoldings))
                 );
         }
 
@@ -1872,244 +1872,244 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Ticker != null)
-                    hashCode = hashCode * 59 + this.Ticker.GetHashCode();
-                if (this.FigiTicker != null)
-                    hashCode = hashCode * 59 + this.FigiTicker.GetHashCode();
-                if (this.Ric != null)
-                    hashCode = hashCode * 59 + this.Ric.GetHashCode();
-                if (this.Isin != null)
-                    hashCode = hashCode * 59 + this.Isin.GetHashCode();
-                if (this.Sedol != null)
-                    hashCode = hashCode * 59 + this.Sedol.GetHashCode();
-                if (this.ExchangeMic != null)
-                    hashCode = hashCode * 59 + this.ExchangeMic.GetHashCode();
-                if (this.Sponsor != null)
-                    hashCode = hashCode * 59 + this.Sponsor.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.InceptionDate != null)
-                    hashCode = hashCode * 59 + this.InceptionDate.GetHashCode();
-                if (this.DataChangeDate != null)
-                    hashCode = hashCode * 59 + this.DataChangeDate.GetHashCode();
-                if (this.CloseDate != null)
-                    hashCode = hashCode * 59 + this.CloseDate.GetHashCode();
-                if (this.IsLiveListed != null)
-                    hashCode = hashCode * 59 + this.IsLiveListed.GetHashCode();
-                if (this.LegalStructure != null)
-                    hashCode = hashCode * 59 + this.LegalStructure.GetHashCode();
-                if (this.IntradayNavTicker != null)
-                    hashCode = hashCode * 59 + this.IntradayNavTicker.GetHashCode();
-                if (this.PrimaryTicker != null)
-                    hashCode = hashCode * 59 + this.PrimaryTicker.GetHashCode();
-                if (this.PrimaryTickerCountryCode != null)
-                    hashCode = hashCode * 59 + this.PrimaryTickerCountryCode.GetHashCode();
-                if (this.PrimaryListingRegion != null)
-                    hashCode = hashCode * 59 + this.PrimaryListingRegion.GetHashCode();
-                if (this.NetExpenseRatio != null)
-                    hashCode = hashCode * 59 + this.NetExpenseRatio.GetHashCode();
-                if (this.AssetClass != null)
-                    hashCode = hashCode * 59 + this.AssetClass.GetHashCode();
-                if (this.OtherAssetTypes != null)
-                    hashCode = hashCode * 59 + this.OtherAssetTypes.GetHashCode();
-                if (this.MarketCapRange != null)
-                    hashCode = hashCode * 59 + this.MarketCapRange.GetHashCode();
-                if (this.HoldsOnlyNyseStocks != null)
-                    hashCode = hashCode * 59 + this.HoldsOnlyNyseStocks.GetHashCode();
-                if (this.HoldsOnlyNasdaqStocks != null)
-                    hashCode = hashCode * 59 + this.HoldsOnlyNasdaqStocks.GetHashCode();
-                if (this.GrowthValueTilt != null)
-                    hashCode = hashCode * 59 + this.GrowthValueTilt.GetHashCode();
-                if (this.GrowthType != null)
-                    hashCode = hashCode * 59 + this.GrowthType.GetHashCode();
-                if (this.ValueType != null)
-                    hashCode = hashCode * 59 + this.ValueType.GetHashCode();
-                if (this.Sector != null)
-                    hashCode = hashCode * 59 + this.Sector.GetHashCode();
-                if (this.Industry != null)
-                    hashCode = hashCode * 59 + this.Industry.GetHashCode();
-                if (this.SubIndustry != null)
-                    hashCode = hashCode * 59 + this.SubIndustry.GetHashCode();
-                if (this.CrossSectorTheme != null)
-                    hashCode = hashCode * 59 + this.CrossSectorTheme.GetHashCode();
-                if (this.NaturalResourcesType != null)
-                    hashCode = hashCode * 59 + this.NaturalResourcesType.GetHashCode();
-                if (this.ExcludesFinancials != null)
-                    hashCode = hashCode * 59 + this.ExcludesFinancials.GetHashCode();
-                if (this.ExcludesTechnology != null)
-                    hashCode = hashCode * 59 + this.ExcludesTechnology.GetHashCode();
-                if (this.UsOrExcludesUs != null)
-                    hashCode = hashCode * 59 + this.UsOrExcludesUs.GetHashCode();
-                if (this.DevelopedEmerging != null)
-                    hashCode = hashCode * 59 + this.DevelopedEmerging.GetHashCode();
-                if (this.SpecializedRegion != null)
-                    hashCode = hashCode * 59 + this.SpecializedRegion.GetHashCode();
-                if (this.Continent != null)
-                    hashCode = hashCode * 59 + this.Continent.GetHashCode();
-                if (this.LatinAmericaSubGroup != null)
-                    hashCode = hashCode * 59 + this.LatinAmericaSubGroup.GetHashCode();
-                if (this.EuropeSubGroup != null)
-                    hashCode = hashCode * 59 + this.EuropeSubGroup.GetHashCode();
-                if (this.AsiaSubGroup != null)
-                    hashCode = hashCode * 59 + this.AsiaSubGroup.GetHashCode();
-                if (this.SpecificCountry != null)
-                    hashCode = hashCode * 59 + this.SpecificCountry.GetHashCode();
-                if (this.ChinaListingLocation != null)
-                    hashCode = hashCode * 59 + this.ChinaListingLocation.GetHashCode();
-                if (this.UsState != null)
-                    hashCode = hashCode * 59 + this.UsState.GetHashCode();
-                if (this.RealEstate != null)
-                    hashCode = hashCode * 59 + this.RealEstate.GetHashCode();
-                if (this.IndexWeightingScheme != null)
-                    hashCode = hashCode * 59 + this.IndexWeightingScheme.GetHashCode();
-                if (this.MarketCapWeightingType != null)
-                    hashCode = hashCode * 59 + this.MarketCapWeightingType.GetHashCode();
-                if (this.FundamentalWeightingType != null)
-                    hashCode = hashCode * 59 + this.FundamentalWeightingType.GetHashCode();
-                if (this.DividendWeightingType != null)
-                    hashCode = hashCode * 59 + this.DividendWeightingType.GetHashCode();
-                if (this.BondType != null)
-                    hashCode = hashCode * 59 + this.BondType.GetHashCode();
-                if (this.GovernmentBondTypes != null)
-                    hashCode = hashCode * 59 + this.GovernmentBondTypes.GetHashCode();
-                if (this.MunicipalBondRegion != null)
-                    hashCode = hashCode * 59 + this.MunicipalBondRegion.GetHashCode();
-                if (this.MunicipalVrdo != null)
-                    hashCode = hashCode * 59 + this.MunicipalVrdo.GetHashCode();
-                if (this.MortgageBondTypes != null)
-                    hashCode = hashCode * 59 + this.MortgageBondTypes.GetHashCode();
-                if (this.BondTaxStatus != null)
-                    hashCode = hashCode * 59 + this.BondTaxStatus.GetHashCode();
-                if (this.CreditQuality != null)
-                    hashCode = hashCode * 59 + this.CreditQuality.GetHashCode();
-                if (this.AverageMaturity != null)
-                    hashCode = hashCode * 59 + this.AverageMaturity.GetHashCode();
-                if (this.SpecificMaturityYear != null)
-                    hashCode = hashCode * 59 + this.SpecificMaturityYear.GetHashCode();
-                if (this.BondCurrencyDenomination != null)
-                    hashCode = hashCode * 59 + this.BondCurrencyDenomination.GetHashCode();
-                if (this.Laddered != null)
-                    hashCode = hashCode * 59 + this.Laddered.GetHashCode();
-                if (this.ZeroCoupon != null)
-                    hashCode = hashCode * 59 + this.ZeroCoupon.GetHashCode();
-                if (this.FloatingRate != null)
-                    hashCode = hashCode * 59 + this.FloatingRate.GetHashCode();
-                if (this.BuildAmericaBonds != null)
-                    hashCode = hashCode * 59 + this.BuildAmericaBonds.GetHashCode();
-                if (this.CommodityTypes != null)
-                    hashCode = hashCode * 59 + this.CommodityTypes.GetHashCode();
-                if (this.EnergyType != null)
-                    hashCode = hashCode * 59 + this.EnergyType.GetHashCode();
-                if (this.AgriculturalType != null)
-                    hashCode = hashCode * 59 + this.AgriculturalType.GetHashCode();
-                if (this.MetalType != null)
-                    hashCode = hashCode * 59 + this.MetalType.GetHashCode();
-                if (this.InverseLeveraged != null)
-                    hashCode = hashCode * 59 + this.InverseLeveraged.GetHashCode();
-                if (this.TargetDateMultiAssetType != null)
-                    hashCode = hashCode * 59 + this.TargetDateMultiAssetType.GetHashCode();
-                if (this.CurrencyHedged != null)
-                    hashCode = hashCode * 59 + this.CurrencyHedged.GetHashCode();
-                if (this.CurrencyPair != null)
-                    hashCode = hashCode * 59 + this.CurrencyPair.GetHashCode();
-                if (this.SocialEnvironmentalType != null)
-                    hashCode = hashCode * 59 + this.SocialEnvironmentalType.GetHashCode();
-                if (this.CleanEnergyType != null)
-                    hashCode = hashCode * 59 + this.CleanEnergyType.GetHashCode();
-                if (this.DividendType != null)
-                    hashCode = hashCode * 59 + this.DividendType.GetHashCode();
-                if (this.RegularDividendPayorType != null)
-                    hashCode = hashCode * 59 + this.RegularDividendPayorType.GetHashCode();
-                if (this.HoldsMlPs != null)
-                    hashCode = hashCode * 59 + this.HoldsMlPs.GetHashCode();
-                if (this.HoldsPreferredStock != null)
-                    hashCode = hashCode * 59 + this.HoldsPreferredStock.GetHashCode();
-                if (this.HoldsClosedEndFunds != null)
-                    hashCode = hashCode * 59 + this.HoldsClosedEndFunds.GetHashCode();
-                if (this.QuantStrategiesType != null)
-                    hashCode = hashCode * 59 + this.QuantStrategiesType.GetHashCode();
-                if (this.OtherQuantModels != null)
-                    hashCode = hashCode * 59 + this.OtherQuantModels.GetHashCode();
-                if (this.HedgeFundType != null)
-                    hashCode = hashCode * 59 + this.HedgeFundType.GetHashCode();
-                if (this.DerivativesBased != null)
-                    hashCode = hashCode * 59 + this.DerivativesBased.GetHashCode();
-                if (this.HoldsAdRs != null)
-                    hashCode = hashCode * 59 + this.HoldsAdRs.GetHashCode();
-                if (this.IndexLinked != null)
-                    hashCode = hashCode * 59 + this.IndexLinked.GetHashCode();
-                if (this.IncludesShortExposure != null)
-                    hashCode = hashCode * 59 + this.IncludesShortExposure.GetHashCode();
-                if (this.IndexName != null)
-                    hashCode = hashCode * 59 + this.IndexName.GetHashCode();
-                if (this.ParentIndex != null)
-                    hashCode = hashCode * 59 + this.ParentIndex.GetHashCode();
-                if (this.IndexFamily != null)
-                    hashCode = hashCode * 59 + this.IndexFamily.GetHashCode();
-                if (this.BroaderIndexFamily != null)
-                    hashCode = hashCode * 59 + this.BroaderIndexFamily.GetHashCode();
-                if (this.IndexProvider != null)
-                    hashCode = hashCode * 59 + this.IndexProvider.GetHashCode();
-                if (this.FundFamily != null)
-                    hashCode = hashCode * 59 + this.FundFamily.GetHashCode();
-                if (this.IndexTicker != null)
-                    hashCode = hashCode * 59 + this.IndexTicker.GetHashCode();
-                if (this.EtnIssuingBank != null)
-                    hashCode = hashCode * 59 + this.EtnIssuingBank.GetHashCode();
-                if (this.EtnMaturityDate != null)
-                    hashCode = hashCode * 59 + this.EtnMaturityDate.GetHashCode();
-                if (this.Livestock != null)
-                    hashCode = hashCode * 59 + this.Livestock.GetHashCode();
-                if (this.DynamicFuturesRoll != null)
-                    hashCode = hashCode * 59 + this.DynamicFuturesRoll.GetHashCode();
-                if (this.IndexProviderCode != null)
-                    hashCode = hashCode * 59 + this.IndexProviderCode.GetHashCode();
-                if (this.SingleCategoryDesignation != null)
-                    hashCode = hashCode * 59 + this.SingleCategoryDesignation.GetHashCode();
-                if (this.RegisteredCountries != null)
-                    hashCode = hashCode * 59 + this.RegisteredCountries.GetHashCode();
-                if (this.IssuingEntityCountryCode != null)
-                    hashCode = hashCode * 59 + this.IssuingEntityCountryCode.GetHashCode();
-                if (this.Ucits != null)
-                    hashCode = hashCode * 59 + this.Ucits.GetHashCode();
-                if (this.ReplicationStructure != null)
-                    hashCode = hashCode * 59 + this.ReplicationStructure.GetHashCode();
-                if (this.Domicile != null)
-                    hashCode = hashCode * 59 + this.Domicile.GetHashCode();
-                if (this.BaseCurrency != null)
-                    hashCode = hashCode * 59 + this.BaseCurrency.GetHashCode();
-                if (this.ListingCurrency != null)
-                    hashCode = hashCode * 59 + this.ListingCurrency.GetHashCode();
-                if (this.FundListingDate != null)
-                    hashCode = hashCode * 59 + this.FundListingDate.GetHashCode();
-                if (this.ListingCountryCode != null)
-                    hashCode = hashCode * 59 + this.ListingCountryCode.GetHashCode();
-                if (this.ListingRegion != null)
-                    hashCode = hashCode * 59 + this.ListingRegion.GetHashCode();
-                if (this.SmartvsTraditionalBeta != null)
-                    hashCode = hashCode * 59 + this.SmartvsTraditionalBeta.GetHashCode();
-                if (this.SmartvsTraditionalBetaLevel2 != null)
-                    hashCode = hashCode * 59 + this.SmartvsTraditionalBetaLevel2.GetHashCode();
-                if (this.IncomeCategory != null)
-                    hashCode = hashCode * 59 + this.IncomeCategory.GetHashCode();
-                if (this.EtpStructureType != null)
-                    hashCode = hashCode * 59 + this.EtpStructureType.GetHashCode();
-                if (this.MonthEndAssets != null)
-                    hashCode = hashCode * 59 + this.MonthEndAssets.GetHashCode();
-                if (this.EtfPortfolioTurnover != null)
-                    hashCode = hashCode * 59 + this.EtfPortfolioTurnover.GetHashCode();
-                if (this.FirstbridgeId != null)
-                    hashCode = hashCode * 59 + this.FirstbridgeId.GetHashCode();
-                if (this.FirstbridgeParentId != null)
-                    hashCode = hashCode * 59 + this.FirstbridgeParentId.GetHashCode();
-                if (this.NumberOfHoldings != null)
-                    hashCode = hashCode * 59 + this.NumberOfHoldings.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (Name != null)
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                if (Ticker != null)
+                    hashCode = hashCode * 59 + Ticker.GetHashCode();
+                if (FigiTicker != null)
+                    hashCode = hashCode * 59 + FigiTicker.GetHashCode();
+                if (Ric != null)
+                    hashCode = hashCode * 59 + Ric.GetHashCode();
+                if (Isin != null)
+                    hashCode = hashCode * 59 + Isin.GetHashCode();
+                if (Sedol != null)
+                    hashCode = hashCode * 59 + Sedol.GetHashCode();
+                if (ExchangeMic != null)
+                    hashCode = hashCode * 59 + ExchangeMic.GetHashCode();
+                if (Sponsor != null)
+                    hashCode = hashCode * 59 + Sponsor.GetHashCode();
+                if (Type != null)
+                    hashCode = hashCode * 59 + Type.GetHashCode();
+                if (Description != null)
+                    hashCode = hashCode * 59 + Description.GetHashCode();
+                if (InceptionDate != null)
+                    hashCode = hashCode * 59 + InceptionDate.GetHashCode();
+                if (DataChangeDate != null)
+                    hashCode = hashCode * 59 + DataChangeDate.GetHashCode();
+                if (CloseDate != null)
+                    hashCode = hashCode * 59 + CloseDate.GetHashCode();
+                if (IsLiveListed != null)
+                    hashCode = hashCode * 59 + IsLiveListed.GetHashCode();
+                if (LegalStructure != null)
+                    hashCode = hashCode * 59 + LegalStructure.GetHashCode();
+                if (IntradayNavTicker != null)
+                    hashCode = hashCode * 59 + IntradayNavTicker.GetHashCode();
+                if (PrimaryTicker != null)
+                    hashCode = hashCode * 59 + PrimaryTicker.GetHashCode();
+                if (PrimaryTickerCountryCode != null)
+                    hashCode = hashCode * 59 + PrimaryTickerCountryCode.GetHashCode();
+                if (PrimaryListingRegion != null)
+                    hashCode = hashCode * 59 + PrimaryListingRegion.GetHashCode();
+                if (NetExpenseRatio != null)
+                    hashCode = hashCode * 59 + NetExpenseRatio.GetHashCode();
+                if (AssetClass != null)
+                    hashCode = hashCode * 59 + AssetClass.GetHashCode();
+                if (OtherAssetTypes != null)
+                    hashCode = hashCode * 59 + OtherAssetTypes.GetHashCode();
+                if (MarketCapRange != null)
+                    hashCode = hashCode * 59 + MarketCapRange.GetHashCode();
+                if (HoldsOnlyNyseStocks != null)
+                    hashCode = hashCode * 59 + HoldsOnlyNyseStocks.GetHashCode();
+                if (HoldsOnlyNasdaqStocks != null)
+                    hashCode = hashCode * 59 + HoldsOnlyNasdaqStocks.GetHashCode();
+                if (GrowthValueTilt != null)
+                    hashCode = hashCode * 59 + GrowthValueTilt.GetHashCode();
+                if (GrowthType != null)
+                    hashCode = hashCode * 59 + GrowthType.GetHashCode();
+                if (ValueType != null)
+                    hashCode = hashCode * 59 + ValueType.GetHashCode();
+                if (Sector != null)
+                    hashCode = hashCode * 59 + Sector.GetHashCode();
+                if (Industry != null)
+                    hashCode = hashCode * 59 + Industry.GetHashCode();
+                if (SubIndustry != null)
+                    hashCode = hashCode * 59 + SubIndustry.GetHashCode();
+                if (CrossSectorTheme != null)
+                    hashCode = hashCode * 59 + CrossSectorTheme.GetHashCode();
+                if (NaturalResourcesType != null)
+                    hashCode = hashCode * 59 + NaturalResourcesType.GetHashCode();
+                if (ExcludesFinancials != null)
+                    hashCode = hashCode * 59 + ExcludesFinancials.GetHashCode();
+                if (ExcludesTechnology != null)
+                    hashCode = hashCode * 59 + ExcludesTechnology.GetHashCode();
+                if (UsOrExcludesUs != null)
+                    hashCode = hashCode * 59 + UsOrExcludesUs.GetHashCode();
+                if (DevelopedEmerging != null)
+                    hashCode = hashCode * 59 + DevelopedEmerging.GetHashCode();
+                if (SpecializedRegion != null)
+                    hashCode = hashCode * 59 + SpecializedRegion.GetHashCode();
+                if (Continent != null)
+                    hashCode = hashCode * 59 + Continent.GetHashCode();
+                if (LatinAmericaSubGroup != null)
+                    hashCode = hashCode * 59 + LatinAmericaSubGroup.GetHashCode();
+                if (EuropeSubGroup != null)
+                    hashCode = hashCode * 59 + EuropeSubGroup.GetHashCode();
+                if (AsiaSubGroup != null)
+                    hashCode = hashCode * 59 + AsiaSubGroup.GetHashCode();
+                if (SpecificCountry != null)
+                    hashCode = hashCode * 59 + SpecificCountry.GetHashCode();
+                if (ChinaListingLocation != null)
+                    hashCode = hashCode * 59 + ChinaListingLocation.GetHashCode();
+                if (UsState != null)
+                    hashCode = hashCode * 59 + UsState.GetHashCode();
+                if (RealEstate != null)
+                    hashCode = hashCode * 59 + RealEstate.GetHashCode();
+                if (IndexWeightingScheme != null)
+                    hashCode = hashCode * 59 + IndexWeightingScheme.GetHashCode();
+                if (MarketCapWeightingType != null)
+                    hashCode = hashCode * 59 + MarketCapWeightingType.GetHashCode();
+                if (FundamentalWeightingType != null)
+                    hashCode = hashCode * 59 + FundamentalWeightingType.GetHashCode();
+                if (DividendWeightingType != null)
+                    hashCode = hashCode * 59 + DividendWeightingType.GetHashCode();
+                if (BondType != null)
+                    hashCode = hashCode * 59 + BondType.GetHashCode();
+                if (GovernmentBondTypes != null)
+                    hashCode = hashCode * 59 + GovernmentBondTypes.GetHashCode();
+                if (MunicipalBondRegion != null)
+                    hashCode = hashCode * 59 + MunicipalBondRegion.GetHashCode();
+                if (MunicipalVrdo != null)
+                    hashCode = hashCode * 59 + MunicipalVrdo.GetHashCode();
+                if (MortgageBondTypes != null)
+                    hashCode = hashCode * 59 + MortgageBondTypes.GetHashCode();
+                if (BondTaxStatus != null)
+                    hashCode = hashCode * 59 + BondTaxStatus.GetHashCode();
+                if (CreditQuality != null)
+                    hashCode = hashCode * 59 + CreditQuality.GetHashCode();
+                if (AverageMaturity != null)
+                    hashCode = hashCode * 59 + AverageMaturity.GetHashCode();
+                if (SpecificMaturityYear != null)
+                    hashCode = hashCode * 59 + SpecificMaturityYear.GetHashCode();
+                if (BondCurrencyDenomination != null)
+                    hashCode = hashCode * 59 + BondCurrencyDenomination.GetHashCode();
+                if (Laddered != null)
+                    hashCode = hashCode * 59 + Laddered.GetHashCode();
+                if (ZeroCoupon != null)
+                    hashCode = hashCode * 59 + ZeroCoupon.GetHashCode();
+                if (FloatingRate != null)
+                    hashCode = hashCode * 59 + FloatingRate.GetHashCode();
+                if (BuildAmericaBonds != null)
+                    hashCode = hashCode * 59 + BuildAmericaBonds.GetHashCode();
+                if (CommodityTypes != null)
+                    hashCode = hashCode * 59 + CommodityTypes.GetHashCode();
+                if (EnergyType != null)
+                    hashCode = hashCode * 59 + EnergyType.GetHashCode();
+                if (AgriculturalType != null)
+                    hashCode = hashCode * 59 + AgriculturalType.GetHashCode();
+                if (MetalType != null)
+                    hashCode = hashCode * 59 + MetalType.GetHashCode();
+                if (InverseLeveraged != null)
+                    hashCode = hashCode * 59 + InverseLeveraged.GetHashCode();
+                if (TargetDateMultiAssetType != null)
+                    hashCode = hashCode * 59 + TargetDateMultiAssetType.GetHashCode();
+                if (CurrencyHedged != null)
+                    hashCode = hashCode * 59 + CurrencyHedged.GetHashCode();
+                if (CurrencyPair != null)
+                    hashCode = hashCode * 59 + CurrencyPair.GetHashCode();
+                if (SocialEnvironmentalType != null)
+                    hashCode = hashCode * 59 + SocialEnvironmentalType.GetHashCode();
+                if (CleanEnergyType != null)
+                    hashCode = hashCode * 59 + CleanEnergyType.GetHashCode();
+                if (DividendType != null)
+                    hashCode = hashCode * 59 + DividendType.GetHashCode();
+                if (RegularDividendPayorType != null)
+                    hashCode = hashCode * 59 + RegularDividendPayorType.GetHashCode();
+                if (HoldsMlPs != null)
+                    hashCode = hashCode * 59 + HoldsMlPs.GetHashCode();
+                if (HoldsPreferredStock != null)
+                    hashCode = hashCode * 59 + HoldsPreferredStock.GetHashCode();
+                if (HoldsClosedEndFunds != null)
+                    hashCode = hashCode * 59 + HoldsClosedEndFunds.GetHashCode();
+                if (QuantStrategiesType != null)
+                    hashCode = hashCode * 59 + QuantStrategiesType.GetHashCode();
+                if (OtherQuantModels != null)
+                    hashCode = hashCode * 59 + OtherQuantModels.GetHashCode();
+                if (HedgeFundType != null)
+                    hashCode = hashCode * 59 + HedgeFundType.GetHashCode();
+                if (DerivativesBased != null)
+                    hashCode = hashCode * 59 + DerivativesBased.GetHashCode();
+                if (HoldsAdRs != null)
+                    hashCode = hashCode * 59 + HoldsAdRs.GetHashCode();
+                if (IndexLinked != null)
+                    hashCode = hashCode * 59 + IndexLinked.GetHashCode();
+                if (IncludesShortExposure != null)
+                    hashCode = hashCode * 59 + IncludesShortExposure.GetHashCode();
+                if (IndexName != null)
+                    hashCode = hashCode * 59 + IndexName.GetHashCode();
+                if (ParentIndex != null)
+                    hashCode = hashCode * 59 + ParentIndex.GetHashCode();
+                if (IndexFamily != null)
+                    hashCode = hashCode * 59 + IndexFamily.GetHashCode();
+                if (BroaderIndexFamily != null)
+                    hashCode = hashCode * 59 + BroaderIndexFamily.GetHashCode();
+                if (IndexProvider != null)
+                    hashCode = hashCode * 59 + IndexProvider.GetHashCode();
+                if (FundFamily != null)
+                    hashCode = hashCode * 59 + FundFamily.GetHashCode();
+                if (IndexTicker != null)
+                    hashCode = hashCode * 59 + IndexTicker.GetHashCode();
+                if (EtnIssuingBank != null)
+                    hashCode = hashCode * 59 + EtnIssuingBank.GetHashCode();
+                if (EtnMaturityDate != null)
+                    hashCode = hashCode * 59 + EtnMaturityDate.GetHashCode();
+                if (Livestock != null)
+                    hashCode = hashCode * 59 + Livestock.GetHashCode();
+                if (DynamicFuturesRoll != null)
+                    hashCode = hashCode * 59 + DynamicFuturesRoll.GetHashCode();
+                if (IndexProviderCode != null)
+                    hashCode = hashCode * 59 + IndexProviderCode.GetHashCode();
+                if (SingleCategoryDesignation != null)
+                    hashCode = hashCode * 59 + SingleCategoryDesignation.GetHashCode();
+                if (RegisteredCountries != null)
+                    hashCode = hashCode * 59 + RegisteredCountries.GetHashCode();
+                if (IssuingEntityCountryCode != null)
+                    hashCode = hashCode * 59 + IssuingEntityCountryCode.GetHashCode();
+                if (Ucits != null)
+                    hashCode = hashCode * 59 + Ucits.GetHashCode();
+                if (ReplicationStructure != null)
+                    hashCode = hashCode * 59 + ReplicationStructure.GetHashCode();
+                if (Domicile != null)
+                    hashCode = hashCode * 59 + Domicile.GetHashCode();
+                if (BaseCurrency != null)
+                    hashCode = hashCode * 59 + BaseCurrency.GetHashCode();
+                if (ListingCurrency != null)
+                    hashCode = hashCode * 59 + ListingCurrency.GetHashCode();
+                if (FundListingDate != null)
+                    hashCode = hashCode * 59 + FundListingDate.GetHashCode();
+                if (ListingCountryCode != null)
+                    hashCode = hashCode * 59 + ListingCountryCode.GetHashCode();
+                if (ListingRegion != null)
+                    hashCode = hashCode * 59 + ListingRegion.GetHashCode();
+                if (SmartvsTraditionalBeta != null)
+                    hashCode = hashCode * 59 + SmartvsTraditionalBeta.GetHashCode();
+                if (SmartvsTraditionalBetaLevel2 != null)
+                    hashCode = hashCode * 59 + SmartvsTraditionalBetaLevel2.GetHashCode();
+                if (IncomeCategory != null)
+                    hashCode = hashCode * 59 + IncomeCategory.GetHashCode();
+                if (EtpStructureType != null)
+                    hashCode = hashCode * 59 + EtpStructureType.GetHashCode();
+                if (MonthEndAssets != null)
+                    hashCode = hashCode * 59 + MonthEndAssets.GetHashCode();
+                if (EtfPortfolioTurnover != null)
+                    hashCode = hashCode * 59 + EtfPortfolioTurnover.GetHashCode();
+                if (FirstbridgeId != null)
+                    hashCode = hashCode * 59 + FirstbridgeId.GetHashCode();
+                if (FirstbridgeParentId != null)
+                    hashCode = hashCode * 59 + FirstbridgeParentId.GetHashCode();
+                if (NumberOfHoldings != null)
+                    hashCode = hashCode * 59 + NumberOfHoldings.GetHashCode();
                 return hashCode;
             }
         }
@@ -2119,7 +2119,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -1,13 +1,10 @@
-
-
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text.RegularExpressions;
-using RestSharp;
-using Intrinio.Net.Client;
-using Intrinio.Net.Model;
 
 namespace Intrinio.Net.Api
 {
@@ -23,7 +20,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns all Data Tags. Returns Data Tags matching parameters when specified.
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="tag">Tag (optional)</param>
         /// <param name="type">Type (optional)</param>
         /// <param name="parent">ID of tag parent (optional)</param>
@@ -40,7 +37,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns all Data Tags. Returns Data Tags matching parameters when specified.
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="tag">Tag (optional)</param>
         /// <param name="type">Type (optional)</param>
         /// <param name="parent">ID of tag parent (optional)</param>
@@ -56,7 +53,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Data Tag with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or the code-name of the Data Tag</param>
         /// <returns>DataTag</returns>
         DataTag GetDataTagById (string identifier);
@@ -67,7 +64,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Data Tag with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or the code-name of the Data Tag</param>
         /// <returns>ApiResponse of DataTag</returns>
         ApiResponse<DataTag> GetDataTagByIdWithHttpInfo (string identifier);
@@ -77,7 +74,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Searches for Data Tags matching the text &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <returns>ApiResponseDataTagsSearch</returns>
@@ -89,7 +86,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Searches for Data Tags matching the text &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <returns>ApiResponse of ApiResponseDataTagsSearch</returns>
@@ -102,7 +99,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns all Data Tags. Returns Data Tags matching parameters when specified.
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="tag">Tag (optional)</param>
         /// <param name="type">Type (optional)</param>
         /// <param name="parent">ID of tag parent (optional)</param>
@@ -119,7 +116,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns all Data Tags. Returns Data Tags matching parameters when specified.
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="tag">Tag (optional)</param>
         /// <param name="type">Type (optional)</param>
         /// <param name="parent">ID of tag parent (optional)</param>
@@ -135,7 +132,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Data Tag with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or the code-name of the Data Tag</param>
         /// <returns>Task of DataTag</returns>
         System.Threading.Tasks.Task<DataTag> GetDataTagByIdAsync (string identifier);
@@ -146,7 +143,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Data Tag with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or the code-name of the Data Tag</param>
         /// <returns>Task of ApiResponse (DataTag)</returns>
         System.Threading.Tasks.Task<ApiResponse<DataTag>> GetDataTagByIdAsyncWithHttpInfo (string identifier);
@@ -156,7 +153,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Searches for Data Tags matching the text &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <returns>Task of ApiResponseDataTagsSearch</returns>
@@ -168,7 +165,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Searches for Data Tags matching the text &#x60;query&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <returns>Task of ApiResponse (ApiResponseDataTagsSearch)</returns>
@@ -181,17 +178,17 @@ namespace Intrinio.Net.Api
     /// </summary>
     public partial class DataTagApi : IDataTagApi
     {
-        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DataTagApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public DataTagApi(String basePath)
+        public DataTagApi(string basePath)
         {
-            this.Configuration = new Configuration { BasePath = basePath };
+            Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -203,20 +200,20 @@ namespace Intrinio.Net.Api
         public DataTagApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = Configuration.Default;
+                Configuration = Configuration.Default;
             else
-                this.Configuration = configuration;
+                Configuration = configuration;
 
-            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
-            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+            return Configuration.ApiClient.RestClient.BaseUrl.ToString();
         }
 
         /// <summary>
@@ -224,7 +221,7 @@ namespace Intrinio.Net.Api
         /// </summary>
         /// <value>The base path</value>
         [Obsolete("SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             // do nothing
         }
@@ -238,7 +235,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -256,9 +253,9 @@ namespace Intrinio.Net.Api
         /// </summary>
         /// <returns>Dictionary of HTTP header</returns>
         [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<String, String> DefaultHeader()
+        public IDictionary<string, string> DefaultHeader()
         {
-            return new ReadOnlyDictionary<string, string>(this.Configuration.DefaultHeader);
+            return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
         }
 
         /// <summary>
@@ -270,13 +267,13 @@ namespace Intrinio.Net.Api
         [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
         public void AddDefaultHeader(string key, string value)
         {
-            this.Configuration.AddDefaultHeader(key, value);
+            Configuration.AddDefaultHeader(key, value);
         }
 
         /// <summary>
         /// All Data Tags Returns all Data Tags. Returns Data Tags matching parameters when specified.
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="tag">Tag (optional)</param>
         /// <param name="type">Type (optional)</param>
         /// <param name="parent">ID of tag parent (optional)</param>
@@ -294,7 +291,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// All Data Tags Returns all Data Tags. Returns Data Tags matching parameters when specified.
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="tag">Tag (optional)</param>
         /// <param name="type">Type (optional)</param>
         /// <param name="parent">ID of tag parent (optional)</param>
@@ -303,29 +300,29 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseDataTags</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseDataTags > GetAllDataTagsWithHttpInfo (string tag = null, string type = null, string parent = null, string statementCode = null, string fsTemplate = null, int? pageSize = null, string nextPage = null)
         {
 
             var localVarPath = "/data_tags";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -339,7 +336,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -365,7 +362,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// All Data Tags Returns all Data Tags. Returns Data Tags matching parameters when specified.
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="tag">Tag (optional)</param>
         /// <param name="type">Type (optional)</param>
         /// <param name="parent">ID of tag parent (optional)</param>
@@ -384,7 +381,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// All Data Tags Returns all Data Tags. Returns Data Tags matching parameters when specified.
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="tag">Tag (optional)</param>
         /// <param name="type">Type (optional)</param>
         /// <param name="parent">ID of tag parent (optional)</param>
@@ -397,23 +394,23 @@ namespace Intrinio.Net.Api
         {
 
             var localVarPath = "/data_tags";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -427,7 +424,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -453,7 +450,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Lookup Data Tag Returns the Data Tag with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or the code-name of the Data Tag</param>
         /// <returns>DataTag</returns>
         public DataTag GetDataTagById (string identifier)
@@ -465,11 +462,11 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Lookup Data Tag Returns the Data Tag with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or the code-name of the Data Tag</param>
         /// <returns>ApiResponse of DataTag</returns>
-        
-        
+
+
         public ApiResponse< DataTag > GetDataTagByIdWithHttpInfo (string identifier)
         {
             // verify the required parameter 'identifier' is set
@@ -477,23 +474,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling DataTagApi->GetDataTagById");
 
             var localVarPath = "/data_tags/{identifier}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -501,7 +498,7 @@ namespace Intrinio.Net.Api
             if (identifier != null) localVarPathParams.Add("identifier", Configuration.ApiClient.ParameterToString(identifier)); // path parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -527,7 +524,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Lookup Data Tag Returns the Data Tag with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or the code-name of the Data Tag</param>
         /// <returns>Task of DataTag</returns>
         public async System.Threading.Tasks.Task<DataTag> GetDataTagByIdAsync (string identifier)
@@ -540,7 +537,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Lookup Data Tag Returns the Data Tag with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">The Intrinio ID or the code-name of the Data Tag</param>
         /// <returns>Task of ApiResponse (DataTag)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<DataTag>> GetDataTagByIdAsyncWithHttpInfo (string identifier)
@@ -550,23 +547,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling DataTagApi->GetDataTagById");
 
             var localVarPath = "/data_tags/{identifier}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -574,7 +571,7 @@ namespace Intrinio.Net.Api
             if (identifier != null) localVarPathParams.Add("identifier", Configuration.ApiClient.ParameterToString(identifier)); // path parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -600,7 +597,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Search Data Tags Searches for Data Tags matching the text &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <returns>ApiResponseDataTagsSearch</returns>
@@ -613,12 +610,12 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Search Data Tags Searches for Data Tags matching the text &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <returns>ApiResponse of ApiResponseDataTagsSearch</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseDataTagsSearch > SearchDataTagsWithHttpInfo (string query, int? pageSize = null)
         {
             // verify the required parameter 'query' is set
@@ -626,23 +623,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'query' when calling DataTagApi->SearchDataTags");
 
             var localVarPath = "/data_tags/search";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -651,7 +648,7 @@ namespace Intrinio.Net.Api
             if (pageSize != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page_size", pageSize)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -677,7 +674,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Search Data Tags Searches for Data Tags matching the text &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <returns>Task of ApiResponseDataTagsSearch</returns>
@@ -691,7 +688,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Search Data Tags Searches for Data Tags matching the text &#x60;query&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="query"></param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <returns>Task of ApiResponse (ApiResponseDataTagsSearch)</returns>
@@ -702,23 +699,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'query' when calling DataTagApi->SearchDataTags");
 
             var localVarPath = "/data_tags/search";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -727,7 +724,7 @@ namespace Intrinio.Net.Api
             if (pageSize != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "page_size", pageSize)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }

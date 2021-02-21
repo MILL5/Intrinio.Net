@@ -1,5 +1,3 @@
-
-
 using System;
 using System.Reflection;
 using System.Collections.Concurrent;
@@ -218,7 +216,7 @@ namespace Intrinio.Net.Client
             }
         }
 
-        private String _basePath = null;
+        private string _basePath = null;
         /// <summary>
         /// Gets or sets the base path for API access.
         /// </summary>
@@ -416,11 +414,11 @@ namespace Intrinio.Net.Client
         /// <summary>
         /// Returns a string with essential information for debugging.
         /// </summary>
-        public static String ToDebugReport()
+        public static string ToDebugReport()
         {
-            String report = "C# SDK (Intrinio.Net) Debug Report:\n";
-            report += "    OS: " + System.Environment.OSVersion + "\n";
-            report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
+            string report = "C# SDK (Intrinio.Net) Debug Report:\n";
+            report += "    OS: " + Environment.OSVersion + "\n";
+            report += "    .NET Framework Version: " + Environment.Version  + "\n";
             report += "    Version of the API: 2.18.0\n";
             report += "    SDK Package Version: 5.8.0\n";
 

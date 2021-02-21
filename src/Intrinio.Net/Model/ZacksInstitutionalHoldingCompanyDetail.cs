@@ -1,17 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+using System.Text;
 using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
@@ -188,7 +180,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ZacksInstitutionalHoldingCompanyDetail);
+            return Equals(input as ZacksInstitutionalHoldingCompanyDetail);
         }
 
         /// <summary>
@@ -203,69 +195,69 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Ticker == input.Ticker ||
-                    (this.Ticker != null &&
-                    this.Ticker.Equals(input.Ticker))
+                    Ticker == input.Ticker ||
+                    (Ticker != null &&
+                    Ticker.Equals(input.Ticker))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Exchange == input.Exchange ||
-                    (this.Exchange != null &&
-                    this.Exchange.Equals(input.Exchange))
+                    Exchange == input.Exchange ||
+                    (Exchange != null &&
+                    Exchange.Equals(input.Exchange))
                 ) && 
                 (
-                    this.SharesOutstanding == input.SharesOutstanding ||
-                    (this.SharesOutstanding != null &&
-                    this.SharesOutstanding.Equals(input.SharesOutstanding))
+                    SharesOutstanding == input.SharesOutstanding ||
+                    (SharesOutstanding != null &&
+                    SharesOutstanding.Equals(input.SharesOutstanding))
                 ) && 
                 (
-                    this.LastClosePrice == input.LastClosePrice ||
-                    (this.LastClosePrice != null &&
-                    this.LastClosePrice.Equals(input.LastClosePrice))
+                    LastClosePrice == input.LastClosePrice ||
+                    (LastClosePrice != null &&
+                    LastClosePrice.Equals(input.LastClosePrice))
                 ) && 
                 (
-                    this.LastCloseDate == input.LastCloseDate ||
-                    (this.LastCloseDate != null &&
-                    this.LastCloseDate.Equals(input.LastCloseDate))
+                    LastCloseDate == input.LastCloseDate ||
+                    (LastCloseDate != null &&
+                    LastCloseDate.Equals(input.LastCloseDate))
                 ) && 
                 (
-                    this.InstitutionalSharesHeldPercent == input.InstitutionalSharesHeldPercent ||
-                    (this.InstitutionalSharesHeldPercent != null &&
-                    this.InstitutionalSharesHeldPercent.Equals(input.InstitutionalSharesHeldPercent))
+                    InstitutionalSharesHeldPercent == input.InstitutionalSharesHeldPercent ||
+                    (InstitutionalSharesHeldPercent != null &&
+                    InstitutionalSharesHeldPercent.Equals(input.InstitutionalSharesHeldPercent))
                 ) && 
                 (
-                    this.InstitutionalSharesBuy == input.InstitutionalSharesBuy ||
-                    (this.InstitutionalSharesBuy != null &&
-                    this.InstitutionalSharesBuy.Equals(input.InstitutionalSharesBuy))
+                    InstitutionalSharesBuy == input.InstitutionalSharesBuy ||
+                    (InstitutionalSharesBuy != null &&
+                    InstitutionalSharesBuy.Equals(input.InstitutionalSharesBuy))
                 ) && 
                 (
-                    this.InstitutionalSharesSell == input.InstitutionalSharesSell ||
-                    (this.InstitutionalSharesSell != null &&
-                    this.InstitutionalSharesSell.Equals(input.InstitutionalSharesSell))
+                    InstitutionalSharesSell == input.InstitutionalSharesSell ||
+                    (InstitutionalSharesSell != null &&
+                    InstitutionalSharesSell.Equals(input.InstitutionalSharesSell))
                 ) && 
                 (
-                    this.InstitutionalPositionsIncrease == input.InstitutionalPositionsIncrease ||
-                    (this.InstitutionalPositionsIncrease != null &&
-                    this.InstitutionalPositionsIncrease.Equals(input.InstitutionalPositionsIncrease))
+                    InstitutionalPositionsIncrease == input.InstitutionalPositionsIncrease ||
+                    (InstitutionalPositionsIncrease != null &&
+                    InstitutionalPositionsIncrease.Equals(input.InstitutionalPositionsIncrease))
                 ) && 
                 (
-                    this.InstitutionalPositionsDecrease == input.InstitutionalPositionsDecrease ||
-                    (this.InstitutionalPositionsDecrease != null &&
-                    this.InstitutionalPositionsDecrease.Equals(input.InstitutionalPositionsDecrease))
+                    InstitutionalPositionsDecrease == input.InstitutionalPositionsDecrease ||
+                    (InstitutionalPositionsDecrease != null &&
+                    InstitutionalPositionsDecrease.Equals(input.InstitutionalPositionsDecrease))
                 ) && 
                 (
-                    this.InstitutionalPositionsUnchanged == input.InstitutionalPositionsUnchanged ||
-                    (this.InstitutionalPositionsUnchanged != null &&
-                    this.InstitutionalPositionsUnchanged.Equals(input.InstitutionalPositionsUnchanged))
+                    InstitutionalPositionsUnchanged == input.InstitutionalPositionsUnchanged ||
+                    (InstitutionalPositionsUnchanged != null &&
+                    InstitutionalPositionsUnchanged.Equals(input.InstitutionalPositionsUnchanged))
                 ) && 
                 (
-                    this.InstitutionalPositionsTotal == input.InstitutionalPositionsTotal ||
-                    (this.InstitutionalPositionsTotal != null &&
-                    this.InstitutionalPositionsTotal.Equals(input.InstitutionalPositionsTotal))
+                    InstitutionalPositionsTotal == input.InstitutionalPositionsTotal ||
+                    (InstitutionalPositionsTotal != null &&
+                    InstitutionalPositionsTotal.Equals(input.InstitutionalPositionsTotal))
                 );
         }
 
@@ -278,32 +270,32 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Ticker != null)
-                    hashCode = hashCode * 59 + this.Ticker.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Exchange != null)
-                    hashCode = hashCode * 59 + this.Exchange.GetHashCode();
-                if (this.SharesOutstanding != null)
-                    hashCode = hashCode * 59 + this.SharesOutstanding.GetHashCode();
-                if (this.LastClosePrice != null)
-                    hashCode = hashCode * 59 + this.LastClosePrice.GetHashCode();
-                if (this.LastCloseDate != null)
-                    hashCode = hashCode * 59 + this.LastCloseDate.GetHashCode();
-                if (this.InstitutionalSharesHeldPercent != null)
-                    hashCode = hashCode * 59 + this.InstitutionalSharesHeldPercent.GetHashCode();
-                if (this.InstitutionalSharesBuy != null)
-                    hashCode = hashCode * 59 + this.InstitutionalSharesBuy.GetHashCode();
-                if (this.InstitutionalSharesSell != null)
-                    hashCode = hashCode * 59 + this.InstitutionalSharesSell.GetHashCode();
-                if (this.InstitutionalPositionsIncrease != null)
-                    hashCode = hashCode * 59 + this.InstitutionalPositionsIncrease.GetHashCode();
-                if (this.InstitutionalPositionsDecrease != null)
-                    hashCode = hashCode * 59 + this.InstitutionalPositionsDecrease.GetHashCode();
-                if (this.InstitutionalPositionsUnchanged != null)
-                    hashCode = hashCode * 59 + this.InstitutionalPositionsUnchanged.GetHashCode();
-                if (this.InstitutionalPositionsTotal != null)
-                    hashCode = hashCode * 59 + this.InstitutionalPositionsTotal.GetHashCode();
+                if (Ticker != null)
+                    hashCode = hashCode * 59 + Ticker.GetHashCode();
+                if (Name != null)
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                if (Exchange != null)
+                    hashCode = hashCode * 59 + Exchange.GetHashCode();
+                if (SharesOutstanding != null)
+                    hashCode = hashCode * 59 + SharesOutstanding.GetHashCode();
+                if (LastClosePrice != null)
+                    hashCode = hashCode * 59 + LastClosePrice.GetHashCode();
+                if (LastCloseDate != null)
+                    hashCode = hashCode * 59 + LastCloseDate.GetHashCode();
+                if (InstitutionalSharesHeldPercent != null)
+                    hashCode = hashCode * 59 + InstitutionalSharesHeldPercent.GetHashCode();
+                if (InstitutionalSharesBuy != null)
+                    hashCode = hashCode * 59 + InstitutionalSharesBuy.GetHashCode();
+                if (InstitutionalSharesSell != null)
+                    hashCode = hashCode * 59 + InstitutionalSharesSell.GetHashCode();
+                if (InstitutionalPositionsIncrease != null)
+                    hashCode = hashCode * 59 + InstitutionalPositionsIncrease.GetHashCode();
+                if (InstitutionalPositionsDecrease != null)
+                    hashCode = hashCode * 59 + InstitutionalPositionsDecrease.GetHashCode();
+                if (InstitutionalPositionsUnchanged != null)
+                    hashCode = hashCode * 59 + InstitutionalPositionsUnchanged.GetHashCode();
+                if (InstitutionalPositionsTotal != null)
+                    hashCode = hashCode * 59 + InstitutionalPositionsTotal.GetHashCode();
                 return hashCode;
             }
         }
@@ -313,7 +305,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

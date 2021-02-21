@@ -77,7 +77,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ReportedFinancialDimension);
+            return Equals(input as ReportedFinancialDimension);
         }
 
         /// <summary>
@@ -92,14 +92,14 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Axis == input.Axis ||
-                    (this.Axis != null &&
-                    this.Axis.Equals(input.Axis))
+                    Axis == input.Axis ||
+                    (Axis != null &&
+                    Axis.Equals(input.Axis))
                 ) && 
                 (
-                    this.Member == input.Member ||
-                    (this.Member != null &&
-                    this.Member.Equals(input.Member))
+                    Member == input.Member ||
+                    (Member != null &&
+                    Member.Equals(input.Member))
                 );
         }
 
@@ -112,10 +112,10 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Axis != null)
-                    hashCode = hashCode * 59 + this.Axis.GetHashCode();
-                if (this.Member != null)
-                    hashCode = hashCode * 59 + this.Member.GetHashCode();
+                if (Axis != null)
+                    hashCode = hashCode * 59 + Axis.GetHashCode();
+                if (Member != null)
+                    hashCode = hashCode * 59 + Member.GetHashCode();
                 return hashCode;
             }
         }
@@ -125,7 +125,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

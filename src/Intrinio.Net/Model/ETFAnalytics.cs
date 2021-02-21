@@ -146,7 +146,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ETFAnalytics);
+            return Equals(input as ETFAnalytics);
         }
 
         /// <summary>
@@ -161,49 +161,49 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.FiftyTwoWeekHigh == input.FiftyTwoWeekHigh ||
-                    (this.FiftyTwoWeekHigh != null &&
-                    this.FiftyTwoWeekHigh.Equals(input.FiftyTwoWeekHigh))
+                    FiftyTwoWeekHigh == input.FiftyTwoWeekHigh ||
+                    (FiftyTwoWeekHigh != null &&
+                    FiftyTwoWeekHigh.Equals(input.FiftyTwoWeekHigh))
                 ) && 
                 (
-                    this.FiftyTwoWeekLow == input.FiftyTwoWeekLow ||
-                    (this.FiftyTwoWeekLow != null &&
-                    this.FiftyTwoWeekLow.Equals(input.FiftyTwoWeekLow))
+                    FiftyTwoWeekLow == input.FiftyTwoWeekLow ||
+                    (FiftyTwoWeekLow != null &&
+                    FiftyTwoWeekLow.Equals(input.FiftyTwoWeekLow))
                 ) && 
                 (
-                    this.VolumeTraded == input.VolumeTraded ||
-                    (this.VolumeTraded != null &&
-                    this.VolumeTraded.Equals(input.VolumeTraded))
+                    VolumeTraded == input.VolumeTraded ||
+                    (VolumeTraded != null &&
+                    VolumeTraded.Equals(input.VolumeTraded))
                 ) && 
                 (
-                    this.AverageDailyVolumeOneMonth == input.AverageDailyVolumeOneMonth ||
-                    (this.AverageDailyVolumeOneMonth != null &&
-                    this.AverageDailyVolumeOneMonth.Equals(input.AverageDailyVolumeOneMonth))
+                    AverageDailyVolumeOneMonth == input.AverageDailyVolumeOneMonth ||
+                    (AverageDailyVolumeOneMonth != null &&
+                    AverageDailyVolumeOneMonth.Equals(input.AverageDailyVolumeOneMonth))
                 ) && 
                 (
-                    this.AverageDailyVolumeThreeMonth == input.AverageDailyVolumeThreeMonth ||
-                    (this.AverageDailyVolumeThreeMonth != null &&
-                    this.AverageDailyVolumeThreeMonth.Equals(input.AverageDailyVolumeThreeMonth))
+                    AverageDailyVolumeThreeMonth == input.AverageDailyVolumeThreeMonth ||
+                    (AverageDailyVolumeThreeMonth != null &&
+                    AverageDailyVolumeThreeMonth.Equals(input.AverageDailyVolumeThreeMonth))
                 ) && 
                 (
-                    this.AverageDailyVolumeSixMonth == input.AverageDailyVolumeSixMonth ||
-                    (this.AverageDailyVolumeSixMonth != null &&
-                    this.AverageDailyVolumeSixMonth.Equals(input.AverageDailyVolumeSixMonth))
+                    AverageDailyVolumeSixMonth == input.AverageDailyVolumeSixMonth ||
+                    (AverageDailyVolumeSixMonth != null &&
+                    AverageDailyVolumeSixMonth.Equals(input.AverageDailyVolumeSixMonth))
                 ) && 
                 (
-                    this.MarketCap == input.MarketCap ||
-                    (this.MarketCap != null &&
-                    this.MarketCap.Equals(input.MarketCap))
+                    MarketCap == input.MarketCap ||
+                    (MarketCap != null &&
+                    MarketCap.Equals(input.MarketCap))
                 ) && 
                 (
-                    this.SharesOutstanding == input.SharesOutstanding ||
-                    (this.SharesOutstanding != null &&
-                    this.SharesOutstanding.Equals(input.SharesOutstanding))
+                    SharesOutstanding == input.SharesOutstanding ||
+                    (SharesOutstanding != null &&
+                    SharesOutstanding.Equals(input.SharesOutstanding))
                 ) && 
                 (
-                    this.Etf == input.Etf ||
-                    (this.Etf != null &&
-                    this.Etf.Equals(input.Etf))
+                    Etf == input.Etf ||
+                    (Etf != null &&
+                    Etf.Equals(input.Etf))
                 );
         }
 
@@ -216,24 +216,24 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.FiftyTwoWeekHigh != null)
-                    hashCode = hashCode * 59 + this.FiftyTwoWeekHigh.GetHashCode();
-                if (this.FiftyTwoWeekLow != null)
-                    hashCode = hashCode * 59 + this.FiftyTwoWeekLow.GetHashCode();
-                if (this.VolumeTraded != null)
-                    hashCode = hashCode * 59 + this.VolumeTraded.GetHashCode();
-                if (this.AverageDailyVolumeOneMonth != null)
-                    hashCode = hashCode * 59 + this.AverageDailyVolumeOneMonth.GetHashCode();
-                if (this.AverageDailyVolumeThreeMonth != null)
-                    hashCode = hashCode * 59 + this.AverageDailyVolumeThreeMonth.GetHashCode();
-                if (this.AverageDailyVolumeSixMonth != null)
-                    hashCode = hashCode * 59 + this.AverageDailyVolumeSixMonth.GetHashCode();
-                if (this.MarketCap != null)
-                    hashCode = hashCode * 59 + this.MarketCap.GetHashCode();
-                if (this.SharesOutstanding != null)
-                    hashCode = hashCode * 59 + this.SharesOutstanding.GetHashCode();
-                if (this.Etf != null)
-                    hashCode = hashCode * 59 + this.Etf.GetHashCode();
+                if (FiftyTwoWeekHigh != null)
+                    hashCode = hashCode * 59 + FiftyTwoWeekHigh.GetHashCode();
+                if (FiftyTwoWeekLow != null)
+                    hashCode = hashCode * 59 + FiftyTwoWeekLow.GetHashCode();
+                if (VolumeTraded != null)
+                    hashCode = hashCode * 59 + VolumeTraded.GetHashCode();
+                if (AverageDailyVolumeOneMonth != null)
+                    hashCode = hashCode * 59 + AverageDailyVolumeOneMonth.GetHashCode();
+                if (AverageDailyVolumeThreeMonth != null)
+                    hashCode = hashCode * 59 + AverageDailyVolumeThreeMonth.GetHashCode();
+                if (AverageDailyVolumeSixMonth != null)
+                    hashCode = hashCode * 59 + AverageDailyVolumeSixMonth.GetHashCode();
+                if (MarketCap != null)
+                    hashCode = hashCode * 59 + MarketCap.GetHashCode();
+                if (SharesOutstanding != null)
+                    hashCode = hashCode * 59 + SharesOutstanding.GetHashCode();
+                if (Etf != null)
+                    hashCode = hashCode * 59 + Etf.GetHashCode();
                 return hashCode;
             }
         }
@@ -243,7 +243,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

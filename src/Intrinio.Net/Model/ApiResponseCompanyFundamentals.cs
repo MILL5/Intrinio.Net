@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -85,7 +77,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ApiResponseCompanyFundamentals);
+            return Equals(input as ApiResponseCompanyFundamentals);
         }
 
         /// <summary>
@@ -100,19 +92,19 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Fundamentals == input.Fundamentals ||
-                    this.Fundamentals != null &&
-                    this.Fundamentals.SequenceEqual(input.Fundamentals)
+                    Fundamentals == input.Fundamentals ||
+                    Fundamentals != null &&
+                    Fundamentals.SequenceEqual(input.Fundamentals)
                 ) && 
                 (
-                    this.Company == input.Company ||
-                    (this.Company != null &&
-                    this.Company.Equals(input.Company))
+                    Company == input.Company ||
+                    (Company != null &&
+                    Company.Equals(input.Company))
                 ) && 
                 (
-                    this.NextPage == input.NextPage ||
-                    (this.NextPage != null &&
-                    this.NextPage.Equals(input.NextPage))
+                    NextPage == input.NextPage ||
+                    (NextPage != null &&
+                    NextPage.Equals(input.NextPage))
                 );
         }
 
@@ -125,12 +117,12 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Fundamentals != null)
-                    hashCode = hashCode * 59 + this.Fundamentals.GetHashCode();
-                if (this.Company != null)
-                    hashCode = hashCode * 59 + this.Company.GetHashCode();
-                if (this.NextPage != null)
-                    hashCode = hashCode * 59 + this.NextPage.GetHashCode();
+                if (Fundamentals != null)
+                    hashCode = hashCode * 59 + Fundamentals.GetHashCode();
+                if (Company != null)
+                    hashCode = hashCode * 59 + Company.GetHashCode();
+                if (NextPage != null)
+                    hashCode = hashCode * 59 + NextPage.GetHashCode();
                 return hashCode;
             }
         }
@@ -140,7 +132,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

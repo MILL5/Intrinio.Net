@@ -27,7 +27,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="Etfs">Etfs.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseETFs(Object Etfs = default(Object), string NextPage = default(string))
+        public ApiResponseETFs(object Etfs = default(object), string NextPage = default(string))
         {
             this.Etfs = Etfs;
             this.NextPage = NextPage;
@@ -37,7 +37,7 @@ namespace Intrinio.Net.Model
         /// Gets or Sets Etfs
         /// </summary>
         [DataMember(Name="etfs", EmitDefaultValue=false)]
-        public Object Etfs { get; set; }
+        public object Etfs { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
@@ -76,7 +76,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ApiResponseETFs);
+            return Equals(input as ApiResponseETFs);
         }
 
         /// <summary>
@@ -91,14 +91,14 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Etfs == input.Etfs ||
-                    (this.Etfs != null &&
-                    this.Etfs.Equals(input.Etfs))
+                    Etfs == input.Etfs ||
+                    (Etfs != null &&
+                    Etfs.Equals(input.Etfs))
                 ) && 
                 (
-                    this.NextPage == input.NextPage ||
-                    (this.NextPage != null &&
-                    this.NextPage.Equals(input.NextPage))
+                    NextPage == input.NextPage ||
+                    (NextPage != null &&
+                    NextPage.Equals(input.NextPage))
                 );
         }
 
@@ -111,10 +111,10 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Etfs != null)
-                    hashCode = hashCode * 59 + this.Etfs.GetHashCode();
-                if (this.NextPage != null)
-                    hashCode = hashCode * 59 + this.NextPage.GetHashCode();
+                if (Etfs != null)
+                    hashCode = hashCode * 59 + Etfs.GetHashCode();
+                if (NextPage != null)
+                    hashCode = hashCode * 59 + NextPage.GetHashCode();
                 return hashCode;
             }
         }
@@ -124,7 +124,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -1,17 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+using System.Text;
 using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
@@ -128,7 +120,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ZacksETFHolding);
+            return Equals(input as ZacksETFHolding);
         }
 
         /// <summary>
@@ -143,39 +135,39 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.EtfTicker == input.EtfTicker ||
-                    (this.EtfTicker != null &&
-                    this.EtfTicker.Equals(input.EtfTicker))
+                    EtfTicker == input.EtfTicker ||
+                    (EtfTicker != null &&
+                    EtfTicker.Equals(input.EtfTicker))
                 ) && 
                 (
-                    this.EtfName == input.EtfName ||
-                    (this.EtfName != null &&
-                    this.EtfName.Equals(input.EtfName))
+                    EtfName == input.EtfName ||
+                    (EtfName != null &&
+                    EtfName.Equals(input.EtfName))
                 ) && 
                 (
-                    this.HoldingSymbol == input.HoldingSymbol ||
-                    (this.HoldingSymbol != null &&
-                    this.HoldingSymbol.Equals(input.HoldingSymbol))
+                    HoldingSymbol == input.HoldingSymbol ||
+                    (HoldingSymbol != null &&
+                    HoldingSymbol.Equals(input.HoldingSymbol))
                 ) && 
                 (
-                    this.HoldingName == input.HoldingName ||
-                    (this.HoldingName != null &&
-                    this.HoldingName.Equals(input.HoldingName))
+                    HoldingName == input.HoldingName ||
+                    (HoldingName != null &&
+                    HoldingName.Equals(input.HoldingName))
                 ) && 
                 (
-                    this.DateOfHolding == input.DateOfHolding ||
-                    (this.DateOfHolding != null &&
-                    this.DateOfHolding.Equals(input.DateOfHolding))
+                    DateOfHolding == input.DateOfHolding ||
+                    (DateOfHolding != null &&
+                    DateOfHolding.Equals(input.DateOfHolding))
                 ) && 
                 (
-                    this.Shares == input.Shares ||
-                    (this.Shares != null &&
-                    this.Shares.Equals(input.Shares))
+                    Shares == input.Shares ||
+                    (Shares != null &&
+                    Shares.Equals(input.Shares))
                 ) && 
                 (
-                    this.Weight == input.Weight ||
-                    (this.Weight != null &&
-                    this.Weight.Equals(input.Weight))
+                    Weight == input.Weight ||
+                    (Weight != null &&
+                    Weight.Equals(input.Weight))
                 );
         }
 
@@ -188,20 +180,20 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.EtfTicker != null)
-                    hashCode = hashCode * 59 + this.EtfTicker.GetHashCode();
-                if (this.EtfName != null)
-                    hashCode = hashCode * 59 + this.EtfName.GetHashCode();
-                if (this.HoldingSymbol != null)
-                    hashCode = hashCode * 59 + this.HoldingSymbol.GetHashCode();
-                if (this.HoldingName != null)
-                    hashCode = hashCode * 59 + this.HoldingName.GetHashCode();
-                if (this.DateOfHolding != null)
-                    hashCode = hashCode * 59 + this.DateOfHolding.GetHashCode();
-                if (this.Shares != null)
-                    hashCode = hashCode * 59 + this.Shares.GetHashCode();
-                if (this.Weight != null)
-                    hashCode = hashCode * 59 + this.Weight.GetHashCode();
+                if (EtfTicker != null)
+                    hashCode = hashCode * 59 + EtfTicker.GetHashCode();
+                if (EtfName != null)
+                    hashCode = hashCode * 59 + EtfName.GetHashCode();
+                if (HoldingSymbol != null)
+                    hashCode = hashCode * 59 + HoldingSymbol.GetHashCode();
+                if (HoldingName != null)
+                    hashCode = hashCode * 59 + HoldingName.GetHashCode();
+                if (DateOfHolding != null)
+                    hashCode = hashCode * 59 + DateOfHolding.GetHashCode();
+                if (Shares != null)
+                    hashCode = hashCode * 59 + Shares.GetHashCode();
+                if (Weight != null)
+                    hashCode = hashCode * 59 + Weight.GetHashCode();
                 return hashCode;
             }
         }
@@ -211,7 +203,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

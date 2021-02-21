@@ -169,7 +169,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ZacksAnalystRatingSnapshot);
+            return Equals(input as ZacksAnalystRatingSnapshot);
         }
 
         /// <summary>
@@ -184,59 +184,59 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    Type == input.Type ||
+                    (Type != null &&
+                    Type.Equals(input.Type))
                 ) && 
                 (
-                    this.SnapshotDate == input.SnapshotDate ||
-                    (this.SnapshotDate != null &&
-                    this.SnapshotDate.Equals(input.SnapshotDate))
+                    SnapshotDate == input.SnapshotDate ||
+                    (SnapshotDate != null &&
+                    SnapshotDate.Equals(input.SnapshotDate))
                 ) && 
                 (
-                    this.RatingDate == input.RatingDate ||
-                    (this.RatingDate != null &&
-                    this.RatingDate.Equals(input.RatingDate))
+                    RatingDate == input.RatingDate ||
+                    (RatingDate != null &&
+                    RatingDate.Equals(input.RatingDate))
                 ) && 
                 (
-                    this.Mean == input.Mean ||
-                    (this.Mean != null &&
-                    this.Mean.Equals(input.Mean))
+                    Mean == input.Mean ||
+                    (Mean != null &&
+                    Mean.Equals(input.Mean))
                 ) && 
                 (
-                    this.Percentile == input.Percentile ||
-                    (this.Percentile != null &&
-                    this.Percentile.Equals(input.Percentile))
+                    Percentile == input.Percentile ||
+                    (Percentile != null &&
+                    Percentile.Equals(input.Percentile))
                 ) && 
                 (
-                    this.StrongBuys == input.StrongBuys ||
-                    (this.StrongBuys != null &&
-                    this.StrongBuys.Equals(input.StrongBuys))
+                    StrongBuys == input.StrongBuys ||
+                    (StrongBuys != null &&
+                    StrongBuys.Equals(input.StrongBuys))
                 ) && 
                 (
-                    this.Buys == input.Buys ||
-                    (this.Buys != null &&
-                    this.Buys.Equals(input.Buys))
+                    Buys == input.Buys ||
+                    (Buys != null &&
+                    Buys.Equals(input.Buys))
                 ) && 
                 (
-                    this.Holds == input.Holds ||
-                    (this.Holds != null &&
-                    this.Holds.Equals(input.Holds))
+                    Holds == input.Holds ||
+                    (Holds != null &&
+                    Holds.Equals(input.Holds))
                 ) && 
                 (
-                    this.Sells == input.Sells ||
-                    (this.Sells != null &&
-                    this.Sells.Equals(input.Sells))
+                    Sells == input.Sells ||
+                    (Sells != null &&
+                    Sells.Equals(input.Sells))
                 ) && 
                 (
-                    this.StrongSells == input.StrongSells ||
-                    (this.StrongSells != null &&
-                    this.StrongSells.Equals(input.StrongSells))
+                    StrongSells == input.StrongSells ||
+                    (StrongSells != null &&
+                    StrongSells.Equals(input.StrongSells))
                 ) && 
                 (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
+                    Total == input.Total ||
+                    (Total != null &&
+                    Total.Equals(input.Total))
                 );
         }
 
@@ -249,28 +249,28 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.SnapshotDate != null)
-                    hashCode = hashCode * 59 + this.SnapshotDate.GetHashCode();
-                if (this.RatingDate != null)
-                    hashCode = hashCode * 59 + this.RatingDate.GetHashCode();
-                if (this.Mean != null)
-                    hashCode = hashCode * 59 + this.Mean.GetHashCode();
-                if (this.Percentile != null)
-                    hashCode = hashCode * 59 + this.Percentile.GetHashCode();
-                if (this.StrongBuys != null)
-                    hashCode = hashCode * 59 + this.StrongBuys.GetHashCode();
-                if (this.Buys != null)
-                    hashCode = hashCode * 59 + this.Buys.GetHashCode();
-                if (this.Holds != null)
-                    hashCode = hashCode * 59 + this.Holds.GetHashCode();
-                if (this.Sells != null)
-                    hashCode = hashCode * 59 + this.Sells.GetHashCode();
-                if (this.StrongSells != null)
-                    hashCode = hashCode * 59 + this.StrongSells.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (Type != null)
+                    hashCode = hashCode * 59 + Type.GetHashCode();
+                if (SnapshotDate != null)
+                    hashCode = hashCode * 59 + SnapshotDate.GetHashCode();
+                if (RatingDate != null)
+                    hashCode = hashCode * 59 + RatingDate.GetHashCode();
+                if (Mean != null)
+                    hashCode = hashCode * 59 + Mean.GetHashCode();
+                if (Percentile != null)
+                    hashCode = hashCode * 59 + Percentile.GetHashCode();
+                if (StrongBuys != null)
+                    hashCode = hashCode * 59 + StrongBuys.GetHashCode();
+                if (Buys != null)
+                    hashCode = hashCode * 59 + Buys.GetHashCode();
+                if (Holds != null)
+                    hashCode = hashCode * 59 + Holds.GetHashCode();
+                if (Sells != null)
+                    hashCode = hashCode * 59 + Sells.GetHashCode();
+                if (StrongSells != null)
+                    hashCode = hashCode * 59 + StrongSells.GetHashCode();
+                if (Total != null)
+                    hashCode = hashCode * 59 + Total.GetHashCode();
                 return hashCode;
             }
         }
@@ -280,7 +280,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -87,7 +87,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ForexPair);
+            return Equals(input as ForexPair);
         }
 
         /// <summary>
@@ -102,19 +102,19 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
+                    Code == input.Code ||
+                    (Code != null &&
+                    Code.Equals(input.Code))
                 ) && 
                 (
-                    this.BaseCurrency == input.BaseCurrency ||
-                    (this.BaseCurrency != null &&
-                    this.BaseCurrency.Equals(input.BaseCurrency))
+                    BaseCurrency == input.BaseCurrency ||
+                    (BaseCurrency != null &&
+                    BaseCurrency.Equals(input.BaseCurrency))
                 ) && 
                 (
-                    this.QuoteCurrency == input.QuoteCurrency ||
-                    (this.QuoteCurrency != null &&
-                    this.QuoteCurrency.Equals(input.QuoteCurrency))
+                    QuoteCurrency == input.QuoteCurrency ||
+                    (QuoteCurrency != null &&
+                    QuoteCurrency.Equals(input.QuoteCurrency))
                 );
         }
 
@@ -127,12 +127,12 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.BaseCurrency != null)
-                    hashCode = hashCode * 59 + this.BaseCurrency.GetHashCode();
-                if (this.QuoteCurrency != null)
-                    hashCode = hashCode * 59 + this.QuoteCurrency.GetHashCode();
+                if (Code != null)
+                    hashCode = hashCode * 59 + Code.GetHashCode();
+                if (BaseCurrency != null)
+                    hashCode = hashCode * 59 + BaseCurrency.GetHashCode();
+                if (QuoteCurrency != null)
+                    hashCode = hashCode * 59 + QuoteCurrency.GetHashCode();
                 return hashCode;
             }
         }
@@ -142,7 +142,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

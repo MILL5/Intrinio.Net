@@ -1,5 +1,3 @@
-
-
 using Newtonsoft.Json.Converters;
 
 namespace Intrinio.Net.Client

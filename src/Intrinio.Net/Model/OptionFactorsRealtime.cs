@@ -117,7 +117,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OptionFactorsRealtime);
+            return Equals(input as OptionFactorsRealtime);
         }
 
         /// <summary>
@@ -132,34 +132,34 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.MarketPrice == input.MarketPrice ||
-                    (this.MarketPrice != null &&
-                    this.MarketPrice.Equals(input.MarketPrice))
+                    MarketPrice == input.MarketPrice ||
+                    (MarketPrice != null &&
+                    MarketPrice.Equals(input.MarketPrice))
                 ) && 
                 (
-                    this.UnderlyingPrice == input.UnderlyingPrice ||
-                    (this.UnderlyingPrice != null &&
-                    this.UnderlyingPrice.Equals(input.UnderlyingPrice))
+                    UnderlyingPrice == input.UnderlyingPrice ||
+                    (UnderlyingPrice != null &&
+                    UnderlyingPrice.Equals(input.UnderlyingPrice))
                 ) && 
                 (
-                    this.StrikePrice == input.StrikePrice ||
-                    (this.StrikePrice != null &&
-                    this.StrikePrice.Equals(input.StrikePrice))
+                    StrikePrice == input.StrikePrice ||
+                    (StrikePrice != null &&
+                    StrikePrice.Equals(input.StrikePrice))
                 ) && 
                 (
-                    this.DaysToExpiration == input.DaysToExpiration ||
-                    (this.DaysToExpiration != null &&
-                    this.DaysToExpiration.Equals(input.DaysToExpiration))
+                    DaysToExpiration == input.DaysToExpiration ||
+                    (DaysToExpiration != null &&
+                    DaysToExpiration.Equals(input.DaysToExpiration))
                 ) && 
                 (
-                    this.RiskFreeInterestRate == input.RiskFreeInterestRate ||
-                    (this.RiskFreeInterestRate != null &&
-                    this.RiskFreeInterestRate.Equals(input.RiskFreeInterestRate))
+                    RiskFreeInterestRate == input.RiskFreeInterestRate ||
+                    (RiskFreeInterestRate != null &&
+                    RiskFreeInterestRate.Equals(input.RiskFreeInterestRate))
                 ) && 
                 (
-                    this.DividendYield == input.DividendYield ||
-                    (this.DividendYield != null &&
-                    this.DividendYield.Equals(input.DividendYield))
+                    DividendYield == input.DividendYield ||
+                    (DividendYield != null &&
+                    DividendYield.Equals(input.DividendYield))
                 );
         }
 
@@ -172,18 +172,18 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.MarketPrice != null)
-                    hashCode = hashCode * 59 + this.MarketPrice.GetHashCode();
-                if (this.UnderlyingPrice != null)
-                    hashCode = hashCode * 59 + this.UnderlyingPrice.GetHashCode();
-                if (this.StrikePrice != null)
-                    hashCode = hashCode * 59 + this.StrikePrice.GetHashCode();
-                if (this.DaysToExpiration != null)
-                    hashCode = hashCode * 59 + this.DaysToExpiration.GetHashCode();
-                if (this.RiskFreeInterestRate != null)
-                    hashCode = hashCode * 59 + this.RiskFreeInterestRate.GetHashCode();
-                if (this.DividendYield != null)
-                    hashCode = hashCode * 59 + this.DividendYield.GetHashCode();
+                if (MarketPrice != null)
+                    hashCode = hashCode * 59 + MarketPrice.GetHashCode();
+                if (UnderlyingPrice != null)
+                    hashCode = hashCode * 59 + UnderlyingPrice.GetHashCode();
+                if (StrikePrice != null)
+                    hashCode = hashCode * 59 + StrikePrice.GetHashCode();
+                if (DaysToExpiration != null)
+                    hashCode = hashCode * 59 + DaysToExpiration.GetHashCode();
+                if (RiskFreeInterestRate != null)
+                    hashCode = hashCode * 59 + RiskFreeInterestRate.GetHashCode();
+                if (DividendYield != null)
+                    hashCode = hashCode * 59 + DividendYield.GetHashCode();
                 return hashCode;
             }
         }
@@ -193,7 +193,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

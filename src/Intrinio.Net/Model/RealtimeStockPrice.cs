@@ -216,7 +216,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RealtimeStockPrice);
+            return Equals(input as RealtimeStockPrice);
         }
 
         /// <summary>
@@ -231,84 +231,84 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.LastPrice == input.LastPrice ||
-                    (this.LastPrice != null &&
-                    this.LastPrice.Equals(input.LastPrice))
+                    LastPrice == input.LastPrice ||
+                    (LastPrice != null &&
+                    LastPrice.Equals(input.LastPrice))
                 ) && 
                 (
-                    this.LastTime == input.LastTime ||
-                    (this.LastTime != null &&
-                    this.LastTime.Equals(input.LastTime))
+                    LastTime == input.LastTime ||
+                    (LastTime != null &&
+                    LastTime.Equals(input.LastTime))
                 ) && 
                 (
-                    this.LastSize == input.LastSize ||
-                    (this.LastSize != null &&
-                    this.LastSize.Equals(input.LastSize))
+                    LastSize == input.LastSize ||
+                    (LastSize != null &&
+                    LastSize.Equals(input.LastSize))
                 ) && 
                 (
-                    this.BidPrice == input.BidPrice ||
-                    (this.BidPrice != null &&
-                    this.BidPrice.Equals(input.BidPrice))
+                    BidPrice == input.BidPrice ||
+                    (BidPrice != null &&
+                    BidPrice.Equals(input.BidPrice))
                 ) && 
                 (
-                    this.BidSize == input.BidSize ||
-                    (this.BidSize != null &&
-                    this.BidSize.Equals(input.BidSize))
+                    BidSize == input.BidSize ||
+                    (BidSize != null &&
+                    BidSize.Equals(input.BidSize))
                 ) && 
                 (
-                    this.AskPrice == input.AskPrice ||
-                    (this.AskPrice != null &&
-                    this.AskPrice.Equals(input.AskPrice))
+                    AskPrice == input.AskPrice ||
+                    (AskPrice != null &&
+                    AskPrice.Equals(input.AskPrice))
                 ) && 
                 (
-                    this.AskSize == input.AskSize ||
-                    (this.AskSize != null &&
-                    this.AskSize.Equals(input.AskSize))
+                    AskSize == input.AskSize ||
+                    (AskSize != null &&
+                    AskSize.Equals(input.AskSize))
                 ) && 
                 (
-                    this.OpenPrice == input.OpenPrice ||
-                    (this.OpenPrice != null &&
-                    this.OpenPrice.Equals(input.OpenPrice))
+                    OpenPrice == input.OpenPrice ||
+                    (OpenPrice != null &&
+                    OpenPrice.Equals(input.OpenPrice))
                 ) && 
                 (
-                    this.ClosePrice == input.ClosePrice ||
-                    (this.ClosePrice != null &&
-                    this.ClosePrice.Equals(input.ClosePrice))
+                    ClosePrice == input.ClosePrice ||
+                    (ClosePrice != null &&
+                    ClosePrice.Equals(input.ClosePrice))
                 ) && 
                 (
-                    this.HighPrice == input.HighPrice ||
-                    (this.HighPrice != null &&
-                    this.HighPrice.Equals(input.HighPrice))
+                    HighPrice == input.HighPrice ||
+                    (HighPrice != null &&
+                    HighPrice.Equals(input.HighPrice))
                 ) && 
                 (
-                    this.LowPrice == input.LowPrice ||
-                    (this.LowPrice != null &&
-                    this.LowPrice.Equals(input.LowPrice))
+                    LowPrice == input.LowPrice ||
+                    (LowPrice != null &&
+                    LowPrice.Equals(input.LowPrice))
                 ) && 
                 (
-                    this.ExchangeVolume == input.ExchangeVolume ||
-                    (this.ExchangeVolume != null &&
-                    this.ExchangeVolume.Equals(input.ExchangeVolume))
+                    ExchangeVolume == input.ExchangeVolume ||
+                    (ExchangeVolume != null &&
+                    ExchangeVolume.Equals(input.ExchangeVolume))
                 ) && 
                 (
-                    this.MarketVolume == input.MarketVolume ||
-                    (this.MarketVolume != null &&
-                    this.MarketVolume.Equals(input.MarketVolume))
+                    MarketVolume == input.MarketVolume ||
+                    (MarketVolume != null &&
+                    MarketVolume.Equals(input.MarketVolume))
                 ) && 
                 (
-                    this.UpdatedOn == input.UpdatedOn ||
-                    (this.UpdatedOn != null &&
-                    this.UpdatedOn.Equals(input.UpdatedOn))
+                    UpdatedOn == input.UpdatedOn ||
+                    (UpdatedOn != null &&
+                    UpdatedOn.Equals(input.UpdatedOn))
                 ) && 
                 (
-                    this.Source == input.Source ||
-                    (this.Source != null &&
-                    this.Source.Equals(input.Source))
+                    Source == input.Source ||
+                    (Source != null &&
+                    Source.Equals(input.Source))
                 ) && 
                 (
-                    this.Security == input.Security ||
-                    (this.Security != null &&
-                    this.Security.Equals(input.Security))
+                    Security == input.Security ||
+                    (Security != null &&
+                    Security.Equals(input.Security))
                 );
         }
 
@@ -321,38 +321,38 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.LastPrice != null)
-                    hashCode = hashCode * 59 + this.LastPrice.GetHashCode();
-                if (this.LastTime != null)
-                    hashCode = hashCode * 59 + this.LastTime.GetHashCode();
-                if (this.LastSize != null)
-                    hashCode = hashCode * 59 + this.LastSize.GetHashCode();
-                if (this.BidPrice != null)
-                    hashCode = hashCode * 59 + this.BidPrice.GetHashCode();
-                if (this.BidSize != null)
-                    hashCode = hashCode * 59 + this.BidSize.GetHashCode();
-                if (this.AskPrice != null)
-                    hashCode = hashCode * 59 + this.AskPrice.GetHashCode();
-                if (this.AskSize != null)
-                    hashCode = hashCode * 59 + this.AskSize.GetHashCode();
-                if (this.OpenPrice != null)
-                    hashCode = hashCode * 59 + this.OpenPrice.GetHashCode();
-                if (this.ClosePrice != null)
-                    hashCode = hashCode * 59 + this.ClosePrice.GetHashCode();
-                if (this.HighPrice != null)
-                    hashCode = hashCode * 59 + this.HighPrice.GetHashCode();
-                if (this.LowPrice != null)
-                    hashCode = hashCode * 59 + this.LowPrice.GetHashCode();
-                if (this.ExchangeVolume != null)
-                    hashCode = hashCode * 59 + this.ExchangeVolume.GetHashCode();
-                if (this.MarketVolume != null)
-                    hashCode = hashCode * 59 + this.MarketVolume.GetHashCode();
-                if (this.UpdatedOn != null)
-                    hashCode = hashCode * 59 + this.UpdatedOn.GetHashCode();
-                if (this.Source != null)
-                    hashCode = hashCode * 59 + this.Source.GetHashCode();
-                if (this.Security != null)
-                    hashCode = hashCode * 59 + this.Security.GetHashCode();
+                if (LastPrice != null)
+                    hashCode = hashCode * 59 + LastPrice.GetHashCode();
+                if (LastTime != null)
+                    hashCode = hashCode * 59 + LastTime.GetHashCode();
+                if (LastSize != null)
+                    hashCode = hashCode * 59 + LastSize.GetHashCode();
+                if (BidPrice != null)
+                    hashCode = hashCode * 59 + BidPrice.GetHashCode();
+                if (BidSize != null)
+                    hashCode = hashCode * 59 + BidSize.GetHashCode();
+                if (AskPrice != null)
+                    hashCode = hashCode * 59 + AskPrice.GetHashCode();
+                if (AskSize != null)
+                    hashCode = hashCode * 59 + AskSize.GetHashCode();
+                if (OpenPrice != null)
+                    hashCode = hashCode * 59 + OpenPrice.GetHashCode();
+                if (ClosePrice != null)
+                    hashCode = hashCode * 59 + ClosePrice.GetHashCode();
+                if (HighPrice != null)
+                    hashCode = hashCode * 59 + HighPrice.GetHashCode();
+                if (LowPrice != null)
+                    hashCode = hashCode * 59 + LowPrice.GetHashCode();
+                if (ExchangeVolume != null)
+                    hashCode = hashCode * 59 + ExchangeVolume.GetHashCode();
+                if (MarketVolume != null)
+                    hashCode = hashCode * 59 + MarketVolume.GetHashCode();
+                if (UpdatedOn != null)
+                    hashCode = hashCode * 59 + UpdatedOn.GetHashCode();
+                if (Source != null)
+                    hashCode = hashCode * 59 + Source.GetHashCode();
+                if (Security != null)
+                    hashCode = hashCode * 59 + Security.GetHashCode();
                 return hashCode;
             }
         }
@@ -362,7 +362,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -1,17 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+using System.Text;
 using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
@@ -229,7 +221,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ZacksSalesSurprise);
+            return Equals(input as ZacksSalesSurprise);
         }
 
         /// <summary>
@@ -244,89 +236,89 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.FiscalYear == input.FiscalYear ||
-                    (this.FiscalYear != null &&
-                    this.FiscalYear.Equals(input.FiscalYear))
+                    FiscalYear == input.FiscalYear ||
+                    (FiscalYear != null &&
+                    FiscalYear.Equals(input.FiscalYear))
                 ) && 
                 (
-                    this.FiscalQuarter == input.FiscalQuarter ||
-                    (this.FiscalQuarter != null &&
-                    this.FiscalQuarter.Equals(input.FiscalQuarter))
+                    FiscalQuarter == input.FiscalQuarter ||
+                    (FiscalQuarter != null &&
+                    FiscalQuarter.Equals(input.FiscalQuarter))
                 ) && 
                 (
-                    this.CalendarYear == input.CalendarYear ||
-                    (this.CalendarYear != null &&
-                    this.CalendarYear.Equals(input.CalendarYear))
+                    CalendarYear == input.CalendarYear ||
+                    (CalendarYear != null &&
+                    CalendarYear.Equals(input.CalendarYear))
                 ) && 
                 (
-                    this.CalendarQuarter == input.CalendarQuarter ||
-                    (this.CalendarQuarter != null &&
-                    this.CalendarQuarter.Equals(input.CalendarQuarter))
+                    CalendarQuarter == input.CalendarQuarter ||
+                    (CalendarQuarter != null &&
+                    CalendarQuarter.Equals(input.CalendarQuarter))
                 ) && 
                 (
-                    this.ActualReportedDate == input.ActualReportedDate ||
-                    (this.ActualReportedDate != null &&
-                    this.ActualReportedDate.Equals(input.ActualReportedDate))
+                    ActualReportedDate == input.ActualReportedDate ||
+                    (ActualReportedDate != null &&
+                    ActualReportedDate.Equals(input.ActualReportedDate))
                 ) && 
                 (
-                    this.ActualReportedTime == input.ActualReportedTime ||
-                    (this.ActualReportedTime != null &&
-                    this.ActualReportedTime.Equals(input.ActualReportedTime))
+                    ActualReportedTime == input.ActualReportedTime ||
+                    (ActualReportedTime != null &&
+                    ActualReportedTime.Equals(input.ActualReportedTime))
                 ) && 
                 (
-                    this.ActualReportedCode == input.ActualReportedCode ||
-                    (this.ActualReportedCode != null &&
-                    this.ActualReportedCode.Equals(input.ActualReportedCode))
+                    ActualReportedCode == input.ActualReportedCode ||
+                    (ActualReportedCode != null &&
+                    ActualReportedCode.Equals(input.ActualReportedCode))
                 ) && 
                 (
-                    this.ActualReportedDesc == input.ActualReportedDesc ||
-                    (this.ActualReportedDesc != null &&
-                    this.ActualReportedDesc.Equals(input.ActualReportedDesc))
+                    ActualReportedDesc == input.ActualReportedDesc ||
+                    (ActualReportedDesc != null &&
+                    ActualReportedDesc.Equals(input.ActualReportedDesc))
                 ) && 
                 (
-                    this.LastRevDate == input.LastRevDate ||
-                    (this.LastRevDate != null &&
-                    this.LastRevDate.Equals(input.LastRevDate))
+                    LastRevDate == input.LastRevDate ||
+                    (LastRevDate != null &&
+                    LastRevDate.Equals(input.LastRevDate))
                 ) && 
                 (
-                    this.SalesActual == input.SalesActual ||
-                    (this.SalesActual != null &&
-                    this.SalesActual.Equals(input.SalesActual))
+                    SalesActual == input.SalesActual ||
+                    (SalesActual != null &&
+                    SalesActual.Equals(input.SalesActual))
                 ) && 
                 (
-                    this.SalesActualZacksAdj == input.SalesActualZacksAdj ||
-                    (this.SalesActualZacksAdj != null &&
-                    this.SalesActualZacksAdj.Equals(input.SalesActualZacksAdj))
+                    SalesActualZacksAdj == input.SalesActualZacksAdj ||
+                    (SalesActualZacksAdj != null &&
+                    SalesActualZacksAdj.Equals(input.SalesActualZacksAdj))
                 ) && 
                 (
-                    this.SalesActualGaap == input.SalesActualGaap ||
-                    (this.SalesActualGaap != null &&
-                    this.SalesActualGaap.Equals(input.SalesActualGaap))
+                    SalesActualGaap == input.SalesActualGaap ||
+                    (SalesActualGaap != null &&
+                    SalesActualGaap.Equals(input.SalesActualGaap))
                 ) && 
                 (
-                    this.SalesMeanEstimate == input.SalesMeanEstimate ||
-                    (this.SalesMeanEstimate != null &&
-                    this.SalesMeanEstimate.Equals(input.SalesMeanEstimate))
+                    SalesMeanEstimate == input.SalesMeanEstimate ||
+                    (SalesMeanEstimate != null &&
+                    SalesMeanEstimate.Equals(input.SalesMeanEstimate))
                 ) && 
                 (
-                    this.SalesAmountDiff == input.SalesAmountDiff ||
-                    (this.SalesAmountDiff != null &&
-                    this.SalesAmountDiff.Equals(input.SalesAmountDiff))
+                    SalesAmountDiff == input.SalesAmountDiff ||
+                    (SalesAmountDiff != null &&
+                    SalesAmountDiff.Equals(input.SalesAmountDiff))
                 ) && 
                 (
-                    this.SalesPercentDiff == input.SalesPercentDiff ||
-                    (this.SalesPercentDiff != null &&
-                    this.SalesPercentDiff.Equals(input.SalesPercentDiff))
+                    SalesPercentDiff == input.SalesPercentDiff ||
+                    (SalesPercentDiff != null &&
+                    SalesPercentDiff.Equals(input.SalesPercentDiff))
                 ) && 
                 (
-                    this.SalesStdDevEstimate == input.SalesStdDevEstimate ||
-                    (this.SalesStdDevEstimate != null &&
-                    this.SalesStdDevEstimate.Equals(input.SalesStdDevEstimate))
+                    SalesStdDevEstimate == input.SalesStdDevEstimate ||
+                    (SalesStdDevEstimate != null &&
+                    SalesStdDevEstimate.Equals(input.SalesStdDevEstimate))
                 );
         }
 
@@ -339,40 +331,40 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.FiscalYear != null)
-                    hashCode = hashCode * 59 + this.FiscalYear.GetHashCode();
-                if (this.FiscalQuarter != null)
-                    hashCode = hashCode * 59 + this.FiscalQuarter.GetHashCode();
-                if (this.CalendarYear != null)
-                    hashCode = hashCode * 59 + this.CalendarYear.GetHashCode();
-                if (this.CalendarQuarter != null)
-                    hashCode = hashCode * 59 + this.CalendarQuarter.GetHashCode();
-                if (this.ActualReportedDate != null)
-                    hashCode = hashCode * 59 + this.ActualReportedDate.GetHashCode();
-                if (this.ActualReportedTime != null)
-                    hashCode = hashCode * 59 + this.ActualReportedTime.GetHashCode();
-                if (this.ActualReportedCode != null)
-                    hashCode = hashCode * 59 + this.ActualReportedCode.GetHashCode();
-                if (this.ActualReportedDesc != null)
-                    hashCode = hashCode * 59 + this.ActualReportedDesc.GetHashCode();
-                if (this.LastRevDate != null)
-                    hashCode = hashCode * 59 + this.LastRevDate.GetHashCode();
-                if (this.SalesActual != null)
-                    hashCode = hashCode * 59 + this.SalesActual.GetHashCode();
-                if (this.SalesActualZacksAdj != null)
-                    hashCode = hashCode * 59 + this.SalesActualZacksAdj.GetHashCode();
-                if (this.SalesActualGaap != null)
-                    hashCode = hashCode * 59 + this.SalesActualGaap.GetHashCode();
-                if (this.SalesMeanEstimate != null)
-                    hashCode = hashCode * 59 + this.SalesMeanEstimate.GetHashCode();
-                if (this.SalesAmountDiff != null)
-                    hashCode = hashCode * 59 + this.SalesAmountDiff.GetHashCode();
-                if (this.SalesPercentDiff != null)
-                    hashCode = hashCode * 59 + this.SalesPercentDiff.GetHashCode();
-                if (this.SalesStdDevEstimate != null)
-                    hashCode = hashCode * 59 + this.SalesStdDevEstimate.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (FiscalYear != null)
+                    hashCode = hashCode * 59 + FiscalYear.GetHashCode();
+                if (FiscalQuarter != null)
+                    hashCode = hashCode * 59 + FiscalQuarter.GetHashCode();
+                if (CalendarYear != null)
+                    hashCode = hashCode * 59 + CalendarYear.GetHashCode();
+                if (CalendarQuarter != null)
+                    hashCode = hashCode * 59 + CalendarQuarter.GetHashCode();
+                if (ActualReportedDate != null)
+                    hashCode = hashCode * 59 + ActualReportedDate.GetHashCode();
+                if (ActualReportedTime != null)
+                    hashCode = hashCode * 59 + ActualReportedTime.GetHashCode();
+                if (ActualReportedCode != null)
+                    hashCode = hashCode * 59 + ActualReportedCode.GetHashCode();
+                if (ActualReportedDesc != null)
+                    hashCode = hashCode * 59 + ActualReportedDesc.GetHashCode();
+                if (LastRevDate != null)
+                    hashCode = hashCode * 59 + LastRevDate.GetHashCode();
+                if (SalesActual != null)
+                    hashCode = hashCode * 59 + SalesActual.GetHashCode();
+                if (SalesActualZacksAdj != null)
+                    hashCode = hashCode * 59 + SalesActualZacksAdj.GetHashCode();
+                if (SalesActualGaap != null)
+                    hashCode = hashCode * 59 + SalesActualGaap.GetHashCode();
+                if (SalesMeanEstimate != null)
+                    hashCode = hashCode * 59 + SalesMeanEstimate.GetHashCode();
+                if (SalesAmountDiff != null)
+                    hashCode = hashCode * 59 + SalesAmountDiff.GetHashCode();
+                if (SalesPercentDiff != null)
+                    hashCode = hashCode * 59 + SalesPercentDiff.GetHashCode();
+                if (SalesStdDevEstimate != null)
+                    hashCode = hashCode * 59 + SalesStdDevEstimate.GetHashCode();
                 return hashCode;
             }
         }
@@ -382,7 +374,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

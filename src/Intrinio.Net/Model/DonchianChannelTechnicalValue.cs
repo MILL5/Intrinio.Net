@@ -87,7 +87,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DonchianChannelTechnicalValue);
+            return Equals(input as DonchianChannelTechnicalValue);
         }
 
         /// <summary>
@@ -102,19 +102,19 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.DateTime == input.DateTime ||
-                    (this.DateTime != null &&
-                    this.DateTime.Equals(input.DateTime))
+                    DateTime == input.DateTime ||
+                    (DateTime != null &&
+                    DateTime.Equals(input.DateTime))
                 ) && 
                 (
-                    this.LowerBound == input.LowerBound ||
-                    (this.LowerBound != null &&
-                    this.LowerBound.Equals(input.LowerBound))
+                    LowerBound == input.LowerBound ||
+                    (LowerBound != null &&
+                    LowerBound.Equals(input.LowerBound))
                 ) && 
                 (
-                    this.UpperBound == input.UpperBound ||
-                    (this.UpperBound != null &&
-                    this.UpperBound.Equals(input.UpperBound))
+                    UpperBound == input.UpperBound ||
+                    (UpperBound != null &&
+                    UpperBound.Equals(input.UpperBound))
                 );
         }
 
@@ -127,12 +127,12 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DateTime != null)
-                    hashCode = hashCode * 59 + this.DateTime.GetHashCode();
-                if (this.LowerBound != null)
-                    hashCode = hashCode * 59 + this.LowerBound.GetHashCode();
-                if (this.UpperBound != null)
-                    hashCode = hashCode * 59 + this.UpperBound.GetHashCode();
+                if (DateTime != null)
+                    hashCode = hashCode * 59 + DateTime.GetHashCode();
+                if (LowerBound != null)
+                    hashCode = hashCode * 59 + LowerBound.GetHashCode();
+                if (UpperBound != null)
+                    hashCode = hashCode * 59 + UpperBound.GetHashCode();
                 return hashCode;
             }
         }
@@ -142,7 +142,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

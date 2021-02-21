@@ -67,7 +67,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ApiResponseOptionsExpirations);
+            return Equals(input as ApiResponseOptionsExpirations);
         }
 
         /// <summary>
@@ -82,9 +82,9 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Expirations == input.Expirations ||
-                    this.Expirations != null &&
-                    this.Expirations.SequenceEqual(input.Expirations)
+                    Expirations == input.Expirations ||
+                    Expirations != null &&
+                    Expirations.SequenceEqual(input.Expirations)
                 );
         }
 
@@ -97,8 +97,8 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Expirations != null)
-                    hashCode = hashCode * 59 + this.Expirations.GetHashCode();
+                if (Expirations != null)
+                    hashCode = hashCode * 59 + Expirations.GetHashCode();
                 return hashCode;
             }
         }
@@ -108,7 +108,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

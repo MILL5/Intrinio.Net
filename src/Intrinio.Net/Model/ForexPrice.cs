@@ -157,7 +157,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ForexPrice);
+            return Equals(input as ForexPrice);
         }
 
         /// <summary>
@@ -172,54 +172,54 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.OccurredAt == input.OccurredAt ||
-                    (this.OccurredAt != null &&
-                    this.OccurredAt.Equals(input.OccurredAt))
+                    OccurredAt == input.OccurredAt ||
+                    (OccurredAt != null &&
+                    OccurredAt.Equals(input.OccurredAt))
                 ) && 
                 (
-                    this.OpenBid == input.OpenBid ||
-                    (this.OpenBid != null &&
-                    this.OpenBid.Equals(input.OpenBid))
+                    OpenBid == input.OpenBid ||
+                    (OpenBid != null &&
+                    OpenBid.Equals(input.OpenBid))
                 ) && 
                 (
-                    this.HighBid == input.HighBid ||
-                    (this.HighBid != null &&
-                    this.HighBid.Equals(input.HighBid))
+                    HighBid == input.HighBid ||
+                    (HighBid != null &&
+                    HighBid.Equals(input.HighBid))
                 ) && 
                 (
-                    this.LowBid == input.LowBid ||
-                    (this.LowBid != null &&
-                    this.LowBid.Equals(input.LowBid))
+                    LowBid == input.LowBid ||
+                    (LowBid != null &&
+                    LowBid.Equals(input.LowBid))
                 ) && 
                 (
-                    this.CloseBid == input.CloseBid ||
-                    (this.CloseBid != null &&
-                    this.CloseBid.Equals(input.CloseBid))
+                    CloseBid == input.CloseBid ||
+                    (CloseBid != null &&
+                    CloseBid.Equals(input.CloseBid))
                 ) && 
                 (
-                    this.OpenAsk == input.OpenAsk ||
-                    (this.OpenAsk != null &&
-                    this.OpenAsk.Equals(input.OpenAsk))
+                    OpenAsk == input.OpenAsk ||
+                    (OpenAsk != null &&
+                    OpenAsk.Equals(input.OpenAsk))
                 ) && 
                 (
-                    this.HighAsk == input.HighAsk ||
-                    (this.HighAsk != null &&
-                    this.HighAsk.Equals(input.HighAsk))
+                    HighAsk == input.HighAsk ||
+                    (HighAsk != null &&
+                    HighAsk.Equals(input.HighAsk))
                 ) && 
                 (
-                    this.LowAsk == input.LowAsk ||
-                    (this.LowAsk != null &&
-                    this.LowAsk.Equals(input.LowAsk))
+                    LowAsk == input.LowAsk ||
+                    (LowAsk != null &&
+                    LowAsk.Equals(input.LowAsk))
                 ) && 
                 (
-                    this.CloseAsk == input.CloseAsk ||
-                    (this.CloseAsk != null &&
-                    this.CloseAsk.Equals(input.CloseAsk))
+                    CloseAsk == input.CloseAsk ||
+                    (CloseAsk != null &&
+                    CloseAsk.Equals(input.CloseAsk))
                 ) && 
                 (
-                    this.TotalTicks == input.TotalTicks ||
-                    (this.TotalTicks != null &&
-                    this.TotalTicks.Equals(input.TotalTicks))
+                    TotalTicks == input.TotalTicks ||
+                    (TotalTicks != null &&
+                    TotalTicks.Equals(input.TotalTicks))
                 );
         }
 
@@ -232,26 +232,26 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OccurredAt != null)
-                    hashCode = hashCode * 59 + this.OccurredAt.GetHashCode();
-                if (this.OpenBid != null)
-                    hashCode = hashCode * 59 + this.OpenBid.GetHashCode();
-                if (this.HighBid != null)
-                    hashCode = hashCode * 59 + this.HighBid.GetHashCode();
-                if (this.LowBid != null)
-                    hashCode = hashCode * 59 + this.LowBid.GetHashCode();
-                if (this.CloseBid != null)
-                    hashCode = hashCode * 59 + this.CloseBid.GetHashCode();
-                if (this.OpenAsk != null)
-                    hashCode = hashCode * 59 + this.OpenAsk.GetHashCode();
-                if (this.HighAsk != null)
-                    hashCode = hashCode * 59 + this.HighAsk.GetHashCode();
-                if (this.LowAsk != null)
-                    hashCode = hashCode * 59 + this.LowAsk.GetHashCode();
-                if (this.CloseAsk != null)
-                    hashCode = hashCode * 59 + this.CloseAsk.GetHashCode();
-                if (this.TotalTicks != null)
-                    hashCode = hashCode * 59 + this.TotalTicks.GetHashCode();
+                if (OccurredAt != null)
+                    hashCode = hashCode * 59 + OccurredAt.GetHashCode();
+                if (OpenBid != null)
+                    hashCode = hashCode * 59 + OpenBid.GetHashCode();
+                if (HighBid != null)
+                    hashCode = hashCode * 59 + HighBid.GetHashCode();
+                if (LowBid != null)
+                    hashCode = hashCode * 59 + LowBid.GetHashCode();
+                if (CloseBid != null)
+                    hashCode = hashCode * 59 + CloseBid.GetHashCode();
+                if (OpenAsk != null)
+                    hashCode = hashCode * 59 + OpenAsk.GetHashCode();
+                if (HighAsk != null)
+                    hashCode = hashCode * 59 + HighAsk.GetHashCode();
+                if (LowAsk != null)
+                    hashCode = hashCode * 59 + LowAsk.GetHashCode();
+                if (CloseAsk != null)
+                    hashCode = hashCode * 59 + CloseAsk.GetHashCode();
+                if (TotalTicks != null)
+                    hashCode = hashCode * 59 + TotalTicks.GetHashCode();
                 return hashCode;
             }
         }
@@ -261,7 +261,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

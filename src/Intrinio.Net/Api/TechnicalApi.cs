@@ -1,13 +1,10 @@
-
-
+using Intrinio.Net.Client;
+using Intrinio.Net.Model;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text.RegularExpressions;
-using RestSharp;
-using Intrinio.Net.Client;
-using Intrinio.Net.Model;
 
 namespace Intrinio.Net.Api
 {
@@ -23,7 +20,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -38,7 +35,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -52,7 +49,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -68,7 +65,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -83,7 +80,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -99,7 +96,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -114,7 +111,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -131,7 +128,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -147,7 +144,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -163,7 +160,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -178,7 +175,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -196,7 +193,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -213,7 +210,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -230,7 +227,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -246,7 +243,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -262,7 +259,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -277,7 +274,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -294,7 +291,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -310,7 +307,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -327,7 +324,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -343,7 +340,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -359,7 +356,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -374,7 +371,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -389,7 +386,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -403,7 +400,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -421,7 +418,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -438,7 +435,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -454,7 +451,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -469,7 +466,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -493,7 +490,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -516,7 +513,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -535,7 +532,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -553,7 +550,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -569,7 +566,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -584,7 +581,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -601,7 +598,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -617,7 +614,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -632,7 +629,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -646,7 +643,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -661,7 +658,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -675,7 +672,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -691,7 +688,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -706,7 +703,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -723,7 +720,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -739,7 +736,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -756,7 +753,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -772,7 +769,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -789,7 +786,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -805,7 +802,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -821,7 +818,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -836,7 +833,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -854,7 +851,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -871,7 +868,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -892,7 +889,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -912,7 +909,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -928,7 +925,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -943,7 +940,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -958,7 +955,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -972,7 +969,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -987,7 +984,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1001,7 +998,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1017,7 +1014,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1034,7 +1031,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1049,7 +1046,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1063,7 +1060,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1079,7 +1076,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1094,7 +1091,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1110,7 +1107,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1125,7 +1122,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -1142,7 +1139,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -1158,7 +1155,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1174,7 +1171,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1189,7 +1186,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -1207,7 +1204,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -1224,7 +1221,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -1241,7 +1238,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -1257,7 +1254,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1273,7 +1270,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1288,7 +1285,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -1305,7 +1302,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -1321,7 +1318,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -1338,7 +1335,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -1354,7 +1351,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1370,7 +1367,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1385,7 +1382,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1400,7 +1397,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1414,7 +1411,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -1432,7 +1429,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -1449,7 +1446,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1465,7 +1462,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1480,7 +1477,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -1504,7 +1501,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -1527,7 +1524,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -1546,7 +1543,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -1564,7 +1561,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1580,7 +1577,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1595,7 +1592,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -1612,7 +1609,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -1628,7 +1625,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1643,7 +1640,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1657,7 +1654,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1672,7 +1669,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1686,7 +1683,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1702,7 +1699,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1717,7 +1714,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -1734,7 +1731,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -1750,7 +1747,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -1767,7 +1764,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -1783,7 +1780,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -1800,7 +1797,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -1816,7 +1813,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1832,7 +1829,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1847,7 +1844,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -1865,7 +1862,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -1882,7 +1879,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -1903,7 +1900,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -1923,7 +1920,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1939,7 +1936,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -1954,7 +1951,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1969,7 +1966,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1983,7 +1980,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -1998,7 +1995,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -2012,7 +2009,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2028,7 +2025,7 @@ namespace Intrinio.Net.Api
         /// <remarks>
         /// Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </remarks>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2045,17 +2042,17 @@ namespace Intrinio.Net.Api
     /// </summary>
     public partial class TechnicalApi : ITechnicalApi
     {
-        private Intrinio.Net.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TechnicalApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public TechnicalApi(String basePath)
+        public TechnicalApi(string basePath)
         {
-            this.Configuration = new Configuration { BasePath = basePath };
+            Configuration = new Configuration { BasePath = basePath };
 
-            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -2067,20 +2064,20 @@ namespace Intrinio.Net.Api
         public TechnicalApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = Configuration.Default;
+                Configuration = Configuration.Default;
             else
-                this.Configuration = configuration;
+                Configuration = configuration;
 
-            ExceptionFactory = Intrinio.Net.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
-            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+            return Configuration.ApiClient.RestClient.BaseUrl.ToString();
         }
 
         /// <summary>
@@ -2088,7 +2085,7 @@ namespace Intrinio.Net.Api
         /// </summary>
         /// <value>The base path</value>
         [Obsolete("SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             // do nothing
         }
@@ -2102,7 +2099,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Intrinio.Net.Client.ExceptionFactory ExceptionFactory
+        public ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -2120,9 +2117,9 @@ namespace Intrinio.Net.Api
         /// </summary>
         /// <returns>Dictionary of HTTP header</returns>
         [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<String, String> DefaultHeader()
+        public IDictionary<string, string> DefaultHeader()
         {
-            return new ReadOnlyDictionary<string, string>(this.Configuration.DefaultHeader);
+            return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
         }
 
         /// <summary>
@@ -2134,13 +2131,13 @@ namespace Intrinio.Net.Api
         [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
         public void AddDefaultHeader(string key, string value)
         {
-            this.Configuration.AddDefaultHeader(key, value);
+            Configuration.AddDefaultHeader(key, value);
         }
 
         /// <summary>
         /// Accumulation/Distribution Index Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -2156,15 +2153,15 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Accumulation/Distribution Index Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityAccumulationDistributionIndex</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityAccumulationDistributionIndex > GetSecurityPriceTechnicalsAdiWithHttpInfo (string identifier, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -2172,23 +2169,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsAdi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/adi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -2200,7 +2197,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -2226,7 +2223,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Accumulation/Distribution Index Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -2243,7 +2240,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Accumulation/Distribution Index Returns the Accumulation/Distribution Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -2257,23 +2254,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsAdi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/adi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -2285,7 +2282,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -2311,7 +2308,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Average Daily Trading Volume Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2328,7 +2325,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Average Daily Trading Volume Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2336,8 +2333,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityAverageDailyTradingVolume</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityAverageDailyTradingVolume > GetSecurityPriceTechnicalsAdtvWithHttpInfo (string identifier, int? period = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -2345,23 +2342,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsAdtv");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/adtv";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -2374,7 +2371,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -2400,7 +2397,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Average Daily Trading Volume Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2418,7 +2415,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Average Daily Trading Volume Returns the Average Daily Trading Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Daily Trading Volume (optional, default to 22)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2433,23 +2430,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsAdtv");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/adtv";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -2462,7 +2459,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -2488,7 +2485,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Average Directional Index Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2505,7 +2502,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Average Directional Index Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2513,8 +2510,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityAverageDirectionalIndex</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityAverageDirectionalIndex > GetSecurityPriceTechnicalsAdxWithHttpInfo (string identifier, int? period = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -2522,23 +2519,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsAdx");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/adx";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -2551,7 +2548,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -2577,7 +2574,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Average Directional Index Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2595,7 +2592,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Average Directional Index Returns the Average Directional Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average Directional Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2610,23 +2607,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsAdx");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/adx";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -2639,7 +2636,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -2665,7 +2662,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Awesome Oscillator Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -2683,7 +2680,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Awesome Oscillator Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -2692,8 +2689,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityAwesomeOscillator</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityAwesomeOscillator > GetSecurityPriceTechnicalsAoWithHttpInfo (string identifier, int? shortPeriod = null, int? longPeriod = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -2701,23 +2698,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsAo");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/ao";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -2731,7 +2728,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -2757,7 +2754,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Awesome Oscillator Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -2776,7 +2773,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Awesome Oscillator Returns the Awesome Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate short period Simple Moving Average of the Awesome Oscillator (optional, default to 5)</param>
         /// <param name="longPeriod">The number of observations, per period, to calculate long period Simple Moving Average of the Awesome Oscillator (optional, default to 34)</param>
@@ -2792,23 +2789,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsAo");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/ao";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -2822,7 +2819,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -2848,7 +2845,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Average True Range Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2865,7 +2862,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Average True Range Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2873,8 +2870,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityAverageTrueRange</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityAverageTrueRange > GetSecurityPriceTechnicalsAtrWithHttpInfo (string identifier, int? period = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -2882,23 +2879,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsAtr");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/atr";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -2911,7 +2908,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -2937,7 +2934,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Average True Range Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2955,7 +2952,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Average True Range Returns the Average True Range values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Average True Range (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -2970,23 +2967,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsAtr");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/atr";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -2999,7 +2996,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -3025,7 +3022,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Bollinger Bands Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -3044,7 +3041,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Bollinger Bands Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -3054,8 +3051,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityBollingerBands</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityBollingerBands > GetSecurityPriceTechnicalsBbWithHttpInfo (string identifier, int? period = null, float? standardDeviations = null, string priceKey = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -3063,23 +3060,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsBb");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/bb";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -3094,7 +3091,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -3120,7 +3117,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Bollinger Bands Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -3140,7 +3137,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Bollinger Bands Returns the Bollinger Bands values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Bollinger Bands (optional, default to 20)</param>
         /// <param name="standardDeviations">The number of standard deviations to calculate the upper and lower bands of the Bollinger Bands (optional, default to 2.0)</param>
@@ -3157,23 +3154,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsBb");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/bb";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -3188,7 +3185,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -3214,7 +3211,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Commodity Channel Index Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -3232,7 +3229,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Commodity Channel Index Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -3241,8 +3238,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityCommodityChannelIndex</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityCommodityChannelIndex > GetSecurityPriceTechnicalsCciWithHttpInfo (string identifier, int? period = null, float? constant = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -3250,23 +3247,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsCci");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/cci";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -3280,7 +3277,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -3306,7 +3303,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Commodity Channel Index Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -3325,7 +3322,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Commodity Channel Index Returns the Commodity Channel Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 20)</param>
         /// <param name="constant">The number of observations, per period, to calculate Commodity Channel Index (optional, default to 0.015)</param>
@@ -3341,23 +3338,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsCci");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/cci";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -3371,7 +3368,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -3397,7 +3394,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Chaikin Money Flow Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -3414,7 +3411,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Chaikin Money Flow Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -3422,8 +3419,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityChaikinMoneyFlow</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityChaikinMoneyFlow > GetSecurityPriceTechnicalsCmfWithHttpInfo (string identifier, int? period = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -3431,23 +3428,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsCmf");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/cmf";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -3460,7 +3457,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -3486,7 +3483,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Chaikin Money Flow Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -3504,7 +3501,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Chaikin Money Flow Returns the Chaikin Money Flow values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Chaikin Money Flow (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -3519,23 +3516,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsCmf");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/cmf";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -3548,7 +3545,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -3574,7 +3571,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Donchian Channel Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -3592,7 +3589,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Donchian Channel Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -3601,8 +3598,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityDonchianChannel</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityDonchianChannel > GetSecurityPriceTechnicalsDcWithHttpInfo (string identifier, int? period = null, string priceKey = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -3610,23 +3607,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsDc");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/dc";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -3640,7 +3637,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -3666,7 +3663,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Donchian Channel Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -3685,7 +3682,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Donchian Channel Returns the Donchian Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Donchian Channel (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Donchian Channel (optional, default to close)</param>
@@ -3701,23 +3698,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsDc");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/dc";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -3731,7 +3728,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -3757,7 +3754,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Detrended Price Oscillator Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -3775,7 +3772,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Detrended Price Oscillator Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -3784,8 +3781,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityDetrendedPriceOscillator</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityDetrendedPriceOscillator > GetSecurityPriceTechnicalsDpoWithHttpInfo (string identifier, int? period = null, string priceKey = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -3793,23 +3790,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsDpo");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/dpo";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -3823,7 +3820,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -3849,7 +3846,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Detrended Price Oscillator Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -3868,7 +3865,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Detrended Price Oscillator Returns the Detrended Price Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Detrended Price Oscillator (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Detrended Price Oscillator (optional, default to close)</param>
@@ -3884,23 +3881,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsDpo");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/dpo";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -3914,7 +3911,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -3940,7 +3937,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Ease of Movement Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -3957,7 +3954,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Ease of Movement Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -3965,8 +3962,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityEaseOfMovement</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityEaseOfMovement > GetSecurityPriceTechnicalsEomWithHttpInfo (string identifier, int? period = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -3974,23 +3971,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsEom");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/eom";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -4003,7 +4000,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -4029,7 +4026,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Ease of Movement Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -4047,7 +4044,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Ease of Movement Returns the Ease of Movement values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Ease of Movement (optional, default to 20)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -4062,23 +4059,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsEom");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/eom";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -4091,7 +4088,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -4117,7 +4114,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Force Index Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -4133,15 +4130,15 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Force Index Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityForceIndex</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityForceIndex > GetSecurityPriceTechnicalsFiWithHttpInfo (string identifier, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -4149,23 +4146,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsFi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/fi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -4177,7 +4174,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -4203,7 +4200,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Force Index Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -4220,7 +4217,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Force Index Returns the Force Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -4234,23 +4231,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsFi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/fi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -4262,7 +4259,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -4288,7 +4285,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Ichimoku Kinko Hyo Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -4307,7 +4304,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Ichimoku Kinko Hyo Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -4317,8 +4314,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityIchimokuKinkoHyo</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityIchimokuKinkoHyo > GetSecurityPriceTechnicalsIchimokuWithHttpInfo (string identifier, int? lowPeriod = null, int? mediumPeriod = null, int? highPeriod = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -4326,23 +4323,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsIchimoku");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/ichimoku";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -4357,7 +4354,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -4383,7 +4380,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Ichimoku Kinko Hyo Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -4403,7 +4400,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Ichimoku Kinko Hyo Returns the Ichimoku Kinko Hyo values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate Tenkan Sen (Conversion Line) of Ichimoku Kinko Hyo (optional, default to 9)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate Kijun Sen (Base Line), Senkou Span A (Leading Span A), and Chikou Span (Lagging Span) of Ichimoku Kinko Hyo (optional, default to 26)</param>
@@ -4420,23 +4417,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsIchimoku");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/ichimoku";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -4451,7 +4448,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -4477,7 +4474,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Keltner Channel Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -4494,7 +4491,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Keltner Channel Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -4502,8 +4499,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityKeltnerChannel</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityKeltnerChannel > GetSecurityPriceTechnicalsKcWithHttpInfo (string identifier, int? period = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -4511,23 +4508,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsKc");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/kc";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -4540,7 +4537,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -4566,7 +4563,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Keltner Channel Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -4584,7 +4581,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Keltner Channel Returns the Keltner Channel values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Kelter Channel (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -4599,23 +4596,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsKc");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/kc";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -4628,7 +4625,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -4654,7 +4651,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Know Sure Thing Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -4679,7 +4676,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Know Sure Thing Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -4695,8 +4692,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityKnowSureThing</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityKnowSureThing > GetSecurityPriceTechnicalsKstWithHttpInfo (string identifier, int? roc1 = null, int? roc2 = null, int? roc3 = null, int? roc4 = null, int? sma1 = null, int? sma2 = null, int? sma3 = null, int? sma4 = null, string priceKey = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -4704,23 +4701,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsKst");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/kst";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -4741,7 +4738,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -4767,7 +4764,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Know Sure Thing Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -4793,7 +4790,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Know Sure Thing Returns the Know Sure Thing values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="roc1">The number of observations, per period, to calculate the rate-of-change for RCMA1 (optional, default to 10)</param>
         /// <param name="roc2">The number of observations, per period, to calculate the rate-of-change for RCMA2 (optional, default to 15)</param>
@@ -4816,23 +4813,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsKst");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/kst";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -4853,7 +4850,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -4879,7 +4876,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Moving Average Convergence Divergence Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -4899,7 +4896,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Moving Average Convergence Divergence Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -4910,8 +4907,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityMovingAverageConvergenceDivergence</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityMovingAverageConvergenceDivergence > GetSecurityPriceTechnicalsMacdWithHttpInfo (string identifier, int? fastPeriod = null, int? slowPeriod = null, int? signalPeriod = null, string priceKey = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -4919,23 +4916,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsMacd");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/macd";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -4951,7 +4948,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -4977,7 +4974,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Moving Average Convergence Divergence Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -4998,7 +4995,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Moving Average Convergence Divergence Returns the Moving Average Convergence Divergence values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="fastPeriod">The number of observations, per period, to calculate the fast moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 12)</param>
         /// <param name="slowPeriod">The number of observations, per period, to calculate the slow moving Exponential Moving Average for Moving Average Convergence Divergence (optional, default to 26)</param>
@@ -5016,23 +5013,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsMacd");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/macd";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -5048,7 +5045,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -5074,7 +5071,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Money Flow Index Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5091,7 +5088,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Money Flow Index Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5099,8 +5096,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityMoneyFlowIndex</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityMoneyFlowIndex > GetSecurityPriceTechnicalsMfiWithHttpInfo (string identifier, int? period = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -5108,23 +5105,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsMfi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/mfi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -5137,7 +5134,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -5163,7 +5160,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Money Flow Index Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5181,7 +5178,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Money Flow Index Returns the Money Flow Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Money Flow Index (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5196,23 +5193,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsMfi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/mfi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -5225,7 +5222,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -5251,7 +5248,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Mass Index Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -5269,7 +5266,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Mass Index Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -5278,8 +5275,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityMassIndex</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityMassIndex > GetSecurityPriceTechnicalsMiWithHttpInfo (string identifier, int? emaPeriod = null, int? sumPeriod = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -5287,23 +5284,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsMi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/mi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -5317,7 +5314,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -5343,7 +5340,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Mass Index Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -5362,7 +5359,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Mass Index Returns the Mass Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="emaPeriod">The number of observations, per period, to calculate the single Exponential Moving Average and the Double Exponential Moving Average for Mass Index (optional, default to 9)</param>
         /// <param name="sumPeriod">The number of observations, per period, to calculate the sum of the Exponetinal Moving Average Ratios for Mass Index (optional, default to 25)</param>
@@ -5378,23 +5375,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsMi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/mi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -5408,7 +5405,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -5434,7 +5431,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Negative Volume Index Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5450,15 +5447,15 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Negative Volume Index Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityNegativeVolumeIndex</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityNegativeVolumeIndex > GetSecurityPriceTechnicalsNviWithHttpInfo (string identifier, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -5466,23 +5463,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsNvi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/nvi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -5494,7 +5491,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -5520,7 +5517,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Negative Volume Index Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5537,7 +5534,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Negative Volume Index Returns the Negative Volume Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5551,23 +5548,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsNvi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/nvi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -5579,7 +5576,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -5605,7 +5602,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// On-balance Volume Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5621,15 +5618,15 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// On-balance Volume Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityOnBalanceVolume</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityOnBalanceVolume > GetSecurityPriceTechnicalsObvWithHttpInfo (string identifier, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -5637,23 +5634,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsObv");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/obv";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -5665,7 +5662,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -5691,7 +5688,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// On-balance Volume Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5708,7 +5705,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// On-balance Volume Returns the On-balance Volume values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -5722,23 +5719,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsObv");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/obv";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -5750,7 +5747,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -5776,7 +5773,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// On-balance Volume Mean Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5793,7 +5790,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// On-balance Volume Mean Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5801,8 +5798,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityOnBalanceVolumeMean</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityOnBalanceVolumeMean > GetSecurityPriceTechnicalsObvMeanWithHttpInfo (string identifier, int? period = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -5810,23 +5807,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsObvMean");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/obv_mean";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -5839,7 +5836,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -5865,7 +5862,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// On-balance Volume Mean Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5883,7 +5880,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// On-balance Volume Mean Returns the On-balance Volume Mean values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate On-balance Volume Mean (optional, default to 10)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -5898,23 +5895,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsObvMean");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/obv_mean";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -5927,7 +5924,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -5953,7 +5950,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Relative Strength Index Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -5971,7 +5968,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Relative Strength Index Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -5980,8 +5977,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityRelativeStrengthIndex</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityRelativeStrengthIndex > GetSecurityPriceTechnicalsRsiWithHttpInfo (string identifier, int? period = null, string priceKey = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -5989,23 +5986,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsRsi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/rsi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -6019,7 +6016,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -6045,7 +6042,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Relative Strength Index Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -6064,7 +6061,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Relative Strength Index Returns the Relative Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Relative Strength Index (optional, default to 14)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Relative Strength Index (optional, default to close)</param>
@@ -6080,23 +6077,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsRsi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/rsi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -6110,7 +6107,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -6136,7 +6133,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Simple Moving Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -6154,7 +6151,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Simple Moving Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -6163,8 +6160,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecuritySimpleMovingAverage</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecuritySimpleMovingAverage > GetSecurityPriceTechnicalsSmaWithHttpInfo (string identifier, int? period = null, string priceKey = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -6172,23 +6169,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsSma");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/sma";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -6202,7 +6199,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -6228,7 +6225,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Simple Moving Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -6247,7 +6244,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Simple Moving Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Simple Moving Average (optional, default to 20)</param>
         /// <param name="priceKey">The Stock Price field to use when calculating Simple Moving Average (optional, default to close)</param>
@@ -6263,23 +6260,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsSma");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/sma";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -6293,7 +6290,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -6319,7 +6316,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Stochastic Oscillator Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -6337,7 +6334,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Stochastic Oscillator Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -6346,8 +6343,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityStochasticOscillator</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityStochasticOscillator > GetSecurityPriceTechnicalsSrWithHttpInfo (string identifier, int? period = null, int? signalPeriod = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -6355,23 +6352,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsSr");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/sr";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -6385,7 +6382,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -6411,7 +6408,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Stochastic Oscillator Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -6430,7 +6427,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Stochastic Oscillator Returns the Stochastic Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate %K of Stochastic Oscillator (optional, default to 14)</param>
         /// <param name="signalPeriod">The number of observations, per period, to calculate the %D (the Simple Moving Average of %K) as a signal line for Stochastic Oscillator (optional, default to 3)</param>
@@ -6446,23 +6443,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsSr");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/sr";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -6476,7 +6473,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -6502,7 +6499,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Triple Exponential Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -6519,7 +6516,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Triple Exponential Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -6527,8 +6524,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityTripleExponentialAverage</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityTripleExponentialAverage > GetSecurityPriceTechnicalsTrixWithHttpInfo (string identifier, int? period = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -6536,23 +6533,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsTrix");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/trix";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -6565,7 +6562,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -6591,7 +6588,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Triple Exponential Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -6609,7 +6606,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Triple Exponential Average Returns the Simple Moving Average values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Exponential Moving Average for Triple Exponential Average (optional, default to 15)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -6624,23 +6621,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsTrix");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/trix";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -6653,7 +6650,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -6679,7 +6676,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// True Strength Index Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -6698,7 +6695,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// True Strength Index Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -6708,8 +6705,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityTrueStrengthIndex</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityTrueStrengthIndex > GetSecurityPriceTechnicalsTsiWithHttpInfo (string identifier, int? lowPeriod = null, int? highPeriod = null, string priceKey = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -6717,23 +6714,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsTsi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/tsi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -6748,7 +6745,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -6774,7 +6771,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// True Strength Index Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -6794,7 +6791,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// True Strength Index Returns the True Strength Index values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="lowPeriod">The number of observations, per period, to calculate low period Exponential Moving Average for smoothing in True Strength Index (optional, default to 13)</param>
         /// <param name="highPeriod">The number of observations, per period, to calculate high period Exponential Moving Average for smoothing in True Strength Index (optional, default to 25)</param>
@@ -6811,23 +6808,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsTsi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/tsi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -6842,7 +6839,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -6868,7 +6865,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Ultimate Oscillator Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -6890,7 +6887,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Ultimate Oscillator Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -6903,8 +6900,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityUltimateOscillator</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityUltimateOscillator > GetSecurityPriceTechnicalsUoWithHttpInfo (string identifier, int? shortPeriod = null, int? mediumPeriod = null, int? longPeriod = null, float? shortWeight = null, float? mediumWeight = null, float? longWeight = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -6912,23 +6909,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsUo");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/uo";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -6946,7 +6943,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -6972,7 +6969,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Ultimate Oscillator Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -6995,7 +6992,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Ultimate Oscillator Returns the Ultimate Oscillator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="shortPeriod">The number of observations, per period, to calculate the short period for Ultimate Oscillator (optional, default to 7)</param>
         /// <param name="mediumPeriod">The number of observations, per period, to calculate the medium period for Ultimate Oscillator (optional, default to 14)</param>
@@ -7015,23 +7012,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsUo");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/uo";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -7049,7 +7046,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -7075,7 +7072,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Vortex Indicator Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7092,7 +7089,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Vortex Indicator Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7100,8 +7097,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityVortexIndicator</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityVortexIndicator > GetSecurityPriceTechnicalsViWithHttpInfo (string identifier, int? period = null, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -7109,23 +7106,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsVi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/vi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -7138,7 +7135,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -7164,7 +7161,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Vortex Indicator Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7182,7 +7179,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Vortex Indicator Returns the Vortex Indicator values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to calculate Vortex Indicator (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7197,23 +7194,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsVi");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/vi";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -7226,7 +7223,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -7252,7 +7249,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Volume-price Trend Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7268,15 +7265,15 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Volume-price Trend Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityVolumePriceTrend</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityVolumePriceTrend > GetSecurityPriceTechnicalsVptWithHttpInfo (string identifier, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -7284,23 +7281,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsVpt");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/vpt";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -7312,7 +7309,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -7338,7 +7335,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Volume-price Trend Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7355,7 +7352,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Volume-price Trend Returns the Volume-price Trend values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7369,23 +7366,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsVpt");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/vpt";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -7397,7 +7394,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -7423,7 +7420,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Volume Weighted Average Price Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7439,15 +7436,15 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Volume Weighted Average Price Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityVolumeWeightedAveragePrice</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityVolumeWeightedAveragePrice > GetSecurityPriceTechnicalsVwapWithHttpInfo (string identifier, string startDate = null, string endDate = null, int? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -7455,23 +7452,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsVwap");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/vwap";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -7483,7 +7480,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -7509,7 +7506,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Volume Weighted Average Price Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7526,7 +7523,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Volume Weighted Average Price Returns the Volume Weighted Average Price values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
         /// <param name="endDate">Return technical indicator values on or before the date (optional)</param>
@@ -7540,23 +7537,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsVwap");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/vwap";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -7568,7 +7565,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -7594,7 +7591,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Williams %R Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7611,7 +7608,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Williams %R Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7619,8 +7616,8 @@ namespace Intrinio.Net.Api
         /// <param name="pageSize">The number of results to return (optional, default to 100)</param>
         /// <param name="nextPage">Gets the next page of data from a previous API call (optional)</param>
         /// <returns>ApiResponse of ApiResponseSecurityWilliamsR</returns>
-        
-        
+
+
         public ApiResponse< ApiResponseSecurityWilliamsR > GetSecurityPriceTechnicalsWrWithHttpInfo (string identifier, int? period = null, string startDate = null, string endDate = null, decimal? pageSize = null, string nextPage = null)
         {
             // verify the required parameter 'identifier' is set
@@ -7628,23 +7625,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsWr");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/wr";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
             
@@ -7657,7 +7654,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }
@@ -7683,7 +7680,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Williams %R Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7701,7 +7698,7 @@ namespace Intrinio.Net.Api
         /// <summary>
         /// Williams %R Returns the Williams %R values of Stock Prices for the Security with the given &#x60;identifier&#x60;
         /// </summary>
-        /// <exception cref="Intrinio.Net.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier">A Security identifier (Ticker, FIGI, ISIN, CUSIP, Intrinio ID)</param>
         /// <param name="period">The number of observations, per period, to look-back when calculating Williams %R (optional, default to 14)</param>
         /// <param name="startDate">Return technical indicator values on or after the date (optional)</param>
@@ -7716,23 +7713,23 @@ namespace Intrinio.Net.Api
                 throw new ApiException(400, "Missing required parameter 'identifier' when calling TechnicalApi->GetSecurityPriceTechnicalsWr");
 
             var localVarPath = "/securities/{identifier}/prices/technicals/wr";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            var localVarPathParams = new Dictionary<string, string>();
+            var localVarQueryParams = new List<KeyValuePair<string, string>>();
+            var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<string, string>();
+            var localVarFileParams = new Dictionary<string, FileParameter>();
+            object localVarPostBody = null;
 
             // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
+            string[] localVarHttpContentTypes = new string[] {
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+            string[] localVarHttpHeaderAccepts = new string[] {
                 "application/json"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
               
@@ -7745,7 +7742,7 @@ namespace Intrinio.Net.Api
             if (nextPage != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "next_page", nextPage)); // query parameter
 
             // authentication (ApiKeyAuth) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
+            if (!string.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("api_key")))
             {
                 localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "api_key", Configuration.GetApiKeyWithPrefix("api_key")));
             }

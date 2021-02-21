@@ -87,7 +87,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SecurityScreenGroup);
+            return Equals(input as SecurityScreenGroup);
         }
 
         /// <summary>
@@ -102,19 +102,19 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Operator == input.Operator ||
-                    (this.Operator != null &&
-                    this.Operator.Equals(input.Operator))
+                    Operator == input.Operator ||
+                    (Operator != null &&
+                    Operator.Equals(input.Operator))
                 ) && 
                 (
-                    this.Clauses == input.Clauses ||
-                    this.Clauses != null &&
-                    this.Clauses.SequenceEqual(input.Clauses)
+                    Clauses == input.Clauses ||
+                    Clauses != null &&
+                    Clauses.SequenceEqual(input.Clauses)
                 ) && 
                 (
-                    this.Groups == input.Groups ||
-                    this.Groups != null &&
-                    this.Groups.SequenceEqual(input.Groups)
+                    Groups == input.Groups ||
+                    Groups != null &&
+                    Groups.SequenceEqual(input.Groups)
                 );
         }
 
@@ -127,12 +127,12 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Operator != null)
-                    hashCode = hashCode * 59 + this.Operator.GetHashCode();
-                if (this.Clauses != null)
-                    hashCode = hashCode * 59 + this.Clauses.GetHashCode();
-                if (this.Groups != null)
-                    hashCode = hashCode * 59 + this.Groups.GetHashCode();
+                if (Operator != null)
+                    hashCode = hashCode * 59 + Operator.GetHashCode();
+                if (Clauses != null)
+                    hashCode = hashCode * 59 + Clauses.GetHashCode();
+                if (Groups != null)
+                    hashCode = hashCode * 59 + Groups.GetHashCode();
                 return hashCode;
             }
         }
@@ -142,7 +142,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -1,17 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+using System.Text;
 using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
@@ -228,7 +220,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ZacksEPSSurprise);
+            return Equals(input as ZacksEPSSurprise);
         }
 
         /// <summary>
@@ -243,89 +235,89 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.FiscalYear == input.FiscalYear ||
-                    (this.FiscalYear != null &&
-                    this.FiscalYear.Equals(input.FiscalYear))
+                    FiscalYear == input.FiscalYear ||
+                    (FiscalYear != null &&
+                    FiscalYear.Equals(input.FiscalYear))
                 ) && 
                 (
-                    this.FiscalQuarter == input.FiscalQuarter ||
-                    (this.FiscalQuarter != null &&
-                    this.FiscalQuarter.Equals(input.FiscalQuarter))
+                    FiscalQuarter == input.FiscalQuarter ||
+                    (FiscalQuarter != null &&
+                    FiscalQuarter.Equals(input.FiscalQuarter))
                 ) && 
                 (
-                    this.CalendarYear == input.CalendarYear ||
-                    (this.CalendarYear != null &&
-                    this.CalendarYear.Equals(input.CalendarYear))
+                    CalendarYear == input.CalendarYear ||
+                    (CalendarYear != null &&
+                    CalendarYear.Equals(input.CalendarYear))
                 ) && 
                 (
-                    this.CalendarQuarter == input.CalendarQuarter ||
-                    (this.CalendarQuarter != null &&
-                    this.CalendarQuarter.Equals(input.CalendarQuarter))
+                    CalendarQuarter == input.CalendarQuarter ||
+                    (CalendarQuarter != null &&
+                    CalendarQuarter.Equals(input.CalendarQuarter))
                 ) && 
                 (
-                    this.ActualReportedDate == input.ActualReportedDate ||
-                    (this.ActualReportedDate != null &&
-                    this.ActualReportedDate.Equals(input.ActualReportedDate))
+                    ActualReportedDate == input.ActualReportedDate ||
+                    (ActualReportedDate != null &&
+                    ActualReportedDate.Equals(input.ActualReportedDate))
                 ) && 
                 (
-                    this.ActualReportedTime == input.ActualReportedTime ||
-                    (this.ActualReportedTime != null &&
-                    this.ActualReportedTime.Equals(input.ActualReportedTime))
+                    ActualReportedTime == input.ActualReportedTime ||
+                    (ActualReportedTime != null &&
+                    ActualReportedTime.Equals(input.ActualReportedTime))
                 ) && 
                 (
-                    this.ActualReportedCode == input.ActualReportedCode ||
-                    (this.ActualReportedCode != null &&
-                    this.ActualReportedCode.Equals(input.ActualReportedCode))
+                    ActualReportedCode == input.ActualReportedCode ||
+                    (ActualReportedCode != null &&
+                    ActualReportedCode.Equals(input.ActualReportedCode))
                 ) && 
                 (
-                    this.ActualReportedDesc == input.ActualReportedDesc ||
-                    (this.ActualReportedDesc != null &&
-                    this.ActualReportedDesc.Equals(input.ActualReportedDesc))
+                    ActualReportedDesc == input.ActualReportedDesc ||
+                    (ActualReportedDesc != null &&
+                    ActualReportedDesc.Equals(input.ActualReportedDesc))
                 ) && 
                 (
-                    this.EpsActual == input.EpsActual ||
-                    (this.EpsActual != null &&
-                    this.EpsActual.Equals(input.EpsActual))
+                    EpsActual == input.EpsActual ||
+                    (EpsActual != null &&
+                    EpsActual.Equals(input.EpsActual))
                 ) && 
                 (
-                    this.EpsActualZacksAdj == input.EpsActualZacksAdj ||
-                    (this.EpsActualZacksAdj != null &&
-                    this.EpsActualZacksAdj.Equals(input.EpsActualZacksAdj))
+                    EpsActualZacksAdj == input.EpsActualZacksAdj ||
+                    (EpsActualZacksAdj != null &&
+                    EpsActualZacksAdj.Equals(input.EpsActualZacksAdj))
                 ) && 
                 (
-                    this.EpsMeanEstimate == input.EpsMeanEstimate ||
-                    (this.EpsMeanEstimate != null &&
-                    this.EpsMeanEstimate.Equals(input.EpsMeanEstimate))
+                    EpsMeanEstimate == input.EpsMeanEstimate ||
+                    (EpsMeanEstimate != null &&
+                    EpsMeanEstimate.Equals(input.EpsMeanEstimate))
                 ) && 
                 (
-                    this.EpsAmountDiff == input.EpsAmountDiff ||
-                    (this.EpsAmountDiff != null &&
-                    this.EpsAmountDiff.Equals(input.EpsAmountDiff))
+                    EpsAmountDiff == input.EpsAmountDiff ||
+                    (EpsAmountDiff != null &&
+                    EpsAmountDiff.Equals(input.EpsAmountDiff))
                 ) && 
                 (
-                    this.EpsPercentDiff == input.EpsPercentDiff ||
-                    (this.EpsPercentDiff != null &&
-                    this.EpsPercentDiff.Equals(input.EpsPercentDiff))
+                    EpsPercentDiff == input.EpsPercentDiff ||
+                    (EpsPercentDiff != null &&
+                    EpsPercentDiff.Equals(input.EpsPercentDiff))
                 ) && 
                 (
-                    this.EpsCountEstimate == input.EpsCountEstimate ||
-                    (this.EpsCountEstimate != null &&
-                    this.EpsCountEstimate.Equals(input.EpsCountEstimate))
+                    EpsCountEstimate == input.EpsCountEstimate ||
+                    (EpsCountEstimate != null &&
+                    EpsCountEstimate.Equals(input.EpsCountEstimate))
                 ) && 
                 (
-                    this.EpsStdDevEstimate == input.EpsStdDevEstimate ||
-                    (this.EpsStdDevEstimate != null &&
-                    this.EpsStdDevEstimate.Equals(input.EpsStdDevEstimate))
+                    EpsStdDevEstimate == input.EpsStdDevEstimate ||
+                    (EpsStdDevEstimate != null &&
+                    EpsStdDevEstimate.Equals(input.EpsStdDevEstimate))
                 ) && 
                 (
-                    this.Security == input.Security ||
-                    (this.Security != null &&
-                    this.Security.Equals(input.Security))
+                    Security == input.Security ||
+                    (Security != null &&
+                    Security.Equals(input.Security))
                 );
         }
 
@@ -338,40 +330,40 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.FiscalYear != null)
-                    hashCode = hashCode * 59 + this.FiscalYear.GetHashCode();
-                if (this.FiscalQuarter != null)
-                    hashCode = hashCode * 59 + this.FiscalQuarter.GetHashCode();
-                if (this.CalendarYear != null)
-                    hashCode = hashCode * 59 + this.CalendarYear.GetHashCode();
-                if (this.CalendarQuarter != null)
-                    hashCode = hashCode * 59 + this.CalendarQuarter.GetHashCode();
-                if (this.ActualReportedDate != null)
-                    hashCode = hashCode * 59 + this.ActualReportedDate.GetHashCode();
-                if (this.ActualReportedTime != null)
-                    hashCode = hashCode * 59 + this.ActualReportedTime.GetHashCode();
-                if (this.ActualReportedCode != null)
-                    hashCode = hashCode * 59 + this.ActualReportedCode.GetHashCode();
-                if (this.ActualReportedDesc != null)
-                    hashCode = hashCode * 59 + this.ActualReportedDesc.GetHashCode();
-                if (this.EpsActual != null)
-                    hashCode = hashCode * 59 + this.EpsActual.GetHashCode();
-                if (this.EpsActualZacksAdj != null)
-                    hashCode = hashCode * 59 + this.EpsActualZacksAdj.GetHashCode();
-                if (this.EpsMeanEstimate != null)
-                    hashCode = hashCode * 59 + this.EpsMeanEstimate.GetHashCode();
-                if (this.EpsAmountDiff != null)
-                    hashCode = hashCode * 59 + this.EpsAmountDiff.GetHashCode();
-                if (this.EpsPercentDiff != null)
-                    hashCode = hashCode * 59 + this.EpsPercentDiff.GetHashCode();
-                if (this.EpsCountEstimate != null)
-                    hashCode = hashCode * 59 + this.EpsCountEstimate.GetHashCode();
-                if (this.EpsStdDevEstimate != null)
-                    hashCode = hashCode * 59 + this.EpsStdDevEstimate.GetHashCode();
-                if (this.Security != null)
-                    hashCode = hashCode * 59 + this.Security.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (FiscalYear != null)
+                    hashCode = hashCode * 59 + FiscalYear.GetHashCode();
+                if (FiscalQuarter != null)
+                    hashCode = hashCode * 59 + FiscalQuarter.GetHashCode();
+                if (CalendarYear != null)
+                    hashCode = hashCode * 59 + CalendarYear.GetHashCode();
+                if (CalendarQuarter != null)
+                    hashCode = hashCode * 59 + CalendarQuarter.GetHashCode();
+                if (ActualReportedDate != null)
+                    hashCode = hashCode * 59 + ActualReportedDate.GetHashCode();
+                if (ActualReportedTime != null)
+                    hashCode = hashCode * 59 + ActualReportedTime.GetHashCode();
+                if (ActualReportedCode != null)
+                    hashCode = hashCode * 59 + ActualReportedCode.GetHashCode();
+                if (ActualReportedDesc != null)
+                    hashCode = hashCode * 59 + ActualReportedDesc.GetHashCode();
+                if (EpsActual != null)
+                    hashCode = hashCode * 59 + EpsActual.GetHashCode();
+                if (EpsActualZacksAdj != null)
+                    hashCode = hashCode * 59 + EpsActualZacksAdj.GetHashCode();
+                if (EpsMeanEstimate != null)
+                    hashCode = hashCode * 59 + EpsMeanEstimate.GetHashCode();
+                if (EpsAmountDiff != null)
+                    hashCode = hashCode * 59 + EpsAmountDiff.GetHashCode();
+                if (EpsPercentDiff != null)
+                    hashCode = hashCode * 59 + EpsPercentDiff.GetHashCode();
+                if (EpsCountEstimate != null)
+                    hashCode = hashCode * 59 + EpsCountEstimate.GetHashCode();
+                if (EpsStdDevEstimate != null)
+                    hashCode = hashCode * 59 + EpsStdDevEstimate.GetHashCode();
+                if (Security != null)
+                    hashCode = hashCode * 59 + Security.GetHashCode();
                 return hashCode;
             }
         }
@@ -381,7 +373,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

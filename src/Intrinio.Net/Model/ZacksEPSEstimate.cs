@@ -227,7 +227,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ZacksEPSEstimate);
+            return Equals(input as ZacksEPSEstimate);
         }
 
         /// <summary>
@@ -242,89 +242,89 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Company == input.Company ||
-                    (this.Company != null &&
-                    this.Company.Equals(input.Company))
+                    Company == input.Company ||
+                    (Company != null &&
+                    Company.Equals(input.Company))
                 ) && 
                 (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
+                    Date == input.Date ||
+                    (Date != null &&
+                    Date.Equals(input.Date))
                 ) && 
                 (
-                    this.FiscalYear == input.FiscalYear ||
-                    (this.FiscalYear != null &&
-                    this.FiscalYear.Equals(input.FiscalYear))
+                    FiscalYear == input.FiscalYear ||
+                    (FiscalYear != null &&
+                    FiscalYear.Equals(input.FiscalYear))
                 ) && 
                 (
-                    this.FiscalQuarter == input.FiscalQuarter ||
-                    (this.FiscalQuarter != null &&
-                    this.FiscalQuarter.Equals(input.FiscalQuarter))
+                    FiscalQuarter == input.FiscalQuarter ||
+                    (FiscalQuarter != null &&
+                    FiscalQuarter.Equals(input.FiscalQuarter))
                 ) && 
                 (
-                    this.CalendarYear == input.CalendarYear ||
-                    (this.CalendarYear != null &&
-                    this.CalendarYear.Equals(input.CalendarYear))
+                    CalendarYear == input.CalendarYear ||
+                    (CalendarYear != null &&
+                    CalendarYear.Equals(input.CalendarYear))
                 ) && 
                 (
-                    this.CalendarQuarter == input.CalendarQuarter ||
-                    (this.CalendarQuarter != null &&
-                    this.CalendarQuarter.Equals(input.CalendarQuarter))
+                    CalendarQuarter == input.CalendarQuarter ||
+                    (CalendarQuarter != null &&
+                    CalendarQuarter.Equals(input.CalendarQuarter))
                 ) && 
                 (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
+                    Count == input.Count ||
+                    (Count != null &&
+                    Count.Equals(input.Count))
                 ) && 
                 (
-                    this.Mean == input.Mean ||
-                    (this.Mean != null &&
-                    this.Mean.Equals(input.Mean))
+                    Mean == input.Mean ||
+                    (Mean != null &&
+                    Mean.Equals(input.Mean))
                 ) && 
                 (
-                    this.Median == input.Median ||
-                    (this.Median != null &&
-                    this.Median.Equals(input.Median))
+                    Median == input.Median ||
+                    (Median != null &&
+                    Median.Equals(input.Median))
                 ) && 
                 (
-                    this.High == input.High ||
-                    (this.High != null &&
-                    this.High.Equals(input.High))
+                    High == input.High ||
+                    (High != null &&
+                    High.Equals(input.High))
                 ) && 
                 (
-                    this.Low == input.Low ||
-                    (this.Low != null &&
-                    this.Low.Equals(input.Low))
+                    Low == input.Low ||
+                    (Low != null &&
+                    Low.Equals(input.Low))
                 ) && 
                 (
-                    this.StandardDeviation == input.StandardDeviation ||
-                    (this.StandardDeviation != null &&
-                    this.StandardDeviation.Equals(input.StandardDeviation))
+                    StandardDeviation == input.StandardDeviation ||
+                    (StandardDeviation != null &&
+                    StandardDeviation.Equals(input.StandardDeviation))
                 ) && 
                 (
-                    this.PercentChange == input.PercentChange ||
-                    (this.PercentChange != null &&
-                    this.PercentChange.Equals(input.PercentChange))
+                    PercentChange == input.PercentChange ||
+                    (PercentChange != null &&
+                    PercentChange.Equals(input.PercentChange))
                 ) && 
                 (
-                    this.Mean7DaysAgo == input.Mean7DaysAgo ||
-                    (this.Mean7DaysAgo != null &&
-                    this.Mean7DaysAgo.Equals(input.Mean7DaysAgo))
+                    Mean7DaysAgo == input.Mean7DaysAgo ||
+                    (Mean7DaysAgo != null &&
+                    Mean7DaysAgo.Equals(input.Mean7DaysAgo))
                 ) && 
                 (
-                    this.Mean30DaysAgo == input.Mean30DaysAgo ||
-                    (this.Mean30DaysAgo != null &&
-                    this.Mean30DaysAgo.Equals(input.Mean30DaysAgo))
+                    Mean30DaysAgo == input.Mean30DaysAgo ||
+                    (Mean30DaysAgo != null &&
+                    Mean30DaysAgo.Equals(input.Mean30DaysAgo))
                 ) && 
                 (
-                    this.Mean60DaysAgo == input.Mean60DaysAgo ||
-                    (this.Mean60DaysAgo != null &&
-                    this.Mean60DaysAgo.Equals(input.Mean60DaysAgo))
+                    Mean60DaysAgo == input.Mean60DaysAgo ||
+                    (Mean60DaysAgo != null &&
+                    Mean60DaysAgo.Equals(input.Mean60DaysAgo))
                 ) && 
                 (
-                    this.Mean90DaysAgo == input.Mean90DaysAgo ||
-                    (this.Mean90DaysAgo != null &&
-                    this.Mean90DaysAgo.Equals(input.Mean90DaysAgo))
+                    Mean90DaysAgo == input.Mean90DaysAgo ||
+                    (Mean90DaysAgo != null &&
+                    Mean90DaysAgo.Equals(input.Mean90DaysAgo))
                 );
         }
 
@@ -337,40 +337,40 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Company != null)
-                    hashCode = hashCode * 59 + this.Company.GetHashCode();
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.FiscalYear != null)
-                    hashCode = hashCode * 59 + this.FiscalYear.GetHashCode();
-                if (this.FiscalQuarter != null)
-                    hashCode = hashCode * 59 + this.FiscalQuarter.GetHashCode();
-                if (this.CalendarYear != null)
-                    hashCode = hashCode * 59 + this.CalendarYear.GetHashCode();
-                if (this.CalendarQuarter != null)
-                    hashCode = hashCode * 59 + this.CalendarQuarter.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Mean != null)
-                    hashCode = hashCode * 59 + this.Mean.GetHashCode();
-                if (this.Median != null)
-                    hashCode = hashCode * 59 + this.Median.GetHashCode();
-                if (this.High != null)
-                    hashCode = hashCode * 59 + this.High.GetHashCode();
-                if (this.Low != null)
-                    hashCode = hashCode * 59 + this.Low.GetHashCode();
-                if (this.StandardDeviation != null)
-                    hashCode = hashCode * 59 + this.StandardDeviation.GetHashCode();
-                if (this.PercentChange != null)
-                    hashCode = hashCode * 59 + this.PercentChange.GetHashCode();
-                if (this.Mean7DaysAgo != null)
-                    hashCode = hashCode * 59 + this.Mean7DaysAgo.GetHashCode();
-                if (this.Mean30DaysAgo != null)
-                    hashCode = hashCode * 59 + this.Mean30DaysAgo.GetHashCode();
-                if (this.Mean60DaysAgo != null)
-                    hashCode = hashCode * 59 + this.Mean60DaysAgo.GetHashCode();
-                if (this.Mean90DaysAgo != null)
-                    hashCode = hashCode * 59 + this.Mean90DaysAgo.GetHashCode();
+                if (Company != null)
+                    hashCode = hashCode * 59 + Company.GetHashCode();
+                if (Date != null)
+                    hashCode = hashCode * 59 + Date.GetHashCode();
+                if (FiscalYear != null)
+                    hashCode = hashCode * 59 + FiscalYear.GetHashCode();
+                if (FiscalQuarter != null)
+                    hashCode = hashCode * 59 + FiscalQuarter.GetHashCode();
+                if (CalendarYear != null)
+                    hashCode = hashCode * 59 + CalendarYear.GetHashCode();
+                if (CalendarQuarter != null)
+                    hashCode = hashCode * 59 + CalendarQuarter.GetHashCode();
+                if (Count != null)
+                    hashCode = hashCode * 59 + Count.GetHashCode();
+                if (Mean != null)
+                    hashCode = hashCode * 59 + Mean.GetHashCode();
+                if (Median != null)
+                    hashCode = hashCode * 59 + Median.GetHashCode();
+                if (High != null)
+                    hashCode = hashCode * 59 + High.GetHashCode();
+                if (Low != null)
+                    hashCode = hashCode * 59 + Low.GetHashCode();
+                if (StandardDeviation != null)
+                    hashCode = hashCode * 59 + StandardDeviation.GetHashCode();
+                if (PercentChange != null)
+                    hashCode = hashCode * 59 + PercentChange.GetHashCode();
+                if (Mean7DaysAgo != null)
+                    hashCode = hashCode * 59 + Mean7DaysAgo.GetHashCode();
+                if (Mean30DaysAgo != null)
+                    hashCode = hashCode * 59 + Mean30DaysAgo.GetHashCode();
+                if (Mean60DaysAgo != null)
+                    hashCode = hashCode * 59 + Mean60DaysAgo.GetHashCode();
+                if (Mean90DaysAgo != null)
+                    hashCode = hashCode * 59 + Mean90DaysAgo.GetHashCode();
                 return hashCode;
             }
         }
@@ -380,7 +380,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

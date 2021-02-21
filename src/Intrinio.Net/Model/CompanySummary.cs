@@ -107,7 +107,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CompanySummary);
+            return Equals(input as CompanySummary);
         }
 
         /// <summary>
@@ -122,29 +122,29 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Ticker == input.Ticker ||
-                    (this.Ticker != null &&
-                    this.Ticker.Equals(input.Ticker))
+                    Ticker == input.Ticker ||
+                    (Ticker != null &&
+                    Ticker.Equals(input.Ticker))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Lei == input.Lei ||
-                    (this.Lei != null &&
-                    this.Lei.Equals(input.Lei))
+                    Lei == input.Lei ||
+                    (Lei != null &&
+                    Lei.Equals(input.Lei))
                 ) && 
                 (
-                    this.Cik == input.Cik ||
-                    (this.Cik != null &&
-                    this.Cik.Equals(input.Cik))
+                    Cik == input.Cik ||
+                    (Cik != null &&
+                    Cik.Equals(input.Cik))
                 );
         }
 
@@ -157,16 +157,16 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Ticker != null)
-                    hashCode = hashCode * 59 + this.Ticker.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Lei != null)
-                    hashCode = hashCode * 59 + this.Lei.GetHashCode();
-                if (this.Cik != null)
-                    hashCode = hashCode * 59 + this.Cik.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (Ticker != null)
+                    hashCode = hashCode * 59 + Ticker.GetHashCode();
+                if (Name != null)
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                if (Lei != null)
+                    hashCode = hashCode * 59 + Lei.GetHashCode();
+                if (Cik != null)
+                    hashCode = hashCode * 59 + Cik.GetHashCode();
                 return hashCode;
             }
         }
@@ -176,7 +176,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

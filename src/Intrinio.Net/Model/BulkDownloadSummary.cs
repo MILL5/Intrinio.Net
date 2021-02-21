@@ -117,7 +117,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BulkDownloadSummary);
+            return Equals(input as BulkDownloadSummary);
         }
 
         /// <summary>
@@ -132,34 +132,34 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
+                    Format == input.Format ||
+                    (Format != null &&
+                    Format.Equals(input.Format))
                 ) && 
                 (
-                    this.DataLengthBytes == input.DataLengthBytes ||
-                    (this.DataLengthBytes != null &&
-                    this.DataLengthBytes.Equals(input.DataLengthBytes))
+                    DataLengthBytes == input.DataLengthBytes ||
+                    (DataLengthBytes != null &&
+                    DataLengthBytes.Equals(input.DataLengthBytes))
                 ) && 
                 (
-                    this.UpdateFrequency == input.UpdateFrequency ||
-                    (this.UpdateFrequency != null &&
-                    this.UpdateFrequency.Equals(input.UpdateFrequency))
+                    UpdateFrequency == input.UpdateFrequency ||
+                    (UpdateFrequency != null &&
+                    UpdateFrequency.Equals(input.UpdateFrequency))
                 ) && 
                 (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
+                    Links == input.Links ||
+                    Links != null &&
+                    Links.SequenceEqual(input.Links)
                 );
         }
 
@@ -172,18 +172,18 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Format != null)
-                    hashCode = hashCode * 59 + this.Format.GetHashCode();
-                if (this.DataLengthBytes != null)
-                    hashCode = hashCode * 59 + this.DataLengthBytes.GetHashCode();
-                if (this.UpdateFrequency != null)
-                    hashCode = hashCode * 59 + this.UpdateFrequency.GetHashCode();
-                if (this.Links != null)
-                    hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (Name != null)
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                if (Format != null)
+                    hashCode = hashCode * 59 + Format.GetHashCode();
+                if (DataLengthBytes != null)
+                    hashCode = hashCode * 59 + DataLengthBytes.GetHashCode();
+                if (UpdateFrequency != null)
+                    hashCode = hashCode * 59 + UpdateFrequency.GetHashCode();
+                if (Links != null)
+                    hashCode = hashCode * 59 + Links.GetHashCode();
                 return hashCode;
             }
         }
@@ -193,7 +193,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -107,7 +107,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OptionStatsRealtime);
+            return Equals(input as OptionStatsRealtime);
         }
 
         /// <summary>
@@ -122,29 +122,29 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.ImpliedVolatility == input.ImpliedVolatility ||
-                    (this.ImpliedVolatility != null &&
-                    this.ImpliedVolatility.Equals(input.ImpliedVolatility))
+                    ImpliedVolatility == input.ImpliedVolatility ||
+                    (ImpliedVolatility != null &&
+                    ImpliedVolatility.Equals(input.ImpliedVolatility))
                 ) && 
                 (
-                    this.Delta == input.Delta ||
-                    (this.Delta != null &&
-                    this.Delta.Equals(input.Delta))
+                    Delta == input.Delta ||
+                    (Delta != null &&
+                    Delta.Equals(input.Delta))
                 ) && 
                 (
-                    this.Gamma == input.Gamma ||
-                    (this.Gamma != null &&
-                    this.Gamma.Equals(input.Gamma))
+                    Gamma == input.Gamma ||
+                    (Gamma != null &&
+                    Gamma.Equals(input.Gamma))
                 ) && 
                 (
-                    this.Theta == input.Theta ||
-                    (this.Theta != null &&
-                    this.Theta.Equals(input.Theta))
+                    Theta == input.Theta ||
+                    (Theta != null &&
+                    Theta.Equals(input.Theta))
                 ) && 
                 (
-                    this.Vega == input.Vega ||
-                    (this.Vega != null &&
-                    this.Vega.Equals(input.Vega))
+                    Vega == input.Vega ||
+                    (Vega != null &&
+                    Vega.Equals(input.Vega))
                 );
         }
 
@@ -157,16 +157,16 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ImpliedVolatility != null)
-                    hashCode = hashCode * 59 + this.ImpliedVolatility.GetHashCode();
-                if (this.Delta != null)
-                    hashCode = hashCode * 59 + this.Delta.GetHashCode();
-                if (this.Gamma != null)
-                    hashCode = hashCode * 59 + this.Gamma.GetHashCode();
-                if (this.Theta != null)
-                    hashCode = hashCode * 59 + this.Theta.GetHashCode();
-                if (this.Vega != null)
-                    hashCode = hashCode * 59 + this.Vega.GetHashCode();
+                if (ImpliedVolatility != null)
+                    hashCode = hashCode * 59 + ImpliedVolatility.GetHashCode();
+                if (Delta != null)
+                    hashCode = hashCode * 59 + Delta.GetHashCode();
+                if (Gamma != null)
+                    hashCode = hashCode * 59 + Gamma.GetHashCode();
+                if (Theta != null)
+                    hashCode = hashCode * 59 + Theta.GetHashCode();
+                if (Vega != null)
+                    hashCode = hashCode * 59 + Vega.GetHashCode();
                 return hashCode;
             }
         }
@@ -176,7 +176,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

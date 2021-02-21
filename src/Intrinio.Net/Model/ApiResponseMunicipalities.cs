@@ -76,7 +76,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ApiResponseMunicipalities);
+            return Equals(input as ApiResponseMunicipalities);
         }
 
         /// <summary>
@@ -91,14 +91,14 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Municipalities == input.Municipalities ||
-                    this.Municipalities != null &&
-                    this.Municipalities.SequenceEqual(input.Municipalities)
+                    Municipalities == input.Municipalities ||
+                    Municipalities != null &&
+                    Municipalities.SequenceEqual(input.Municipalities)
                 ) && 
                 (
-                    this.NextPage == input.NextPage ||
-                    (this.NextPage != null &&
-                    this.NextPage.Equals(input.NextPage))
+                    NextPage == input.NextPage ||
+                    (NextPage != null &&
+                    NextPage.Equals(input.NextPage))
                 );
         }
 
@@ -111,10 +111,10 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Municipalities != null)
-                    hashCode = hashCode * 59 + this.Municipalities.GetHashCode();
-                if (this.NextPage != null)
-                    hashCode = hashCode * 59 + this.NextPage.GetHashCode();
+                if (Municipalities != null)
+                    hashCode = hashCode * 59 + Municipalities.GetHashCode();
+                if (NextPage != null)
+                    hashCode = hashCode * 59 + NextPage.GetHashCode();
                 return hashCode;
             }
         }
@@ -124,7 +124,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

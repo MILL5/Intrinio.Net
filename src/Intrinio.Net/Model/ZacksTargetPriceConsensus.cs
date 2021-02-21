@@ -1,17 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+using System.Text;
 using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
@@ -187,7 +179,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ZacksTargetPriceConsensus);
+            return Equals(input as ZacksTargetPriceConsensus);
         }
 
         /// <summary>
@@ -202,69 +194,69 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Ticker == input.Ticker ||
-                    (this.Ticker != null &&
-                    this.Ticker.Equals(input.Ticker))
+                    Ticker == input.Ticker ||
+                    (Ticker != null &&
+                    Ticker.Equals(input.Ticker))
                 ) && 
                 (
-                    this.CompanyName == input.CompanyName ||
-                    (this.CompanyName != null &&
-                    this.CompanyName.Equals(input.CompanyName))
+                    CompanyName == input.CompanyName ||
+                    (CompanyName != null &&
+                    CompanyName.Equals(input.CompanyName))
                 ) && 
                 (
-                    this.IndustryGroupNumber == input.IndustryGroupNumber ||
-                    (this.IndustryGroupNumber != null &&
-                    this.IndustryGroupNumber.Equals(input.IndustryGroupNumber))
+                    IndustryGroupNumber == input.IndustryGroupNumber ||
+                    (IndustryGroupNumber != null &&
+                    IndustryGroupNumber.Equals(input.IndustryGroupNumber))
                 ) && 
                 (
-                    this.High == input.High ||
-                    (this.High != null &&
-                    this.High.Equals(input.High))
+                    High == input.High ||
+                    (High != null &&
+                    High.Equals(input.High))
                 ) && 
                 (
-                    this.Low == input.Low ||
-                    (this.Low != null &&
-                    this.Low.Equals(input.Low))
+                    Low == input.Low ||
+                    (Low != null &&
+                    Low.Equals(input.Low))
                 ) && 
                 (
-                    this.Mean == input.Mean ||
-                    (this.Mean != null &&
-                    this.Mean.Equals(input.Mean))
+                    Mean == input.Mean ||
+                    (Mean != null &&
+                    Mean.Equals(input.Mean))
                 ) && 
                 (
-                    this.StandardDeviation == input.StandardDeviation ||
-                    (this.StandardDeviation != null &&
-                    this.StandardDeviation.Equals(input.StandardDeviation))
+                    StandardDeviation == input.StandardDeviation ||
+                    (StandardDeviation != null &&
+                    StandardDeviation.Equals(input.StandardDeviation))
                 ) && 
                 (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
+                    Total == input.Total ||
+                    (Total != null &&
+                    Total.Equals(input.Total))
                 ) && 
                 (
-                    this.MostRecentDate == input.MostRecentDate ||
-                    (this.MostRecentDate != null &&
-                    this.MostRecentDate.Equals(input.MostRecentDate))
+                    MostRecentDate == input.MostRecentDate ||
+                    (MostRecentDate != null &&
+                    MostRecentDate.Equals(input.MostRecentDate))
                 ) && 
                 (
-                    this.Median == input.Median ||
-                    (this.Median != null &&
-                    this.Median.Equals(input.Median))
+                    Median == input.Median ||
+                    (Median != null &&
+                    Median.Equals(input.Median))
                 ) && 
                 (
-                    this.Raised == input.Raised ||
-                    (this.Raised != null &&
-                    this.Raised.Equals(input.Raised))
+                    Raised == input.Raised ||
+                    (Raised != null &&
+                    Raised.Equals(input.Raised))
                 ) && 
                 (
-                    this.Lowered == input.Lowered ||
-                    (this.Lowered != null &&
-                    this.Lowered.Equals(input.Lowered))
+                    Lowered == input.Lowered ||
+                    (Lowered != null &&
+                    Lowered.Equals(input.Lowered))
                 ) && 
                 (
-                    this.Company == input.Company ||
-                    (this.Company != null &&
-                    this.Company.Equals(input.Company))
+                    Company == input.Company ||
+                    (Company != null &&
+                    Company.Equals(input.Company))
                 );
         }
 
@@ -277,32 +269,32 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Ticker != null)
-                    hashCode = hashCode * 59 + this.Ticker.GetHashCode();
-                if (this.CompanyName != null)
-                    hashCode = hashCode * 59 + this.CompanyName.GetHashCode();
-                if (this.IndustryGroupNumber != null)
-                    hashCode = hashCode * 59 + this.IndustryGroupNumber.GetHashCode();
-                if (this.High != null)
-                    hashCode = hashCode * 59 + this.High.GetHashCode();
-                if (this.Low != null)
-                    hashCode = hashCode * 59 + this.Low.GetHashCode();
-                if (this.Mean != null)
-                    hashCode = hashCode * 59 + this.Mean.GetHashCode();
-                if (this.StandardDeviation != null)
-                    hashCode = hashCode * 59 + this.StandardDeviation.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.MostRecentDate != null)
-                    hashCode = hashCode * 59 + this.MostRecentDate.GetHashCode();
-                if (this.Median != null)
-                    hashCode = hashCode * 59 + this.Median.GetHashCode();
-                if (this.Raised != null)
-                    hashCode = hashCode * 59 + this.Raised.GetHashCode();
-                if (this.Lowered != null)
-                    hashCode = hashCode * 59 + this.Lowered.GetHashCode();
-                if (this.Company != null)
-                    hashCode = hashCode * 59 + this.Company.GetHashCode();
+                if (Ticker != null)
+                    hashCode = hashCode * 59 + Ticker.GetHashCode();
+                if (CompanyName != null)
+                    hashCode = hashCode * 59 + CompanyName.GetHashCode();
+                if (IndustryGroupNumber != null)
+                    hashCode = hashCode * 59 + IndustryGroupNumber.GetHashCode();
+                if (High != null)
+                    hashCode = hashCode * 59 + High.GetHashCode();
+                if (Low != null)
+                    hashCode = hashCode * 59 + Low.GetHashCode();
+                if (Mean != null)
+                    hashCode = hashCode * 59 + Mean.GetHashCode();
+                if (StandardDeviation != null)
+                    hashCode = hashCode * 59 + StandardDeviation.GetHashCode();
+                if (Total != null)
+                    hashCode = hashCode * 59 + Total.GetHashCode();
+                if (MostRecentDate != null)
+                    hashCode = hashCode * 59 + MostRecentDate.GetHashCode();
+                if (Median != null)
+                    hashCode = hashCode * 59 + Median.GetHashCode();
+                if (Raised != null)
+                    hashCode = hashCode * 59 + Raised.GetHashCode();
+                if (Lowered != null)
+                    hashCode = hashCode * 59 + Lowered.GetHashCode();
+                if (Company != null)
+                    hashCode = hashCode * 59 + Company.GetHashCode();
                 return hashCode;
             }
         }
@@ -312,7 +304,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

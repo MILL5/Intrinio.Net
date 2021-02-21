@@ -166,7 +166,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as FundamentalSummary);
+            return Equals(input as FundamentalSummary);
         }
 
         /// <summary>
@@ -181,44 +181,44 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.StatementCode == input.StatementCode ||
-                    (this.StatementCode != null &&
-                    this.StatementCode.Equals(input.StatementCode))
+                    StatementCode == input.StatementCode ||
+                    (StatementCode != null &&
+                    StatementCode.Equals(input.StatementCode))
                 ) && 
                 (
-                    this.FiscalYear == input.FiscalYear ||
-                    (this.FiscalYear != null &&
-                    this.FiscalYear.Equals(input.FiscalYear))
+                    FiscalYear == input.FiscalYear ||
+                    (FiscalYear != null &&
+                    FiscalYear.Equals(input.FiscalYear))
                 ) && 
                 (
-                    this.FiscalPeriod == input.FiscalPeriod ||
-                    (this.FiscalPeriod != null &&
-                    this.FiscalPeriod.Equals(input.FiscalPeriod))
+                    FiscalPeriod == input.FiscalPeriod ||
+                    (FiscalPeriod != null &&
+                    FiscalPeriod.Equals(input.FiscalPeriod))
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    Type == input.Type ||
+                    (Type != null &&
+                    Type.Equals(input.Type))
                 ) && 
                 (
-                    this.StartDate == input.StartDate ||
-                    (this.StartDate != null &&
-                    this.StartDate.Equals(input.StartDate))
+                    StartDate == input.StartDate ||
+                    (StartDate != null &&
+                    StartDate.Equals(input.StartDate))
                 ) && 
                 (
-                    this.EndDate == input.EndDate ||
-                    (this.EndDate != null &&
-                    this.EndDate.Equals(input.EndDate))
+                    EndDate == input.EndDate ||
+                    (EndDate != null &&
+                    EndDate.Equals(input.EndDate))
                 ) && 
                 (
-                    this.FilingDate == input.FilingDate ||
-                    (this.FilingDate != null &&
-                    this.FilingDate.Equals(input.FilingDate))
+                    FilingDate == input.FilingDate ||
+                    (FilingDate != null &&
+                    FilingDate.Equals(input.FilingDate))
                 );
         }
 
@@ -231,22 +231,22 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.StatementCode != null)
-                    hashCode = hashCode * 59 + this.StatementCode.GetHashCode();
-                if (this.FiscalYear != null)
-                    hashCode = hashCode * 59 + this.FiscalYear.GetHashCode();
-                if (this.FiscalPeriod != null)
-                    hashCode = hashCode * 59 + this.FiscalPeriod.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.StartDate != null)
-                    hashCode = hashCode * 59 + this.StartDate.GetHashCode();
-                if (this.EndDate != null)
-                    hashCode = hashCode * 59 + this.EndDate.GetHashCode();
-                if (this.FilingDate != null)
-                    hashCode = hashCode * 59 + this.FilingDate.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (StatementCode != null)
+                    hashCode = hashCode * 59 + StatementCode.GetHashCode();
+                if (FiscalYear != null)
+                    hashCode = hashCode * 59 + FiscalYear.GetHashCode();
+                if (FiscalPeriod != null)
+                    hashCode = hashCode * 59 + FiscalPeriod.GetHashCode();
+                if (Type != null)
+                    hashCode = hashCode * 59 + Type.GetHashCode();
+                if (StartDate != null)
+                    hashCode = hashCode * 59 + StartDate.GetHashCode();
+                if (EndDate != null)
+                    hashCode = hashCode * 59 + EndDate.GetHashCode();
+                if (FilingDate != null)
+                    hashCode = hashCode * 59 + FilingDate.GetHashCode();
                 return hashCode;
             }
         }
@@ -256,7 +256,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

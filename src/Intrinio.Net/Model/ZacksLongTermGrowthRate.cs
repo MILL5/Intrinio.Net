@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -307,7 +298,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ZacksLongTermGrowthRate);
+            return Equals(input as ZacksLongTermGrowthRate);
         }
 
         /// <summary>
@@ -322,129 +313,129 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Mean == input.Mean ||
-                    (this.Mean != null &&
-                    this.Mean.Equals(input.Mean))
+                    Mean == input.Mean ||
+                    (Mean != null &&
+                    Mean.Equals(input.Mean))
                 ) && 
                 (
-                    this.Median == input.Median ||
-                    (this.Median != null &&
-                    this.Median.Equals(input.Median))
+                    Median == input.Median ||
+                    (Median != null &&
+                    Median.Equals(input.Median))
                 ) && 
                 (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
+                    Count == input.Count ||
+                    (Count != null &&
+                    Count.Equals(input.Count))
                 ) && 
                 (
-                    this.High == input.High ||
-                    (this.High != null &&
-                    this.High.Equals(input.High))
+                    High == input.High ||
+                    (High != null &&
+                    High.Equals(input.High))
                 ) && 
                 (
-                    this.Low == input.Low ||
-                    (this.Low != null &&
-                    this.Low.Equals(input.Low))
+                    Low == input.Low ||
+                    (Low != null &&
+                    Low.Equals(input.Low))
                 ) && 
                 (
-                    this.StdDev == input.StdDev ||
-                    (this.StdDev != null &&
-                    this.StdDev.Equals(input.StdDev))
+                    StdDev == input.StdDev ||
+                    (StdDev != null &&
+                    StdDev.Equals(input.StdDev))
                 ) && 
                 (
-                    this.RevisionsUpward == input.RevisionsUpward ||
-                    (this.RevisionsUpward != null &&
-                    this.RevisionsUpward.Equals(input.RevisionsUpward))
+                    RevisionsUpward == input.RevisionsUpward ||
+                    (RevisionsUpward != null &&
+                    RevisionsUpward.Equals(input.RevisionsUpward))
                 ) && 
                 (
-                    this.RevisionsDownward == input.RevisionsDownward ||
-                    (this.RevisionsDownward != null &&
-                    this.RevisionsDownward.Equals(input.RevisionsDownward))
+                    RevisionsDownward == input.RevisionsDownward ||
+                    (RevisionsDownward != null &&
+                    RevisionsDownward.Equals(input.RevisionsDownward))
                 ) && 
                 (
-                    this.Mean7DaysAgo == input.Mean7DaysAgo ||
-                    (this.Mean7DaysAgo != null &&
-                    this.Mean7DaysAgo.Equals(input.Mean7DaysAgo))
+                    Mean7DaysAgo == input.Mean7DaysAgo ||
+                    (Mean7DaysAgo != null &&
+                    Mean7DaysAgo.Equals(input.Mean7DaysAgo))
                 ) && 
                 (
-                    this.Mean30DaysAgo == input.Mean30DaysAgo ||
-                    (this.Mean30DaysAgo != null &&
-                    this.Mean30DaysAgo.Equals(input.Mean30DaysAgo))
+                    Mean30DaysAgo == input.Mean30DaysAgo ||
+                    (Mean30DaysAgo != null &&
+                    Mean30DaysAgo.Equals(input.Mean30DaysAgo))
                 ) && 
                 (
-                    this.Mean60DaysAgo == input.Mean60DaysAgo ||
-                    (this.Mean60DaysAgo != null &&
-                    this.Mean60DaysAgo.Equals(input.Mean60DaysAgo))
+                    Mean60DaysAgo == input.Mean60DaysAgo ||
+                    (Mean60DaysAgo != null &&
+                    Mean60DaysAgo.Equals(input.Mean60DaysAgo))
                 ) && 
                 (
-                    this.Mean90DaysAgo == input.Mean90DaysAgo ||
-                    (this.Mean90DaysAgo != null &&
-                    this.Mean90DaysAgo.Equals(input.Mean90DaysAgo))
+                    Mean90DaysAgo == input.Mean90DaysAgo ||
+                    (Mean90DaysAgo != null &&
+                    Mean90DaysAgo.Equals(input.Mean90DaysAgo))
                 ) && 
                 (
-                    this.RevisionsUpwardLast7Days == input.RevisionsUpwardLast7Days ||
-                    (this.RevisionsUpwardLast7Days != null &&
-                    this.RevisionsUpwardLast7Days.Equals(input.RevisionsUpwardLast7Days))
+                    RevisionsUpwardLast7Days == input.RevisionsUpwardLast7Days ||
+                    (RevisionsUpwardLast7Days != null &&
+                    RevisionsUpwardLast7Days.Equals(input.RevisionsUpwardLast7Days))
                 ) && 
                 (
-                    this.RevisionsDownwardLast7Days == input.RevisionsDownwardLast7Days ||
-                    (this.RevisionsDownwardLast7Days != null &&
-                    this.RevisionsDownwardLast7Days.Equals(input.RevisionsDownwardLast7Days))
+                    RevisionsDownwardLast7Days == input.RevisionsDownwardLast7Days ||
+                    (RevisionsDownwardLast7Days != null &&
+                    RevisionsDownwardLast7Days.Equals(input.RevisionsDownwardLast7Days))
                 ) && 
                 (
-                    this.RevisionsUpwardLast30Days == input.RevisionsUpwardLast30Days ||
-                    (this.RevisionsUpwardLast30Days != null &&
-                    this.RevisionsUpwardLast30Days.Equals(input.RevisionsUpwardLast30Days))
+                    RevisionsUpwardLast30Days == input.RevisionsUpwardLast30Days ||
+                    (RevisionsUpwardLast30Days != null &&
+                    RevisionsUpwardLast30Days.Equals(input.RevisionsUpwardLast30Days))
                 ) && 
                 (
-                    this.RevisionsDownwardLast30Days == input.RevisionsDownwardLast30Days ||
-                    (this.RevisionsDownwardLast30Days != null &&
-                    this.RevisionsDownwardLast30Days.Equals(input.RevisionsDownwardLast30Days))
+                    RevisionsDownwardLast30Days == input.RevisionsDownwardLast30Days ||
+                    (RevisionsDownwardLast30Days != null &&
+                    RevisionsDownwardLast30Days.Equals(input.RevisionsDownwardLast30Days))
                 ) && 
                 (
-                    this.RevisionsUpwardLast60Days == input.RevisionsUpwardLast60Days ||
-                    (this.RevisionsUpwardLast60Days != null &&
-                    this.RevisionsUpwardLast60Days.Equals(input.RevisionsUpwardLast60Days))
+                    RevisionsUpwardLast60Days == input.RevisionsUpwardLast60Days ||
+                    (RevisionsUpwardLast60Days != null &&
+                    RevisionsUpwardLast60Days.Equals(input.RevisionsUpwardLast60Days))
                 ) && 
                 (
-                    this.RevisionsDownwardLast60Days == input.RevisionsDownwardLast60Days ||
-                    (this.RevisionsDownwardLast60Days != null &&
-                    this.RevisionsDownwardLast60Days.Equals(input.RevisionsDownwardLast60Days))
+                    RevisionsDownwardLast60Days == input.RevisionsDownwardLast60Days ||
+                    (RevisionsDownwardLast60Days != null &&
+                    RevisionsDownwardLast60Days.Equals(input.RevisionsDownwardLast60Days))
                 ) && 
                 (
-                    this.RevisionsUpwardLast90Days == input.RevisionsUpwardLast90Days ||
-                    (this.RevisionsUpwardLast90Days != null &&
-                    this.RevisionsUpwardLast90Days.Equals(input.RevisionsUpwardLast90Days))
+                    RevisionsUpwardLast90Days == input.RevisionsUpwardLast90Days ||
+                    (RevisionsUpwardLast90Days != null &&
+                    RevisionsUpwardLast90Days.Equals(input.RevisionsUpwardLast90Days))
                 ) && 
                 (
-                    this.RevisionsDownwardLast90Days == input.RevisionsDownwardLast90Days ||
-                    (this.RevisionsDownwardLast90Days != null &&
-                    this.RevisionsDownwardLast90Days.Equals(input.RevisionsDownwardLast90Days))
+                    RevisionsDownwardLast90Days == input.RevisionsDownwardLast90Days ||
+                    (RevisionsDownwardLast90Days != null &&
+                    RevisionsDownwardLast90Days.Equals(input.RevisionsDownwardLast90Days))
                 ) && 
                 (
-                    this.RevisionsUpwardLast120Days == input.RevisionsUpwardLast120Days ||
-                    (this.RevisionsUpwardLast120Days != null &&
-                    this.RevisionsUpwardLast120Days.Equals(input.RevisionsUpwardLast120Days))
+                    RevisionsUpwardLast120Days == input.RevisionsUpwardLast120Days ||
+                    (RevisionsUpwardLast120Days != null &&
+                    RevisionsUpwardLast120Days.Equals(input.RevisionsUpwardLast120Days))
                 ) && 
                 (
-                    this.RevisionsDownwardLast120Days == input.RevisionsDownwardLast120Days ||
-                    (this.RevisionsDownwardLast120Days != null &&
-                    this.RevisionsDownwardLast120Days.Equals(input.RevisionsDownwardLast120Days))
+                    RevisionsDownwardLast120Days == input.RevisionsDownwardLast120Days ||
+                    (RevisionsDownwardLast120Days != null &&
+                    RevisionsDownwardLast120Days.Equals(input.RevisionsDownwardLast120Days))
                 ) && 
                 (
-                    this.RevisionsUpwardLast150Days == input.RevisionsUpwardLast150Days ||
-                    (this.RevisionsUpwardLast150Days != null &&
-                    this.RevisionsUpwardLast150Days.Equals(input.RevisionsUpwardLast150Days))
+                    RevisionsUpwardLast150Days == input.RevisionsUpwardLast150Days ||
+                    (RevisionsUpwardLast150Days != null &&
+                    RevisionsUpwardLast150Days.Equals(input.RevisionsUpwardLast150Days))
                 ) && 
                 (
-                    this.RevisionsDownwardLast150Days == input.RevisionsDownwardLast150Days ||
-                    (this.RevisionsDownwardLast150Days != null &&
-                    this.RevisionsDownwardLast150Days.Equals(input.RevisionsDownwardLast150Days))
+                    RevisionsDownwardLast150Days == input.RevisionsDownwardLast150Days ||
+                    (RevisionsDownwardLast150Days != null &&
+                    RevisionsDownwardLast150Days.Equals(input.RevisionsDownwardLast150Days))
                 ) && 
                 (
-                    this.Security == input.Security ||
-                    (this.Security != null &&
-                    this.Security.Equals(input.Security))
+                    Security == input.Security ||
+                    (Security != null &&
+                    Security.Equals(input.Security))
                 );
         }
 
@@ -457,56 +448,56 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Mean != null)
-                    hashCode = hashCode * 59 + this.Mean.GetHashCode();
-                if (this.Median != null)
-                    hashCode = hashCode * 59 + this.Median.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.High != null)
-                    hashCode = hashCode * 59 + this.High.GetHashCode();
-                if (this.Low != null)
-                    hashCode = hashCode * 59 + this.Low.GetHashCode();
-                if (this.StdDev != null)
-                    hashCode = hashCode * 59 + this.StdDev.GetHashCode();
-                if (this.RevisionsUpward != null)
-                    hashCode = hashCode * 59 + this.RevisionsUpward.GetHashCode();
-                if (this.RevisionsDownward != null)
-                    hashCode = hashCode * 59 + this.RevisionsDownward.GetHashCode();
-                if (this.Mean7DaysAgo != null)
-                    hashCode = hashCode * 59 + this.Mean7DaysAgo.GetHashCode();
-                if (this.Mean30DaysAgo != null)
-                    hashCode = hashCode * 59 + this.Mean30DaysAgo.GetHashCode();
-                if (this.Mean60DaysAgo != null)
-                    hashCode = hashCode * 59 + this.Mean60DaysAgo.GetHashCode();
-                if (this.Mean90DaysAgo != null)
-                    hashCode = hashCode * 59 + this.Mean90DaysAgo.GetHashCode();
-                if (this.RevisionsUpwardLast7Days != null)
-                    hashCode = hashCode * 59 + this.RevisionsUpwardLast7Days.GetHashCode();
-                if (this.RevisionsDownwardLast7Days != null)
-                    hashCode = hashCode * 59 + this.RevisionsDownwardLast7Days.GetHashCode();
-                if (this.RevisionsUpwardLast30Days != null)
-                    hashCode = hashCode * 59 + this.RevisionsUpwardLast30Days.GetHashCode();
-                if (this.RevisionsDownwardLast30Days != null)
-                    hashCode = hashCode * 59 + this.RevisionsDownwardLast30Days.GetHashCode();
-                if (this.RevisionsUpwardLast60Days != null)
-                    hashCode = hashCode * 59 + this.RevisionsUpwardLast60Days.GetHashCode();
-                if (this.RevisionsDownwardLast60Days != null)
-                    hashCode = hashCode * 59 + this.RevisionsDownwardLast60Days.GetHashCode();
-                if (this.RevisionsUpwardLast90Days != null)
-                    hashCode = hashCode * 59 + this.RevisionsUpwardLast90Days.GetHashCode();
-                if (this.RevisionsDownwardLast90Days != null)
-                    hashCode = hashCode * 59 + this.RevisionsDownwardLast90Days.GetHashCode();
-                if (this.RevisionsUpwardLast120Days != null)
-                    hashCode = hashCode * 59 + this.RevisionsUpwardLast120Days.GetHashCode();
-                if (this.RevisionsDownwardLast120Days != null)
-                    hashCode = hashCode * 59 + this.RevisionsDownwardLast120Days.GetHashCode();
-                if (this.RevisionsUpwardLast150Days != null)
-                    hashCode = hashCode * 59 + this.RevisionsUpwardLast150Days.GetHashCode();
-                if (this.RevisionsDownwardLast150Days != null)
-                    hashCode = hashCode * 59 + this.RevisionsDownwardLast150Days.GetHashCode();
-                if (this.Security != null)
-                    hashCode = hashCode * 59 + this.Security.GetHashCode();
+                if (Mean != null)
+                    hashCode = hashCode * 59 + Mean.GetHashCode();
+                if (Median != null)
+                    hashCode = hashCode * 59 + Median.GetHashCode();
+                if (Count != null)
+                    hashCode = hashCode * 59 + Count.GetHashCode();
+                if (High != null)
+                    hashCode = hashCode * 59 + High.GetHashCode();
+                if (Low != null)
+                    hashCode = hashCode * 59 + Low.GetHashCode();
+                if (StdDev != null)
+                    hashCode = hashCode * 59 + StdDev.GetHashCode();
+                if (RevisionsUpward != null)
+                    hashCode = hashCode * 59 + RevisionsUpward.GetHashCode();
+                if (RevisionsDownward != null)
+                    hashCode = hashCode * 59 + RevisionsDownward.GetHashCode();
+                if (Mean7DaysAgo != null)
+                    hashCode = hashCode * 59 + Mean7DaysAgo.GetHashCode();
+                if (Mean30DaysAgo != null)
+                    hashCode = hashCode * 59 + Mean30DaysAgo.GetHashCode();
+                if (Mean60DaysAgo != null)
+                    hashCode = hashCode * 59 + Mean60DaysAgo.GetHashCode();
+                if (Mean90DaysAgo != null)
+                    hashCode = hashCode * 59 + Mean90DaysAgo.GetHashCode();
+                if (RevisionsUpwardLast7Days != null)
+                    hashCode = hashCode * 59 + RevisionsUpwardLast7Days.GetHashCode();
+                if (RevisionsDownwardLast7Days != null)
+                    hashCode = hashCode * 59 + RevisionsDownwardLast7Days.GetHashCode();
+                if (RevisionsUpwardLast30Days != null)
+                    hashCode = hashCode * 59 + RevisionsUpwardLast30Days.GetHashCode();
+                if (RevisionsDownwardLast30Days != null)
+                    hashCode = hashCode * 59 + RevisionsDownwardLast30Days.GetHashCode();
+                if (RevisionsUpwardLast60Days != null)
+                    hashCode = hashCode * 59 + RevisionsUpwardLast60Days.GetHashCode();
+                if (RevisionsDownwardLast60Days != null)
+                    hashCode = hashCode * 59 + RevisionsDownwardLast60Days.GetHashCode();
+                if (RevisionsUpwardLast90Days != null)
+                    hashCode = hashCode * 59 + RevisionsUpwardLast90Days.GetHashCode();
+                if (RevisionsDownwardLast90Days != null)
+                    hashCode = hashCode * 59 + RevisionsDownwardLast90Days.GetHashCode();
+                if (RevisionsUpwardLast120Days != null)
+                    hashCode = hashCode * 59 + RevisionsUpwardLast120Days.GetHashCode();
+                if (RevisionsDownwardLast120Days != null)
+                    hashCode = hashCode * 59 + RevisionsDownwardLast120Days.GetHashCode();
+                if (RevisionsUpwardLast150Days != null)
+                    hashCode = hashCode * 59 + RevisionsUpwardLast150Days.GetHashCode();
+                if (RevisionsDownwardLast150Days != null)
+                    hashCode = hashCode * 59 + RevisionsDownwardLast150Days.GetHashCode();
+                if (Security != null)
+                    hashCode = hashCode * 59 + Security.GetHashCode();
                 return hashCode;
             }
         }
@@ -516,7 +507,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -77,7 +77,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OnBalanceVolumeMeanTechnicalValue);
+            return Equals(input as OnBalanceVolumeMeanTechnicalValue);
         }
 
         /// <summary>
@@ -92,14 +92,14 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.DateTime == input.DateTime ||
-                    (this.DateTime != null &&
-                    this.DateTime.Equals(input.DateTime))
+                    DateTime == input.DateTime ||
+                    (DateTime != null &&
+                    DateTime.Equals(input.DateTime))
                 ) && 
                 (
-                    this.ObvMean == input.ObvMean ||
-                    (this.ObvMean != null &&
-                    this.ObvMean.Equals(input.ObvMean))
+                    ObvMean == input.ObvMean ||
+                    (ObvMean != null &&
+                    ObvMean.Equals(input.ObvMean))
                 );
         }
 
@@ -112,10 +112,10 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DateTime != null)
-                    hashCode = hashCode * 59 + this.DateTime.GetHashCode();
-                if (this.ObvMean != null)
-                    hashCode = hashCode * 59 + this.ObvMean.GetHashCode();
+                if (DateTime != null)
+                    hashCode = hashCode * 59 + DateTime.GetHashCode();
+                if (ObvMean != null)
+                    hashCode = hashCode * 59 + ObvMean.GetHashCode();
                 return hashCode;
             }
         }
@@ -125,7 +125,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -97,7 +97,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as MovingAverageConvergenceDivergenceTechnicalValue);
+            return Equals(input as MovingAverageConvergenceDivergenceTechnicalValue);
         }
 
         /// <summary>
@@ -112,24 +112,24 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.DateTime == input.DateTime ||
-                    (this.DateTime != null &&
-                    this.DateTime.Equals(input.DateTime))
+                    DateTime == input.DateTime ||
+                    (DateTime != null &&
+                    DateTime.Equals(input.DateTime))
                 ) && 
                 (
-                    this.MacdHistogram == input.MacdHistogram ||
-                    (this.MacdHistogram != null &&
-                    this.MacdHistogram.Equals(input.MacdHistogram))
+                    MacdHistogram == input.MacdHistogram ||
+                    (MacdHistogram != null &&
+                    MacdHistogram.Equals(input.MacdHistogram))
                 ) && 
                 (
-                    this.MacdLine == input.MacdLine ||
-                    (this.MacdLine != null &&
-                    this.MacdLine.Equals(input.MacdLine))
+                    MacdLine == input.MacdLine ||
+                    (MacdLine != null &&
+                    MacdLine.Equals(input.MacdLine))
                 ) && 
                 (
-                    this.SignalLine == input.SignalLine ||
-                    (this.SignalLine != null &&
-                    this.SignalLine.Equals(input.SignalLine))
+                    SignalLine == input.SignalLine ||
+                    (SignalLine != null &&
+                    SignalLine.Equals(input.SignalLine))
                 );
         }
 
@@ -142,14 +142,14 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DateTime != null)
-                    hashCode = hashCode * 59 + this.DateTime.GetHashCode();
-                if (this.MacdHistogram != null)
-                    hashCode = hashCode * 59 + this.MacdHistogram.GetHashCode();
-                if (this.MacdLine != null)
-                    hashCode = hashCode * 59 + this.MacdLine.GetHashCode();
-                if (this.SignalLine != null)
-                    hashCode = hashCode * 59 + this.SignalLine.GetHashCode();
+                if (DateTime != null)
+                    hashCode = hashCode * 59 + DateTime.GetHashCode();
+                if (MacdHistogram != null)
+                    hashCode = hashCode * 59 + MacdHistogram.GetHashCode();
+                if (MacdLine != null)
+                    hashCode = hashCode * 59 + MacdLine.GetHashCode();
+                if (SignalLine != null)
+                    hashCode = hashCode * 59 + SignalLine.GetHashCode();
                 return hashCode;
             }
         }
@@ -159,7 +159,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

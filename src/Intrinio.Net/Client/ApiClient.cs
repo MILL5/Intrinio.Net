@@ -1,19 +1,15 @@
-
-
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Polly;
+using RestSharp;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Text.RegularExpressions;
 using System.IO;
-using System.Web;
 using System.Linq;
 using System.Net;
 using System.Text;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using RestSharp;
-using Polly;
+using System.Text.RegularExpressions;
 
 namespace Intrinio.Net.Client
 {
@@ -48,7 +44,7 @@ namespace Intrinio.Net.Client
         /// </summary>
         public ApiClient()
         {
-            Configuration = Intrinio.Net.Client.Configuration.Default;
+            Configuration = Client.Configuration.Default;
             RestClient = new RestClient("https://api-v2.intrinio.com");
         }
 
@@ -59,7 +55,7 @@ namespace Intrinio.Net.Client
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
         {
-            Configuration = config ?? Intrinio.Net.Client.Configuration.Default;
+            Configuration = config ?? Client.Configuration.Default;
 
             RestClient = new RestClient(Configuration.BasePath);
         }
@@ -69,9 +65,9 @@ namespace Intrinio.Net.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "https://api-v2.intrinio.com")
+        public ApiClient(string basePath = "https://api-v2.intrinio.com")
         {
-           if (String.IsNullOrEmpty(basePath))
+           if (string.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
 
             RestClient = new RestClient(basePath);
@@ -104,10 +100,10 @@ namespace Intrinio.Net.Client
 
         // Creates and sets up a RestRequest prior to a call.
         private RestRequest PrepareRequest(
-            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
-            Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-            Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
-            String contentType)
+            string path, Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
+            Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+            Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
+            string contentType)
         {
             var request = new RestRequest(path, method);
 
@@ -154,11 +150,11 @@ namespace Intrinio.Net.Client
         /// <param name="pathParams">Path parameters.</param>
         /// <param name="contentType">Content Type of the request</param>
         /// <returns>Object</returns>
-        public Object CallApi(
-            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
-            Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-            Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
-            String contentType)
+        public object CallApi(
+            string path, Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
+            Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+            Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
+            string contentType)
         {
             var request = PrepareRequest(
                 path, method, queryParams, postBody, headerParams, formParams, fileParams,
@@ -170,7 +166,7 @@ namespace Intrinio.Net.Client
             // set user agent
             RestClient.UserAgent = Configuration.UserAgent;
 
-            var allowRetries = Intrinio.Net.Client.Configuration.Default.AllowRetries;
+            var allowRetries = Client.Configuration.Default.AllowRetries;
             var retryCount = 0;
             if (allowRetries is true)
                 retryCount = 4;
@@ -179,7 +175,7 @@ namespace Intrinio.Net.Client
               .HandleResult<IRestResponse>((result) =>
               {
                   bool shouldRetry = false;
-                  List<Parameter> responseHeaders = result.Headers.ToList();
+                  var responseHeaders = result.Headers.ToList();
                   
                   // Retry if server error or rate limit error
                   if ((int)result.StatusCode >= 500)
@@ -188,10 +184,10 @@ namespace Intrinio.Net.Client
                   }
                   else if (result.StatusCode == (HttpStatusCode)429)
                   {
-                      Parameter rateLimitHeader = responseHeaders.Find(x => x.Name == "retry-after");
+                      var rateLimitHeader = responseHeaders.Find(x => x.Name == "retry-after");
                       if (rateLimitHeader != null)
                       {
-                          int rateLimitElapsesIn = Int32.Parse(rateLimitHeader.Value.ToString()) * 1000;
+                          int rateLimitElapsesIn = int.Parse(rateLimitHeader.Value.ToString()) * 1000;
                           
                           // If the rate limit elapse milliseconds is less than the maximum allowed retry time limit, sleep program until rate limit has elapsed. Then retry.
                           if (rateLimitElapsesIn < maxRetryMilliSeconds)
@@ -215,7 +211,7 @@ namespace Intrinio.Net.Client
                 return RestClient.Execute(request);
             });
             InterceptResponse(request, response);
-            return (Object)response;
+            return (object)response;
         }
         /// <summary>
         /// Makes the asynchronous HTTP request.
@@ -230,24 +226,24 @@ namespace Intrinio.Net.Client
         /// <param name="pathParams">Path parameters.</param>
         /// <param name="contentType">Content type.</param>
         /// <returns>The Task instance.</returns>
-        public async System.Threading.Tasks.Task<Object> CallApiAsync(
-            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
-            Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-            Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
-            String contentType)
+        public async System.Threading.Tasks.Task<object> CallApiAsync(
+            string path, Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
+            Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+            Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
+            string contentType)
         {
             var request = PrepareRequest(
                 path, method, queryParams, postBody, headerParams, formParams, fileParams,
                 pathParams, contentType);
             
-            var retryCount = Intrinio.Net.Client.Configuration.Default.AllowRetries ? 4 : 0;
+            var retryCount = Client.Configuration.Default.AllowRetries ? 4 : 0;
             
             var retryPolicy = Policy
               .HandleResult<IRestResponse>((result) =>
               {
 
                   bool shouldRetry = false;
-                  List<Parameter> responseHeaders = result.Headers.ToList();
+                  var responseHeaders = result.Headers.ToList();
                   
                   // Retry if server error or rate limit error
                   if ((int)result.StatusCode >= 500)
@@ -256,11 +252,11 @@ namespace Intrinio.Net.Client
                   }
                   else if (result.StatusCode == (HttpStatusCode)429)
                   {
-                      Parameter rateLimitHeader = responseHeaders.Find(x => x.Name == "retry-after");
+                      var rateLimitHeader = responseHeaders.Find(x => x.Name == "retry-after");
                       
                       if (rateLimitHeader != null)
                       {
-                          int rateLimitElapsesIn = Int32.Parse(rateLimitHeader.Value.ToString()) * 1000;
+                          int rateLimitElapsesIn = int.Parse(rateLimitHeader.Value.ToString()) * 1000;
                           
                           // If the rate limit elapse milliseconds is less than the maximum allowed retry time limit, sleep program until rate limit has elapsed. Then retry.
                           if (rateLimitElapsesIn < maxRetryMilliSeconds)
@@ -281,12 +277,11 @@ namespace Intrinio.Net.Client
             
             var response = await retryPolicy.ExecuteAsync(async () =>
             {
-              Console.WriteLine("Calling Intrinio API...");
               return await RestClient.ExecuteAsync(request);
             });
              
             InterceptResponse(request, response);
-            return (Object)response;
+            return response;
         }
 
         /// <summary>
@@ -357,7 +352,7 @@ namespace Intrinio.Net.Client
         /// <returns>Object representation of the JSON string.</returns>
         public object Deserialize(IRestResponse response, Type type)
         {
-            IList<Parameter> headers = response.Headers;
+            var headers = response.Headers;
             if (type == typeof(byte[])) // return byte array
             {
                 return response.RawBytes;
@@ -368,7 +363,7 @@ namespace Intrinio.Net.Client
             {
                 if (headers != null)
                 {
-                    var filePath = String.IsNullOrEmpty(Configuration.TempFolderPath)
+                    var filePath = string.IsNullOrEmpty(Configuration.TempFolderPath)
                         ? Path.GetTempPath()
                         : Configuration.TempFolderPath;
                     var regex = new Regex(@"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$");
@@ -392,7 +387,7 @@ namespace Intrinio.Net.Client
                 return DateTime.Parse(response.Content,  null, System.Globalization.DateTimeStyles.RoundtripKind);
             }
 
-            if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
+            if (type == typeof(string) || type.Name.StartsWith("System.Nullable")) // return primitive type
             {
                 return ConvertType(response.Content, type);
             }
@@ -422,7 +417,7 @@ namespace Intrinio.Net.Client
         /// </summary>
         /// <param name="obj">Object.</param>
         /// <returns>JSON string.</returns>
-        public String Serialize(object obj)
+        public string Serialize(object obj)
         {
             try
             {
@@ -444,8 +439,9 @@ namespace Intrinio.Net.Client
         /// </summary>
         /// <param name="mime">MIME</param>
         /// <returns>Returns True if MIME type is json.</returns>
-        public bool IsJsonMime(String mime)
+        public bool IsJsonMime(string mime)
         {
+            // TODO: Holy Frijoles Batman!  Performance Issue Abound!
             var jsonRegex = new Regex("(?i)^(application/json|[^;/ \t]+/[^;/ \t]+[+]json)[ \t]*(;.*)?$");
             return mime != null && (jsonRegex.IsMatch(mime) || mime.Equals("application/json-patch+json"));
         }
@@ -457,7 +453,7 @@ namespace Intrinio.Net.Client
         /// </summary>
         /// <param name="contentTypes">The Content-Type array to select from.</param>
         /// <returns>The Content-Type header to use.</returns>
-        public String SelectHeaderContentType(String[] contentTypes)
+        public string SelectHeaderContentType(string[] contentTypes)
         {
             if (contentTypes.Length == 0)
                 return "application/json";
@@ -478,7 +474,7 @@ namespace Intrinio.Net.Client
         /// </summary>
         /// <param name="accepts">The accepts array to select from.</param>
         /// <returns>The Accept header to use.</returns>
-        public String SelectHeaderAccept(String[] accepts)
+        public string SelectHeaderAccept(string[] accepts)
         {
             if (accepts.Length == 0)
                 return null;
@@ -486,7 +482,7 @@ namespace Intrinio.Net.Client
             if (accepts.Contains("application/json", StringComparer.OrdinalIgnoreCase))
                 return "application/json";
 
-            return String.Join(",", accepts);
+            return string.Join(",", accepts);
         }
 
         /// <summary>
@@ -496,7 +492,7 @@ namespace Intrinio.Net.Client
         /// <returns>Encoded string.</returns>
         public static string Base64Encode(string text)
         {
-            return System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(text));
+            return Convert.ToBase64String(Encoding.UTF8.GetBytes(text));
         }
 
         /// <summary>

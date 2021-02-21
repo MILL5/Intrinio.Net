@@ -1,6 +1,3 @@
-
-
-
 using System.Collections.Generic;
 
 namespace Intrinio.Net.Client

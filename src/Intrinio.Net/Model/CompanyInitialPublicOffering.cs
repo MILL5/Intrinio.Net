@@ -304,7 +304,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CompanyInitialPublicOffering);
+            return Equals(input as CompanyInitialPublicOffering);
         }
 
         /// <summary>
@@ -319,114 +319,114 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Ticker == input.Ticker ||
-                    (this.Ticker != null &&
-                    this.Ticker.Equals(input.Ticker))
+                    Ticker == input.Ticker ||
+                    (Ticker != null &&
+                    Ticker.Equals(input.Ticker))
                 ) && 
                 (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
+                    Date == input.Date ||
+                    (Date != null &&
+                    Date.Equals(input.Date))
                 ) && 
                 (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
+                    Status == input.Status ||
+                    (Status != null &&
+                    Status.Equals(input.Status))
                 ) && 
                 (
-                    this.Exchange == input.Exchange ||
-                    (this.Exchange != null &&
-                    this.Exchange.Equals(input.Exchange))
+                    Exchange == input.Exchange ||
+                    (Exchange != null &&
+                    Exchange.Equals(input.Exchange))
                 ) && 
                 (
-                    this.OfferAmount == input.OfferAmount ||
-                    (this.OfferAmount != null &&
-                    this.OfferAmount.Equals(input.OfferAmount))
+                    OfferAmount == input.OfferAmount ||
+                    (OfferAmount != null &&
+                    OfferAmount.Equals(input.OfferAmount))
                 ) && 
                 (
-                    this.SharePrice == input.SharePrice ||
-                    (this.SharePrice != null &&
-                    this.SharePrice.Equals(input.SharePrice))
+                    SharePrice == input.SharePrice ||
+                    (SharePrice != null &&
+                    SharePrice.Equals(input.SharePrice))
                 ) && 
                 (
-                    this.SharePriceLowest == input.SharePriceLowest ||
-                    (this.SharePriceLowest != null &&
-                    this.SharePriceLowest.Equals(input.SharePriceLowest))
+                    SharePriceLowest == input.SharePriceLowest ||
+                    (SharePriceLowest != null &&
+                    SharePriceLowest.Equals(input.SharePriceLowest))
                 ) && 
                 (
-                    this.SharePriceHighest == input.SharePriceHighest ||
-                    (this.SharePriceHighest != null &&
-                    this.SharePriceHighest.Equals(input.SharePriceHighest))
+                    SharePriceHighest == input.SharePriceHighest ||
+                    (SharePriceHighest != null &&
+                    SharePriceHighest.Equals(input.SharePriceHighest))
                 ) && 
                 (
-                    this.ShareCount == input.ShareCount ||
-                    (this.ShareCount != null &&
-                    this.ShareCount.Equals(input.ShareCount))
+                    ShareCount == input.ShareCount ||
+                    (ShareCount != null &&
+                    ShareCount.Equals(input.ShareCount))
                 ) && 
                 (
-                    this.ShareCountLowest == input.ShareCountLowest ||
-                    (this.ShareCountLowest != null &&
-                    this.ShareCountLowest.Equals(input.ShareCountLowest))
+                    ShareCountLowest == input.ShareCountLowest ||
+                    (ShareCountLowest != null &&
+                    ShareCountLowest.Equals(input.ShareCountLowest))
                 ) && 
                 (
-                    this.ShareCountHighest == input.ShareCountHighest ||
-                    (this.ShareCountHighest != null &&
-                    this.ShareCountHighest.Equals(input.ShareCountHighest))
+                    ShareCountHighest == input.ShareCountHighest ||
+                    (ShareCountHighest != null &&
+                    ShareCountHighest.Equals(input.ShareCountHighest))
                 ) && 
                 (
-                    this.AnnouncementUrl == input.AnnouncementUrl ||
-                    (this.AnnouncementUrl != null &&
-                    this.AnnouncementUrl.Equals(input.AnnouncementUrl))
+                    AnnouncementUrl == input.AnnouncementUrl ||
+                    (AnnouncementUrl != null &&
+                    AnnouncementUrl.Equals(input.AnnouncementUrl))
                 ) && 
                 (
-                    this.SecReportUrl == input.SecReportUrl ||
-                    (this.SecReportUrl != null &&
-                    this.SecReportUrl.Equals(input.SecReportUrl))
+                    SecReportUrl == input.SecReportUrl ||
+                    (SecReportUrl != null &&
+                    SecReportUrl.Equals(input.SecReportUrl))
                 ) && 
                 (
-                    this.OpenPrice == input.OpenPrice ||
-                    (this.OpenPrice != null &&
-                    this.OpenPrice.Equals(input.OpenPrice))
+                    OpenPrice == input.OpenPrice ||
+                    (OpenPrice != null &&
+                    OpenPrice.Equals(input.OpenPrice))
                 ) && 
                 (
-                    this.ClosePrice == input.ClosePrice ||
-                    (this.ClosePrice != null &&
-                    this.ClosePrice.Equals(input.ClosePrice))
+                    ClosePrice == input.ClosePrice ||
+                    (ClosePrice != null &&
+                    ClosePrice.Equals(input.ClosePrice))
                 ) && 
                 (
-                    this.Volume == input.Volume ||
-                    (this.Volume != null &&
-                    this.Volume.Equals(input.Volume))
+                    Volume == input.Volume ||
+                    (Volume != null &&
+                    Volume.Equals(input.Volume))
                 ) && 
                 (
-                    this.DayChange == input.DayChange ||
-                    (this.DayChange != null &&
-                    this.DayChange.Equals(input.DayChange))
+                    DayChange == input.DayChange ||
+                    (DayChange != null &&
+                    DayChange.Equals(input.DayChange))
                 ) && 
                 (
-                    this.WeekChange == input.WeekChange ||
-                    (this.WeekChange != null &&
-                    this.WeekChange.Equals(input.WeekChange))
+                    WeekChange == input.WeekChange ||
+                    (WeekChange != null &&
+                    WeekChange.Equals(input.WeekChange))
                 ) && 
                 (
-                    this.MonthChange == input.MonthChange ||
-                    (this.MonthChange != null &&
-                    this.MonthChange.Equals(input.MonthChange))
+                    MonthChange == input.MonthChange ||
+                    (MonthChange != null &&
+                    MonthChange.Equals(input.MonthChange))
                 ) && 
                 (
-                    this.Company == input.Company ||
-                    (this.Company != null &&
-                    this.Company.Equals(input.Company))
+                    Company == input.Company ||
+                    (Company != null &&
+                    Company.Equals(input.Company))
                 ) && 
                 (
-                    this.Security == input.Security ||
-                    (this.Security != null &&
-                    this.Security.Equals(input.Security))
+                    Security == input.Security ||
+                    (Security != null &&
+                    Security.Equals(input.Security))
                 );
         }
 
@@ -439,50 +439,50 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Ticker != null)
-                    hashCode = hashCode * 59 + this.Ticker.GetHashCode();
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Exchange != null)
-                    hashCode = hashCode * 59 + this.Exchange.GetHashCode();
-                if (this.OfferAmount != null)
-                    hashCode = hashCode * 59 + this.OfferAmount.GetHashCode();
-                if (this.SharePrice != null)
-                    hashCode = hashCode * 59 + this.SharePrice.GetHashCode();
-                if (this.SharePriceLowest != null)
-                    hashCode = hashCode * 59 + this.SharePriceLowest.GetHashCode();
-                if (this.SharePriceHighest != null)
-                    hashCode = hashCode * 59 + this.SharePriceHighest.GetHashCode();
-                if (this.ShareCount != null)
-                    hashCode = hashCode * 59 + this.ShareCount.GetHashCode();
-                if (this.ShareCountLowest != null)
-                    hashCode = hashCode * 59 + this.ShareCountLowest.GetHashCode();
-                if (this.ShareCountHighest != null)
-                    hashCode = hashCode * 59 + this.ShareCountHighest.GetHashCode();
-                if (this.AnnouncementUrl != null)
-                    hashCode = hashCode * 59 + this.AnnouncementUrl.GetHashCode();
-                if (this.SecReportUrl != null)
-                    hashCode = hashCode * 59 + this.SecReportUrl.GetHashCode();
-                if (this.OpenPrice != null)
-                    hashCode = hashCode * 59 + this.OpenPrice.GetHashCode();
-                if (this.ClosePrice != null)
-                    hashCode = hashCode * 59 + this.ClosePrice.GetHashCode();
-                if (this.Volume != null)
-                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
-                if (this.DayChange != null)
-                    hashCode = hashCode * 59 + this.DayChange.GetHashCode();
-                if (this.WeekChange != null)
-                    hashCode = hashCode * 59 + this.WeekChange.GetHashCode();
-                if (this.MonthChange != null)
-                    hashCode = hashCode * 59 + this.MonthChange.GetHashCode();
-                if (this.Company != null)
-                    hashCode = hashCode * 59 + this.Company.GetHashCode();
-                if (this.Security != null)
-                    hashCode = hashCode * 59 + this.Security.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (Ticker != null)
+                    hashCode = hashCode * 59 + Ticker.GetHashCode();
+                if (Date != null)
+                    hashCode = hashCode * 59 + Date.GetHashCode();
+                if (Status != null)
+                    hashCode = hashCode * 59 + Status.GetHashCode();
+                if (Exchange != null)
+                    hashCode = hashCode * 59 + Exchange.GetHashCode();
+                if (OfferAmount != null)
+                    hashCode = hashCode * 59 + OfferAmount.GetHashCode();
+                if (SharePrice != null)
+                    hashCode = hashCode * 59 + SharePrice.GetHashCode();
+                if (SharePriceLowest != null)
+                    hashCode = hashCode * 59 + SharePriceLowest.GetHashCode();
+                if (SharePriceHighest != null)
+                    hashCode = hashCode * 59 + SharePriceHighest.GetHashCode();
+                if (ShareCount != null)
+                    hashCode = hashCode * 59 + ShareCount.GetHashCode();
+                if (ShareCountLowest != null)
+                    hashCode = hashCode * 59 + ShareCountLowest.GetHashCode();
+                if (ShareCountHighest != null)
+                    hashCode = hashCode * 59 + ShareCountHighest.GetHashCode();
+                if (AnnouncementUrl != null)
+                    hashCode = hashCode * 59 + AnnouncementUrl.GetHashCode();
+                if (SecReportUrl != null)
+                    hashCode = hashCode * 59 + SecReportUrl.GetHashCode();
+                if (OpenPrice != null)
+                    hashCode = hashCode * 59 + OpenPrice.GetHashCode();
+                if (ClosePrice != null)
+                    hashCode = hashCode * 59 + ClosePrice.GetHashCode();
+                if (Volume != null)
+                    hashCode = hashCode * 59 + Volume.GetHashCode();
+                if (DayChange != null)
+                    hashCode = hashCode * 59 + DayChange.GetHashCode();
+                if (WeekChange != null)
+                    hashCode = hashCode * 59 + WeekChange.GetHashCode();
+                if (MonthChange != null)
+                    hashCode = hashCode * 59 + MonthChange.GetHashCode();
+                if (Company != null)
+                    hashCode = hashCode * 59 + Company.GetHashCode();
+                if (Security != null)
+                    hashCode = hashCode * 59 + Security.GetHashCode();
                 return hashCode;
             }
         }
@@ -492,7 +492,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

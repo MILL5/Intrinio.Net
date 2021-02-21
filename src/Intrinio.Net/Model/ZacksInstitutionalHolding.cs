@@ -1,17 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
@@ -186,7 +179,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ZacksInstitutionalHolding);
+            return Equals(input as ZacksInstitutionalHolding);
         }
 
         /// <summary>
@@ -201,69 +194,69 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Company == input.Company ||
-                    (this.Company != null &&
-                    this.Company.Equals(input.Company))
+                    Company == input.Company ||
+                    (Company != null &&
+                    Company.Equals(input.Company))
                 ) && 
                 (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
+                    Owner == input.Owner ||
+                    (Owner != null &&
+                    Owner.Equals(input.Owner))
                 ) && 
                 (
-                    this.AsOfDate == input.AsOfDate ||
-                    (this.AsOfDate != null &&
-                    this.AsOfDate.Equals(input.AsOfDate))
+                    AsOfDate == input.AsOfDate ||
+                    (AsOfDate != null &&
+                    AsOfDate.Equals(input.AsOfDate))
                 ) && 
                 (
-                    this.SharesHeld == input.SharesHeld ||
-                    (this.SharesHeld != null &&
-                    this.SharesHeld.Equals(input.SharesHeld))
+                    SharesHeld == input.SharesHeld ||
+                    (SharesHeld != null &&
+                    SharesHeld.Equals(input.SharesHeld))
                 ) && 
                 (
-                    this.SharedHeldPercent == input.SharedHeldPercent ||
-                    (this.SharedHeldPercent != null &&
-                    this.SharedHeldPercent.Equals(input.SharedHeldPercent))
+                    SharedHeldPercent == input.SharedHeldPercent ||
+                    (SharedHeldPercent != null &&
+                    SharedHeldPercent.Equals(input.SharedHeldPercent))
                 ) && 
                 (
-                    this.SharesChange == input.SharesChange ||
-                    (this.SharesChange != null &&
-                    this.SharesChange.Equals(input.SharesChange))
+                    SharesChange == input.SharesChange ||
+                    (SharesChange != null &&
+                    SharesChange.Equals(input.SharesChange))
                 ) && 
                 (
-                    this.SharesChangePercent == input.SharesChangePercent ||
-                    (this.SharesChangePercent != null &&
-                    this.SharesChangePercent.Equals(input.SharesChangePercent))
+                    SharesChangePercent == input.SharesChangePercent ||
+                    (SharesChangePercent != null &&
+                    SharesChangePercent.Equals(input.SharesChangePercent))
                 ) && 
                 (
-                    this.MarketValue == input.MarketValue ||
-                    (this.MarketValue != null &&
-                    this.MarketValue.Equals(input.MarketValue))
+                    MarketValue == input.MarketValue ||
+                    (MarketValue != null &&
+                    MarketValue.Equals(input.MarketValue))
                 ) && 
                 (
-                    this.MarketValueChange == input.MarketValueChange ||
-                    (this.MarketValueChange != null &&
-                    this.MarketValueChange.Equals(input.MarketValueChange))
+                    MarketValueChange == input.MarketValueChange ||
+                    (MarketValueChange != null &&
+                    MarketValueChange.Equals(input.MarketValueChange))
                 ) && 
                 (
-                    this.LastSecFilingType == input.LastSecFilingType ||
-                    (this.LastSecFilingType != null &&
-                    this.LastSecFilingType.Equals(input.LastSecFilingType))
+                    LastSecFilingType == input.LastSecFilingType ||
+                    (LastSecFilingType != null &&
+                    LastSecFilingType.Equals(input.LastSecFilingType))
                 ) && 
                 (
-                    this.LastSecFilingDate == input.LastSecFilingDate ||
-                    (this.LastSecFilingDate != null &&
-                    this.LastSecFilingDate.Equals(input.LastSecFilingDate))
+                    LastSecFilingDate == input.LastSecFilingDate ||
+                    (LastSecFilingDate != null &&
+                    LastSecFilingDate.Equals(input.LastSecFilingDate))
                 ) && 
                 (
-                    this.LastSecFilingShares == input.LastSecFilingShares ||
-                    (this.LastSecFilingShares != null &&
-                    this.LastSecFilingShares.Equals(input.LastSecFilingShares))
+                    LastSecFilingShares == input.LastSecFilingShares ||
+                    (LastSecFilingShares != null &&
+                    LastSecFilingShares.Equals(input.LastSecFilingShares))
                 ) && 
                 (
-                    this.HistoricalHoldings == input.HistoricalHoldings ||
-                    this.HistoricalHoldings != null &&
-                    this.HistoricalHoldings.SequenceEqual(input.HistoricalHoldings)
+                    HistoricalHoldings == input.HistoricalHoldings ||
+                    HistoricalHoldings != null &&
+                    HistoricalHoldings.SequenceEqual(input.HistoricalHoldings)
                 );
         }
 
@@ -276,32 +269,32 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Company != null)
-                    hashCode = hashCode * 59 + this.Company.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
-                if (this.AsOfDate != null)
-                    hashCode = hashCode * 59 + this.AsOfDate.GetHashCode();
-                if (this.SharesHeld != null)
-                    hashCode = hashCode * 59 + this.SharesHeld.GetHashCode();
-                if (this.SharedHeldPercent != null)
-                    hashCode = hashCode * 59 + this.SharedHeldPercent.GetHashCode();
-                if (this.SharesChange != null)
-                    hashCode = hashCode * 59 + this.SharesChange.GetHashCode();
-                if (this.SharesChangePercent != null)
-                    hashCode = hashCode * 59 + this.SharesChangePercent.GetHashCode();
-                if (this.MarketValue != null)
-                    hashCode = hashCode * 59 + this.MarketValue.GetHashCode();
-                if (this.MarketValueChange != null)
-                    hashCode = hashCode * 59 + this.MarketValueChange.GetHashCode();
-                if (this.LastSecFilingType != null)
-                    hashCode = hashCode * 59 + this.LastSecFilingType.GetHashCode();
-                if (this.LastSecFilingDate != null)
-                    hashCode = hashCode * 59 + this.LastSecFilingDate.GetHashCode();
-                if (this.LastSecFilingShares != null)
-                    hashCode = hashCode * 59 + this.LastSecFilingShares.GetHashCode();
-                if (this.HistoricalHoldings != null)
-                    hashCode = hashCode * 59 + this.HistoricalHoldings.GetHashCode();
+                if (Company != null)
+                    hashCode = hashCode * 59 + Company.GetHashCode();
+                if (Owner != null)
+                    hashCode = hashCode * 59 + Owner.GetHashCode();
+                if (AsOfDate != null)
+                    hashCode = hashCode * 59 + AsOfDate.GetHashCode();
+                if (SharesHeld != null)
+                    hashCode = hashCode * 59 + SharesHeld.GetHashCode();
+                if (SharedHeldPercent != null)
+                    hashCode = hashCode * 59 + SharedHeldPercent.GetHashCode();
+                if (SharesChange != null)
+                    hashCode = hashCode * 59 + SharesChange.GetHashCode();
+                if (SharesChangePercent != null)
+                    hashCode = hashCode * 59 + SharesChangePercent.GetHashCode();
+                if (MarketValue != null)
+                    hashCode = hashCode * 59 + MarketValue.GetHashCode();
+                if (MarketValueChange != null)
+                    hashCode = hashCode * 59 + MarketValueChange.GetHashCode();
+                if (LastSecFilingType != null)
+                    hashCode = hashCode * 59 + LastSecFilingType.GetHashCode();
+                if (LastSecFilingDate != null)
+                    hashCode = hashCode * 59 + LastSecFilingDate.GetHashCode();
+                if (LastSecFilingShares != null)
+                    hashCode = hashCode * 59 + LastSecFilingShares.GetHashCode();
+                if (HistoricalHoldings != null)
+                    hashCode = hashCode * 59 + HistoricalHoldings.GetHashCode();
                 return hashCode;
             }
         }
@@ -311,7 +304,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -203,7 +203,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DividendRecord);
+            return Equals(input as DividendRecord);
         }
 
         /// <summary>
@@ -218,59 +218,59 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.ExDividend == input.ExDividend ||
-                    (this.ExDividend != null &&
-                    this.ExDividend.Equals(input.ExDividend))
+                    ExDividend == input.ExDividend ||
+                    (ExDividend != null &&
+                    ExDividend.Equals(input.ExDividend))
                 ) && 
                 (
-                    this.Currency == input.Currency ||
-                    (this.Currency != null &&
-                    this.Currency.Equals(input.Currency))
+                    Currency == input.Currency ||
+                    (Currency != null &&
+                    Currency.Equals(input.Currency))
                 ) && 
                 (
-                    this.AnnouncementDate == input.AnnouncementDate ||
-                    (this.AnnouncementDate != null &&
-                    this.AnnouncementDate.Equals(input.AnnouncementDate))
+                    AnnouncementDate == input.AnnouncementDate ||
+                    (AnnouncementDate != null &&
+                    AnnouncementDate.Equals(input.AnnouncementDate))
                 ) && 
                 (
-                    this.RecordDate == input.RecordDate ||
-                    (this.RecordDate != null &&
-                    this.RecordDate.Equals(input.RecordDate))
+                    RecordDate == input.RecordDate ||
+                    (RecordDate != null &&
+                    RecordDate.Equals(input.RecordDate))
                 ) && 
                 (
-                    this.PayDate == input.PayDate ||
-                    (this.PayDate != null &&
-                    this.PayDate.Equals(input.PayDate))
+                    PayDate == input.PayDate ||
+                    (PayDate != null &&
+                    PayDate.Equals(input.PayDate))
                 ) && 
                 (
-                    this.Frequency == input.Frequency ||
-                    (this.Frequency != null &&
-                    this.Frequency.Equals(input.Frequency))
+                    Frequency == input.Frequency ||
+                    (Frequency != null &&
+                    Frequency.Equals(input.Frequency))
                 ) && 
                 (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
+                    Status == input.Status ||
+                    (Status != null &&
+                    Status.Equals(input.Status))
                 ) && 
                 (
-                    this.ForwardYield == input.ForwardYield ||
-                    (this.ForwardYield != null &&
-                    this.ForwardYield.Equals(input.ForwardYield))
+                    ForwardYield == input.ForwardYield ||
+                    (ForwardYield != null &&
+                    ForwardYield.Equals(input.ForwardYield))
                 ) && 
                 (
-                    this.ForwardRate == input.ForwardRate ||
-                    (this.ForwardRate != null &&
-                    this.ForwardRate.Equals(input.ForwardRate))
+                    ForwardRate == input.ForwardRate ||
+                    (ForwardRate != null &&
+                    ForwardRate.Equals(input.ForwardRate))
                 ) && 
                 (
-                    this.LastExDividendDate == input.LastExDividendDate ||
-                    (this.LastExDividendDate != null &&
-                    this.LastExDividendDate.Equals(input.LastExDividendDate))
+                    LastExDividendDate == input.LastExDividendDate ||
+                    (LastExDividendDate != null &&
+                    LastExDividendDate.Equals(input.LastExDividendDate))
                 ) && 
                 (
-                    this.Security == input.Security ||
-                    (this.Security != null &&
-                    this.Security.Equals(input.Security))
+                    Security == input.Security ||
+                    (Security != null &&
+                    Security.Equals(input.Security))
                 );
         }
 
@@ -283,28 +283,28 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ExDividend != null)
-                    hashCode = hashCode * 59 + this.ExDividend.GetHashCode();
-                if (this.Currency != null)
-                    hashCode = hashCode * 59 + this.Currency.GetHashCode();
-                if (this.AnnouncementDate != null)
-                    hashCode = hashCode * 59 + this.AnnouncementDate.GetHashCode();
-                if (this.RecordDate != null)
-                    hashCode = hashCode * 59 + this.RecordDate.GetHashCode();
-                if (this.PayDate != null)
-                    hashCode = hashCode * 59 + this.PayDate.GetHashCode();
-                if (this.Frequency != null)
-                    hashCode = hashCode * 59 + this.Frequency.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.ForwardYield != null)
-                    hashCode = hashCode * 59 + this.ForwardYield.GetHashCode();
-                if (this.ForwardRate != null)
-                    hashCode = hashCode * 59 + this.ForwardRate.GetHashCode();
-                if (this.LastExDividendDate != null)
-                    hashCode = hashCode * 59 + this.LastExDividendDate.GetHashCode();
-                if (this.Security != null)
-                    hashCode = hashCode * 59 + this.Security.GetHashCode();
+                if (ExDividend != null)
+                    hashCode = hashCode * 59 + ExDividend.GetHashCode();
+                if (Currency != null)
+                    hashCode = hashCode * 59 + Currency.GetHashCode();
+                if (AnnouncementDate != null)
+                    hashCode = hashCode * 59 + AnnouncementDate.GetHashCode();
+                if (RecordDate != null)
+                    hashCode = hashCode * 59 + RecordDate.GetHashCode();
+                if (PayDate != null)
+                    hashCode = hashCode * 59 + PayDate.GetHashCode();
+                if (Frequency != null)
+                    hashCode = hashCode * 59 + Frequency.GetHashCode();
+                if (Status != null)
+                    hashCode = hashCode * 59 + Status.GetHashCode();
+                if (ForwardYield != null)
+                    hashCode = hashCode * 59 + ForwardYield.GetHashCode();
+                if (ForwardRate != null)
+                    hashCode = hashCode * 59 + ForwardRate.GetHashCode();
+                if (LastExDividendDate != null)
+                    hashCode = hashCode * 59 + LastExDividendDate.GetHashCode();
+                if (Security != null)
+                    hashCode = hashCode * 59 + Security.GetHashCode();
                 return hashCode;
             }
         }
@@ -314,7 +314,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

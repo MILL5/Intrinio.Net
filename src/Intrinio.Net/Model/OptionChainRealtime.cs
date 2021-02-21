@@ -84,7 +84,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OptionChainRealtime);
+            return Equals(input as OptionChainRealtime);
         }
 
         /// <summary>
@@ -99,19 +99,19 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Option == input.Option ||
-                    (this.Option != null &&
-                    this.Option.Equals(input.Option))
+                    Option == input.Option ||
+                    (Option != null &&
+                    Option.Equals(input.Option))
                 ) && 
                 (
-                    this.Price == input.Price ||
-                    (this.Price != null &&
-                    this.Price.Equals(input.Price))
+                    Price == input.Price ||
+                    (Price != null &&
+                    Price.Equals(input.Price))
                 ) && 
                 (
-                    this.Stats == input.Stats ||
-                    (this.Stats != null &&
-                    this.Stats.Equals(input.Stats))
+                    Stats == input.Stats ||
+                    (Stats != null &&
+                    Stats.Equals(input.Stats))
                 );
         }
 
@@ -124,12 +124,12 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Option != null)
-                    hashCode = hashCode * 59 + this.Option.GetHashCode();
-                if (this.Price != null)
-                    hashCode = hashCode * 59 + this.Price.GetHashCode();
-                if (this.Stats != null)
-                    hashCode = hashCode * 59 + this.Stats.GetHashCode();
+                if (Option != null)
+                    hashCode = hashCode * 59 + Option.GetHashCode();
+                if (Price != null)
+                    hashCode = hashCode * 59 + Price.GetHashCode();
+                if (Stats != null)
+                    hashCode = hashCode * 59 + Stats.GetHashCode();
                 return hashCode;
             }
         }
@@ -139,7 +139,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

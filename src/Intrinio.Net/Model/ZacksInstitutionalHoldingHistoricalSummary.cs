@@ -1,17 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+using System.Text;
 using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
@@ -78,7 +70,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ZacksInstitutionalHoldingHistoricalSummary);
+            return Equals(input as ZacksInstitutionalHoldingHistoricalSummary);
         }
 
         /// <summary>
@@ -93,14 +85,14 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.AsOfDate == input.AsOfDate ||
-                    (this.AsOfDate != null &&
-                    this.AsOfDate.Equals(input.AsOfDate))
+                    AsOfDate == input.AsOfDate ||
+                    (AsOfDate != null &&
+                    AsOfDate.Equals(input.AsOfDate))
                 ) && 
                 (
-                    this.SharesHeld == input.SharesHeld ||
-                    (this.SharesHeld != null &&
-                    this.SharesHeld.Equals(input.SharesHeld))
+                    SharesHeld == input.SharesHeld ||
+                    (SharesHeld != null &&
+                    SharesHeld.Equals(input.SharesHeld))
                 );
         }
 
@@ -113,10 +105,10 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AsOfDate != null)
-                    hashCode = hashCode * 59 + this.AsOfDate.GetHashCode();
-                if (this.SharesHeld != null)
-                    hashCode = hashCode * 59 + this.SharesHeld.GetHashCode();
+                if (AsOfDate != null)
+                    hashCode = hashCode * 59 + AsOfDate.GetHashCode();
+                if (SharesHeld != null)
+                    hashCode = hashCode * 59 + SharesHeld.GetHashCode();
                 return hashCode;
             }
         }
@@ -126,7 +118,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -247,7 +247,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Municipality);
+            return Equals(input as Municipality);
         }
 
         /// <summary>
@@ -262,99 +262,99 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.CensusId == input.CensusId ||
-                    (this.CensusId != null &&
-                    this.CensusId.Equals(input.CensusId))
+                    CensusId == input.CensusId ||
+                    (CensusId != null &&
+                    CensusId.Equals(input.CensusId))
                 ) && 
                 (
-                    this.GovernmentName == input.GovernmentName ||
-                    (this.GovernmentName != null &&
-                    this.GovernmentName.Equals(input.GovernmentName))
+                    GovernmentName == input.GovernmentName ||
+                    (GovernmentName != null &&
+                    GovernmentName.Equals(input.GovernmentName))
                 ) && 
                 (
-                    this.GovernmentType == input.GovernmentType ||
-                    (this.GovernmentType != null &&
-                    this.GovernmentType.Equals(input.GovernmentType))
+                    GovernmentType == input.GovernmentType ||
+                    (GovernmentType != null &&
+                    GovernmentType.Equals(input.GovernmentType))
                 ) && 
                 (
-                    this.PrimaryContactType == input.PrimaryContactType ||
-                    (this.PrimaryContactType != null &&
-                    this.PrimaryContactType.Equals(input.PrimaryContactType))
+                    PrimaryContactType == input.PrimaryContactType ||
+                    (PrimaryContactType != null &&
+                    PrimaryContactType.Equals(input.PrimaryContactType))
                 ) && 
                 (
-                    this.Address1 == input.Address1 ||
-                    (this.Address1 != null &&
-                    this.Address1.Equals(input.Address1))
+                    Address1 == input.Address1 ||
+                    (Address1 != null &&
+                    Address1.Equals(input.Address1))
                 ) && 
                 (
-                    this.Address2 == input.Address2 ||
-                    (this.Address2 != null &&
-                    this.Address2.Equals(input.Address2))
+                    Address2 == input.Address2 ||
+                    (Address2 != null &&
+                    Address2.Equals(input.Address2))
                 ) && 
                 (
-                    this.City == input.City ||
-                    (this.City != null &&
-                    this.City.Equals(input.City))
+                    City == input.City ||
+                    (City != null &&
+                    City.Equals(input.City))
                 ) && 
                 (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
+                    State == input.State ||
+                    (State != null &&
+                    State.Equals(input.State))
                 ) && 
                 (
-                    this.Zip == input.Zip ||
-                    (this.Zip != null &&
-                    this.Zip.Equals(input.Zip))
+                    Zip == input.Zip ||
+                    (Zip != null &&
+                    Zip.Equals(input.Zip))
                 ) && 
                 (
-                    this.WebSite == input.WebSite ||
-                    (this.WebSite != null &&
-                    this.WebSite.Equals(input.WebSite))
+                    WebSite == input.WebSite ||
+                    (WebSite != null &&
+                    WebSite.Equals(input.WebSite))
                 ) && 
                 (
-                    this.Population == input.Population ||
-                    (this.Population != null &&
-                    this.Population.Equals(input.Population))
+                    Population == input.Population ||
+                    (Population != null &&
+                    Population.Equals(input.Population))
                 ) && 
                 (
-                    this.PopulationAsOfYear == input.PopulationAsOfYear ||
-                    (this.PopulationAsOfYear != null &&
-                    this.PopulationAsOfYear.Equals(input.PopulationAsOfYear))
+                    PopulationAsOfYear == input.PopulationAsOfYear ||
+                    (PopulationAsOfYear != null &&
+                    PopulationAsOfYear.Equals(input.PopulationAsOfYear))
                 ) && 
                 (
-                    this.Enrollment == input.Enrollment ||
-                    (this.Enrollment != null &&
-                    this.Enrollment.Equals(input.Enrollment))
+                    Enrollment == input.Enrollment ||
+                    (Enrollment != null &&
+                    Enrollment.Equals(input.Enrollment))
                 ) && 
                 (
-                    this.EnrollmentAsOfYear == input.EnrollmentAsOfYear ||
-                    (this.EnrollmentAsOfYear != null &&
-                    this.EnrollmentAsOfYear.Equals(input.EnrollmentAsOfYear))
+                    EnrollmentAsOfYear == input.EnrollmentAsOfYear ||
+                    (EnrollmentAsOfYear != null &&
+                    EnrollmentAsOfYear.Equals(input.EnrollmentAsOfYear))
                 ) && 
                 (
-                    this.AreaName == input.AreaName ||
-                    (this.AreaName != null &&
-                    this.AreaName.Equals(input.AreaName))
+                    AreaName == input.AreaName ||
+                    (AreaName != null &&
+                    AreaName.Equals(input.AreaName))
                 ) && 
                 (
-                    this.AreaType == input.AreaType ||
-                    (this.AreaType != null &&
-                    this.AreaType.Equals(input.AreaType))
+                    AreaType == input.AreaType ||
+                    (AreaType != null &&
+                    AreaType.Equals(input.AreaType))
                 ) && 
                 (
-                    this.Latitude == input.Latitude ||
-                    (this.Latitude != null &&
-                    this.Latitude.Equals(input.Latitude))
+                    Latitude == input.Latitude ||
+                    (Latitude != null &&
+                    Latitude.Equals(input.Latitude))
                 ) && 
                 (
-                    this.Longitude == input.Longitude ||
-                    (this.Longitude != null &&
-                    this.Longitude.Equals(input.Longitude))
+                    Longitude == input.Longitude ||
+                    (Longitude != null &&
+                    Longitude.Equals(input.Longitude))
                 );
         }
 
@@ -367,44 +367,44 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.CensusId != null)
-                    hashCode = hashCode * 59 + this.CensusId.GetHashCode();
-                if (this.GovernmentName != null)
-                    hashCode = hashCode * 59 + this.GovernmentName.GetHashCode();
-                if (this.GovernmentType != null)
-                    hashCode = hashCode * 59 + this.GovernmentType.GetHashCode();
-                if (this.PrimaryContactType != null)
-                    hashCode = hashCode * 59 + this.PrimaryContactType.GetHashCode();
-                if (this.Address1 != null)
-                    hashCode = hashCode * 59 + this.Address1.GetHashCode();
-                if (this.Address2 != null)
-                    hashCode = hashCode * 59 + this.Address2.GetHashCode();
-                if (this.City != null)
-                    hashCode = hashCode * 59 + this.City.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.Zip != null)
-                    hashCode = hashCode * 59 + this.Zip.GetHashCode();
-                if (this.WebSite != null)
-                    hashCode = hashCode * 59 + this.WebSite.GetHashCode();
-                if (this.Population != null)
-                    hashCode = hashCode * 59 + this.Population.GetHashCode();
-                if (this.PopulationAsOfYear != null)
-                    hashCode = hashCode * 59 + this.PopulationAsOfYear.GetHashCode();
-                if (this.Enrollment != null)
-                    hashCode = hashCode * 59 + this.Enrollment.GetHashCode();
-                if (this.EnrollmentAsOfYear != null)
-                    hashCode = hashCode * 59 + this.EnrollmentAsOfYear.GetHashCode();
-                if (this.AreaName != null)
-                    hashCode = hashCode * 59 + this.AreaName.GetHashCode();
-                if (this.AreaType != null)
-                    hashCode = hashCode * 59 + this.AreaType.GetHashCode();
-                if (this.Latitude != null)
-                    hashCode = hashCode * 59 + this.Latitude.GetHashCode();
-                if (this.Longitude != null)
-                    hashCode = hashCode * 59 + this.Longitude.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (CensusId != null)
+                    hashCode = hashCode * 59 + CensusId.GetHashCode();
+                if (GovernmentName != null)
+                    hashCode = hashCode * 59 + GovernmentName.GetHashCode();
+                if (GovernmentType != null)
+                    hashCode = hashCode * 59 + GovernmentType.GetHashCode();
+                if (PrimaryContactType != null)
+                    hashCode = hashCode * 59 + PrimaryContactType.GetHashCode();
+                if (Address1 != null)
+                    hashCode = hashCode * 59 + Address1.GetHashCode();
+                if (Address2 != null)
+                    hashCode = hashCode * 59 + Address2.GetHashCode();
+                if (City != null)
+                    hashCode = hashCode * 59 + City.GetHashCode();
+                if (State != null)
+                    hashCode = hashCode * 59 + State.GetHashCode();
+                if (Zip != null)
+                    hashCode = hashCode * 59 + Zip.GetHashCode();
+                if (WebSite != null)
+                    hashCode = hashCode * 59 + WebSite.GetHashCode();
+                if (Population != null)
+                    hashCode = hashCode * 59 + Population.GetHashCode();
+                if (PopulationAsOfYear != null)
+                    hashCode = hashCode * 59 + PopulationAsOfYear.GetHashCode();
+                if (Enrollment != null)
+                    hashCode = hashCode * 59 + Enrollment.GetHashCode();
+                if (EnrollmentAsOfYear != null)
+                    hashCode = hashCode * 59 + EnrollmentAsOfYear.GetHashCode();
+                if (AreaName != null)
+                    hashCode = hashCode * 59 + AreaName.GetHashCode();
+                if (AreaType != null)
+                    hashCode = hashCode * 59 + AreaType.GetHashCode();
+                if (Latitude != null)
+                    hashCode = hashCode * 59 + Latitude.GetHashCode();
+                if (Longitude != null)
+                    hashCode = hashCode * 59 + Longitude.GetHashCode();
                 return hashCode;
             }
         }
@@ -414,7 +414,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

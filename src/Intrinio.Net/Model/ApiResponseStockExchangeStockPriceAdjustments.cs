@@ -87,7 +87,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ApiResponseStockExchangeStockPriceAdjustments);
+            return Equals(input as ApiResponseStockExchangeStockPriceAdjustments);
         }
 
         /// <summary>
@@ -102,19 +102,19 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.StockPriceAdjustments == input.StockPriceAdjustments ||
-                    this.StockPriceAdjustments != null &&
-                    this.StockPriceAdjustments.SequenceEqual(input.StockPriceAdjustments)
+                    StockPriceAdjustments == input.StockPriceAdjustments ||
+                    StockPriceAdjustments != null &&
+                    StockPriceAdjustments.SequenceEqual(input.StockPriceAdjustments)
                 ) && 
                 (
-                    this.StockExchange == input.StockExchange ||
-                    (this.StockExchange != null &&
-                    this.StockExchange.Equals(input.StockExchange))
+                    StockExchange == input.StockExchange ||
+                    (StockExchange != null &&
+                    StockExchange.Equals(input.StockExchange))
                 ) && 
                 (
-                    this.NextPage == input.NextPage ||
-                    (this.NextPage != null &&
-                    this.NextPage.Equals(input.NextPage))
+                    NextPage == input.NextPage ||
+                    (NextPage != null &&
+                    NextPage.Equals(input.NextPage))
                 );
         }
 
@@ -127,12 +127,12 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.StockPriceAdjustments != null)
-                    hashCode = hashCode * 59 + this.StockPriceAdjustments.GetHashCode();
-                if (this.StockExchange != null)
-                    hashCode = hashCode * 59 + this.StockExchange.GetHashCode();
-                if (this.NextPage != null)
-                    hashCode = hashCode * 59 + this.NextPage.GetHashCode();
+                if (StockPriceAdjustments != null)
+                    hashCode = hashCode * 59 + StockPriceAdjustments.GetHashCode();
+                if (StockExchange != null)
+                    hashCode = hashCode * 59 + StockExchange.GetHashCode();
+                if (NextPage != null)
+                    hashCode = hashCode * 59 + NextPage.GetHashCode();
                 return hashCode;
             }
         }
@@ -142,7 +142,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -198,7 +198,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OptionPriceRealtime);
+            return Equals(input as OptionPriceRealtime);
         }
 
         /// <summary>
@@ -213,64 +213,64 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Last == input.Last ||
-                    (this.Last != null &&
-                    this.Last.Equals(input.Last))
+                    Last == input.Last ||
+                    (Last != null &&
+                    Last.Equals(input.Last))
                 ) && 
                 (
-                    this.LastSize == input.LastSize ||
-                    (this.LastSize != null &&
-                    this.LastSize.Equals(input.LastSize))
+                    LastSize == input.LastSize ||
+                    (LastSize != null &&
+                    LastSize.Equals(input.LastSize))
                 ) && 
                 (
-                    this.LastTimestamp == input.LastTimestamp ||
-                    (this.LastTimestamp != null &&
-                    this.LastTimestamp.Equals(input.LastTimestamp))
+                    LastTimestamp == input.LastTimestamp ||
+                    (LastTimestamp != null &&
+                    LastTimestamp.Equals(input.LastTimestamp))
                 ) && 
                 (
-                    this.Volume == input.Volume ||
-                    (this.Volume != null &&
-                    this.Volume.Equals(input.Volume))
+                    Volume == input.Volume ||
+                    (Volume != null &&
+                    Volume.Equals(input.Volume))
                 ) && 
                 (
-                    this.Ask == input.Ask ||
-                    (this.Ask != null &&
-                    this.Ask.Equals(input.Ask))
+                    Ask == input.Ask ||
+                    (Ask != null &&
+                    Ask.Equals(input.Ask))
                 ) && 
                 (
-                    this.AskSize == input.AskSize ||
-                    (this.AskSize != null &&
-                    this.AskSize.Equals(input.AskSize))
+                    AskSize == input.AskSize ||
+                    (AskSize != null &&
+                    AskSize.Equals(input.AskSize))
                 ) && 
                 (
-                    this.AskTimestamp == input.AskTimestamp ||
-                    (this.AskTimestamp != null &&
-                    this.AskTimestamp.Equals(input.AskTimestamp))
+                    AskTimestamp == input.AskTimestamp ||
+                    (AskTimestamp != null &&
+                    AskTimestamp.Equals(input.AskTimestamp))
                 ) && 
                 (
-                    this.Bid == input.Bid ||
-                    (this.Bid != null &&
-                    this.Bid.Equals(input.Bid))
+                    Bid == input.Bid ||
+                    (Bid != null &&
+                    Bid.Equals(input.Bid))
                 ) && 
                 (
-                    this.BidSize == input.BidSize ||
-                    (this.BidSize != null &&
-                    this.BidSize.Equals(input.BidSize))
+                    BidSize == input.BidSize ||
+                    (BidSize != null &&
+                    BidSize.Equals(input.BidSize))
                 ) && 
                 (
-                    this.BidTimestamp == input.BidTimestamp ||
-                    (this.BidTimestamp != null &&
-                    this.BidTimestamp.Equals(input.BidTimestamp))
+                    BidTimestamp == input.BidTimestamp ||
+                    (BidTimestamp != null &&
+                    BidTimestamp.Equals(input.BidTimestamp))
                 ) && 
                 (
-                    this.OpenInterest == input.OpenInterest ||
-                    (this.OpenInterest != null &&
-                    this.OpenInterest.Equals(input.OpenInterest))
+                    OpenInterest == input.OpenInterest ||
+                    (OpenInterest != null &&
+                    OpenInterest.Equals(input.OpenInterest))
                 ) && 
                 (
-                    this.ExerciseStyle == input.ExerciseStyle ||
-                    (this.ExerciseStyle != null &&
-                    this.ExerciseStyle.Equals(input.ExerciseStyle))
+                    ExerciseStyle == input.ExerciseStyle ||
+                    (ExerciseStyle != null &&
+                    ExerciseStyle.Equals(input.ExerciseStyle))
                 );
         }
 
@@ -283,30 +283,30 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Last != null)
-                    hashCode = hashCode * 59 + this.Last.GetHashCode();
-                if (this.LastSize != null)
-                    hashCode = hashCode * 59 + this.LastSize.GetHashCode();
-                if (this.LastTimestamp != null)
-                    hashCode = hashCode * 59 + this.LastTimestamp.GetHashCode();
-                if (this.Volume != null)
-                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
-                if (this.Ask != null)
-                    hashCode = hashCode * 59 + this.Ask.GetHashCode();
-                if (this.AskSize != null)
-                    hashCode = hashCode * 59 + this.AskSize.GetHashCode();
-                if (this.AskTimestamp != null)
-                    hashCode = hashCode * 59 + this.AskTimestamp.GetHashCode();
-                if (this.Bid != null)
-                    hashCode = hashCode * 59 + this.Bid.GetHashCode();
-                if (this.BidSize != null)
-                    hashCode = hashCode * 59 + this.BidSize.GetHashCode();
-                if (this.BidTimestamp != null)
-                    hashCode = hashCode * 59 + this.BidTimestamp.GetHashCode();
-                if (this.OpenInterest != null)
-                    hashCode = hashCode * 59 + this.OpenInterest.GetHashCode();
-                if (this.ExerciseStyle != null)
-                    hashCode = hashCode * 59 + this.ExerciseStyle.GetHashCode();
+                if (Last != null)
+                    hashCode = hashCode * 59 + Last.GetHashCode();
+                if (LastSize != null)
+                    hashCode = hashCode * 59 + LastSize.GetHashCode();
+                if (LastTimestamp != null)
+                    hashCode = hashCode * 59 + LastTimestamp.GetHashCode();
+                if (Volume != null)
+                    hashCode = hashCode * 59 + Volume.GetHashCode();
+                if (Ask != null)
+                    hashCode = hashCode * 59 + Ask.GetHashCode();
+                if (AskSize != null)
+                    hashCode = hashCode * 59 + AskSize.GetHashCode();
+                if (AskTimestamp != null)
+                    hashCode = hashCode * 59 + AskTimestamp.GetHashCode();
+                if (Bid != null)
+                    hashCode = hashCode * 59 + Bid.GetHashCode();
+                if (BidSize != null)
+                    hashCode = hashCode * 59 + BidSize.GetHashCode();
+                if (BidTimestamp != null)
+                    hashCode = hashCode * 59 + BidTimestamp.GetHashCode();
+                if (OpenInterest != null)
+                    hashCode = hashCode * 59 + OpenInterest.GetHashCode();
+                if (ExerciseStyle != null)
+                    hashCode = hashCode * 59 + ExerciseStyle.GetHashCode();
                 return hashCode;
             }
         }
@@ -316,7 +316,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

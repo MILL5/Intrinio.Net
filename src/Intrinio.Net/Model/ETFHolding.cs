@@ -240,7 +240,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ETFHolding);
+            return Equals(input as ETFHolding);
         }
 
         /// <summary>
@@ -255,94 +255,94 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.AsOfDate == input.AsOfDate ||
-                    (this.AsOfDate != null &&
-                    this.AsOfDate.Equals(input.AsOfDate))
+                    AsOfDate == input.AsOfDate ||
+                    (AsOfDate != null &&
+                    AsOfDate.Equals(input.AsOfDate))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Ticker == input.Ticker ||
-                    (this.Ticker != null &&
-                    this.Ticker.Equals(input.Ticker))
+                    Ticker == input.Ticker ||
+                    (Ticker != null &&
+                    Ticker.Equals(input.Ticker))
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    Type == input.Type ||
+                    (Type != null &&
+                    Type.Equals(input.Type))
                 ) && 
                 (
-                    this.CompositeFigi == input.CompositeFigi ||
-                    (this.CompositeFigi != null &&
-                    this.CompositeFigi.Equals(input.CompositeFigi))
+                    CompositeFigi == input.CompositeFigi ||
+                    (CompositeFigi != null &&
+                    CompositeFigi.Equals(input.CompositeFigi))
                 ) && 
                 (
-                    this.Isin == input.Isin ||
-                    (this.Isin != null &&
-                    this.Isin.Equals(input.Isin))
+                    Isin == input.Isin ||
+                    (Isin != null &&
+                    Isin.Equals(input.Isin))
                 ) && 
                 (
-                    this.Ric == input.Ric ||
-                    (this.Ric != null &&
-                    this.Ric.Equals(input.Ric))
+                    Ric == input.Ric ||
+                    (Ric != null &&
+                    Ric.Equals(input.Ric))
                 ) && 
                 (
-                    this.Sedol == input.Sedol ||
-                    (this.Sedol != null &&
-                    this.Sedol.Equals(input.Sedol))
+                    Sedol == input.Sedol ||
+                    (Sedol != null &&
+                    Sedol.Equals(input.Sedol))
                 ) && 
                 (
-                    this.Face == input.Face ||
-                    (this.Face != null &&
-                    this.Face.Equals(input.Face))
+                    Face == input.Face ||
+                    (Face != null &&
+                    Face.Equals(input.Face))
                 ) && 
                 (
-                    this.Coupon == input.Coupon ||
-                    (this.Coupon != null &&
-                    this.Coupon.Equals(input.Coupon))
+                    Coupon == input.Coupon ||
+                    (Coupon != null &&
+                    Coupon.Equals(input.Coupon))
                 ) && 
                 (
-                    this.MarketValueHeld == input.MarketValueHeld ||
-                    (this.MarketValueHeld != null &&
-                    this.MarketValueHeld.Equals(input.MarketValueHeld))
+                    MarketValueHeld == input.MarketValueHeld ||
+                    (MarketValueHeld != null &&
+                    MarketValueHeld.Equals(input.MarketValueHeld))
                 ) && 
                 (
-                    this.NotionalValue == input.NotionalValue ||
-                    (this.NotionalValue != null &&
-                    this.NotionalValue.Equals(input.NotionalValue))
+                    NotionalValue == input.NotionalValue ||
+                    (NotionalValue != null &&
+                    NotionalValue.Equals(input.NotionalValue))
                 ) && 
                 (
-                    this.Maturity == input.Maturity ||
-                    (this.Maturity != null &&
-                    this.Maturity.Equals(input.Maturity))
+                    Maturity == input.Maturity ||
+                    (Maturity != null &&
+                    Maturity.Equals(input.Maturity))
                 ) && 
                 (
-                    this.QuantityHeld == input.QuantityHeld ||
-                    (this.QuantityHeld != null &&
-                    this.QuantityHeld.Equals(input.QuantityHeld))
+                    QuantityHeld == input.QuantityHeld ||
+                    (QuantityHeld != null &&
+                    QuantityHeld.Equals(input.QuantityHeld))
                 ) && 
                 (
-                    this.Weighting == input.Weighting ||
-                    (this.Weighting != null &&
-                    this.Weighting.Equals(input.Weighting))
+                    Weighting == input.Weighting ||
+                    (Weighting != null &&
+                    Weighting.Equals(input.Weighting))
                 ) && 
                 (
-                    this.QuantityUnits == input.QuantityUnits ||
-                    (this.QuantityUnits != null &&
-                    this.QuantityUnits.Equals(input.QuantityUnits))
+                    QuantityUnits == input.QuantityUnits ||
+                    (QuantityUnits != null &&
+                    QuantityUnits.Equals(input.QuantityUnits))
                 ) && 
                 (
-                    this.QuantityPerShare == input.QuantityPerShare ||
-                    (this.QuantityPerShare != null &&
-                    this.QuantityPerShare.Equals(input.QuantityPerShare))
+                    QuantityPerShare == input.QuantityPerShare ||
+                    (QuantityPerShare != null &&
+                    QuantityPerShare.Equals(input.QuantityPerShare))
                 ) && 
                 (
-                    this.ContractExpiryDate == input.ContractExpiryDate ||
-                    (this.ContractExpiryDate != null &&
-                    this.ContractExpiryDate.Equals(input.ContractExpiryDate))
+                    ContractExpiryDate == input.ContractExpiryDate ||
+                    (ContractExpiryDate != null &&
+                    ContractExpiryDate.Equals(input.ContractExpiryDate))
                 );
         }
 
@@ -355,42 +355,42 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AsOfDate != null)
-                    hashCode = hashCode * 59 + this.AsOfDate.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Ticker != null)
-                    hashCode = hashCode * 59 + this.Ticker.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.CompositeFigi != null)
-                    hashCode = hashCode * 59 + this.CompositeFigi.GetHashCode();
-                if (this.Isin != null)
-                    hashCode = hashCode * 59 + this.Isin.GetHashCode();
-                if (this.Ric != null)
-                    hashCode = hashCode * 59 + this.Ric.GetHashCode();
-                if (this.Sedol != null)
-                    hashCode = hashCode * 59 + this.Sedol.GetHashCode();
-                if (this.Face != null)
-                    hashCode = hashCode * 59 + this.Face.GetHashCode();
-                if (this.Coupon != null)
-                    hashCode = hashCode * 59 + this.Coupon.GetHashCode();
-                if (this.MarketValueHeld != null)
-                    hashCode = hashCode * 59 + this.MarketValueHeld.GetHashCode();
-                if (this.NotionalValue != null)
-                    hashCode = hashCode * 59 + this.NotionalValue.GetHashCode();
-                if (this.Maturity != null)
-                    hashCode = hashCode * 59 + this.Maturity.GetHashCode();
-                if (this.QuantityHeld != null)
-                    hashCode = hashCode * 59 + this.QuantityHeld.GetHashCode();
-                if (this.Weighting != null)
-                    hashCode = hashCode * 59 + this.Weighting.GetHashCode();
-                if (this.QuantityUnits != null)
-                    hashCode = hashCode * 59 + this.QuantityUnits.GetHashCode();
-                if (this.QuantityPerShare != null)
-                    hashCode = hashCode * 59 + this.QuantityPerShare.GetHashCode();
-                if (this.ContractExpiryDate != null)
-                    hashCode = hashCode * 59 + this.ContractExpiryDate.GetHashCode();
+                if (AsOfDate != null)
+                    hashCode = hashCode * 59 + AsOfDate.GetHashCode();
+                if (Name != null)
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                if (Ticker != null)
+                    hashCode = hashCode * 59 + Ticker.GetHashCode();
+                if (Type != null)
+                    hashCode = hashCode * 59 + Type.GetHashCode();
+                if (CompositeFigi != null)
+                    hashCode = hashCode * 59 + CompositeFigi.GetHashCode();
+                if (Isin != null)
+                    hashCode = hashCode * 59 + Isin.GetHashCode();
+                if (Ric != null)
+                    hashCode = hashCode * 59 + Ric.GetHashCode();
+                if (Sedol != null)
+                    hashCode = hashCode * 59 + Sedol.GetHashCode();
+                if (Face != null)
+                    hashCode = hashCode * 59 + Face.GetHashCode();
+                if (Coupon != null)
+                    hashCode = hashCode * 59 + Coupon.GetHashCode();
+                if (MarketValueHeld != null)
+                    hashCode = hashCode * 59 + MarketValueHeld.GetHashCode();
+                if (NotionalValue != null)
+                    hashCode = hashCode * 59 + NotionalValue.GetHashCode();
+                if (Maturity != null)
+                    hashCode = hashCode * 59 + Maturity.GetHashCode();
+                if (QuantityHeld != null)
+                    hashCode = hashCode * 59 + QuantityHeld.GetHashCode();
+                if (Weighting != null)
+                    hashCode = hashCode * 59 + Weighting.GetHashCode();
+                if (QuantityUnits != null)
+                    hashCode = hashCode * 59 + QuantityUnits.GetHashCode();
+                if (QuantityPerShare != null)
+                    hashCode = hashCode * 59 + QuantityPerShare.GetHashCode();
+                if (ContractExpiryDate != null)
+                    hashCode = hashCode * 59 + ContractExpiryDate.GetHashCode();
                 return hashCode;
             }
         }
@@ -400,7 +400,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

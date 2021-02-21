@@ -227,7 +227,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as StockPriceSummary);
+            return Equals(input as StockPriceSummary);
         }
 
         /// <summary>
@@ -242,69 +242,69 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
+                    Date == input.Date ||
+                    (Date != null &&
+                    Date.Equals(input.Date))
                 ) && 
                 (
-                    this.Intraperiod == input.Intraperiod ||
-                    (this.Intraperiod != null &&
-                    this.Intraperiod.Equals(input.Intraperiod))
+                    Intraperiod == input.Intraperiod ||
+                    (Intraperiod != null &&
+                    Intraperiod.Equals(input.Intraperiod))
                 ) && 
                 (
-                    this.Frequency == input.Frequency ||
-                    (this.Frequency != null &&
-                    this.Frequency.Equals(input.Frequency))
+                    Frequency == input.Frequency ||
+                    (Frequency != null &&
+                    Frequency.Equals(input.Frequency))
                 ) && 
                 (
-                    this.Open == input.Open ||
-                    (this.Open != null &&
-                    this.Open.Equals(input.Open))
+                    Open == input.Open ||
+                    (Open != null &&
+                    Open.Equals(input.Open))
                 ) && 
                 (
-                    this.High == input.High ||
-                    (this.High != null &&
-                    this.High.Equals(input.High))
+                    High == input.High ||
+                    (High != null &&
+                    High.Equals(input.High))
                 ) && 
                 (
-                    this.Low == input.Low ||
-                    (this.Low != null &&
-                    this.Low.Equals(input.Low))
+                    Low == input.Low ||
+                    (Low != null &&
+                    Low.Equals(input.Low))
                 ) && 
                 (
-                    this.Close == input.Close ||
-                    (this.Close != null &&
-                    this.Close.Equals(input.Close))
+                    Close == input.Close ||
+                    (Close != null &&
+                    Close.Equals(input.Close))
                 ) && 
                 (
-                    this.Volume == input.Volume ||
-                    (this.Volume != null &&
-                    this.Volume.Equals(input.Volume))
+                    Volume == input.Volume ||
+                    (Volume != null &&
+                    Volume.Equals(input.Volume))
                 ) && 
                 (
-                    this.AdjOpen == input.AdjOpen ||
-                    (this.AdjOpen != null &&
-                    this.AdjOpen.Equals(input.AdjOpen))
+                    AdjOpen == input.AdjOpen ||
+                    (AdjOpen != null &&
+                    AdjOpen.Equals(input.AdjOpen))
                 ) && 
                 (
-                    this.AdjHigh == input.AdjHigh ||
-                    (this.AdjHigh != null &&
-                    this.AdjHigh.Equals(input.AdjHigh))
+                    AdjHigh == input.AdjHigh ||
+                    (AdjHigh != null &&
+                    AdjHigh.Equals(input.AdjHigh))
                 ) && 
                 (
-                    this.AdjLow == input.AdjLow ||
-                    (this.AdjLow != null &&
-                    this.AdjLow.Equals(input.AdjLow))
+                    AdjLow == input.AdjLow ||
+                    (AdjLow != null &&
+                    AdjLow.Equals(input.AdjLow))
                 ) && 
                 (
-                    this.AdjClose == input.AdjClose ||
-                    (this.AdjClose != null &&
-                    this.AdjClose.Equals(input.AdjClose))
+                    AdjClose == input.AdjClose ||
+                    (AdjClose != null &&
+                    AdjClose.Equals(input.AdjClose))
                 ) && 
                 (
-                    this.AdjVolume == input.AdjVolume ||
-                    (this.AdjVolume != null &&
-                    this.AdjVolume.Equals(input.AdjVolume))
+                    AdjVolume == input.AdjVolume ||
+                    (AdjVolume != null &&
+                    AdjVolume.Equals(input.AdjVolume))
                 );
         }
 
@@ -317,32 +317,32 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.Intraperiod != null)
-                    hashCode = hashCode * 59 + this.Intraperiod.GetHashCode();
-                if (this.Frequency != null)
-                    hashCode = hashCode * 59 + this.Frequency.GetHashCode();
-                if (this.Open != null)
-                    hashCode = hashCode * 59 + this.Open.GetHashCode();
-                if (this.High != null)
-                    hashCode = hashCode * 59 + this.High.GetHashCode();
-                if (this.Low != null)
-                    hashCode = hashCode * 59 + this.Low.GetHashCode();
-                if (this.Close != null)
-                    hashCode = hashCode * 59 + this.Close.GetHashCode();
-                if (this.Volume != null)
-                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
-                if (this.AdjOpen != null)
-                    hashCode = hashCode * 59 + this.AdjOpen.GetHashCode();
-                if (this.AdjHigh != null)
-                    hashCode = hashCode * 59 + this.AdjHigh.GetHashCode();
-                if (this.AdjLow != null)
-                    hashCode = hashCode * 59 + this.AdjLow.GetHashCode();
-                if (this.AdjClose != null)
-                    hashCode = hashCode * 59 + this.AdjClose.GetHashCode();
-                if (this.AdjVolume != null)
-                    hashCode = hashCode * 59 + this.AdjVolume.GetHashCode();
+                if (Date != null)
+                    hashCode = hashCode * 59 + Date.GetHashCode();
+                if (Intraperiod != null)
+                    hashCode = hashCode * 59 + Intraperiod.GetHashCode();
+                if (Frequency != null)
+                    hashCode = hashCode * 59 + Frequency.GetHashCode();
+                if (Open != null)
+                    hashCode = hashCode * 59 + Open.GetHashCode();
+                if (High != null)
+                    hashCode = hashCode * 59 + High.GetHashCode();
+                if (Low != null)
+                    hashCode = hashCode * 59 + Low.GetHashCode();
+                if (Close != null)
+                    hashCode = hashCode * 59 + Close.GetHashCode();
+                if (Volume != null)
+                    hashCode = hashCode * 59 + Volume.GetHashCode();
+                if (AdjOpen != null)
+                    hashCode = hashCode * 59 + AdjOpen.GetHashCode();
+                if (AdjHigh != null)
+                    hashCode = hashCode * 59 + AdjHigh.GetHashCode();
+                if (AdjLow != null)
+                    hashCode = hashCode * 59 + AdjLow.GetHashCode();
+                if (AdjClose != null)
+                    hashCode = hashCode * 59 + AdjClose.GetHashCode();
+                if (AdjVolume != null)
+                    hashCode = hashCode * 59 + AdjVolume.GetHashCode();
                 return hashCode;
             }
         }
@@ -352,7 +352,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -66,7 +66,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ApiResponseStockMarketIndicesSearch);
+            return Equals(input as ApiResponseStockMarketIndicesSearch);
         }
 
         /// <summary>
@@ -81,9 +81,9 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Indices == input.Indices ||
-                    this.Indices != null &&
-                    this.Indices.SequenceEqual(input.Indices)
+                    Indices == input.Indices ||
+                    Indices != null &&
+                    Indices.SequenceEqual(input.Indices)
                 );
         }
 
@@ -96,8 +96,8 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Indices != null)
-                    hashCode = hashCode * 59 + this.Indices.GetHashCode();
+                if (Indices != null)
+                    hashCode = hashCode * 59 + Indices.GetHashCode();
                 return hashCode;
             }
         }
@@ -107,7 +107,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

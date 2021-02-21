@@ -77,7 +77,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ApiResponseZacksLongTermGrowthRates);
+            return Equals(input as ApiResponseZacksLongTermGrowthRates);
         }
 
         /// <summary>
@@ -92,14 +92,14 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.LongTermGrowthEstimates == input.LongTermGrowthEstimates ||
-                    this.LongTermGrowthEstimates != null &&
-                    this.LongTermGrowthEstimates.SequenceEqual(input.LongTermGrowthEstimates)
+                    LongTermGrowthEstimates == input.LongTermGrowthEstimates ||
+                    LongTermGrowthEstimates != null &&
+                    LongTermGrowthEstimates.SequenceEqual(input.LongTermGrowthEstimates)
                 ) && 
                 (
-                    this.NextPage == input.NextPage ||
-                    (this.NextPage != null &&
-                    this.NextPage.Equals(input.NextPage))
+                    NextPage == input.NextPage ||
+                    (NextPage != null &&
+                    NextPage.Equals(input.NextPage))
                 );
         }
 
@@ -112,10 +112,10 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.LongTermGrowthEstimates != null)
-                    hashCode = hashCode * 59 + this.LongTermGrowthEstimates.GetHashCode();
-                if (this.NextPage != null)
-                    hashCode = hashCode * 59 + this.NextPage.GetHashCode();
+                if (LongTermGrowthEstimates != null)
+                    hashCode = hashCode * 59 + LongTermGrowthEstimates.GetHashCode();
+                if (NextPage != null)
+                    hashCode = hashCode * 59 + NextPage.GetHashCode();
                 return hashCode;
             }
         }
@@ -125,7 +125,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

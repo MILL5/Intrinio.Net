@@ -386,7 +386,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as EarningsRecord);
+            return Equals(input as EarningsRecord);
         }
 
         /// <summary>
@@ -401,124 +401,124 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Quarter == input.Quarter ||
-                    (this.Quarter != null &&
-                    this.Quarter.Equals(input.Quarter))
+                    Quarter == input.Quarter ||
+                    (Quarter != null &&
+                    Quarter.Equals(input.Quarter))
                 ) && 
                 (
-                    this.TimeOfDay == input.TimeOfDay ||
-                    (this.TimeOfDay != null &&
-                    this.TimeOfDay.Equals(input.TimeOfDay))
+                    TimeOfDay == input.TimeOfDay ||
+                    (TimeOfDay != null &&
+                    TimeOfDay.Equals(input.TimeOfDay))
                 ) && 
                 (
-                    this.BroadcastUrl == input.BroadcastUrl ||
-                    (this.BroadcastUrl != null &&
-                    this.BroadcastUrl.Equals(input.BroadcastUrl))
+                    BroadcastUrl == input.BroadcastUrl ||
+                    (BroadcastUrl != null &&
+                    BroadcastUrl.Equals(input.BroadcastUrl))
                 ) && 
                 (
-                    this.TranscriptUrl == input.TranscriptUrl ||
-                    (this.TranscriptUrl != null &&
-                    this.TranscriptUrl.Equals(input.TranscriptUrl))
+                    TranscriptUrl == input.TranscriptUrl ||
+                    (TranscriptUrl != null &&
+                    TranscriptUrl.Equals(input.TranscriptUrl))
                 ) && 
                 (
-                    this.TranscriptQuarter == input.TranscriptQuarter ||
-                    (this.TranscriptQuarter != null &&
-                    this.TranscriptQuarter.Equals(input.TranscriptQuarter))
+                    TranscriptQuarter == input.TranscriptQuarter ||
+                    (TranscriptQuarter != null &&
+                    TranscriptQuarter.Equals(input.TranscriptQuarter))
                 ) && 
                 (
-                    this.TranscriptFiscalYear == input.TranscriptFiscalYear ||
-                    (this.TranscriptFiscalYear != null &&
-                    this.TranscriptFiscalYear.Equals(input.TranscriptFiscalYear))
+                    TranscriptFiscalYear == input.TranscriptFiscalYear ||
+                    (TranscriptFiscalYear != null &&
+                    TranscriptFiscalYear.Equals(input.TranscriptFiscalYear))
                 ) && 
                 (
-                    this.ConferenceCallDate == input.ConferenceCallDate ||
-                    (this.ConferenceCallDate != null &&
-                    this.ConferenceCallDate.Equals(input.ConferenceCallDate))
+                    ConferenceCallDate == input.ConferenceCallDate ||
+                    (ConferenceCallDate != null &&
+                    ConferenceCallDate.Equals(input.ConferenceCallDate))
                 ) && 
                 (
-                    this.ConferenceCallTime == input.ConferenceCallTime ||
-                    (this.ConferenceCallTime != null &&
-                    this.ConferenceCallTime.Equals(input.ConferenceCallTime))
+                    ConferenceCallTime == input.ConferenceCallTime ||
+                    (ConferenceCallTime != null &&
+                    ConferenceCallTime.Equals(input.ConferenceCallTime))
                 ) && 
                 (
-                    this.ConferenceCallPhoneNumber == input.ConferenceCallPhoneNumber ||
-                    (this.ConferenceCallPhoneNumber != null &&
-                    this.ConferenceCallPhoneNumber.Equals(input.ConferenceCallPhoneNumber))
+                    ConferenceCallPhoneNumber == input.ConferenceCallPhoneNumber ||
+                    (ConferenceCallPhoneNumber != null &&
+                    ConferenceCallPhoneNumber.Equals(input.ConferenceCallPhoneNumber))
                 ) && 
                 (
-                    this.ConferenceCallPasscode == input.ConferenceCallPasscode ||
-                    (this.ConferenceCallPasscode != null &&
-                    this.ConferenceCallPasscode.Equals(input.ConferenceCallPasscode))
+                    ConferenceCallPasscode == input.ConferenceCallPasscode ||
+                    (ConferenceCallPasscode != null &&
+                    ConferenceCallPasscode.Equals(input.ConferenceCallPasscode))
                 ) && 
                 (
-                    this.LastConfirmationDate == input.LastConfirmationDate ||
-                    (this.LastConfirmationDate != null &&
-                    this.LastConfirmationDate.Equals(input.LastConfirmationDate))
+                    LastConfirmationDate == input.LastConfirmationDate ||
+                    (LastConfirmationDate != null &&
+                    LastConfirmationDate.Equals(input.LastConfirmationDate))
                 ) && 
                 (
-                    this.BoardOfDirectorsMeetingDate == input.BoardOfDirectorsMeetingDate ||
-                    (this.BoardOfDirectorsMeetingDate != null &&
-                    this.BoardOfDirectorsMeetingDate.Equals(input.BoardOfDirectorsMeetingDate))
+                    BoardOfDirectorsMeetingDate == input.BoardOfDirectorsMeetingDate ||
+                    (BoardOfDirectorsMeetingDate != null &&
+                    BoardOfDirectorsMeetingDate.Equals(input.BoardOfDirectorsMeetingDate))
                 ) && 
                 (
-                    this.BoardOfDirectorsMeetingType == input.BoardOfDirectorsMeetingType ||
-                    (this.BoardOfDirectorsMeetingType != null &&
-                    this.BoardOfDirectorsMeetingType.Equals(input.BoardOfDirectorsMeetingType))
+                    BoardOfDirectorsMeetingType == input.BoardOfDirectorsMeetingType ||
+                    (BoardOfDirectorsMeetingType != null &&
+                    BoardOfDirectorsMeetingType.Equals(input.BoardOfDirectorsMeetingType))
                 ) && 
                 (
-                    this.CompanyWebsite == input.CompanyWebsite ||
-                    (this.CompanyWebsite != null &&
-                    this.CompanyWebsite.Equals(input.CompanyWebsite))
+                    CompanyWebsite == input.CompanyWebsite ||
+                    (CompanyWebsite != null &&
+                    CompanyWebsite.Equals(input.CompanyWebsite))
                 ) && 
                 (
-                    this.Q1Date == input.Q1Date ||
-                    (this.Q1Date != null &&
-                    this.Q1Date.Equals(input.Q1Date))
+                    Q1Date == input.Q1Date ||
+                    (Q1Date != null &&
+                    Q1Date.Equals(input.Q1Date))
                 ) && 
                 (
-                    this.Q2Date == input.Q2Date ||
-                    (this.Q2Date != null &&
-                    this.Q2Date.Equals(input.Q2Date))
+                    Q2Date == input.Q2Date ||
+                    (Q2Date != null &&
+                    Q2Date.Equals(input.Q2Date))
                 ) && 
                 (
-                    this.Q3Date == input.Q3Date ||
-                    (this.Q3Date != null &&
-                    this.Q3Date.Equals(input.Q3Date))
+                    Q3Date == input.Q3Date ||
+                    (Q3Date != null &&
+                    Q3Date.Equals(input.Q3Date))
                 ) && 
                 (
-                    this.Q4Date == input.Q4Date ||
-                    (this.Q4Date != null &&
-                    this.Q4Date.Equals(input.Q4Date))
+                    Q4Date == input.Q4Date ||
+                    (Q4Date != null &&
+                    Q4Date.Equals(input.Q4Date))
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    Type == input.Type ||
+                    (Type != null &&
+                    Type.Equals(input.Type))
                 ) && 
                 (
-                    this.NextEarningsDate == input.NextEarningsDate ||
-                    (this.NextEarningsDate != null &&
-                    this.NextEarningsDate.Equals(input.NextEarningsDate))
+                    NextEarningsDate == input.NextEarningsDate ||
+                    (NextEarningsDate != null &&
+                    NextEarningsDate.Equals(input.NextEarningsDate))
                 ) && 
                 (
-                    this.NextEarningsQuarter == input.NextEarningsQuarter ||
-                    (this.NextEarningsQuarter != null &&
-                    this.NextEarningsQuarter.Equals(input.NextEarningsQuarter))
+                    NextEarningsQuarter == input.NextEarningsQuarter ||
+                    (NextEarningsQuarter != null &&
+                    NextEarningsQuarter.Equals(input.NextEarningsQuarter))
                 ) && 
                 (
-                    this.NextEarningsFiscalYear == input.NextEarningsFiscalYear ||
-                    (this.NextEarningsFiscalYear != null &&
-                    this.NextEarningsFiscalYear.Equals(input.NextEarningsFiscalYear))
+                    NextEarningsFiscalYear == input.NextEarningsFiscalYear ||
+                    (NextEarningsFiscalYear != null &&
+                    NextEarningsFiscalYear.Equals(input.NextEarningsFiscalYear))
                 ) && 
                 (
-                    this.PreliminaryEarningsDate == input.PreliminaryEarningsDate ||
-                    (this.PreliminaryEarningsDate != null &&
-                    this.PreliminaryEarningsDate.Equals(input.PreliminaryEarningsDate))
+                    PreliminaryEarningsDate == input.PreliminaryEarningsDate ||
+                    (PreliminaryEarningsDate != null &&
+                    PreliminaryEarningsDate.Equals(input.PreliminaryEarningsDate))
                 ) && 
                 (
-                    this.Security == input.Security ||
-                    (this.Security != null &&
-                    this.Security.Equals(input.Security))
+                    Security == input.Security ||
+                    (Security != null &&
+                    Security.Equals(input.Security))
                 );
         }
 
@@ -531,54 +531,54 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Quarter != null)
-                    hashCode = hashCode * 59 + this.Quarter.GetHashCode();
-                if (this.TimeOfDay != null)
-                    hashCode = hashCode * 59 + this.TimeOfDay.GetHashCode();
-                if (this.BroadcastUrl != null)
-                    hashCode = hashCode * 59 + this.BroadcastUrl.GetHashCode();
-                if (this.TranscriptUrl != null)
-                    hashCode = hashCode * 59 + this.TranscriptUrl.GetHashCode();
-                if (this.TranscriptQuarter != null)
-                    hashCode = hashCode * 59 + this.TranscriptQuarter.GetHashCode();
-                if (this.TranscriptFiscalYear != null)
-                    hashCode = hashCode * 59 + this.TranscriptFiscalYear.GetHashCode();
-                if (this.ConferenceCallDate != null)
-                    hashCode = hashCode * 59 + this.ConferenceCallDate.GetHashCode();
-                if (this.ConferenceCallTime != null)
-                    hashCode = hashCode * 59 + this.ConferenceCallTime.GetHashCode();
-                if (this.ConferenceCallPhoneNumber != null)
-                    hashCode = hashCode * 59 + this.ConferenceCallPhoneNumber.GetHashCode();
-                if (this.ConferenceCallPasscode != null)
-                    hashCode = hashCode * 59 + this.ConferenceCallPasscode.GetHashCode();
-                if (this.LastConfirmationDate != null)
-                    hashCode = hashCode * 59 + this.LastConfirmationDate.GetHashCode();
-                if (this.BoardOfDirectorsMeetingDate != null)
-                    hashCode = hashCode * 59 + this.BoardOfDirectorsMeetingDate.GetHashCode();
-                if (this.BoardOfDirectorsMeetingType != null)
-                    hashCode = hashCode * 59 + this.BoardOfDirectorsMeetingType.GetHashCode();
-                if (this.CompanyWebsite != null)
-                    hashCode = hashCode * 59 + this.CompanyWebsite.GetHashCode();
-                if (this.Q1Date != null)
-                    hashCode = hashCode * 59 + this.Q1Date.GetHashCode();
-                if (this.Q2Date != null)
-                    hashCode = hashCode * 59 + this.Q2Date.GetHashCode();
-                if (this.Q3Date != null)
-                    hashCode = hashCode * 59 + this.Q3Date.GetHashCode();
-                if (this.Q4Date != null)
-                    hashCode = hashCode * 59 + this.Q4Date.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.NextEarningsDate != null)
-                    hashCode = hashCode * 59 + this.NextEarningsDate.GetHashCode();
-                if (this.NextEarningsQuarter != null)
-                    hashCode = hashCode * 59 + this.NextEarningsQuarter.GetHashCode();
-                if (this.NextEarningsFiscalYear != null)
-                    hashCode = hashCode * 59 + this.NextEarningsFiscalYear.GetHashCode();
-                if (this.PreliminaryEarningsDate != null)
-                    hashCode = hashCode * 59 + this.PreliminaryEarningsDate.GetHashCode();
-                if (this.Security != null)
-                    hashCode = hashCode * 59 + this.Security.GetHashCode();
+                if (Quarter != null)
+                    hashCode = hashCode * 59 + Quarter.GetHashCode();
+                if (TimeOfDay != null)
+                    hashCode = hashCode * 59 + TimeOfDay.GetHashCode();
+                if (BroadcastUrl != null)
+                    hashCode = hashCode * 59 + BroadcastUrl.GetHashCode();
+                if (TranscriptUrl != null)
+                    hashCode = hashCode * 59 + TranscriptUrl.GetHashCode();
+                if (TranscriptQuarter != null)
+                    hashCode = hashCode * 59 + TranscriptQuarter.GetHashCode();
+                if (TranscriptFiscalYear != null)
+                    hashCode = hashCode * 59 + TranscriptFiscalYear.GetHashCode();
+                if (ConferenceCallDate != null)
+                    hashCode = hashCode * 59 + ConferenceCallDate.GetHashCode();
+                if (ConferenceCallTime != null)
+                    hashCode = hashCode * 59 + ConferenceCallTime.GetHashCode();
+                if (ConferenceCallPhoneNumber != null)
+                    hashCode = hashCode * 59 + ConferenceCallPhoneNumber.GetHashCode();
+                if (ConferenceCallPasscode != null)
+                    hashCode = hashCode * 59 + ConferenceCallPasscode.GetHashCode();
+                if (LastConfirmationDate != null)
+                    hashCode = hashCode * 59 + LastConfirmationDate.GetHashCode();
+                if (BoardOfDirectorsMeetingDate != null)
+                    hashCode = hashCode * 59 + BoardOfDirectorsMeetingDate.GetHashCode();
+                if (BoardOfDirectorsMeetingType != null)
+                    hashCode = hashCode * 59 + BoardOfDirectorsMeetingType.GetHashCode();
+                if (CompanyWebsite != null)
+                    hashCode = hashCode * 59 + CompanyWebsite.GetHashCode();
+                if (Q1Date != null)
+                    hashCode = hashCode * 59 + Q1Date.GetHashCode();
+                if (Q2Date != null)
+                    hashCode = hashCode * 59 + Q2Date.GetHashCode();
+                if (Q3Date != null)
+                    hashCode = hashCode * 59 + Q3Date.GetHashCode();
+                if (Q4Date != null)
+                    hashCode = hashCode * 59 + Q4Date.GetHashCode();
+                if (Type != null)
+                    hashCode = hashCode * 59 + Type.GetHashCode();
+                if (NextEarningsDate != null)
+                    hashCode = hashCode * 59 + NextEarningsDate.GetHashCode();
+                if (NextEarningsQuarter != null)
+                    hashCode = hashCode * 59 + NextEarningsQuarter.GetHashCode();
+                if (NextEarningsFiscalYear != null)
+                    hashCode = hashCode * 59 + NextEarningsFiscalYear.GetHashCode();
+                if (PreliminaryEarningsDate != null)
+                    hashCode = hashCode * 59 + PreliminaryEarningsDate.GetHashCode();
+                if (Security != null)
+                    hashCode = hashCode * 59 + Security.GetHashCode();
                 return hashCode;
             }
         }
@@ -588,7 +588,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

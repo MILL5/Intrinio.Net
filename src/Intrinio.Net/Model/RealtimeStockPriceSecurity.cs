@@ -107,7 +107,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RealtimeStockPriceSecurity);
+            return Equals(input as RealtimeStockPriceSecurity);
         }
 
         /// <summary>
@@ -122,29 +122,29 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Ticker == input.Ticker ||
-                    (this.Ticker != null &&
-                    this.Ticker.Equals(input.Ticker))
+                    Ticker == input.Ticker ||
+                    (Ticker != null &&
+                    Ticker.Equals(input.Ticker))
                 ) && 
                 (
-                    this.ExchangeTicker == input.ExchangeTicker ||
-                    (this.ExchangeTicker != null &&
-                    this.ExchangeTicker.Equals(input.ExchangeTicker))
+                    ExchangeTicker == input.ExchangeTicker ||
+                    (ExchangeTicker != null &&
+                    ExchangeTicker.Equals(input.ExchangeTicker))
                 ) && 
                 (
-                    this.Figi == input.Figi ||
-                    (this.Figi != null &&
-                    this.Figi.Equals(input.Figi))
+                    Figi == input.Figi ||
+                    (Figi != null &&
+                    Figi.Equals(input.Figi))
                 ) && 
                 (
-                    this.CompositeFigi == input.CompositeFigi ||
-                    (this.CompositeFigi != null &&
-                    this.CompositeFigi.Equals(input.CompositeFigi))
+                    CompositeFigi == input.CompositeFigi ||
+                    (CompositeFigi != null &&
+                    CompositeFigi.Equals(input.CompositeFigi))
                 );
         }
 
@@ -157,16 +157,16 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Ticker != null)
-                    hashCode = hashCode * 59 + this.Ticker.GetHashCode();
-                if (this.ExchangeTicker != null)
-                    hashCode = hashCode * 59 + this.ExchangeTicker.GetHashCode();
-                if (this.Figi != null)
-                    hashCode = hashCode * 59 + this.Figi.GetHashCode();
-                if (this.CompositeFigi != null)
-                    hashCode = hashCode * 59 + this.CompositeFigi.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (Ticker != null)
+                    hashCode = hashCode * 59 + Ticker.GetHashCode();
+                if (ExchangeTicker != null)
+                    hashCode = hashCode * 59 + ExchangeTicker.GetHashCode();
+                if (Figi != null)
+                    hashCode = hashCode * 59 + Figi.GetHashCode();
+                if (CompositeFigi != null)
+                    hashCode = hashCode * 59 + CompositeFigi.GetHashCode();
                 return hashCode;
             }
         }
@@ -176,7 +176,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

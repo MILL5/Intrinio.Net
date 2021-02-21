@@ -99,7 +99,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as FilingNoteFiling);
+            return Equals(input as FilingNoteFiling);
         }
 
         /// <summary>
@@ -114,24 +114,24 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Cik == input.Cik ||
-                    (this.Cik != null &&
-                    this.Cik.Equals(input.Cik))
+                    Cik == input.Cik ||
+                    (Cik != null &&
+                    Cik.Equals(input.Cik))
                 ) && 
                 (
-                    this.ReportType == input.ReportType ||
-                    (this.ReportType != null &&
-                    this.ReportType.Equals(input.ReportType))
+                    ReportType == input.ReportType ||
+                    (ReportType != null &&
+                    ReportType.Equals(input.ReportType))
                 ) && 
                 (
-                    this.PeriodEndDate == input.PeriodEndDate ||
-                    (this.PeriodEndDate != null &&
-                    this.PeriodEndDate.Equals(input.PeriodEndDate))
+                    PeriodEndDate == input.PeriodEndDate ||
+                    (PeriodEndDate != null &&
+                    PeriodEndDate.Equals(input.PeriodEndDate))
                 ) && 
                 (
-                    this.FilingDate == input.FilingDate ||
-                    (this.FilingDate != null &&
-                    this.FilingDate.Equals(input.FilingDate))
+                    FilingDate == input.FilingDate ||
+                    (FilingDate != null &&
+                    FilingDate.Equals(input.FilingDate))
                 );
         }
 
@@ -144,14 +144,14 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Cik != null)
-                    hashCode = hashCode * 59 + this.Cik.GetHashCode();
-                if (this.ReportType != null)
-                    hashCode = hashCode * 59 + this.ReportType.GetHashCode();
-                if (this.PeriodEndDate != null)
-                    hashCode = hashCode * 59 + this.PeriodEndDate.GetHashCode();
-                if (this.FilingDate != null)
-                    hashCode = hashCode * 59 + this.FilingDate.GetHashCode();
+                if (Cik != null)
+                    hashCode = hashCode * 59 + Cik.GetHashCode();
+                if (ReportType != null)
+                    hashCode = hashCode * 59 + ReportType.GetHashCode();
+                if (PeriodEndDate != null)
+                    hashCode = hashCode * 59 + PeriodEndDate.GetHashCode();
+                if (FilingDate != null)
+                    hashCode = hashCode * 59 + FilingDate.GetHashCode();
                 return hashCode;
             }
         }
@@ -161,7 +161,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

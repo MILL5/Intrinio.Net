@@ -108,7 +108,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as StockPriceAdjustmentSummary);
+            return Equals(input as StockPriceAdjustmentSummary);
         }
 
         /// <summary>
@@ -123,29 +123,29 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
+                    Date == input.Date ||
+                    (Date != null &&
+                    Date.Equals(input.Date))
                 ) && 
                 (
-                    this.Factor == input.Factor ||
-                    (this.Factor != null &&
-                    this.Factor.Equals(input.Factor))
+                    Factor == input.Factor ||
+                    (Factor != null &&
+                    Factor.Equals(input.Factor))
                 ) && 
                 (
-                    this.Dividend == input.Dividend ||
-                    (this.Dividend != null &&
-                    this.Dividend.Equals(input.Dividend))
+                    Dividend == input.Dividend ||
+                    (Dividend != null &&
+                    Dividend.Equals(input.Dividend))
                 ) && 
                 (
-                    this.DividendCurrency == input.DividendCurrency ||
-                    (this.DividendCurrency != null &&
-                    this.DividendCurrency.Equals(input.DividendCurrency))
+                    DividendCurrency == input.DividendCurrency ||
+                    (DividendCurrency != null &&
+                    DividendCurrency.Equals(input.DividendCurrency))
                 ) && 
                 (
-                    this.SplitRatio == input.SplitRatio ||
-                    (this.SplitRatio != null &&
-                    this.SplitRatio.Equals(input.SplitRatio))
+                    SplitRatio == input.SplitRatio ||
+                    (SplitRatio != null &&
+                    SplitRatio.Equals(input.SplitRatio))
                 );
         }
 
@@ -158,16 +158,16 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.Factor != null)
-                    hashCode = hashCode * 59 + this.Factor.GetHashCode();
-                if (this.Dividend != null)
-                    hashCode = hashCode * 59 + this.Dividend.GetHashCode();
-                if (this.DividendCurrency != null)
-                    hashCode = hashCode * 59 + this.DividendCurrency.GetHashCode();
-                if (this.SplitRatio != null)
-                    hashCode = hashCode * 59 + this.SplitRatio.GetHashCode();
+                if (Date != null)
+                    hashCode = hashCode * 59 + Date.GetHashCode();
+                if (Factor != null)
+                    hashCode = hashCode * 59 + Factor.GetHashCode();
+                if (Dividend != null)
+                    hashCode = hashCode * 59 + Dividend.GetHashCode();
+                if (DividendCurrency != null)
+                    hashCode = hashCode * 59 + DividendCurrency.GetHashCode();
+                if (SplitRatio != null)
+                    hashCode = hashCode * 59 + SplitRatio.GetHashCode();
                 return hashCode;
             }
         }
@@ -177,7 +177,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

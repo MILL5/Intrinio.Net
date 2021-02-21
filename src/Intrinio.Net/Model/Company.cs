@@ -421,7 +421,7 @@ namespace Intrinio.Net.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Company);
+            return Equals(input as Company);
         }
 
         /// <summary>
@@ -436,184 +436,184 @@ namespace Intrinio.Net.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    Id == input.Id ||
+                    (Id != null &&
+                    Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Ticker == input.Ticker ||
-                    (this.Ticker != null &&
-                    this.Ticker.Equals(input.Ticker))
+                    Ticker == input.Ticker ||
+                    (Ticker != null &&
+                    Ticker.Equals(input.Ticker))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Lei == input.Lei ||
-                    (this.Lei != null &&
-                    this.Lei.Equals(input.Lei))
+                    Lei == input.Lei ||
+                    (Lei != null &&
+                    Lei.Equals(input.Lei))
                 ) && 
                 (
-                    this.LegalName == input.LegalName ||
-                    (this.LegalName != null &&
-                    this.LegalName.Equals(input.LegalName))
+                    LegalName == input.LegalName ||
+                    (LegalName != null &&
+                    LegalName.Equals(input.LegalName))
                 ) && 
                 (
-                    this.StockExchange == input.StockExchange ||
-                    (this.StockExchange != null &&
-                    this.StockExchange.Equals(input.StockExchange))
+                    StockExchange == input.StockExchange ||
+                    (StockExchange != null &&
+                    StockExchange.Equals(input.StockExchange))
                 ) && 
                 (
-                    this.Sic == input.Sic ||
-                    (this.Sic != null &&
-                    this.Sic.Equals(input.Sic))
+                    Sic == input.Sic ||
+                    (Sic != null &&
+                    Sic.Equals(input.Sic))
                 ) && 
                 (
-                    this.ShortDescription == input.ShortDescription ||
-                    (this.ShortDescription != null &&
-                    this.ShortDescription.Equals(input.ShortDescription))
+                    ShortDescription == input.ShortDescription ||
+                    (ShortDescription != null &&
+                    ShortDescription.Equals(input.ShortDescription))
                 ) && 
                 (
-                    this.LongDescription == input.LongDescription ||
-                    (this.LongDescription != null &&
-                    this.LongDescription.Equals(input.LongDescription))
+                    LongDescription == input.LongDescription ||
+                    (LongDescription != null &&
+                    LongDescription.Equals(input.LongDescription))
                 ) && 
                 (
-                    this.Ceo == input.Ceo ||
-                    (this.Ceo != null &&
-                    this.Ceo.Equals(input.Ceo))
+                    Ceo == input.Ceo ||
+                    (Ceo != null &&
+                    Ceo.Equals(input.Ceo))
                 ) && 
                 (
-                    this.CompanyUrl == input.CompanyUrl ||
-                    (this.CompanyUrl != null &&
-                    this.CompanyUrl.Equals(input.CompanyUrl))
+                    CompanyUrl == input.CompanyUrl ||
+                    (CompanyUrl != null &&
+                    CompanyUrl.Equals(input.CompanyUrl))
                 ) && 
                 (
-                    this.BusinessAddress == input.BusinessAddress ||
-                    (this.BusinessAddress != null &&
-                    this.BusinessAddress.Equals(input.BusinessAddress))
+                    BusinessAddress == input.BusinessAddress ||
+                    (BusinessAddress != null &&
+                    BusinessAddress.Equals(input.BusinessAddress))
                 ) && 
                 (
-                    this.MailingAddress == input.MailingAddress ||
-                    (this.MailingAddress != null &&
-                    this.MailingAddress.Equals(input.MailingAddress))
+                    MailingAddress == input.MailingAddress ||
+                    (MailingAddress != null &&
+                    MailingAddress.Equals(input.MailingAddress))
                 ) && 
                 (
-                    this.BusinessPhoneNo == input.BusinessPhoneNo ||
-                    (this.BusinessPhoneNo != null &&
-                    this.BusinessPhoneNo.Equals(input.BusinessPhoneNo))
+                    BusinessPhoneNo == input.BusinessPhoneNo ||
+                    (BusinessPhoneNo != null &&
+                    BusinessPhoneNo.Equals(input.BusinessPhoneNo))
                 ) && 
                 (
-                    this.HqAddress1 == input.HqAddress1 ||
-                    (this.HqAddress1 != null &&
-                    this.HqAddress1.Equals(input.HqAddress1))
+                    HqAddress1 == input.HqAddress1 ||
+                    (HqAddress1 != null &&
+                    HqAddress1.Equals(input.HqAddress1))
                 ) && 
                 (
-                    this.HqAddress2 == input.HqAddress2 ||
-                    (this.HqAddress2 != null &&
-                    this.HqAddress2.Equals(input.HqAddress2))
+                    HqAddress2 == input.HqAddress2 ||
+                    (HqAddress2 != null &&
+                    HqAddress2.Equals(input.HqAddress2))
                 ) && 
                 (
-                    this.HqAddressCity == input.HqAddressCity ||
-                    (this.HqAddressCity != null &&
-                    this.HqAddressCity.Equals(input.HqAddressCity))
+                    HqAddressCity == input.HqAddressCity ||
+                    (HqAddressCity != null &&
+                    HqAddressCity.Equals(input.HqAddressCity))
                 ) && 
                 (
-                    this.HqAddressPostalCode == input.HqAddressPostalCode ||
-                    (this.HqAddressPostalCode != null &&
-                    this.HqAddressPostalCode.Equals(input.HqAddressPostalCode))
+                    HqAddressPostalCode == input.HqAddressPostalCode ||
+                    (HqAddressPostalCode != null &&
+                    HqAddressPostalCode.Equals(input.HqAddressPostalCode))
                 ) && 
                 (
-                    this.EntityLegalForm == input.EntityLegalForm ||
-                    (this.EntityLegalForm != null &&
-                    this.EntityLegalForm.Equals(input.EntityLegalForm))
+                    EntityLegalForm == input.EntityLegalForm ||
+                    (EntityLegalForm != null &&
+                    EntityLegalForm.Equals(input.EntityLegalForm))
                 ) && 
                 (
-                    this.Cik == input.Cik ||
-                    (this.Cik != null &&
-                    this.Cik.Equals(input.Cik))
+                    Cik == input.Cik ||
+                    (Cik != null &&
+                    Cik.Equals(input.Cik))
                 ) && 
                 (
-                    this.LatestFilingDate == input.LatestFilingDate ||
-                    (this.LatestFilingDate != null &&
-                    this.LatestFilingDate.Equals(input.LatestFilingDate))
+                    LatestFilingDate == input.LatestFilingDate ||
+                    (LatestFilingDate != null &&
+                    LatestFilingDate.Equals(input.LatestFilingDate))
                 ) && 
                 (
-                    this.HqState == input.HqState ||
-                    (this.HqState != null &&
-                    this.HqState.Equals(input.HqState))
+                    HqState == input.HqState ||
+                    (HqState != null &&
+                    HqState.Equals(input.HqState))
                 ) && 
                 (
-                    this.HqCountry == input.HqCountry ||
-                    (this.HqCountry != null &&
-                    this.HqCountry.Equals(input.HqCountry))
+                    HqCountry == input.HqCountry ||
+                    (HqCountry != null &&
+                    HqCountry.Equals(input.HqCountry))
                 ) && 
                 (
-                    this.IncState == input.IncState ||
-                    (this.IncState != null &&
-                    this.IncState.Equals(input.IncState))
+                    IncState == input.IncState ||
+                    (IncState != null &&
+                    IncState.Equals(input.IncState))
                 ) && 
                 (
-                    this.IncCountry == input.IncCountry ||
-                    (this.IncCountry != null &&
-                    this.IncCountry.Equals(input.IncCountry))
+                    IncCountry == input.IncCountry ||
+                    (IncCountry != null &&
+                    IncCountry.Equals(input.IncCountry))
                 ) && 
                 (
-                    this.Employees == input.Employees ||
-                    (this.Employees != null &&
-                    this.Employees.Equals(input.Employees))
+                    Employees == input.Employees ||
+                    (Employees != null &&
+                    Employees.Equals(input.Employees))
                 ) && 
                 (
-                    this.EntityStatus == input.EntityStatus ||
-                    (this.EntityStatus != null &&
-                    this.EntityStatus.Equals(input.EntityStatus))
+                    EntityStatus == input.EntityStatus ||
+                    (EntityStatus != null &&
+                    EntityStatus.Equals(input.EntityStatus))
                 ) && 
                 (
-                    this.Sector == input.Sector ||
-                    (this.Sector != null &&
-                    this.Sector.Equals(input.Sector))
+                    Sector == input.Sector ||
+                    (Sector != null &&
+                    Sector.Equals(input.Sector))
                 ) && 
                 (
-                    this.IndustryCategory == input.IndustryCategory ||
-                    (this.IndustryCategory != null &&
-                    this.IndustryCategory.Equals(input.IndustryCategory))
+                    IndustryCategory == input.IndustryCategory ||
+                    (IndustryCategory != null &&
+                    IndustryCategory.Equals(input.IndustryCategory))
                 ) && 
                 (
-                    this.IndustryGroup == input.IndustryGroup ||
-                    (this.IndustryGroup != null &&
-                    this.IndustryGroup.Equals(input.IndustryGroup))
+                    IndustryGroup == input.IndustryGroup ||
+                    (IndustryGroup != null &&
+                    IndustryGroup.Equals(input.IndustryGroup))
                 ) && 
                 (
-                    this.Template == input.Template ||
-                    (this.Template != null &&
-                    this.Template.Equals(input.Template))
+                    Template == input.Template ||
+                    (Template != null &&
+                    Template.Equals(input.Template))
                 ) && 
                 (
-                    this.StandardizedActive == input.StandardizedActive ||
-                    (this.StandardizedActive != null &&
-                    this.StandardizedActive.Equals(input.StandardizedActive))
+                    StandardizedActive == input.StandardizedActive ||
+                    (StandardizedActive != null &&
+                    StandardizedActive.Equals(input.StandardizedActive))
                 ) && 
                 (
-                    this.FirstFundamentalDate == input.FirstFundamentalDate ||
-                    (this.FirstFundamentalDate != null &&
-                    this.FirstFundamentalDate.Equals(input.FirstFundamentalDate))
+                    FirstFundamentalDate == input.FirstFundamentalDate ||
+                    (FirstFundamentalDate != null &&
+                    FirstFundamentalDate.Equals(input.FirstFundamentalDate))
                 ) && 
                 (
-                    this.LastFundamentalDate == input.LastFundamentalDate ||
-                    (this.LastFundamentalDate != null &&
-                    this.LastFundamentalDate.Equals(input.LastFundamentalDate))
+                    LastFundamentalDate == input.LastFundamentalDate ||
+                    (LastFundamentalDate != null &&
+                    LastFundamentalDate.Equals(input.LastFundamentalDate))
                 ) && 
                 (
-                    this.FirstStockPriceDate == input.FirstStockPriceDate ||
-                    (this.FirstStockPriceDate != null &&
-                    this.FirstStockPriceDate.Equals(input.FirstStockPriceDate))
+                    FirstStockPriceDate == input.FirstStockPriceDate ||
+                    (FirstStockPriceDate != null &&
+                    FirstStockPriceDate.Equals(input.FirstStockPriceDate))
                 ) && 
                 (
-                    this.LastStockPriceDate == input.LastStockPriceDate ||
-                    (this.LastStockPriceDate != null &&
-                    this.LastStockPriceDate.Equals(input.LastStockPriceDate))
+                    LastStockPriceDate == input.LastStockPriceDate ||
+                    (LastStockPriceDate != null &&
+                    LastStockPriceDate.Equals(input.LastStockPriceDate))
                 );
         }
 
@@ -626,78 +626,78 @@ namespace Intrinio.Net.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Ticker != null)
-                    hashCode = hashCode * 59 + this.Ticker.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Lei != null)
-                    hashCode = hashCode * 59 + this.Lei.GetHashCode();
-                if (this.LegalName != null)
-                    hashCode = hashCode * 59 + this.LegalName.GetHashCode();
-                if (this.StockExchange != null)
-                    hashCode = hashCode * 59 + this.StockExchange.GetHashCode();
-                if (this.Sic != null)
-                    hashCode = hashCode * 59 + this.Sic.GetHashCode();
-                if (this.ShortDescription != null)
-                    hashCode = hashCode * 59 + this.ShortDescription.GetHashCode();
-                if (this.LongDescription != null)
-                    hashCode = hashCode * 59 + this.LongDescription.GetHashCode();
-                if (this.Ceo != null)
-                    hashCode = hashCode * 59 + this.Ceo.GetHashCode();
-                if (this.CompanyUrl != null)
-                    hashCode = hashCode * 59 + this.CompanyUrl.GetHashCode();
-                if (this.BusinessAddress != null)
-                    hashCode = hashCode * 59 + this.BusinessAddress.GetHashCode();
-                if (this.MailingAddress != null)
-                    hashCode = hashCode * 59 + this.MailingAddress.GetHashCode();
-                if (this.BusinessPhoneNo != null)
-                    hashCode = hashCode * 59 + this.BusinessPhoneNo.GetHashCode();
-                if (this.HqAddress1 != null)
-                    hashCode = hashCode * 59 + this.HqAddress1.GetHashCode();
-                if (this.HqAddress2 != null)
-                    hashCode = hashCode * 59 + this.HqAddress2.GetHashCode();
-                if (this.HqAddressCity != null)
-                    hashCode = hashCode * 59 + this.HqAddressCity.GetHashCode();
-                if (this.HqAddressPostalCode != null)
-                    hashCode = hashCode * 59 + this.HqAddressPostalCode.GetHashCode();
-                if (this.EntityLegalForm != null)
-                    hashCode = hashCode * 59 + this.EntityLegalForm.GetHashCode();
-                if (this.Cik != null)
-                    hashCode = hashCode * 59 + this.Cik.GetHashCode();
-                if (this.LatestFilingDate != null)
-                    hashCode = hashCode * 59 + this.LatestFilingDate.GetHashCode();
-                if (this.HqState != null)
-                    hashCode = hashCode * 59 + this.HqState.GetHashCode();
-                if (this.HqCountry != null)
-                    hashCode = hashCode * 59 + this.HqCountry.GetHashCode();
-                if (this.IncState != null)
-                    hashCode = hashCode * 59 + this.IncState.GetHashCode();
-                if (this.IncCountry != null)
-                    hashCode = hashCode * 59 + this.IncCountry.GetHashCode();
-                if (this.Employees != null)
-                    hashCode = hashCode * 59 + this.Employees.GetHashCode();
-                if (this.EntityStatus != null)
-                    hashCode = hashCode * 59 + this.EntityStatus.GetHashCode();
-                if (this.Sector != null)
-                    hashCode = hashCode * 59 + this.Sector.GetHashCode();
-                if (this.IndustryCategory != null)
-                    hashCode = hashCode * 59 + this.IndustryCategory.GetHashCode();
-                if (this.IndustryGroup != null)
-                    hashCode = hashCode * 59 + this.IndustryGroup.GetHashCode();
-                if (this.Template != null)
-                    hashCode = hashCode * 59 + this.Template.GetHashCode();
-                if (this.StandardizedActive != null)
-                    hashCode = hashCode * 59 + this.StandardizedActive.GetHashCode();
-                if (this.FirstFundamentalDate != null)
-                    hashCode = hashCode * 59 + this.FirstFundamentalDate.GetHashCode();
-                if (this.LastFundamentalDate != null)
-                    hashCode = hashCode * 59 + this.LastFundamentalDate.GetHashCode();
-                if (this.FirstStockPriceDate != null)
-                    hashCode = hashCode * 59 + this.FirstStockPriceDate.GetHashCode();
-                if (this.LastStockPriceDate != null)
-                    hashCode = hashCode * 59 + this.LastStockPriceDate.GetHashCode();
+                if (Id != null)
+                    hashCode = hashCode * 59 + Id.GetHashCode();
+                if (Ticker != null)
+                    hashCode = hashCode * 59 + Ticker.GetHashCode();
+                if (Name != null)
+                    hashCode = hashCode * 59 + Name.GetHashCode();
+                if (Lei != null)
+                    hashCode = hashCode * 59 + Lei.GetHashCode();
+                if (LegalName != null)
+                    hashCode = hashCode * 59 + LegalName.GetHashCode();
+                if (StockExchange != null)
+                    hashCode = hashCode * 59 + StockExchange.GetHashCode();
+                if (Sic != null)
+                    hashCode = hashCode * 59 + Sic.GetHashCode();
+                if (ShortDescription != null)
+                    hashCode = hashCode * 59 + ShortDescription.GetHashCode();
+                if (LongDescription != null)
+                    hashCode = hashCode * 59 + LongDescription.GetHashCode();
+                if (Ceo != null)
+                    hashCode = hashCode * 59 + Ceo.GetHashCode();
+                if (CompanyUrl != null)
+                    hashCode = hashCode * 59 + CompanyUrl.GetHashCode();
+                if (BusinessAddress != null)
+                    hashCode = hashCode * 59 + BusinessAddress.GetHashCode();
+                if (MailingAddress != null)
+                    hashCode = hashCode * 59 + MailingAddress.GetHashCode();
+                if (BusinessPhoneNo != null)
+                    hashCode = hashCode * 59 + BusinessPhoneNo.GetHashCode();
+                if (HqAddress1 != null)
+                    hashCode = hashCode * 59 + HqAddress1.GetHashCode();
+                if (HqAddress2 != null)
+                    hashCode = hashCode * 59 + HqAddress2.GetHashCode();
+                if (HqAddressCity != null)
+                    hashCode = hashCode * 59 + HqAddressCity.GetHashCode();
+                if (HqAddressPostalCode != null)
+                    hashCode = hashCode * 59 + HqAddressPostalCode.GetHashCode();
+                if (EntityLegalForm != null)
+                    hashCode = hashCode * 59 + EntityLegalForm.GetHashCode();
+                if (Cik != null)
+                    hashCode = hashCode * 59 + Cik.GetHashCode();
+                if (LatestFilingDate != null)
+                    hashCode = hashCode * 59 + LatestFilingDate.GetHashCode();
+                if (HqState != null)
+                    hashCode = hashCode * 59 + HqState.GetHashCode();
+                if (HqCountry != null)
+                    hashCode = hashCode * 59 + HqCountry.GetHashCode();
+                if (IncState != null)
+                    hashCode = hashCode * 59 + IncState.GetHashCode();
+                if (IncCountry != null)
+                    hashCode = hashCode * 59 + IncCountry.GetHashCode();
+                if (Employees != null)
+                    hashCode = hashCode * 59 + Employees.GetHashCode();
+                if (EntityStatus != null)
+                    hashCode = hashCode * 59 + EntityStatus.GetHashCode();
+                if (Sector != null)
+                    hashCode = hashCode * 59 + Sector.GetHashCode();
+                if (IndustryCategory != null)
+                    hashCode = hashCode * 59 + IndustryCategory.GetHashCode();
+                if (IndustryGroup != null)
+                    hashCode = hashCode * 59 + IndustryGroup.GetHashCode();
+                if (Template != null)
+                    hashCode = hashCode * 59 + Template.GetHashCode();
+                if (StandardizedActive != null)
+                    hashCode = hashCode * 59 + StandardizedActive.GetHashCode();
+                if (FirstFundamentalDate != null)
+                    hashCode = hashCode * 59 + FirstFundamentalDate.GetHashCode();
+                if (LastFundamentalDate != null)
+                    hashCode = hashCode * 59 + LastFundamentalDate.GetHashCode();
+                if (FirstStockPriceDate != null)
+                    hashCode = hashCode * 59 + FirstStockPriceDate.GetHashCode();
+                if (LastStockPriceDate != null)
+                    hashCode = hashCode * 59 + LastStockPriceDate.GetHashCode();
                 return hashCode;
             }
         }
@@ -707,7 +707,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }
