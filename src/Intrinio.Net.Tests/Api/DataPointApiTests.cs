@@ -12,7 +12,7 @@ using NUnit.Framework;
 using Intrinio.Net.Client;
 using Intrinio.Net.Api;
 
-namespace Intrinio.Net.Test
+namespace Intrinio.Net.Tests
 {
     /// <summary>
     ///  Class for testing DataPointApi

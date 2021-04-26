@@ -10,7 +10,7 @@ using Intrinio.Net.Client;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace Intrinio.Net.Test
+namespace Intrinio.Net.Tests
 {
     /// <summary>
     ///  Class for testing ApiResponseBulkDownloadLinks

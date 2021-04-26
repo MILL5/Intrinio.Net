@@ -13,7 +13,7 @@ using Intrinio.Net.Client;
 using Intrinio.Net.Api;
 using Intrinio.Net.Model;
 
-namespace Intrinio.Net.Test
+namespace Intrinio.Net.Tests
 {
     /// <summary>
     ///  Class for testing MunicipalityApi
