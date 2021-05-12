@@ -12,7 +12,6 @@
     <PackageReleaseNotes>This is an initial release recompiled for .NET Standard 2.x.</PackageReleaseNotes>
     <Authors>MILL5</Authors>
 	<Description>This is a port of the Intrinio.Net to .NET Standard so that it can be used across .NET Framework, .NET Core, and the new .NET 5.0.</Description>
-    <PackageLicenseUrl>https://www.gnu.org/licenses/gpl-3.0.en.html</PackageLicenseUrl>
 	<PackageTags>intrinio;api;data;stock;price;</PackageTags>
 	<PackageIcon>intrinio.png</PackageIcon>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -20,6 +19,7 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Version>1.0.5</Version>
     <AssemblyVersion>1.0.5.0</AssemblyVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
