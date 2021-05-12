@@ -18,7 +18,7 @@ namespace Intrinio.Net.Client
     /// </summary>
     public partial class ApiClient
     {
-        private readonly JsonSerializerSettings serializerSettings = new JsonSerializerSettings
+        private readonly JsonSerializerSettings serializerSettings = new JsonSerializerSettings()
         {
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
         };
@@ -507,7 +507,7 @@ namespace Intrinio.Net.Client
         public static byte[] ReadAsBytes(Stream inputStream)
         {
             byte[] buf = new byte[16*1024];
-            using (MemoryStream ms = new MemoryStream())
+            using (var ms = new MemoryStream())
             {
                 int count;
                 while ((count = inputStream.Read(buf, 0, buf.Length)) > 0)
@@ -530,7 +530,7 @@ namespace Intrinio.Net.Client
 
             if (input == null)
             {
-                throw new ArgumentNullException("input");
+                throw new ArgumentNullException(nameof(input));
             }
 
             if (input.Length <= maxLength)
@@ -538,7 +538,7 @@ namespace Intrinio.Net.Client
                 return Uri.EscapeDataString(input);
             }
 
-            StringBuilder sb = new StringBuilder(input.Length * 2);
+            var sb = new StringBuilder(input.Length * 2);
             int index = 0;
 
             while (index < input.Length)
