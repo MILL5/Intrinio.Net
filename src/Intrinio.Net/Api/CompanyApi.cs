@@ -808,10 +808,10 @@ namespace Intrinio.Net.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public string GetBasePath()
-        {
-            return Configuration.ApiClient.RestClient.BaseUrl.ToString();
-        }
+        // public string GetBasePath()
+        // {
+        //     // return Configuration.ApiClient.RestClient.BaseUrl.ToString();
+        // }
 
         /// <summary>
         /// Gets or sets the configuration object

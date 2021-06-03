@@ -45,7 +45,7 @@ namespace Intrinio.Net.Client
         public ApiClient()
         {
             Configuration = Client.Configuration.Default;
-            RestClient = new RestClient("https://api-v2.intrinio.com");
+            // RestClient = new RestClient("https://api-v2.intrinio.com");
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Intrinio.Net.Client
         {
             Configuration = config ?? Client.Configuration.Default;
 
-            RestClient = new RestClient(Configuration.BasePath);
+            // RestClient = new RestClient(Configuration.BasePath);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Intrinio.Net.Client
            if (string.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
 
-            RestClient = new RestClient(basePath);
+            // RestClient = new RestClient(basePath);
             Configuration = Client.Configuration.Default;
         }
 
@@ -89,7 +89,7 @@ namespace Intrinio.Net.Client
         /// Gets or sets the RestClient.
         /// </summary>
         /// <value>An instance of the RestClient</value>
-        public RestClient RestClient { get; set; }
+        // public RestClient RestClient { get; set; }
 
         // Creates and sets up a RestRequest prior to a call.
         private RestRequest PrepareRequest(
@@ -143,69 +143,69 @@ namespace Intrinio.Net.Client
         /// <param name="pathParams">Path parameters.</param>
         /// <param name="contentType">Content Type of the request</param>
         /// <returns>Object</returns>
-        public object CallApi(
-            string path, Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
-            Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
-            Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
-            string contentType)
-        {
-            var request = PrepareRequest(
-                path, method, queryParams, postBody, headerParams, formParams, fileParams,
-                pathParams, contentType);
-
-            // set timeout
-            
-            RestClient.Timeout = Configuration.Timeout;
-            // set user agent
-            RestClient.UserAgent = Configuration.UserAgent;
-
-            var allowRetries = Client.Configuration.Default.AllowRetries;
-            var retryCount = 0;
-            if (allowRetries is true)
-                retryCount = 4;
-                
-            var retryPolicy = Policy
-              .HandleResult<IRestResponse>((result) =>
-              {
-                  bool shouldRetry = false;
-                  var responseHeaders = result.Headers.ToList();
-                  
-                  // Retry if server error or rate limit error
-                  if ((int)result.StatusCode >= 500)
-                  {
-                      shouldRetry = true;
-                  }
-                  else if (result.StatusCode == (HttpStatusCode)429)
-                  {
-                      var rateLimitHeader = responseHeaders.Find(x => x.Name == "retry-after");
-                      if (rateLimitHeader != null)
-                      {
-                          int rateLimitElapsesIn = int.Parse(rateLimitHeader.Value.ToString()) * 1000;
-                          
-                          // If the rate limit elapse milliseconds is less than the maximum allowed retry time limit, sleep program until rate limit has elapsed. Then retry.
-                          if (rateLimitElapsesIn < maxRetryMilliSeconds)
-                          {
-                              System.Threading.Thread.Sleep((int)rateLimitElapsesIn);
-                              shouldRetry = true;
-                          }
-                      }
-                  }
-
-                  return shouldRetry;
-              })
-              .WaitAndRetry(retryCount, retryAttempt =>
-                TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
-              );
-              
-            InterceptRequest(request);
-            
-            var response = retryPolicy.Execute(() =>
-            {
-                return RestClient.Execute(request);
-            });
-            InterceptResponse(request, response);
-            return (object)response;
-        }
+        // public object CallApi(
+        //     string path, Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
+        //     Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+        //     Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
+        //     string contentType)
+        // {
+        //     var request = PrepareRequest(
+        //         path, method, queryParams, postBody, headerParams, formParams, fileParams,
+        //         pathParams, contentType);
+        //
+        //     // set timeout
+        //     
+        //     // RestClient.Timeout = Configuration.Timeout;
+        //     // set user agent
+        //     // RestClient.UserAgent = Configuration.UserAgent;
+        //
+        //     var allowRetries = Client.Configuration.Default.AllowRetries;
+        //     var retryCount = 0;
+        //     if (allowRetries is true)
+        //         retryCount = 4;
+        //         
+        //     var retryPolicy = Policy
+        //       .HandleResult<IRestResponse>((result) =>
+        //       {
+        //           bool shouldRetry = false;
+        //           var responseHeaders = result.Headers.ToList();
+        //           
+        //           // Retry if server error or rate limit error
+        //           if ((int)result.StatusCode >= 500)
+        //           {
+        //               shouldRetry = true;
+        //           }
+        //           else if (result.StatusCode == (HttpStatusCode)429)
+        //           {
+        //               var rateLimitHeader = responseHeaders.Find(x => x.Name == "retry-after");
+        //               if (rateLimitHeader != null)
+        //               {
+        //                   int rateLimitElapsesIn = int.Parse(rateLimitHeader.Value.ToString()) * 1000;
+        //                   
+        //                   // If the rate limit elapse milliseconds is less than the maximum allowed retry time limit, sleep program until rate limit has elapsed. Then retry.
+        //                   if (rateLimitElapsesIn < maxRetryMilliSeconds)
+        //                   {
+        //                       System.Threading.Thread.Sleep((int)rateLimitElapsesIn);
+        //                       shouldRetry = true;
+        //                   }
+        //               }
+        //           }
+        //
+        //           return shouldRetry;
+        //       })
+        //       .WaitAndRetry(retryCount, retryAttempt =>
+        //         TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
+        //       );
+        //       
+        //     InterceptRequest(request);
+        //     
+        //     // var response = retryPolicy.Execute(() =>
+        //     // {
+        //     //     // return RestClient.Execute(request);
+        //     // });
+        //     InterceptResponse(request, response);
+        //     // return (object)response;
+        // }
         /// <summary>
         /// Makes the asynchronous HTTP request.
         /// </summary>
@@ -219,63 +219,63 @@ namespace Intrinio.Net.Client
         /// <param name="pathParams">Path parameters.</param>
         /// <param name="contentType">Content type.</param>
         /// <returns>The Task instance.</returns>
-        public async System.Threading.Tasks.Task<object> CallApiAsync(
-            string path, Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
-            Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
-            Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
-            string contentType)
-        {
-            var request = PrepareRequest(
-                path, method, queryParams, postBody, headerParams, formParams, fileParams,
-                pathParams, contentType);
-            
-            var retryCount = Client.Configuration.Default.AllowRetries ? 4 : 0;
-            
-            var retryPolicy = Policy
-              .HandleResult<IRestResponse>((result) =>
-              {
-
-                  bool shouldRetry = false;
-                  var responseHeaders = result.Headers.ToList();
-                  
-                  // Retry if server error or rate limit error
-                  if ((int)result.StatusCode >= 500)
-                  {
-                      shouldRetry = true;
-                  }
-                  else if (result.StatusCode == (HttpStatusCode)429)
-                  {
-                      var rateLimitHeader = responseHeaders.Find(x => x.Name == "retry-after");
-                      
-                      if (rateLimitHeader != null)
-                      {
-                          int rateLimitElapsesIn = int.Parse(rateLimitHeader.Value.ToString()) * 1000;
-                          
-                          // If the rate limit elapse milliseconds is less than the maximum allowed retry time limit, sleep program until rate limit has elapsed. Then retry.
-                          if (rateLimitElapsesIn < maxRetryMilliSeconds)
-                          {
-                              System.Threading.Thread.Sleep((int)rateLimitElapsesIn);
-                              shouldRetry = true;
-                          }
-                      }
-                  }
-
-                  return shouldRetry;
-              })
-              .WaitAndRetryAsync(retryCount, retryAttempt =>
-                TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
-              );
-              
-            InterceptRequest(request);
-            
-            var response = await retryPolicy.ExecuteAsync(async () =>
-            {
-              return await RestClient.ExecuteAsync(request);
-            });
-             
-            InterceptResponse(request, response);
-            return response;
-        }
+        // public async System.Threading.Tasks.Task<object> CallApiAsync(
+        //     string path, Method method, List<KeyValuePair<string, string>> queryParams, object postBody,
+        //     Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+        //     Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
+        //     string contentType)
+        // {
+        //     var request = PrepareRequest(
+        //         path, method, queryParams, postBody, headerParams, formParams, fileParams,
+        //         pathParams, contentType);
+        //     
+        //     var retryCount = Client.Configuration.Default.AllowRetries ? 4 : 0;
+        //     
+        //     var retryPolicy = Policy
+        //       .HandleResult<IRestResponse>((result) =>
+        //       {
+        //
+        //           bool shouldRetry = false;
+        //           var responseHeaders = result.Headers.ToList();
+        //           
+        //           // Retry if server error or rate limit error
+        //           if ((int)result.StatusCode >= 500)
+        //           {
+        //               shouldRetry = true;
+        //           }
+        //           else if (result.StatusCode == (HttpStatusCode)429)
+        //           {
+        //               var rateLimitHeader = responseHeaders.Find(x => x.Name == "retry-after");
+        //               
+        //               if (rateLimitHeader != null)
+        //               {
+        //                   int rateLimitElapsesIn = int.Parse(rateLimitHeader.Value.ToString()) * 1000;
+        //                   
+        //                   // If the rate limit elapse milliseconds is less than the maximum allowed retry time limit, sleep program until rate limit has elapsed. Then retry.
+        //                   if (rateLimitElapsesIn < maxRetryMilliSeconds)
+        //                   {
+        //                       System.Threading.Thread.Sleep((int)rateLimitElapsesIn);
+        //                       shouldRetry = true;
+        //                   }
+        //               }
+        //           }
+        //
+        //           return shouldRetry;
+        //       })
+        //       .WaitAndRetryAsync(retryCount, retryAttempt =>
+        //         TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
+        //       );
+        //       
+        //     InterceptRequest(request);
+        //     
+        //     // var response = await retryPolicy.ExecuteAsync(async () =>
+        //     // {
+        //     //   // return await RestClient.ExecuteAsync(request);
+        //     // });
+        //      
+        //     InterceptResponse(request, response);
+        //     // return response;
+        // }
 
         /// <summary>
         /// Escape string (url-encoded).

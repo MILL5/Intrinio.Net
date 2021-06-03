@@ -109,7 +109,7 @@ namespace Intrinio.Net.Client
             AllowRetries = true;
 
             // Setting Timeout has side effects (forces ApiClient creation).
-            Timeout = 100000;
+            // Timeout = 100000;
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Intrinio.Net.Client
                 _basePath = value;
                 // pass-through to ApiClient if it's set.
                 if(_apiClient != null) {
-                    _apiClient.RestClient.BaseUrl = new Uri(_basePath);
+                    // _apiClient.RestClient.BaseUrl = new Uri(_basePath);
                 }
             }
         }
@@ -189,12 +189,12 @@ namespace Intrinio.Net.Client
         /// <summary>
         /// Gets or sets the HTTP timeout (milliseconds) of ApiClient. Default to 100000 milliseconds.
         /// </summary>
-        public virtual int Timeout
-        {
-            
-            get { return ApiClient.RestClient.Timeout; }
-            set { ApiClient.RestClient.Timeout = value; }
-        }
+        // public virtual int Timeout
+        // {
+        //     
+        //     // get { return ApiClient.RestClient.Timeout; }
+        //     // set { ApiClient.RestClient.Timeout = value; }
+        // }
         
         /// <summary>
         /// Get or Set the condition for allowing API call retries.
