@@ -87,6 +87,8 @@ namespace Intrinio.Net.Client
         private string _dateTimeFormat = ISO8601_DATETIME_FORMAT;
         private string _tempFolderPath = Path.GetTempPath();
 
+        private readonly IIntrinioDependencies _dependencies;
+
         #endregion Private Members
 
         #region Constructors
@@ -94,6 +96,11 @@ namespace Intrinio.Net.Client
         static Configuration()
         {
             _globalConfiguration = new GlobalConfiguration();
+        }
+
+        public Configuration(IIntrinioDependencies dependencies)
+        {
+            _dependencies = dependencies;
         }
 
         /// <summary>
@@ -357,7 +364,8 @@ namespace Intrinio.Net.Client
         /// <returns></returns>
         public ApiClient CreateApiClient()
         {
-            return new ApiClient(BasePath) { Configuration = this };
+            // return new ApiClient(BasePath) { Configuration = this };
+            return new ApiClient(_dependencies);
         }
 
 

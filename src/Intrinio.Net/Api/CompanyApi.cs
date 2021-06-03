@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
 using M5.FinancialDataSanitizer;
 
 
@@ -772,68 +773,80 @@ namespace Intrinio.Net.Api
     /// </summary>
     public partial class CompanyApi : ICompanyApi
     {
-        private ExceptionFactory _exceptionFactory = (name, response) => null;
         private readonly AbbreviationParser _expandString;
+        public IIntrinioDependencies Dependencies { get; set; }
+        public Configuration Configuration { get; set; }
+        public ExceptionFactory ExceptionFactory { get; set; }
+        
+        public IHttpClientFactory Client { get; set; }
+
+        public CompanyApi(IIntrinioDependencies dependencies)
+        {
+            Dependencies = dependencies;
+            Configuration = new Configuration {BasePath = dependencies.Settings.ApiBaseUrl};
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
+            Client = dependencies.HttpClientFactory;
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public CompanyApi(string basePath)
-        {
-            Configuration = new Configuration { BasePath = basePath };
-
-            ExceptionFactory = Configuration.DefaultExceptionFactory;
-
-            _expandString = new AbbreviationParser();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CompanyApi"/> class
-        /// using Configuration object
-        /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
-        /// <returns></returns>
-        public CompanyApi(Configuration configuration = null)
-        {
-            if (configuration == null) // use the default one in Configuration
-                Configuration = Configuration.Default;
-            else
-                Configuration = configuration;
-
-            ExceptionFactory = Configuration.DefaultExceptionFactory;
-        }
-
-        /// <summary>
-        /// Gets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        // public string GetBasePath()
+        // public CompanyApi(string basePath)
         // {
-        //     // return Configuration.ApiClient.RestClient.BaseUrl.ToString();
+        //     Configuration = new Configuration { BasePath = basePath };
+        //
+        //     ExceptionFactory = Configuration.DefaultExceptionFactory;
+        //
+        //     _expandString = new AbbreviationParser();
         // }
-
-        /// <summary>
-        /// Gets or sets the configuration object
-        /// </summary>
-        /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
-
-        /// <summary>
-        /// Provides a factory method hook for the creation of exceptions.
-        /// </summary>
-        public ExceptionFactory ExceptionFactory
-        {
-            get
-            {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
-                {
-                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
-                }
-                return _exceptionFactory;
-            }
-            set { _exceptionFactory = value; }
-        }
+        //
+        // /// <summary>
+        // /// Initializes a new instance of the <see cref="CompanyApi"/> class
+        // /// using Configuration object
+        // /// </summary>
+        // /// <param name="configuration">An instance of Configuration</param>
+        // /// <returns></returns>
+        // public CompanyApi(Configuration configuration = null)
+        // {
+        //     if (configuration == null) // use the default one in Configuration
+        //         Configuration = Configuration.Default;
+        //     else
+        //         Configuration = configuration;
+        //
+        //     ExceptionFactory = Configuration.DefaultExceptionFactory;
+        // }
+        //
+        // /// <summary>
+        // /// Gets the base path of the API client.
+        // /// </summary>
+        // /// <value>The base path</value>
+        // // public string GetBasePath()
+        // // {
+        // //     // return Configuration.ApiClient.RestClient.BaseUrl.ToString();
+        // // }
+        //
+        // /// <summary>
+        // /// Gets or sets the configuration object
+        // /// </summary>
+        // /// <value>An instance of the Configuration</value>
+        // public Configuration Configuration {get; set;}
+        //
+        // /// <summary>
+        // /// Provides a factory method hook for the creation of exceptions.
+        // /// </summary>
+        // public ExceptionFactory ExceptionFactory
+        // {
+        //     get
+        //     {
+        //         if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
+        //         {
+        //             throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
+        //         }
+        //         return _exceptionFactory;
+        //     }
+        //     set { _exceptionFactory = value; }
+        // }
 
         /// <summary>
         /// All Companies Returns all Companies. When parameters are specified, returns matching companies.
@@ -3251,7 +3264,7 @@ namespace Intrinio.Net.Api
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await Clie (localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -3278,5 +3291,7 @@ namespace Intrinio.Net.Api
             return response;
         }
 
+        
     }
 }
+,

@@ -18,6 +18,7 @@ namespace Intrinio.Net.Client
     /// </summary>
     public partial class ApiClient
     {
+        private readonly IIntrinioDependencies _dependencies;
         private readonly JsonSerializerSettings serializerSettings = new JsonSerializerSettings()
         {
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
@@ -42,6 +43,11 @@ namespace Intrinio.Net.Client
         /// Initializes a new instance of the <see cref="ApiClient" /> class
         /// with default configuration.
         /// </summary>
+        ///
+        public ApiClient(IIntrinioDependencies Dependencies)
+        {
+            _dependencies = Dependencies;
+        }
         public ApiClient()
         {
             Configuration = Client.Configuration.Default;
@@ -65,14 +71,14 @@ namespace Intrinio.Net.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(string basePath = "https://api-v2.intrinio.com")
-        {
-           if (string.IsNullOrEmpty(basePath))
-                throw new ArgumentException("basePath cannot be empty");
-
-            // RestClient = new RestClient(basePath);
-            Configuration = Client.Configuration.Default;
-        }
+        // public ApiClient(string basePath = "https://api-v2.intrinio.com")
+        // {
+        //    if (string.IsNullOrEmpty(basePath))
+        //         throw new ArgumentException("basePath cannot be empty");
+        //
+        //     // RestClient = new RestClient(basePath);
+        //     Configuration = Client.Configuration.Default;
+        // }
 
         /// <summary>
         /// Gets or sets an instance of the IReadableConfiguration.
