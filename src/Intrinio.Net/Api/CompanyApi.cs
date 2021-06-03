@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using M5.FinancialDataSanitizer;
+
 
 namespace Intrinio.Net.Api
 {
@@ -771,6 +773,7 @@ namespace Intrinio.Net.Api
     public partial class CompanyApi : ICompanyApi
     {
         private ExceptionFactory _exceptionFactory = (name, response) => null;
+        private readonly AbbreviationParser _expandString;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyApi"/> class.
@@ -781,6 +784,8 @@ namespace Intrinio.Net.Api
             Configuration = new Configuration { BasePath = basePath };
 
             ExceptionFactory = Configuration.DefaultExceptionFactory;
+
+            _expandString = new AbbreviationParser();
         }
 
         /// <summary>
@@ -848,6 +853,15 @@ namespace Intrinio.Net.Api
         public ApiResponseCompanies GetAllCompanies (DateTime? latestFilingDate = null, string sic = null, string template = null, string sector = null, string industryCategory = null, string industryGroup = null, bool? hasFundamentals = null, bool? hasStockPrices = null, int? pageSize = null, string nextPage = null, bool expandAbbreviations = false)
         {
              ApiResponse<ApiResponseCompanies> localVarResponse = GetAllCompaniesWithHttpInfo(latestFilingDate, sic, template, sector, industryCategory, industryGroup, hasFundamentals, hasStockPrices, pageSize, nextPage);
+
+             if (!expandAbbreviations) return localVarResponse.Data;
+             
+             foreach (var company in localVarResponse.Data.Companies)
+             {
+                 company.Name =
+                     _expandString.ExpandAllAbbreviationsFromString(company.Name);
+             }
+
              return localVarResponse.Data;
         }
 
@@ -922,10 +936,20 @@ namespace Intrinio.Net.Api
                 Exception exception = ExceptionFactory("GetAllCompanies", localVarResponse);
                 if (exception != null) throw exception;
             }
-
-            return new ApiResponse<ApiResponseCompanies>(localVarStatusCode,
+            
+            var response = new ApiResponse<ApiResponseCompanies>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ApiResponseCompanies) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiResponseCompanies)));
+
+            if (!expandAbbreviations) return response;
+            
+            foreach (var company in response.Data.Companies)
+            {
+                company.Name =
+                    _expandString.ExpandAllAbbreviationsFromString(company.Name);
+            }
+
+            return response;
         }
 
         /// <summary>
@@ -946,6 +970,14 @@ namespace Intrinio.Net.Api
         public async System.Threading.Tasks.Task<ApiResponseCompanies> GetAllCompaniesAsync (DateTime? latestFilingDate = null, string sic = null, string template = null, string sector = null, string industryCategory = null, string industryGroup = null, bool? hasFundamentals = null, bool? hasStockPrices = null, int? pageSize = null, string nextPage = null, bool expandAbbreviations = false)
         {
              ApiResponse<ApiResponseCompanies> localVarResponse = await GetAllCompaniesAsyncWithHttpInfo(latestFilingDate, sic, template, sector, industryCategory, industryGroup, hasFundamentals, hasStockPrices, pageSize, nextPage);
+             if (!expandAbbreviations) return localVarResponse.Data;
+             
+             foreach (var company in localVarResponse.Data.Companies)
+             {
+                 company.Name =
+                     _expandString.ExpandAllAbbreviationsFromString(company.Name);
+             }
+
              return localVarResponse.Data;
 
         }
@@ -1020,9 +1052,19 @@ namespace Intrinio.Net.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ApiResponseCompanies>(localVarStatusCode,
+            var response = new ApiResponse<ApiResponseCompanies>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ApiResponseCompanies) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiResponseCompanies)));
+
+            if (!expandAbbreviations) return response;
+            
+            foreach (var company in response.Data.Companies)
+            {
+                company.Name =
+                    _expandString.ExpandAllAbbreviationsFromString(company.Name);
+            }
+
+            return response;
         }
 
         /// <summary>
@@ -1241,9 +1283,15 @@ namespace Intrinio.Net.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Company>(localVarStatusCode,
+            var response = new ApiResponse<Company>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Company) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Company)));
+            
+            if (!expandAbbreviations) return response;
+
+            response.Data.Name = _expandString.ExpandAllAbbreviationsFromString(response.Data.Name);
+
+            return response;
         }
 
         /// <summary>
@@ -1255,6 +1303,11 @@ namespace Intrinio.Net.Api
         public async System.Threading.Tasks.Task<Company> GetCompanyAsync (string identifier, bool expandAbbreviations = false)
         {
              ApiResponse<Company> localVarResponse = await GetCompanyAsyncWithHttpInfo(identifier);
+             
+             if (!expandAbbreviations) return localVarResponse.Data;
+
+             localVarResponse.Data.Name = _expandString.ExpandAllAbbreviationsFromString(localVarResponse.Data.Name);
+
              return localVarResponse.Data;
 
         }
@@ -1314,9 +1367,15 @@ namespace Intrinio.Net.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Company>(localVarStatusCode,
+            var response = new ApiResponse<Company>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Company) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Company)));
+            
+            if (!expandAbbreviations) return response;
+
+            response.Data.Name = _expandString.ExpandAllAbbreviationsFromString(response.Data.Name);
+
+            return response;
         }
 
         /// <summary>
@@ -2038,6 +2097,11 @@ namespace Intrinio.Net.Api
         public ApiResponseCompanyHistoricalData GetCompanyHistoricalData (string identifier, string tag, string frequency = null, string type = null, DateTime? startDate = null, DateTime? endDate = null, string sortOrder = null, int? pageSize = null, string nextPage = null, bool expandAbbreviations = false)
         {
              ApiResponse<ApiResponseCompanyHistoricalData> localVarResponse = GetCompanyHistoricalDataWithHttpInfo(identifier, tag, frequency, type, startDate, endDate, sortOrder, pageSize, nextPage);
+             
+             if (!expandAbbreviations) return localVarResponse.Data;
+
+             localVarResponse.Data.Company.Name = _expandString.ExpandAllAbbreviationsFromString(localVarResponse.Data.Company.Name);
+
              return localVarResponse.Data;
         }
 
@@ -2117,9 +2181,15 @@ namespace Intrinio.Net.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ApiResponseCompanyHistoricalData>(localVarStatusCode,
+            var response = new ApiResponse<ApiResponseCompanyHistoricalData>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ApiResponseCompanyHistoricalData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiResponseCompanyHistoricalData)));
+            
+            if (!expandAbbreviations) return response;
+
+            response.Data.Company.Name = _expandString.ExpandAllAbbreviationsFromString(response.Data.Company.Name);
+
+            return response;
         }
 
         /// <summary>
@@ -2139,6 +2209,11 @@ namespace Intrinio.Net.Api
         public async System.Threading.Tasks.Task<ApiResponseCompanyHistoricalData> GetCompanyHistoricalDataAsync (string identifier, string tag, string frequency = null, string type = null, DateTime? startDate = null, DateTime? endDate = null, string sortOrder = null, int? pageSize = null, string nextPage = null, bool expandAbbreviations = false)
         {
              ApiResponse<ApiResponseCompanyHistoricalData> localVarResponse = await GetCompanyHistoricalDataAsyncWithHttpInfo(identifier, tag, frequency, type, startDate, endDate, sortOrder, pageSize, nextPage);
+             
+             if (!expandAbbreviations) return localVarResponse.Data;
+
+             localVarResponse.Data.Company.Name = _expandString.ExpandAllAbbreviationsFromString(localVarResponse.Data.Company.Name);
+
              return localVarResponse.Data;
 
         }
@@ -2217,9 +2292,15 @@ namespace Intrinio.Net.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ApiResponseCompanyHistoricalData>(localVarStatusCode,
+            var response = new ApiResponse<ApiResponseCompanyHistoricalData>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ApiResponseCompanyHistoricalData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiResponseCompanyHistoricalData)));
+            
+            if (!expandAbbreviations) return response;
+
+            response.Data.Company.Name = _expandString.ExpandAllAbbreviationsFromString(response.Data.Company.Name);
+
+            return response;
         }
 
         /// <summary>
@@ -2238,6 +2319,15 @@ namespace Intrinio.Net.Api
         public ApiResponseInitialPublicOfferings GetCompanyIpos (string ticker = null, string status = null, DateTime? startDate = null, DateTime? endDate = null, int? offerAmountGreaterThan = null, int? offerAmountLessThan = null, int? pageSize = null, string nextPage = null, bool expandAbbreviations = false)
         {
              ApiResponse<ApiResponseInitialPublicOfferings> localVarResponse = GetCompanyIposWithHttpInfo(ticker, status, startDate, endDate, offerAmountGreaterThan, offerAmountLessThan, pageSize, nextPage);
+
+             if (!expandAbbreviations) return localVarResponse.Data;
+             
+             foreach (var ipo in localVarResponse.Data.InitialPublicOfferings)
+             {
+                 ipo.Company.Name =
+                     _expandString.ExpandAllAbbreviationsFromString(ipo.Company.Name);
+             }
+
              return localVarResponse.Data;
         }
 
@@ -2309,9 +2399,19 @@ namespace Intrinio.Net.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ApiResponseInitialPublicOfferings>(localVarStatusCode,
+            var response = new ApiResponse<ApiResponseInitialPublicOfferings>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ApiResponseInitialPublicOfferings) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiResponseInitialPublicOfferings)));
+
+            if (!expandAbbreviations) return response;
+            
+            foreach (var ipo in response.Data.InitialPublicOfferings)
+            {
+                ipo.Company.Name =
+                    _expandString.ExpandAllAbbreviationsFromString(ipo.Company.Name);
+            }
+
+            return response;
         }
 
         /// <summary>
@@ -2330,6 +2430,15 @@ namespace Intrinio.Net.Api
         public async System.Threading.Tasks.Task<ApiResponseInitialPublicOfferings> GetCompanyIposAsync (string ticker = null, string status = null, DateTime? startDate = null, DateTime? endDate = null, int? offerAmountGreaterThan = null, int? offerAmountLessThan = null, int? pageSize = null, string nextPage = null, bool expandAbbreviations = false)
         {
              ApiResponse<ApiResponseInitialPublicOfferings> localVarResponse = await GetCompanyIposAsyncWithHttpInfo(ticker, status, startDate, endDate, offerAmountGreaterThan, offerAmountLessThan, pageSize, nextPage);
+             
+             if (!expandAbbreviations) return localVarResponse.Data;
+             
+             foreach (var ipo in localVarResponse.Data.InitialPublicOfferings)
+             {
+                 ipo.Company.Name =
+                     _expandString.ExpandAllAbbreviationsFromString(ipo.Company.Name);
+             }
+
              return localVarResponse.Data;
 
         }
@@ -2400,9 +2509,19 @@ namespace Intrinio.Net.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ApiResponseInitialPublicOfferings>(localVarStatusCode,
+            var response = new ApiResponse<ApiResponseInitialPublicOfferings>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ApiResponseInitialPublicOfferings) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiResponseInitialPublicOfferings)));
+            
+            if (!expandAbbreviations) return response;
+            
+            foreach (var ipo in response.Data.InitialPublicOfferings)
+            {
+                ipo.Company.Name =
+                    _expandString.ExpandAllAbbreviationsFromString(ipo.Company.Name);
+            }
+
+            return response;
         }
 
         /// <summary>
@@ -2574,6 +2693,14 @@ namespace Intrinio.Net.Api
         public ApiResponseCompanySecurities GetCompanySecurities (string identifier, string nextPage = null, bool expandAbbreviations = false)
         {
              ApiResponse<ApiResponseCompanySecurities> localVarResponse = GetCompanySecuritiesWithHttpInfo(identifier, nextPage);
+
+             if (!expandAbbreviations) return localVarResponse.Data;
+
+             foreach (var security in localVarResponse.Data.Securities)
+             {
+                 security.Name = _expandString.ExpandAbbreviation(security.Name);
+             }
+
              return localVarResponse.Data;
         }
 
@@ -2636,9 +2763,18 @@ namespace Intrinio.Net.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ApiResponseCompanySecurities>(localVarStatusCode,
+            var response = new ApiResponse<ApiResponseCompanySecurities>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ApiResponseCompanySecurities) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiResponseCompanySecurities)));
+            
+            if (!expandAbbreviations) return response;
+
+            foreach (var security in response.Data.Securities)
+            {
+                security.Name = _expandString.ExpandAbbreviation(security.Name);
+            }
+
+            return response;
         }
 
         /// <summary>
@@ -2651,6 +2787,13 @@ namespace Intrinio.Net.Api
         public async System.Threading.Tasks.Task<ApiResponseCompanySecurities> GetCompanySecuritiesAsync (string identifier, string nextPage = null, bool expandAbbreviations = false)
         {
              ApiResponse<ApiResponseCompanySecurities> localVarResponse = await GetCompanySecuritiesAsyncWithHttpInfo(identifier, nextPage);
+             if (!expandAbbreviations) return localVarResponse.Data;
+
+             foreach (var security in localVarResponse.Data.Securities)
+             {
+                 security.Name = _expandString.ExpandAbbreviation(security.Name);
+             }
+
              return localVarResponse.Data;
 
         }
@@ -2712,9 +2855,24 @@ namespace Intrinio.Net.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ApiResponseCompanySecurities>(localVarStatusCode,
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetCompanySecurities", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            var response = new ApiResponse<ApiResponseCompanySecurities>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ApiResponseCompanySecurities) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiResponseCompanySecurities)));
+            
+            if (!expandAbbreviations) return response;
+
+            foreach (var security in response.Data.Securities)
+            {
+                security.Name = _expandString.ExpandAbbreviation(security.Name);
+            }
+
+            return response;
         }
 
         /// <summary>
@@ -2729,6 +2887,12 @@ namespace Intrinio.Net.Api
         public Fundamental LookupCompanyFundamental (string identifier, string statementCode, string fiscalPeriod, int? fiscalYear, bool expandAbbreviations = false)
         {
              ApiResponse<Fundamental> localVarResponse = LookupCompanyFundamentalWithHttpInfo(identifier, statementCode, fiscalPeriod, fiscalYear);
+
+             if (!expandAbbreviations) return localVarResponse.Data;
+
+             localVarResponse.Data.Company.Name =
+                 _expandString.ExpandAllAbbreviationsFromString(localVarResponse.Data.Company.Name);
+
              return localVarResponse.Data;
         }
 
@@ -2804,9 +2968,16 @@ namespace Intrinio.Net.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Fundamental>(localVarStatusCode,
+            var response = new ApiResponse<Fundamental>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Fundamental) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Fundamental)));
+            
+            if (!expandAbbreviations) return response;
+
+            response.Data.Company.Name =
+                _expandString.ExpandAllAbbreviationsFromString(response.Data.Company.Name);
+
+            return response;
         }
 
         /// <summary>
@@ -2821,6 +2992,11 @@ namespace Intrinio.Net.Api
         public async System.Threading.Tasks.Task<Fundamental> LookupCompanyFundamentalAsync (string identifier, string statementCode, string fiscalPeriod, int? fiscalYear, bool expandAbbreviations = false)
         {
              ApiResponse<Fundamental> localVarResponse = await LookupCompanyFundamentalAsyncWithHttpInfo(identifier, statementCode, fiscalPeriod, fiscalYear);
+             if (!expandAbbreviations) return localVarResponse.Data;
+
+             localVarResponse.Data.Company.Name =
+                 _expandString.ExpandAllAbbreviationsFromString(localVarResponse.Data.Company.Name);
+
              return localVarResponse.Data;
 
         }
@@ -2895,9 +3071,16 @@ namespace Intrinio.Net.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Fundamental>(localVarStatusCode,
+            var response = new ApiResponse<Fundamental>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Fundamental) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Fundamental)));
+            
+            if (!expandAbbreviations) return response;
+
+            response.Data.Company.Name =
+                _expandString.ExpandAllAbbreviationsFromString(response.Data.Company.Name);
+
+            return response;
         }
 
         /// <summary>
@@ -2911,6 +3094,14 @@ namespace Intrinio.Net.Api
         public ApiResponseCompaniesSearch SearchCompanies (string query, bool? active = null, int? pageSize = null, bool expandAbbreviations = false)
         {
              ApiResponse<ApiResponseCompaniesSearch> localVarResponse = SearchCompaniesWithHttpInfo(query, active, pageSize);
+             if (!expandAbbreviations) return localVarResponse.Data;
+
+             foreach (var company in localVarResponse.Data.Companies)
+             {
+                 company.Name =
+                     _expandString.ExpandAllAbbreviationsFromString(company.Name);
+             }
+
              return localVarResponse.Data;
         }
 
@@ -2975,9 +3166,19 @@ namespace Intrinio.Net.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ApiResponseCompaniesSearch>(localVarStatusCode,
+            var response = new ApiResponse<ApiResponseCompaniesSearch>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ApiResponseCompaniesSearch) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiResponseCompaniesSearch)));
+            
+            if (!expandAbbreviations) return response;
+
+            foreach (var company in response.Data.Companies)
+            {
+                company.Name =
+                    _expandString.ExpandAllAbbreviationsFromString(company.Name);
+            }
+
+            return response;
         }
 
         /// <summary>
@@ -2991,6 +3192,14 @@ namespace Intrinio.Net.Api
         public async System.Threading.Tasks.Task<ApiResponseCompaniesSearch> SearchCompaniesAsync (string query, bool? active = null, int? pageSize = null, bool expandAbbreviations = false)
         {
              ApiResponse<ApiResponseCompaniesSearch> localVarResponse = await SearchCompaniesAsyncWithHttpInfo(query, active, pageSize);
+             if (!expandAbbreviations) return localVarResponse.Data;
+
+             foreach (var company in localVarResponse.Data.Companies)
+             {
+                 company.Name =
+                     _expandString.ExpandAllAbbreviationsFromString(company.Name);
+             }
+
              return localVarResponse.Data;
 
         }
@@ -3054,9 +3263,19 @@ namespace Intrinio.Net.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ApiResponseCompaniesSearch>(localVarStatusCode,
+            var response = new ApiResponse<ApiResponseCompaniesSearch>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (ApiResponseCompaniesSearch) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ApiResponseCompaniesSearch)));
+            
+            if (!expandAbbreviations) return response;
+
+            foreach (var company in response.Data.Companies)
+            {
+                company.Name =
+                    _expandString.ExpandAllAbbreviationsFromString(company.Name);
+            }
+
+            return response;
         }
 
     }

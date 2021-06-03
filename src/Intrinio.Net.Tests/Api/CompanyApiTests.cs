@@ -58,19 +58,12 @@ namespace Intrinio.Net.Tests
         [Test]
         public void GetAllCompaniesTest()
         {
-            // TODO uncomment below to test the method and replace null with proper value
-            //DateTime? latestFilingDate = null;
-            //string sic = null;
-            //string template = null;
-            //string sector = null;
-            //string industryCategory = null;
-            //string industryGroup = null;
-            //bool? hasFundamentals = null;
-            //bool? hasStockPrices = null;
-            //int? pageSize = null;
-            //string nextPage = null;
-            //var response = instance.GetAllCompanies(latestFilingDate, sic, template, sector, industryCategory, industryGroup, hasFundamentals, hasStockPrices, pageSize, nextPage);
-            //Assert.IsInstanceOf<ApiResponseCompanies> (response, "response is ApiResponseCompanies");
+            var response = instance.GetAllCompanies();
+            
+            Assert.IsNull(response);
+            Assert.IsNotEmpty(response.Companies);
+            
+            
         }
         
         /// <summary>
