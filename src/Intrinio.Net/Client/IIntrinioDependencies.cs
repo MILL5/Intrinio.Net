@@ -8,8 +8,8 @@ namespace Intrinio.Net.Client
         IntrinioSettings Settings { get; set; }
         IHttpClientFactory HttpClientFactory { get; set; }
         ApiClient ApiClient { get; set; }
-        // ExceptionFactory ExceptionFactory { get; set; }
-        // Configuration Configuration { get; set; }
+        ExceptionFactory ExceptionFactory { get; set; }
+        Configuration Configuration { get; set; }
     }
 
     internal class IntrinioDependencies : IIntrinioDependencies
@@ -17,8 +17,8 @@ namespace Intrinio.Net.Client
         public IntrinioSettings Settings { get; set; }
         public IHttpClientFactory HttpClientFactory { get; set; }
         public ApiClient ApiClient { get; set; }
-        // public ExceptionFactory ExceptionFactory { get; set; }
-        // public Configuration Configuration { get; set; }
+        public ExceptionFactory ExceptionFactory { get; set; }
+        public Configuration Configuration { get; set; }
 
 
         public IntrinioDependencies(IntrinioSettings settings, IHttpClientFactory clientFactory)
@@ -28,8 +28,8 @@ namespace Intrinio.Net.Client
 
             Settings = settings;
             HttpClientFactory = clientFactory;
-            // Configuration = new Configuration {BasePath = settings.ApiBaseUrl};
-            // ExceptionFactory = Configuration.DefaultExceptionFactory;
+            Configuration = new Configuration {BasePath = settings.ApiBaseUrl};
+            ExceptionFactory = Configuration.DefaultExceptionFactory;
         }
     }
 }
