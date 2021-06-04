@@ -1,6 +1,7 @@
 using System;
 using System.Net;
 using System.Net.Http;
+using Intrinio.Net.Api;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Pineapple.Networking;
@@ -26,7 +27,7 @@ namespace Intrinio.Net.Client
 
             services.AddSingleton(settings);
             services.AddTransient<IIntrinioDependencies, IntrinioDependencies>();
-            services.AddTransient<ApiClient>();
+            services.AddTransient<IIntrinioClient, IntrinioClient>();
 
             AddHttpClient(services, settings);
         }

@@ -1,24 +1,27 @@
 using System.Net.Http;
+using M5.FinancialDataSanitizer;
 using static Pineapple.Common.Preconditions;
 
 namespace Intrinio.Net.Client
 {
     public interface IIntrinioDependencies
     {
-        IntrinioSettings Settings { get; set; }
-        IHttpClientFactory HttpClientFactory { get; set; }
-        ApiClient ApiClient { get; set; }
-        ExceptionFactory ExceptionFactory { get; set; }
-        Configuration Configuration { get; set; }
+        IntrinioSettings Settings { get; }
+        IHttpClientFactory HttpClientFactory { get; }
+        AbbreviationParser AbbreviationParser { get; }
+
+    }
+
+    internal class SwaggerDateConverter
+    {
+        
     }
 
     internal class IntrinioDependencies : IIntrinioDependencies
     {
-        public IntrinioSettings Settings { get; set; }
-        public IHttpClientFactory HttpClientFactory { get; set; }
-        public ApiClient ApiClient { get; set; }
-        public ExceptionFactory ExceptionFactory { get; set; }
-        public Configuration Configuration { get; set; }
+        public IntrinioSettings Settings { get; }
+        public IHttpClientFactory HttpClientFactory { get; }
+        public AbbreviationParser AbbreviationParser { get; }
 
 
         public IntrinioDependencies(IntrinioSettings settings, IHttpClientFactory clientFactory)
@@ -28,8 +31,7 @@ namespace Intrinio.Net.Client
 
             Settings = settings;
             HttpClientFactory = clientFactory;
-            Configuration = new Configuration {BasePath = settings.ApiBaseUrl};
-            ExceptionFactory = Configuration.DefaultExceptionFactory;
+            AbbreviationParser = new AbbreviationParser();
         }
     }
 }
