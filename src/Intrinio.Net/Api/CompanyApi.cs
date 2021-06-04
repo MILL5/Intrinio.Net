@@ -3008,7 +3008,7 @@ namespace Intrinio.Net.Api
         /// <param name="identifier">A Company identifier (Ticker, CIK, LEI, Intrinio ID)</param>
         /// <param name="statementCode">The statement code</param>
         /// <param name="fiscalPeriod">The fiscal period</param>
-        /// <param name="fiscalYear">The fiscal year</param>
+        /// <param name="fiscalYear">The fiscal year</param>                                     
         /// <returns>Task of ApiResponse (Fundamental)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Fundamental>> LookupCompanyFundamentalAsyncWithHttpInfo (string identifier, string statementCode, string fiscalPeriod, int? fiscalYear, bool expandAbbreviations = false)
         {
