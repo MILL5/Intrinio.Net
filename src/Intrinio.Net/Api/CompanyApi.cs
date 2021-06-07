@@ -14,10 +14,9 @@ using Newtonsoft.Json;
 
 namespace Intrinio.Net.Api
 {
-     public partial class IntrinioClient : IIntrinioClient
+     public partial class IntrinioClient
     {
-         
-        public async Task<IEnumerable<Company>> GetAllCompaniesAsync (
+         public async Task<IEnumerable<CompanySummary>> GetAllCompaniesAsync (
              DateTime? latestFilingDate = null, 
              string sic = null, 
              string template = null, 
@@ -27,7 +26,7 @@ namespace Intrinio.Net.Api
              bool? hasFundamentals = null, 
              bool? hasStockPrices = null, 
              int? pageSize = null, 
-             string nextPage = null, 
+             string next_page = null, 
              bool expandAbbreviations = false)
         {
              var queryParams = new Dictionary<string, string>
@@ -41,22 +40,56 @@ namespace Intrinio.Net.Api
                   { nameof(hasFundamentals), hasFundamentals?.ToString() },
                   { nameof(hasStockPrices), hasStockPrices?.ToString() },
                   { nameof(pageSize), pageSize.ToString() },
-                  { nameof(nextPage), nextPage }
+                  { nameof(next_page), next_page }
              };
-             
-             var response = await Get($"{allCompaniesBaseUrl}{GetQueryParameterString(queryParams)}");
-             
-             var companies = new List<Company> {JsonConvert.DeserializeObject<Company>(response)};
 
-             if (!expandAbbreviations) return companies;
-
-             foreach (var company in companies)
+             var result = new List<CompanySummary>();
+             
+             var jsonResponse = await Get($"{allCompaniesBaseUrl}{GetQueryParameterString(queryParams)}");
+             var apiResponse = JsonConvert.DeserializeObject<ApiResponseCompanies>(jsonResponse);
+             
+             if (apiResponse == null)
              {
-                  company.Name = _parser.ExpandAllAbbreviationsFromString(company.Name);
+                  throw new Exception("API Response is Null");
+             }
+             
+             var companies = apiResponse.Companies;
+
+             if (expandAbbreviations)
+             {
+                  companies = Mapper.Map<List<CompanySummary>>(companies);
              }
 
-             return companies;
+             result.AddRange(companies);
+
+             while (apiResponse.NextPage != null)
+             {
+                  queryParams[nameof(next_page)] = apiResponse.NextPage;
+                  jsonResponse = await Get($"{allCompaniesBaseUrl}{GetQueryParameterString(queryParams)}");
+                  apiResponse = JsonConvert.DeserializeObject<ApiResponseCompanies>(jsonResponse);
+                  if (apiResponse == null)
+                  {
+                       throw new Exception("API Response is Null");
+                  }
+                  companies = apiResponse.Companies;
+                  result.AddRange(companies);
+             }
+             
+             return result;
         }
+         
+         public async Task<Company> GetCompanyAsync (string identifier, bool expandAbbreviations = false)
+         {
+              var jsonResponse = await Get(String.Format(lookupCompanyBaseUrl, identifier));
+              var company = JsonConvert.DeserializeObject<Company>(jsonResponse);
+             
+              if (!expandAbbreviations) return company;
+
+              company = Mapper.Map<Company>(company);
+
+              return company;
+
+         }
 
         // public async System.Threading.Tasks.Task<ApiResponseNews> GetAllCompanyNewsAsync (int? pageSize = null, string nextPage = null)
         // {
@@ -65,17 +98,7 @@ namespace Intrinio.Net.Api
         //
         // }
         //
-        // public async System.Threading.Tasks.Task<Company> GetCompanyAsync (string identifier, bool expandAbbreviations = false)
-        // {
-        //      ApiResponse<Company> localVarResponse = await GetCompanyAsyncWithHttpInfo(identifier);
-        //      
-        //      if (!expandAbbreviations) return localVarResponse.Data;
-        //
-        //      localVarResponse.Data.Name = _parser.ExpandAllAbbreviationsFromString(localVarResponse.Data.Name);
-        //
-        //      return localVarResponse.Data;
-        //
-        // }
+        
         //
         // public async System.Threading.Tasks.Task<decimal?> GetCompanyDataPointNumberAsync (string identifier, string tag)
         // {

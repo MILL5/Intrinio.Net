@@ -23,6 +23,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="JsonSubTypes" Version="1.8.0" />
     <PackageReference Include="M5.FinancialDataSanitizer" Version="1.0.1-alpha" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />

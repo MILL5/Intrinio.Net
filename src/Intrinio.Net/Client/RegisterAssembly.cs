@@ -29,6 +29,8 @@ namespace Intrinio.Net.Client
             services.AddTransient<IIntrinioDependencies, IntrinioDependencies>();
             services.AddTransient<IIntrinioClient, IntrinioClient>();
 
+            services.AddAutoMapper(typeof(RegisterAssembly));
+
             AddHttpClient(services, settings);
         }
         private static void AddHttpClient(IServiceCollection services, IntrinioSettings settings)

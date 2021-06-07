@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Intrinio.Net.Client;
 using M5.FinancialDataSanitizer;
+using Pineapple.Threading;
 
 namespace Intrinio.Net.Api
 {
@@ -13,21 +15,44 @@ namespace Intrinio.Net.Api
         public IIntrinioDependencies Dependencies { get; }
         public HttpClient Client { get; }
         
+        public IMapper Mapper { get; }
+        
         private readonly AbbreviationParser _parser;
         private readonly string allCompaniesBaseUrl;
         private readonly string searchCompaniesBaseUrl;
         private readonly string allSecuritiesByCompanyBaseUrl;
         private readonly string lookupCompanyBaseUrl;
-        
+        private readonly string stockPricesBySecurityBaseUrl;
+        private readonly string exchangesBaseUrl;
+        private readonly string stockPricesByExchangeBaseUrl;
+        private readonly string securitiesByExchangeBaseUrl;
+
+        private readonly string securitiesBaseUrl;
+
         public IntrinioClient(IIntrinioDependencies dependencies)
         {
             Dependencies = dependencies;
             Client = dependencies.HttpClientFactory.CreateClient(dependencies.Settings.HttpClientName);
             _parser = Dependencies.AbbreviationParser;
+            Mapper = dependencies.Mapper;
+            
+            // Company Routes
             allCompaniesBaseUrl =  $"{Dependencies.Settings.ApiBaseUrl}/companies";
             searchCompaniesBaseUrl = $"{allCompaniesBaseUrl}/search";
-            allSecuritiesByCompanyBaseUrl = $"{allCompaniesBaseUrl}/{0}/securities";
-            lookupCompanyBaseUrl = $"{allCompaniesBaseUrl}/{0}";
+            allSecuritiesByCompanyBaseUrl = allCompaniesBaseUrl + "/{0}/securities";
+            lookupCompanyBaseUrl = allCompaniesBaseUrl + "/{0}";
+            
+            // Exchanges Routes
+            exchangesBaseUrl = $"{Dependencies.Settings.ApiBaseUrl}/stock_exchanges";
+            
+            // Securities Routes
+            securitiesBaseUrl = $"{Dependencies.Settings.ApiBaseUrl}/securities";
+            securitiesByExchangeBaseUrl = exchangesBaseUrl + "/{0}/securities";
+
+            
+            // Stock Price Routes
+            stockPricesBySecurityBaseUrl = securitiesBaseUrl + "/{0}/prices";
+            stockPricesByExchangeBaseUrl = exchangesBaseUrl + "/{0}/prices";
         }
 
         public async Task<string> Get(string requestUrl)
@@ -42,7 +67,7 @@ namespace Intrinio.Net.Api
             {
                 throw new HttpRequestException(response.ReasonPhrase);
             }
-            
+        
             return await response.Content.ReadAsStringAsync();
         }
 
@@ -52,7 +77,7 @@ namespace Intrinio.Net.Api
 
             foreach(var qp in queryParams)
             {
-                if(qp.Value != null)
+                if(!string.IsNullOrEmpty(qp.Value))
                 {
                     sb.Append($"&{ qp.Key }={ qp.Value }");
                 }
