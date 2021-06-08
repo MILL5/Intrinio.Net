@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -13,6 +14,7 @@ namespace Intrinio.Net.Tests.Api
     {
         private const string APPLE_TICKER = "AAPL";
         private const string USCOMP = "USCOMP";
+        private const string XNAS = "XNAS";
 
         [TestMethod]
         public async Task GetAllSecuritiesSucceedsAsync()
@@ -38,6 +40,37 @@ namespace Intrinio.Net.Tests.Api
         public async Task LookupSecuritySuceedsAsync()
         {
             var securities = await IntrinioTestClient.LookupSecurityAsync(APPLE_TICKER);
+            
+            Assert.IsNotNull(securities);
+            Assert.IsTrue(securities.Any());
+        }
+
+        [DataTestMethod]
+        [DataRow(true, null)]
+        [DataRow(null, true)]
+        public async Task GetAllSecuritesWithActiveStatusParamsSucceedsAsync(bool active, bool delisted)
+        {
+            var securities = await IntrinioTestClient.GetAllSecuritiesAsync(active, delisted);
+            
+            Assert.IsNotNull(securities);
+            Assert.IsTrue(securities.Any());
+        }
+        
+        [DataTestMethod]
+        [DataRow(APPLE_TICKER)]
+        public async Task GetAllSecuritesWithTickerParamsSucceedsAsync(string ticker)
+        {
+            var securities = await IntrinioTestClient.GetAllSecuritiesAsync(ticker: ticker);
+            
+            Assert.IsNotNull(securities);
+            Assert.IsTrue(securities.Any());
+        }
+        
+        [DataTestMethod]
+        [DataRow(XNAS)]
+        public async Task GetAllSecuritesWithMicParamsSucceedsAsync(string mic)
+        {
+            var securities = await IntrinioTestClient.GetAllSecuritiesAsync(exchange_mic: mic);
             
             Assert.IsNotNull(securities);
             Assert.IsTrue(securities.Any());

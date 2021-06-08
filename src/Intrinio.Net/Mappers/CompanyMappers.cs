@@ -1,5 +1,4 @@
 using AutoMapper;
-using Intrinio.Net.Client;
 using Intrinio.Net.Model;
 using M5.FinancialDataSanitizer;
 

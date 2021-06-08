@@ -1,7 +1,6 @@
 using Intrinio.Net.Model;
 using System;
 using System.Collections.Generic;
-using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 

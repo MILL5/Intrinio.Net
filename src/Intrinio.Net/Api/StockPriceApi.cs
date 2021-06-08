@@ -18,8 +18,8 @@ namespace Intrinio.Net.Api
         {
             var queryParams = new Dictionary<string, string>
             {
-                { nameof(frequency), frequency.ToString() },
-                { nameof(page_size), page_size.ToString() },
+                { nameof(frequency), frequency.ToString().ToLower() },
+                { nameof(page_size), page_size.ToString().ToLower() },
                 { nameof(start_date), start_date },
                 { nameof(end_date), end_date },
                 { nameof(next_page), next_page }
@@ -65,8 +65,8 @@ namespace Intrinio.Net.Api
         {
             var queryParams = new Dictionary<string, string>
             {
-                { nameof(frequency), frequency.ToString() },
-                { nameof(page_size), page_size.ToString() },
+                { nameof(frequency), frequency.ToString().ToLower() },
+                { nameof(page_size), page_size.ToString().ToLower() },
                 { nameof(date), date },
                 { nameof(next_page), next_page }
             };

@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Intrinio.Net.Client;
 using M5.FinancialDataSanitizer;
-using Pineapple.Threading;
 using Polly;
 
 namespace Intrinio.Net.Api
@@ -73,6 +74,10 @@ namespace Intrinio.Net.Api
                     var tryResponse = await Client.SendAsync(request);
                     if (!tryResponse.IsSuccessStatusCode)
                     {
+                        if (tryResponse.StatusCode == HttpStatusCode.TooManyRequests)
+                        {
+                            Thread.Sleep(60000);
+                        }
                         throw new HttpRequestException(tryResponse.ReasonPhrase);
                     }
 

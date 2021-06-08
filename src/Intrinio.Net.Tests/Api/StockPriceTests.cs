@@ -14,6 +14,8 @@ namespace Intrinio.Net.Tests.Api
     {
         private const string APPLE_TICKER = "AAPL";
         private const string USCOMP = "USCOMP";
+        private const string JAN_FIRST_01 = "2021-01-01";
+        private const string JAN_FIRST_00 = "2020-01-01";
 
         [DataTestMethod]
         [DataRow(APPLE_TICKER)]
@@ -30,6 +32,39 @@ namespace Intrinio.Net.Tests.Api
         public async Task GetStockPricesByExchangeSucceedsAsync(string identifier)
         {
             var result = await IntrinioTestClient.GetStockPricesByExchangeAsync(identifier);
+            
+            Assert.IsNotNull(result);
+            AssertAllPropertiesNotNull(result.First());
+        }
+        
+        [DataTestMethod]
+        [DataRow(JAN_FIRST_00, JAN_FIRST_01)]
+
+        public async Task GetStockPricesBySecurityDateRangeSucceedsAsync(string start, string end)
+        {
+            var result = await IntrinioTestClient.GetStockPricesBySecurityAsync(identifier: APPLE_TICKER, start_date: start, end_date: end);
+            
+            Assert.IsNotNull(result);
+            AssertAllPropertiesNotNull(result.First());
+        }
+        
+        [DataTestMethod]
+        [DataRow(JAN_FIRST_00, JAN_FIRST_01, StockPriceSummary.FrequencyEnum.Daily)]
+        [DataRow(JAN_FIRST_00, JAN_FIRST_01, StockPriceSummary.FrequencyEnum.Weekly)]
+        [DataRow(JAN_FIRST_00, JAN_FIRST_01, StockPriceSummary.FrequencyEnum.Monthly)]
+        public async Task GetStockPricesBySecurityDateRangeWithFreqSucceedsAsync(string start, string end, StockPriceSummary.FrequencyEnum freq)
+        {
+            var result = await IntrinioTestClient.GetStockPricesBySecurityAsync(identifier: APPLE_TICKER, start_date: start, end_date: end, frequency: freq);
+            
+            Assert.IsNotNull(result);
+            AssertAllPropertiesNotNull(result.First());
+        }
+        
+        [DataTestMethod]
+        [DataRow(USCOMP, JAN_FIRST_01)]
+        public async Task GetStockPricesByExchangeWithDateSucceedsAsync(string identifier, string date)
+        {
+            var result = await IntrinioTestClient.GetStockPricesByExchangeAsync(identifier, date: date);
             
             Assert.IsNotNull(result);
             AssertAllPropertiesNotNull(result.First());
