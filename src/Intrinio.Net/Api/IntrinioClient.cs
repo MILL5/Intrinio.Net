@@ -7,6 +7,7 @@ using AutoMapper;
 using Intrinio.Net.Client;
 using M5.FinancialDataSanitizer;
 using Pineapple.Threading;
+using Polly;
 
 namespace Intrinio.Net.Api
 {
@@ -59,15 +60,28 @@ namespace Intrinio.Net.Api
         {
             requestUrl = $"{ requestUrl }{ (requestUrl.Contains("?") ? "&" : "?") }api_key={ Dependencies.Settings.ApiKey }";
 
-            var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
+            var lockObj = new object();
 
-            var response = await Client.SendAsync(request);
+            HttpResponseMessage response = null;
 
-            if(!response.IsSuccessStatusCode)
-            {
-                throw new HttpRequestException(response.ReasonPhrase);
-            }
-        
+            await Policy
+                .Handle<Exception>()
+                .RetryAsync(3)
+                .ExecuteAsync(async () =>
+                {
+                    var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
+                    var tryResponse = await Client.SendAsync(request);
+                    if (!tryResponse.IsSuccessStatusCode)
+                    {
+                        throw new HttpRequestException(tryResponse.ReasonPhrase);
+                    }
+
+                    lock (lockObj)
+                    {
+                        response = tryResponse;
+                    }
+                }).ConfigureAwait(true);
+
             return await response.Content.ReadAsStringAsync();
         }
 

@@ -37,7 +37,7 @@ namespace Intrinio.Net.Tests.Api
         [TestMethod]
         public async Task LookupSecuritySuceedsAsync()
         {
-            var securities = await IntrinioTestClient.GetAllSecuritiesByExchangeAsync(APPLE_TICKER);
+            var securities = await IntrinioTestClient.LookupSecurityAsync(APPLE_TICKER);
             
             Assert.IsNotNull(securities);
             Assert.IsTrue(securities.Any());
