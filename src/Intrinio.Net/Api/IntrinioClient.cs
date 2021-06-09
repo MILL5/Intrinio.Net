@@ -74,9 +74,9 @@ namespace Intrinio.Net.Api
                     var tryResponse = await Client.SendAsync(request);
                     if (!tryResponse.IsSuccessStatusCode)
                     {
-                        if (tryResponse.StatusCode == HttpStatusCode.TooManyRequests)
+                        if (tryResponse.ReasonPhrase == "Too Many Requests")
                         {
-                            Thread.Sleep(60000);
+                            Thread.Sleep(10000);
                         }
                         throw new HttpRequestException(tryResponse.ReasonPhrase);
                     }
