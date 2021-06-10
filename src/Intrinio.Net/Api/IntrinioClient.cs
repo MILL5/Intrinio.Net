@@ -71,7 +71,8 @@ namespace Intrinio.Net.Api
                 .ExecuteAsync(async () =>
                 {
                     var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
-                    var tryResponse = await Client.SendAsync(request);
+                    var tryResponse = await Client.SendAsync(request)
+                        .ConfigureAwait(false);
                     if (!tryResponse.IsSuccessStatusCode)
                     {
                         if (tryResponse.ReasonPhrase == "Too Many Requests")
@@ -85,9 +86,10 @@ namespace Intrinio.Net.Api
                     {
                         response = tryResponse;
                     }
-                }).ConfigureAwait(true);
+                }).ConfigureAwait(false);
 
-            return await response.Content.ReadAsStringAsync();
+            return await response.Content.ReadAsStringAsync()
+                .ConfigureAwait(false);
         }
 
         public string GetQueryParameterString(Dictionary<string, string> queryParams)

@@ -37,8 +37,9 @@ namespace Intrinio.Net.Api
              };
 
              var result = new List<CompanySummary>();
-             
-             var jsonResponse = await Get($"{allCompaniesBaseUrl}{GetQueryParameterString(queryParams)}");
+
+             var jsonResponse = await Get($"{allCompaniesBaseUrl}{GetQueryParameterString(queryParams)}")
+                  .ConfigureAwait(false);
              var apiResponse = JsonConvert.DeserializeObject<ApiResponseCompanies>(jsonResponse);
              
              if (apiResponse == null)
@@ -58,7 +59,8 @@ namespace Intrinio.Net.Api
              while (apiResponse.NextPage != null)
              {
                   queryParams[nameof(next_page)] = apiResponse.NextPage;
-                  jsonResponse = await Get($"{allCompaniesBaseUrl}{GetQueryParameterString(queryParams)}");
+                  jsonResponse = await Get($"{allCompaniesBaseUrl}{GetQueryParameterString(queryParams)}")
+                       .ConfigureAwait(false);
                   apiResponse = JsonConvert.DeserializeObject<ApiResponseCompanies>(jsonResponse);
                   if (apiResponse == null)
                   {
@@ -73,7 +75,8 @@ namespace Intrinio.Net.Api
          
          public async Task<Company> GetCompanyAsync (string identifier, bool expandAbbreviations = false)
          {
-              var jsonResponse = await Get(String.Format(lookupCompanyBaseUrl, identifier));
+              var jsonResponse = await Get(String.Format(lookupCompanyBaseUrl, identifier))
+                   .ConfigureAwait(false);
               var company = JsonConvert.DeserializeObject<Company>(jsonResponse);
              
               if (!expandAbbreviations) return company;

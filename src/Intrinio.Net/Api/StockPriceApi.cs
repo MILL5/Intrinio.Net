@@ -27,7 +27,8 @@ namespace Intrinio.Net.Api
             
             var result = new List<StockPriceSummary>();
             
-            var jsonResponse = await Get($"{string.Format(stockPricesBySecurityBaseUrl, identifier)}{GetQueryParameterString(queryParams)}");
+            var jsonResponse = await Get($"{string.Format(stockPricesBySecurityBaseUrl, identifier)}{GetQueryParameterString(queryParams)}")
+                .ConfigureAwait(false);
             var apiResponse = JsonConvert.DeserializeObject<ApiResponseSecurityStockPrices>(jsonResponse);
             
             if (apiResponse == null)
@@ -42,7 +43,8 @@ namespace Intrinio.Net.Api
             while (apiResponse.NextPage != null)
             {
                 queryParams[nameof(next_page)] = apiResponse.NextPage;
-                jsonResponse = await Get($"{string.Format(stockPricesBySecurityBaseUrl, identifier)}{GetQueryParameterString(queryParams)}");
+                jsonResponse = await Get($"{string.Format(stockPricesBySecurityBaseUrl, identifier)}{GetQueryParameterString(queryParams)}")
+                    .ConfigureAwait(false);
                 apiResponse = JsonConvert.DeserializeObject<ApiResponseSecurityStockPrices>(jsonResponse);
                 if (apiResponse == null)
                 {
@@ -73,7 +75,8 @@ namespace Intrinio.Net.Api
             
             var result = new List<StockPrice>();
             
-            var jsonResponse = await Get($"{string.Format(stockPricesByExchangeBaseUrl, identifier)}{GetQueryParameterString(queryParams)}");
+            var jsonResponse = await Get($"{string.Format(stockPricesByExchangeBaseUrl, identifier)}{GetQueryParameterString(queryParams)}")
+                .ConfigureAwait(false);
             var apiResponse = JsonConvert.DeserializeObject<ApiResponseStockExchangeStockPrices>(jsonResponse);
             
             if (apiResponse == null)
@@ -88,7 +91,8 @@ namespace Intrinio.Net.Api
             while (apiResponse.NextPage != null)
             {
                 queryParams[nameof(next_page)] = apiResponse.NextPage;
-                jsonResponse = await Get($"{string.Format(stockPricesByExchangeBaseUrl, identifier)}{GetQueryParameterString(queryParams)}");
+                jsonResponse = await Get($"{string.Format(stockPricesByExchangeBaseUrl, identifier)}{GetQueryParameterString(queryParams)}")
+                    .ConfigureAwait(false);
                 apiResponse = JsonConvert.DeserializeObject<ApiResponseStockExchangeStockPrices>(jsonResponse);
                 if (apiResponse == null)
                 {

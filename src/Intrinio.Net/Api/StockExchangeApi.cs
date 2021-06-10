@@ -24,7 +24,8 @@ namespace Intrinio.Net.Api
             
             var result = new List<StockExchange>();
             
-            var jsonResponse = await Get($"{exchangesBaseUrl}{GetQueryParameterString(queryParams)}");
+            var jsonResponse = await Get($"{exchangesBaseUrl}{GetQueryParameterString(queryParams)}")
+                .ConfigureAwait(false);
             var apiResponse = JsonConvert.DeserializeObject<ApiResponseStockExchanges>(jsonResponse);
             
             if (apiResponse == null)
@@ -37,7 +38,8 @@ namespace Intrinio.Net.Api
 
         public async Task<StockExchange> LookupExchangeAsync(string identifier)
         {
-            var jsonResponse = await Get($"{exchangesBaseUrl}/{identifier}");
+            var jsonResponse = await Get($"{exchangesBaseUrl}/{identifier}")
+                .ConfigureAwait(false);
             var exchange = JsonConvert.DeserializeObject<StockExchange>(jsonResponse);
 
             if (exchange == null)

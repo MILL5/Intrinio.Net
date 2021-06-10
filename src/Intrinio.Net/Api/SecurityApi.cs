@@ -51,7 +51,8 @@ namespace Intrinio.Net.Api
 
              var result = new List<SecuritySummary>();
              
-             var jsonResponse = await Get($"{securitiesBaseUrl}{GetQueryParameterString(queryParams)}");
+             var jsonResponse = await Get($"{securitiesBaseUrl}{GetQueryParameterString(queryParams)}")
+                 .ConfigureAwait(false);
              var apiResponse = JsonConvert.DeserializeObject<ApiResponseSecurities>(jsonResponse);
              
              if (apiResponse == null)
@@ -66,7 +67,8 @@ namespace Intrinio.Net.Api
              while (apiResponse.NextPage != null)
              {
                  queryParams[nameof(next_page)] = apiResponse.NextPage;
-                 jsonResponse = await Get($"{securitiesBaseUrl}{GetQueryParameterString(queryParams)}");
+                 jsonResponse = await Get($"{securitiesBaseUrl}{GetQueryParameterString(queryParams)}")
+                     .ConfigureAwait(false);
                  apiResponse = JsonConvert.DeserializeObject<ApiResponseSecurities>(jsonResponse);
 
                  if (apiResponse == null)
@@ -94,7 +96,8 @@ namespace Intrinio.Net.Api
 
              var result = new List<SecuritySummary>();
              
-             var jsonResponse = await Get($"{string.Format(securitiesByExchangeBaseUrl, identifier)}{GetQueryParameterString(queryParams)}");
+             var jsonResponse = await Get($"{string.Format(securitiesByExchangeBaseUrl, identifier)}{GetQueryParameterString(queryParams)}")
+                 .ConfigureAwait(false);
              var apiResponse = JsonConvert.DeserializeObject<ApiResponseSecurities>(jsonResponse);
              
              if (apiResponse == null)
@@ -109,7 +112,8 @@ namespace Intrinio.Net.Api
              while (apiResponse.NextPage != null)
              {
                  queryParams[nameof(next_page)] = apiResponse.NextPage;
-                 jsonResponse = await Get($"{string.Format(securitiesByExchangeBaseUrl, identifier)}{GetQueryParameterString(queryParams)}");
+                 jsonResponse = await Get($"{string.Format(securitiesByExchangeBaseUrl, identifier)}{GetQueryParameterString(queryParams)}")
+                     .ConfigureAwait(false);
                  apiResponse = JsonConvert.DeserializeObject<ApiResponseSecurities>(jsonResponse);
 
                  if (apiResponse == null)
@@ -126,7 +130,8 @@ namespace Intrinio.Net.Api
 
         public async Task<IEnumerable<SecuritySummary>> LookupSecurityAsync(string identifier)
         {
-            var jsonResponse = await Get($"{securitiesBaseUrl}/{identifier}");
+            var jsonResponse = await Get($"{securitiesBaseUrl}/{identifier}")
+                .ConfigureAwait(false);
             var security = new List<SecuritySummary>()
                 {JsonConvert.DeserializeObject<SecuritySummary>(jsonResponse)};
 
