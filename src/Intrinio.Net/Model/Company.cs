@@ -1,16 +1,10 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 
 namespace Intrinio.Net.Model
@@ -245,7 +239,6 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <value>The date of the company&#39;s last filing with the SEC</value>
         [DataMember(Name="latest_filing_date", EmitDefaultValue=false)]
-        // [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? LatestFilingDate { get; set; }
 
         /// <summary>

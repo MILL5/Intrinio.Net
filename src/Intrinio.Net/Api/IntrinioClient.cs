@@ -75,7 +75,7 @@ namespace Intrinio.Net.Api
                         .ConfigureAwait(false);
                     if (!tryResponse.IsSuccessStatusCode)
                     {
-                        if (tryResponse.ReasonPhrase == "Too Many Requests")
+                        if (string.Equals(tryResponse.ReasonPhrase, "Too Many Requests", StringComparison.OrdinalIgnoreCase))
                         {
                             Thread.Sleep(10000);
                         }
