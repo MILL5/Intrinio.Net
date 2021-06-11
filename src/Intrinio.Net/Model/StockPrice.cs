@@ -12,7 +12,6 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
 {
@@ -121,7 +120,6 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <value>The calendar date that the stock price represents. For non-daily stock prices, this represents the last day in the period (end of the week, month, quarter, year, etc)</value>
         [DataMember(Name="date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? Date { get; set; }
 
         /// <summary>

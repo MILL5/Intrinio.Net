@@ -1,18 +1,11 @@
 
 
 using System;
-using System.Linq;
-using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
 {
@@ -246,7 +239,6 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <value>The date of the company&#39;s last filing with the SEC</value>
         [DataMember(Name="latest_filing_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? LatestFilingDate { get; set; }
 
         /// <summary>
@@ -330,7 +322,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <value>The period end date of the company&#39;s first reported fundamental</value>
         [DataMember(Name="first_fundamental_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        // [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? FirstFundamentalDate { get; set; }
 
         /// <summary>
@@ -338,7 +330,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <value>The period end date of the company&#39;s last reported fundamental</value>
         [DataMember(Name="last_fundamental_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        // [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? LastFundamentalDate { get; set; }
 
         /// <summary>
@@ -346,7 +338,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <value>The date of the company&#39;s first stock price, based on the company&#39;s primary security, which is typically traded on US exchages</value>
         [DataMember(Name="first_stock_price_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        // [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? FirstStockPriceDate { get; set; }
 
         /// <summary>
@@ -354,7 +346,7 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <value>The date of the company&#39;s last stock price, based on the company&#39;s primary security, which is typically traded on US exchages</value>
         [DataMember(Name="last_stock_price_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        // [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? LastStockPriceDate { get; set; }
 
         /// <summary>

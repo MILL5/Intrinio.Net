@@ -12,7 +12,6 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
 {
@@ -110,7 +109,6 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <value>The earliest date for which Intrinio has stock prices for the exchange</value>
         [DataMember(Name="first_stock_price_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? FirstStockPriceDate { get; set; }
 
         /// <summary>
@@ -118,7 +116,6 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <value>The latest date for which Intrinio has stock prices for the exchange</value>
         [DataMember(Name="last_stock_price_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? LastStockPriceDate { get; set; }
 
         /// <summary>

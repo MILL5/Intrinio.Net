@@ -1,0 +1,51 @@
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+using static Intrinio.Net.Tests.TestManager;
+using Assert = NUnit.Framework.Assert;
+
+
+namespace Intrinio.Net.Tests.Api
+{
+    [TestClass]
+    public class ExchangeTests
+    {
+        private const string APPLE_TICKER = "AAPL";
+        private const string USCOMP = "USCOMP";
+        private const string SEOUL_CITY = "SEOUL";
+        private const string KOREA_COUNTRY_CODE = "KR";
+        private const string USA_NAME = "UNITED STATES OF AMERICA";
+
+        [TestMethod]
+        public async Task GetAllExchangesSucceedsAsync()
+        {
+            var exchanges = await IntrinioTestClient.GetAllExchangesAsync();
+            
+            Assert.IsNotNull(exchanges);
+            Assert.IsTrue(exchanges.Count() > 1);
+        }
+
+        [TestMethod]
+        public async Task LookupExchangeSucceedsAsync()
+        {
+            var uscomp = await IntrinioTestClient.LookupExchangeAsync(USCOMP);
+            
+            Assert.IsNotNull(uscomp);
+            Assert.IsTrue(uscomp.Mic == USCOMP);
+        }
+
+        [DataTestMethod]
+        [DataRow(SEOUL_CITY, null, KOREA_COUNTRY_CODE)]
+        [DataRow(SEOUL_CITY, null, null)]
+        [DataRow(null, USA_NAME, null)]
+        [DataRow(null, null, KOREA_COUNTRY_CODE)]
+        public async Task GetAllExchangesByCountrySucceedsAsync(string city, string country, string countryCode)
+        {
+            var exchanges = await IntrinioTestClient.GetAllExchangesAsync(city, country, countryCode);
+            
+            Assert.IsNotNull(exchanges);
+            Assert.IsNotEmpty(exchanges);
+        }
+    }
+}
