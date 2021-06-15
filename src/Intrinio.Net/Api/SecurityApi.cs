@@ -8,7 +8,7 @@ namespace Intrinio.Net.Api
 {
     public partial class IntrinioClient
     {
-        public async Task<IEnumerable<SecuritySummary>> GetAllSecuritiesAsync(
+        public async Task<IEnumerable<SecuritySummary>> GetAllSecuritySummariesAsync(
             bool? active = null,
             bool? delisted = null,
             string code = null,
@@ -83,7 +83,7 @@ namespace Intrinio.Net.Api
              return result;
         }
 
-        public async Task<IEnumerable<SecuritySummary>> GetAllSecuritiesByExchangeAsync(
+        public async Task<ApiResponseStockExchangeSecurities> GetAllSecuritySummariesByExchangeAsync(
             string identifier,
             int? page_size = null,
             string next_page = null)
@@ -94,35 +94,33 @@ namespace Intrinio.Net.Api
                   { nameof(next_page), next_page }
              };
 
-             var result = new List<SecuritySummary>();
+            var result = new ApiResponseStockExchangeSecurities();
              
              var jsonResponse = await Get($"{string.Format(securitiesByExchangeBaseUrl, identifier)}{GetQueryParameterString(queryParams)}")
                  .ConfigureAwait(false);
-             var apiResponse = JsonConvert.DeserializeObject<ApiResponseSecurities>(jsonResponse);
+             var apiResponse = JsonConvert.DeserializeObject<ApiResponseStockExchangeSecurities>(jsonResponse);
              
              if (apiResponse == null)
              {
                   throw new Exception("API Response is Null");
              }
-             
-             var securities = apiResponse.Securities;
 
-             result.AddRange(securities);
+             result = apiResponse;
 
              while (apiResponse.NextPage != null)
              {
                  queryParams[nameof(next_page)] = apiResponse.NextPage;
                  jsonResponse = await Get($"{string.Format(securitiesByExchangeBaseUrl, identifier)}{GetQueryParameterString(queryParams)}")
                      .ConfigureAwait(false);
-                 apiResponse = JsonConvert.DeserializeObject<ApiResponseSecurities>(jsonResponse);
+                 apiResponse = JsonConvert.DeserializeObject<ApiResponseStockExchangeSecurities>(jsonResponse);
 
                  if (apiResponse == null)
                  {
                      throw new Exception("API Response is Null");
                  }
-
-                 securities = apiResponse.Securities; 
-                 result.AddRange(securities);
+                 
+                 result.Securities.AddRange(apiResponse.Securities);
+                 result.NextPage = apiResponse.NextPage;
              }
              
              return result;

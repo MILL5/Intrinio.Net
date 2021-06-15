@@ -18,7 +18,7 @@ namespace Intrinio.Net.Tests.Api
         [TestMethod]
         public async Task GetAllCompaniesSucceedsAsync()
         {
-            var companies = await IntrinioTestClient.GetAllCompaniesAsync();
+            var companies = await IntrinioTestClient.GetAllCompanySummariesAsync();
             
             Assert.IsNotNull(companies);
             Assert.IsTrue(companies.Count() > 1);
@@ -27,7 +27,7 @@ namespace Intrinio.Net.Tests.Api
         [TestMethod]
         public async Task GetAllCompaniesWithExpansionSucceedsAsync()
         {
-            var companies = await IntrinioTestClient.GetAllCompaniesAsync(expandAbbreviations: true);
+            var companies = await IntrinioTestClient.GetAllCompanySummariesAsync(expandAbbreviations: true);
             
             Assert.IsNotNull(companies);
             Assert.IsTrue(companies.Count() > 1);

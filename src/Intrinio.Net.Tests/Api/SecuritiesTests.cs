@@ -19,7 +19,7 @@ namespace Intrinio.Net.Tests.Api
         [TestMethod]
         public async Task GetAllSecuritiesSucceedsAsync()
         {
-            var securities = await IntrinioTestClient.GetAllSecuritiesAsync();
+            var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync();
             
             Assert.IsNotNull(securities);
             Assert.IsTrue(securities.Count() > 1);
@@ -37,10 +37,12 @@ namespace Intrinio.Net.Tests.Api
         public async Task GetAllSecuritiesByExchangeSucceedsAsync()
         {
             {
-                var securities = await IntrinioTestClient.GetAllSecuritiesByExchangeAsync(USCOMP);
+                var result = await IntrinioTestClient.GetAllSecuritySummariesByExchangeAsync(USCOMP);
             
-                Assert.IsNotNull(securities);
-                Assert.IsTrue(securities.Count() > 1);
+                Assert.IsNotNull(result);
+                Assert.IsNotNull(result.Securities);
+                Assert.IsNotNull(result.StockExchange);
+                Assert.IsTrue(result.Securities.Count > 1);
             }
         }
 
@@ -58,7 +60,7 @@ namespace Intrinio.Net.Tests.Api
         [DataRow(null, true)]
         public async Task GetAllSecuritesWithActiveStatusParamsSucceedsAsync(bool active, bool delisted)
         {
-            var securities = await IntrinioTestClient.GetAllSecuritiesAsync(active, delisted);
+            var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync(active, delisted);
             
             Assert.IsNotNull(securities);
             Assert.IsTrue(securities.Any());
@@ -68,7 +70,7 @@ namespace Intrinio.Net.Tests.Api
         [DataRow(APPLE_TICKER)]
         public async Task GetAllSecuritesWithTickerParamsSucceedsAsync(string ticker)
         {
-            var securities = await IntrinioTestClient.GetAllSecuritiesAsync(ticker: ticker);
+            var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync(ticker: ticker);
             
             Assert.IsNotNull(securities);
             Assert.IsTrue(securities.Any());
@@ -78,7 +80,7 @@ namespace Intrinio.Net.Tests.Api
         [DataRow(XNAS)]
         public async Task GetAllSecuritesWithMicParamsSucceedsAsync(string mic)
         {
-            var securities = await IntrinioTestClient.GetAllSecuritiesAsync(exchange_mic: mic);
+            var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync(exchange_mic: mic);
             
             Assert.IsNotNull(securities);
             Assert.IsTrue(securities.Any());

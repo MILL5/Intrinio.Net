@@ -9,7 +9,7 @@ namespace Intrinio.Net.Api
 {
      public partial class IntrinioClient
     {
-         public async Task<IEnumerable<CompanySummary>> GetAllCompaniesAsync (
+         public async Task<IEnumerable<CompanySummary>> GetAllCompanySummariesAsync (
              DateTime? latestFilingDate = null, 
              string sic = null, 
              string template = null, 

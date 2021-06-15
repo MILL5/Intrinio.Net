@@ -18,7 +18,7 @@ namespace Intrinio.Net.Api
 
         string FormatDateString(string inputDateString);
         
-        Task<IEnumerable<CompanySummary>> GetAllCompaniesAsync(
+        Task<IEnumerable<CompanySummary>> GetAllCompanySummariesAsync(
             DateTime? latestFilingDate = null,
             string sic = null,
             string template = null,
@@ -39,8 +39,8 @@ namespace Intrinio.Net.Api
             int? page_size = null,
             string date = null,
             string next_page = null);
-
-        Task<IEnumerable<StockPriceSummary>> GetStockPricesBySecurityAsync(
+        
+        Task<ApiResponseSecurityStockPrices> GetStockPriceSummariesBySecurityAsync(
             string identifier,
             StockPriceSummary.FrequencyEnum? frequency = null,
             int? page_size = null,
@@ -50,12 +50,12 @@ namespace Intrinio.Net.Api
 
         Task<IEnumerable<Security>> LookupSecurityAsync(string identifier);
 
-        Task<IEnumerable<SecuritySummary>> GetAllSecuritiesByExchangeAsync(
+        Task<ApiResponseStockExchangeSecurities> GetAllSecuritySummariesByExchangeAsync(
             string identifier,
             int? page_size = null,
             string next_page = null);
 
-        Task<IEnumerable<SecuritySummary>> GetAllSecuritiesAsync(
+        Task<IEnumerable<SecuritySummary>> GetAllSecuritySummariesAsync(
             bool? active = null,
             bool? delisted = null,
             string code = null,
