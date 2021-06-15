@@ -26,6 +26,14 @@ namespace Intrinio.Net.Tests.Api
         }
 
         [TestMethod]
+        public async Task GetSecuritiesByCompanySucceedsAsync()
+        {
+            var securities = await IntrinioTestClient.GetSecuritiesByCompanyAsync((APPLE_TICKER));
+            Assert.IsNotNull(securities);
+            Assert.IsTrue(securities.Any());
+        }
+
+        [TestMethod]
         public async Task GetAllSecuritiesByExchangeSucceedsAsync()
         {
             {

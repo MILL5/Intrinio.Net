@@ -17,7 +17,7 @@ namespace Intrinio.Net.Api
         Task<string> Get(string requestUrl);
 
         string FormatDateString(string inputDateString);
-
+        
         Task<IEnumerable<CompanySummary>> GetAllCompaniesAsync(
             DateTime? latestFilingDate = null,
             string sic = null,
@@ -31,7 +31,7 @@ namespace Intrinio.Net.Api
             string next_page = null,
             bool expandAbbreviations = false);
 
-        Task<Company> GetCompanyAsync(string identifier, bool expandAbbreviations = false);
+        Task<Company> LookupCompanyAsync(string identifier, bool expandAbbreviations = false);
 
         Task<IEnumerable<StockPrice>> GetStockPricesByExchangeAsync(
             string identifier,
@@ -48,7 +48,7 @@ namespace Intrinio.Net.Api
             string end_date = null,
             string next_page = null);
 
-        Task<IEnumerable<SecuritySummary>> LookupSecurityAsync(string identifier);
+        Task<IEnumerable<Security>> LookupSecurityAsync(string identifier);
 
         Task<IEnumerable<SecuritySummary>> GetAllSecuritiesByExchangeAsync(
             string identifier,
@@ -74,6 +74,8 @@ namespace Intrinio.Net.Api
             int? page_size = null,
             bool? primary_listing = null,
             string next_page = null);
+
+        Task<IEnumerable<SecuritySummary>> GetSecuritiesByCompanyAsync(string identifier);
 
         Task<IEnumerable<StockExchange>> GetAllExchangesAsync(
             string city = null,

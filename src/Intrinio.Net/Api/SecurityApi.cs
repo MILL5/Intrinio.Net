@@ -128,10 +128,24 @@ namespace Intrinio.Net.Api
              return result;
         }
 
-        public async Task<IEnumerable<SecuritySummary>> LookupSecurityAsync(string identifier)
+        public async Task<IEnumerable<Security>> LookupSecurityAsync(string identifier)
         {
             var jsonResponse = await Get($"{securitiesBaseUrl}/{identifier}")
                 .ConfigureAwait(false);
+            var security = new List<Security>()
+                {JsonConvert.DeserializeObject<Security>(jsonResponse)};
+
+            if (security == null)
+            {
+                throw new Exception("API Response is Null");
+            }
+            
+            return security;
+        }
+
+        public async Task<IEnumerable<SecuritySummary>> GetSecuritiesByCompanyAsync(string identifier)
+        {
+            var jsonResponse = await Get($"{securitiesBaseUrl}/{identifier}");
             var security = new List<SecuritySummary>()
                 {JsonConvert.DeserializeObject<SecuritySummary>(jsonResponse)};
 

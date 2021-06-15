@@ -36,7 +36,7 @@ namespace Intrinio.Net.Tests.Api
             Assert.IsNotNull(result);
             AssertAllPropertiesNotNull(result.First());
         }
-        
+
         [DataTestMethod]
         [DataRow(JAN_FIRST_00, JAN_FIRST_01)]
 

@@ -45,7 +45,7 @@ namespace Intrinio.Net.Tests.Api
         [DataRow(APPLE_LEI)]
         public async Task LookupCompanySucceedsAsync(string identifier)
         {
-            var apple = await IntrinioTestClient.GetCompanyAsync(identifier);
+            var apple = await IntrinioTestClient.LookupCompanyAsync(identifier);
             
             Assert.IsNotNull(apple);
             Assert.IsTrue(apple.Ticker == APPLE_TICKER);
@@ -57,7 +57,7 @@ namespace Intrinio.Net.Tests.Api
         [DataRow(APPLE_LEI)]
         public async Task LookupCompanyWithExpansionSucceedsAsync(string identifier)
         {
-            var apple = await IntrinioTestClient.GetCompanyAsync(identifier, true);
+            var apple = await IntrinioTestClient.LookupCompanyAsync(identifier, true);
             
             Assert.IsNotNull(apple);
             Assert.IsTrue(apple.Ticker == APPLE_TICKER);
