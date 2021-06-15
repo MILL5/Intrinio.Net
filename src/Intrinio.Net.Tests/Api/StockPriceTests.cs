@@ -19,7 +19,7 @@ namespace Intrinio.Net.Tests.Api
 
         [DataTestMethod]
         [DataRow(APPLE_TICKER)]
-        public async Task GetStockPricesBySecuritySucceedsAsync(string identifier)
+        public async Task GetStockPriceSummariesBySecuritySucceedsAsync(string identifier)
         {
             var result = await IntrinioTestClient.GetStockPriceSummariesBySecurityAsync(identifier);
             
@@ -43,7 +43,7 @@ namespace Intrinio.Net.Tests.Api
         [DataTestMethod]
         [DataRow(JAN_FIRST_00, JAN_FIRST_01)]
 
-        public async Task GetStockPricesBySecurityDateRangeSucceedsAsync(string start, string end)
+        public async Task GetStockPriceSummariesBySecurityDateRangeSucceedsAsync(string start, string end)
         {
             var result = await IntrinioTestClient.GetStockPriceSummariesBySecurityAsync(identifier: APPLE_TICKER, start_date: start, end_date: end);
             
@@ -57,7 +57,7 @@ namespace Intrinio.Net.Tests.Api
         [DataRow(JAN_FIRST_00, JAN_FIRST_01, StockPriceSummary.FrequencyEnum.Daily)]
         [DataRow(JAN_FIRST_00, JAN_FIRST_01, StockPriceSummary.FrequencyEnum.Weekly)]
         [DataRow(JAN_FIRST_00, JAN_FIRST_01, StockPriceSummary.FrequencyEnum.Monthly)]
-        public async Task GetStockPricesBySecurityDateRangeWithFreqSucceedsAsync(string start, string end, StockPriceSummary.FrequencyEnum freq)
+        public async Task GetStockPriceSummariesBySecurityDateRangeWithFreqSucceedsAsync(string start, string end, StockPriceSummary.FrequencyEnum freq)
         {
             var result = await IntrinioTestClient.GetStockPriceSummariesBySecurityAsync(identifier: APPLE_TICKER, start_date: start, end_date: end, frequency: freq);
             

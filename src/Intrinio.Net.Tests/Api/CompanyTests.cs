@@ -16,7 +16,7 @@ namespace Intrinio.Net.Tests.Api
         private const string APPLE_CIK = "0000320193";
         
         [TestMethod]
-        public async Task GetAllCompaniesSucceedsAsync()
+        public async Task GetAllCompanySummariesSucceedsAsync()
         {
             var companies = await IntrinioTestClient.GetAllCompanySummariesAsync();
             
@@ -25,7 +25,7 @@ namespace Intrinio.Net.Tests.Api
         }
         
         [TestMethod]
-        public async Task GetAllCompaniesWithExpansionSucceedsAsync()
+        public async Task GetAllCompanySummariesWithExpansionSucceedsAsync()
         {
             var companies = await IntrinioTestClient.GetAllCompanySummariesAsync(expandAbbreviations: true);
             

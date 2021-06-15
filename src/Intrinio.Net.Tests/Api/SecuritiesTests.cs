@@ -17,7 +17,7 @@ namespace Intrinio.Net.Tests.Api
         private const string XNAS = "XNAS";
 
         [TestMethod]
-        public async Task GetAllSecuritiesSucceedsAsync()
+        public async Task GetAllSecuritySummariesSucceedsAsync()
         {
             var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync();
             
@@ -34,7 +34,7 @@ namespace Intrinio.Net.Tests.Api
         }
 
         [TestMethod]
-        public async Task GetAllSecuritiesByExchangeSucceedsAsync()
+        public async Task GetAllSecuritySummariesByExchangeSucceedsAsync()
         {
             {
                 var result = await IntrinioTestClient.GetAllSecuritySummariesByExchangeAsync(USCOMP);
@@ -58,7 +58,7 @@ namespace Intrinio.Net.Tests.Api
         [DataTestMethod]
         [DataRow(true, null)]
         [DataRow(null, true)]
-        public async Task GetAllSecuritesWithActiveStatusParamsSucceedsAsync(bool active, bool delisted)
+        public async Task GetAllSecuritySummariesWithActiveStatusParamsSucceedsAsync(bool active, bool delisted)
         {
             var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync(active, delisted);
             
@@ -68,7 +68,7 @@ namespace Intrinio.Net.Tests.Api
         
         [DataTestMethod]
         [DataRow(APPLE_TICKER)]
-        public async Task GetAllSecuritesWithTickerParamsSucceedsAsync(string ticker)
+        public async Task GetAllSecuritySummariesWithTickerParamsSucceedsAsync(string ticker)
         {
             var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync(ticker: ticker);
             
@@ -78,7 +78,7 @@ namespace Intrinio.Net.Tests.Api
         
         [DataTestMethod]
         [DataRow(XNAS)]
-        public async Task GetAllSecuritesWithMicParamsSucceedsAsync(string mic)
+        public async Task GetAllSecuritySummariesWithMicParamsSucceedsAsync(string mic)
         {
             var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync(exchange_mic: mic);
             
