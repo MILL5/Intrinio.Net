@@ -244,7 +244,6 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <value>The date of the first recorded stock price</value>
         [DataMember(Name="first_stock_price", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? FirstStockPrice { get; set; }
 
         /// <summary>
@@ -252,7 +251,6 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <value>The date of the last recorded stock price (or the most recent trading day)</value>
         [DataMember(Name="last_stock_price", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? LastStockPrice { get; set; }
 
         /// <summary>
@@ -260,7 +258,6 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <value>The date of the last stock price adjustment (dividend, split, etc)</value>
         [DataMember(Name="last_stock_price_adjustment", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? LastStockPriceAdjustment { get; set; }
 
         /// <summary>
@@ -268,7 +265,6 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <value>The date of the last corporate action</value>
         [DataMember(Name="last_corporate_action", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? LastCorporateAction { get; set; }
 
         /// <summary>

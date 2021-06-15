@@ -8,7 +8,7 @@ namespace Intrinio.Net.Api
 {
     public partial class IntrinioClient
     {
-        public async Task<IEnumerable<StockPriceSummary>> GetStockPricesBySecurityAsync(
+        public async Task<ApiResponseSecurityStockPrices> GetStockPriceSummariesBySecurityAsync(
             string identifier,
             StockPriceSummary.FrequencyEnum? frequency = null,
             int? page_size = null,
@@ -25,7 +25,7 @@ namespace Intrinio.Net.Api
                 { nameof(next_page), next_page }
             };
             
-            var result = new List<StockPriceSummary>();
+            var result = new ApiResponseSecurityStockPrices();
             
             var jsonResponse = await Get($"{string.Format(stockPricesBySecurityBaseUrl, identifier)}{GetQueryParameterString(queryParams)}")
                 .ConfigureAwait(false);
@@ -35,10 +35,8 @@ namespace Intrinio.Net.Api
             {
                 throw new Exception("API Response is Null");
             }
-             
-            var prices = apiResponse.StockPrices;
 
-            result.AddRange(prices);
+            result = apiResponse;
 
             while (apiResponse.NextPage != null)
             {
@@ -50,14 +48,14 @@ namespace Intrinio.Net.Api
                 {
                     throw new Exception("API Response is Null");
                 }
-                prices = apiResponse.StockPrices;
-                result.AddRange(prices);
+                var newPrices = apiResponse.StockPrices;
+                result.StockPrices.AddRange(newPrices);
+                result.NextPage = apiResponse.NextPage;
             }
              
             return result;
-            
         }
-        
+
         public async Task<IEnumerable<StockPrice>> GetStockPricesByExchangeAsync(
             string identifier,
             StockPriceSummary.FrequencyEnum? frequency = null,

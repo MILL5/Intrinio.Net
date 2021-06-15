@@ -16,18 +16,18 @@ namespace Intrinio.Net.Tests.Api
         private const string APPLE_CIK = "0000320193";
         
         [TestMethod]
-        public async Task GetAllCompaniesSucceedsAsync()
+        public async Task GetAllCompanySummariesSucceedsAsync()
         {
-            var companies = await IntrinioTestClient.GetAllCompaniesAsync();
+            var companies = await IntrinioTestClient.GetAllCompanySummariesAsync();
             
             Assert.IsNotNull(companies);
             Assert.IsTrue(companies.Count() > 1);
         }
         
         [TestMethod]
-        public async Task GetAllCompaniesWithExpansionSucceedsAsync()
+        public async Task GetAllCompanySummariesWithExpansionSucceedsAsync()
         {
-            var companies = await IntrinioTestClient.GetAllCompaniesAsync(expandAbbreviations: true);
+            var companies = await IntrinioTestClient.GetAllCompanySummariesAsync(expandAbbreviations: true);
             
             Assert.IsNotNull(companies);
             Assert.IsTrue(companies.Count() > 1);
@@ -45,7 +45,7 @@ namespace Intrinio.Net.Tests.Api
         [DataRow(APPLE_LEI)]
         public async Task LookupCompanySucceedsAsync(string identifier)
         {
-            var apple = await IntrinioTestClient.GetCompanyAsync(identifier);
+            var apple = await IntrinioTestClient.LookupCompanyAsync(identifier);
             
             Assert.IsNotNull(apple);
             Assert.IsTrue(apple.Ticker == APPLE_TICKER);
@@ -57,7 +57,7 @@ namespace Intrinio.Net.Tests.Api
         [DataRow(APPLE_LEI)]
         public async Task LookupCompanyWithExpansionSucceedsAsync(string identifier)
         {
-            var apple = await IntrinioTestClient.GetCompanyAsync(identifier, true);
+            var apple = await IntrinioTestClient.LookupCompanyAsync(identifier, true);
             
             Assert.IsNotNull(apple);
             Assert.IsTrue(apple.Ticker == APPLE_TICKER);

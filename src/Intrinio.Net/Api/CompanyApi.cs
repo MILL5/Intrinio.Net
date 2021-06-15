@@ -9,7 +9,7 @@ namespace Intrinio.Net.Api
 {
      public partial class IntrinioClient
     {
-         public async Task<IEnumerable<CompanySummary>> GetAllCompaniesAsync (
+         public async Task<IEnumerable<CompanySummary>> GetAllCompanySummariesAsync (
              DateTime? latestFilingDate = null, 
              string sic = null, 
              string template = null, 
@@ -73,7 +73,7 @@ namespace Intrinio.Net.Api
              return result;
         }
          
-         public async Task<Company> GetCompanyAsync (string identifier, bool expandAbbreviations = false)
+         public async Task<Company> LookupCompanyAsync(string identifier, bool expandAbbreviations = false)
          {
               var jsonResponse = await Get(String.Format(lookupCompanyBaseUrl, identifier))
                    .ConfigureAwait(false);

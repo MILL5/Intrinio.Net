@@ -17,8 +17,8 @@ namespace Intrinio.Net.Api
         Task<string> Get(string requestUrl);
 
         string FormatDateString(string inputDateString);
-
-        Task<IEnumerable<CompanySummary>> GetAllCompaniesAsync(
+        
+        Task<IEnumerable<CompanySummary>> GetAllCompanySummariesAsync(
             DateTime? latestFilingDate = null,
             string sic = null,
             string template = null,
@@ -31,7 +31,7 @@ namespace Intrinio.Net.Api
             string next_page = null,
             bool expandAbbreviations = false);
 
-        Task<Company> GetCompanyAsync(string identifier, bool expandAbbreviations = false);
+        Task<Company> LookupCompanyAsync(string identifier, bool expandAbbreviations = false);
 
         Task<IEnumerable<StockPrice>> GetStockPricesByExchangeAsync(
             string identifier,
@@ -39,8 +39,8 @@ namespace Intrinio.Net.Api
             int? page_size = null,
             string date = null,
             string next_page = null);
-
-        Task<IEnumerable<StockPriceSummary>> GetStockPricesBySecurityAsync(
+        
+        Task<ApiResponseSecurityStockPrices> GetStockPriceSummariesBySecurityAsync(
             string identifier,
             StockPriceSummary.FrequencyEnum? frequency = null,
             int? page_size = null,
@@ -48,14 +48,14 @@ namespace Intrinio.Net.Api
             string end_date = null,
             string next_page = null);
 
-        Task<IEnumerable<SecuritySummary>> LookupSecurityAsync(string identifier);
+        Task<IEnumerable<Security>> LookupSecurityAsync(string identifier);
 
-        Task<IEnumerable<SecuritySummary>> GetAllSecuritiesByExchangeAsync(
+        Task<ApiResponseStockExchangeSecurities> GetAllSecuritySummariesByExchangeAsync(
             string identifier,
             int? page_size = null,
             string next_page = null);
 
-        Task<IEnumerable<SecuritySummary>> GetAllSecuritiesAsync(
+        Task<IEnumerable<SecuritySummary>> GetAllSecuritySummariesAsync(
             bool? active = null,
             bool? delisted = null,
             string code = null,
@@ -74,6 +74,8 @@ namespace Intrinio.Net.Api
             int? page_size = null,
             bool? primary_listing = null,
             string next_page = null);
+
+        Task<IEnumerable<SecuritySummary>> GetSecuritiesByCompanyAsync(string identifier);
 
         Task<IEnumerable<StockExchange>> GetAllExchangesAsync(
             string city = null,
