@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -75,9 +77,9 @@ namespace Intrinio.Net.Api
                         .ConfigureAwait(false);
                     if (!tryResponse.IsSuccessStatusCode)
                     {
-                        if (string.Equals(tryResponse.ReasonPhrase, "Too Many Requests", StringComparison.OrdinalIgnoreCase))
+                        if (tryResponse.StatusCode == (HttpStatusCode)429)
                         {
-                            Thread.Sleep(10000);
+                            Thread.Sleep(60000);
                         }
                         throw new HttpRequestException(tryResponse.ReasonPhrase);
                     }
