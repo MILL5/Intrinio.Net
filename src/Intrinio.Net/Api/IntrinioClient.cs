@@ -67,6 +67,7 @@ namespace Intrinio.Net.Api
 
             HttpResponseMessage response = null;
 
+            // TODO: Revisit this sleep policy and use rate limiting more effectively
             await Policy
                 .Handle<Exception>()
                 .RetryAsync(3)
