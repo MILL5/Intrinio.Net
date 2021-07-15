@@ -1,43 +1,43 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Title>Intrinio.Net</Title>
-    <TargetFramework>netstandard2.0</TargetFramework>
+	<Title>Intrinio.Net</Title>
+	<TargetFramework>netstandard2.0</TargetFramework>
 	<Company>MILL5</Company>
-    <Copyright>Copyright © MILL5, LLC 2021</Copyright>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/MILL5/Intrinio.Net</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/MILL5/Intrinio.Net</PackageProjectUrl>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>This is an initial release recompiled for .NET Standard 2.x.</PackageReleaseNotes>
-    <Authors>MILL5</Authors>
+	<Copyright>Copyright © MILL5, LLC 2021</Copyright>
+	<RepositoryType>git</RepositoryType>
+	<RepositoryUrl>https://github.com/MILL5/Intrinio.Net</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/MILL5/Intrinio.Net</PackageProjectUrl>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<PackageReleaseNotes>This is an initial release recompiled for .NET Standard 2.x.</PackageReleaseNotes>
+	<Authors>MILL5</Authors>
 	<Description>This is a port of the Intrinio.Net to .NET Standard so that it can be used across .NET Framework, .NET Core, and the new .NET 5.0.</Description>
 	<PackageTags>intrinio;api;data;stock;price;</PackageTags>
 	<PackageIcon>intrinio.png</PackageIcon>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <Version>1.0.8-alpha</Version>
-    <AssemblyVersion>1.0.8.0</AssemblyVersion>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PublishRepositoryUrl>true</PublishRepositoryUrl>
+	<IncludeSymbols>true</IncludeSymbols>
+	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	<Version>1.0.9-alpha</Version>
+	<AssemblyVersion>1.0.9.0</AssemblyVersion>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="10.1.1" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
-    <PackageReference Include="JsonSubTypes" Version="1.8.0" />
-    <PackageReference Include="M5.FinancialDataSanitizer" Version="1.0.2-alpha" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Polly" Version="7.2.2" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+	<PackageReference Include="AutoMapper" Version="10.1.1" />
+	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+	<PackageReference Include="JsonSubTypes" Version="1.8.0" />
+	<PackageReference Include="M5.FinancialDataSanitizer" Version="1.0.2-alpha" />
+	<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+	<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	<PackageReference Include="Polly" Version="7.2.2" />
+	<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="intrinio.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
+	<None Include="intrinio.png">
+	  <Pack>True</Pack>
+	  <PackagePath></PackagePath>
+	</None>
   </ItemGroup>
 
 </Project>

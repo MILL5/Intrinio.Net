@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// The summary of a financial instrument representing shares of ownership in a publicly-traded company
     /// </summary>
     [DataContract]
-    public partial class SecuritySummary :  IEquatable<SecuritySummary>, IValidatableObject
+    public partial class SecuritySummary : IEquatable<SecuritySummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SecuritySummary" /> class.
@@ -50,83 +41,90 @@ namespace Intrinio.Net.Model
             this.ShareClassFigi = ShareClassFigi;
             this.PrimaryListing = PrimaryListing;
         }
-        
+
         /// <summary>
         /// The Intrinio ID for Security
         /// </summary>
         /// <value>The Intrinio ID for Security</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The Intrinio ID for the Company for which the Security is issued
         /// </summary>
         /// <value>The Intrinio ID for the Company for which the Security is issued</value>
-        [DataMember(Name="company_id", EmitDefaultValue=false)]
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
         public string CompanyId { get; set; }
 
         /// <summary>
         /// The name of the Security
         /// </summary>
         /// <value>The name of the Security</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// A 2-3 digit code classifying the Security (&lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/security_codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;)
         /// </summary>
         /// <value>A 2-3 digit code classifying the Security (&lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/security_codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;)</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
         /// The currency in which the Security is traded on the exchange
         /// </summary>
         /// <value>The currency in which the Security is traded on the exchange</value>
-        [DataMember(Name="currency", EmitDefaultValue=false)]
+        [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
         /// <summary>
         /// The common/local ticker of the Security
         /// </summary>
         /// <value>The common/local ticker of the Security</value>
-        [DataMember(Name="ticker", EmitDefaultValue=false)]
+        [DataMember(Name = "ticker", EmitDefaultValue = false)]
         public string Ticker { get; set; }
 
         /// <summary>
         /// The country-composite ticker of the Security
         /// </summary>
         /// <value>The country-composite ticker of the Security</value>
-        [DataMember(Name="composite_ticker", EmitDefaultValue=false)]
+        [DataMember(Name = "composite_ticker", EmitDefaultValue = false)]
         public string CompositeTicker { get; set; }
 
         /// <summary>
         /// The OpenFIGI identifier
         /// </summary>
         /// <value>The OpenFIGI identifier</value>
-        [DataMember(Name="figi", EmitDefaultValue=false)]
+        [DataMember(Name = "figi", EmitDefaultValue = false)]
         public string Figi { get; set; }
 
         /// <summary>
         /// The country-composite OpenFIGI identifier
         /// </summary>
         /// <value>The country-composite OpenFIGI identifier</value>
-        [DataMember(Name="composite_figi", EmitDefaultValue=false)]
+        [DataMember(Name = "composite_figi", EmitDefaultValue = false)]
         public string CompositeFigi { get; set; }
 
         /// <summary>
         /// The global-composite OpenFIGI identifier
         /// </summary>
         /// <value>The global-composite OpenFIGI identifier</value>
-        [DataMember(Name="share_class_figi", EmitDefaultValue=false)]
+        [DataMember(Name = "share_class_figi", EmitDefaultValue = false)]
         public string ShareClassFigi { get; set; }
 
         /// <summary>
         /// If true, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange
         /// </summary>
         /// <value>If true, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange</value>
-        [DataMember(Name="primary_listing", EmitDefaultValue=false)]
+        [DataMember(Name = "primary_listing", EmitDefaultValue = false)]
         public bool? PrimaryListing { get; set; }
+
+        /// <summary>
+        /// The global-composite OpenFIGI identifier
+        /// </summary>
+        /// <value>The global-composite OpenFIGI identifier</value>
+        [DataMember(Name = "stock_exchange_id", EmitDefaultValue = false)]
+        public string StockExchangeId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -150,7 +148,7 @@ namespace Intrinio.Net.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -180,57 +178,57 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     CompanyId == input.CompanyId ||
                     (CompanyId != null &&
                     CompanyId.Equals(input.CompanyId))
-                ) && 
+                ) &&
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Code == input.Code ||
                     (Code != null &&
                     Code.Equals(input.Code))
-                ) && 
+                ) &&
                 (
                     Currency == input.Currency ||
                     (Currency != null &&
                     Currency.Equals(input.Currency))
-                ) && 
+                ) &&
                 (
                     Ticker == input.Ticker ||
                     (Ticker != null &&
                     Ticker.Equals(input.Ticker))
-                ) && 
+                ) &&
                 (
                     CompositeTicker == input.CompositeTicker ||
                     (CompositeTicker != null &&
                     CompositeTicker.Equals(input.CompositeTicker))
-                ) && 
+                ) &&
                 (
                     Figi == input.Figi ||
                     (Figi != null &&
                     Figi.Equals(input.Figi))
-                ) && 
+                ) &&
                 (
                     CompositeFigi == input.CompositeFigi ||
                     (CompositeFigi != null &&
                     CompositeFigi.Equals(input.CompositeFigi))
-                ) && 
+                ) &&
                 (
                     ShareClassFigi == input.ShareClassFigi ||
                     (ShareClassFigi != null &&
                     ShareClassFigi.Equals(input.ShareClassFigi))
-                ) && 
+                ) &&
                 (
                     PrimaryListing == input.PrimaryListing ||
                     (PrimaryListing != null &&
@@ -283,5 +281,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }
