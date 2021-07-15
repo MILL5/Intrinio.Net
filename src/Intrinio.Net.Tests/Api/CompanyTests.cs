@@ -1,9 +1,8 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static Intrinio.Net.Tests.TestManager;
 using Assert = NUnit.Framework.Assert;
-
 
 namespace Intrinio.Net.Tests.Api
 {
@@ -14,21 +13,21 @@ namespace Intrinio.Net.Tests.Api
         private const string APPLE_NAME = "Apple Incorporated";
         private const string APPLE_LEI = "HWUPKR0MPOU8FGXBT394";
         private const string APPLE_CIK = "0000320193";
-        
+
         [TestMethod]
         public async Task GetAllCompanySummariesSucceedsAsync()
         {
             var companies = await IntrinioTestClient.GetAllCompanySummariesAsync();
-            
+
             Assert.IsNotNull(companies);
             Assert.IsTrue(companies.Count() > 1);
         }
-        
+
         [TestMethod]
         public async Task GetAllCompanySummariesWithExpansionSucceedsAsync()
         {
             var companies = await IntrinioTestClient.GetAllCompanySummariesAsync(expandAbbreviations: true);
-            
+
             Assert.IsNotNull(companies);
             Assert.IsTrue(companies.Count() > 1);
 
@@ -38,7 +37,7 @@ namespace Intrinio.Net.Tests.Api
             Assert.IsNotNull(apple);
             Assert.IsTrue(apple.Name == APPLE_NAME);
         }
-        
+
         [DataTestMethod]
         [DataRow(APPLE_TICKER)]
         [DataRow(APPLE_CIK)]
@@ -46,11 +45,11 @@ namespace Intrinio.Net.Tests.Api
         public async Task LookupCompanySucceedsAsync(string identifier)
         {
             var apple = await IntrinioTestClient.LookupCompanyAsync(identifier);
-            
+
             Assert.IsNotNull(apple);
             Assert.IsTrue(apple.Ticker == APPLE_TICKER);
         }
-        
+
         [DataTestMethod]
         [DataRow(APPLE_TICKER)]
         [DataRow(APPLE_CIK)]
@@ -58,10 +57,19 @@ namespace Intrinio.Net.Tests.Api
         public async Task LookupCompanyWithExpansionSucceedsAsync(string identifier)
         {
             var apple = await IntrinioTestClient.LookupCompanyAsync(identifier, true);
-            
+
             Assert.IsNotNull(apple);
             Assert.IsTrue(apple.Ticker == APPLE_TICKER);
             Assert.IsTrue(apple.Name == APPLE_NAME);
+        }
+
+        [TestMethod]
+        public async Task GetAllCompanySummariesPageSizeSuccessfulAsync()
+        {
+            var companies = await IntrinioTestClient.GetAllCompanySummariesAsync(page_size: 10000, has_stock_prices: true);
+
+            Assert.IsNotNull(companies);
+            Assert.IsTrue(companies.Any());
         }
     }
 }
