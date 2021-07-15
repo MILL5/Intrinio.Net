@@ -17,17 +17,14 @@
 	<PublishRepositoryUrl>true</PublishRepositoryUrl>
 	<IncludeSymbols>true</IncludeSymbols>
 	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-	<Version>1.0.9-alpha</Version>
-	<AssemblyVersion>1.0.9.0</AssemblyVersion>
+	<Version>1.0.10-alpha</Version>
+	<AssemblyVersion>1.0.10.0</AssemblyVersion>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
-	<PackageReference Include="AutoMapper" Version="10.1.1" />
 	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
-	<PackageReference Include="JsonSubTypes" Version="1.8.0" />
 	<PackageReference Include="M5.FinancialDataSanitizer" Version="1.0.2-alpha" />
-	<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
 	<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	<PackageReference Include="Polly" Version="7.2.2" />
 	<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />

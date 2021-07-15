@@ -32,7 +32,7 @@ namespace Intrinio.Net.Tests.Api
         
         [DataTestMethod]
         [DataRow(USCOMP)]
-        [DataRow("sxg_xgxM8Xq")]
+        [DataRow("sxg_2gB0zb")]
         public async Task GetStockPricesByExchangeSucceedsAsync(string identifier)
         {
             var result = await IntrinioTestClient.GetStockPricesByExchangeAsync(identifier);
