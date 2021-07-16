@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +12,7 @@ namespace Intrinio.Net.Model
     /// ApiResponseStockMarketIndexHistoricalData
     /// </summary>
     [DataContract]
-    public partial class ApiResponseStockMarketIndexHistoricalData :  IEquatable<ApiResponseStockMarketIndexHistoricalData>, IValidatableObject
+    public sealed partial class ApiResponseStockMarketIndexHistoricalData : IEquatable<ApiResponseStockMarketIndexHistoricalData>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseStockMarketIndexHistoricalData" /> class.
@@ -28,30 +20,30 @@ namespace Intrinio.Net.Model
         /// <param name="HistoricalData">HistoricalData.</param>
         /// <param name="Index">Index.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseStockMarketIndexHistoricalData(List<HistoricalData> HistoricalData = default(List<HistoricalData>), StockMarketIndexSummary Index = default(StockMarketIndexSummary), string NextPage = default(string))
+        public ApiResponseStockMarketIndexHistoricalData(List<HistoricalData> HistoricalData = default, StockMarketIndexSummary Index = default, string NextPage = default)
         {
             this.HistoricalData = HistoricalData;
             this.Index = Index;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets HistoricalData
         /// </summary>
-        [DataMember(Name="historical_data", EmitDefaultValue=false)]
+        [DataMember(Name = "historical_data", EmitDefaultValue = false)]
         public List<HistoricalData> HistoricalData { get; set; }
 
         /// <summary>
         /// Gets or Sets Index
         /// </summary>
-        [DataMember(Name="index", EmitDefaultValue=false)]
+        [DataMember(Name = "index", EmitDefaultValue = false)]
         public StockMarketIndexSummary Index { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -62,13 +54,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseStockMarketIndexHistoricalData {\n");
-            sb.Append("  HistoricalData: ").Append(HistoricalData).Append("\n");
-            sb.Append("  Index: ").Append(Index).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  HistoricalData: ").Append(HistoricalData).Append('\n');
+            sb.Append("  Index: ").Append(Index).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -83,9 +75,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseStockMarketIndexHistoricalData);
+            return Equals(obj as ApiResponseStockMarketIndexHistoricalData);
         }
 
         /// <summary>
@@ -98,17 +90,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     HistoricalData == input.HistoricalData ||
                     HistoricalData != null &&
                     HistoricalData.SequenceEqual(input.HistoricalData)
-                ) && 
+                ) &&
                 (
                     Index == input.Index ||
                     (Index != null &&
                     Index.Equals(input.Index))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -145,5 +137,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

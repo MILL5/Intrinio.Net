@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,30 +12,30 @@ namespace Intrinio.Net.Model
     /// ApiResponseZacksAnalystRatings
     /// </summary>
     [DataContract]
-    public partial class ApiResponseZacksAnalystRatings :  IEquatable<ApiResponseZacksAnalystRatings>, IValidatableObject
+    public sealed partial class ApiResponseZacksAnalystRatings : IEquatable<ApiResponseZacksAnalystRatings>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseZacksAnalystRatings" /> class.
         /// </summary>
         /// <param name="AnalystRatings">AnalystRatings.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseZacksAnalystRatings(List<ZacksAnalystRating> AnalystRatings = default(List<ZacksAnalystRating>), string NextPage = default(string))
+        public ApiResponseZacksAnalystRatings(List<ZacksAnalystRating> AnalystRatings = default, string NextPage = default)
         {
             this.AnalystRatings = AnalystRatings;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets AnalystRatings
         /// </summary>
-        [DataMember(Name="analyst_ratings", EmitDefaultValue=false)]
+        [DataMember(Name = "analyst_ratings", EmitDefaultValue = false)]
         public List<ZacksAnalystRating> AnalystRatings { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -54,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseZacksAnalystRatings {\n");
-            sb.Append("  AnalystRatings: ").Append(AnalystRatings).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  AnalystRatings: ").Append(AnalystRatings).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -74,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseZacksAnalystRatings);
+            return Equals(obj as ApiResponseZacksAnalystRatings);
         }
 
         /// <summary>
@@ -89,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     AnalystRatings == input.AnalystRatings ||
                     AnalystRatings != null &&
                     AnalystRatings.SequenceEqual(input.AnalystRatings)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -129,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

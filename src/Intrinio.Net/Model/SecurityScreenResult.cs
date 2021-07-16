@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,29 +12,29 @@ namespace Intrinio.Net.Model
     /// A security that matches the screen and its corresponding screened properties
     /// </summary>
     [DataContract]
-    public partial class SecurityScreenResult :  IEquatable<SecurityScreenResult>, IValidatableObject
+    public sealed partial class SecurityScreenResult : IEquatable<SecurityScreenResult>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SecurityScreenResult" /> class.
         /// </summary>
         /// <param name="Security">Security.</param>
         /// <param name="Data">Data.</param>
-        public SecurityScreenResult(SecuritySummary Security = default(SecuritySummary), List<SecurityScreenResultData> Data = default(List<SecurityScreenResultData>))
+        public SecurityScreenResult(SecuritySummary Security = default, List<SecurityScreenResultData> Data = default)
         {
             this.Security = Security;
             this.Data = Data;
         }
-        
+
         /// <summary>
         /// Gets or Sets Security
         /// </summary>
-        [DataMember(Name="security", EmitDefaultValue=false)]
+        [DataMember(Name = "security", EmitDefaultValue = false)]
         public SecuritySummary Security { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
-        [DataMember(Name="data", EmitDefaultValue=false)]
+        [DataMember(Name = "data", EmitDefaultValue = false)]
         public List<SecurityScreenResultData> Data { get; set; }
 
         /// <summary>
@@ -53,12 +45,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SecurityScreenResult {\n");
-            sb.Append("  Security: ").Append(Security).Append("\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Security: ").Append(Security).Append('\n');
+            sb.Append("  Data: ").Append(Data).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -73,9 +65,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as SecurityScreenResult);
+            return Equals(obj as SecurityScreenResult);
         }
 
         /// <summary>
@@ -88,12 +80,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Security == input.Security ||
                     (Security != null &&
                     Security.Equals(input.Security))
-                ) && 
+                ) &&
                 (
                     Data == input.Data ||
                     Data != null &&
@@ -128,5 +120,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

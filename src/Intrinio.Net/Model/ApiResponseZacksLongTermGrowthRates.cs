@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +12,31 @@ namespace Intrinio.Net.Model
     /// ApiResponseZacksLongTermGrowthRates
     /// </summary>
     [DataContract]
-    public partial class ApiResponseZacksLongTermGrowthRates :  IEquatable<ApiResponseZacksLongTermGrowthRates>, IValidatableObject
+    public sealed partial class ApiResponseZacksLongTermGrowthRates : IEquatable<ApiResponseZacksLongTermGrowthRates>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseZacksLongTermGrowthRates" /> class.
         /// </summary>
         /// <param name="LongTermGrowthEstimates">Zacks latest long term growth rates.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseZacksLongTermGrowthRates(List<ZacksLongTermGrowthRate> LongTermGrowthEstimates = default(List<ZacksLongTermGrowthRate>), string NextPage = default(string))
+        public ApiResponseZacksLongTermGrowthRates(List<ZacksLongTermGrowthRate> LongTermGrowthEstimates = default, string NextPage = default)
         {
             this.LongTermGrowthEstimates = LongTermGrowthEstimates;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Zacks latest long term growth rates
         /// </summary>
         /// <value>Zacks latest long term growth rates</value>
-        [DataMember(Name="long_term_growth_estimates", EmitDefaultValue=false)]
+        [DataMember(Name = "long_term_growth_estimates", EmitDefaultValue = false)]
         public List<ZacksLongTermGrowthRate> LongTermGrowthEstimates { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -55,12 +47,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseZacksLongTermGrowthRates {\n");
-            sb.Append("  LongTermGrowthEstimates: ").Append(LongTermGrowthEstimates).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  LongTermGrowthEstimates: ").Append(LongTermGrowthEstimates).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +67,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseZacksLongTermGrowthRates);
+            return Equals(obj as ApiResponseZacksLongTermGrowthRates);
         }
 
         /// <summary>
@@ -90,12 +82,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     LongTermGrowthEstimates == input.LongTermGrowthEstimates ||
                     LongTermGrowthEstimates != null &&
                     LongTermGrowthEstimates.SequenceEqual(input.LongTermGrowthEstimates)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -130,5 +122,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -12,7 +12,7 @@ namespace Intrinio.Net.Model
     /// ApiResponseCompanyFilings
     /// </summary>
     [DataContract]
-    public partial class ApiResponseCompanyFilings :  IEquatable<ApiResponseCompanyFilings>, IValidatableObject
+    public sealed partial class ApiResponseCompanyFilings : IEquatable<ApiResponseCompanyFilings>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseCompanyFilings" /> class.
@@ -20,30 +20,30 @@ namespace Intrinio.Net.Model
         /// <param name="Filings">Filings.</param>
         /// <param name="Company">Company.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseCompanyFilings(List<FilingSummary> Filings = default(List<FilingSummary>), CompanySummary Company = default(CompanySummary), string NextPage = default(string))
+        public ApiResponseCompanyFilings(List<FilingSummary> Filings = default, CompanySummary Company = default, string NextPage = default)
         {
             this.Filings = Filings;
             this.Company = Company;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets Filings
         /// </summary>
-        [DataMember(Name="filings", EmitDefaultValue=false)]
+        [DataMember(Name = "filings", EmitDefaultValue = false)]
         public List<FilingSummary> Filings { get; set; }
 
         /// <summary>
         /// Gets or Sets Company
         /// </summary>
-        [DataMember(Name="company", EmitDefaultValue=false)]
+        [DataMember(Name = "company", EmitDefaultValue = false)]
         public CompanySummary Company { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -54,13 +54,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseCompanyFilings {\n");
-            sb.Append("  Filings: ").Append(Filings).Append("\n");
-            sb.Append("  Company: ").Append(Company).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Filings: ").Append(Filings).Append('\n');
+            sb.Append("  Company: ").Append(Company).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +75,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseCompanyFilings);
+            return Equals(obj as ApiResponseCompanyFilings);
         }
 
         /// <summary>
@@ -90,17 +90,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Filings == input.Filings ||
                     Filings != null &&
                     Filings.SequenceEqual(input.Filings)
-                ) && 
+                ) &&
                 (
                     Company == input.Company ||
                     (Company != null &&
                     Company.Equals(input.Company))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -137,5 +137,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

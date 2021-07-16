@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +12,31 @@ namespace Intrinio.Net.Model
     /// ApiResponseZacksETFHoldings
     /// </summary>
     [DataContract]
-    public partial class ApiResponseZacksETFHoldings :  IEquatable<ApiResponseZacksETFHoldings>, IValidatableObject
+    public sealed partial class ApiResponseZacksEtfHoldings : IEquatable<ApiResponseZacksEtfHoldings>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiResponseZacksETFHoldings" /> class.
+        /// Initializes a new instance of the <see cref="ApiResponseZacksEtfHoldings" /> class.
         /// </summary>
         /// <param name="Holdings">Zacks ETF holding data.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseZacksETFHoldings(List<ZacksETFHolding> Holdings = default(List<ZacksETFHolding>), string NextPage = default(string))
+        public ApiResponseZacksEtfHoldings(List<ZacksEtfHolding> Holdings = default, string NextPage = default)
         {
             this.Holdings = Holdings;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Zacks ETF holding data
         /// </summary>
         /// <value>Zacks ETF holding data</value>
-        [DataMember(Name="holdings", EmitDefaultValue=false)]
-        public List<ZacksETFHolding> Holdings { get; set; }
+        [DataMember(Name = "holdings", EmitDefaultValue = false)]
+        public List<ZacksEtfHolding> Holdings { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -55,12 +47,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseZacksETFHoldings {\n");
-            sb.Append("  Holdings: ").Append(Holdings).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Holdings: ").Append(Holdings).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +67,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseZacksETFHoldings);
+            return Equals(obj as ApiResponseZacksEtfHoldings);
         }
 
         /// <summary>
@@ -85,17 +77,17 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Instance of ApiResponseZacksETFHoldings to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ApiResponseZacksETFHoldings input)
+        public bool Equals(ApiResponseZacksEtfHoldings input)
         {
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Holdings == input.Holdings ||
                     Holdings != null &&
                     Holdings.SequenceEqual(input.Holdings)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -130,5 +122,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,21 +12,21 @@ namespace Intrinio.Net.Model
     /// ApiResponseFilingNotesSearch
     /// </summary>
     [DataContract]
-    public partial class ApiResponseFilingNotesSearch :  IEquatable<ApiResponseFilingNotesSearch>, IValidatableObject
+    public sealed partial class ApiResponseFilingNotesSearch : IEquatable<ApiResponseFilingNotesSearch>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseFilingNotesSearch" /> class.
         /// </summary>
         /// <param name="FilingNotes">FilingNotes.</param>
-        public ApiResponseFilingNotesSearch(List<FilingNoteSummary> FilingNotes = default(List<FilingNoteSummary>))
+        public ApiResponseFilingNotesSearch(List<FilingNoteSummary> FilingNotes = default)
         {
             this.FilingNotes = FilingNotes;
         }
-        
+
         /// <summary>
         /// Gets or Sets FilingNotes
         /// </summary>
-        [DataMember(Name="filing_notes", EmitDefaultValue=false)]
+        [DataMember(Name = "filing_notes", EmitDefaultValue = false)]
         public List<FilingNoteSummary> FilingNotes { get; set; }
 
         /// <summary>
@@ -45,11 +37,11 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseFilingNotesSearch {\n");
-            sb.Append("  FilingNotes: ").Append(FilingNotes).Append("\n");
+            sb.Append("  FilingNotes: ").Append(FilingNotes).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -64,9 +56,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseFilingNotesSearch);
+            return Equals(obj as ApiResponseFilingNotesSearch);
         }
 
         /// <summary>
@@ -79,7 +71,7 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     FilingNotes == input.FilingNotes ||
                     FilingNotes != null &&
@@ -112,5 +104,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

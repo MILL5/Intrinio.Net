@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,17 +11,17 @@ namespace Intrinio.Net.Model
     /// An Index representing a Standard Industrial Classification (SIC) code.
     /// </summary>
     [DataContract]
-    public partial class SICIndex :  IEquatable<SICIndex>, IValidatableObject
+    public sealed partial class SicIndex : IEquatable<SicIndex>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SICIndex" /> class.
+        /// Initializes a new instance of the <see cref="SicIndex" /> class.
         /// </summary>
         /// <param name="Id">Intrinio ID for the Index.</param>
         /// <param name="Symbol">The symbol used to identify the Index.</param>
         /// <param name="Name">The name of the Index.</param>
         /// <param name="Continent">The continent of the country of focus for the Index.</param>
         /// <param name="Country">The country of focus for the Index.</param>
-        public SICIndex(string Id = default(string), string Symbol = default(string), string Name = default(string), string Continent = default(string), string Country = default(string))
+        public SicIndex(string Id = default, string Symbol = default, string Name = default, string Continent = default, string Country = default)
         {
             this.Id = Id;
             this.Symbol = Symbol;
@@ -38,40 +29,40 @@ namespace Intrinio.Net.Model
             this.Continent = Continent;
             this.Country = Country;
         }
-        
+
         /// <summary>
         /// Intrinio ID for the Index
         /// </summary>
         /// <value>Intrinio ID for the Index</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The symbol used to identify the Index
         /// </summary>
         /// <value>The symbol used to identify the Index</value>
-        [DataMember(Name="symbol", EmitDefaultValue=false)]
+        [DataMember(Name = "symbol", EmitDefaultValue = false)]
         public string Symbol { get; set; }
 
         /// <summary>
         /// The name of the Index
         /// </summary>
         /// <value>The name of the Index</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The continent of the country of focus for the Index
         /// </summary>
         /// <value>The continent of the country of focus for the Index</value>
-        [DataMember(Name="continent", EmitDefaultValue=false)]
+        [DataMember(Name = "continent", EmitDefaultValue = false)]
         public string Continent { get; set; }
 
         /// <summary>
         /// The country of focus for the Index
         /// </summary>
         /// <value>The country of focus for the Index</value>
-        [DataMember(Name="country", EmitDefaultValue=false)]
+        [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
         /// <summary>
@@ -82,15 +73,15 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SICIndex {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Continent: ").Append(Continent).Append("\n");
-            sb.Append("  Country: ").Append(Country).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  Symbol: ").Append(Symbol).Append('\n');
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Continent: ").Append(Continent).Append('\n');
+            sb.Append("  Country: ").Append(Country).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -105,9 +96,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as SICIndex);
+            return Equals(obj as SicIndex);
         }
 
         /// <summary>
@@ -115,32 +106,32 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Instance of SICIndex to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(SICIndex input)
+        public bool Equals(SicIndex input)
         {
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     Symbol == input.Symbol ||
                     (Symbol != null &&
                     Symbol.Equals(input.Symbol))
-                ) && 
+                ) &&
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Continent == input.Continent ||
                     (Continent != null &&
                     Continent.Equals(input.Continent))
-                ) && 
+                ) &&
                 (
                     Country == input.Country ||
                     (Country != null &&
@@ -181,5 +172,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

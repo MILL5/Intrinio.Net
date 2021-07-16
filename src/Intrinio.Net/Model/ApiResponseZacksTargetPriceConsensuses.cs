@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +12,31 @@ namespace Intrinio.Net.Model
     /// ApiResponseZacksTargetPriceConsensuses
     /// </summary>
     [DataContract]
-    public partial class ApiResponseZacksTargetPriceConsensuses :  IEquatable<ApiResponseZacksTargetPriceConsensuses>, IValidatableObject
+    public sealed partial class ApiResponseZacksTargetPriceConsensuses : IEquatable<ApiResponseZacksTargetPriceConsensuses>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseZacksTargetPriceConsensuses" /> class.
         /// </summary>
         /// <param name="TargetPriceConsensuses">Zacks target price consensuses for the latest date.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseZacksTargetPriceConsensuses(List<ZacksTargetPriceConsensus> TargetPriceConsensuses = default(List<ZacksTargetPriceConsensus>), string NextPage = default(string))
+        public ApiResponseZacksTargetPriceConsensuses(List<ZacksTargetPriceConsensus> TargetPriceConsensuses = default, string NextPage = default)
         {
             this.TargetPriceConsensuses = TargetPriceConsensuses;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Zacks target price consensuses for the latest date
         /// </summary>
         /// <value>Zacks target price consensuses for the latest date</value>
-        [DataMember(Name="target_price_consensuses", EmitDefaultValue=false)]
+        [DataMember(Name = "target_price_consensuses", EmitDefaultValue = false)]
         public List<ZacksTargetPriceConsensus> TargetPriceConsensuses { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -55,12 +47,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseZacksTargetPriceConsensuses {\n");
-            sb.Append("  TargetPriceConsensuses: ").Append(TargetPriceConsensuses).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  TargetPriceConsensuses: ").Append(TargetPriceConsensuses).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +67,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseZacksTargetPriceConsensuses);
+            return Equals(obj as ApiResponseZacksTargetPriceConsensuses);
         }
 
         /// <summary>
@@ -90,12 +82,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     TargetPriceConsensuses == input.TargetPriceConsensuses ||
                     TargetPriceConsensuses != null &&
                     TargetPriceConsensuses.SequenceEqual(input.TargetPriceConsensuses)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -130,5 +122,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// A Forex Currency Pair
     /// </summary>
     [DataContract]
-    public partial class ForexPair :  IEquatable<ForexPair>, IValidatableObject
+    public sealed partial class ForexPair : IEquatable<ForexPair>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ForexPair" /> class.
@@ -28,32 +19,32 @@ namespace Intrinio.Net.Model
         /// <param name="Code">The common code of the currency pair.</param>
         /// <param name="BaseCurrency">The ISO 4217 currency code of the base currency.</param>
         /// <param name="QuoteCurrency">The ISO 4217 currency code of the quote currency.</param>
-        public ForexPair(string Code = default(string), string BaseCurrency = default(string), string QuoteCurrency = default(string))
+        public ForexPair(string Code = default, string BaseCurrency = default, string QuoteCurrency = default)
         {
             this.Code = Code;
             this.BaseCurrency = BaseCurrency;
             this.QuoteCurrency = QuoteCurrency;
         }
-        
+
         /// <summary>
         /// The common code of the currency pair
         /// </summary>
         /// <value>The common code of the currency pair</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
         /// The ISO 4217 currency code of the base currency
         /// </summary>
         /// <value>The ISO 4217 currency code of the base currency</value>
-        [DataMember(Name="base_currency", EmitDefaultValue=false)]
+        [DataMember(Name = "base_currency", EmitDefaultValue = false)]
         public string BaseCurrency { get; set; }
 
         /// <summary>
         /// The ISO 4217 currency code of the quote currency
         /// </summary>
         /// <value>The ISO 4217 currency code of the quote currency</value>
-        [DataMember(Name="quote_currency", EmitDefaultValue=false)]
+        [DataMember(Name = "quote_currency", EmitDefaultValue = false)]
         public string QuoteCurrency { get; set; }
 
         /// <summary>
@@ -64,13 +55,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ForexPair {\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  BaseCurrency: ").Append(BaseCurrency).Append("\n");
-            sb.Append("  QuoteCurrency: ").Append(QuoteCurrency).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append('\n');
+            sb.Append("  BaseCurrency: ").Append(BaseCurrency).Append('\n');
+            sb.Append("  QuoteCurrency: ").Append(QuoteCurrency).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -85,9 +76,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ForexPair);
+            return Equals(obj as ForexPair);
         }
 
         /// <summary>
@@ -100,17 +91,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Code == input.Code ||
                     (Code != null &&
                     Code.Equals(input.Code))
-                ) && 
+                ) &&
                 (
                     BaseCurrency == input.BaseCurrency ||
                     (BaseCurrency != null &&
                     BaseCurrency.Equals(input.BaseCurrency))
-                ) && 
+                ) &&
                 (
                     QuoteCurrency == input.QuoteCurrency ||
                     (QuoteCurrency != null &&
@@ -147,5 +138,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

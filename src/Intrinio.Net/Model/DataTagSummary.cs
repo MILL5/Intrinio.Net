@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// DataTagSummary
     /// </summary>
     [DataContract]
-    public partial class DataTagSummary :  IEquatable<DataTagSummary>, IValidatableObject
+    public sealed partial class DataTagSummary : IEquatable<DataTagSummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DataTagSummary" /> class.
@@ -33,7 +24,7 @@ namespace Intrinio.Net.Model
         /// <param name="Factor">The operator forming the statement relationship between the child Data Tag (or Data Tags) and the parent Data Tag.</param>
         /// <param name="Balance">Whether the Data Tag represents a credit or debit.</param>
         /// <param name="Unit">The unit of the Data Tag.</param>
-        public DataTagSummary(string Id = default(string), string Name = default(string), string Tag = default(string), string Parent = default(string), decimal? Sequence = default(decimal?), string Factor = default(string), string Balance = default(string), string Unit = default(string))
+        public DataTagSummary(string Id = default, string Name = default, string Tag = default, string Parent = default, decimal? Sequence = default, string Factor = default, string Balance = default, string Unit = default)
         {
             this.Id = Id;
             this.Name = Name;
@@ -44,61 +35,61 @@ namespace Intrinio.Net.Model
             this.Balance = Balance;
             this.Unit = Unit;
         }
-        
+
         /// <summary>
         /// The Intrinio ID for the Data Tag
         /// </summary>
         /// <value>The Intrinio ID for the Data Tag</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The readable name of the Data Tag
         /// </summary>
         /// <value>The readable name of the Data Tag</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The code-name of the Data Tag
         /// </summary>
         /// <value>The code-name of the Data Tag</value>
-        [DataMember(Name="tag", EmitDefaultValue=false)]
+        [DataMember(Name = "tag", EmitDefaultValue = false)]
         public string Tag { get; set; }
 
         /// <summary>
         /// The parent Data Tag forming the statement relationship with the factor
         /// </summary>
         /// <value>The parent Data Tag forming the statement relationship with the factor</value>
-        [DataMember(Name="parent", EmitDefaultValue=false)]
+        [DataMember(Name = "parent", EmitDefaultValue = false)]
         public string Parent { get; set; }
 
         /// <summary>
         /// The order in which the Data Tag appears in its logical group (such as a financial statement)
         /// </summary>
         /// <value>The order in which the Data Tag appears in its logical group (such as a financial statement)</value>
-        [DataMember(Name="sequence", EmitDefaultValue=false)]
+        [DataMember(Name = "sequence", EmitDefaultValue = false)]
         public decimal? Sequence { get; set; }
 
         /// <summary>
         /// The operator forming the statement relationship between the child Data Tag (or Data Tags) and the parent Data Tag
         /// </summary>
         /// <value>The operator forming the statement relationship between the child Data Tag (or Data Tags) and the parent Data Tag</value>
-        [DataMember(Name="factor", EmitDefaultValue=false)]
+        [DataMember(Name = "factor", EmitDefaultValue = false)]
         public string Factor { get; set; }
 
         /// <summary>
         /// Whether the Data Tag represents a credit or debit
         /// </summary>
         /// <value>Whether the Data Tag represents a credit or debit</value>
-        [DataMember(Name="balance", EmitDefaultValue=false)]
+        [DataMember(Name = "balance", EmitDefaultValue = false)]
         public string Balance { get; set; }
 
         /// <summary>
         /// The unit of the Data Tag
         /// </summary>
         /// <value>The unit of the Data Tag</value>
-        [DataMember(Name="unit", EmitDefaultValue=false)]
+        [DataMember(Name = "unit", EmitDefaultValue = false)]
         public string Unit { get; set; }
 
         /// <summary>
@@ -109,18 +100,18 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DataTagSummary {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Tag: ").Append(Tag).Append("\n");
-            sb.Append("  Parent: ").Append(Parent).Append("\n");
-            sb.Append("  Sequence: ").Append(Sequence).Append("\n");
-            sb.Append("  Factor: ").Append(Factor).Append("\n");
-            sb.Append("  Balance: ").Append(Balance).Append("\n");
-            sb.Append("  Unit: ").Append(Unit).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Tag: ").Append(Tag).Append('\n');
+            sb.Append("  Parent: ").Append(Parent).Append('\n');
+            sb.Append("  Sequence: ").Append(Sequence).Append('\n');
+            sb.Append("  Factor: ").Append(Factor).Append('\n');
+            sb.Append("  Balance: ").Append(Balance).Append('\n');
+            sb.Append("  Unit: ").Append(Unit).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -135,9 +126,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as DataTagSummary);
+            return Equals(obj as DataTagSummary);
         }
 
         /// <summary>
@@ -150,42 +141,42 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Tag == input.Tag ||
                     (Tag != null &&
                     Tag.Equals(input.Tag))
-                ) && 
+                ) &&
                 (
                     Parent == input.Parent ||
                     (Parent != null &&
                     Parent.Equals(input.Parent))
-                ) && 
+                ) &&
                 (
                     Sequence == input.Sequence ||
                     (Sequence != null &&
                     Sequence.Equals(input.Sequence))
-                ) && 
+                ) &&
                 (
                     Factor == input.Factor ||
                     (Factor != null &&
                     Factor.Equals(input.Factor))
-                ) && 
+                ) &&
                 (
                     Balance == input.Balance ||
                     (Balance != null &&
                     Balance.Equals(input.Balance))
-                ) && 
+                ) &&
                 (
                     Unit == input.Unit ||
                     (Unit != null &&
@@ -232,5 +223,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

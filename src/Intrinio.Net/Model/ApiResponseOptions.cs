@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +12,31 @@ namespace Intrinio.Net.Model
     /// ApiResponseOptions
     /// </summary>
     [DataContract]
-    public partial class ApiResponseOptions :  IEquatable<ApiResponseOptions>, IValidatableObject
+    public sealed partial class ApiResponseOptions : IEquatable<ApiResponseOptions>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseOptions" /> class.
         /// </summary>
         /// <param name="Options">A list of options contracts with the given symbol.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseOptions(List<Option> Options = default(List<Option>), string NextPage = default(string))
+        public ApiResponseOptions(List<Option> Options = default, string NextPage = default)
         {
             this.Options = Options;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// A list of options contracts with the given symbol
         /// </summary>
         /// <value>A list of options contracts with the given symbol</value>
-        [DataMember(Name="options", EmitDefaultValue=false)]
+        [DataMember(Name = "options", EmitDefaultValue = false)]
         public List<Option> Options { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -55,12 +47,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseOptions {\n");
-            sb.Append("  Options: ").Append(Options).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Options: ").Append(Options).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +67,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseOptions);
+            return Equals(obj as ApiResponseOptions);
         }
 
         /// <summary>
@@ -90,12 +82,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Options == input.Options ||
                     Options != null &&
                     Options.SequenceEqual(input.Options)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -130,5 +122,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

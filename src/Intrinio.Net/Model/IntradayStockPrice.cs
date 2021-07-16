@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// An intraday stock price for a Security.
     /// </summary>
     [DataContract]
-    public partial class IntradayStockPrice :  IEquatable<IntradayStockPrice>, IValidatableObject
+    public sealed partial class IntradayStockPrice : IEquatable<IntradayStockPrice>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="IntradayStockPrice" /> class.
@@ -33,7 +24,7 @@ namespace Intrinio.Net.Model
         /// <param name="BidSize">The size of the top bid order..</param>
         /// <param name="Volume">The number of shares exchanged during the trading day on the exchange..</param>
         /// <param name="Source">The source of the data..</param>
-        public IntradayStockPrice(DateTime? Time = default(DateTime?), decimal? LastPrice = default(decimal?), decimal? AskPrice = default(decimal?), decimal? AskSize = default(decimal?), decimal? BidPrice = default(decimal?), decimal? BidSize = default(decimal?), decimal? Volume = default(decimal?), string Source = default(string))
+        public IntradayStockPrice(DateTime? Time = default, decimal? LastPrice = default, decimal? AskPrice = default, decimal? AskSize = default, decimal? BidPrice = default, decimal? BidSize = default, decimal? Volume = default, string Source = default)
         {
             this.Time = Time;
             this.LastPrice = LastPrice;
@@ -44,61 +35,61 @@ namespace Intrinio.Net.Model
             this.Volume = Volume;
             this.Source = Source;
         }
-        
+
         /// <summary>
         /// The timestamp that the &#x60;last_price&#x60; represents.
         /// </summary>
         /// <value>The timestamp that the &#x60;last_price&#x60; represents.</value>
-        [DataMember(Name="time", EmitDefaultValue=false)]
+        [DataMember(Name = "time", EmitDefaultValue = false)]
         public DateTime? Time { get; set; }
 
         /// <summary>
         /// The price of the last trade.
         /// </summary>
         /// <value>The price of the last trade.</value>
-        [DataMember(Name="last_price", EmitDefaultValue=false)]
+        [DataMember(Name = "last_price", EmitDefaultValue = false)]
         public decimal? LastPrice { get; set; }
 
         /// <summary>
         /// The price of the top ask order.
         /// </summary>
         /// <value>The price of the top ask order.</value>
-        [DataMember(Name="ask_price", EmitDefaultValue=false)]
+        [DataMember(Name = "ask_price", EmitDefaultValue = false)]
         public decimal? AskPrice { get; set; }
 
         /// <summary>
         /// The size of the top ask order.
         /// </summary>
         /// <value>The size of the top ask order.</value>
-        [DataMember(Name="ask_size", EmitDefaultValue=false)]
+        [DataMember(Name = "ask_size", EmitDefaultValue = false)]
         public decimal? AskSize { get; set; }
 
         /// <summary>
         /// The price of the top bid order.
         /// </summary>
         /// <value>The price of the top bid order.</value>
-        [DataMember(Name="bid_price", EmitDefaultValue=false)]
+        [DataMember(Name = "bid_price", EmitDefaultValue = false)]
         public decimal? BidPrice { get; set; }
 
         /// <summary>
         /// The size of the top bid order.
         /// </summary>
         /// <value>The size of the top bid order.</value>
-        [DataMember(Name="bid_size", EmitDefaultValue=false)]
+        [DataMember(Name = "bid_size", EmitDefaultValue = false)]
         public decimal? BidSize { get; set; }
 
         /// <summary>
         /// The number of shares exchanged during the trading day on the exchange.
         /// </summary>
         /// <value>The number of shares exchanged during the trading day on the exchange.</value>
-        [DataMember(Name="volume", EmitDefaultValue=false)]
+        [DataMember(Name = "volume", EmitDefaultValue = false)]
         public decimal? Volume { get; set; }
 
         /// <summary>
         /// The source of the data.
         /// </summary>
         /// <value>The source of the data.</value>
-        [DataMember(Name="source", EmitDefaultValue=false)]
+        [DataMember(Name = "source", EmitDefaultValue = false)]
         public string Source { get; set; }
 
         /// <summary>
@@ -109,18 +100,18 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class IntradayStockPrice {\n");
-            sb.Append("  Time: ").Append(Time).Append("\n");
-            sb.Append("  LastPrice: ").Append(LastPrice).Append("\n");
-            sb.Append("  AskPrice: ").Append(AskPrice).Append("\n");
-            sb.Append("  AskSize: ").Append(AskSize).Append("\n");
-            sb.Append("  BidPrice: ").Append(BidPrice).Append("\n");
-            sb.Append("  BidSize: ").Append(BidSize).Append("\n");
-            sb.Append("  Volume: ").Append(Volume).Append("\n");
-            sb.Append("  Source: ").Append(Source).Append("\n");
+            sb.Append("  Time: ").Append(Time).Append('\n');
+            sb.Append("  LastPrice: ").Append(LastPrice).Append('\n');
+            sb.Append("  AskPrice: ").Append(AskPrice).Append('\n');
+            sb.Append("  AskSize: ").Append(AskSize).Append('\n');
+            sb.Append("  BidPrice: ").Append(BidPrice).Append('\n');
+            sb.Append("  BidSize: ").Append(BidSize).Append('\n');
+            sb.Append("  Volume: ").Append(Volume).Append('\n');
+            sb.Append("  Source: ").Append(Source).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -135,9 +126,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as IntradayStockPrice);
+            return Equals(obj as IntradayStockPrice);
         }
 
         /// <summary>
@@ -150,42 +141,42 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Time == input.Time ||
                     (Time != null &&
                     Time.Equals(input.Time))
-                ) && 
+                ) &&
                 (
                     LastPrice == input.LastPrice ||
                     (LastPrice != null &&
                     LastPrice.Equals(input.LastPrice))
-                ) && 
+                ) &&
                 (
                     AskPrice == input.AskPrice ||
                     (AskPrice != null &&
                     AskPrice.Equals(input.AskPrice))
-                ) && 
+                ) &&
                 (
                     AskSize == input.AskSize ||
                     (AskSize != null &&
                     AskSize.Equals(input.AskSize))
-                ) && 
+                ) &&
                 (
                     BidPrice == input.BidPrice ||
                     (BidPrice != null &&
                     BidPrice.Equals(input.BidPrice))
-                ) && 
+                ) &&
                 (
                     BidSize == input.BidSize ||
                     (BidSize != null &&
                     BidSize.Equals(input.BidSize))
-                ) && 
+                ) &&
                 (
                     Volume == input.Volume ||
                     (Volume != null &&
                     Volume.Equals(input.Volume))
-                ) && 
+                ) &&
                 (
                     Source == input.Source ||
                     (Source != null &&
@@ -232,5 +223,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

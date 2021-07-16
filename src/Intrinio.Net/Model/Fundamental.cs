@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,28 +12,27 @@ namespace Intrinio.Net.Model
     /// Fundamental
     /// </summary>
     [DataContract]
-    public partial class Fundamental :  IEquatable<Fundamental>, IValidatableObject
+    public sealed partial class Fundamental : IEquatable<Fundamental>, IValidatableObject
     {
         /// <summary>
         /// The type of Fundamental
         /// </summary>
         /// <value>The type of Fundamental</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
+        public enum FundamentalType
         {
-            
             /// <summary>
             /// Enum Reported for value: reported
             /// </summary>
             [EnumMember(Value = "reported")]
             Reported = 1,
-            
+
             /// <summary>
             /// Enum Restated for value: restated
             /// </summary>
             [EnumMember(Value = "restated")]
             Restated = 2,
-            
+
             /// <summary>
             /// Enum Calculated for value: calculated
             /// </summary>
@@ -53,8 +44,9 @@ namespace Intrinio.Net.Model
         /// The type of Fundamental
         /// </summary>
         /// <value>The type of Fundamental</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
-        public TypeEnum? Type { get; set; }
+        [DataMember(Name = "type", EmitDefaultValue = false)]
+        public FundamentalType? Type { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Fundamental" /> class.
         /// </summary>
@@ -68,7 +60,7 @@ namespace Intrinio.Net.Model
         /// <param name="FilingDate">The date and time when the Fundamental was filed with the SEC.</param>
         /// <param name="IsLatest">Is this the latest fundamental available based on the company&#39;s most recent filings? Use the Lookup Fundamental endpoint to find the latest fundamental (&lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/web_api/lookup_fundamental_v2\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;).</param>
         /// <param name="Company">The Company that the Fundamental was belongs to.</param>
-        public Fundamental(string Id = default(string), string StatementCode = default(string), decimal? FiscalYear = default(decimal?), string FiscalPeriod = default(string), TypeEnum? Type = default(TypeEnum?), DateTime? StartDate = default(DateTime?), DateTime? EndDate = default(DateTime?), DateTime? FilingDate = default(DateTime?), bool? IsLatest = default(bool?), CompanySummary Company = default(CompanySummary))
+        public Fundamental(string Id = default, string StatementCode = default, decimal? FiscalYear = default, string FiscalPeriod = default, FundamentalType? Type = default, DateTime? StartDate = default, DateTime? EndDate = default, DateTime? FilingDate = default, bool? IsLatest = default, CompanySummary Company = default)
         {
             this.Id = Id;
             this.StatementCode = StatementCode;
@@ -81,71 +73,68 @@ namespace Intrinio.Net.Model
             this.IsLatest = IsLatest;
             this.Company = Company;
         }
-        
+
         /// <summary>
         /// The Intrinio ID of the Fundamental
         /// </summary>
         /// <value>The Intrinio ID of the Fundamental</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The code of the financial statement that the Fundamental represents
         /// </summary>
         /// <value>The code of the financial statement that the Fundamental represents</value>
-        [DataMember(Name="statement_code", EmitDefaultValue=false)]
+        [DataMember(Name = "statement_code", EmitDefaultValue = false)]
         public string StatementCode { get; set; }
 
         /// <summary>
         /// The fiscal year
         /// </summary>
         /// <value>The fiscal year</value>
-        [DataMember(Name="fiscal_year", EmitDefaultValue=false)]
+        [DataMember(Name = "fiscal_year", EmitDefaultValue = false)]
         public decimal? FiscalYear { get; set; }
 
         /// <summary>
         /// The fiscal period
         /// </summary>
         /// <value>The fiscal period</value>
-        [DataMember(Name="fiscal_period", EmitDefaultValue=false)]
+        [DataMember(Name = "fiscal_period", EmitDefaultValue = false)]
         public string FiscalPeriod { get; set; }
-
 
         /// <summary>
         /// The period start date
         /// </summary>
         /// <value>The period start date</value>
-        [DataMember(Name="start_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "start_date", EmitDefaultValue = false)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
         /// The period start date
         /// </summary>
         /// <value>The period start date</value>
-        [DataMember(Name="end_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "end_date", EmitDefaultValue = false)]
         public DateTime? EndDate { get; set; }
 
         /// <summary>
         /// The date and time when the Fundamental was filed with the SEC
         /// </summary>
         /// <value>The date and time when the Fundamental was filed with the SEC</value>
-        [DataMember(Name="filing_date", EmitDefaultValue=false)]
+        [DataMember(Name = "filing_date", EmitDefaultValue = false)]
         public DateTime? FilingDate { get; set; }
 
         /// <summary>
         /// Is this the latest fundamental available based on the company&#39;s most recent filings? Use the Lookup Fundamental endpoint to find the latest fundamental (&lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/web_api/lookup_fundamental_v2\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;)
         /// </summary>
         /// <value>Is this the latest fundamental available based on the company&#39;s most recent filings? Use the Lookup Fundamental endpoint to find the latest fundamental (&lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/web_api/lookup_fundamental_v2\&quot; target&#x3D;\&quot;_blank\&quot;&gt;reference&lt;/a&gt;)</value>
-        [DataMember(Name="is_latest", EmitDefaultValue=false)]
+        [DataMember(Name = "is_latest", EmitDefaultValue = false)]
         public bool? IsLatest { get; set; }
 
         /// <summary>
         /// The Company that the Fundamental was belongs to
         /// </summary>
         /// <value>The Company that the Fundamental was belongs to</value>
-        [DataMember(Name="company", EmitDefaultValue=false)]
+        [DataMember(Name = "company", EmitDefaultValue = false)]
         public CompanySummary Company { get; set; }
 
         /// <summary>
@@ -156,20 +145,20 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Fundamental {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  StatementCode: ").Append(StatementCode).Append("\n");
-            sb.Append("  FiscalYear: ").Append(FiscalYear).Append("\n");
-            sb.Append("  FiscalPeriod: ").Append(FiscalPeriod).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  StartDate: ").Append(StartDate).Append("\n");
-            sb.Append("  EndDate: ").Append(EndDate).Append("\n");
-            sb.Append("  FilingDate: ").Append(FilingDate).Append("\n");
-            sb.Append("  IsLatest: ").Append(IsLatest).Append("\n");
-            sb.Append("  Company: ").Append(Company).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  StatementCode: ").Append(StatementCode).Append('\n');
+            sb.Append("  FiscalYear: ").Append(FiscalYear).Append('\n');
+            sb.Append("  FiscalPeriod: ").Append(FiscalPeriod).Append('\n');
+            sb.Append("  Type: ").Append(Type).Append('\n');
+            sb.Append("  StartDate: ").Append(StartDate).Append('\n');
+            sb.Append("  EndDate: ").Append(EndDate).Append('\n');
+            sb.Append("  FilingDate: ").Append(FilingDate).Append('\n');
+            sb.Append("  IsLatest: ").Append(IsLatest).Append('\n');
+            sb.Append("  Company: ").Append(Company).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -184,9 +173,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as Fundamental);
+            return Equals(obj as Fundamental);
         }
 
         /// <summary>
@@ -199,52 +188,52 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     StatementCode == input.StatementCode ||
                     (StatementCode != null &&
                     StatementCode.Equals(input.StatementCode))
-                ) && 
+                ) &&
                 (
                     FiscalYear == input.FiscalYear ||
                     (FiscalYear != null &&
                     FiscalYear.Equals(input.FiscalYear))
-                ) && 
+                ) &&
                 (
                     FiscalPeriod == input.FiscalPeriod ||
                     (FiscalPeriod != null &&
                     FiscalPeriod.Equals(input.FiscalPeriod))
-                ) && 
+                ) &&
                 (
                     Type == input.Type ||
                     (Type != null &&
                     Type.Equals(input.Type))
-                ) && 
+                ) &&
                 (
                     StartDate == input.StartDate ||
                     (StartDate != null &&
                     StartDate.Equals(input.StartDate))
-                ) && 
+                ) &&
                 (
                     EndDate == input.EndDate ||
                     (EndDate != null &&
                     EndDate.Equals(input.EndDate))
-                ) && 
+                ) &&
                 (
                     FilingDate == input.FilingDate ||
                     (FilingDate != null &&
                     FilingDate.Equals(input.FilingDate))
-                ) && 
+                ) &&
                 (
                     IsLatest == input.IsLatest ||
                     (IsLatest != null &&
                     IsLatest.Equals(input.IsLatest))
-                ) && 
+                ) &&
                 (
                     Company == input.Company ||
                     (Company != null &&
@@ -295,5 +284,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

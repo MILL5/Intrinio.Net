@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +12,7 @@ namespace Intrinio.Net.Model
     /// ApiResponseForexPrices
     /// </summary>
     [DataContract]
-    public partial class ApiResponseForexPrices :  IEquatable<ApiResponseForexPrices>, IValidatableObject
+    public sealed partial class ApiResponseForexPrices : IEquatable<ApiResponseForexPrices>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseForexPrices" /> class.
@@ -28,31 +20,31 @@ namespace Intrinio.Net.Model
         /// <param name="Prices">Prices.</param>
         /// <param name="Pair">The Forex currency pair for which prices were requested.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseForexPrices(List<ForexPrice> Prices = default(List<ForexPrice>), ForexPair Pair = default(ForexPair), string NextPage = default(string))
+        public ApiResponseForexPrices(List<ForexPrice> Prices = default, ForexPair Pair = default, string NextPage = default)
         {
             this.Prices = Prices;
             this.Pair = Pair;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets Prices
         /// </summary>
-        [DataMember(Name="prices", EmitDefaultValue=false)]
+        [DataMember(Name = "prices", EmitDefaultValue = false)]
         public List<ForexPrice> Prices { get; set; }
 
         /// <summary>
         /// The Forex currency pair for which prices were requested
         /// </summary>
         /// <value>The Forex currency pair for which prices were requested</value>
-        [DataMember(Name="pair", EmitDefaultValue=false)]
+        [DataMember(Name = "pair", EmitDefaultValue = false)]
         public ForexPair Pair { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -63,13 +55,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseForexPrices {\n");
-            sb.Append("  Prices: ").Append(Prices).Append("\n");
-            sb.Append("  Pair: ").Append(Pair).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Prices: ").Append(Prices).Append('\n');
+            sb.Append("  Pair: ").Append(Pair).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -84,9 +76,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseForexPrices);
+            return Equals(obj as ApiResponseForexPrices);
         }
 
         /// <summary>
@@ -99,17 +91,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Prices == input.Prices ||
                     Prices != null &&
                     Prices.SequenceEqual(input.Prices)
-                ) && 
+                ) &&
                 (
                     Pair == input.Pair ||
                     (Pair != null &&
                     Pair.Equals(input.Pair))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -146,5 +138,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

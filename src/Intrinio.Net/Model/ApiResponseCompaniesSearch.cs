@@ -12,21 +12,21 @@ namespace Intrinio.Net.Model
     /// ApiResponseCompaniesSearch
     /// </summary>
     [DataContract]
-    public partial class ApiResponseCompaniesSearch :  IEquatable<ApiResponseCompaniesSearch>, IValidatableObject
+    public sealed partial class ApiResponseCompaniesSearch : IEquatable<ApiResponseCompaniesSearch>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseCompaniesSearch" /> class.
         /// </summary>
         /// <param name="Companies">Companies.</param>
-        public ApiResponseCompaniesSearch(List<CompanySummary> Companies = default(List<CompanySummary>))
+        public ApiResponseCompaniesSearch(List<CompanySummary> Companies = default)
         {
             this.Companies = Companies;
         }
-        
+
         /// <summary>
         /// Gets or Sets Companies
         /// </summary>
-        [DataMember(Name="companies", EmitDefaultValue=false)]
+        [DataMember(Name = "companies", EmitDefaultValue = false)]
         public List<CompanySummary> Companies { get; set; }
 
         /// <summary>
@@ -37,11 +37,11 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseCompaniesSearch {\n");
-            sb.Append("  Companies: ").Append(Companies).Append("\n");
+            sb.Append("  Companies: ").Append(Companies).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -56,9 +56,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseCompaniesSearch);
+            return Equals(obj as ApiResponseCompaniesSearch);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Companies == input.Companies ||
                     Companies != null &&
@@ -104,5 +104,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

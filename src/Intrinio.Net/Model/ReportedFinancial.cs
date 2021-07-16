@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +12,7 @@ namespace Intrinio.Net.Model
     /// A financial statement fact as-reported, directly from the financial statements of the XBRL filings from the company.
     /// </summary>
     [DataContract]
-    public partial class ReportedFinancial :  IEquatable<ReportedFinancial>, IValidatableObject
+    public sealed partial class ReportedFinancial : IEquatable<ReportedFinancial>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportedFinancial" /> class.
@@ -28,31 +20,31 @@ namespace Intrinio.Net.Model
         /// <param name="XbrlTag">XbrlTag.</param>
         /// <param name="Value">The value reported for the XBRL Tag within the scope of the Fundamental.</param>
         /// <param name="Dimensions">The combination of XBRL axis and members that defines the dimensionalization of this fact (if any).</param>
-        public ReportedFinancial(ReportedTag XbrlTag = default(ReportedTag), decimal? Value = default(decimal?), List<ReportedFinancialDimension> Dimensions = default(List<ReportedFinancialDimension>))
+        public ReportedFinancial(ReportedTag XbrlTag = default, decimal? Value = default, List<ReportedFinancialDimension> Dimensions = default)
         {
             this.XbrlTag = XbrlTag;
             this.Value = Value;
             this.Dimensions = Dimensions;
         }
-        
+
         /// <summary>
         /// Gets or Sets XbrlTag
         /// </summary>
-        [DataMember(Name="xbrl_tag", EmitDefaultValue=false)]
+        [DataMember(Name = "xbrl_tag", EmitDefaultValue = false)]
         public ReportedTag XbrlTag { get; set; }
 
         /// <summary>
         /// The value reported for the XBRL Tag within the scope of the Fundamental
         /// </summary>
         /// <value>The value reported for the XBRL Tag within the scope of the Fundamental</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public decimal? Value { get; set; }
 
         /// <summary>
         /// The combination of XBRL axis and members that defines the dimensionalization of this fact (if any)
         /// </summary>
         /// <value>The combination of XBRL axis and members that defines the dimensionalization of this fact (if any)</value>
-        [DataMember(Name="dimensions", EmitDefaultValue=false)]
+        [DataMember(Name = "dimensions", EmitDefaultValue = false)]
         public List<ReportedFinancialDimension> Dimensions { get; set; }
 
         /// <summary>
@@ -63,13 +55,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ReportedFinancial {\n");
-            sb.Append("  XbrlTag: ").Append(XbrlTag).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
-            sb.Append("  Dimensions: ").Append(Dimensions).Append("\n");
+            sb.Append("  XbrlTag: ").Append(XbrlTag).Append('\n');
+            sb.Append("  Value: ").Append(Value).Append('\n');
+            sb.Append("  Dimensions: ").Append(Dimensions).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -84,9 +76,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ReportedFinancial);
+            return Equals(obj as ReportedFinancial);
         }
 
         /// <summary>
@@ -99,17 +91,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     XbrlTag == input.XbrlTag ||
                     (XbrlTag != null &&
                     XbrlTag.Equals(input.XbrlTag))
-                ) && 
+                ) &&
                 (
                     Value == input.Value ||
                     (Value != null &&
                     Value.Equals(input.Value))
-                ) && 
+                ) &&
                 (
                     Dimensions == input.Dimensions ||
                     Dimensions != null &&
@@ -146,5 +138,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

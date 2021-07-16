@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +12,7 @@ namespace Intrinio.Net.Model
     /// ApiResponseSecurityStockPriceAdjustments
     /// </summary>
     [DataContract]
-    public partial class ApiResponseSecurityStockPriceAdjustments :  IEquatable<ApiResponseSecurityStockPriceAdjustments>, IValidatableObject
+    public sealed partial class ApiResponseSecurityStockPriceAdjustments : IEquatable<ApiResponseSecurityStockPriceAdjustments>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseSecurityStockPriceAdjustments" /> class.
@@ -28,32 +20,32 @@ namespace Intrinio.Net.Model
         /// <param name="StockPriceAdjustments">The stock price adjustments for the Security.</param>
         /// <param name="Security">The Security resolved from the given identifier.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseSecurityStockPriceAdjustments(List<StockPriceAdjustmentSummary> StockPriceAdjustments = default(List<StockPriceAdjustmentSummary>), SecuritySummary Security = default(SecuritySummary), string NextPage = default(string))
+        public ApiResponseSecurityStockPriceAdjustments(List<StockPriceAdjustmentSummary> StockPriceAdjustments = default, SecuritySummary Security = default, string NextPage = default)
         {
             this.StockPriceAdjustments = StockPriceAdjustments;
             this.Security = Security;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// The stock price adjustments for the Security
         /// </summary>
         /// <value>The stock price adjustments for the Security</value>
-        [DataMember(Name="stock_price_adjustments", EmitDefaultValue=false)]
+        [DataMember(Name = "stock_price_adjustments", EmitDefaultValue = false)]
         public List<StockPriceAdjustmentSummary> StockPriceAdjustments { get; set; }
 
         /// <summary>
         /// The Security resolved from the given identifier
         /// </summary>
         /// <value>The Security resolved from the given identifier</value>
-        [DataMember(Name="security", EmitDefaultValue=false)]
+        [DataMember(Name = "security", EmitDefaultValue = false)]
         public SecuritySummary Security { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -64,13 +56,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseSecurityStockPriceAdjustments {\n");
-            sb.Append("  StockPriceAdjustments: ").Append(StockPriceAdjustments).Append("\n");
-            sb.Append("  Security: ").Append(Security).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  StockPriceAdjustments: ").Append(StockPriceAdjustments).Append('\n');
+            sb.Append("  Security: ").Append(Security).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -85,9 +77,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseSecurityStockPriceAdjustments);
+            return Equals(obj as ApiResponseSecurityStockPriceAdjustments);
         }
 
         /// <summary>
@@ -100,17 +92,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     StockPriceAdjustments == input.StockPriceAdjustments ||
                     StockPriceAdjustments != null &&
                     StockPriceAdjustments.SequenceEqual(input.StockPriceAdjustments)
-                ) && 
+                ) &&
                 (
                     Security == input.Security ||
                     (Security != null &&
                     Security.Equals(input.Security))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -147,5 +139,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// The date_time, lower_band, middle_band, and upper_band values of a Bollinger Bands technical indicator calculation
     /// </summary>
     [DataContract]
-    public partial class BollingerBandsTechnicalValue :  IEquatable<BollingerBandsTechnicalValue>, IValidatableObject
+    public sealed partial class BollingerBandsTechnicalValue : IEquatable<BollingerBandsTechnicalValue>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BollingerBandsTechnicalValue" /> class.
@@ -29,40 +20,40 @@ namespace Intrinio.Net.Model
         /// <param name="LowerBand">The lower band value of the Bollinger Bands technical indicator calculation.</param>
         /// <param name="MiddleBand">The middle band value of the Bollinger Bands technical indicator calculation.</param>
         /// <param name="UpperBand">The upper band value of the Bollinger Bands technical indicator calculation.</param>
-        public BollingerBandsTechnicalValue(DateTime? DateTime = default(DateTime?), float? LowerBand = default(float?), float? MiddleBand = default(float?), float? UpperBand = default(float?))
+        public BollingerBandsTechnicalValue(DateTime? DateTime = default, float? LowerBand = default, float? MiddleBand = default, float? UpperBand = default)
         {
             this.DateTime = DateTime;
             this.LowerBand = LowerBand;
             this.MiddleBand = MiddleBand;
             this.UpperBand = UpperBand;
         }
-        
+
         /// <summary>
         /// The date_time of the observation
         /// </summary>
         /// <value>The date_time of the observation</value>
-        [DataMember(Name="date_time", EmitDefaultValue=false)]
+        [DataMember(Name = "date_time", EmitDefaultValue = false)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// The lower band value of the Bollinger Bands technical indicator calculation
         /// </summary>
         /// <value>The lower band value of the Bollinger Bands technical indicator calculation</value>
-        [DataMember(Name="lower_band", EmitDefaultValue=false)]
+        [DataMember(Name = "lower_band", EmitDefaultValue = false)]
         public float? LowerBand { get; set; }
 
         /// <summary>
         /// The middle band value of the Bollinger Bands technical indicator calculation
         /// </summary>
         /// <value>The middle band value of the Bollinger Bands technical indicator calculation</value>
-        [DataMember(Name="middle_band", EmitDefaultValue=false)]
+        [DataMember(Name = "middle_band", EmitDefaultValue = false)]
         public float? MiddleBand { get; set; }
 
         /// <summary>
         /// The upper band value of the Bollinger Bands technical indicator calculation
         /// </summary>
         /// <value>The upper band value of the Bollinger Bands technical indicator calculation</value>
-        [DataMember(Name="upper_band", EmitDefaultValue=false)]
+        [DataMember(Name = "upper_band", EmitDefaultValue = false)]
         public float? UpperBand { get; set; }
 
         /// <summary>
@@ -73,14 +64,14 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BollingerBandsTechnicalValue {\n");
-            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
-            sb.Append("  LowerBand: ").Append(LowerBand).Append("\n");
-            sb.Append("  MiddleBand: ").Append(MiddleBand).Append("\n");
-            sb.Append("  UpperBand: ").Append(UpperBand).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append('\n');
+            sb.Append("  LowerBand: ").Append(LowerBand).Append('\n');
+            sb.Append("  MiddleBand: ").Append(MiddleBand).Append('\n');
+            sb.Append("  UpperBand: ").Append(UpperBand).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -95,9 +86,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as BollingerBandsTechnicalValue);
+            return Equals(obj as BollingerBandsTechnicalValue);
         }
 
         /// <summary>
@@ -110,22 +101,22 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DateTime == input.DateTime ||
                     (DateTime != null &&
                     DateTime.Equals(input.DateTime))
-                ) && 
+                ) &&
                 (
                     LowerBand == input.LowerBand ||
                     (LowerBand != null &&
                     LowerBand.Equals(input.LowerBand))
-                ) && 
+                ) &&
                 (
                     MiddleBand == input.MiddleBand ||
                     (MiddleBand != null &&
                     MiddleBand.Equals(input.MiddleBand))
-                ) && 
+                ) &&
                 (
                     UpperBand == input.UpperBand ||
                     (UpperBand != null &&
@@ -164,5 +155,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }
