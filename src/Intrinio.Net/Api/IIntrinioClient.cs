@@ -1,22 +1,13 @@
-using Intrinio.Net.Client;
 using Intrinio.Net.Model;
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Intrinio.Net.Api
 {
     public interface IIntrinioClient
     {
-        IIntrinioDependencies Dependencies { get; }
-        HttpClient Client { get; }
-
-        string GetQueryParameterString(Dictionary<string, string> queryParams);
-
-        Task<string> Get(string requestUrl);
-
-        string FormatDateString(string inputDateString);
+        Task<string> GetAsync(string requestUrl);
 
         Task<IEnumerable<CompanySummary>> GetAllCompanySummariesAsync(
             DateTime? latest_filing_date = null,
@@ -35,14 +26,14 @@ namespace Intrinio.Net.Api
 
         Task<IEnumerable<StockPrice>> GetStockPricesByExchangeAsync(
             string identifier,
-            StockPriceSummary.FrequencyEnum? frequency = null,
+            StockPriceSummary.PeriodFrequency? frequency = null,
             int? page_size = null,
             string date = null,
             string next_page = null);
 
         Task<ApiResponseSecurityStockPrices> GetStockPriceSummariesBySecurityAsync(
             string identifier,
-            StockPriceSummary.FrequencyEnum? frequency = null,
+            StockPriceSummary.PeriodFrequency? frequency = null,
             int? page_size = null,
             string start_date = null,
             string end_date = null,

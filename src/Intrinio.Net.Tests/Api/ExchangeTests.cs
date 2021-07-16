@@ -10,8 +10,7 @@ namespace Intrinio.Net.Tests.Api
 {
     [TestClass]
     public class ExchangeTests
-    {
-        private const string APPLE_TICKER = "AAPL";
+    {        
         private const string USCOMP = "USCOMP";
         private const string SEOUL_CITY = "SEOUL";
         private const string KOREA_COUNTRY_CODE = "KR";

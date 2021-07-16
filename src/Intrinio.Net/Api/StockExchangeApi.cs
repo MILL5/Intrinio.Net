@@ -1,8 +1,7 @@
 using Intrinio.Net.Model;
-using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace Intrinio.Net.Api
 {
@@ -21,30 +20,26 @@ namespace Intrinio.Net.Api
                 { nameof(country), country },
                 { nameof(country_code), country_code }
             };
-            
-            var result = new List<StockExchange>();
-            
-            var jsonResponse = await Get($"{exchangesBaseUrl}{GetQueryParameterString(queryParams)}")
-                .ConfigureAwait(false);
-            var apiResponse = JsonConvert.DeserializeObject<ApiResponseStockExchanges>(jsonResponse);
-            
-            if (apiResponse == null)
+
+            var jsonResponse = await GetAsync($"{RestApiUrls.Exchanges.Default}{GetQueryParameterString(queryParams)}").ConfigureAwait(false);
+            var stockExchanges = JsonConvert.DeserializeObject<ApiResponseStockExchanges>(jsonResponse);
+
+            if (stockExchanges == null)
             {
-                throw new Exception("API Response is Null");
+                throw new IntrinioNetException("API Response is Null");
             }
 
-            return apiResponse.StockExchanges;
+            return stockExchanges.StockExchanges;
         }
 
         public async Task<StockExchange> LookupExchangeAsync(string identifier)
         {
-            var jsonResponse = await Get($"{exchangesBaseUrl}/{identifier}")
-                .ConfigureAwait(false);
+            var jsonResponse = await GetAsync($"{RestApiUrls.Exchanges.Default}/{identifier}").ConfigureAwait(false);
             var exchange = JsonConvert.DeserializeObject<StockExchange>(jsonResponse);
 
             if (exchange == null)
             {
-                throw new Exception("API Response is Null");
+                throw new IntrinioNetException("API Response is Null");
             }
 
             return exchange;
