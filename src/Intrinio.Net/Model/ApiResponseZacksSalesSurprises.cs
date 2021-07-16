@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +12,31 @@ namespace Intrinio.Net.Model
     /// ApiResponseZacksSalesSurprises
     /// </summary>
     [DataContract]
-    public partial class ApiResponseZacksSalesSurprises :  IEquatable<ApiResponseZacksSalesSurprises>, IValidatableObject
+    public sealed partial class ApiResponseZacksSalesSurprises : IEquatable<ApiResponseZacksSalesSurprises>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseZacksSalesSurprises" /> class.
         /// </summary>
         /// <param name="SalesSurprises">Zacks Sales Surprise data for a Security in descending order by actual reported date.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseZacksSalesSurprises(List<ZacksSalesSurprise> SalesSurprises = default(List<ZacksSalesSurprise>), string NextPage = default(string))
+        public ApiResponseZacksSalesSurprises(List<ZacksSalesSurprise> SalesSurprises = default, string NextPage = default)
         {
             this.SalesSurprises = SalesSurprises;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Zacks Sales Surprise data for a Security in descending order by actual reported date
         /// </summary>
         /// <value>Zacks Sales Surprise data for a Security in descending order by actual reported date</value>
-        [DataMember(Name="sales_surprises", EmitDefaultValue=false)]
+        [DataMember(Name = "sales_surprises", EmitDefaultValue = false)]
         public List<ZacksSalesSurprise> SalesSurprises { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -55,12 +47,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseZacksSalesSurprises {\n");
-            sb.Append("  SalesSurprises: ").Append(SalesSurprises).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  SalesSurprises: ").Append(SalesSurprises).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +67,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseZacksSalesSurprises);
+            return Equals(obj as ApiResponseZacksSalesSurprises);
         }
 
         /// <summary>
@@ -90,12 +82,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     SalesSurprises == input.SalesSurprises ||
                     SalesSurprises != null &&
                     SalesSurprises.SequenceEqual(input.SalesSurprises)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -130,5 +122,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,30 +12,30 @@ namespace Intrinio.Net.Model
     /// ApiResponseInitialPublicOfferings
     /// </summary>
     [DataContract]
-    public partial class ApiResponseInitialPublicOfferings :  IEquatable<ApiResponseInitialPublicOfferings>, IValidatableObject
+    public sealed partial class ApiResponseInitialPublicOfferings : IEquatable<ApiResponseInitialPublicOfferings>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseInitialPublicOfferings" /> class.
         /// </summary>
         /// <param name="InitialPublicOfferings">InitialPublicOfferings.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseInitialPublicOfferings(List<CompanyInitialPublicOffering> InitialPublicOfferings = default(List<CompanyInitialPublicOffering>), string NextPage = default(string))
+        public ApiResponseInitialPublicOfferings(List<CompanyInitialPublicOffering> InitialPublicOfferings = default, string NextPage = default)
         {
             this.InitialPublicOfferings = InitialPublicOfferings;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets InitialPublicOfferings
         /// </summary>
-        [DataMember(Name="initial_public_offerings", EmitDefaultValue=false)]
+        [DataMember(Name = "initial_public_offerings", EmitDefaultValue = false)]
         public List<CompanyInitialPublicOffering> InitialPublicOfferings { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -54,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseInitialPublicOfferings {\n");
-            sb.Append("  InitialPublicOfferings: ").Append(InitialPublicOfferings).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  InitialPublicOfferings: ").Append(InitialPublicOfferings).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -74,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseInitialPublicOfferings);
+            return Equals(obj as ApiResponseInitialPublicOfferings);
         }
 
         /// <summary>
@@ -89,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     InitialPublicOfferings == input.InitialPublicOfferings ||
                     InitialPublicOfferings != null &&
                     InitialPublicOfferings.SequenceEqual(input.InitialPublicOfferings)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -129,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

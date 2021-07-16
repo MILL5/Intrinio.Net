@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,29 +12,29 @@ namespace Intrinio.Net.Model
     /// ApiResponseMunicipalitiyFinancials
     /// </summary>
     [DataContract]
-    public partial class ApiResponseMunicipalitiyFinancials :  IEquatable<ApiResponseMunicipalitiyFinancials>, IValidatableObject
+    public sealed partial class ApiResponseMunicipalitiyFinancials : IEquatable<ApiResponseMunicipalitiyFinancials>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseMunicipalitiyFinancials" /> class.
         /// </summary>
         /// <param name="Financials">Financials.</param>
         /// <param name="Municipality">Municipality.</param>
-        public ApiResponseMunicipalitiyFinancials(List<MunicipalityFinancial> Financials = default(List<MunicipalityFinancial>), Municipality Municipality = default(Municipality))
+        public ApiResponseMunicipalitiyFinancials(List<MunicipalityFinancial> Financials = default, Municipality Municipality = default)
         {
             this.Financials = Financials;
             this.Municipality = Municipality;
         }
-        
+
         /// <summary>
         /// Gets or Sets Financials
         /// </summary>
-        [DataMember(Name="financials", EmitDefaultValue=false)]
+        [DataMember(Name = "financials", EmitDefaultValue = false)]
         public List<MunicipalityFinancial> Financials { get; set; }
 
         /// <summary>
         /// Gets or Sets Municipality
         /// </summary>
-        [DataMember(Name="municipality", EmitDefaultValue=false)]
+        [DataMember(Name = "municipality", EmitDefaultValue = false)]
         public Municipality Municipality { get; set; }
 
         /// <summary>
@@ -53,12 +45,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseMunicipalitiyFinancials {\n");
-            sb.Append("  Financials: ").Append(Financials).Append("\n");
-            sb.Append("  Municipality: ").Append(Municipality).Append("\n");
+            sb.Append("  Financials: ").Append(Financials).Append('\n');
+            sb.Append("  Municipality: ").Append(Municipality).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -73,9 +65,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseMunicipalitiyFinancials);
+            return Equals(obj as ApiResponseMunicipalitiyFinancials);
         }
 
         /// <summary>
@@ -88,12 +80,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Financials == input.Financials ||
                     Financials != null &&
                     Financials.SequenceEqual(input.Financials)
-                ) && 
+                ) &&
                 (
                     Municipality == input.Municipality ||
                     (Municipality != null &&
@@ -128,5 +120,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

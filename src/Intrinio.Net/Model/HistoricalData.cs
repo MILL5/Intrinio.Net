@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,32 +11,31 @@ namespace Intrinio.Net.Model
     /// A historcial value for the identifier/item combination a specific date
     /// </summary>
     [DataContract]
-    public partial class HistoricalData :  IEquatable<HistoricalData>, IValidatableObject
+    public sealed partial class HistoricalData : IEquatable<HistoricalData>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="HistoricalData" /> class.
         /// </summary>
         /// <param name="Date">The date that the value is present.</param>
         /// <param name="Value">The historical value.</param>
-        public HistoricalData(DateTime? Date = default(DateTime?), decimal? Value = default(decimal?))
+        public HistoricalData(DateTime? Date = default, decimal? Value = default)
         {
             this.Date = Date;
             this.Value = Value;
         }
-        
+
         /// <summary>
         /// The date that the value is present
         /// </summary>
         /// <value>The date that the value is present</value>
-        [DataMember(Name="date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "date", EmitDefaultValue = false)]
         public DateTime? Date { get; set; }
 
         /// <summary>
         /// The historical value
         /// </summary>
         /// <value>The historical value</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public decimal? Value { get; set; }
 
         /// <summary>
@@ -56,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class HistoricalData {\n");
-            sb.Append("  Date: ").Append(Date).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  Date: ").Append(Date).Append('\n');
+            sb.Append("  Value: ").Append(Value).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -76,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as HistoricalData);
+            return Equals(obj as HistoricalData);
         }
 
         /// <summary>
@@ -91,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Date == input.Date ||
                     (Date != null &&
                     Date.Equals(input.Date))
-                ) && 
+                ) &&
                 (
                     Value == input.Value ||
                     (Value != null &&
@@ -131,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

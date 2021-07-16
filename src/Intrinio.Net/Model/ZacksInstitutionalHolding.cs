@@ -5,7 +5,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
 {
@@ -13,7 +12,7 @@ namespace Intrinio.Net.Model
     /// Returns a list of all ownership interests and the value of their interests sourced from Zacks.
     /// </summary>
     [DataContract]
-    public partial class ZacksInstitutionalHolding :  IEquatable<ZacksInstitutionalHolding>, IValidatableObject
+    public sealed partial class ZacksInstitutionalHolding : IEquatable<ZacksInstitutionalHolding>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ZacksInstitutionalHolding" /> class.
@@ -31,7 +30,7 @@ namespace Intrinio.Net.Model
         /// <param name="LastSecFilingDate">The date of the latest SEC filing.</param>
         /// <param name="LastSecFilingShares">The.</param>
         /// <param name="HistoricalHoldings">HistoricalHoldings.</param>
-        public ZacksInstitutionalHolding(ZacksInstitutionalHoldingCompanySummary Company = default(ZacksInstitutionalHoldingCompanySummary), ZacksInstitutionalHoldingOwnerSummary Owner = default(ZacksInstitutionalHoldingOwnerSummary), DateTime? AsOfDate = default(DateTime?), decimal? SharesHeld = default(decimal?), decimal? SharedHeldPercent = default(decimal?), decimal? SharesChange = default(decimal?), decimal? SharesChangePercent = default(decimal?), decimal? MarketValue = default(decimal?), decimal? MarketValueChange = default(decimal?), string LastSecFilingType = default(string), DateTime? LastSecFilingDate = default(DateTime?), decimal? LastSecFilingShares = default(decimal?), List<ZacksInstitutionalHoldingHistoricalSummary> HistoricalHoldings = default(List<ZacksInstitutionalHoldingHistoricalSummary>))
+        public ZacksInstitutionalHolding(ZacksInstitutionalHoldingCompanySummary Company = default, ZacksInstitutionalHoldingOwnerSummary Owner = default, DateTime? AsOfDate = default, decimal? SharesHeld = default, decimal? SharedHeldPercent = default, decimal? SharesChange = default, decimal? SharesChangePercent = default, decimal? MarketValue = default, decimal? MarketValueChange = default, string LastSecFilingType = default, DateTime? LastSecFilingDate = default, decimal? LastSecFilingShares = default, List<ZacksInstitutionalHoldingHistoricalSummary> HistoricalHoldings = default)
         {
             this.Company = Company;
             this.Owner = Owner;
@@ -47,95 +46,93 @@ namespace Intrinio.Net.Model
             this.LastSecFilingShares = LastSecFilingShares;
             this.HistoricalHoldings = HistoricalHoldings;
         }
-        
+
         /// <summary>
         /// Gets or Sets Company
         /// </summary>
-        [DataMember(Name="company", EmitDefaultValue=false)]
+        [DataMember(Name = "company", EmitDefaultValue = false)]
         public ZacksInstitutionalHoldingCompanySummary Company { get; set; }
 
         /// <summary>
         /// Gets or Sets Owner
         /// </summary>
-        [DataMember(Name="owner", EmitDefaultValue=false)]
+        [DataMember(Name = "owner", EmitDefaultValue = false)]
         public ZacksInstitutionalHoldingOwnerSummary Owner { get; set; }
 
         /// <summary>
         /// Quarter end date listed in the most recent 13F report filed by the institution
         /// </summary>
         /// <value>Quarter end date listed in the most recent 13F report filed by the institution</value>
-        [DataMember(Name="as_of_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "as_of_date", EmitDefaultValue = false)]
         public DateTime? AsOfDate { get; set; }
 
         /// <summary>
         /// Number of shares of the stock listed
         /// </summary>
         /// <value>Number of shares of the stock listed</value>
-        [DataMember(Name="shares_held", EmitDefaultValue=false)]
+        [DataMember(Name = "shares_held", EmitDefaultValue = false)]
         public decimal? SharesHeld { get; set; }
 
         /// <summary>
         /// Percent of shares outstanding held of the stock by the institution listed
         /// </summary>
         /// <value>Percent of shares outstanding held of the stock by the institution listed</value>
-        [DataMember(Name="shared_held_percent", EmitDefaultValue=false)]
+        [DataMember(Name = "shared_held_percent", EmitDefaultValue = false)]
         public decimal? SharedHeldPercent { get; set; }
 
         /// <summary>
         /// Change in shares of the stock held by the institution listed
         /// </summary>
         /// <value>Change in shares of the stock held by the institution listed</value>
-        [DataMember(Name="shares_change", EmitDefaultValue=false)]
+        [DataMember(Name = "shares_change", EmitDefaultValue = false)]
         public decimal? SharesChange { get; set; }
 
         /// <summary>
         /// Percentage change in shares of the stock held by the institution listed
         /// </summary>
         /// <value>Percentage change in shares of the stock held by the institution listed</value>
-        [DataMember(Name="shares_change_percent", EmitDefaultValue=false)]
+        [DataMember(Name = "shares_change_percent", EmitDefaultValue = false)]
         public decimal? SharesChangePercent { get; set; }
 
         /// <summary>
         /// Market value of shares outstanding held of the stock listed
         /// </summary>
         /// <value>Market value of shares outstanding held of the stock listed</value>
-        [DataMember(Name="market_value", EmitDefaultValue=false)]
+        [DataMember(Name = "market_value", EmitDefaultValue = false)]
         public decimal? MarketValue { get; set; }
 
         /// <summary>
         /// Change in market value shares of the stock listed
         /// </summary>
         /// <value>Change in market value shares of the stock listed</value>
-        [DataMember(Name="market_value_change", EmitDefaultValue=false)]
+        [DataMember(Name = "market_value_change", EmitDefaultValue = false)]
         public decimal? MarketValueChange { get; set; }
 
         /// <summary>
         /// The report type of the latest SEC filing
         /// </summary>
         /// <value>The report type of the latest SEC filing</value>
-        [DataMember(Name="last_sec_filing_type", EmitDefaultValue=false)]
+        [DataMember(Name = "last_sec_filing_type", EmitDefaultValue = false)]
         public string LastSecFilingType { get; set; }
 
         /// <summary>
         /// The date of the latest SEC filing
         /// </summary>
         /// <value>The date of the latest SEC filing</value>
-        [DataMember(Name="last_sec_filing_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "last_sec_filing_date", EmitDefaultValue = false)]
         public DateTime? LastSecFilingDate { get; set; }
 
         /// <summary>
         /// The
         /// </summary>
         /// <value>The</value>
-        [DataMember(Name="last_sec_filing_shares", EmitDefaultValue=false)]
+        [DataMember(Name = "last_sec_filing_shares", EmitDefaultValue = false)]
         public decimal? LastSecFilingShares { get; set; }
 
         /// <summary>
         /// Gets or Sets HistoricalHoldings
         /// </summary>
-        [DataMember(Name="historical_holdings", EmitDefaultValue=false)]
+        [DataMember(Name = "historical_holdings", EmitDefaultValue = false)]
         public List<ZacksInstitutionalHoldingHistoricalSummary> HistoricalHoldings { get; set; }
 
         /// <summary>
@@ -146,23 +143,23 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ZacksInstitutionalHolding {\n");
-            sb.Append("  Company: ").Append(Company).Append("\n");
-            sb.Append("  Owner: ").Append(Owner).Append("\n");
-            sb.Append("  AsOfDate: ").Append(AsOfDate).Append("\n");
-            sb.Append("  SharesHeld: ").Append(SharesHeld).Append("\n");
-            sb.Append("  SharedHeldPercent: ").Append(SharedHeldPercent).Append("\n");
-            sb.Append("  SharesChange: ").Append(SharesChange).Append("\n");
-            sb.Append("  SharesChangePercent: ").Append(SharesChangePercent).Append("\n");
-            sb.Append("  MarketValue: ").Append(MarketValue).Append("\n");
-            sb.Append("  MarketValueChange: ").Append(MarketValueChange).Append("\n");
-            sb.Append("  LastSecFilingType: ").Append(LastSecFilingType).Append("\n");
-            sb.Append("  LastSecFilingDate: ").Append(LastSecFilingDate).Append("\n");
-            sb.Append("  LastSecFilingShares: ").Append(LastSecFilingShares).Append("\n");
-            sb.Append("  HistoricalHoldings: ").Append(HistoricalHoldings).Append("\n");
+            sb.Append("  Company: ").Append(Company).Append('\n');
+            sb.Append("  Owner: ").Append(Owner).Append('\n');
+            sb.Append("  AsOfDate: ").Append(AsOfDate).Append('\n');
+            sb.Append("  SharesHeld: ").Append(SharesHeld).Append('\n');
+            sb.Append("  SharedHeldPercent: ").Append(SharedHeldPercent).Append('\n');
+            sb.Append("  SharesChange: ").Append(SharesChange).Append('\n');
+            sb.Append("  SharesChangePercent: ").Append(SharesChangePercent).Append('\n');
+            sb.Append("  MarketValue: ").Append(MarketValue).Append('\n');
+            sb.Append("  MarketValueChange: ").Append(MarketValueChange).Append('\n');
+            sb.Append("  LastSecFilingType: ").Append(LastSecFilingType).Append('\n');
+            sb.Append("  LastSecFilingDate: ").Append(LastSecFilingDate).Append('\n');
+            sb.Append("  LastSecFilingShares: ").Append(LastSecFilingShares).Append('\n');
+            sb.Append("  HistoricalHoldings: ").Append(HistoricalHoldings).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -177,9 +174,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ZacksInstitutionalHolding);
+            return Equals(obj as ZacksInstitutionalHolding);
         }
 
         /// <summary>
@@ -192,67 +189,67 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Company == input.Company ||
                     (Company != null &&
                     Company.Equals(input.Company))
-                ) && 
+                ) &&
                 (
                     Owner == input.Owner ||
                     (Owner != null &&
                     Owner.Equals(input.Owner))
-                ) && 
+                ) &&
                 (
                     AsOfDate == input.AsOfDate ||
                     (AsOfDate != null &&
                     AsOfDate.Equals(input.AsOfDate))
-                ) && 
+                ) &&
                 (
                     SharesHeld == input.SharesHeld ||
                     (SharesHeld != null &&
                     SharesHeld.Equals(input.SharesHeld))
-                ) && 
+                ) &&
                 (
                     SharedHeldPercent == input.SharedHeldPercent ||
                     (SharedHeldPercent != null &&
                     SharedHeldPercent.Equals(input.SharedHeldPercent))
-                ) && 
+                ) &&
                 (
                     SharesChange == input.SharesChange ||
                     (SharesChange != null &&
                     SharesChange.Equals(input.SharesChange))
-                ) && 
+                ) &&
                 (
                     SharesChangePercent == input.SharesChangePercent ||
                     (SharesChangePercent != null &&
                     SharesChangePercent.Equals(input.SharesChangePercent))
-                ) && 
+                ) &&
                 (
                     MarketValue == input.MarketValue ||
                     (MarketValue != null &&
                     MarketValue.Equals(input.MarketValue))
-                ) && 
+                ) &&
                 (
                     MarketValueChange == input.MarketValueChange ||
                     (MarketValueChange != null &&
                     MarketValueChange.Equals(input.MarketValueChange))
-                ) && 
+                ) &&
                 (
                     LastSecFilingType == input.LastSecFilingType ||
                     (LastSecFilingType != null &&
                     LastSecFilingType.Equals(input.LastSecFilingType))
-                ) && 
+                ) &&
                 (
                     LastSecFilingDate == input.LastSecFilingDate ||
                     (LastSecFilingDate != null &&
                     LastSecFilingDate.Equals(input.LastSecFilingDate))
-                ) && 
+                ) &&
                 (
                     LastSecFilingShares == input.LastSecFilingShares ||
                     (LastSecFilingShares != null &&
                     LastSecFilingShares.Equals(input.LastSecFilingShares))
-                ) && 
+                ) &&
                 (
                     HistoricalHoldings == input.HistoricalHoldings ||
                     HistoricalHoldings != null &&
@@ -309,5 +306,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

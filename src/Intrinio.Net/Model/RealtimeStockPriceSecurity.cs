@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// The Security of the stock price
     /// </summary>
     [DataContract]
-    public partial class RealtimeStockPriceSecurity :  IEquatable<RealtimeStockPriceSecurity>, IValidatableObject
+    public sealed partial class RealtimeStockPriceSecurity : IEquatable<RealtimeStockPriceSecurity>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeStockPriceSecurity" /> class.
@@ -30,7 +21,7 @@ namespace Intrinio.Net.Model
         /// <param name="ExchangeTicker">The exchange-level ticker.</param>
         /// <param name="Figi">The OpenFIGI identifier.</param>
         /// <param name="CompositeFigi">The country-composite OpenFIGI identifier.</param>
-        public RealtimeStockPriceSecurity(string Id = default(string), string Ticker = default(string), string ExchangeTicker = default(string), string Figi = default(string), string CompositeFigi = default(string))
+        public RealtimeStockPriceSecurity(string Id = default, string Ticker = default, string ExchangeTicker = default, string Figi = default, string CompositeFigi = default)
         {
             this.Id = Id;
             this.Ticker = Ticker;
@@ -38,40 +29,40 @@ namespace Intrinio.Net.Model
             this.Figi = Figi;
             this.CompositeFigi = CompositeFigi;
         }
-        
+
         /// <summary>
         /// The Intrinio ID for Security
         /// </summary>
         /// <value>The Intrinio ID for Security</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The common/local ticker of the Security
         /// </summary>
         /// <value>The common/local ticker of the Security</value>
-        [DataMember(Name="ticker", EmitDefaultValue=false)]
+        [DataMember(Name = "ticker", EmitDefaultValue = false)]
         public string Ticker { get; set; }
 
         /// <summary>
         /// The exchange-level ticker
         /// </summary>
         /// <value>The exchange-level ticker</value>
-        [DataMember(Name="exchange_ticker", EmitDefaultValue=false)]
+        [DataMember(Name = "exchange_ticker", EmitDefaultValue = false)]
         public string ExchangeTicker { get; set; }
 
         /// <summary>
         /// The OpenFIGI identifier
         /// </summary>
         /// <value>The OpenFIGI identifier</value>
-        [DataMember(Name="figi", EmitDefaultValue=false)]
+        [DataMember(Name = "figi", EmitDefaultValue = false)]
         public string Figi { get; set; }
 
         /// <summary>
         /// The country-composite OpenFIGI identifier
         /// </summary>
         /// <value>The country-composite OpenFIGI identifier</value>
-        [DataMember(Name="composite_figi", EmitDefaultValue=false)]
+        [DataMember(Name = "composite_figi", EmitDefaultValue = false)]
         public string CompositeFigi { get; set; }
 
         /// <summary>
@@ -82,15 +73,15 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class RealtimeStockPriceSecurity {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Ticker: ").Append(Ticker).Append("\n");
-            sb.Append("  ExchangeTicker: ").Append(ExchangeTicker).Append("\n");
-            sb.Append("  Figi: ").Append(Figi).Append("\n");
-            sb.Append("  CompositeFigi: ").Append(CompositeFigi).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  Ticker: ").Append(Ticker).Append('\n');
+            sb.Append("  ExchangeTicker: ").Append(ExchangeTicker).Append('\n');
+            sb.Append("  Figi: ").Append(Figi).Append('\n');
+            sb.Append("  CompositeFigi: ").Append(CompositeFigi).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -105,9 +96,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as RealtimeStockPriceSecurity);
+            return Equals(obj as RealtimeStockPriceSecurity);
         }
 
         /// <summary>
@@ -120,27 +111,27 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     Ticker == input.Ticker ||
                     (Ticker != null &&
                     Ticker.Equals(input.Ticker))
-                ) && 
+                ) &&
                 (
                     ExchangeTicker == input.ExchangeTicker ||
                     (ExchangeTicker != null &&
                     ExchangeTicker.Equals(input.ExchangeTicker))
-                ) && 
+                ) &&
                 (
                     Figi == input.Figi ||
                     (Figi != null &&
                     Figi.Equals(input.Figi))
-                ) && 
+                ) &&
                 (
                     CompositeFigi == input.CompositeFigi ||
                     (CompositeFigi != null &&
@@ -181,5 +172,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

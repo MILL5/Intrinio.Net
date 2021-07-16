@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +11,31 @@ namespace Intrinio.Net.Model
     /// The date_time and mfi value of a Money Flow Index technical indicator calculation
     /// </summary>
     [DataContract]
-    public partial class MoneyFlowIndexTechnicalValue :  IEquatable<MoneyFlowIndexTechnicalValue>, IValidatableObject
+    public sealed partial class MoneyFlowIndexTechnicalValue : IEquatable<MoneyFlowIndexTechnicalValue>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MoneyFlowIndexTechnicalValue" /> class.
         /// </summary>
         /// <param name="DateTime">The date_time of the observation.</param>
         /// <param name="Mfi">The Money Flow Index calculation value.</param>
-        public MoneyFlowIndexTechnicalValue(DateTime? DateTime = default(DateTime?), float? Mfi = default(float?))
+        public MoneyFlowIndexTechnicalValue(DateTime? DateTime = default, float? Mfi = default)
         {
             this.DateTime = DateTime;
             this.Mfi = Mfi;
         }
-        
+
         /// <summary>
         /// The date_time of the observation
         /// </summary>
         /// <value>The date_time of the observation</value>
-        [DataMember(Name="date_time", EmitDefaultValue=false)]
+        [DataMember(Name = "date_time", EmitDefaultValue = false)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// The Money Flow Index calculation value
         /// </summary>
         /// <value>The Money Flow Index calculation value</value>
-        [DataMember(Name="mfi", EmitDefaultValue=false)]
+        [DataMember(Name = "mfi", EmitDefaultValue = false)]
         public float? Mfi { get; set; }
 
         /// <summary>
@@ -55,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class MoneyFlowIndexTechnicalValue {\n");
-            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
-            sb.Append("  Mfi: ").Append(Mfi).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append('\n');
+            sb.Append("  Mfi: ").Append(Mfi).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as MoneyFlowIndexTechnicalValue);
+            return Equals(obj as MoneyFlowIndexTechnicalValue);
         }
 
         /// <summary>
@@ -90,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DateTime == input.DateTime ||
                     (DateTime != null &&
                     DateTime.Equals(input.DateTime))
-                ) && 
+                ) &&
                 (
                     Mfi == input.Mfi ||
                     (Mfi != null &&
@@ -130,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

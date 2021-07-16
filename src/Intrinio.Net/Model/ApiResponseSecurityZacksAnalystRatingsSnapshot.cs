@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,30 +12,30 @@ namespace Intrinio.Net.Model
     /// ApiResponseSecurityZacksAnalystRatingsSnapshot
     /// </summary>
     [DataContract]
-    public partial class ApiResponseSecurityZacksAnalystRatingsSnapshot :  IEquatable<ApiResponseSecurityZacksAnalystRatingsSnapshot>, IValidatableObject
+    public sealed partial class ApiResponseSecurityZacksAnalystRatingsSnapshot : IEquatable<ApiResponseSecurityZacksAnalystRatingsSnapshot>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseSecurityZacksAnalystRatingsSnapshot" /> class.
         /// </summary>
         /// <param name="Snapshots">Snapshots.</param>
         /// <param name="Security">The Security resolved from the given identifier.</param>
-        public ApiResponseSecurityZacksAnalystRatingsSnapshot(List<ZacksAnalystRatingSnapshot> Snapshots = default(List<ZacksAnalystRatingSnapshot>), SecuritySummary Security = default(SecuritySummary))
+        public ApiResponseSecurityZacksAnalystRatingsSnapshot(List<ZacksAnalystRatingSnapshot> Snapshots = default, SecuritySummary Security = default)
         {
             this.Snapshots = Snapshots;
             this.Security = Security;
         }
-        
+
         /// <summary>
         /// Gets or Sets Snapshots
         /// </summary>
-        [DataMember(Name="snapshots", EmitDefaultValue=false)]
+        [DataMember(Name = "snapshots", EmitDefaultValue = false)]
         public List<ZacksAnalystRatingSnapshot> Snapshots { get; set; }
 
         /// <summary>
         /// The Security resolved from the given identifier
         /// </summary>
         /// <value>The Security resolved from the given identifier</value>
-        [DataMember(Name="security", EmitDefaultValue=false)]
+        [DataMember(Name = "security", EmitDefaultValue = false)]
         public SecuritySummary Security { get; set; }
 
         /// <summary>
@@ -54,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseSecurityZacksAnalystRatingsSnapshot {\n");
-            sb.Append("  Snapshots: ").Append(Snapshots).Append("\n");
-            sb.Append("  Security: ").Append(Security).Append("\n");
+            sb.Append("  Snapshots: ").Append(Snapshots).Append('\n');
+            sb.Append("  Security: ").Append(Security).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -74,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseSecurityZacksAnalystRatingsSnapshot);
+            return Equals(obj as ApiResponseSecurityZacksAnalystRatingsSnapshot);
         }
 
         /// <summary>
@@ -89,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Snapshots == input.Snapshots ||
                     Snapshots != null &&
                     Snapshots.SequenceEqual(input.Snapshots)
-                ) && 
+                ) &&
                 (
                     Security == input.Security ||
                     (Security != null &&
@@ -129,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

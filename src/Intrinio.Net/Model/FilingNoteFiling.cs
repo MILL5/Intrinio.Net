@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// A filing submitted to the SEC by a company
     /// </summary>
     [DataContract]
-    public partial class FilingNoteFiling :  IEquatable<FilingNoteFiling>, IValidatableObject
+    public sealed partial class FilingNoteFiling : IEquatable<FilingNoteFiling>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FilingNoteFiling" /> class.
@@ -29,42 +20,40 @@ namespace Intrinio.Net.Model
         /// <param name="ReportType">The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;.</param>
         /// <param name="PeriodEndDate">The ending date of the fiscal period for the filing.</param>
         /// <param name="FilingDate">The date the report was filed with the SEC.</param>
-        public FilingNoteFiling(string Cik = default(string), string ReportType = default(string), DateTime? PeriodEndDate = default(DateTime?), DateTime? FilingDate = default(DateTime?))
+        public FilingNoteFiling(string Cik = default, string ReportType = default, DateTime? PeriodEndDate = default, DateTime? FilingDate = default)
         {
             this.Cik = Cik;
             this.ReportType = ReportType;
             this.PeriodEndDate = PeriodEndDate;
             this.FilingDate = FilingDate;
         }
-        
+
         /// <summary>
         /// The Central Index Key (CIK) assigned to the company
         /// </summary>
         /// <value>The Central Index Key (CIK) assigned to the company</value>
-        [DataMember(Name="cik", EmitDefaultValue=false)]
+        [DataMember(Name = "cik", EmitDefaultValue = false)]
         public string Cik { get; set; }
 
         /// <summary>
         /// The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;
         /// </summary>
         /// <value>The filing &lt;a href&#x3D;\&quot;https://docs.intrinio.com/documentation/sec_filing_report_types\&quot; target&#x3D;\&quot;_blank\&quot;&gt;report type&lt;/a&gt;</value>
-        [DataMember(Name="report_type", EmitDefaultValue=false)]
+        [DataMember(Name = "report_type", EmitDefaultValue = false)]
         public string ReportType { get; set; }
 
         /// <summary>
         /// The ending date of the fiscal period for the filing
         /// </summary>
         /// <value>The ending date of the fiscal period for the filing</value>
-        [DataMember(Name="period_end_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "period_end_date", EmitDefaultValue = false)]
         public DateTime? PeriodEndDate { get; set; }
 
         /// <summary>
         /// The date the report was filed with the SEC
         /// </summary>
         /// <value>The date the report was filed with the SEC</value>
-        [DataMember(Name="filing_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "filing_date", EmitDefaultValue = false)]
         public DateTime? FilingDate { get; set; }
 
         /// <summary>
@@ -75,14 +64,14 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class FilingNoteFiling {\n");
-            sb.Append("  Cik: ").Append(Cik).Append("\n");
-            sb.Append("  ReportType: ").Append(ReportType).Append("\n");
-            sb.Append("  PeriodEndDate: ").Append(PeriodEndDate).Append("\n");
-            sb.Append("  FilingDate: ").Append(FilingDate).Append("\n");
+            sb.Append("  Cik: ").Append(Cik).Append('\n');
+            sb.Append("  ReportType: ").Append(ReportType).Append('\n');
+            sb.Append("  PeriodEndDate: ").Append(PeriodEndDate).Append('\n');
+            sb.Append("  FilingDate: ").Append(FilingDate).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -97,9 +86,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as FilingNoteFiling);
+            return Equals(obj as FilingNoteFiling);
         }
 
         /// <summary>
@@ -112,22 +101,22 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Cik == input.Cik ||
                     (Cik != null &&
                     Cik.Equals(input.Cik))
-                ) && 
+                ) &&
                 (
                     ReportType == input.ReportType ||
                     (ReportType != null &&
                     ReportType.Equals(input.ReportType))
-                ) && 
+                ) &&
                 (
                     PeriodEndDate == input.PeriodEndDate ||
                     (PeriodEndDate != null &&
                     PeriodEndDate.Equals(input.PeriodEndDate))
-                ) && 
+                ) &&
                 (
                     FilingDate == input.FilingDate ||
                     (FilingDate != null &&
@@ -166,5 +155,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

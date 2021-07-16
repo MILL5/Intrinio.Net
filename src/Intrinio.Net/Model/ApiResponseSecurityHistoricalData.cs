@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +12,7 @@ namespace Intrinio.Net.Model
     /// ApiResponseSecurityHistoricalData
     /// </summary>
     [DataContract]
-    public partial class ApiResponseSecurityHistoricalData :  IEquatable<ApiResponseSecurityHistoricalData>, IValidatableObject
+    public sealed partial class ApiResponseSecurityHistoricalData : IEquatable<ApiResponseSecurityHistoricalData>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseSecurityHistoricalData" /> class.
@@ -28,30 +20,30 @@ namespace Intrinio.Net.Model
         /// <param name="HistoricalData">HistoricalData.</param>
         /// <param name="Security">Security.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseSecurityHistoricalData(List<HistoricalData> HistoricalData = default(List<HistoricalData>), SecuritySummary Security = default(SecuritySummary), string NextPage = default(string))
+        public ApiResponseSecurityHistoricalData(List<HistoricalData> HistoricalData = default, SecuritySummary Security = default, string NextPage = default)
         {
             this.HistoricalData = HistoricalData;
             this.Security = Security;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets HistoricalData
         /// </summary>
-        [DataMember(Name="historical_data", EmitDefaultValue=false)]
+        [DataMember(Name = "historical_data", EmitDefaultValue = false)]
         public List<HistoricalData> HistoricalData { get; set; }
 
         /// <summary>
         /// Gets or Sets Security
         /// </summary>
-        [DataMember(Name="security", EmitDefaultValue=false)]
+        [DataMember(Name = "security", EmitDefaultValue = false)]
         public SecuritySummary Security { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -62,13 +54,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseSecurityHistoricalData {\n");
-            sb.Append("  HistoricalData: ").Append(HistoricalData).Append("\n");
-            sb.Append("  Security: ").Append(Security).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  HistoricalData: ").Append(HistoricalData).Append('\n');
+            sb.Append("  Security: ").Append(Security).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -83,9 +75,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseSecurityHistoricalData);
+            return Equals(obj as ApiResponseSecurityHistoricalData);
         }
 
         /// <summary>
@@ -98,17 +90,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     HistoricalData == input.HistoricalData ||
                     HistoricalData != null &&
                     HistoricalData.SequenceEqual(input.HistoricalData)
-                ) && 
+                ) &&
                 (
                     Security == input.Security ||
                     (Security != null &&
                     Security.Equals(input.Security))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -145,5 +137,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

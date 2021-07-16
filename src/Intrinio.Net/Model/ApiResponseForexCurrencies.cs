@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,21 +12,21 @@ namespace Intrinio.Net.Model
     /// ApiResponseForexCurrencies
     /// </summary>
     [DataContract]
-    public partial class ApiResponseForexCurrencies :  IEquatable<ApiResponseForexCurrencies>, IValidatableObject
+    public sealed partial class ApiResponseForexCurrencies : IEquatable<ApiResponseForexCurrencies>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseForexCurrencies" /> class.
         /// </summary>
         /// <param name="Currencies">Currencies.</param>
-        public ApiResponseForexCurrencies(List<ForexCurrency> Currencies = default(List<ForexCurrency>))
+        public ApiResponseForexCurrencies(List<ForexCurrency> Currencies = default)
         {
             this.Currencies = Currencies;
         }
-        
+
         /// <summary>
         /// Gets or Sets Currencies
         /// </summary>
-        [DataMember(Name="currencies", EmitDefaultValue=false)]
+        [DataMember(Name = "currencies", EmitDefaultValue = false)]
         public List<ForexCurrency> Currencies { get; set; }
 
         /// <summary>
@@ -45,11 +37,11 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseForexCurrencies {\n");
-            sb.Append("  Currencies: ").Append(Currencies).Append("\n");
+            sb.Append("  Currencies: ").Append(Currencies).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -64,9 +56,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseForexCurrencies);
+            return Equals(obj as ApiResponseForexCurrencies);
         }
 
         /// <summary>
@@ -79,7 +71,7 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Currencies == input.Currencies ||
                     Currencies != null &&
@@ -112,5 +104,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

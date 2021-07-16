@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,22 +12,22 @@ namespace Intrinio.Net.Model
     /// ApiResponseOptionsChain
     /// </summary>
     [DataContract]
-    public partial class ApiResponseOptionsChain :  IEquatable<ApiResponseOptionsChain>, IValidatableObject
+    public sealed partial class ApiResponseOptionsChain : IEquatable<ApiResponseOptionsChain>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseOptionsChain" /> class.
         /// </summary>
         /// <param name="Chain">A list of options for the provided expiration date their respective option prices..</param>
-        public ApiResponseOptionsChain(List<OptionChain> Chain = default(List<OptionChain>))
+        public ApiResponseOptionsChain(List<OptionChain> Chain = default)
         {
             this.Chain = Chain;
         }
-        
+
         /// <summary>
         /// A list of options for the provided expiration date their respective option prices.
         /// </summary>
         /// <value>A list of options for the provided expiration date their respective option prices.</value>
-        [DataMember(Name="chain", EmitDefaultValue=false)]
+        [DataMember(Name = "chain", EmitDefaultValue = false)]
         public List<OptionChain> Chain { get; set; }
 
         /// <summary>
@@ -46,11 +38,11 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseOptionsChain {\n");
-            sb.Append("  Chain: ").Append(Chain).Append("\n");
+            sb.Append("  Chain: ").Append(Chain).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -65,9 +57,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseOptionsChain);
+            return Equals(obj as ApiResponseOptionsChain);
         }
 
         /// <summary>
@@ -80,7 +72,7 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Chain == input.Chain ||
                     Chain != null &&
@@ -113,5 +105,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// Realtime stats such as greeks and implied volatility for a specific options contract.
     /// </summary>
     [DataContract]
-    public partial class OptionStatsRealtime :  IEquatable<OptionStatsRealtime>, IValidatableObject
+    public sealed partial class OptionStatsRealtime : IEquatable<OptionStatsRealtime>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OptionStatsRealtime" /> class.
@@ -30,7 +21,7 @@ namespace Intrinio.Net.Model
         /// <param name="Gamma">Gamma represents the rate of change between an option&#39;s delta and the underlying asset&#39;s price..</param>
         /// <param name="Theta">Theta represents the rate of change between the option price and time, or time sensitivity - sometimes known as an option&#39;s time decay..</param>
         /// <param name="Vega">Vega represents the rate of change between an option&#39;s value and the underlying asset&#39;s implied volatility..</param>
-        public OptionStatsRealtime(decimal? ImpliedVolatility = default(decimal?), decimal? Delta = default(decimal?), decimal? Gamma = default(decimal?), decimal? Theta = default(decimal?), decimal? Vega = default(decimal?))
+        public OptionStatsRealtime(decimal? ImpliedVolatility = default, decimal? Delta = default, decimal? Gamma = default, decimal? Theta = default, decimal? Vega = default)
         {
             this.ImpliedVolatility = ImpliedVolatility;
             this.Delta = Delta;
@@ -38,40 +29,40 @@ namespace Intrinio.Net.Model
             this.Theta = Theta;
             this.Vega = Vega;
         }
-        
+
         /// <summary>
         /// The implied volatility of the contract calculated using the Black-Scholes Model.
         /// </summary>
         /// <value>The implied volatility of the contract calculated using the Black-Scholes Model.</value>
-        [DataMember(Name="implied_volatility", EmitDefaultValue=false)]
+        [DataMember(Name = "implied_volatility", EmitDefaultValue = false)]
         public decimal? ImpliedVolatility { get; set; }
 
         /// <summary>
         /// Delta represents the rate of change between the option&#39;s price and a $1 change in the underlying asset&#39;s price.
         /// </summary>
         /// <value>Delta represents the rate of change between the option&#39;s price and a $1 change in the underlying asset&#39;s price.</value>
-        [DataMember(Name="delta", EmitDefaultValue=false)]
+        [DataMember(Name = "delta", EmitDefaultValue = false)]
         public decimal? Delta { get; set; }
 
         /// <summary>
         /// Gamma represents the rate of change between an option&#39;s delta and the underlying asset&#39;s price.
         /// </summary>
         /// <value>Gamma represents the rate of change between an option&#39;s delta and the underlying asset&#39;s price.</value>
-        [DataMember(Name="gamma", EmitDefaultValue=false)]
+        [DataMember(Name = "gamma", EmitDefaultValue = false)]
         public decimal? Gamma { get; set; }
 
         /// <summary>
         /// Theta represents the rate of change between the option price and time, or time sensitivity - sometimes known as an option&#39;s time decay.
         /// </summary>
         /// <value>Theta represents the rate of change between the option price and time, or time sensitivity - sometimes known as an option&#39;s time decay.</value>
-        [DataMember(Name="theta", EmitDefaultValue=false)]
+        [DataMember(Name = "theta", EmitDefaultValue = false)]
         public decimal? Theta { get; set; }
 
         /// <summary>
         /// Vega represents the rate of change between an option&#39;s value and the underlying asset&#39;s implied volatility.
         /// </summary>
         /// <value>Vega represents the rate of change between an option&#39;s value and the underlying asset&#39;s implied volatility.</value>
-        [DataMember(Name="vega", EmitDefaultValue=false)]
+        [DataMember(Name = "vega", EmitDefaultValue = false)]
         public decimal? Vega { get; set; }
 
         /// <summary>
@@ -82,15 +73,15 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OptionStatsRealtime {\n");
-            sb.Append("  ImpliedVolatility: ").Append(ImpliedVolatility).Append("\n");
-            sb.Append("  Delta: ").Append(Delta).Append("\n");
-            sb.Append("  Gamma: ").Append(Gamma).Append("\n");
-            sb.Append("  Theta: ").Append(Theta).Append("\n");
-            sb.Append("  Vega: ").Append(Vega).Append("\n");
+            sb.Append("  ImpliedVolatility: ").Append(ImpliedVolatility).Append('\n');
+            sb.Append("  Delta: ").Append(Delta).Append('\n');
+            sb.Append("  Gamma: ").Append(Gamma).Append('\n');
+            sb.Append("  Theta: ").Append(Theta).Append('\n');
+            sb.Append("  Vega: ").Append(Vega).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -105,9 +96,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as OptionStatsRealtime);
+            return Equals(obj as OptionStatsRealtime);
         }
 
         /// <summary>
@@ -120,27 +111,27 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     ImpliedVolatility == input.ImpliedVolatility ||
                     (ImpliedVolatility != null &&
                     ImpliedVolatility.Equals(input.ImpliedVolatility))
-                ) && 
+                ) &&
                 (
                     Delta == input.Delta ||
                     (Delta != null &&
                     Delta.Equals(input.Delta))
-                ) && 
+                ) &&
                 (
                     Gamma == input.Gamma ||
                     (Gamma != null &&
                     Gamma.Equals(input.Gamma))
-                ) && 
+                ) &&
                 (
                     Theta == input.Theta ||
                     (Theta != null &&
                     Theta.Equals(input.Theta))
-                ) && 
+                ) &&
                 (
                     Vega == input.Vega ||
                     (Vega != null &&
@@ -181,5 +172,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +12,31 @@ namespace Intrinio.Net.Model
     /// ApiResponseZacksInstitutionalHoldingOwners
     /// </summary>
     [DataContract]
-    public partial class ApiResponseZacksInstitutionalHoldingOwners :  IEquatable<ApiResponseZacksInstitutionalHoldingOwners>, IValidatableObject
+    public sealed partial class ApiResponseZacksInstitutionalHoldingOwners : IEquatable<ApiResponseZacksInstitutionalHoldingOwners>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseZacksInstitutionalHoldingOwners" /> class.
         /// </summary>
         /// <param name="Owners">Zacks institutional holding owners data.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseZacksInstitutionalHoldingOwners(List<ZacksInstitutionalHoldingOwnerDetail> Owners = default(List<ZacksInstitutionalHoldingOwnerDetail>), string NextPage = default(string))
+        public ApiResponseZacksInstitutionalHoldingOwners(List<ZacksInstitutionalHoldingOwnerDetail> Owners = default, string NextPage = default)
         {
             this.Owners = Owners;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Zacks institutional holding owners data
         /// </summary>
         /// <value>Zacks institutional holding owners data</value>
-        [DataMember(Name="owners", EmitDefaultValue=false)]
+        [DataMember(Name = "owners", EmitDefaultValue = false)]
         public List<ZacksInstitutionalHoldingOwnerDetail> Owners { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -55,12 +47,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseZacksInstitutionalHoldingOwners {\n");
-            sb.Append("  Owners: ").Append(Owners).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Owners: ").Append(Owners).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +67,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseZacksInstitutionalHoldingOwners);
+            return Equals(obj as ApiResponseZacksInstitutionalHoldingOwners);
         }
 
         /// <summary>
@@ -90,12 +82,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Owners == input.Owners ||
                     Owners != null &&
                     Owners.SequenceEqual(input.Owners)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -130,5 +122,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

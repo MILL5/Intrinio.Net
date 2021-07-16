@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +12,7 @@ namespace Intrinio.Net.Model
     /// The Volume-price Trend calculations for the Stock Prices of the given Security
     /// </summary>
     [DataContract]
-    public partial class ApiResponseSecurityVolumePriceTrend :  IEquatable<ApiResponseSecurityVolumePriceTrend>, IValidatableObject
+    public sealed partial class ApiResponseSecurityVolumePriceTrend : IEquatable<ApiResponseSecurityVolumePriceTrend>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseSecurityVolumePriceTrend" /> class.
@@ -29,39 +21,39 @@ namespace Intrinio.Net.Model
         /// <param name="Indicator">The name and symbol of the technical indicator.</param>
         /// <param name="Security">The Security of the Stock Price.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseSecurityVolumePriceTrend(List<VolumePriceTrendTechnicalValue> Technicals = default(List<VolumePriceTrendTechnicalValue>), TechnicalIndicator Indicator = default(TechnicalIndicator), SecuritySummary Security = default(SecuritySummary), string NextPage = default(string))
+        public ApiResponseSecurityVolumePriceTrend(List<VolumePriceTrendTechnicalValue> Technicals = default, TechnicalIndicator Indicator = default, SecuritySummary Security = default, string NextPage = default)
         {
             this.Technicals = Technicals;
             this.Indicator = Indicator;
             this.Security = Security;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets Technicals
         /// </summary>
-        [DataMember(Name="technicals", EmitDefaultValue=false)]
+        [DataMember(Name = "technicals", EmitDefaultValue = false)]
         public List<VolumePriceTrendTechnicalValue> Technicals { get; set; }
 
         /// <summary>
         /// The name and symbol of the technical indicator
         /// </summary>
         /// <value>The name and symbol of the technical indicator</value>
-        [DataMember(Name="indicator", EmitDefaultValue=false)]
+        [DataMember(Name = "indicator", EmitDefaultValue = false)]
         public TechnicalIndicator Indicator { get; set; }
 
         /// <summary>
         /// The Security of the Stock Price
         /// </summary>
         /// <value>The Security of the Stock Price</value>
-        [DataMember(Name="security", EmitDefaultValue=false)]
+        [DataMember(Name = "security", EmitDefaultValue = false)]
         public SecuritySummary Security { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -72,14 +64,14 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseSecurityVolumePriceTrend {\n");
-            sb.Append("  Technicals: ").Append(Technicals).Append("\n");
-            sb.Append("  Indicator: ").Append(Indicator).Append("\n");
-            sb.Append("  Security: ").Append(Security).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Technicals: ").Append(Technicals).Append('\n');
+            sb.Append("  Indicator: ").Append(Indicator).Append('\n');
+            sb.Append("  Security: ").Append(Security).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -94,9 +86,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseSecurityVolumePriceTrend);
+            return Equals(obj as ApiResponseSecurityVolumePriceTrend);
         }
 
         /// <summary>
@@ -109,22 +101,22 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Technicals == input.Technicals ||
                     Technicals != null &&
                     Technicals.SequenceEqual(input.Technicals)
-                ) && 
+                ) &&
                 (
                     Indicator == input.Indicator ||
                     (Indicator != null &&
                     Indicator.Equals(input.Indicator))
-                ) && 
+                ) &&
                 (
                     Security == input.Security ||
                     (Security != null &&
                     Security.Equals(input.Security))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -163,5 +155,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

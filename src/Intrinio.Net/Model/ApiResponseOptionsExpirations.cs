@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,22 +12,22 @@ namespace Intrinio.Net.Model
     /// ApiResponseOptionsExpirations
     /// </summary>
     [DataContract]
-    public partial class ApiResponseOptionsExpirations :  IEquatable<ApiResponseOptionsExpirations>, IValidatableObject
+    public sealed partial class ApiResponseOptionsExpirations : IEquatable<ApiResponseOptionsExpirations>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseOptionsExpirations" /> class.
         /// </summary>
         /// <param name="Expirations">A list of option expiration dates in descending order.</param>
-        public ApiResponseOptionsExpirations(List<string> Expirations = default(List<string>))
+        public ApiResponseOptionsExpirations(List<string> Expirations = default)
         {
             this.Expirations = Expirations;
         }
-        
+
         /// <summary>
         /// A list of option expiration dates in descending order
         /// </summary>
         /// <value>A list of option expiration dates in descending order</value>
-        [DataMember(Name="expirations", EmitDefaultValue=false)]
+        [DataMember(Name = "expirations", EmitDefaultValue = false)]
         public List<string> Expirations { get; set; }
 
         /// <summary>
@@ -46,11 +38,11 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseOptionsExpirations {\n");
-            sb.Append("  Expirations: ").Append(Expirations).Append("\n");
+            sb.Append("  Expirations: ").Append(Expirations).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -65,9 +57,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseOptionsExpirations);
+            return Equals(obj as ApiResponseOptionsExpirations);
         }
 
         /// <summary>
@@ -80,7 +72,7 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Expirations == input.Expirations ||
                     Expirations != null &&
@@ -113,5 +105,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

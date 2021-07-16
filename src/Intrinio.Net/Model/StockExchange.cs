@@ -1,17 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -19,7 +11,7 @@ namespace Intrinio.Net.Model
     /// An organized and regulated financial market in which securities are bought and sold.
     /// </summary>
     [DataContract]
-    public partial class StockExchange :  IEquatable<StockExchange>, IValidatableObject
+    public sealed partial class StockExchange : IEquatable<StockExchange>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StockExchange" /> class.
@@ -34,7 +26,7 @@ namespace Intrinio.Net.Model
         /// <param name="Website">The website of the exchange.</param>
         /// <param name="FirstStockPriceDate">The earliest date for which Intrinio has stock prices for the exchange.</param>
         /// <param name="LastStockPriceDate">The latest date for which Intrinio has stock prices for the exchange.</param>
-        public StockExchange(string Id = default(string), string Name = default(string), string Mic = default(string), string Acronym = default(string), string City = default(string), string Country = default(string), string CountryCode = default(string), string Website = default(string), DateTime? FirstStockPriceDate = default(DateTime?), DateTime? LastStockPriceDate = default(DateTime?))
+        public StockExchange(string Id = default, string Name = default, string Mic = default, string Acronym = default, string City = default, string Country = default, string CountryCode = default, string Website = default, DateTime? FirstStockPriceDate = default, DateTime? LastStockPriceDate = default)
         {
             this.Id = Id;
             this.Name = Name;
@@ -47,75 +39,75 @@ namespace Intrinio.Net.Model
             this.FirstStockPriceDate = FirstStockPriceDate;
             this.LastStockPriceDate = LastStockPriceDate;
         }
-        
+
         /// <summary>
         /// The Intrinio ID for the Stock Exchange
         /// </summary>
         /// <value>The Intrinio ID for the Stock Exchange</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The name of the exchange
         /// </summary>
         /// <value>The name of the exchange</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The Market Identifier Code (MIC) of the exchange
         /// </summary>
         /// <value>The Market Identifier Code (MIC) of the exchange</value>
-        [DataMember(Name="mic", EmitDefaultValue=false)]
+        [DataMember(Name = "mic", EmitDefaultValue = false)]
         public string Mic { get; set; }
 
         /// <summary>
         /// The acronym of the exchange&#39;s name
         /// </summary>
         /// <value>The acronym of the exchange&#39;s name</value>
-        [DataMember(Name="acronym", EmitDefaultValue=false)]
+        [DataMember(Name = "acronym", EmitDefaultValue = false)]
         public string Acronym { get; set; }
 
         /// <summary>
         /// The city in which the exchange is located
         /// </summary>
         /// <value>The city in which the exchange is located</value>
-        [DataMember(Name="city", EmitDefaultValue=false)]
+        [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
         /// <summary>
         /// The country in which the exchange is located
         /// </summary>
         /// <value>The country in which the exchange is located</value>
-        [DataMember(Name="country", EmitDefaultValue=false)]
+        [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
         /// <summary>
         /// The 2-digit code of the exchange&#39;s country
         /// </summary>
         /// <value>The 2-digit code of the exchange&#39;s country</value>
-        [DataMember(Name="country_code", EmitDefaultValue=false)]
+        [DataMember(Name = "country_code", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
         /// <summary>
         /// The website of the exchange
         /// </summary>
         /// <value>The website of the exchange</value>
-        [DataMember(Name="website", EmitDefaultValue=false)]
+        [DataMember(Name = "website", EmitDefaultValue = false)]
         public string Website { get; set; }
 
         /// <summary>
         /// The earliest date for which Intrinio has stock prices for the exchange
         /// </summary>
         /// <value>The earliest date for which Intrinio has stock prices for the exchange</value>
-        [DataMember(Name="first_stock_price_date", EmitDefaultValue=false)]
+        [DataMember(Name = "first_stock_price_date", EmitDefaultValue = false)]
         public DateTime? FirstStockPriceDate { get; set; }
 
         /// <summary>
         /// The latest date for which Intrinio has stock prices for the exchange
         /// </summary>
         /// <value>The latest date for which Intrinio has stock prices for the exchange</value>
-        [DataMember(Name="last_stock_price_date", EmitDefaultValue=false)]
+        [DataMember(Name = "last_stock_price_date", EmitDefaultValue = false)]
         public DateTime? LastStockPriceDate { get; set; }
 
         /// <summary>
@@ -126,20 +118,20 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class StockExchange {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Mic: ").Append(Mic).Append("\n");
-            sb.Append("  Acronym: ").Append(Acronym).Append("\n");
-            sb.Append("  City: ").Append(City).Append("\n");
-            sb.Append("  Country: ").Append(Country).Append("\n");
-            sb.Append("  CountryCode: ").Append(CountryCode).Append("\n");
-            sb.Append("  Website: ").Append(Website).Append("\n");
-            sb.Append("  FirstStockPriceDate: ").Append(FirstStockPriceDate).Append("\n");
-            sb.Append("  LastStockPriceDate: ").Append(LastStockPriceDate).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Mic: ").Append(Mic).Append('\n');
+            sb.Append("  Acronym: ").Append(Acronym).Append('\n');
+            sb.Append("  City: ").Append(City).Append('\n');
+            sb.Append("  Country: ").Append(Country).Append('\n');
+            sb.Append("  CountryCode: ").Append(CountryCode).Append('\n');
+            sb.Append("  Website: ").Append(Website).Append('\n');
+            sb.Append("  FirstStockPriceDate: ").Append(FirstStockPriceDate).Append('\n');
+            sb.Append("  LastStockPriceDate: ").Append(LastStockPriceDate).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -154,9 +146,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as StockExchange);
+            return Equals(obj as StockExchange);
         }
 
         /// <summary>
@@ -169,52 +161,52 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Mic == input.Mic ||
                     (Mic != null &&
                     Mic.Equals(input.Mic))
-                ) && 
+                ) &&
                 (
                     Acronym == input.Acronym ||
                     (Acronym != null &&
                     Acronym.Equals(input.Acronym))
-                ) && 
+                ) &&
                 (
                     City == input.City ||
                     (City != null &&
                     City.Equals(input.City))
-                ) && 
+                ) &&
                 (
                     Country == input.Country ||
                     (Country != null &&
                     Country.Equals(input.Country))
-                ) && 
+                ) &&
                 (
                     CountryCode == input.CountryCode ||
                     (CountryCode != null &&
                     CountryCode.Equals(input.CountryCode))
-                ) && 
+                ) &&
                 (
                     Website == input.Website ||
                     (Website != null &&
                     Website.Equals(input.Website))
-                ) && 
+                ) &&
                 (
                     FirstStockPriceDate == input.FirstStockPriceDate ||
                     (FirstStockPriceDate != null &&
                     FirstStockPriceDate.Equals(input.FirstStockPriceDate))
-                ) && 
+                ) &&
                 (
                     LastStockPriceDate == input.LastStockPriceDate ||
                     (LastStockPriceDate != null &&
@@ -265,5 +257,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

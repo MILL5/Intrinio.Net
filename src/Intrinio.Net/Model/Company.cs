@@ -1,11 +1,9 @@
-
-
-using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -13,7 +11,7 @@ namespace Intrinio.Net.Model
     /// A company that submits filings to the SEC and has a security traded primarily on a US exchange
     /// </summary>
     [DataContract]
-    public partial class Company :  IEquatable<Company>, IValidatableObject
+    public sealed partial class Company : IEquatable<Company>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Company" /> class.
@@ -54,7 +52,7 @@ namespace Intrinio.Net.Model
         /// <param name="LastFundamentalDate">The period end date of the company&#39;s last reported fundamental.</param>
         /// <param name="FirstStockPriceDate">The date of the company&#39;s first stock price, based on the company&#39;s primary security, which is typically traded on US exchages.</param>
         /// <param name="LastStockPriceDate">The date of the company&#39;s last stock price, based on the company&#39;s primary security, which is typically traded on US exchages.</param>
-        public Company(string Id = default(string), string Ticker = default(string), string Name = default(string), string Lei = default(string), string LegalName = default(string), string StockExchange = default(string), string Sic = default(string), string ShortDescription = default(string), string LongDescription = default(string), string Ceo = default(string), string CompanyUrl = default(string), string BusinessAddress = default(string), string MailingAddress = default(string), string BusinessPhoneNo = default(string), string HqAddress1 = default(string), string HqAddress2 = default(string), string HqAddressCity = default(string), string HqAddressPostalCode = default(string), string EntityLegalForm = default(string), string Cik = default(string), DateTime? LatestFilingDate = default(DateTime?), string HqState = default(string), string HqCountry = default(string), string IncState = default(string), string IncCountry = default(string), int? Employees = default(int?), string EntityStatus = default(string), string Sector = default(string), string IndustryCategory = default(string), string IndustryGroup = default(string), string Template = default(string), bool? StandardizedActive = default(bool?), DateTime? FirstFundamentalDate = default(DateTime?), DateTime? LastFundamentalDate = default(DateTime?), DateTime? FirstStockPriceDate = default(DateTime?), DateTime? LastStockPriceDate = default(DateTime?))
+        public Company(string Id = default, string Ticker = default, string Name = default, string Lei = default, string LegalName = default, string StockExchange = default, string Sic = default, string ShortDescription = default, string LongDescription = default, string Ceo = default, string CompanyUrl = default, string BusinessAddress = default, string MailingAddress = default, string BusinessPhoneNo = default, string HqAddress1 = default, string HqAddress2 = default, string HqAddressCity = default, string HqAddressPostalCode = default, string EntityLegalForm = default, string Cik = default, DateTime? LatestFilingDate = default, string HqState = default, string HqCountry = default, string IncState = default, string IncCountry = default, int? Employees = default, string EntityStatus = default, string Sector = default, string IndustryCategory = default, string IndustryGroup = default, string Template = default, bool? StandardizedActive = default, DateTime? FirstFundamentalDate = default, DateTime? LastFundamentalDate = default, DateTime? FirstStockPriceDate = default, DateTime? LastStockPriceDate = default)
         {
             this.Id = Id;
             this.Ticker = Ticker;
@@ -93,235 +91,235 @@ namespace Intrinio.Net.Model
             this.FirstStockPriceDate = FirstStockPriceDate;
             this.LastStockPriceDate = LastStockPriceDate;
         }
-        
+
         /// <summary>
         /// The Intrinio ID of the company
         /// </summary>
         /// <value>The Intrinio ID of the company</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The stock market ticker symbol associated with the company&#39;s common stock securities
         /// </summary>
         /// <value>The stock market ticker symbol associated with the company&#39;s common stock securities</value>
-        [DataMember(Name="ticker", EmitDefaultValue=false)]
+        [DataMember(Name = "ticker", EmitDefaultValue = false)]
         public string Ticker { get; set; }
 
         /// <summary>
         /// The company&#39;s common name
         /// </summary>
         /// <value>The company&#39;s common name</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The Legal Entity Identifier (LEI) assigned to the company
         /// </summary>
         /// <value>The Legal Entity Identifier (LEI) assigned to the company</value>
-        [DataMember(Name="lei", EmitDefaultValue=false)]
+        [DataMember(Name = "lei", EmitDefaultValue = false)]
         public string Lei { get; set; }
 
         /// <summary>
         /// The company&#39;s official legal name
         /// </summary>
         /// <value>The company&#39;s official legal name</value>
-        [DataMember(Name="legal_name", EmitDefaultValue=false)]
+        [DataMember(Name = "legal_name", EmitDefaultValue = false)]
         public string LegalName { get; set; }
 
         /// <summary>
         /// The Stock Exchange where the company&#39;s common stock is primarily traded
         /// </summary>
         /// <value>The Stock Exchange where the company&#39;s common stock is primarily traded</value>
-        [DataMember(Name="stock_exchange", EmitDefaultValue=false)]
+        [DataMember(Name = "stock_exchange", EmitDefaultValue = false)]
         public string StockExchange { get; set; }
 
         /// <summary>
         /// The Standard Industrial Classification (SIC) determined by the company and filed with the SEC
         /// </summary>
         /// <value>The Standard Industrial Classification (SIC) determined by the company and filed with the SEC</value>
-        [DataMember(Name="sic", EmitDefaultValue=false)]
+        [DataMember(Name = "sic", EmitDefaultValue = false)]
         public string Sic { get; set; }
 
         /// <summary>
         /// A one or two sentence description of the company&#39;s operations
         /// </summary>
         /// <value>A one or two sentence description of the company&#39;s operations</value>
-        [DataMember(Name="short_description", EmitDefaultValue=false)]
+        [DataMember(Name = "short_description", EmitDefaultValue = false)]
         public string ShortDescription { get; set; }
 
         /// <summary>
         /// A one paragraph description of the company&#39;s operations and other corporate actions
         /// </summary>
         /// <value>A one paragraph description of the company&#39;s operations and other corporate actions</value>
-        [DataMember(Name="long_description", EmitDefaultValue=false)]
+        [DataMember(Name = "long_description", EmitDefaultValue = false)]
         public string LongDescription { get; set; }
 
         /// <summary>
         /// The Chief Executive Officer of the company
         /// </summary>
         /// <value>The Chief Executive Officer of the company</value>
-        [DataMember(Name="ceo", EmitDefaultValue=false)]
+        [DataMember(Name = "ceo", EmitDefaultValue = false)]
         public string Ceo { get; set; }
 
         /// <summary>
         /// The URL of the company&#39;s primary corporate website or primary internet property
         /// </summary>
         /// <value>The URL of the company&#39;s primary corporate website or primary internet property</value>
-        [DataMember(Name="company_url", EmitDefaultValue=false)]
+        [DataMember(Name = "company_url", EmitDefaultValue = false)]
         public string CompanyUrl { get; set; }
 
         /// <summary>
         /// The company&#39;s business address
         /// </summary>
         /// <value>The company&#39;s business address</value>
-        [DataMember(Name="business_address", EmitDefaultValue=false)]
+        [DataMember(Name = "business_address", EmitDefaultValue = false)]
         public string BusinessAddress { get; set; }
 
         /// <summary>
         /// The mailing address reported by the company
         /// </summary>
         /// <value>The mailing address reported by the company</value>
-        [DataMember(Name="mailing_address", EmitDefaultValue=false)]
+        [DataMember(Name = "mailing_address", EmitDefaultValue = false)]
         public string MailingAddress { get; set; }
 
         /// <summary>
         /// The phone number reported by the company
         /// </summary>
         /// <value>The phone number reported by the company</value>
-        [DataMember(Name="business_phone_no", EmitDefaultValue=false)]
+        [DataMember(Name = "business_phone_no", EmitDefaultValue = false)]
         public string BusinessPhoneNo { get; set; }
 
         /// <summary>
         /// The company&#39;s headquarters address - line 1
         /// </summary>
         /// <value>The company&#39;s headquarters address - line 1</value>
-        [DataMember(Name="hq_address1", EmitDefaultValue=false)]
+        [DataMember(Name = "hq_address1", EmitDefaultValue = false)]
         public string HqAddress1 { get; set; }
 
         /// <summary>
         /// The company&#39;s headquarters address - line 2
         /// </summary>
         /// <value>The company&#39;s headquarters address - line 2</value>
-        [DataMember(Name="hq_address2", EmitDefaultValue=false)]
+        [DataMember(Name = "hq_address2", EmitDefaultValue = false)]
         public string HqAddress2 { get; set; }
 
         /// <summary>
         /// The company&#39;s headquarters city
         /// </summary>
         /// <value>The company&#39;s headquarters city</value>
-        [DataMember(Name="hq_address_city", EmitDefaultValue=false)]
+        [DataMember(Name = "hq_address_city", EmitDefaultValue = false)]
         public string HqAddressCity { get; set; }
 
         /// <summary>
         /// The company&#39;s headquarters postal code
         /// </summary>
         /// <value>The company&#39;s headquarters postal code</value>
-        [DataMember(Name="hq_address_postal_code", EmitDefaultValue=false)]
+        [DataMember(Name = "hq_address_postal_code", EmitDefaultValue = false)]
         public string HqAddressPostalCode { get; set; }
 
         /// <summary>
         /// The company&#39;s legal organization form
         /// </summary>
         /// <value>The company&#39;s legal organization form</value>
-        [DataMember(Name="entity_legal_form", EmitDefaultValue=false)]
+        [DataMember(Name = "entity_legal_form", EmitDefaultValue = false)]
         public string EntityLegalForm { get; set; }
 
         /// <summary>
         /// The Central Index Key (CIK) assigned to the company by the SEC as a unique identifier, used in SEC filings
         /// </summary>
         /// <value>The Central Index Key (CIK) assigned to the company by the SEC as a unique identifier, used in SEC filings</value>
-        [DataMember(Name="cik", EmitDefaultValue=false)]
+        [DataMember(Name = "cik", EmitDefaultValue = false)]
         public string Cik { get; set; }
 
         /// <summary>
         /// The date of the company&#39;s last filing with the SEC
         /// </summary>
         /// <value>The date of the company&#39;s last filing with the SEC</value>
-        [DataMember(Name="latest_filing_date", EmitDefaultValue=false)]
+        [DataMember(Name = "latest_filing_date", EmitDefaultValue = false)]
         public DateTime? LatestFilingDate { get; set; }
 
         /// <summary>
         /// The state (US &amp; Canada Only) where the company headquarters are located
         /// </summary>
         /// <value>The state (US &amp; Canada Only) where the company headquarters are located</value>
-        [DataMember(Name="hq_state", EmitDefaultValue=false)]
+        [DataMember(Name = "hq_state", EmitDefaultValue = false)]
         public string HqState { get; set; }
 
         /// <summary>
         /// The country where the company headquarters are located
         /// </summary>
         /// <value>The country where the company headquarters are located</value>
-        [DataMember(Name="hq_country", EmitDefaultValue=false)]
+        [DataMember(Name = "hq_country", EmitDefaultValue = false)]
         public string HqCountry { get; set; }
 
         /// <summary>
         /// The state (US &amp; Canada Only) where the company is incorporated
         /// </summary>
         /// <value>The state (US &amp; Canada Only) where the company is incorporated</value>
-        [DataMember(Name="inc_state", EmitDefaultValue=false)]
+        [DataMember(Name = "inc_state", EmitDefaultValue = false)]
         public string IncState { get; set; }
 
         /// <summary>
         /// The country where the company is incorporated
         /// </summary>
         /// <value>The country where the company is incorporated</value>
-        [DataMember(Name="inc_country", EmitDefaultValue=false)]
+        [DataMember(Name = "inc_country", EmitDefaultValue = false)]
         public string IncCountry { get; set; }
 
         /// <summary>
         /// The number of employees working for the company
         /// </summary>
         /// <value>The number of employees working for the company</value>
-        [DataMember(Name="employees", EmitDefaultValue=false)]
+        [DataMember(Name = "employees", EmitDefaultValue = false)]
         public int? Employees { get; set; }
 
         /// <summary>
         /// Gets or Sets EntityStatus
         /// </summary>
-        [DataMember(Name="entity_status", EmitDefaultValue=false)]
+        [DataMember(Name = "entity_status", EmitDefaultValue = false)]
         public string EntityStatus { get; set; }
 
         /// <summary>
         /// The company&#39;s operating sector
         /// </summary>
         /// <value>The company&#39;s operating sector</value>
-        [DataMember(Name="sector", EmitDefaultValue=false)]
+        [DataMember(Name = "sector", EmitDefaultValue = false)]
         public string Sector { get; set; }
 
         /// <summary>
         /// The company&#39;s operating industry category
         /// </summary>
         /// <value>The company&#39;s operating industry category</value>
-        [DataMember(Name="industry_category", EmitDefaultValue=false)]
+        [DataMember(Name = "industry_category", EmitDefaultValue = false)]
         public string IndustryCategory { get; set; }
 
         /// <summary>
         /// The company&#39;s operating industry group
         /// </summary>
         /// <value>The company&#39;s operating industry group</value>
-        [DataMember(Name="industry_group", EmitDefaultValue=false)]
+        [DataMember(Name = "industry_group", EmitDefaultValue = false)]
         public string IndustryGroup { get; set; }
 
         /// <summary>
         /// The financial statement template used by Intrinio to standardize the as reported data
         /// </summary>
         /// <value>The financial statement template used by Intrinio to standardize the as reported data</value>
-        [DataMember(Name="template", EmitDefaultValue=false)]
+        [DataMember(Name = "template", EmitDefaultValue = false)]
         public string Template { get; set; }
 
         /// <summary>
         /// If true, the company has standardized and as reported fundamental data via the Intrinio API; if false, the company has as-reported data only
         /// </summary>
         /// <value>If true, the company has standardized and as reported fundamental data via the Intrinio API; if false, the company has as-reported data only</value>
-        [DataMember(Name="standardized_active", EmitDefaultValue=false)]
+        [DataMember(Name = "standardized_active", EmitDefaultValue = false)]
         public bool? StandardizedActive { get; set; }
 
         /// <summary>
         /// The period end date of the company&#39;s first reported fundamental
         /// </summary>
         /// <value>The period end date of the company&#39;s first reported fundamental</value>
-        [DataMember(Name="first_fundamental_date", EmitDefaultValue=false)]
+        [DataMember(Name = "first_fundamental_date", EmitDefaultValue = false)]
         // [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? FirstFundamentalDate { get; set; }
 
@@ -329,7 +327,7 @@ namespace Intrinio.Net.Model
         /// The period end date of the company&#39;s last reported fundamental
         /// </summary>
         /// <value>The period end date of the company&#39;s last reported fundamental</value>
-        [DataMember(Name="last_fundamental_date", EmitDefaultValue=false)]
+        [DataMember(Name = "last_fundamental_date", EmitDefaultValue = false)]
         // [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? LastFundamentalDate { get; set; }
 
@@ -337,7 +335,7 @@ namespace Intrinio.Net.Model
         /// The date of the company&#39;s first stock price, based on the company&#39;s primary security, which is typically traded on US exchages
         /// </summary>
         /// <value>The date of the company&#39;s first stock price, based on the company&#39;s primary security, which is typically traded on US exchages</value>
-        [DataMember(Name="first_stock_price_date", EmitDefaultValue=false)]
+        [DataMember(Name = "first_stock_price_date", EmitDefaultValue = false)]
         // [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? FirstStockPriceDate { get; set; }
 
@@ -345,7 +343,7 @@ namespace Intrinio.Net.Model
         /// The date of the company&#39;s last stock price, based on the company&#39;s primary security, which is typically traded on US exchages
         /// </summary>
         /// <value>The date of the company&#39;s last stock price, based on the company&#39;s primary security, which is typically traded on US exchages</value>
-        [DataMember(Name="last_stock_price_date", EmitDefaultValue=false)]
+        [DataMember(Name = "last_stock_price_date", EmitDefaultValue = false)]
         // [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? LastStockPriceDate { get; set; }
 
@@ -357,46 +355,46 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Company {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Ticker: ").Append(Ticker).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Lei: ").Append(Lei).Append("\n");
-            sb.Append("  LegalName: ").Append(LegalName).Append("\n");
-            sb.Append("  StockExchange: ").Append(StockExchange).Append("\n");
-            sb.Append("  Sic: ").Append(Sic).Append("\n");
-            sb.Append("  ShortDescription: ").Append(ShortDescription).Append("\n");
-            sb.Append("  LongDescription: ").Append(LongDescription).Append("\n");
-            sb.Append("  Ceo: ").Append(Ceo).Append("\n");
-            sb.Append("  CompanyUrl: ").Append(CompanyUrl).Append("\n");
-            sb.Append("  BusinessAddress: ").Append(BusinessAddress).Append("\n");
-            sb.Append("  MailingAddress: ").Append(MailingAddress).Append("\n");
-            sb.Append("  BusinessPhoneNo: ").Append(BusinessPhoneNo).Append("\n");
-            sb.Append("  HqAddress1: ").Append(HqAddress1).Append("\n");
-            sb.Append("  HqAddress2: ").Append(HqAddress2).Append("\n");
-            sb.Append("  HqAddressCity: ").Append(HqAddressCity).Append("\n");
-            sb.Append("  HqAddressPostalCode: ").Append(HqAddressPostalCode).Append("\n");
-            sb.Append("  EntityLegalForm: ").Append(EntityLegalForm).Append("\n");
-            sb.Append("  Cik: ").Append(Cik).Append("\n");
-            sb.Append("  LatestFilingDate: ").Append(LatestFilingDate).Append("\n");
-            sb.Append("  HqState: ").Append(HqState).Append("\n");
-            sb.Append("  HqCountry: ").Append(HqCountry).Append("\n");
-            sb.Append("  IncState: ").Append(IncState).Append("\n");
-            sb.Append("  IncCountry: ").Append(IncCountry).Append("\n");
-            sb.Append("  Employees: ").Append(Employees).Append("\n");
-            sb.Append("  EntityStatus: ").Append(EntityStatus).Append("\n");
-            sb.Append("  Sector: ").Append(Sector).Append("\n");
-            sb.Append("  IndustryCategory: ").Append(IndustryCategory).Append("\n");
-            sb.Append("  IndustryGroup: ").Append(IndustryGroup).Append("\n");
-            sb.Append("  Template: ").Append(Template).Append("\n");
-            sb.Append("  StandardizedActive: ").Append(StandardizedActive).Append("\n");
-            sb.Append("  FirstFundamentalDate: ").Append(FirstFundamentalDate).Append("\n");
-            sb.Append("  LastFundamentalDate: ").Append(LastFundamentalDate).Append("\n");
-            sb.Append("  FirstStockPriceDate: ").Append(FirstStockPriceDate).Append("\n");
-            sb.Append("  LastStockPriceDate: ").Append(LastStockPriceDate).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  Ticker: ").Append(Ticker).Append('\n');
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Lei: ").Append(Lei).Append('\n');
+            sb.Append("  LegalName: ").Append(LegalName).Append('\n');
+            sb.Append("  StockExchange: ").Append(StockExchange).Append('\n');
+            sb.Append("  Sic: ").Append(Sic).Append('\n');
+            sb.Append("  ShortDescription: ").Append(ShortDescription).Append('\n');
+            sb.Append("  LongDescription: ").Append(LongDescription).Append('\n');
+            sb.Append("  Ceo: ").Append(Ceo).Append('\n');
+            sb.Append("  CompanyUrl: ").Append(CompanyUrl).Append('\n');
+            sb.Append("  BusinessAddress: ").Append(BusinessAddress).Append('\n');
+            sb.Append("  MailingAddress: ").Append(MailingAddress).Append('\n');
+            sb.Append("  BusinessPhoneNo: ").Append(BusinessPhoneNo).Append('\n');
+            sb.Append("  HqAddress1: ").Append(HqAddress1).Append('\n');
+            sb.Append("  HqAddress2: ").Append(HqAddress2).Append('\n');
+            sb.Append("  HqAddressCity: ").Append(HqAddressCity).Append('\n');
+            sb.Append("  HqAddressPostalCode: ").Append(HqAddressPostalCode).Append('\n');
+            sb.Append("  EntityLegalForm: ").Append(EntityLegalForm).Append('\n');
+            sb.Append("  Cik: ").Append(Cik).Append('\n');
+            sb.Append("  LatestFilingDate: ").Append(LatestFilingDate).Append('\n');
+            sb.Append("  HqState: ").Append(HqState).Append('\n');
+            sb.Append("  HqCountry: ").Append(HqCountry).Append('\n');
+            sb.Append("  IncState: ").Append(IncState).Append('\n');
+            sb.Append("  IncCountry: ").Append(IncCountry).Append('\n');
+            sb.Append("  Employees: ").Append(Employees).Append('\n');
+            sb.Append("  EntityStatus: ").Append(EntityStatus).Append('\n');
+            sb.Append("  Sector: ").Append(Sector).Append('\n');
+            sb.Append("  IndustryCategory: ").Append(IndustryCategory).Append('\n');
+            sb.Append("  IndustryGroup: ").Append(IndustryGroup).Append('\n');
+            sb.Append("  Template: ").Append(Template).Append('\n');
+            sb.Append("  StandardizedActive: ").Append(StandardizedActive).Append('\n');
+            sb.Append("  FirstFundamentalDate: ").Append(FirstFundamentalDate).Append('\n');
+            sb.Append("  LastFundamentalDate: ").Append(LastFundamentalDate).Append('\n');
+            sb.Append("  FirstStockPriceDate: ").Append(FirstStockPriceDate).Append('\n');
+            sb.Append("  LastStockPriceDate: ").Append(LastStockPriceDate).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -411,9 +409,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as Company);
+            return Equals(obj as Company);
         }
 
         /// <summary>
@@ -426,182 +424,182 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     Ticker == input.Ticker ||
                     (Ticker != null &&
                     Ticker.Equals(input.Ticker))
-                ) && 
+                ) &&
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Lei == input.Lei ||
                     (Lei != null &&
                     Lei.Equals(input.Lei))
-                ) && 
+                ) &&
                 (
                     LegalName == input.LegalName ||
                     (LegalName != null &&
                     LegalName.Equals(input.LegalName))
-                ) && 
+                ) &&
                 (
                     StockExchange == input.StockExchange ||
                     (StockExchange != null &&
                     StockExchange.Equals(input.StockExchange))
-                ) && 
+                ) &&
                 (
                     Sic == input.Sic ||
                     (Sic != null &&
                     Sic.Equals(input.Sic))
-                ) && 
+                ) &&
                 (
                     ShortDescription == input.ShortDescription ||
                     (ShortDescription != null &&
                     ShortDescription.Equals(input.ShortDescription))
-                ) && 
+                ) &&
                 (
                     LongDescription == input.LongDescription ||
                     (LongDescription != null &&
                     LongDescription.Equals(input.LongDescription))
-                ) && 
+                ) &&
                 (
                     Ceo == input.Ceo ||
                     (Ceo != null &&
                     Ceo.Equals(input.Ceo))
-                ) && 
+                ) &&
                 (
                     CompanyUrl == input.CompanyUrl ||
                     (CompanyUrl != null &&
                     CompanyUrl.Equals(input.CompanyUrl))
-                ) && 
+                ) &&
                 (
                     BusinessAddress == input.BusinessAddress ||
                     (BusinessAddress != null &&
                     BusinessAddress.Equals(input.BusinessAddress))
-                ) && 
+                ) &&
                 (
                     MailingAddress == input.MailingAddress ||
                     (MailingAddress != null &&
                     MailingAddress.Equals(input.MailingAddress))
-                ) && 
+                ) &&
                 (
                     BusinessPhoneNo == input.BusinessPhoneNo ||
                     (BusinessPhoneNo != null &&
                     BusinessPhoneNo.Equals(input.BusinessPhoneNo))
-                ) && 
+                ) &&
                 (
                     HqAddress1 == input.HqAddress1 ||
                     (HqAddress1 != null &&
                     HqAddress1.Equals(input.HqAddress1))
-                ) && 
+                ) &&
                 (
                     HqAddress2 == input.HqAddress2 ||
                     (HqAddress2 != null &&
                     HqAddress2.Equals(input.HqAddress2))
-                ) && 
+                ) &&
                 (
                     HqAddressCity == input.HqAddressCity ||
                     (HqAddressCity != null &&
                     HqAddressCity.Equals(input.HqAddressCity))
-                ) && 
+                ) &&
                 (
                     HqAddressPostalCode == input.HqAddressPostalCode ||
                     (HqAddressPostalCode != null &&
                     HqAddressPostalCode.Equals(input.HqAddressPostalCode))
-                ) && 
+                ) &&
                 (
                     EntityLegalForm == input.EntityLegalForm ||
                     (EntityLegalForm != null &&
                     EntityLegalForm.Equals(input.EntityLegalForm))
-                ) && 
+                ) &&
                 (
                     Cik == input.Cik ||
                     (Cik != null &&
                     Cik.Equals(input.Cik))
-                ) && 
+                ) &&
                 (
                     LatestFilingDate == input.LatestFilingDate ||
                     (LatestFilingDate != null &&
                     LatestFilingDate.Equals(input.LatestFilingDate))
-                ) && 
+                ) &&
                 (
                     HqState == input.HqState ||
                     (HqState != null &&
                     HqState.Equals(input.HqState))
-                ) && 
+                ) &&
                 (
                     HqCountry == input.HqCountry ||
                     (HqCountry != null &&
                     HqCountry.Equals(input.HqCountry))
-                ) && 
+                ) &&
                 (
                     IncState == input.IncState ||
                     (IncState != null &&
                     IncState.Equals(input.IncState))
-                ) && 
+                ) &&
                 (
                     IncCountry == input.IncCountry ||
                     (IncCountry != null &&
                     IncCountry.Equals(input.IncCountry))
-                ) && 
+                ) &&
                 (
                     Employees == input.Employees ||
                     (Employees != null &&
                     Employees.Equals(input.Employees))
-                ) && 
+                ) &&
                 (
                     EntityStatus == input.EntityStatus ||
                     (EntityStatus != null &&
                     EntityStatus.Equals(input.EntityStatus))
-                ) && 
+                ) &&
                 (
                     Sector == input.Sector ||
                     (Sector != null &&
                     Sector.Equals(input.Sector))
-                ) && 
+                ) &&
                 (
                     IndustryCategory == input.IndustryCategory ||
                     (IndustryCategory != null &&
                     IndustryCategory.Equals(input.IndustryCategory))
-                ) && 
+                ) &&
                 (
                     IndustryGroup == input.IndustryGroup ||
                     (IndustryGroup != null &&
                     IndustryGroup.Equals(input.IndustryGroup))
-                ) && 
+                ) &&
                 (
                     Template == input.Template ||
                     (Template != null &&
                     Template.Equals(input.Template))
-                ) && 
+                ) &&
                 (
                     StandardizedActive == input.StandardizedActive ||
                     (StandardizedActive != null &&
                     StandardizedActive.Equals(input.StandardizedActive))
-                ) && 
+                ) &&
                 (
                     FirstFundamentalDate == input.FirstFundamentalDate ||
                     (FirstFundamentalDate != null &&
                     FirstFundamentalDate.Equals(input.FirstFundamentalDate))
-                ) && 
+                ) &&
                 (
                     LastFundamentalDate == input.LastFundamentalDate ||
                     (LastFundamentalDate != null &&
                     LastFundamentalDate.Equals(input.LastFundamentalDate))
-                ) && 
+                ) &&
                 (
                     FirstStockPriceDate == input.FirstStockPriceDate ||
                     (FirstStockPriceDate != null &&
                     FirstStockPriceDate.Equals(input.FirstStockPriceDate))
-                ) && 
+                ) &&
                 (
                     LastStockPriceDate == input.LastStockPriceDate ||
                     (LastStockPriceDate != null &&
@@ -704,5 +702,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

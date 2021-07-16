@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// An option contract gives the buyer of a contract the right to buy or sell a particular asset at a later date at an agreed upon price.
     /// </summary>
     [DataContract]
-    public partial class Option :  IEquatable<Option>, IValidatableObject
+    public sealed partial class Option : IEquatable<Option>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Option" /> class.
@@ -31,7 +22,7 @@ namespace Intrinio.Net.Model
         /// <param name="Expiration">The date on which the Option expires. The Option becomes invalid after this date and cannot be exercised..</param>
         /// <param name="Strike">The strike price is the fixed price at which a derivative can be exercised, and refers to the price of the derivative’s underlying asset.  In a call option, the strike price is the price at which the option holder can purchase the underlying security.  For a put option, the strike price is the price at which the option holder can sell the underlying security..</param>
         /// <param name="Type">The type of Option (put or call). A put option is an option contract giving the owner the right, but not the obligation, to sell a specified amount of an underlying asset at a specified price before the option&#39;s expiration date. A call option gives the holder the right to buy an underlying asset at a specified price, before the option&#39;s expiration date..</param>
-        public Option(string Id = default(string), string Code = default(string), string Ticker = default(string), string Expiration = default(string), decimal? Strike = default(decimal?), string Type = default(string))
+        public Option(string Id = default, string Code = default, string Ticker = default, string Expiration = default, decimal? Strike = default, string Type = default)
         {
             this.Id = Id;
             this.Code = Code;
@@ -40,47 +31,47 @@ namespace Intrinio.Net.Model
             this.Strike = Strike;
             this.Type = Type;
         }
-        
+
         /// <summary>
         /// The Intrinio ID for the Option.
         /// </summary>
         /// <value>The Intrinio ID for the Option.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The Intrinio Code for the Option.
         /// </summary>
         /// <value>The Intrinio Code for the Option.</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
         /// The ticker symbol of the Security for the Option.
         /// </summary>
         /// <value>The ticker symbol of the Security for the Option.</value>
-        [DataMember(Name="ticker", EmitDefaultValue=false)]
+        [DataMember(Name = "ticker", EmitDefaultValue = false)]
         public string Ticker { get; set; }
 
         /// <summary>
         /// The date on which the Option expires. The Option becomes invalid after this date and cannot be exercised.
         /// </summary>
         /// <value>The date on which the Option expires. The Option becomes invalid after this date and cannot be exercised.</value>
-        [DataMember(Name="expiration", EmitDefaultValue=false)]
+        [DataMember(Name = "expiration", EmitDefaultValue = false)]
         public string Expiration { get; set; }
 
         /// <summary>
         /// The strike price is the fixed price at which a derivative can be exercised, and refers to the price of the derivative’s underlying asset.  In a call option, the strike price is the price at which the option holder can purchase the underlying security.  For a put option, the strike price is the price at which the option holder can sell the underlying security.
         /// </summary>
         /// <value>The strike price is the fixed price at which a derivative can be exercised, and refers to the price of the derivative’s underlying asset.  In a call option, the strike price is the price at which the option holder can purchase the underlying security.  For a put option, the strike price is the price at which the option holder can sell the underlying security.</value>
-        [DataMember(Name="strike", EmitDefaultValue=false)]
+        [DataMember(Name = "strike", EmitDefaultValue = false)]
         public decimal? Strike { get; set; }
 
         /// <summary>
         /// The type of Option (put or call). A put option is an option contract giving the owner the right, but not the obligation, to sell a specified amount of an underlying asset at a specified price before the option&#39;s expiration date. A call option gives the holder the right to buy an underlying asset at a specified price, before the option&#39;s expiration date.
         /// </summary>
         /// <value>The type of Option (put or call). A put option is an option contract giving the owner the right, but not the obligation, to sell a specified amount of an underlying asset at a specified price before the option&#39;s expiration date. A call option gives the holder the right to buy an underlying asset at a specified price, before the option&#39;s expiration date.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
         /// <summary>
@@ -91,16 +82,16 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Option {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Ticker: ").Append(Ticker).Append("\n");
-            sb.Append("  Expiration: ").Append(Expiration).Append("\n");
-            sb.Append("  Strike: ").Append(Strike).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  Code: ").Append(Code).Append('\n');
+            sb.Append("  Ticker: ").Append(Ticker).Append('\n');
+            sb.Append("  Expiration: ").Append(Expiration).Append('\n');
+            sb.Append("  Strike: ").Append(Strike).Append('\n');
+            sb.Append("  Type: ").Append(Type).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -115,9 +106,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as Option);
+            return Equals(obj as Option);
         }
 
         /// <summary>
@@ -130,32 +121,32 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     Code == input.Code ||
                     (Code != null &&
                     Code.Equals(input.Code))
-                ) && 
+                ) &&
                 (
                     Ticker == input.Ticker ||
                     (Ticker != null &&
                     Ticker.Equals(input.Ticker))
-                ) && 
+                ) &&
                 (
                     Expiration == input.Expiration ||
                     (Expiration != null &&
                     Expiration.Equals(input.Expiration))
-                ) && 
+                ) &&
                 (
                     Strike == input.Strike ||
                     (Strike != null &&
                     Strike.Equals(input.Strike))
-                ) && 
+                ) &&
                 (
                     Type == input.Type ||
                     (Type != null &&
@@ -198,5 +189,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

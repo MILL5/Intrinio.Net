@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +11,31 @@ namespace Intrinio.Net.Model
     /// An axis-member combination related to a reported XBRL fact, which denotes a facet of an XBRL dimension.
     /// </summary>
     [DataContract]
-    public partial class ReportedFinancialDimension :  IEquatable<ReportedFinancialDimension>, IValidatableObject
+    public sealed partial class ReportedFinancialDimension : IEquatable<ReportedFinancialDimension>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportedFinancialDimension" /> class.
         /// </summary>
         /// <param name="Axis">The axis of the dimension.</param>
         /// <param name="Member">The member of the axis.</param>
-        public ReportedFinancialDimension(string Axis = default(string), string Member = default(string))
+        public ReportedFinancialDimension(string Axis = default, string Member = default)
         {
             this.Axis = Axis;
             this.Member = Member;
         }
-        
+
         /// <summary>
         /// The axis of the dimension
         /// </summary>
         /// <value>The axis of the dimension</value>
-        [DataMember(Name="axis", EmitDefaultValue=false)]
+        [DataMember(Name = "axis", EmitDefaultValue = false)]
         public string Axis { get; set; }
 
         /// <summary>
         /// The member of the axis
         /// </summary>
         /// <value>The member of the axis</value>
-        [DataMember(Name="member", EmitDefaultValue=false)]
+        [DataMember(Name = "member", EmitDefaultValue = false)]
         public string Member { get; set; }
 
         /// <summary>
@@ -55,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ReportedFinancialDimension {\n");
-            sb.Append("  Axis: ").Append(Axis).Append("\n");
-            sb.Append("  Member: ").Append(Member).Append("\n");
+            sb.Append("  Axis: ").Append(Axis).Append('\n');
+            sb.Append("  Member: ").Append(Member).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ReportedFinancialDimension);
+            return Equals(obj as ReportedFinancialDimension);
         }
 
         /// <summary>
@@ -90,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Axis == input.Axis ||
                     (Axis != null &&
                     Axis.Equals(input.Axis))
-                ) && 
+                ) &&
                 (
                     Member == input.Member ||
                     (Member != null &&
@@ -130,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

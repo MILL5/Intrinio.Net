@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// An XBRL tag as-reported by the company on the as-reported financial statement
     /// </summary>
     [DataContract]
-    public partial class ReportedTag :  IEquatable<ReportedTag>, IValidatableObject
+    public sealed partial class ReportedTag : IEquatable<ReportedTag>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReportedTag" /> class.
@@ -32,7 +23,7 @@ namespace Intrinio.Net.Model
         /// <param name="Abstract">If true, the tag is an abstract and does not represent a nominal value.</param>
         /// <param name="Sequence">The vertical sequence of the tag when displayed in the financial statement.</param>
         /// <param name="Depth">The horizontal depth of the tag when displayed in the financial statement.</param>
-        public ReportedTag(string Tag = default(string), string Name = default(string), string Balance = default(string), string Unit = default(string), bool? Abstract = default(bool?), int? Sequence = default(int?), int? Depth = default(int?))
+        public ReportedTag(string Tag = default, string Name = default, string Balance = default, string Unit = default, bool? Abstract = default, int? Sequence = default, int? Depth = default)
         {
             this.Tag = Tag;
             this.Name = Name;
@@ -42,54 +33,54 @@ namespace Intrinio.Net.Model
             this.Sequence = Sequence;
             this.Depth = Depth;
         }
-        
+
         /// <summary>
         /// The tag code
         /// </summary>
         /// <value>The tag code</value>
-        [DataMember(Name="tag", EmitDefaultValue=false)]
+        [DataMember(Name = "tag", EmitDefaultValue = false)]
         public string Tag { get; set; }
 
         /// <summary>
         /// The tag name
         /// </summary>
         /// <value>The tag name</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Whether the tag represents a credit or debit
         /// </summary>
         /// <value>Whether the tag represents a credit or debit</value>
-        [DataMember(Name="balance", EmitDefaultValue=false)]
+        [DataMember(Name = "balance", EmitDefaultValue = false)]
         public string Balance { get; set; }
 
         /// <summary>
         /// The unit of the tag
         /// </summary>
         /// <value>The unit of the tag</value>
-        [DataMember(Name="unit", EmitDefaultValue=false)]
+        [DataMember(Name = "unit", EmitDefaultValue = false)]
         public string Unit { get; set; }
 
         /// <summary>
         /// If true, the tag is an abstract and does not represent a nominal value
         /// </summary>
         /// <value>If true, the tag is an abstract and does not represent a nominal value</value>
-        [DataMember(Name="abstract", EmitDefaultValue=false)]
+        [DataMember(Name = "abstract", EmitDefaultValue = false)]
         public bool? Abstract { get; set; }
 
         /// <summary>
         /// The vertical sequence of the tag when displayed in the financial statement
         /// </summary>
         /// <value>The vertical sequence of the tag when displayed in the financial statement</value>
-        [DataMember(Name="sequence", EmitDefaultValue=false)]
+        [DataMember(Name = "sequence", EmitDefaultValue = false)]
         public int? Sequence { get; set; }
 
         /// <summary>
         /// The horizontal depth of the tag when displayed in the financial statement
         /// </summary>
         /// <value>The horizontal depth of the tag when displayed in the financial statement</value>
-        [DataMember(Name="depth", EmitDefaultValue=false)]
+        [DataMember(Name = "depth", EmitDefaultValue = false)]
         public int? Depth { get; set; }
 
         /// <summary>
@@ -100,17 +91,17 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ReportedTag {\n");
-            sb.Append("  Tag: ").Append(Tag).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Balance: ").Append(Balance).Append("\n");
-            sb.Append("  Unit: ").Append(Unit).Append("\n");
-            sb.Append("  Abstract: ").Append(Abstract).Append("\n");
-            sb.Append("  Sequence: ").Append(Sequence).Append("\n");
-            sb.Append("  Depth: ").Append(Depth).Append("\n");
+            sb.Append("  Tag: ").Append(Tag).Append('\n');
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Balance: ").Append(Balance).Append('\n');
+            sb.Append("  Unit: ").Append(Unit).Append('\n');
+            sb.Append("  Abstract: ").Append(Abstract).Append('\n');
+            sb.Append("  Sequence: ").Append(Sequence).Append('\n');
+            sb.Append("  Depth: ").Append(Depth).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -125,9 +116,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ReportedTag);
+            return Equals(obj as ReportedTag);
         }
 
         /// <summary>
@@ -140,37 +131,37 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Tag == input.Tag ||
                     (Tag != null &&
                     Tag.Equals(input.Tag))
-                ) && 
+                ) &&
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Balance == input.Balance ||
                     (Balance != null &&
                     Balance.Equals(input.Balance))
-                ) && 
+                ) &&
                 (
                     Unit == input.Unit ||
                     (Unit != null &&
                     Unit.Equals(input.Unit))
-                ) && 
+                ) &&
                 (
                     Abstract == input.Abstract ||
                     (Abstract != null &&
                     Abstract.Equals(input.Abstract))
-                ) && 
+                ) &&
                 (
                     Sequence == input.Sequence ||
                     (Sequence != null &&
                     Sequence.Equals(input.Sequence))
-                ) && 
+                ) &&
                 (
                     Depth == input.Depth ||
                     (Depth != null &&
@@ -215,5 +206,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

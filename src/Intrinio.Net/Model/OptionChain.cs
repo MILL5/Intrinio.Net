@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,29 +11,29 @@ namespace Intrinio.Net.Model
     /// An option chain contains an options contract and corresponding price data for that contract on a given date.
     /// </summary>
     [DataContract]
-    public partial class OptionChain :  IEquatable<OptionChain>, IValidatableObject
+    public sealed partial class OptionChain : IEquatable<OptionChain>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OptionChain" /> class.
         /// </summary>
         /// <param name="Option">Option.</param>
         /// <param name="Price">Price.</param>
-        public OptionChain(Option Option = default(Option), OptionPrice Price = default(OptionPrice))
+        public OptionChain(Option Option = default, OptionPrice Price = default)
         {
             this.Option = Option;
             this.Price = Price;
         }
-        
+
         /// <summary>
         /// Gets or Sets Option
         /// </summary>
-        [DataMember(Name="option", EmitDefaultValue=false)]
+        [DataMember(Name = "option", EmitDefaultValue = false)]
         public Option Option { get; set; }
 
         /// <summary>
         /// Gets or Sets Price
         /// </summary>
-        [DataMember(Name="price", EmitDefaultValue=false)]
+        [DataMember(Name = "price", EmitDefaultValue = false)]
         public OptionPrice Price { get; set; }
 
         /// <summary>
@@ -53,12 +44,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OptionChain {\n");
-            sb.Append("  Option: ").Append(Option).Append("\n");
-            sb.Append("  Price: ").Append(Price).Append("\n");
+            sb.Append("  Option: ").Append(Option).Append('\n');
+            sb.Append("  Price: ").Append(Price).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -73,9 +64,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as OptionChain);
+            return Equals(obj as OptionChain);
         }
 
         /// <summary>
@@ -88,12 +79,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Option == input.Option ||
                     (Option != null &&
                     Option.Equals(input.Option))
-                ) && 
+                ) &&
                 (
                     Price == input.Price ||
                     (Price != null &&
@@ -128,5 +119,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

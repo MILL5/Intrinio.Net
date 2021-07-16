@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,21 +12,21 @@ namespace Intrinio.Net.Model
     /// ApiResponseSecuritiesSearch
     /// </summary>
     [DataContract]
-    public partial class ApiResponseSecuritiesSearch :  IEquatable<ApiResponseSecuritiesSearch>, IValidatableObject
+    public sealed partial class ApiResponseSecuritiesSearch : IEquatable<ApiResponseSecuritiesSearch>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseSecuritiesSearch" /> class.
         /// </summary>
         /// <param name="Securities">Securities.</param>
-        public ApiResponseSecuritiesSearch(List<SecuritySummary> Securities = default(List<SecuritySummary>))
+        public ApiResponseSecuritiesSearch(List<SecuritySummary> Securities = default)
         {
             this.Securities = Securities;
         }
-        
+
         /// <summary>
         /// Gets or Sets Securities
         /// </summary>
-        [DataMember(Name="securities", EmitDefaultValue=false)]
+        [DataMember(Name = "securities", EmitDefaultValue = false)]
         public List<SecuritySummary> Securities { get; set; }
 
         /// <summary>
@@ -45,11 +37,11 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseSecuritiesSearch {\n");
-            sb.Append("  Securities: ").Append(Securities).Append("\n");
+            sb.Append("  Securities: ").Append(Securities).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -64,9 +56,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseSecuritiesSearch);
+            return Equals(obj as ApiResponseSecuritiesSearch);
         }
 
         /// <summary>
@@ -79,7 +71,7 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Securities == input.Securities ||
                     Securities != null &&
@@ -112,5 +104,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

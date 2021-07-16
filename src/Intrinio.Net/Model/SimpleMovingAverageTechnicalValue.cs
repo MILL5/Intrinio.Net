@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +11,31 @@ namespace Intrinio.Net.Model
     /// The date_time and sma values of a Simple Moving Average technical indicator calculation
     /// </summary>
     [DataContract]
-    public partial class SimpleMovingAverageTechnicalValue :  IEquatable<SimpleMovingAverageTechnicalValue>, IValidatableObject
+    public sealed partial class SimpleMovingAverageTechnicalValue : IEquatable<SimpleMovingAverageTechnicalValue>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SimpleMovingAverageTechnicalValue" /> class.
         /// </summary>
         /// <param name="DateTime">The date_time of the observation.</param>
         /// <param name="Sma">The Simple Moving Average calculation value.</param>
-        public SimpleMovingAverageTechnicalValue(DateTime? DateTime = default(DateTime?), float? Sma = default(float?))
+        public SimpleMovingAverageTechnicalValue(DateTime? DateTime = default, float? Sma = default)
         {
             this.DateTime = DateTime;
             this.Sma = Sma;
         }
-        
+
         /// <summary>
         /// The date_time of the observation
         /// </summary>
         /// <value>The date_time of the observation</value>
-        [DataMember(Name="date_time", EmitDefaultValue=false)]
+        [DataMember(Name = "date_time", EmitDefaultValue = false)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// The Simple Moving Average calculation value
         /// </summary>
         /// <value>The Simple Moving Average calculation value</value>
-        [DataMember(Name="sma", EmitDefaultValue=false)]
+        [DataMember(Name = "sma", EmitDefaultValue = false)]
         public float? Sma { get; set; }
 
         /// <summary>
@@ -55,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SimpleMovingAverageTechnicalValue {\n");
-            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
-            sb.Append("  Sma: ").Append(Sma).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append('\n');
+            sb.Append("  Sma: ").Append(Sma).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as SimpleMovingAverageTechnicalValue);
+            return Equals(obj as SimpleMovingAverageTechnicalValue);
         }
 
         /// <summary>
@@ -90,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DateTime == input.DateTime ||
                     (DateTime != null &&
                     DateTime.Equals(input.DateTime))
-                ) && 
+                ) &&
                 (
                     Sma == input.Sma ||
                     (Sma != null &&
@@ -130,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

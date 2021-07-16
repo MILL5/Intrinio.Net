@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,30 +12,30 @@ namespace Intrinio.Net.Model
     /// ApiResponseStockExchanges
     /// </summary>
     [DataContract]
-    public partial class ApiResponseStockExchanges :  IEquatable<ApiResponseStockExchanges>, IValidatableObject
+    public sealed partial class ApiResponseStockExchanges : IEquatable<ApiResponseStockExchanges>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseStockExchanges" /> class.
         /// </summary>
         /// <param name="StockExchanges">StockExchanges.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseStockExchanges(List<StockExchange> StockExchanges = default(List<StockExchange>), string NextPage = default(string))
+        public ApiResponseStockExchanges(List<StockExchange> StockExchanges = default, string NextPage = default)
         {
             this.StockExchanges = StockExchanges;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets StockExchanges
         /// </summary>
-        [DataMember(Name="stock_exchanges", EmitDefaultValue=false)]
+        [DataMember(Name = "stock_exchanges", EmitDefaultValue = false)]
         public List<StockExchange> StockExchanges { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -54,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseStockExchanges {\n");
-            sb.Append("  StockExchanges: ").Append(StockExchanges).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  StockExchanges: ").Append(StockExchanges).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -74,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseStockExchanges);
+            return Equals(obj as ApiResponseStockExchanges);
         }
 
         /// <summary>
@@ -89,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     StockExchanges == input.StockExchanges ||
                     StockExchanges != null &&
                     StockExchanges.SequenceEqual(input.StockExchanges)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -129,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

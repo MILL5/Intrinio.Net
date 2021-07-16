@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
 {
@@ -12,32 +11,31 @@ namespace Intrinio.Net.Model
     /// Returns number of shares held in previous quarters
     /// </summary>
     [DataContract]
-    public partial class ZacksInstitutionalHoldingHistoricalSummary :  IEquatable<ZacksInstitutionalHoldingHistoricalSummary>, IValidatableObject
+    public sealed partial class ZacksInstitutionalHoldingHistoricalSummary : IEquatable<ZacksInstitutionalHoldingHistoricalSummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ZacksInstitutionalHoldingHistoricalSummary" /> class.
         /// </summary>
         /// <param name="AsOfDate">The date of the institutional holding.</param>
         /// <param name="SharesHeld">The number of shares held.</param>
-        public ZacksInstitutionalHoldingHistoricalSummary(DateTime? AsOfDate = default(DateTime?), decimal? SharesHeld = default(decimal?))
+        public ZacksInstitutionalHoldingHistoricalSummary(DateTime? AsOfDate = default, decimal? SharesHeld = default)
         {
             this.AsOfDate = AsOfDate;
             this.SharesHeld = SharesHeld;
         }
-        
+
         /// <summary>
         /// The date of the institutional holding
         /// </summary>
         /// <value>The date of the institutional holding</value>
-        [DataMember(Name="as_of_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "as_of_date", EmitDefaultValue = false)]
         public DateTime? AsOfDate { get; set; }
 
         /// <summary>
         /// The number of shares held
         /// </summary>
         /// <value>The number of shares held</value>
-        [DataMember(Name="shares_held", EmitDefaultValue=false)]
+        [DataMember(Name = "shares_held", EmitDefaultValue = false)]
         public decimal? SharesHeld { get; set; }
 
         /// <summary>
@@ -48,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ZacksInstitutionalHoldingHistoricalSummary {\n");
-            sb.Append("  AsOfDate: ").Append(AsOfDate).Append("\n");
-            sb.Append("  SharesHeld: ").Append(SharesHeld).Append("\n");
+            sb.Append("  AsOfDate: ").Append(AsOfDate).Append('\n');
+            sb.Append("  SharesHeld: ").Append(SharesHeld).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -68,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ZacksInstitutionalHoldingHistoricalSummary);
+            return Equals(obj as ZacksInstitutionalHoldingHistoricalSummary);
         }
 
         /// <summary>
@@ -83,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     AsOfDate == input.AsOfDate ||
                     (AsOfDate != null &&
                     AsOfDate.Equals(input.AsOfDate))
-                ) && 
+                ) &&
                 (
                     SharesHeld == input.SharesHeld ||
                     (SharesHeld != null &&
@@ -123,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

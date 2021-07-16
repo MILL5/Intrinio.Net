@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,30 +12,30 @@ namespace Intrinio.Net.Model
     /// ApiResponseStockMarketIndices
     /// </summary>
     [DataContract]
-    public partial class ApiResponseStockMarketIndices :  IEquatable<ApiResponseStockMarketIndices>, IValidatableObject
+    public sealed partial class ApiResponseStockMarketIndices : IEquatable<ApiResponseStockMarketIndices>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseStockMarketIndices" /> class.
         /// </summary>
         /// <param name="Indices">Indices.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseStockMarketIndices(List<StockMarketIndexSummary> Indices = default(List<StockMarketIndexSummary>), string NextPage = default(string))
+        public ApiResponseStockMarketIndices(List<StockMarketIndexSummary> Indices = default, string NextPage = default)
         {
             this.Indices = Indices;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets Indices
         /// </summary>
-        [DataMember(Name="indices", EmitDefaultValue=false)]
+        [DataMember(Name = "indices", EmitDefaultValue = false)]
         public List<StockMarketIndexSummary> Indices { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -54,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseStockMarketIndices {\n");
-            sb.Append("  Indices: ").Append(Indices).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Indices: ").Append(Indices).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -74,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseStockMarketIndices);
+            return Equals(obj as ApiResponseStockMarketIndices);
         }
 
         /// <summary>
@@ -89,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Indices == input.Indices ||
                     Indices != null &&
                     Indices.SequenceEqual(input.Indices)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -129,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

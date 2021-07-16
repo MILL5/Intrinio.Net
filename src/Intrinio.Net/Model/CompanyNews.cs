@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// A news article about a company
     /// </summary>
     [DataContract]
-    public partial class CompanyNews :  IEquatable<CompanyNews>, IValidatableObject
+    public sealed partial class CompanyNews : IEquatable<CompanyNews>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyNews" /> class.
@@ -31,7 +22,7 @@ namespace Intrinio.Net.Model
         /// <param name="Url">The url of the news article.</param>
         /// <param name="Summary">A summary of the news article.</param>
         /// <param name="Company">The Company to which the new article pertains.</param>
-        public CompanyNews(string Id = default(string), string Title = default(string), DateTime? PublicationDate = default(DateTime?), string Url = default(string), string Summary = default(string), CompanySummary Company = default(CompanySummary))
+        public CompanyNews(string Id = default, string Title = default, DateTime? PublicationDate = default, string Url = default, string Summary = default, CompanySummary Company = default)
         {
             this.Id = Id;
             this.Title = Title;
@@ -40,47 +31,47 @@ namespace Intrinio.Net.Model
             this.Summary = Summary;
             this.Company = Company;
         }
-        
+
         /// <summary>
         /// The Intrinio ID for the news article
         /// </summary>
         /// <value>The Intrinio ID for the news article</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The title of the news article
         /// </summary>
         /// <value>The title of the news article</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// The publication date of the news article
         /// </summary>
         /// <value>The publication date of the news article</value>
-        [DataMember(Name="publication_date", EmitDefaultValue=false)]
+        [DataMember(Name = "publication_date", EmitDefaultValue = false)]
         public DateTime? PublicationDate { get; set; }
 
         /// <summary>
         /// The url of the news article
         /// </summary>
         /// <value>The url of the news article</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
         /// <summary>
         /// A summary of the news article
         /// </summary>
         /// <value>A summary of the news article</value>
-        [DataMember(Name="summary", EmitDefaultValue=false)]
+        [DataMember(Name = "summary", EmitDefaultValue = false)]
         public string Summary { get; set; }
 
         /// <summary>
         /// The Company to which the new article pertains
         /// </summary>
         /// <value>The Company to which the new article pertains</value>
-        [DataMember(Name="company", EmitDefaultValue=false)]
+        [DataMember(Name = "company", EmitDefaultValue = false)]
         public CompanySummary Company { get; set; }
 
         /// <summary>
@@ -91,16 +82,16 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CompanyNews {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Title: ").Append(Title).Append("\n");
-            sb.Append("  PublicationDate: ").Append(PublicationDate).Append("\n");
-            sb.Append("  Url: ").Append(Url).Append("\n");
-            sb.Append("  Summary: ").Append(Summary).Append("\n");
-            sb.Append("  Company: ").Append(Company).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  Title: ").Append(Title).Append('\n');
+            sb.Append("  PublicationDate: ").Append(PublicationDate).Append('\n');
+            sb.Append("  Url: ").Append(Url).Append('\n');
+            sb.Append("  Summary: ").Append(Summary).Append('\n');
+            sb.Append("  Company: ").Append(Company).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -115,9 +106,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as CompanyNews);
+            return Equals(obj as CompanyNews);
         }
 
         /// <summary>
@@ -130,32 +121,32 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     Title == input.Title ||
                     (Title != null &&
                     Title.Equals(input.Title))
-                ) && 
+                ) &&
                 (
                     PublicationDate == input.PublicationDate ||
                     (PublicationDate != null &&
                     PublicationDate.Equals(input.PublicationDate))
-                ) && 
+                ) &&
                 (
                     Url == input.Url ||
                     (Url != null &&
                     Url.Equals(input.Url))
-                ) && 
+                ) &&
                 (
                     Summary == input.Summary ||
                     (Summary != null &&
                     Summary.Equals(input.Summary))
-                ) && 
+                ) &&
                 (
                     Company == input.Company ||
                     (Company != null &&
@@ -198,5 +189,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

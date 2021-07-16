@@ -11,7 +11,7 @@ namespace Intrinio.Net.Model
     /// The summary of a company instutionally owned sourced from Zacks.
     /// </summary>
     [DataContract]
-    public partial class ZacksInstitutionalHoldingCompanySummary :  IEquatable<ZacksInstitutionalHoldingCompanySummary>, IValidatableObject
+    public sealed partial class ZacksInstitutionalHoldingCompanySummary : IEquatable<ZacksInstitutionalHoldingCompanySummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ZacksInstitutionalHoldingCompanySummary" /> class.
@@ -19,32 +19,32 @@ namespace Intrinio.Net.Model
         /// <param name="Ticker">The Zacks common exchange ticker.</param>
         /// <param name="Name">The company name of the stock listed.</param>
         /// <param name="Exchange">Exhange where the stock is traded whose shares are held by the institution.</param>
-        public ZacksInstitutionalHoldingCompanySummary(string Ticker = default(string), string Name = default(string), string Exchange = default(string))
+        public ZacksInstitutionalHoldingCompanySummary(string Ticker = default, string Name = default, string Exchange = default)
         {
             this.Ticker = Ticker;
             this.Name = Name;
             this.Exchange = Exchange;
         }
-        
+
         /// <summary>
         /// The Zacks common exchange ticker
         /// </summary>
         /// <value>The Zacks common exchange ticker</value>
-        [DataMember(Name="ticker", EmitDefaultValue=false)]
+        [DataMember(Name = "ticker", EmitDefaultValue = false)]
         public string Ticker { get; set; }
 
         /// <summary>
         /// The company name of the stock listed
         /// </summary>
         /// <value>The company name of the stock listed</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Exhange where the stock is traded whose shares are held by the institution
         /// </summary>
         /// <value>Exhange where the stock is traded whose shares are held by the institution</value>
-        [DataMember(Name="exchange", EmitDefaultValue=false)]
+        [DataMember(Name = "exchange", EmitDefaultValue = false)]
         public string Exchange { get; set; }
 
         /// <summary>
@@ -55,13 +55,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ZacksInstitutionalHoldingCompanySummary {\n");
-            sb.Append("  Ticker: ").Append(Ticker).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Exchange: ").Append(Exchange).Append("\n");
+            sb.Append("  Ticker: ").Append(Ticker).Append('\n');
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Exchange: ").Append(Exchange).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -76,9 +76,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ZacksInstitutionalHoldingCompanySummary);
+            return Equals(obj as ZacksInstitutionalHoldingCompanySummary);
         }
 
         /// <summary>
@@ -91,17 +91,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Ticker == input.Ticker ||
                     (Ticker != null &&
                     Ticker.Equals(input.Ticker))
-                ) && 
+                ) &&
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Exchange == input.Exchange ||
                     (Exchange != null &&
@@ -138,5 +138,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

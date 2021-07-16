@@ -11,7 +11,7 @@ namespace Intrinio.Net.Model
     /// The summary of a financial instrument representing shares of ownership in a publicly-traded company
     /// </summary>
     [DataContract]
-    public partial class SecuritySummary : IEquatable<SecuritySummary>, IValidatableObject
+    public sealed partial class SecuritySummary : IEquatable<SecuritySummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SecuritySummary" /> class.
@@ -27,7 +27,7 @@ namespace Intrinio.Net.Model
         /// <param name="CompositeFigi">The country-composite OpenFIGI identifier.</param>
         /// <param name="ShareClassFigi">The global-composite OpenFIGI identifier.</param>
         /// <param name="PrimaryListing">If true, the Security is the primary issue for the company, otherwise it is a secondary issue on a secondary stock exchange.</param>
-        public SecuritySummary(string Id = default(string), string CompanyId = default(string), string Name = default(string), string Code = default(string), string Currency = default(string), string Ticker = default(string), string CompositeTicker = default(string), string Figi = default(string), string CompositeFigi = default(string), string ShareClassFigi = default(string), bool? PrimaryListing = default(bool?))
+        public SecuritySummary(string Id = default, string CompanyId = default, string Name = default, string Code = default, string Currency = default, string Ticker = default, string CompositeTicker = default, string Figi = default, string CompositeFigi = default, string ShareClassFigi = default, bool? PrimaryListing = default)
         {
             this.Id = Id;
             this.CompanyId = CompanyId;
@@ -134,17 +134,17 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SecuritySummary {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Currency: ").Append(Currency).Append("\n");
-            sb.Append("  Ticker: ").Append(Ticker).Append("\n");
-            sb.Append("  CompositeTicker: ").Append(CompositeTicker).Append("\n");
-            sb.Append("  Figi: ").Append(Figi).Append("\n");
-            sb.Append("  CompositeFigi: ").Append(CompositeFigi).Append("\n");
-            sb.Append("  ShareClassFigi: ").Append(ShareClassFigi).Append("\n");
-            sb.Append("  PrimaryListing: ").Append(PrimaryListing).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  CompanyId: ").Append(CompanyId).Append('\n');
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Code: ").Append(Code).Append('\n');
+            sb.Append("  Currency: ").Append(Currency).Append('\n');
+            sb.Append("  Ticker: ").Append(Ticker).Append('\n');
+            sb.Append("  CompositeTicker: ").Append(CompositeTicker).Append('\n');
+            sb.Append("  Figi: ").Append(Figi).Append('\n');
+            sb.Append("  CompositeFigi: ").Append(CompositeFigi).Append('\n');
+            sb.Append("  ShareClassFigi: ").Append(ShareClassFigi).Append('\n');
+            sb.Append("  PrimaryListing: ").Append(PrimaryListing).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -163,9 +163,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as SecuritySummary);
+            return Equals(obj as SecuritySummary);
         }
 
         /// <summary>

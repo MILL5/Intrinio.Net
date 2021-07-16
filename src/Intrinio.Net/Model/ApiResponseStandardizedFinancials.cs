@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +12,7 @@ namespace Intrinio.Net.Model
     /// ApiResponseStandardizedFinancials
     /// </summary>
     [DataContract]
-    public partial class ApiResponseStandardizedFinancials :  IEquatable<ApiResponseStandardizedFinancials>, IValidatableObject
+    public sealed partial class ApiResponseStandardizedFinancials : IEquatable<ApiResponseStandardizedFinancials>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseStandardizedFinancials" /> class.
@@ -28,30 +20,30 @@ namespace Intrinio.Net.Model
         /// <param name="StandardizedFinancials">StandardizedFinancials.</param>
         /// <param name="Fundamental">Fundamental.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseStandardizedFinancials(List<StandardizedFinancial> StandardizedFinancials = default(List<StandardizedFinancial>), Fundamental Fundamental = default(Fundamental), string NextPage = default(string))
+        public ApiResponseStandardizedFinancials(List<StandardizedFinancial> StandardizedFinancials = default, Fundamental Fundamental = default, string NextPage = default)
         {
             this.StandardizedFinancials = StandardizedFinancials;
             this.Fundamental = Fundamental;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets StandardizedFinancials
         /// </summary>
-        [DataMember(Name="standardized_financials", EmitDefaultValue=false)]
+        [DataMember(Name = "standardized_financials", EmitDefaultValue = false)]
         public List<StandardizedFinancial> StandardizedFinancials { get; set; }
 
         /// <summary>
         /// Gets or Sets Fundamental
         /// </summary>
-        [DataMember(Name="fundamental", EmitDefaultValue=false)]
+        [DataMember(Name = "fundamental", EmitDefaultValue = false)]
         public Fundamental Fundamental { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -62,13 +54,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseStandardizedFinancials {\n");
-            sb.Append("  StandardizedFinancials: ").Append(StandardizedFinancials).Append("\n");
-            sb.Append("  Fundamental: ").Append(Fundamental).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  StandardizedFinancials: ").Append(StandardizedFinancials).Append('\n');
+            sb.Append("  Fundamental: ").Append(Fundamental).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -83,9 +75,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseStandardizedFinancials);
+            return Equals(obj as ApiResponseStandardizedFinancials);
         }
 
         /// <summary>
@@ -98,17 +90,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     StandardizedFinancials == input.StandardizedFinancials ||
                     StandardizedFinancials != null &&
                     StandardizedFinancials.SequenceEqual(input.StandardizedFinancials)
-                ) && 
+                ) &&
                 (
                     Fundamental == input.Fundamental ||
                     (Fundamental != null &&
                     Fundamental.Equals(input.Fundamental))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -145,5 +137,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }
