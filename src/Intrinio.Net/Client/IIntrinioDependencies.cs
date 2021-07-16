@@ -1,9 +1,9 @@
-using System.Net.Http;
 using AutoMapper;
 using M5.FinancialDataSanitizer;
+using System.Net.Http;
 using static Pineapple.Common.Preconditions;
 
-namespace Intrinio.Net.Client
+namespace Intrinio.Net
 {
     public interface IIntrinioDependencies
     {
@@ -11,12 +11,6 @@ namespace Intrinio.Net.Client
         IHttpClientFactory HttpClientFactory { get; }
         AbbreviationParser AbbreviationParser { get; }
         IMapper Mapper { get; }
-
-    }
-
-    internal class SwaggerDateConverter
-    {
-        
     }
 
     internal class IntrinioDependencies : IIntrinioDependencies
@@ -24,7 +18,6 @@ namespace Intrinio.Net.Client
         public IntrinioSettings Settings { get; }
         public IHttpClientFactory HttpClientFactory { get; }
         public AbbreviationParser AbbreviationParser { get; }
-
         public IMapper Mapper { get; }
 
         public IntrinioDependencies(IntrinioSettings settings, IHttpClientFactory clientFactory, IMapper mapper)
