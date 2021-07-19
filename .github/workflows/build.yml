@@ -22,7 +22,7 @@ jobs:
         run: dotnet tool install --global dotnet-sonarscanner
 
       - name: Begin SonarQube Scanner
-        run: dotnet sonarscanner begin /key:"Intrinio.Net" /d:sonar.host.url="${{secrets.SONARQUBE_HOST}}" /d:sonar.login="${{secrets.SONARQUBE_TOKEN}}" /d:sonar.scm.disabled=false /d:sonar.scm.provider=git /d:sonar.links.scm="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" /d:sonar.cs.opencover.reportsPaths='**/coverage.opencover.xml'
+        run: dotnet sonarscanner begin /key:"Intrinio.Net" /d:sonar.host.url="${{ secrets.SONARQUBE_HOST }}" /d:sonar.login="${{ secrets.SONARQUBE_TOKEN }}" /d:sonar.scm.disabled=false /d:sonar.scm.provider=git /d:sonar.links.scm="${ GITHUB_SERVER_URL }/${ GITHUB_REPOSITORY }.git" /d:sonar.cs.opencover.reportsPaths='**/coverage.opencover.xml'
 
       - name: Restore Dependencies
         run: dotnet restore Intrinio.Net.sln
@@ -34,4 +34,4 @@ jobs:
         run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:ExcludeByAttribute="Obsolete"
 
       - name: End SonarQube Scanner
-        run: dotnet sonarscanner end /d:sonar.login="${{secrets.SONARQUBE_TOKEN}}"   
+        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONARQUBE_TOKEN }}"   
