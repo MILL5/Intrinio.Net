@@ -54,7 +54,7 @@ namespace Intrinio.Net.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
         public override bool Equals(object obj)
         {
@@ -64,18 +64,18 @@ namespace Intrinio.Net.Model
         /// <summary>
         /// Returns true if ApiResponseEconomicIndicesSearch instances are equal
         /// </summary>
-        /// <param name="input">Instance of ApiResponseEconomicIndicesSearch to be compared</param>
+        /// <param name="other">Instance of ApiResponseEconomicIndicesSearch to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ApiResponseEconomicIndicesSearch input)
+        public bool Equals(ApiResponseEconomicIndicesSearch other)
         {
-            if (input == null)
+            if (other == null)
                 return false;
 
             return
                 (
-                    Indices == input.Indices ||
+                    Indices == other.Indices ||
                     Indices != null &&
-                    Indices.SequenceEqual(input.Indices)
+                    Indices.SequenceEqual(other.Indices)
                 );
         }
 

@@ -234,7 +234,7 @@ namespace Intrinio.Net.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
         public override bool Equals(object obj)
         {
@@ -244,108 +244,108 @@ namespace Intrinio.Net.Model
         /// <summary>
         /// Returns true if Municipality instances are equal
         /// </summary>
-        /// <param name="input">Instance of Municipality to be compared</param>
+        /// <param name="other">Instance of Municipality to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Municipality input)
+        public bool Equals(Municipality other)
         {
-            if (input == null)
+            if (other == null)
                 return false;
 
             return
                 (
-                    Id == input.Id ||
+                    Id == other.Id ||
                     (Id != null &&
-                    Id.Equals(input.Id))
+                    Id.Equals(other.Id))
                 ) &&
                 (
-                    CensusId == input.CensusId ||
+                    CensusId == other.CensusId ||
                     (CensusId != null &&
-                    CensusId.Equals(input.CensusId))
+                    CensusId.Equals(other.CensusId))
                 ) &&
                 (
-                    GovernmentName == input.GovernmentName ||
+                    GovernmentName == other.GovernmentName ||
                     (GovernmentName != null &&
-                    GovernmentName.Equals(input.GovernmentName))
+                    GovernmentName.Equals(other.GovernmentName))
                 ) &&
                 (
-                    GovernmentType == input.GovernmentType ||
+                    GovernmentType == other.GovernmentType ||
                     (GovernmentType != null &&
-                    GovernmentType.Equals(input.GovernmentType))
+                    GovernmentType.Equals(other.GovernmentType))
                 ) &&
                 (
-                    PrimaryContactType == input.PrimaryContactType ||
+                    PrimaryContactType == other.PrimaryContactType ||
                     (PrimaryContactType != null &&
-                    PrimaryContactType.Equals(input.PrimaryContactType))
+                    PrimaryContactType.Equals(other.PrimaryContactType))
                 ) &&
                 (
-                    Address1 == input.Address1 ||
+                    Address1 == other.Address1 ||
                     (Address1 != null &&
-                    Address1.Equals(input.Address1))
+                    Address1.Equals(other.Address1))
                 ) &&
                 (
-                    Address2 == input.Address2 ||
+                    Address2 == other.Address2 ||
                     (Address2 != null &&
-                    Address2.Equals(input.Address2))
+                    Address2.Equals(other.Address2))
                 ) &&
                 (
-                    City == input.City ||
+                    City == other.City ||
                     (City != null &&
-                    City.Equals(input.City))
+                    City.Equals(other.City))
                 ) &&
                 (
-                    State == input.State ||
+                    State == other.State ||
                     (State != null &&
-                    State.Equals(input.State))
+                    State.Equals(other.State))
                 ) &&
                 (
-                    Zip == input.Zip ||
+                    Zip == other.Zip ||
                     (Zip != null &&
-                    Zip.Equals(input.Zip))
+                    Zip.Equals(other.Zip))
                 ) &&
                 (
-                    WebSite == input.WebSite ||
+                    WebSite == other.WebSite ||
                     (WebSite != null &&
-                    WebSite.Equals(input.WebSite))
+                    WebSite.Equals(other.WebSite))
                 ) &&
                 (
-                    Population == input.Population ||
+                    Population == other.Population ||
                     (Population != null &&
-                    Population.Equals(input.Population))
+                    Population.Equals(other.Population))
                 ) &&
                 (
-                    PopulationAsOfYear == input.PopulationAsOfYear ||
+                    PopulationAsOfYear == other.PopulationAsOfYear ||
                     (PopulationAsOfYear != null &&
-                    PopulationAsOfYear.Equals(input.PopulationAsOfYear))
+                    PopulationAsOfYear.Equals(other.PopulationAsOfYear))
                 ) &&
                 (
-                    Enrollment == input.Enrollment ||
+                    Enrollment == other.Enrollment ||
                     (Enrollment != null &&
-                    Enrollment.Equals(input.Enrollment))
+                    Enrollment.Equals(other.Enrollment))
                 ) &&
                 (
-                    EnrollmentAsOfYear == input.EnrollmentAsOfYear ||
+                    EnrollmentAsOfYear == other.EnrollmentAsOfYear ||
                     (EnrollmentAsOfYear != null &&
-                    EnrollmentAsOfYear.Equals(input.EnrollmentAsOfYear))
+                    EnrollmentAsOfYear.Equals(other.EnrollmentAsOfYear))
                 ) &&
                 (
-                    AreaName == input.AreaName ||
+                    AreaName == other.AreaName ||
                     (AreaName != null &&
-                    AreaName.Equals(input.AreaName))
+                    AreaName.Equals(other.AreaName))
                 ) &&
                 (
-                    AreaType == input.AreaType ||
+                    AreaType == other.AreaType ||
                     (AreaType != null &&
-                    AreaType.Equals(input.AreaType))
+                    AreaType.Equals(other.AreaType))
                 ) &&
                 (
-                    Latitude == input.Latitude ||
+                    Latitude == other.Latitude ||
                     (Latitude != null &&
-                    Latitude.Equals(input.Latitude))
+                    Latitude.Equals(other.Latitude))
                 ) &&
                 (
-                    Longitude == input.Longitude ||
+                    Longitude == other.Longitude ||
                     (Longitude != null &&
-                    Longitude.Equals(input.Longitude))
+                    Longitude.Equals(other.Longitude))
                 );
         }
 

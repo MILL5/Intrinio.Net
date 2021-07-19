@@ -9,6 +9,8 @@ namespace Intrinio.Net.Api
     {
         Task<string> GetAsync(string requestUrl);
 
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S107:Methods should not have too many parameters", Justification = "API params")]
         Task<IEnumerable<CompanySummary>> GetAllCompanySummariesAsync(
             DateTime? latest_filing_date = null,
             string sic = null,
@@ -46,6 +48,7 @@ namespace Intrinio.Net.Api
             int? page_size = null,
             string next_page = null);
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S107:Methods should not have too many parameters", Justification = "API params")]
         Task<IEnumerable<SecuritySummary>> GetAllSecuritySummariesAsync(
             bool? active = null,
             bool? delisted = null,
