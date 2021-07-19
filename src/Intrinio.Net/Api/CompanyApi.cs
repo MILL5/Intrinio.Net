@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using static Pineapple.Common.Preconditions;
 
 namespace Intrinio.Net.Api
 {
@@ -37,13 +38,12 @@ namespace Intrinio.Net.Api
 
             var result = new List<CompanySummary>();
 
-            var jsonResponse = await Get($"{allCompaniesBaseUrl}{GetQueryParameterString(queryParams)}")
-                 .ConfigureAwait(false);
+            var jsonResponse = await GetAsync($"{RestApiUrls.Company.Default}{GetQueryParameterString(queryParams)}").ConfigureAwait(false);
             var apiResponse = JsonConvert.DeserializeObject<ApiResponseCompanies>(jsonResponse);
 
             if (apiResponse == null)
             {
-                throw new Exception("API Response is Null");
+                throw new IntrinioNetException("API Response is Null");
             }
 
             var companies = apiResponse.Companies;
@@ -58,13 +58,15 @@ namespace Intrinio.Net.Api
             while (apiResponse.NextPage != null)
             {
                 queryParams[nameof(next_page)] = apiResponse.NextPage;
-                jsonResponse = await Get($"{allCompaniesBaseUrl}{GetQueryParameterString(queryParams)}")
+                jsonResponse = await GetAsync($"{RestApiUrls.Company.Default}{GetQueryParameterString(queryParams)}")
                      .ConfigureAwait(false);
                 apiResponse = JsonConvert.DeserializeObject<ApiResponseCompanies>(jsonResponse);
+
                 if (apiResponse == null)
                 {
-                    throw new Exception("API Response is Null");
+                    throw new IntrinioNetException("API Response is Null");
                 }
+
                 companies = apiResponse.Companies;
                 result.AddRange(companies);
             }
@@ -74,12 +76,14 @@ namespace Intrinio.Net.Api
 
         public async Task<Company> LookupCompanyAsync(string identifier, bool expandAbbreviations = false)
         {
-            var jsonResponse = await Get(String.Format(lookupCompanyBaseUrl, identifier))
-                 .ConfigureAwait(false);
+            CheckIsNotNullOrWhitespace(nameof(identifier), identifier);
+
+            var requestUrl = string.Format(RestApiUrls.Company.Lookup, identifier);
+
+            var jsonResponse = await GetAsync(requestUrl).ConfigureAwait(false);
             var company = JsonConvert.DeserializeObject<Company>(jsonResponse);
 
             if (!expandAbbreviations) return company;
-
             company = Mapper.Map<Company>(company);
 
             return company;

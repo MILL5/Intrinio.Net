@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,30 +11,30 @@ namespace Intrinio.Net.Model
     /// ApiResponseETFs
     /// </summary>
     [DataContract]
-    public partial class ApiResponseETFs :  IEquatable<ApiResponseETFs>, IValidatableObject
+    public sealed partial class ApiResponseETFs : IEquatable<ApiResponseETFs>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseETFs" /> class.
         /// </summary>
         /// <param name="Etfs">Etfs.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseETFs(object Etfs = default(object), string NextPage = default(string))
+        public ApiResponseETFs(object Etfs = default, string NextPage = default)
         {
             this.Etfs = Etfs;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets Etfs
         /// </summary>
-        [DataMember(Name="etfs", EmitDefaultValue=false)]
+        [DataMember(Name = "etfs", EmitDefaultValue = false)]
         public object Etfs { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -54,12 +45,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseETFs {\n");
-            sb.Append("  Etfs: ").Append(Etfs).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Etfs: ").Append(Etfs).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -74,9 +65,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseETFs);
+            return Equals(obj as ApiResponseETFs);
         }
 
         /// <summary>
@@ -89,12 +80,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Etfs == input.Etfs ||
                     (Etfs != null &&
                     Etfs.Equals(input.Etfs))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -129,5 +120,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,34 +12,33 @@ namespace Intrinio.Net.Model
     /// A dividend record for the identifier
     /// </summary>
     [DataContract]
-    public partial class DividendRecord :  IEquatable<DividendRecord>, IValidatableObject
+    public sealed partial class DividendRecord : IEquatable<DividendRecord>, IValidatableObject
     {
         /// <summary>
         /// Status of the dividend
         /// </summary>
         /// <value>Status of the dividend</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
+        public enum DividendStatus
         {
-            
             /// <summary>
             /// Enum P for value: P
             /// </summary>
             [EnumMember(Value = "P")]
             P = 1,
-            
+
             /// <summary>
             /// Enum X for value: X
             /// </summary>
             [EnumMember(Value = "X")]
             X = 2,
-            
+
             /// <summary>
             /// Enum S for value: S
             /// </summary>
             [EnumMember(Value = "S")]
             S = 3,
-            
+
             /// <summary>
             /// Enum R for value: R
             /// </summary>
@@ -59,8 +50,9 @@ namespace Intrinio.Net.Model
         /// Status of the dividend
         /// </summary>
         /// <value>Status of the dividend</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
-        public StatusEnum? Status { get; set; }
+        [DataMember(Name = "status", EmitDefaultValue = false)]
+        public DividendStatus? Status { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="DividendRecord" /> class.
         /// </summary>
@@ -75,7 +67,7 @@ namespace Intrinio.Net.Model
         /// <param name="ForwardRate">The forward dividend rate.</param>
         /// <param name="LastExDividendDate">The last reported day the stock starts trading without the value of its next dividend payment.</param>
         /// <param name="Security">Security.</param>
-        public DividendRecord(decimal? ExDividend = default(decimal?), string Currency = default(string), DateTime? AnnouncementDate = default(DateTime?), DateTime? RecordDate = default(DateTime?), DateTime? PayDate = default(DateTime?), string Frequency = default(string), StatusEnum? Status = default(StatusEnum?), decimal? ForwardYield = default(decimal?), decimal? ForwardRate = default(decimal?), DateTime? LastExDividendDate = default(DateTime?), SecuritySummary Security = default(SecuritySummary))
+        public DividendRecord(decimal? ExDividend = default, string Currency = default, DateTime? AnnouncementDate = default, DateTime? RecordDate = default, DateTime? PayDate = default, string Frequency = default, DividendStatus? Status = default, decimal? ForwardYield = default, decimal? ForwardRate = default, DateTime? LastExDividendDate = default, SecuritySummary Security = default)
         {
             this.ExDividend = ExDividend;
             this.Currency = Currency;
@@ -89,79 +81,74 @@ namespace Intrinio.Net.Model
             this.LastExDividendDate = LastExDividendDate;
             this.Security = Security;
         }
-        
+
         /// <summary>
         /// Amount of dividend in US dollars
         /// </summary>
         /// <value>Amount of dividend in US dollars</value>
-        [DataMember(Name="ex_dividend", EmitDefaultValue=false)]
+        [DataMember(Name = "ex_dividend", EmitDefaultValue = false)]
         public decimal? ExDividend { get; set; }
 
         /// <summary>
         /// The 3-digit currency code the dividend amount was reported in
         /// </summary>
         /// <value>The 3-digit currency code the dividend amount was reported in</value>
-        [DataMember(Name="currency", EmitDefaultValue=false)]
+        [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 
         /// <summary>
         /// Date dividend was announced
         /// </summary>
         /// <value>Date dividend was announced</value>
-        [DataMember(Name="announcement_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "announcement_date", EmitDefaultValue = false)]        
         public DateTime? AnnouncementDate { get; set; }
 
         /// <summary>
         /// Date before which holders-of-record will receive the dividend
         /// </summary>
         /// <value>Date before which holders-of-record will receive the dividend</value>
-        [DataMember(Name="record_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "record_date", EmitDefaultValue = false)]
         public DateTime? RecordDate { get; set; }
 
         /// <summary>
         /// Date the divdiend was paid
         /// </summary>
         /// <value>Date the divdiend was paid</value>
-        [DataMember(Name="pay_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "pay_date", EmitDefaultValue = false)]
         public DateTime? PayDate { get; set; }
 
         /// <summary>
         /// Identifies payment frequency of announced dividend
         /// </summary>
         /// <value>Identifies payment frequency of announced dividend</value>
-        [DataMember(Name="frequency", EmitDefaultValue=false)]
+        [DataMember(Name = "frequency", EmitDefaultValue = false)]
         public string Frequency { get; set; }
-
 
         /// <summary>
         /// The forward dividend yield
         /// </summary>
         /// <value>The forward dividend yield</value>
-        [DataMember(Name="forward_yield", EmitDefaultValue=false)]
+        [DataMember(Name = "forward_yield", EmitDefaultValue = false)]
         public decimal? ForwardYield { get; set; }
 
         /// <summary>
         /// The forward dividend rate
         /// </summary>
         /// <value>The forward dividend rate</value>
-        [DataMember(Name="forward_rate", EmitDefaultValue=false)]
+        [DataMember(Name = "forward_rate", EmitDefaultValue = false)]
         public decimal? ForwardRate { get; set; }
 
         /// <summary>
         /// The last reported day the stock starts trading without the value of its next dividend payment
         /// </summary>
         /// <value>The last reported day the stock starts trading without the value of its next dividend payment</value>
-        [DataMember(Name="last_ex_dividend_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "last_ex_dividend_date", EmitDefaultValue = false)]
         public DateTime? LastExDividendDate { get; set; }
 
         /// <summary>
         /// Gets or Sets Security
         /// </summary>
-        [DataMember(Name="security", EmitDefaultValue=false)]
+        [DataMember(Name = "security", EmitDefaultValue = false)]
         public SecuritySummary Security { get; set; }
 
         /// <summary>
@@ -172,21 +159,21 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DividendRecord {\n");
-            sb.Append("  ExDividend: ").Append(ExDividend).Append("\n");
-            sb.Append("  Currency: ").Append(Currency).Append("\n");
-            sb.Append("  AnnouncementDate: ").Append(AnnouncementDate).Append("\n");
-            sb.Append("  RecordDate: ").Append(RecordDate).Append("\n");
-            sb.Append("  PayDate: ").Append(PayDate).Append("\n");
-            sb.Append("  Frequency: ").Append(Frequency).Append("\n");
-            sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("  ForwardYield: ").Append(ForwardYield).Append("\n");
-            sb.Append("  ForwardRate: ").Append(ForwardRate).Append("\n");
-            sb.Append("  LastExDividendDate: ").Append(LastExDividendDate).Append("\n");
-            sb.Append("  Security: ").Append(Security).Append("\n");
+            sb.Append("  ExDividend: ").Append(ExDividend).Append('\n');
+            sb.Append("  Currency: ").Append(Currency).Append('\n');
+            sb.Append("  AnnouncementDate: ").Append(AnnouncementDate).Append('\n');
+            sb.Append("  RecordDate: ").Append(RecordDate).Append('\n');
+            sb.Append("  PayDate: ").Append(PayDate).Append('\n');
+            sb.Append("  Frequency: ").Append(Frequency).Append('\n');
+            sb.Append("  Status: ").Append(Status).Append('\n');
+            sb.Append("  ForwardYield: ").Append(ForwardYield).Append('\n');
+            sb.Append("  ForwardRate: ").Append(ForwardRate).Append('\n');
+            sb.Append("  LastExDividendDate: ").Append(LastExDividendDate).Append('\n');
+            sb.Append("  Security: ").Append(Security).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -201,9 +188,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as DividendRecord);
+            return Equals(obj as DividendRecord);
         }
 
         /// <summary>
@@ -216,57 +203,57 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     ExDividend == input.ExDividend ||
                     (ExDividend != null &&
                     ExDividend.Equals(input.ExDividend))
-                ) && 
+                ) &&
                 (
                     Currency == input.Currency ||
                     (Currency != null &&
                     Currency.Equals(input.Currency))
-                ) && 
+                ) &&
                 (
                     AnnouncementDate == input.AnnouncementDate ||
                     (AnnouncementDate != null &&
                     AnnouncementDate.Equals(input.AnnouncementDate))
-                ) && 
+                ) &&
                 (
                     RecordDate == input.RecordDate ||
                     (RecordDate != null &&
                     RecordDate.Equals(input.RecordDate))
-                ) && 
+                ) &&
                 (
                     PayDate == input.PayDate ||
                     (PayDate != null &&
                     PayDate.Equals(input.PayDate))
-                ) && 
+                ) &&
                 (
                     Frequency == input.Frequency ||
                     (Frequency != null &&
                     Frequency.Equals(input.Frequency))
-                ) && 
+                ) &&
                 (
                     Status == input.Status ||
                     (Status != null &&
                     Status.Equals(input.Status))
-                ) && 
+                ) &&
                 (
                     ForwardYield == input.ForwardYield ||
                     (ForwardYield != null &&
                     ForwardYield.Equals(input.ForwardYield))
-                ) && 
+                ) &&
                 (
                     ForwardRate == input.ForwardRate ||
                     (ForwardRate != null &&
                     ForwardRate.Equals(input.ForwardRate))
-                ) && 
+                ) &&
                 (
                     LastExDividendDate == input.LastExDividendDate ||
                     (LastExDividendDate != null &&
                     LastExDividendDate.Equals(input.LastExDividendDate))
-                ) && 
+                ) &&
                 (
                     Security == input.Security ||
                     (Security != null &&
@@ -319,5 +306,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

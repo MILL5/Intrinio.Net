@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,21 +12,21 @@ namespace Intrinio.Net.Model
     /// ApiResponseForexPairs
     /// </summary>
     [DataContract]
-    public partial class ApiResponseForexPairs :  IEquatable<ApiResponseForexPairs>, IValidatableObject
+    public sealed partial class ApiResponseForexPairs : IEquatable<ApiResponseForexPairs>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseForexPairs" /> class.
         /// </summary>
         /// <param name="Pairs">Pairs.</param>
-        public ApiResponseForexPairs(List<ForexPair> Pairs = default(List<ForexPair>))
+        public ApiResponseForexPairs(List<ForexPair> Pairs = default)
         {
             this.Pairs = Pairs;
         }
-        
+
         /// <summary>
         /// Gets or Sets Pairs
         /// </summary>
-        [DataMember(Name="pairs", EmitDefaultValue=false)]
+        [DataMember(Name = "pairs", EmitDefaultValue = false)]
         public List<ForexPair> Pairs { get; set; }
 
         /// <summary>
@@ -45,11 +37,11 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseForexPairs {\n");
-            sb.Append("  Pairs: ").Append(Pairs).Append("\n");
+            sb.Append("  Pairs: ").Append(Pairs).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -64,9 +56,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseForexPairs);
+            return Equals(obj as ApiResponseForexPairs);
         }
 
         /// <summary>
@@ -79,7 +71,7 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Pairs == input.Pairs ||
                     Pairs != null &&
@@ -112,5 +104,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

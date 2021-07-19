@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// A Forex Currency
     /// </summary>
     [DataContract]
-    public partial class ForexCurrency :  IEquatable<ForexCurrency>, IValidatableObject
+    public sealed partial class ForexCurrency : IEquatable<ForexCurrency>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ForexCurrency" /> class.
@@ -28,32 +19,32 @@ namespace Intrinio.Net.Model
         /// <param name="Code">The ISO 4217 currency code.</param>
         /// <param name="Name">The name of the currency.</param>
         /// <param name="Country">The country in which the currency is used.</param>
-        public ForexCurrency(string Code = default(string), string Name = default(string), string Country = default(string))
+        public ForexCurrency(string Code = default, string Name = default, string Country = default)
         {
             this.Code = Code;
             this.Name = Name;
             this.Country = Country;
         }
-        
+
         /// <summary>
         /// The ISO 4217 currency code
         /// </summary>
         /// <value>The ISO 4217 currency code</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
         /// <summary>
         /// The name of the currency
         /// </summary>
         /// <value>The name of the currency</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The country in which the currency is used
         /// </summary>
         /// <value>The country in which the currency is used</value>
-        [DataMember(Name="country", EmitDefaultValue=false)]
+        [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
         /// <summary>
@@ -64,13 +55,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ForexCurrency {\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Country: ").Append(Country).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append('\n');
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Country: ").Append(Country).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -85,9 +76,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ForexCurrency);
+            return Equals(obj as ForexCurrency);
         }
 
         /// <summary>
@@ -100,17 +91,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Code == input.Code ||
                     (Code != null &&
                     Code.Equals(input.Code))
-                ) && 
+                ) &&
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Country == input.Country ||
                     (Country != null &&
@@ -147,5 +138,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// Metadata for the note retrieved including the Intrinio ID, tag and summary of the filing to which it belongs
     /// </summary>
     [DataContract]
-    public partial class FilingNoteSummary :  IEquatable<FilingNoteSummary>, IValidatableObject
+    public sealed partial class FilingNoteSummary : IEquatable<FilingNoteSummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FilingNoteSummary" /> class.
@@ -28,31 +19,31 @@ namespace Intrinio.Net.Model
         /// <param name="Id">The Intrinio ID of the note.</param>
         /// <param name="XbrlTag">The XBRL tag used for the note by the filing entity.</param>
         /// <param name="Filing">Filing.</param>
-        public FilingNoteSummary(string Id = default(string), string XbrlTag = default(string), FilingNoteFiling Filing = default(FilingNoteFiling))
+        public FilingNoteSummary(string Id = default, string XbrlTag = default, FilingNoteFiling Filing = default)
         {
             this.Id = Id;
             this.XbrlTag = XbrlTag;
             this.Filing = Filing;
         }
-        
+
         /// <summary>
         /// The Intrinio ID of the note
         /// </summary>
         /// <value>The Intrinio ID of the note</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The XBRL tag used for the note by the filing entity
         /// </summary>
         /// <value>The XBRL tag used for the note by the filing entity</value>
-        [DataMember(Name="xbrl_tag", EmitDefaultValue=false)]
+        [DataMember(Name = "xbrl_tag", EmitDefaultValue = false)]
         public string XbrlTag { get; set; }
 
         /// <summary>
         /// Gets or Sets Filing
         /// </summary>
-        [DataMember(Name="filing", EmitDefaultValue=false)]
+        [DataMember(Name = "filing", EmitDefaultValue = false)]
         public FilingNoteFiling Filing { get; set; }
 
         /// <summary>
@@ -63,13 +54,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class FilingNoteSummary {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  XbrlTag: ").Append(XbrlTag).Append("\n");
-            sb.Append("  Filing: ").Append(Filing).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  XbrlTag: ").Append(XbrlTag).Append('\n');
+            sb.Append("  Filing: ").Append(Filing).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -84,9 +75,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as FilingNoteSummary);
+            return Equals(obj as FilingNoteSummary);
         }
 
         /// <summary>
@@ -99,17 +90,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     XbrlTag == input.XbrlTag ||
                     (XbrlTag != null &&
                     XbrlTag.Equals(input.XbrlTag))
-                ) && 
+                ) &&
                 (
                     Filing == input.Filing ||
                     (Filing != null &&
@@ -146,5 +137,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// The date_time, sr, and sr_signal values of a Stochastic Oscillator technical indicator calculation
     /// </summary>
     [DataContract]
-    public partial class StochasticOscillatorTechnicalValue :  IEquatable<StochasticOscillatorTechnicalValue>, IValidatableObject
+    public sealed partial class StochasticOscillatorTechnicalValue : IEquatable<StochasticOscillatorTechnicalValue>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StochasticOscillatorTechnicalValue" /> class.
@@ -28,32 +19,32 @@ namespace Intrinio.Net.Model
         /// <param name="DateTime">The date_time of the observation.</param>
         /// <param name="Sr">The Stochastic Oscillator calculation value.</param>
         /// <param name="SrSignal">The Stochastic Oscillator signal line value.</param>
-        public StochasticOscillatorTechnicalValue(DateTime? DateTime = default(DateTime?), float? Sr = default(float?), float? SrSignal = default(float?))
+        public StochasticOscillatorTechnicalValue(DateTime? DateTime = default, float? Sr = default, float? SrSignal = default)
         {
             this.DateTime = DateTime;
             this.Sr = Sr;
             this.SrSignal = SrSignal;
         }
-        
+
         /// <summary>
         /// The date_time of the observation
         /// </summary>
         /// <value>The date_time of the observation</value>
-        [DataMember(Name="date_time", EmitDefaultValue=false)]
+        [DataMember(Name = "date_time", EmitDefaultValue = false)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// The Stochastic Oscillator calculation value
         /// </summary>
         /// <value>The Stochastic Oscillator calculation value</value>
-        [DataMember(Name="sr", EmitDefaultValue=false)]
+        [DataMember(Name = "sr", EmitDefaultValue = false)]
         public float? Sr { get; set; }
 
         /// <summary>
         /// The Stochastic Oscillator signal line value
         /// </summary>
         /// <value>The Stochastic Oscillator signal line value</value>
-        [DataMember(Name="sr_signal", EmitDefaultValue=false)]
+        [DataMember(Name = "sr_signal", EmitDefaultValue = false)]
         public float? SrSignal { get; set; }
 
         /// <summary>
@@ -64,13 +55,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class StochasticOscillatorTechnicalValue {\n");
-            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
-            sb.Append("  Sr: ").Append(Sr).Append("\n");
-            sb.Append("  SrSignal: ").Append(SrSignal).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append('\n');
+            sb.Append("  Sr: ").Append(Sr).Append('\n');
+            sb.Append("  SrSignal: ").Append(SrSignal).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -85,9 +76,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as StochasticOscillatorTechnicalValue);
+            return Equals(obj as StochasticOscillatorTechnicalValue);
         }
 
         /// <summary>
@@ -100,17 +91,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DateTime == input.DateTime ||
                     (DateTime != null &&
                     DateTime.Equals(input.DateTime))
-                ) && 
+                ) &&
                 (
                     Sr == input.Sr ||
                     (Sr != null &&
                     Sr.Equals(input.Sr))
-                ) && 
+                ) &&
                 (
                     SrSignal == input.SrSignal ||
                     (SrSignal != null &&
@@ -147,5 +138,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

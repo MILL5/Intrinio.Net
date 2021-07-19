@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// The date_time, chikou_span, kijun_sen, senkou_span_a, senkou_span_b, and tenkan_sen values of a Ichimoku Kinko Hyo technical indicator calculation
     /// </summary>
     [DataContract]
-    public partial class IchimokuKinkoHyoTechnicalValue :  IEquatable<IchimokuKinkoHyoTechnicalValue>, IValidatableObject
+    public sealed partial class IchimokuKinkoHyoTechnicalValue : IEquatable<IchimokuKinkoHyoTechnicalValue>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="IchimokuKinkoHyoTechnicalValue" /> class.
@@ -31,7 +22,7 @@ namespace Intrinio.Net.Model
         /// <param name="SenkouSpanA">The Senkou Span A (Leading Span A) value of the Ichimoku Kinko Hyo calculation.</param>
         /// <param name="SenkouSpanB">The Senkou Span B (Leading Span B) value of the Ichimoku Kinko Hyo calculation.</param>
         /// <param name="TenkanSen">The Tenskan-sen (Conversion Line) value of the Ichimoku Kinko Hyo calculation.</param>
-        public IchimokuKinkoHyoTechnicalValue(DateTime? DateTime = default(DateTime?), float? ChikouSpan = default(float?), float? KijunSen = default(float?), float? SenkouSpanA = default(float?), float? SenkouSpanB = default(float?), float? TenkanSen = default(float?))
+        public IchimokuKinkoHyoTechnicalValue(DateTime? DateTime = default, float? ChikouSpan = default, float? KijunSen = default, float? SenkouSpanA = default, float? SenkouSpanB = default, float? TenkanSen = default)
         {
             this.DateTime = DateTime;
             this.ChikouSpan = ChikouSpan;
@@ -40,47 +31,47 @@ namespace Intrinio.Net.Model
             this.SenkouSpanB = SenkouSpanB;
             this.TenkanSen = TenkanSen;
         }
-        
+
         /// <summary>
         /// The date_time of the observation
         /// </summary>
         /// <value>The date_time of the observation</value>
-        [DataMember(Name="date_time", EmitDefaultValue=false)]
+        [DataMember(Name = "date_time", EmitDefaultValue = false)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// The Chikou Span (Lagging Span) value of the Ichimoku Kinko Hyo calculation
         /// </summary>
         /// <value>The Chikou Span (Lagging Span) value of the Ichimoku Kinko Hyo calculation</value>
-        [DataMember(Name="chikou_span", EmitDefaultValue=false)]
+        [DataMember(Name = "chikou_span", EmitDefaultValue = false)]
         public float? ChikouSpan { get; set; }
 
         /// <summary>
         /// The Kijun-sen (Base Line) value of the Ichimoku Kinko Hyo calculation
         /// </summary>
         /// <value>The Kijun-sen (Base Line) value of the Ichimoku Kinko Hyo calculation</value>
-        [DataMember(Name="kijun_sen", EmitDefaultValue=false)]
+        [DataMember(Name = "kijun_sen", EmitDefaultValue = false)]
         public float? KijunSen { get; set; }
 
         /// <summary>
         /// The Senkou Span A (Leading Span A) value of the Ichimoku Kinko Hyo calculation
         /// </summary>
         /// <value>The Senkou Span A (Leading Span A) value of the Ichimoku Kinko Hyo calculation</value>
-        [DataMember(Name="senkou_span_a", EmitDefaultValue=false)]
+        [DataMember(Name = "senkou_span_a", EmitDefaultValue = false)]
         public float? SenkouSpanA { get; set; }
 
         /// <summary>
         /// The Senkou Span B (Leading Span B) value of the Ichimoku Kinko Hyo calculation
         /// </summary>
         /// <value>The Senkou Span B (Leading Span B) value of the Ichimoku Kinko Hyo calculation</value>
-        [DataMember(Name="senkou_span_b", EmitDefaultValue=false)]
+        [DataMember(Name = "senkou_span_b", EmitDefaultValue = false)]
         public float? SenkouSpanB { get; set; }
 
         /// <summary>
         /// The Tenskan-sen (Conversion Line) value of the Ichimoku Kinko Hyo calculation
         /// </summary>
         /// <value>The Tenskan-sen (Conversion Line) value of the Ichimoku Kinko Hyo calculation</value>
-        [DataMember(Name="tenkan_sen", EmitDefaultValue=false)]
+        [DataMember(Name = "tenkan_sen", EmitDefaultValue = false)]
         public float? TenkanSen { get; set; }
 
         /// <summary>
@@ -91,16 +82,16 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class IchimokuKinkoHyoTechnicalValue {\n");
-            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
-            sb.Append("  ChikouSpan: ").Append(ChikouSpan).Append("\n");
-            sb.Append("  KijunSen: ").Append(KijunSen).Append("\n");
-            sb.Append("  SenkouSpanA: ").Append(SenkouSpanA).Append("\n");
-            sb.Append("  SenkouSpanB: ").Append(SenkouSpanB).Append("\n");
-            sb.Append("  TenkanSen: ").Append(TenkanSen).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append('\n');
+            sb.Append("  ChikouSpan: ").Append(ChikouSpan).Append('\n');
+            sb.Append("  KijunSen: ").Append(KijunSen).Append('\n');
+            sb.Append("  SenkouSpanA: ").Append(SenkouSpanA).Append('\n');
+            sb.Append("  SenkouSpanB: ").Append(SenkouSpanB).Append('\n');
+            sb.Append("  TenkanSen: ").Append(TenkanSen).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -115,9 +106,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as IchimokuKinkoHyoTechnicalValue);
+            return Equals(obj as IchimokuKinkoHyoTechnicalValue);
         }
 
         /// <summary>
@@ -130,32 +121,32 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DateTime == input.DateTime ||
                     (DateTime != null &&
                     DateTime.Equals(input.DateTime))
-                ) && 
+                ) &&
                 (
                     ChikouSpan == input.ChikouSpan ||
                     (ChikouSpan != null &&
                     ChikouSpan.Equals(input.ChikouSpan))
-                ) && 
+                ) &&
                 (
                     KijunSen == input.KijunSen ||
                     (KijunSen != null &&
                     KijunSen.Equals(input.KijunSen))
-                ) && 
+                ) &&
                 (
                     SenkouSpanA == input.SenkouSpanA ||
                     (SenkouSpanA != null &&
                     SenkouSpanA.Equals(input.SenkouSpanA))
-                ) && 
+                ) &&
                 (
                     SenkouSpanB == input.SenkouSpanB ||
                     (SenkouSpanB != null &&
                     SenkouSpanB.Equals(input.SenkouSpanB))
-                ) && 
+                ) &&
                 (
                     TenkanSen == input.TenkanSen ||
                     (TenkanSen != null &&
@@ -198,5 +189,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

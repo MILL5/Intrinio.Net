@@ -12,30 +12,30 @@ namespace Intrinio.Net.Model
     /// ApiResponseCompanies
     /// </summary>
     [DataContract]
-    public partial class ApiResponseCompanies :  IEquatable<ApiResponseCompanies>, IValidatableObject
+    public sealed partial class ApiResponseCompanies : IEquatable<ApiResponseCompanies>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseCompanies" /> class.
         /// </summary>
         /// <param name="Companies">Companies.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseCompanies(List<CompanySummary> Companies = default(List<CompanySummary>), string NextPage = default(string))
+        public ApiResponseCompanies(List<CompanySummary> Companies = default, string NextPage = default)
         {
             this.Companies = Companies;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets Companies
         /// </summary>
-        [DataMember(Name="companies", EmitDefaultValue=false)]
+        [DataMember(Name = "companies", EmitDefaultValue = false)]
         public List<CompanySummary> Companies { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -46,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseCompanies {\n");
-            sb.Append("  Companies: ").Append(Companies).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Companies: ").Append(Companies).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -66,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseCompanies);
+            return Equals(obj as ApiResponseCompanies);
         }
 
         /// <summary>
@@ -81,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Companies == input.Companies ||
                     Companies != null &&
                     Companies.SequenceEqual(input.Companies)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -121,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

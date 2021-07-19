@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// Buy, sell, and hold recommendations from analysts at brokerages for all companies in the Zacks universe. A rating includes data about mean, strong buys, buys, holds, sells, strong sells, and total.
     /// </summary>
     [DataContract]
-    public partial class ZacksAnalystRatingSummary :  IEquatable<ZacksAnalystRatingSummary>, IValidatableObject
+    public sealed partial class ZacksAnalystRatingSummary : IEquatable<ZacksAnalystRatingSummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ZacksAnalystRatingSummary" /> class.
@@ -34,7 +25,7 @@ namespace Intrinio.Net.Model
         /// <param name="Sells">The number of analysts recommending Sell..</param>
         /// <param name="StrongSells">The number of analysts recommending Strong Sell..</param>
         /// <param name="Total">The total number of analyst recommendations..</param>
-        public ZacksAnalystRatingSummary(string Id = default(string), DateTime? Date = default(DateTime?), decimal? Mean = default(decimal?), int? StrongBuys = default(int?), int? Buys = default(int?), int? Holds = default(int?), int? Sells = default(int?), int? StrongSells = default(int?), int? Total = default(int?))
+        public ZacksAnalystRatingSummary(string Id = default, DateTime? Date = default, decimal? Mean = default, int? StrongBuys = default, int? Buys = default, int? Holds = default, int? Sells = default, int? StrongSells = default, int? Total = default)
         {
             this.Id = Id;
             this.Date = Date;
@@ -46,69 +37,68 @@ namespace Intrinio.Net.Model
             this.StrongSells = StrongSells;
             this.Total = Total;
         }
-        
+
         /// <summary>
         /// The Intrinio ID for the record
         /// </summary>
         /// <value>The Intrinio ID for the record</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The date of the Zacks Analyst Rating.
         /// </summary>
         /// <value>The date of the Zacks Analyst Rating.</value>
-        [DataMember(Name="date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "date", EmitDefaultValue = false)]
         public DateTime? Date { get; set; }
 
         /// <summary>
         /// The mean (average) weighing of analyst recommendations, from 1 (strong buy) to 5 (strong sell).
         /// </summary>
         /// <value>The mean (average) weighing of analyst recommendations, from 1 (strong buy) to 5 (strong sell).</value>
-        [DataMember(Name="mean", EmitDefaultValue=false)]
+        [DataMember(Name = "mean", EmitDefaultValue = false)]
         public decimal? Mean { get; set; }
 
         /// <summary>
         /// The number of analysts recommending Strong Buy.
         /// </summary>
         /// <value>The number of analysts recommending Strong Buy.</value>
-        [DataMember(Name="strong_buys", EmitDefaultValue=false)]
+        [DataMember(Name = "strong_buys", EmitDefaultValue = false)]
         public int? StrongBuys { get; set; }
 
         /// <summary>
         /// The number of analysts recommending Buy.
         /// </summary>
         /// <value>The number of analysts recommending Buy.</value>
-        [DataMember(Name="buys", EmitDefaultValue=false)]
+        [DataMember(Name = "buys", EmitDefaultValue = false)]
         public int? Buys { get; set; }
 
         /// <summary>
         /// The number of analysts recommending Hold.
         /// </summary>
         /// <value>The number of analysts recommending Hold.</value>
-        [DataMember(Name="holds", EmitDefaultValue=false)]
+        [DataMember(Name = "holds", EmitDefaultValue = false)]
         public int? Holds { get; set; }
 
         /// <summary>
         /// The number of analysts recommending Sell.
         /// </summary>
         /// <value>The number of analysts recommending Sell.</value>
-        [DataMember(Name="sells", EmitDefaultValue=false)]
+        [DataMember(Name = "sells", EmitDefaultValue = false)]
         public int? Sells { get; set; }
 
         /// <summary>
         /// The number of analysts recommending Strong Sell.
         /// </summary>
         /// <value>The number of analysts recommending Strong Sell.</value>
-        [DataMember(Name="strong_sells", EmitDefaultValue=false)]
+        [DataMember(Name = "strong_sells", EmitDefaultValue = false)]
         public int? StrongSells { get; set; }
 
         /// <summary>
         /// The total number of analyst recommendations.
         /// </summary>
         /// <value>The total number of analyst recommendations.</value>
-        [DataMember(Name="total", EmitDefaultValue=false)]
+        [DataMember(Name = "total", EmitDefaultValue = false)]
         public int? Total { get; set; }
 
         /// <summary>
@@ -119,19 +109,19 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ZacksAnalystRatingSummary {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Date: ").Append(Date).Append("\n");
-            sb.Append("  Mean: ").Append(Mean).Append("\n");
-            sb.Append("  StrongBuys: ").Append(StrongBuys).Append("\n");
-            sb.Append("  Buys: ").Append(Buys).Append("\n");
-            sb.Append("  Holds: ").Append(Holds).Append("\n");
-            sb.Append("  Sells: ").Append(Sells).Append("\n");
-            sb.Append("  StrongSells: ").Append(StrongSells).Append("\n");
-            sb.Append("  Total: ").Append(Total).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  Date: ").Append(Date).Append('\n');
+            sb.Append("  Mean: ").Append(Mean).Append('\n');
+            sb.Append("  StrongBuys: ").Append(StrongBuys).Append('\n');
+            sb.Append("  Buys: ").Append(Buys).Append('\n');
+            sb.Append("  Holds: ").Append(Holds).Append('\n');
+            sb.Append("  Sells: ").Append(Sells).Append('\n');
+            sb.Append("  StrongSells: ").Append(StrongSells).Append('\n');
+            sb.Append("  Total: ").Append(Total).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -146,9 +136,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ZacksAnalystRatingSummary);
+            return Equals(obj as ZacksAnalystRatingSummary);
         }
 
         /// <summary>
@@ -161,47 +151,47 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     Date == input.Date ||
                     (Date != null &&
                     Date.Equals(input.Date))
-                ) && 
+                ) &&
                 (
                     Mean == input.Mean ||
                     (Mean != null &&
                     Mean.Equals(input.Mean))
-                ) && 
+                ) &&
                 (
                     StrongBuys == input.StrongBuys ||
                     (StrongBuys != null &&
                     StrongBuys.Equals(input.StrongBuys))
-                ) && 
+                ) &&
                 (
                     Buys == input.Buys ||
                     (Buys != null &&
                     Buys.Equals(input.Buys))
-                ) && 
+                ) &&
                 (
                     Holds == input.Holds ||
                     (Holds != null &&
                     Holds.Equals(input.Holds))
-                ) && 
+                ) &&
                 (
                     Sells == input.Sells ||
                     (Sells != null &&
                     Sells.Equals(input.Sells))
-                ) && 
+                ) &&
                 (
                     StrongSells == input.StrongSells ||
                     (StrongSells != null &&
                     StrongSells.Equals(input.StrongSells))
-                ) && 
+                ) &&
                 (
                     Total == input.Total ||
                     (Total != null &&
@@ -250,5 +240,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +12,7 @@ namespace Intrinio.Net.Model
     /// Information about bulk downloads with download links
     /// </summary>
     [DataContract]
-    public partial class BulkDownloadSummary :  IEquatable<BulkDownloadSummary>, IValidatableObject
+    public sealed partial class BulkDownloadSummary : IEquatable<BulkDownloadSummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkDownloadSummary" /> class.
@@ -31,7 +23,7 @@ namespace Intrinio.Net.Model
         /// <param name="DataLengthBytes">The total length of the bulk download data in bytes.</param>
         /// <param name="UpdateFrequency">The update frequency for the bulk download.</param>
         /// <param name="Links">Links to all of the files comprising the bulk download. Links expire in 24 hours..</param>
-        public BulkDownloadSummary(string Id = default(string), string Name = default(string), string Format = default(string), string DataLengthBytes = default(string), string UpdateFrequency = default(string), List<BulkDownloadLinks> Links = default(List<BulkDownloadLinks>))
+        public BulkDownloadSummary(string Id = default, string Name = default, string Format = default, string DataLengthBytes = default, string UpdateFrequency = default, List<BulkDownloadLinks> Links = default)
         {
             this.Id = Id;
             this.Name = Name;
@@ -40,47 +32,47 @@ namespace Intrinio.Net.Model
             this.UpdateFrequency = UpdateFrequency;
             this.Links = Links;
         }
-        
+
         /// <summary>
         /// The Intrinio ID of the bulk download
         /// </summary>
         /// <value>The Intrinio ID of the bulk download</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The name of the bulk download
         /// </summary>
         /// <value>The name of the bulk download</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The file format of the bulk download
         /// </summary>
         /// <value>The file format of the bulk download</value>
-        [DataMember(Name="format", EmitDefaultValue=false)]
+        [DataMember(Name = "format", EmitDefaultValue = false)]
         public string Format { get; set; }
 
         /// <summary>
         /// The total length of the bulk download data in bytes
         /// </summary>
         /// <value>The total length of the bulk download data in bytes</value>
-        [DataMember(Name="data_length_bytes", EmitDefaultValue=false)]
+        [DataMember(Name = "data_length_bytes", EmitDefaultValue = false)]
         public string DataLengthBytes { get; set; }
 
         /// <summary>
         /// The update frequency for the bulk download
         /// </summary>
         /// <value>The update frequency for the bulk download</value>
-        [DataMember(Name="update_frequency", EmitDefaultValue=false)]
+        [DataMember(Name = "update_frequency", EmitDefaultValue = false)]
         public string UpdateFrequency { get; set; }
 
         /// <summary>
         /// Links to all of the files comprising the bulk download. Links expire in 24 hours.
         /// </summary>
         /// <value>Links to all of the files comprising the bulk download. Links expire in 24 hours.</value>
-        [DataMember(Name="links", EmitDefaultValue=false)]
+        [DataMember(Name = "links", EmitDefaultValue = false)]
         public List<BulkDownloadLinks> Links { get; set; }
 
         /// <summary>
@@ -91,16 +83,16 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BulkDownloadSummary {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Format: ").Append(Format).Append("\n");
-            sb.Append("  DataLengthBytes: ").Append(DataLengthBytes).Append("\n");
-            sb.Append("  UpdateFrequency: ").Append(UpdateFrequency).Append("\n");
-            sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Format: ").Append(Format).Append('\n');
+            sb.Append("  DataLengthBytes: ").Append(DataLengthBytes).Append('\n');
+            sb.Append("  UpdateFrequency: ").Append(UpdateFrequency).Append('\n');
+            sb.Append("  Links: ").Append(Links).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -115,9 +107,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as BulkDownloadSummary);
+            return Equals(obj as BulkDownloadSummary);
         }
 
         /// <summary>
@@ -130,32 +122,32 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Format == input.Format ||
                     (Format != null &&
                     Format.Equals(input.Format))
-                ) && 
+                ) &&
                 (
                     DataLengthBytes == input.DataLengthBytes ||
                     (DataLengthBytes != null &&
                     DataLengthBytes.Equals(input.DataLengthBytes))
-                ) && 
+                ) &&
                 (
                     UpdateFrequency == input.UpdateFrequency ||
                     (UpdateFrequency != null &&
                     UpdateFrequency.Equals(input.UpdateFrequency))
-                ) && 
+                ) &&
                 (
                     Links == input.Links ||
                     Links != null &&
@@ -198,5 +190,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

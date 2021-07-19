@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,10 +11,10 @@ namespace Intrinio.Net.Model
     /// Exchange Traded Fund (ETF) sourced from FirstBridge
     /// </summary>
     [DataContract]
-    public partial class ETFSummary :  IEquatable<ETFSummary>, IValidatableObject
+    public sealed partial class EtfSummary : IEquatable<EtfSummary>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ETFSummary" /> class.
+        /// Initializes a new instance of the <see cref="EtfSummary" /> class.
         /// </summary>
         /// <param name="Id">The Intrinio ID of the ETF.</param>
         /// <param name="Name">The common name of the ETF.</param>
@@ -33,7 +24,7 @@ namespace Intrinio.Net.Model
         /// <param name="Isin">International Securities Identification Number (ISIN) for the ETF.</param>
         /// <param name="Sedol">Stock Exchange Daily Official List (SEDOL) for the ETF.</param>
         /// <param name="ExchangeMic">The exchange Market Identifier Code (MIC) from the International Standards Organization (ISO).</param>
-        public ETFSummary(string Id = default(string), string Name = default(string), string Ticker = default(string), string FigiTicker = default(string), string Ric = default(string), string Isin = default(string), string Sedol = default(string), string ExchangeMic = default(string))
+        public EtfSummary(string Id = default, string Name = default, string Ticker = default, string FigiTicker = default, string Ric = default, string Isin = default, string Sedol = default, string ExchangeMic = default)
         {
             this.Id = Id;
             this.Name = Name;
@@ -44,61 +35,61 @@ namespace Intrinio.Net.Model
             this.Sedol = Sedol;
             this.ExchangeMic = ExchangeMic;
         }
-        
+
         /// <summary>
         /// The Intrinio ID of the ETF
         /// </summary>
         /// <value>The Intrinio ID of the ETF</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The common name of the ETF
         /// </summary>
         /// <value>The common name of the ETF</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The common ticker symbol for the ETF
         /// </summary>
         /// <value>The common ticker symbol for the ETF</value>
-        [DataMember(Name="ticker", EmitDefaultValue=false)]
+        [DataMember(Name = "ticker", EmitDefaultValue = false)]
         public string Ticker { get; set; }
 
         /// <summary>
         /// The OpenFIGI ticker for the ETF
         /// </summary>
         /// <value>The OpenFIGI ticker for the ETF</value>
-        [DataMember(Name="figi_ticker", EmitDefaultValue=false)]
+        [DataMember(Name = "figi_ticker", EmitDefaultValue = false)]
         public string FigiTicker { get; set; }
 
         /// <summary>
         /// Reuters Instrument Code (RIC) for the ETF
         /// </summary>
         /// <value>Reuters Instrument Code (RIC) for the ETF</value>
-        [DataMember(Name="ric", EmitDefaultValue=false)]
+        [DataMember(Name = "ric", EmitDefaultValue = false)]
         public string Ric { get; set; }
 
         /// <summary>
         /// International Securities Identification Number (ISIN) for the ETF
         /// </summary>
         /// <value>International Securities Identification Number (ISIN) for the ETF</value>
-        [DataMember(Name="isin", EmitDefaultValue=false)]
+        [DataMember(Name = "isin", EmitDefaultValue = false)]
         public string Isin { get; set; }
 
         /// <summary>
         /// Stock Exchange Daily Official List (SEDOL) for the ETF
         /// </summary>
         /// <value>Stock Exchange Daily Official List (SEDOL) for the ETF</value>
-        [DataMember(Name="sedol", EmitDefaultValue=false)]
+        [DataMember(Name = "sedol", EmitDefaultValue = false)]
         public string Sedol { get; set; }
 
         /// <summary>
         /// The exchange Market Identifier Code (MIC) from the International Standards Organization (ISO)
         /// </summary>
         /// <value>The exchange Market Identifier Code (MIC) from the International Standards Organization (ISO)</value>
-        [DataMember(Name="exchange_mic", EmitDefaultValue=false)]
+        [DataMember(Name = "exchange_mic", EmitDefaultValue = false)]
         public string ExchangeMic { get; set; }
 
         /// <summary>
@@ -109,18 +100,18 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ETFSummary {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Ticker: ").Append(Ticker).Append("\n");
-            sb.Append("  FigiTicker: ").Append(FigiTicker).Append("\n");
-            sb.Append("  Ric: ").Append(Ric).Append("\n");
-            sb.Append("  Isin: ").Append(Isin).Append("\n");
-            sb.Append("  Sedol: ").Append(Sedol).Append("\n");
-            sb.Append("  ExchangeMic: ").Append(ExchangeMic).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Ticker: ").Append(Ticker).Append('\n');
+            sb.Append("  FigiTicker: ").Append(FigiTicker).Append('\n');
+            sb.Append("  Ric: ").Append(Ric).Append('\n');
+            sb.Append("  Isin: ").Append(Isin).Append('\n');
+            sb.Append("  Sedol: ").Append(Sedol).Append('\n');
+            sb.Append("  ExchangeMic: ").Append(ExchangeMic).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -135,9 +126,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ETFSummary);
+            return Equals(obj as EtfSummary);
         }
 
         /// <summary>
@@ -145,47 +136,47 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Instance of ETFSummary to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ETFSummary input)
+        public bool Equals(EtfSummary input)
         {
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Ticker == input.Ticker ||
                     (Ticker != null &&
                     Ticker.Equals(input.Ticker))
-                ) && 
+                ) &&
                 (
                     FigiTicker == input.FigiTicker ||
                     (FigiTicker != null &&
                     FigiTicker.Equals(input.FigiTicker))
-                ) && 
+                ) &&
                 (
                     Ric == input.Ric ||
                     (Ric != null &&
                     Ric.Equals(input.Ric))
-                ) && 
+                ) &&
                 (
                     Isin == input.Isin ||
                     (Isin != null &&
                     Isin.Equals(input.Isin))
-                ) && 
+                ) &&
                 (
                     Sedol == input.Sedol ||
                     (Sedol != null &&
                     Sedol.Equals(input.Sedol))
-                ) && 
+                ) &&
                 (
                     ExchangeMic == input.ExchangeMic ||
                     (ExchangeMic != null &&
@@ -232,5 +223,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +11,31 @@ namespace Intrinio.Net.Model
     /// The date_time and ao values of an Awesome Oscillator technical indicator calculation
     /// </summary>
     [DataContract]
-    public partial class AwesomeOscillatorTechnicalValue :  IEquatable<AwesomeOscillatorTechnicalValue>, IValidatableObject
+    public sealed partial class AwesomeOscillatorTechnicalValue : IEquatable<AwesomeOscillatorTechnicalValue>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AwesomeOscillatorTechnicalValue" /> class.
         /// </summary>
         /// <param name="DateTime">The date_time of the observation.</param>
         /// <param name="Ao">The Awesome Oscillator calculation value.</param>
-        public AwesomeOscillatorTechnicalValue(DateTime? DateTime = default(DateTime?), float? Ao = default(float?))
+        public AwesomeOscillatorTechnicalValue(DateTime? DateTime = default, float? Ao = default)
         {
             this.DateTime = DateTime;
             this.Ao = Ao;
         }
-        
+
         /// <summary>
         /// The date_time of the observation
         /// </summary>
         /// <value>The date_time of the observation</value>
-        [DataMember(Name="date_time", EmitDefaultValue=false)]
+        [DataMember(Name = "date_time", EmitDefaultValue = false)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// The Awesome Oscillator calculation value
         /// </summary>
         /// <value>The Awesome Oscillator calculation value</value>
-        [DataMember(Name="ao", EmitDefaultValue=false)]
+        [DataMember(Name = "ao", EmitDefaultValue = false)]
         public float? Ao { get; set; }
 
         /// <summary>
@@ -55,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AwesomeOscillatorTechnicalValue {\n");
-            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
-            sb.Append("  Ao: ").Append(Ao).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append('\n');
+            sb.Append("  Ao: ").Append(Ao).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as AwesomeOscillatorTechnicalValue);
+            return Equals(obj as AwesomeOscillatorTechnicalValue);
         }
 
         /// <summary>
@@ -90,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DateTime == input.DateTime ||
                     (DateTime != null &&
                     DateTime.Equals(input.DateTime))
-                ) && 
+                ) &&
                 (
                     Ao == input.Ao ||
                     (Ao != null &&
@@ -130,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

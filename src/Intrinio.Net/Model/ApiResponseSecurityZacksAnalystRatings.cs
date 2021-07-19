@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +12,7 @@ namespace Intrinio.Net.Model
     /// ApiResponseSecurityZacksAnalystRatings
     /// </summary>
     [DataContract]
-    public partial class ApiResponseSecurityZacksAnalystRatings :  IEquatable<ApiResponseSecurityZacksAnalystRatings>, IValidatableObject
+    public sealed partial class ApiResponseSecurityZacksAnalystRatings : IEquatable<ApiResponseSecurityZacksAnalystRatings>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseSecurityZacksAnalystRatings" /> class.
@@ -28,31 +20,31 @@ namespace Intrinio.Net.Model
         /// <param name="AnalystRatings">AnalystRatings.</param>
         /// <param name="Security">The Security resolved from the given identifier.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseSecurityZacksAnalystRatings(List<ZacksAnalystRatingSummary> AnalystRatings = default(List<ZacksAnalystRatingSummary>), SecuritySummary Security = default(SecuritySummary), string NextPage = default(string))
+        public ApiResponseSecurityZacksAnalystRatings(List<ZacksAnalystRatingSummary> AnalystRatings = default, SecuritySummary Security = default, string NextPage = default)
         {
             this.AnalystRatings = AnalystRatings;
             this.Security = Security;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets AnalystRatings
         /// </summary>
-        [DataMember(Name="analyst_ratings", EmitDefaultValue=false)]
+        [DataMember(Name = "analyst_ratings", EmitDefaultValue = false)]
         public List<ZacksAnalystRatingSummary> AnalystRatings { get; set; }
 
         /// <summary>
         /// The Security resolved from the given identifier
         /// </summary>
         /// <value>The Security resolved from the given identifier</value>
-        [DataMember(Name="security", EmitDefaultValue=false)]
+        [DataMember(Name = "security", EmitDefaultValue = false)]
         public SecuritySummary Security { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -63,13 +55,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseSecurityZacksAnalystRatings {\n");
-            sb.Append("  AnalystRatings: ").Append(AnalystRatings).Append("\n");
-            sb.Append("  Security: ").Append(Security).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  AnalystRatings: ").Append(AnalystRatings).Append('\n');
+            sb.Append("  Security: ").Append(Security).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -84,9 +76,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseSecurityZacksAnalystRatings);
+            return Equals(obj as ApiResponseSecurityZacksAnalystRatings);
         }
 
         /// <summary>
@@ -99,17 +91,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     AnalystRatings == input.AnalystRatings ||
                     AnalystRatings != null &&
                     AnalystRatings.SequenceEqual(input.AnalystRatings)
-                ) && 
+                ) &&
                 (
                     Security == input.Security ||
                     (Security != null &&
                     Security.Equals(input.Security))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -146,5 +138,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

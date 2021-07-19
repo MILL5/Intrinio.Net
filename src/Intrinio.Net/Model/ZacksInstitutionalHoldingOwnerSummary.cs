@@ -11,31 +11,31 @@ namespace Intrinio.Net.Model
     /// The summary of a institutional owner
     /// </summary>
     [DataContract]
-    public partial class ZacksInstitutionalHoldingOwnerSummary :  IEquatable<ZacksInstitutionalHoldingOwnerSummary>, IValidatableObject
+    public sealed partial class ZacksInstitutionalHoldingOwnerSummary : IEquatable<ZacksInstitutionalHoldingOwnerSummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ZacksInstitutionalHoldingOwnerSummary" /> class.
         /// </summary>
         /// <param name="Name">The owner&#39;s name.</param>
         /// <param name="Cik">The Central Index Key (CIK) assigned to the company by the SEC as a unique identifier, used in SEC filings.</param>
-        public ZacksInstitutionalHoldingOwnerSummary(string Name = default(string), string Cik = default(string))
+        public ZacksInstitutionalHoldingOwnerSummary(string Name = default, string Cik = default)
         {
             this.Name = Name;
             this.Cik = Cik;
         }
-        
+
         /// <summary>
         /// The owner&#39;s name
         /// </summary>
         /// <value>The owner&#39;s name</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The Central Index Key (CIK) assigned to the company by the SEC as a unique identifier, used in SEC filings
         /// </summary>
         /// <value>The Central Index Key (CIK) assigned to the company by the SEC as a unique identifier, used in SEC filings</value>
-        [DataMember(Name="cik", EmitDefaultValue=false)]
+        [DataMember(Name = "cik", EmitDefaultValue = false)]
         public string Cik { get; set; }
 
         /// <summary>
@@ -46,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ZacksInstitutionalHoldingOwnerSummary {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Cik: ").Append(Cik).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Cik: ").Append(Cik).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -66,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ZacksInstitutionalHoldingOwnerSummary);
+            return Equals(obj as ZacksInstitutionalHoldingOwnerSummary);
         }
 
         /// <summary>
@@ -81,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Cik == input.Cik ||
                     (Cik != null &&
@@ -121,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +11,31 @@ namespace Intrinio.Net.Model
     /// The date_time and tsi values of a True Strength Index technical indicator calculation
     /// </summary>
     [DataContract]
-    public partial class TrueStrengthIndexTechnicalValue :  IEquatable<TrueStrengthIndexTechnicalValue>, IValidatableObject
+    public sealed partial class TrueStrengthIndexTechnicalValue : IEquatable<TrueStrengthIndexTechnicalValue>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TrueStrengthIndexTechnicalValue" /> class.
         /// </summary>
         /// <param name="DateTime">The date_time of the observation.</param>
         /// <param name="Tsi">The True Strength Index calculation value.</param>
-        public TrueStrengthIndexTechnicalValue(DateTime? DateTime = default(DateTime?), float? Tsi = default(float?))
+        public TrueStrengthIndexTechnicalValue(DateTime? DateTime = default, float? Tsi = default)
         {
             this.DateTime = DateTime;
             this.Tsi = Tsi;
         }
-        
+
         /// <summary>
         /// The date_time of the observation
         /// </summary>
         /// <value>The date_time of the observation</value>
-        [DataMember(Name="date_time", EmitDefaultValue=false)]
+        [DataMember(Name = "date_time", EmitDefaultValue = false)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// The True Strength Index calculation value
         /// </summary>
         /// <value>The True Strength Index calculation value</value>
-        [DataMember(Name="tsi", EmitDefaultValue=false)]
+        [DataMember(Name = "tsi", EmitDefaultValue = false)]
         public float? Tsi { get; set; }
 
         /// <summary>
@@ -55,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class TrueStrengthIndexTechnicalValue {\n");
-            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
-            sb.Append("  Tsi: ").Append(Tsi).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append('\n');
+            sb.Append("  Tsi: ").Append(Tsi).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as TrueStrengthIndexTechnicalValue);
+            return Equals(obj as TrueStrengthIndexTechnicalValue);
         }
 
         /// <summary>
@@ -90,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DateTime == input.DateTime ||
                     (DateTime != null &&
                     DateTime.Equals(input.DateTime))
-                ) && 
+                ) &&
                 (
                     Tsi == input.Tsi ||
                     (Tsi != null &&
@@ -130,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

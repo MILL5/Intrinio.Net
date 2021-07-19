@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,30 +11,30 @@ namespace Intrinio.Net.Model
     /// Professional-grade historical financial data for a Company. This data is standardized, cleansed and verified to ensure the highest quality data sourced directly from the XBRL financial statements. The primary purpose of standardized financials are to facilitate comparability across a single company’s fundamentals and across all companies fundamentals. For example, it is possible to compare total revenues between two companies as of a certain point in time, or within a single company across multiple time periods. This is not possible using the as-reported financial statements because of the inherent complexity of reporting standards.
     /// </summary>
     [DataContract]
-    public partial class StandardizedFinancial :  IEquatable<StandardizedFinancial>, IValidatableObject
+    public sealed partial class StandardizedFinancial : IEquatable<StandardizedFinancial>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardizedFinancial" /> class.
         /// </summary>
         /// <param name="DataTag">DataTag.</param>
         /// <param name="Value">The value for the Data Tag within the scope of the Fundamental.</param>
-        public StandardizedFinancial(DataTagSummary DataTag = default(DataTagSummary), decimal? Value = default(decimal?))
+        public StandardizedFinancial(DataTagSummary DataTag = default, decimal? Value = default)
         {
             this.DataTag = DataTag;
             this.Value = Value;
         }
-        
+
         /// <summary>
         /// Gets or Sets DataTag
         /// </summary>
-        [DataMember(Name="data_tag", EmitDefaultValue=false)]
+        [DataMember(Name = "data_tag", EmitDefaultValue = false)]
         public DataTagSummary DataTag { get; set; }
 
         /// <summary>
         /// The value for the Data Tag within the scope of the Fundamental
         /// </summary>
         /// <value>The value for the Data Tag within the scope of the Fundamental</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public decimal? Value { get; set; }
 
         /// <summary>
@@ -54,12 +45,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class StandardizedFinancial {\n");
-            sb.Append("  DataTag: ").Append(DataTag).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  DataTag: ").Append(DataTag).Append('\n');
+            sb.Append("  Value: ").Append(Value).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -74,9 +65,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as StandardizedFinancial);
+            return Equals(obj as StandardizedFinancial);
         }
 
         /// <summary>
@@ -89,12 +80,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DataTag == input.DataTag ||
                     (DataTag != null &&
                     DataTag.Equals(input.DataTag))
-                ) && 
+                ) &&
                 (
                     Value == input.Value ||
                     (Value != null &&
@@ -129,5 +120,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

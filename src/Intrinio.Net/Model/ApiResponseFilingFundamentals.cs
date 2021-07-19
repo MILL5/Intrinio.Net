@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +12,7 @@ namespace Intrinio.Net.Model
     /// ApiResponseFilingFundamentals
     /// </summary>
     [DataContract]
-    public partial class ApiResponseFilingFundamentals :  IEquatable<ApiResponseFilingFundamentals>, IValidatableObject
+    public sealed partial class ApiResponseFilingFundamentals : IEquatable<ApiResponseFilingFundamentals>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseFilingFundamentals" /> class.
@@ -28,30 +20,30 @@ namespace Intrinio.Net.Model
         /// <param name="Fundamentals">Fundamentals.</param>
         /// <param name="Filing">Filing.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseFilingFundamentals(List<FundamentalSummary> Fundamentals = default(List<FundamentalSummary>), FilingSummary Filing = default(FilingSummary), string NextPage = default(string))
+        public ApiResponseFilingFundamentals(List<FundamentalSummary> Fundamentals = default, FilingSummary Filing = default, string NextPage = default)
         {
             this.Fundamentals = Fundamentals;
             this.Filing = Filing;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets Fundamentals
         /// </summary>
-        [DataMember(Name="fundamentals", EmitDefaultValue=false)]
+        [DataMember(Name = "fundamentals", EmitDefaultValue = false)]
         public List<FundamentalSummary> Fundamentals { get; set; }
 
         /// <summary>
         /// Gets or Sets Filing
         /// </summary>
-        [DataMember(Name="filing", EmitDefaultValue=false)]
+        [DataMember(Name = "filing", EmitDefaultValue = false)]
         public FilingSummary Filing { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -62,13 +54,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseFilingFundamentals {\n");
-            sb.Append("  Fundamentals: ").Append(Fundamentals).Append("\n");
-            sb.Append("  Filing: ").Append(Filing).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Fundamentals: ").Append(Fundamentals).Append('\n');
+            sb.Append("  Filing: ").Append(Filing).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -83,9 +75,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseFilingFundamentals);
+            return Equals(obj as ApiResponseFilingFundamentals);
         }
 
         /// <summary>
@@ -98,17 +90,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Fundamentals == input.Fundamentals ||
                     Fundamentals != null &&
                     Fundamentals.SequenceEqual(input.Fundamentals)
-                ) && 
+                ) &&
                 (
                     Filing == input.Filing ||
                     (Filing != null &&
                     Filing.Equals(input.Filing))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -145,5 +137,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

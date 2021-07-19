@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// The date_time, adx, di_neg, and di_pos values of a Average Directional Index technical indicator calculation
     /// </summary>
     [DataContract]
-    public partial class AverageDirectionalIndexTechnicalValue :  IEquatable<AverageDirectionalIndexTechnicalValue>, IValidatableObject
+    public sealed partial class AverageDirectionalIndexTechnicalValue : IEquatable<AverageDirectionalIndexTechnicalValue>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AverageDirectionalIndexTechnicalValue" /> class.
@@ -29,40 +20,40 @@ namespace Intrinio.Net.Model
         /// <param name="Adx">The Average Directional Index value.</param>
         /// <param name="DiNeg">The Minus Directional Indicator value.</param>
         /// <param name="DiPos">The Plus Directional Indicator value.</param>
-        public AverageDirectionalIndexTechnicalValue(DateTime? DateTime = default(DateTime?), float? Adx = default(float?), float? DiNeg = default(float?), float? DiPos = default(float?))
+        public AverageDirectionalIndexTechnicalValue(DateTime? DateTime = default, float? Adx = default, float? DiNeg = default, float? DiPos = default)
         {
             this.DateTime = DateTime;
             this.Adx = Adx;
             this.DiNeg = DiNeg;
             this.DiPos = DiPos;
         }
-        
+
         /// <summary>
         /// The date_time of the observation
         /// </summary>
         /// <value>The date_time of the observation</value>
-        [DataMember(Name="date_time", EmitDefaultValue=false)]
+        [DataMember(Name = "date_time", EmitDefaultValue = false)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// The Average Directional Index value
         /// </summary>
         /// <value>The Average Directional Index value</value>
-        [DataMember(Name="adx", EmitDefaultValue=false)]
+        [DataMember(Name = "adx", EmitDefaultValue = false)]
         public float? Adx { get; set; }
 
         /// <summary>
         /// The Minus Directional Indicator value
         /// </summary>
         /// <value>The Minus Directional Indicator value</value>
-        [DataMember(Name="di_neg", EmitDefaultValue=false)]
+        [DataMember(Name = "di_neg", EmitDefaultValue = false)]
         public float? DiNeg { get; set; }
 
         /// <summary>
         /// The Plus Directional Indicator value
         /// </summary>
         /// <value>The Plus Directional Indicator value</value>
-        [DataMember(Name="di_pos", EmitDefaultValue=false)]
+        [DataMember(Name = "di_pos", EmitDefaultValue = false)]
         public float? DiPos { get; set; }
 
         /// <summary>
@@ -73,14 +64,14 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AverageDirectionalIndexTechnicalValue {\n");
-            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
-            sb.Append("  Adx: ").Append(Adx).Append("\n");
-            sb.Append("  DiNeg: ").Append(DiNeg).Append("\n");
-            sb.Append("  DiPos: ").Append(DiPos).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append('\n');
+            sb.Append("  Adx: ").Append(Adx).Append('\n');
+            sb.Append("  DiNeg: ").Append(DiNeg).Append('\n');
+            sb.Append("  DiPos: ").Append(DiPos).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -95,9 +86,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as AverageDirectionalIndexTechnicalValue);
+            return Equals(obj as AverageDirectionalIndexTechnicalValue);
         }
 
         /// <summary>
@@ -110,22 +101,22 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DateTime == input.DateTime ||
                     (DateTime != null &&
                     DateTime.Equals(input.DateTime))
-                ) && 
+                ) &&
                 (
                     Adx == input.Adx ||
                     (Adx != null &&
                     Adx.Equals(input.Adx))
-                ) && 
+                ) &&
                 (
                     DiNeg == input.DiNeg ||
                     (DiNeg != null &&
                     DiNeg.Equals(input.DiNeg))
-                ) && 
+                ) &&
                 (
                     DiPos == input.DiPos ||
                     (DiPos != null &&
@@ -164,5 +155,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

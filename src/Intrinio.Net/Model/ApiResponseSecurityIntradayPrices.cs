@@ -1,18 +1,11 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,22 +13,21 @@ namespace Intrinio.Net.Model
     /// ApiResponseSecurityIntradayPrices
     /// </summary>
     [DataContract]
-    public partial class ApiResponseSecurityIntradayPrices :  IEquatable<ApiResponseSecurityIntradayPrices>, IValidatableObject
+    public sealed partial class ApiResponseSecurityIntradayPrices : IEquatable<ApiResponseSecurityIntradayPrices>, IValidatableObject
     {
         /// <summary>
         /// The source of the data
         /// </summary>
         /// <value>The source of the data</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum SourceEnum
+        public enum DataSource
         {
-            
             /// <summary>
             /// Enum Iex for value: iex
             /// </summary>
             [EnumMember(Value = "iex")]
             Iex = 1,
-            
+
             /// <summary>
             /// Enum Bats for value: bats
             /// </summary>
@@ -47,8 +39,9 @@ namespace Intrinio.Net.Model
         /// The source of the data
         /// </summary>
         /// <value>The source of the data</value>
-        [DataMember(Name="source", EmitDefaultValue=false)]
-        public SourceEnum? Source { get; set; }
+        [DataMember(Name = "source", EmitDefaultValue = false)]
+        public DataSource? Source { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseSecurityIntradayPrices" /> class.
         /// </summary>
@@ -56,34 +49,33 @@ namespace Intrinio.Net.Model
         /// <param name="Security">The Security resolved from the given identifier.</param>
         /// <param name="Source">The source of the data.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseSecurityIntradayPrices(List<IntradayStockPrice> IntradayPrices = default(List<IntradayStockPrice>), SecuritySummary Security = default(SecuritySummary), SourceEnum? Source = default(SourceEnum?), string NextPage = default(string))
+        public ApiResponseSecurityIntradayPrices(List<IntradayStockPrice> IntradayPrices = default, SecuritySummary Security = default, DataSource? Source = default, string NextPage = default)
         {
             this.IntradayPrices = IntradayPrices;
             this.Security = Security;
             this.Source = Source;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// The intraday stock prices for the Security
         /// </summary>
         /// <value>The intraday stock prices for the Security</value>
-        [DataMember(Name="intraday_prices", EmitDefaultValue=false)]
+        [DataMember(Name = "intraday_prices", EmitDefaultValue = false)]
         public List<IntradayStockPrice> IntradayPrices { get; set; }
 
         /// <summary>
         /// The Security resolved from the given identifier
         /// </summary>
         /// <value>The Security resolved from the given identifier</value>
-        [DataMember(Name="security", EmitDefaultValue=false)]
+        [DataMember(Name = "security", EmitDefaultValue = false)]
         public SecuritySummary Security { get; set; }
-
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -94,14 +86,14 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseSecurityIntradayPrices {\n");
-            sb.Append("  IntradayPrices: ").Append(IntradayPrices).Append("\n");
-            sb.Append("  Security: ").Append(Security).Append("\n");
-            sb.Append("  Source: ").Append(Source).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  IntradayPrices: ").Append(IntradayPrices).Append('\n');
+            sb.Append("  Security: ").Append(Security).Append('\n');
+            sb.Append("  Source: ").Append(Source).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -116,9 +108,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseSecurityIntradayPrices);
+            return Equals(obj as ApiResponseSecurityIntradayPrices);
         }
 
         /// <summary>
@@ -131,22 +123,22 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     IntradayPrices == input.IntradayPrices ||
                     IntradayPrices != null &&
                     IntradayPrices.SequenceEqual(input.IntradayPrices)
-                ) && 
+                ) &&
                 (
                     Security == input.Security ||
                     (Security != null &&
                     Security.Equals(input.Security))
-                ) && 
+                ) &&
                 (
                     Source == input.Source ||
                     (Source != null &&
                     Source.Equals(input.Source))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -185,5 +177,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

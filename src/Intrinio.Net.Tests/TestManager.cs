@@ -11,7 +11,7 @@ namespace Intrinio.Net.Tests
 {
     [ExcludeFromCodeCoverage]
     [TestClass]
-    public class TestManager
+    public static class TestManager
     {
         public static ILogger Logger { get; private set; }
 
@@ -45,7 +45,7 @@ namespace Intrinio.Net.Tests
 
             Logger = serviceProvider
                 .GetRequiredService<ILoggerFactory>()
-                .CreateLogger<TestManager>();
+                .CreateLogger(nameof(TestManager));
 
             IntrinioTestClient = serviceProvider.GetService<IIntrinioClient>();
             
@@ -55,7 +55,7 @@ namespace Intrinio.Net.Tests
         [AssemblyCleanup]
         public static void Cleanup()
         {
-
+            // No clean up needed
         }
 
         public static void AssertAllPropertiesNotNull<T>(T obj)
@@ -66,7 +66,7 @@ namespace Intrinio.Net.Tests
 
                 Assert.IsNotNull(value);
 
-                if (value.GetType() == typeof(string))
+                if (value is string)
                 {
                     Assert.AreNotEqual(string.Empty, value);
                 }

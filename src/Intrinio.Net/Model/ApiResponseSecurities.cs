@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,30 +12,30 @@ namespace Intrinio.Net.Model
     /// ApiResponseSecurities
     /// </summary>
     [DataContract]
-    public partial class ApiResponseSecurities :  IEquatable<ApiResponseSecurities>, IValidatableObject
+    public sealed partial class ApiResponseSecurities : IEquatable<ApiResponseSecurities>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseSecurities" /> class.
         /// </summary>
         /// <param name="Securities">Securities.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseSecurities(List<SecuritySummary> Securities = default(List<SecuritySummary>), string NextPage = default(string))
+        public ApiResponseSecurities(List<SecuritySummary> Securities = default, string NextPage = default)
         {
             this.Securities = Securities;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets Securities
         /// </summary>
-        [DataMember(Name="securities", EmitDefaultValue=false)]
+        [DataMember(Name = "securities", EmitDefaultValue = false)]
         public List<SecuritySummary> Securities { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -54,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseSecurities {\n");
-            sb.Append("  Securities: ").Append(Securities).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Securities: ").Append(Securities).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -74,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseSecurities);
+            return Equals(obj as ApiResponseSecurities);
         }
 
         /// <summary>
@@ -89,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Securities == input.Securities ||
                     Securities != null &&
                     Securities.SequenceEqual(input.Securities)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -129,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

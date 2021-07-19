@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// StockMarketIndex
     /// </summary>
     [DataContract]
-    public partial class StockMarketIndex :  IEquatable<StockMarketIndex>, IValidatableObject
+    public sealed partial class StockMarketIndex : IEquatable<StockMarketIndex>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StockMarketIndex" /> class.
@@ -35,7 +26,7 @@ namespace Intrinio.Net.Model
         /// <param name="Description">A paragraph describing the index and its scope.</param>
         /// <param name="ObservationStart">The earliest date for which data is available.</param>
         /// <param name="ObservationEnd">The latest date for which data is available.</param>
-        public StockMarketIndex(string Id = default(string), string Symbol = default(string), string Name = default(string), string Continent = default(string), string Country = default(string), string UpdateFrequency = default(string), DateTime? LastUpdated = default(DateTime?), string Description = default(string), DateTime? ObservationStart = default(DateTime?), DateTime? ObservationEnd = default(DateTime?))
+        public StockMarketIndex(string Id = default, string Symbol = default, string Name = default, string Continent = default, string Country = default, string UpdateFrequency = default, DateTime? LastUpdated = default, string Description = default, DateTime? ObservationStart = default, DateTime? ObservationEnd = default)
         {
             this.Id = Id;
             this.Symbol = Symbol;
@@ -48,77 +39,75 @@ namespace Intrinio.Net.Model
             this.ObservationStart = ObservationStart;
             this.ObservationEnd = ObservationEnd;
         }
-        
+
         /// <summary>
         /// Intrinio ID for the Index
         /// </summary>
         /// <value>Intrinio ID for the Index</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The symbol used to identify the Index
         /// </summary>
         /// <value>The symbol used to identify the Index</value>
-        [DataMember(Name="symbol", EmitDefaultValue=false)]
+        [DataMember(Name = "symbol", EmitDefaultValue = false)]
         public string Symbol { get; set; }
 
         /// <summary>
         /// The name of the Index
         /// </summary>
         /// <value>The name of the Index</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The continent of the country of focus for the Index
         /// </summary>
         /// <value>The continent of the country of focus for the Index</value>
-        [DataMember(Name="continent", EmitDefaultValue=false)]
+        [DataMember(Name = "continent", EmitDefaultValue = false)]
         public string Continent { get; set; }
 
         /// <summary>
         /// The country of focus for the Index
         /// </summary>
         /// <value>The country of focus for the Index</value>
-        [DataMember(Name="country", EmitDefaultValue=false)]
+        [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
         /// <summary>
         /// How often the Index is updated
         /// </summary>
         /// <value>How often the Index is updated</value>
-        [DataMember(Name="update_frequency", EmitDefaultValue=false)]
+        [DataMember(Name = "update_frequency", EmitDefaultValue = false)]
         public string UpdateFrequency { get; set; }
 
         /// <summary>
         /// When the Index was updated last
         /// </summary>
         /// <value>When the Index was updated last</value>
-        [DataMember(Name="last_updated", EmitDefaultValue=false)]
+        [DataMember(Name = "last_updated", EmitDefaultValue = false)]
         public DateTime? LastUpdated { get; set; }
 
         /// <summary>
         /// A paragraph describing the index and its scope
         /// </summary>
         /// <value>A paragraph describing the index and its scope</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
         /// The earliest date for which data is available
         /// </summary>
         /// <value>The earliest date for which data is available</value>
-        [DataMember(Name="observation_start", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "observation_start", EmitDefaultValue = false)]
         public DateTime? ObservationStart { get; set; }
 
         /// <summary>
         /// The latest date for which data is available
         /// </summary>
         /// <value>The latest date for which data is available</value>
-        [DataMember(Name="observation_end", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "observation_end", EmitDefaultValue = false)]
         public DateTime? ObservationEnd { get; set; }
 
         /// <summary>
@@ -129,20 +118,20 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class StockMarketIndex {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Symbol: ").Append(Symbol).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Continent: ").Append(Continent).Append("\n");
-            sb.Append("  Country: ").Append(Country).Append("\n");
-            sb.Append("  UpdateFrequency: ").Append(UpdateFrequency).Append("\n");
-            sb.Append("  LastUpdated: ").Append(LastUpdated).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  ObservationStart: ").Append(ObservationStart).Append("\n");
-            sb.Append("  ObservationEnd: ").Append(ObservationEnd).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  Symbol: ").Append(Symbol).Append('\n');
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Continent: ").Append(Continent).Append('\n');
+            sb.Append("  Country: ").Append(Country).Append('\n');
+            sb.Append("  UpdateFrequency: ").Append(UpdateFrequency).Append('\n');
+            sb.Append("  LastUpdated: ").Append(LastUpdated).Append('\n');
+            sb.Append("  Description: ").Append(Description).Append('\n');
+            sb.Append("  ObservationStart: ").Append(ObservationStart).Append('\n');
+            sb.Append("  ObservationEnd: ").Append(ObservationEnd).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -157,9 +146,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as StockMarketIndex);
+            return Equals(obj as StockMarketIndex);
         }
 
         /// <summary>
@@ -172,52 +161,52 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     Symbol == input.Symbol ||
                     (Symbol != null &&
                     Symbol.Equals(input.Symbol))
-                ) && 
+                ) &&
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Continent == input.Continent ||
                     (Continent != null &&
                     Continent.Equals(input.Continent))
-                ) && 
+                ) &&
                 (
                     Country == input.Country ||
                     (Country != null &&
                     Country.Equals(input.Country))
-                ) && 
+                ) &&
                 (
                     UpdateFrequency == input.UpdateFrequency ||
                     (UpdateFrequency != null &&
                     UpdateFrequency.Equals(input.UpdateFrequency))
-                ) && 
+                ) &&
                 (
                     LastUpdated == input.LastUpdated ||
                     (LastUpdated != null &&
                     LastUpdated.Equals(input.LastUpdated))
-                ) && 
+                ) &&
                 (
                     Description == input.Description ||
                     (Description != null &&
                     Description.Equals(input.Description))
-                ) && 
+                ) &&
                 (
                     ObservationStart == input.ObservationStart ||
                     (ObservationStart != null &&
                     ObservationStart.Equals(input.ObservationStart))
-                ) && 
+                ) &&
                 (
                     ObservationEnd == input.ObservationEnd ||
                     (ObservationEnd != null &&
@@ -268,5 +257,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

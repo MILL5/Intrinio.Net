@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
 {
@@ -12,7 +11,7 @@ namespace Intrinio.Net.Model
     /// Zacks target price consensus estimates from analysts for thousands of stocks. Zacks storied research team aggregates and validates the estimates.  Each Growth Rate includes metadata about the corresponding Company.
     /// </summary>
     [DataContract]
-    public partial class ZacksTargetPriceConsensus :  IEquatable<ZacksTargetPriceConsensus>, IValidatableObject
+    public sealed partial class ZacksTargetPriceConsensus : IEquatable<ZacksTargetPriceConsensus>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ZacksTargetPriceConsensus" /> class.
@@ -30,7 +29,7 @@ namespace Intrinio.Net.Model
         /// <param name="Raised">The number of estimates raised.</param>
         /// <param name="Lowered">The number of estimates lowered.</param>
         /// <param name="Company">Company.</param>
-        public ZacksTargetPriceConsensus(string Ticker = default(string), string CompanyName = default(string), string IndustryGroupNumber = default(string), decimal? High = default(decimal?), decimal? Low = default(decimal?), decimal? Mean = default(decimal?), decimal? StandardDeviation = default(decimal?), int? Total = default(int?), DateTime? MostRecentDate = default(DateTime?), decimal? Median = default(decimal?), int? Raised = default(int?), int? Lowered = default(int?), CompanySummary Company = default(CompanySummary))
+        public ZacksTargetPriceConsensus(string Ticker = default, string CompanyName = default, string IndustryGroupNumber = default, decimal? High = default, decimal? Low = default, decimal? Mean = default, decimal? StandardDeviation = default, int? Total = default, DateTime? MostRecentDate = default, decimal? Median = default, int? Raised = default, int? Lowered = default, CompanySummary Company = default)
         {
             this.Ticker = Ticker;
             this.CompanyName = CompanyName;
@@ -46,96 +45,95 @@ namespace Intrinio.Net.Model
             this.Lowered = Lowered;
             this.Company = Company;
         }
-        
+
         /// <summary>
         /// The Zacks common exchange ticker
         /// </summary>
         /// <value>The Zacks common exchange ticker</value>
-        [DataMember(Name="ticker", EmitDefaultValue=false)]
+        [DataMember(Name = "ticker", EmitDefaultValue = false)]
         public string Ticker { get; set; }
 
         /// <summary>
         /// The company name
         /// </summary>
         /// <value>The company name</value>
-        [DataMember(Name="company_name", EmitDefaultValue=false)]
+        [DataMember(Name = "company_name", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
         /// <summary>
         /// The Zacks industry group number
         /// </summary>
         /// <value>The Zacks industry group number</value>
-        [DataMember(Name="industry_group_number", EmitDefaultValue=false)]
+        [DataMember(Name = "industry_group_number", EmitDefaultValue = false)]
         public string IndustryGroupNumber { get; set; }
 
         /// <summary>
         /// The high target price estimate
         /// </summary>
         /// <value>The high target price estimate</value>
-        [DataMember(Name="high", EmitDefaultValue=false)]
+        [DataMember(Name = "high", EmitDefaultValue = false)]
         public decimal? High { get; set; }
 
         /// <summary>
         /// The low target price estimate
         /// </summary>
         /// <value>The low target price estimate</value>
-        [DataMember(Name="low", EmitDefaultValue=false)]
+        [DataMember(Name = "low", EmitDefaultValue = false)]
         public decimal? Low { get; set; }
 
         /// <summary>
         /// The mean target price estimate
         /// </summary>
         /// <value>The mean target price estimate</value>
-        [DataMember(Name="mean", EmitDefaultValue=false)]
+        [DataMember(Name = "mean", EmitDefaultValue = false)]
         public decimal? Mean { get; set; }
 
         /// <summary>
         /// The standard deviation of target price estimates
         /// </summary>
         /// <value>The standard deviation of target price estimates</value>
-        [DataMember(Name="standard_deviation", EmitDefaultValue=false)]
+        [DataMember(Name = "standard_deviation", EmitDefaultValue = false)]
         public decimal? StandardDeviation { get; set; }
 
         /// <summary>
         /// The number of target price estimates in consensus
         /// </summary>
         /// <value>The number of target price estimates in consensus</value>
-        [DataMember(Name="total", EmitDefaultValue=false)]
+        [DataMember(Name = "total", EmitDefaultValue = false)]
         public int? Total { get; set; }
 
         /// <summary>
         /// The date of most recent estimate
         /// </summary>
         /// <value>The date of most recent estimate</value>
-        [DataMember(Name="most_recent_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "most_recent_date", EmitDefaultValue = false)]
         public DateTime? MostRecentDate { get; set; }
 
         /// <summary>
         /// The median target price estimate
         /// </summary>
         /// <value>The median target price estimate</value>
-        [DataMember(Name="median", EmitDefaultValue=false)]
+        [DataMember(Name = "median", EmitDefaultValue = false)]
         public decimal? Median { get; set; }
 
         /// <summary>
         /// The number of estimates raised
         /// </summary>
         /// <value>The number of estimates raised</value>
-        [DataMember(Name="raised", EmitDefaultValue=false)]
+        [DataMember(Name = "raised", EmitDefaultValue = false)]
         public int? Raised { get; set; }
 
         /// <summary>
         /// The number of estimates lowered
         /// </summary>
         /// <value>The number of estimates lowered</value>
-        [DataMember(Name="lowered", EmitDefaultValue=false)]
+        [DataMember(Name = "lowered", EmitDefaultValue = false)]
         public int? Lowered { get; set; }
 
         /// <summary>
         /// Gets or Sets Company
         /// </summary>
-        [DataMember(Name="company", EmitDefaultValue=false)]
+        [DataMember(Name = "company", EmitDefaultValue = false)]
         public CompanySummary Company { get; set; }
 
         /// <summary>
@@ -146,23 +144,23 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ZacksTargetPriceConsensus {\n");
-            sb.Append("  Ticker: ").Append(Ticker).Append("\n");
-            sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
-            sb.Append("  IndustryGroupNumber: ").Append(IndustryGroupNumber).Append("\n");
-            sb.Append("  High: ").Append(High).Append("\n");
-            sb.Append("  Low: ").Append(Low).Append("\n");
-            sb.Append("  Mean: ").Append(Mean).Append("\n");
-            sb.Append("  StandardDeviation: ").Append(StandardDeviation).Append("\n");
-            sb.Append("  Total: ").Append(Total).Append("\n");
-            sb.Append("  MostRecentDate: ").Append(MostRecentDate).Append("\n");
-            sb.Append("  Median: ").Append(Median).Append("\n");
-            sb.Append("  Raised: ").Append(Raised).Append("\n");
-            sb.Append("  Lowered: ").Append(Lowered).Append("\n");
-            sb.Append("  Company: ").Append(Company).Append("\n");
+            sb.Append("  Ticker: ").Append(Ticker).Append('\n');
+            sb.Append("  CompanyName: ").Append(CompanyName).Append('\n');
+            sb.Append("  IndustryGroupNumber: ").Append(IndustryGroupNumber).Append('\n');
+            sb.Append("  High: ").Append(High).Append('\n');
+            sb.Append("  Low: ").Append(Low).Append('\n');
+            sb.Append("  Mean: ").Append(Mean).Append('\n');
+            sb.Append("  StandardDeviation: ").Append(StandardDeviation).Append('\n');
+            sb.Append("  Total: ").Append(Total).Append('\n');
+            sb.Append("  MostRecentDate: ").Append(MostRecentDate).Append('\n');
+            sb.Append("  Median: ").Append(Median).Append('\n');
+            sb.Append("  Raised: ").Append(Raised).Append('\n');
+            sb.Append("  Lowered: ").Append(Lowered).Append('\n');
+            sb.Append("  Company: ").Append(Company).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -177,9 +175,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ZacksTargetPriceConsensus);
+            return Equals(obj as ZacksTargetPriceConsensus);
         }
 
         /// <summary>
@@ -192,67 +190,67 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Ticker == input.Ticker ||
                     (Ticker != null &&
                     Ticker.Equals(input.Ticker))
-                ) && 
+                ) &&
                 (
                     CompanyName == input.CompanyName ||
                     (CompanyName != null &&
                     CompanyName.Equals(input.CompanyName))
-                ) && 
+                ) &&
                 (
                     IndustryGroupNumber == input.IndustryGroupNumber ||
                     (IndustryGroupNumber != null &&
                     IndustryGroupNumber.Equals(input.IndustryGroupNumber))
-                ) && 
+                ) &&
                 (
                     High == input.High ||
                     (High != null &&
                     High.Equals(input.High))
-                ) && 
+                ) &&
                 (
                     Low == input.Low ||
                     (Low != null &&
                     Low.Equals(input.Low))
-                ) && 
+                ) &&
                 (
                     Mean == input.Mean ||
                     (Mean != null &&
                     Mean.Equals(input.Mean))
-                ) && 
+                ) &&
                 (
                     StandardDeviation == input.StandardDeviation ||
                     (StandardDeviation != null &&
                     StandardDeviation.Equals(input.StandardDeviation))
-                ) && 
+                ) &&
                 (
                     Total == input.Total ||
                     (Total != null &&
                     Total.Equals(input.Total))
-                ) && 
+                ) &&
                 (
                     MostRecentDate == input.MostRecentDate ||
                     (MostRecentDate != null &&
                     MostRecentDate.Equals(input.MostRecentDate))
-                ) && 
+                ) &&
                 (
                     Median == input.Median ||
                     (Median != null &&
                     Median.Equals(input.Median))
-                ) && 
+                ) &&
                 (
                     Raised == input.Raised ||
                     (Raised != null &&
                     Raised.Equals(input.Raised))
-                ) && 
+                ) &&
                 (
                     Lowered == input.Lowered ||
                     (Lowered != null &&
                     Lowered.Equals(input.Lowered))
-                ) && 
+                ) &&
                 (
                     Company == input.Company ||
                     (Company != null &&
@@ -309,5 +307,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

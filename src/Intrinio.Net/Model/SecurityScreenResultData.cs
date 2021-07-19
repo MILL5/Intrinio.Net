@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// SecurityScreenResultData
     /// </summary>
     [DataContract]
-    public partial class SecurityScreenResultData :  IEquatable<SecurityScreenResultData>, IValidatableObject
+    public sealed partial class SecurityScreenResultData : IEquatable<SecurityScreenResultData>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SecurityScreenResultData" /> class.
@@ -28,32 +19,32 @@ namespace Intrinio.Net.Model
         /// <param name="Tag">The data tag that was screened-for.</param>
         /// <param name="NumberValue">The numeric value for the tag.</param>
         /// <param name="TextValue">The text value for the tag.</param>
-        public SecurityScreenResultData(string Tag = default(string), string NumberValue = default(string), string TextValue = default(string))
+        public SecurityScreenResultData(string Tag = default, string NumberValue = default, string TextValue = default)
         {
             this.Tag = Tag;
             this.NumberValue = NumberValue;
             this.TextValue = TextValue;
         }
-        
+
         /// <summary>
         /// The data tag that was screened-for
         /// </summary>
         /// <value>The data tag that was screened-for</value>
-        [DataMember(Name="tag", EmitDefaultValue=false)]
+        [DataMember(Name = "tag", EmitDefaultValue = false)]
         public string Tag { get; set; }
 
         /// <summary>
         /// The numeric value for the tag
         /// </summary>
         /// <value>The numeric value for the tag</value>
-        [DataMember(Name="number_value", EmitDefaultValue=false)]
+        [DataMember(Name = "number_value", EmitDefaultValue = false)]
         public string NumberValue { get; set; }
 
         /// <summary>
         /// The text value for the tag
         /// </summary>
         /// <value>The text value for the tag</value>
-        [DataMember(Name="text_value", EmitDefaultValue=false)]
+        [DataMember(Name = "text_value", EmitDefaultValue = false)]
         public string TextValue { get; set; }
 
         /// <summary>
@@ -64,13 +55,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SecurityScreenResultData {\n");
-            sb.Append("  Tag: ").Append(Tag).Append("\n");
-            sb.Append("  NumberValue: ").Append(NumberValue).Append("\n");
-            sb.Append("  TextValue: ").Append(TextValue).Append("\n");
+            sb.Append("  Tag: ").Append(Tag).Append('\n');
+            sb.Append("  NumberValue: ").Append(NumberValue).Append('\n');
+            sb.Append("  TextValue: ").Append(TextValue).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -85,9 +76,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as SecurityScreenResultData);
+            return Equals(obj as SecurityScreenResultData);
         }
 
         /// <summary>
@@ -100,17 +91,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Tag == input.Tag ||
                     (Tag != null &&
                     Tag.Equals(input.Tag))
-                ) && 
+                ) &&
                 (
                     NumberValue == input.NumberValue ||
                     (NumberValue != null &&
                     NumberValue.Equals(input.NumberValue))
-                ) && 
+                ) &&
                 (
                     TextValue == input.TextValue ||
                     (TextValue != null &&
@@ -147,5 +138,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

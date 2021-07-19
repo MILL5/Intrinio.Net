@@ -1,8 +1,7 @@
 using Intrinio.Net.Model;
-using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace Intrinio.Net.Api
 {
@@ -49,38 +48,34 @@ namespace Intrinio.Net.Api
                   { nameof(next_page), next_page }
              };
 
-             var result = new List<SecuritySummary>();
-             
-             var jsonResponse = await Get($"{securitiesBaseUrl}{GetQueryParameterString(queryParams)}")
-                 .ConfigureAwait(false);
-             var apiResponse = JsonConvert.DeserializeObject<ApiResponseSecurities>(jsonResponse);
-             
-             if (apiResponse == null)
-             {
-                  throw new Exception("API Response is Null");
-             }
-             
-             var securities = apiResponse.Securities;
+            var result = new List<SecuritySummary>();
 
-             result.AddRange(securities);
+            var jsonResponse = await GetAsync($"{RestApiUrls.Securities.Default}{GetQueryParameterString(queryParams)}").ConfigureAwait(false);
+            var securities = JsonConvert.DeserializeObject<ApiResponseSecurities>(jsonResponse);
 
-             while (apiResponse.NextPage != null)
-             {
-                 queryParams[nameof(next_page)] = apiResponse.NextPage;
-                 jsonResponse = await Get($"{securitiesBaseUrl}{GetQueryParameterString(queryParams)}")
-                     .ConfigureAwait(false);
-                 apiResponse = JsonConvert.DeserializeObject<ApiResponseSecurities>(jsonResponse);
+            if (securities == null)
+            {
+                throw new IntrinioNetException("API Response is Null");
+            }
 
-                 if (apiResponse == null)
-                 {
-                     throw new Exception("API Response is Null");
-                 }
+            result.AddRange(securities.Securities);
 
-                 securities = apiResponse.Securities; 
-                 result.AddRange(securities);
-             }
-             
-             return result;
+            while (securities.NextPage != null)
+            {
+                queryParams[nameof(next_page)] = securities.NextPage;
+                jsonResponse = await GetAsync($"{RestApiUrls.Securities.Default}{GetQueryParameterString(queryParams)}")
+                    .ConfigureAwait(false);
+                securities = JsonConvert.DeserializeObject<ApiResponseSecurities>(jsonResponse);
+
+                if (securities == null)
+                {
+                    throw new IntrinioNetException("API Response is Null");
+                }
+
+                result.AddRange(securities.Securities);
+            }
+
+            return result;
         }
 
         public async Task<ApiResponseStockExchangeSecurities> GetAllSecuritySummariesByExchangeAsync(
@@ -94,65 +89,58 @@ namespace Intrinio.Net.Api
                   { nameof(next_page), next_page }
              };
 
-            var result = new ApiResponseStockExchangeSecurities();
-             
-             var jsonResponse = await Get($"{string.Format(securitiesByExchangeBaseUrl, identifier)}{GetQueryParameterString(queryParams)}")
-                 .ConfigureAwait(false);
-             var apiResponse = JsonConvert.DeserializeObject<ApiResponseStockExchangeSecurities>(jsonResponse);
-             
-             if (apiResponse == null)
-             {
-                  throw new Exception("API Response is Null");
-             }
+            var jsonResponse = await GetAsync($"{string.Format(RestApiUrls.Exchanges.SecuritiesByExchange, identifier)}{GetQueryParameterString(queryParams)}").ConfigureAwait(false);
+            var stockExchangeSecurities = JsonConvert.DeserializeObject<ApiResponseStockExchangeSecurities>(jsonResponse);
 
-             result = apiResponse;
+            if (stockExchangeSecurities == null)
+            {
+                throw new IntrinioNetException("API Response is Null");
+            }
 
-             while (apiResponse.NextPage != null)
-             {
-                 queryParams[nameof(next_page)] = apiResponse.NextPage;
-                 jsonResponse = await Get($"{string.Format(securitiesByExchangeBaseUrl, identifier)}{GetQueryParameterString(queryParams)}")
-                     .ConfigureAwait(false);
-                 apiResponse = JsonConvert.DeserializeObject<ApiResponseStockExchangeSecurities>(jsonResponse);
+            var result = stockExchangeSecurities;
 
-                 if (apiResponse == null)
-                 {
-                     throw new Exception("API Response is Null");
-                 }
-                 
-                 result.Securities.AddRange(apiResponse.Securities);
-                 result.NextPage = apiResponse.NextPage;
-             }
-             
-             return result;
+            while (stockExchangeSecurities.NextPage != null)
+            {
+                queryParams[nameof(next_page)] = stockExchangeSecurities.NextPage;
+                jsonResponse = await GetAsync($"{string.Format(RestApiUrls.Exchanges.SecuritiesByExchange, identifier)}{GetQueryParameterString(queryParams)}").ConfigureAwait(false);
+                stockExchangeSecurities = JsonConvert.DeserializeObject<ApiResponseStockExchangeSecurities>(jsonResponse);
+
+                if (stockExchangeSecurities == null)
+                {
+                    throw new IntrinioNetException("API Response is Null");
+                }
+
+                result.Securities.AddRange(stockExchangeSecurities.Securities);
+                result.NextPage = stockExchangeSecurities.NextPage;
+            }
+
+            return result;
         }
 
         public async Task<IEnumerable<Security>> LookupSecurityAsync(string identifier)
         {
-            var jsonResponse = await Get($"{securitiesBaseUrl}/{identifier}")
-                .ConfigureAwait(false);
-            var security = new List<Security>()
-                {JsonConvert.DeserializeObject<Security>(jsonResponse)};
+            var jsonResponse = await GetAsync($"{RestApiUrls.Securities.Default}/{identifier}").ConfigureAwait(false);
+            var security = JsonConvert.DeserializeObject<Security>(jsonResponse);
 
             if (security == null)
             {
-                throw new Exception("API Response is Null");
+                throw new IntrinioNetException("API Response is Null");
             }
-            
-            return security;
+
+            return new List<Security>() { security };
         }
 
         public async Task<IEnumerable<SecuritySummary>> GetSecuritiesByCompanyAsync(string identifier)
         {
-            var jsonResponse = await Get($"{securitiesBaseUrl}/{identifier}");
-            var security = new List<SecuritySummary>()
-                {JsonConvert.DeserializeObject<SecuritySummary>(jsonResponse)};
+            var jsonResponse = await GetAsync($"{RestApiUrls.Securities.Default}/{identifier}").ConfigureAwait(false);
+            var securitySummary = JsonConvert.DeserializeObject<SecuritySummary>(jsonResponse);
 
-            if (security == null)
+            if (securitySummary == null)
             {
-                throw new Exception("API Response is Null");
+                throw new IntrinioNetException("API Response is Null");
             }
-            
-            return security;
+
+            return new List<SecuritySummary>() { securitySummary };
         }
     }
 }

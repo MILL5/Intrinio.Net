@@ -13,7 +13,7 @@ namespace Intrinio.Net.Tests.Api
         private const string USCOMP = "USCOMP";
         private const string XNAS = "XNAS";
 
-        [Ignore]
+        [Ignore] // Too many securites to get from the rest api
         [TestMethod]
         public async Task GetAllSecuritySummariesSucceedsAsync()
         {
@@ -34,7 +34,7 @@ namespace Intrinio.Net.Tests.Api
         [TestMethod]
         public async Task GetAllSecuritySummariesByExchangeSucceedsAsync()
         {
-            var result = await IntrinioTestClient.GetAllSecuritySummariesByExchangeAsync(USCOMP, page_size: 5000);
+            var result = await IntrinioTestClient.GetAllSecuritySummariesByExchangeAsync(USCOMP);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Securities);
@@ -56,7 +56,7 @@ namespace Intrinio.Net.Tests.Api
         [DataRow(null, true)]
         public async Task GetAllSecuritySummariesWithActiveStatusParamsSucceedsAsync(bool active, bool delisted)
         {
-            var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync(active, delisted, page_size: 5000);
+            var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync(active, delisted);
 
             Assert.IsNotNull(securities);
             Assert.IsTrue(securities.Any());
@@ -66,7 +66,7 @@ namespace Intrinio.Net.Tests.Api
         [DataRow(APPLE_TICKER)]
         public async Task GetAllSecuritySummariesWithTickerParamsSucceedsAsync(string ticker)
         {
-            var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync(ticker: ticker, page_size: 5000);
+            var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync(ticker: ticker);
 
             Assert.IsNotNull(securities);
             Assert.IsTrue(securities.Any());
@@ -76,7 +76,7 @@ namespace Intrinio.Net.Tests.Api
         [DataRow(XNAS)]
         public async Task GetAllSecuritySummariesWithMicParamsSucceedsAsync(string mic)
         {
-            var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync(exchange_mic: mic, page_size: 5000);
+            var securities = await IntrinioTestClient.GetAllSecuritySummariesAsync(exchange_mic: mic);
 
             Assert.IsNotNull(securities);
             Assert.IsTrue(securities.Any());

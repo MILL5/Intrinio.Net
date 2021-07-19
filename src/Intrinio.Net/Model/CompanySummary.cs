@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// The summary of a company that submits filings to the SEC and has a security traded primarily on a US exchange
     /// </summary>
     [DataContract]
-    public partial class CompanySummary :  IEquatable<CompanySummary>, IValidatableObject
+    public sealed partial class CompanySummary : IEquatable<CompanySummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanySummary" /> class.
@@ -30,7 +21,7 @@ namespace Intrinio.Net.Model
         /// <param name="Name">The company&#39;s common name.</param>
         /// <param name="Lei">The Legal Entity Identifier (LEI) assigned to the company.</param>
         /// <param name="Cik">The Central Index Key (CIK) assigned to the company.</param>
-        public CompanySummary(string Id = default(string), string Ticker = default(string), string Name = default(string), string Lei = default(string), string Cik = default(string))
+        public CompanySummary(string Id = default, string Ticker = default, string Name = default, string Lei = default, string Cik = default)
         {
             this.Id = Id;
             this.Ticker = Ticker;
@@ -38,40 +29,40 @@ namespace Intrinio.Net.Model
             this.Lei = Lei;
             this.Cik = Cik;
         }
-        
+
         /// <summary>
         /// The Intrinio ID of the company
         /// </summary>
         /// <value>The Intrinio ID of the company</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The stock market ticker symbol associated with the company&#39;s common stock securities
         /// </summary>
         /// <value>The stock market ticker symbol associated with the company&#39;s common stock securities</value>
-        [DataMember(Name="ticker", EmitDefaultValue=false)]
+        [DataMember(Name = "ticker", EmitDefaultValue = false)]
         public string Ticker { get; set; }
 
         /// <summary>
         /// The company&#39;s common name
         /// </summary>
         /// <value>The company&#39;s common name</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// The Legal Entity Identifier (LEI) assigned to the company
         /// </summary>
         /// <value>The Legal Entity Identifier (LEI) assigned to the company</value>
-        [DataMember(Name="lei", EmitDefaultValue=false)]
+        [DataMember(Name = "lei", EmitDefaultValue = false)]
         public string Lei { get; set; }
 
         /// <summary>
         /// The Central Index Key (CIK) assigned to the company
         /// </summary>
         /// <value>The Central Index Key (CIK) assigned to the company</value>
-        [DataMember(Name="cik", EmitDefaultValue=false)]
+        [DataMember(Name = "cik", EmitDefaultValue = false)]
         public string Cik { get; set; }
 
         /// <summary>
@@ -82,15 +73,15 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CompanySummary {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Ticker: ").Append(Ticker).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Lei: ").Append(Lei).Append("\n");
-            sb.Append("  Cik: ").Append(Cik).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  Ticker: ").Append(Ticker).Append('\n');
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Lei: ").Append(Lei).Append('\n');
+            sb.Append("  Cik: ").Append(Cik).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -105,9 +96,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as CompanySummary);
+            return Equals(obj as CompanySummary);
         }
 
         /// <summary>
@@ -120,27 +111,27 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     Ticker == input.Ticker ||
                     (Ticker != null &&
                     Ticker.Equals(input.Ticker))
-                ) && 
+                ) &&
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Lei == input.Lei ||
                     (Lei != null &&
                     Lei.Equals(input.Lei))
-                ) && 
+                ) &&
                 (
                     Cik == input.Cik ||
                     (Cik != null &&
@@ -181,5 +172,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

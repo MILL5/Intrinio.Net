@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +12,31 @@ namespace Intrinio.Net.Model
     /// ApiResponseZacksInstitutionalHoldingCompanies
     /// </summary>
     [DataContract]
-    public partial class ApiResponseZacksInstitutionalHoldingCompanies :  IEquatable<ApiResponseZacksInstitutionalHoldingCompanies>, IValidatableObject
+    public sealed partial class ApiResponseZacksInstitutionalHoldingCompanies : IEquatable<ApiResponseZacksInstitutionalHoldingCompanies>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseZacksInstitutionalHoldingCompanies" /> class.
         /// </summary>
         /// <param name="Companies">Zacks institutional holding company data.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseZacksInstitutionalHoldingCompanies(List<ZacksInstitutionalHoldingCompanyDetail> Companies = default(List<ZacksInstitutionalHoldingCompanyDetail>), string NextPage = default(string))
+        public ApiResponseZacksInstitutionalHoldingCompanies(List<ZacksInstitutionalHoldingCompanyDetail> Companies = default, string NextPage = default)
         {
             this.Companies = Companies;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Zacks institutional holding company data
         /// </summary>
         /// <value>Zacks institutional holding company data</value>
-        [DataMember(Name="companies", EmitDefaultValue=false)]
+        [DataMember(Name = "companies", EmitDefaultValue = false)]
         public List<ZacksInstitutionalHoldingCompanyDetail> Companies { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -55,12 +47,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseZacksInstitutionalHoldingCompanies {\n");
-            sb.Append("  Companies: ").Append(Companies).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Companies: ").Append(Companies).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +67,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseZacksInstitutionalHoldingCompanies);
+            return Equals(obj as ApiResponseZacksInstitutionalHoldingCompanies);
         }
 
         /// <summary>
@@ -90,12 +82,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Companies == input.Companies ||
                     Companies != null &&
                     Companies.SequenceEqual(input.Companies)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -130,5 +122,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

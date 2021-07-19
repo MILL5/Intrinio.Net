@@ -1,17 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -19,7 +12,7 @@ namespace Intrinio.Net.Model
     /// ApiResponseCompanySecurities
     /// </summary>
     [DataContract]
-    public partial class ApiResponseCompanySecurities :  IEquatable<ApiResponseCompanySecurities>, IValidatableObject
+    public sealed partial class ApiResponseCompanySecurities : IEquatable<ApiResponseCompanySecurities>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseCompanySecurities" /> class.
@@ -27,30 +20,30 @@ namespace Intrinio.Net.Model
         /// <param name="Securities">Securities.</param>
         /// <param name="Company">Company.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseCompanySecurities(List<SecuritySummary> Securities = default(List<SecuritySummary>), CompanySummary Company = default(CompanySummary), string NextPage = default(string))
+        public ApiResponseCompanySecurities(List<SecuritySummary> Securities = default, CompanySummary Company = default, string NextPage = default)
         {
             this.Securities = Securities;
             this.Company = Company;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets Securities
         /// </summary>
-        [DataMember(Name="securities", EmitDefaultValue=false)]
+        [DataMember(Name = "securities", EmitDefaultValue = false)]
         public List<SecuritySummary> Securities { get; set; }
 
         /// <summary>
         /// Gets or Sets Company
         /// </summary>
-        [DataMember(Name="company", EmitDefaultValue=false)]
+        [DataMember(Name = "company", EmitDefaultValue = false)]
         public CompanySummary Company { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -61,13 +54,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseCompanySecurities {\n");
-            sb.Append("  Securities: ").Append(Securities).Append("\n");
-            sb.Append("  Company: ").Append(Company).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Securities: ").Append(Securities).Append('\n');
+            sb.Append("  Company: ").Append(Company).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -82,9 +75,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseCompanySecurities);
+            return Equals(obj as ApiResponseCompanySecurities);
         }
 
         /// <summary>
@@ -97,17 +90,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Securities == input.Securities ||
                     Securities != null &&
                     Securities.SequenceEqual(input.Securities)
-                ) && 
+                ) &&
                 (
                     Company == input.Company ||
                     (Company != null &&
                     Company.Equals(input.Company))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -144,5 +137,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }
