@@ -11,7 +11,7 @@ namespace Intrinio.Net.Model
     /// The date_time and adi values of a Accumulation/Distribution Index technical indicator calculation
     /// </summary>
     [DataContract]
-    public partial class AccumulationDistributionIndexTechnicalValue :  IEquatable<AccumulationDistributionIndexTechnicalValue>, IValidatableObject
+    public sealed partial class AccumulationDistributionIndexTechnicalValue : IEquatable<AccumulationDistributionIndexTechnicalValue>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AccumulationDistributionIndexTechnicalValue" /> class.
@@ -23,19 +23,19 @@ namespace Intrinio.Net.Model
             this.DateTime = DateTime;
             this.Adi = Adi;
         }
-        
+
         /// <summary>
         /// The date_time of the observation
         /// </summary>
         /// <value>The date_time of the observation</value>
-        [DataMember(Name="date_time", EmitDefaultValue=false)]
+        [DataMember(Name = "date_time", EmitDefaultValue = false)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// The Accumulation/Distribution Index calculation value
         /// </summary>
         /// <value>The Accumulation/Distribution Index calculation value</value>
-        [DataMember(Name="adi", EmitDefaultValue=false)]
+        [DataMember(Name = "adi", EmitDefaultValue = false)]
         public float? Adi { get; set; }
 
         /// <summary>
@@ -46,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AccumulationDistributionIndexTechnicalValue {\n");
-            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
-            sb.Append("  Adi: ").Append(Adi).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append('\n');
+            sb.Append("  Adi: ").Append(Adi).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -64,11 +64,11 @@ namespace Intrinio.Net.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as AccumulationDistributionIndexTechnicalValue);
+            return Equals(obj as AccumulationDistributionIndexTechnicalValue);
         }
 
         /// <summary>
@@ -81,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DateTime == input.DateTime ||
                     (DateTime != null &&
                     DateTime.Equals(input.DateTime))
-                ) && 
+                ) &&
                 (
                     Adi == input.Adi ||
                     (Adi != null &&
@@ -121,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// A stock price adjustment for a security on a given day, most frequently representing a split and/or dividend.
     /// </summary>
     [DataContract]
-    public partial class StockPriceAdjustmentSummary :  IEquatable<StockPriceAdjustmentSummary>, IValidatableObject
+    public sealed partial class StockPriceAdjustmentSummary : IEquatable<StockPriceAdjustmentSummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StockPriceAdjustmentSummary" /> class.
@@ -30,7 +21,7 @@ namespace Intrinio.Net.Model
         /// <param name="Dividend">The dividend amount, if a dividend was paid..</param>
         /// <param name="DividendCurrency">The currency of the dividend, if known..</param>
         /// <param name="SplitRatio">The ratio of the stock split, if a stock split occurred..</param>
-        public StockPriceAdjustmentSummary(DateTime? Date = default(DateTime?), decimal? Factor = default(decimal?), decimal? Dividend = default(decimal?), string DividendCurrency = default(string), decimal? SplitRatio = default(decimal?))
+        public StockPriceAdjustmentSummary(DateTime? Date = default, decimal? Factor = default, decimal? Dividend = default, string DividendCurrency = default, decimal? SplitRatio = default)
         {
             this.Date = Date;
             this.Factor = Factor;
@@ -38,41 +29,40 @@ namespace Intrinio.Net.Model
             this.DividendCurrency = DividendCurrency;
             this.SplitRatio = SplitRatio;
         }
-        
+
         /// <summary>
         /// The date on which the adjustment occurred. The adjustment should be applied to all stock prices before this date.
         /// </summary>
         /// <value>The date on which the adjustment occurred. The adjustment should be applied to all stock prices before this date.</value>
-        [DataMember(Name="date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "date", EmitDefaultValue = false)]
         public DateTime? Date { get; set; }
 
         /// <summary>
         /// The factor by which to multiply stock prices before this date, in order to calculate historically-adjusted stock prices.
         /// </summary>
         /// <value>The factor by which to multiply stock prices before this date, in order to calculate historically-adjusted stock prices.</value>
-        [DataMember(Name="factor", EmitDefaultValue=false)]
+        [DataMember(Name = "factor", EmitDefaultValue = false)]
         public decimal? Factor { get; set; }
 
         /// <summary>
         /// The dividend amount, if a dividend was paid.
         /// </summary>
         /// <value>The dividend amount, if a dividend was paid.</value>
-        [DataMember(Name="dividend", EmitDefaultValue=false)]
+        [DataMember(Name = "dividend", EmitDefaultValue = false)]
         public decimal? Dividend { get; set; }
 
         /// <summary>
         /// The currency of the dividend, if known.
         /// </summary>
         /// <value>The currency of the dividend, if known.</value>
-        [DataMember(Name="dividend_currency", EmitDefaultValue=false)]
+        [DataMember(Name = "dividend_currency", EmitDefaultValue = false)]
         public string DividendCurrency { get; set; }
 
         /// <summary>
         /// The ratio of the stock split, if a stock split occurred.
         /// </summary>
         /// <value>The ratio of the stock split, if a stock split occurred.</value>
-        [DataMember(Name="split_ratio", EmitDefaultValue=false)]
+        [DataMember(Name = "split_ratio", EmitDefaultValue = false)]
         public decimal? SplitRatio { get; set; }
 
         /// <summary>
@@ -83,15 +73,15 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class StockPriceAdjustmentSummary {\n");
-            sb.Append("  Date: ").Append(Date).Append("\n");
-            sb.Append("  Factor: ").Append(Factor).Append("\n");
-            sb.Append("  Dividend: ").Append(Dividend).Append("\n");
-            sb.Append("  DividendCurrency: ").Append(DividendCurrency).Append("\n");
-            sb.Append("  SplitRatio: ").Append(SplitRatio).Append("\n");
+            sb.Append("  Date: ").Append(Date).Append('\n');
+            sb.Append("  Factor: ").Append(Factor).Append('\n');
+            sb.Append("  Dividend: ").Append(Dividend).Append('\n');
+            sb.Append("  DividendCurrency: ").Append(DividendCurrency).Append('\n');
+            sb.Append("  SplitRatio: ").Append(SplitRatio).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -106,9 +96,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as StockPriceAdjustmentSummary);
+            return Equals(obj as StockPriceAdjustmentSummary);
         }
 
         /// <summary>
@@ -121,27 +111,27 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Date == input.Date ||
                     (Date != null &&
                     Date.Equals(input.Date))
-                ) && 
+                ) &&
                 (
                     Factor == input.Factor ||
                     (Factor != null &&
                     Factor.Equals(input.Factor))
-                ) && 
+                ) &&
                 (
                     Dividend == input.Dividend ||
                     (Dividend != null &&
                     Dividend.Equals(input.Dividend))
-                ) && 
+                ) &&
                 (
                     DividendCurrency == input.DividendCurrency ||
                     (DividendCurrency != null &&
                     DividendCurrency.Equals(input.DividendCurrency))
-                ) && 
+                ) &&
                 (
                     SplitRatio == input.SplitRatio ||
                     (SplitRatio != null &&
@@ -182,5 +172,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

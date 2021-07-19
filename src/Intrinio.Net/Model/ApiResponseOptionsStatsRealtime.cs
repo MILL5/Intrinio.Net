@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// ApiResponseOptionsStatsRealtime
     /// </summary>
     [DataContract]
-    public partial class ApiResponseOptionsStatsRealtime :  IEquatable<ApiResponseOptionsStatsRealtime>, IValidatableObject
+    public sealed partial class ApiResponseOptionsStatsRealtime : IEquatable<ApiResponseOptionsStatsRealtime>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseOptionsStatsRealtime" /> class.
@@ -28,29 +19,29 @@ namespace Intrinio.Net.Model
         /// <param name="Stats">Stats.</param>
         /// <param name="Factors">Factors.</param>
         /// <param name="Option">Option.</param>
-        public ApiResponseOptionsStatsRealtime(OptionStatsRealtime Stats = default(OptionStatsRealtime), OptionFactorsRealtime Factors = default(OptionFactorsRealtime), OptionRealtime Option = default(OptionRealtime))
+        public ApiResponseOptionsStatsRealtime(OptionStatsRealtime Stats = default, OptionFactorsRealtime Factors = default, OptionRealtime Option = default)
         {
             this.Stats = Stats;
             this.Factors = Factors;
             this.Option = Option;
         }
-        
+
         /// <summary>
         /// Gets or Sets Stats
         /// </summary>
-        [DataMember(Name="stats", EmitDefaultValue=false)]
+        [DataMember(Name = "stats", EmitDefaultValue = false)]
         public OptionStatsRealtime Stats { get; set; }
 
         /// <summary>
         /// Gets or Sets Factors
         /// </summary>
-        [DataMember(Name="factors", EmitDefaultValue=false)]
+        [DataMember(Name = "factors", EmitDefaultValue = false)]
         public OptionFactorsRealtime Factors { get; set; }
 
         /// <summary>
         /// Gets or Sets Option
         /// </summary>
-        [DataMember(Name="option", EmitDefaultValue=false)]
+        [DataMember(Name = "option", EmitDefaultValue = false)]
         public OptionRealtime Option { get; set; }
 
         /// <summary>
@@ -61,13 +52,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseOptionsStatsRealtime {\n");
-            sb.Append("  Stats: ").Append(Stats).Append("\n");
-            sb.Append("  Factors: ").Append(Factors).Append("\n");
-            sb.Append("  Option: ").Append(Option).Append("\n");
+            sb.Append("  Stats: ").Append(Stats).Append('\n');
+            sb.Append("  Factors: ").Append(Factors).Append('\n');
+            sb.Append("  Option: ").Append(Option).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -82,9 +73,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseOptionsStatsRealtime);
+            return Equals(obj as ApiResponseOptionsStatsRealtime);
         }
 
         /// <summary>
@@ -97,17 +88,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Stats == input.Stats ||
                     (Stats != null &&
                     Stats.Equals(input.Stats))
-                ) && 
+                ) &&
                 (
                     Factors == input.Factors ||
                     (Factors != null &&
                     Factors.Equals(input.Factors))
-                ) && 
+                ) &&
                 (
                     Option == input.Option ||
                     (Option != null &&
@@ -144,5 +135,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

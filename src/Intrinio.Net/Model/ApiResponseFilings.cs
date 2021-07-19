@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,30 +12,30 @@ namespace Intrinio.Net.Model
     /// ApiResponseFilings
     /// </summary>
     [DataContract]
-    public partial class ApiResponseFilings :  IEquatable<ApiResponseFilings>, IValidatableObject
+    public sealed partial class ApiResponseFilings : IEquatable<ApiResponseFilings>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseFilings" /> class.
         /// </summary>
         /// <param name="Filings">Filings.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseFilings(List<Filing> Filings = default(List<Filing>), string NextPage = default(string))
+        public ApiResponseFilings(List<Filing> Filings = default, string NextPage = default)
         {
             this.Filings = Filings;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets Filings
         /// </summary>
-        [DataMember(Name="filings", EmitDefaultValue=false)]
+        [DataMember(Name = "filings", EmitDefaultValue = false)]
         public List<Filing> Filings { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -54,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseFilings {\n");
-            sb.Append("  Filings: ").Append(Filings).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Filings: ").Append(Filings).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -74,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseFilings);
+            return Equals(obj as ApiResponseFilings);
         }
 
         /// <summary>
@@ -89,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Filings == input.Filings ||
                     Filings != null &&
                     Filings.SequenceEqual(input.Filings)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -129,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

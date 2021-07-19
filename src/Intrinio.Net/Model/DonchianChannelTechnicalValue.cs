@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// The date_time, lower_bound, and uppoer_bound values of a Donchian Channel technical indicator calculation
     /// </summary>
     [DataContract]
-    public partial class DonchianChannelTechnicalValue :  IEquatable<DonchianChannelTechnicalValue>, IValidatableObject
+    public sealed partial class DonchianChannelTechnicalValue : IEquatable<DonchianChannelTechnicalValue>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DonchianChannelTechnicalValue" /> class.
@@ -28,32 +19,32 @@ namespace Intrinio.Net.Model
         /// <param name="DateTime">The date_time of the observation.</param>
         /// <param name="LowerBound">The lower bound value of the Donchian Channel calculation.</param>
         /// <param name="UpperBound">The upper bound value of the Donchian Channel calculation.</param>
-        public DonchianChannelTechnicalValue(DateTime? DateTime = default(DateTime?), float? LowerBound = default(float?), float? UpperBound = default(float?))
+        public DonchianChannelTechnicalValue(DateTime? DateTime = default, float? LowerBound = default, float? UpperBound = default)
         {
             this.DateTime = DateTime;
             this.LowerBound = LowerBound;
             this.UpperBound = UpperBound;
         }
-        
+
         /// <summary>
         /// The date_time of the observation
         /// </summary>
         /// <value>The date_time of the observation</value>
-        [DataMember(Name="date_time", EmitDefaultValue=false)]
+        [DataMember(Name = "date_time", EmitDefaultValue = false)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// The lower bound value of the Donchian Channel calculation
         /// </summary>
         /// <value>The lower bound value of the Donchian Channel calculation</value>
-        [DataMember(Name="lower_bound", EmitDefaultValue=false)]
+        [DataMember(Name = "lower_bound", EmitDefaultValue = false)]
         public float? LowerBound { get; set; }
 
         /// <summary>
         /// The upper bound value of the Donchian Channel calculation
         /// </summary>
         /// <value>The upper bound value of the Donchian Channel calculation</value>
-        [DataMember(Name="upper_bound", EmitDefaultValue=false)]
+        [DataMember(Name = "upper_bound", EmitDefaultValue = false)]
         public float? UpperBound { get; set; }
 
         /// <summary>
@@ -64,13 +55,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class DonchianChannelTechnicalValue {\n");
-            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
-            sb.Append("  LowerBound: ").Append(LowerBound).Append("\n");
-            sb.Append("  UpperBound: ").Append(UpperBound).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append('\n');
+            sb.Append("  LowerBound: ").Append(LowerBound).Append('\n');
+            sb.Append("  UpperBound: ").Append(UpperBound).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -85,9 +76,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as DonchianChannelTechnicalValue);
+            return Equals(obj as DonchianChannelTechnicalValue);
         }
 
         /// <summary>
@@ -100,17 +91,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DateTime == input.DateTime ||
                     (DateTime != null &&
                     DateTime.Equals(input.DateTime))
-                ) && 
+                ) &&
                 (
                     LowerBound == input.LowerBound ||
                     (LowerBound != null &&
                     LowerBound.Equals(input.LowerBound))
-                ) && 
+                ) &&
                 (
                     UpperBound == input.UpperBound ||
                     (UpperBound != null &&
@@ -147,5 +138,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

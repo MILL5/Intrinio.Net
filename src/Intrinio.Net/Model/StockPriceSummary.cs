@@ -1,17 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -19,40 +12,39 @@ namespace Intrinio.Net.Model
     /// The summary of a stock price for a security on a given date.
     /// </summary>
     [DataContract]
-    public partial class StockPriceSummary :  IEquatable<StockPriceSummary>, IValidatableObject
+    public sealed partial class StockPriceSummary : IEquatable<StockPriceSummary>, IValidatableObject
     {
         /// <summary>
         /// The type of period that the stock price represents
         /// </summary>
         /// <value>The type of period that the stock price represents</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum FrequencyEnum
+        public enum PeriodFrequency
         {
-            
             /// <summary>
             /// Enum Daily for value: daily
             /// </summary>
             [EnumMember(Value = "daily")]
             Daily = 1,
-            
+
             /// <summary>
             /// Enum Weekly for value: weekly
             /// </summary>
             [EnumMember(Value = "weekly")]
             Weekly = 2,
-            
+
             /// <summary>
             /// Enum Monthly for value: monthly
             /// </summary>
             [EnumMember(Value = "monthly")]
             Monthly = 3,
-            
+
             /// <summary>
             /// Enum Quarterly for value: quarterly
             /// </summary>
             [EnumMember(Value = "quarterly")]
             Quarterly = 4,
-            
+
             /// <summary>
             /// Enum Yearly for value: yearly
             /// </summary>
@@ -64,8 +56,9 @@ namespace Intrinio.Net.Model
         /// The type of period that the stock price represents
         /// </summary>
         /// <value>The type of period that the stock price represents</value>
-        [DataMember(Name="frequency", EmitDefaultValue=false)]
-        public FrequencyEnum? Frequency { get; set; }
+        [DataMember(Name = "frequency", EmitDefaultValue = false)]
+        public PeriodFrequency? Frequency { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="StockPriceSummary" /> class.
         /// </summary>
@@ -82,7 +75,7 @@ namespace Intrinio.Net.Model
         /// <param name="AdjLow">The lowest price over the span of the period, adjusted for splits and dividends.</param>
         /// <param name="AdjClose">The price at the end of the period, adjusted for splits and dividends.</param>
         /// <param name="AdjVolume">The number of shares exchanged during the period, adjusted for splits and dividends.</param>
-        public StockPriceSummary(DateTime? Date = default(DateTime?), bool? Intraperiod = default(bool?), FrequencyEnum? Frequency = default(FrequencyEnum?), decimal? Open = default(decimal?), decimal? High = default(decimal?), decimal? Low = default(decimal?), decimal? Close = default(decimal?), decimal? Volume = default(decimal?), decimal? AdjOpen = default(decimal?), decimal? AdjHigh = default(decimal?), decimal? AdjLow = default(decimal?), decimal? AdjClose = default(decimal?), decimal? AdjVolume = default(decimal?))
+        public StockPriceSummary(DateTime? Date = default, bool? Intraperiod = default, PeriodFrequency? Frequency = default, decimal? Open = default, decimal? High = default, decimal? Low = default, decimal? Close = default, decimal? Volume = default, decimal? AdjOpen = default, decimal? AdjHigh = default, decimal? AdjLow = default, decimal? AdjClose = default, decimal? AdjVolume = default)
         {
             this.Date = Date;
             this.Intraperiod = Intraperiod;
@@ -98,90 +91,89 @@ namespace Intrinio.Net.Model
             this.AdjClose = AdjClose;
             this.AdjVolume = AdjVolume;
         }
-        
+
         /// <summary>
         /// The calendar date that the stock price represents. For non-daily stock prices, this represents the last day in the period (end of the week, month, quarter, year, etc)
         /// </summary>
         /// <value>The calendar date that the stock price represents. For non-daily stock prices, this represents the last day in the period (end of the week, month, quarter, year, etc)</value>
-        [DataMember(Name="date", EmitDefaultValue=false)]
+        [DataMember(Name = "date", EmitDefaultValue = false)]
         public DateTime? Date { get; set; }
 
         /// <summary>
         /// If true, the stock price represents an unfinished period (be it day, week, quarter, month, or year), meaning that the close price is the latest price available, not the official close price for the period
         /// </summary>
         /// <value>If true, the stock price represents an unfinished period (be it day, week, quarter, month, or year), meaning that the close price is the latest price available, not the official close price for the period</value>
-        [DataMember(Name="intraperiod", EmitDefaultValue=false)]
+        [DataMember(Name = "intraperiod", EmitDefaultValue = false)]
         public bool? Intraperiod { get; set; }
-
 
         /// <summary>
         /// The price at the beginning of the period
         /// </summary>
         /// <value>The price at the beginning of the period</value>
-        [DataMember(Name="open", EmitDefaultValue=false)]
+        [DataMember(Name = "open", EmitDefaultValue = false)]
         public decimal? Open { get; set; }
 
         /// <summary>
         /// The highest price over the span of the period
         /// </summary>
         /// <value>The highest price over the span of the period</value>
-        [DataMember(Name="high", EmitDefaultValue=false)]
+        [DataMember(Name = "high", EmitDefaultValue = false)]
         public decimal? High { get; set; }
 
         /// <summary>
         /// The lowest price over the span of the period
         /// </summary>
         /// <value>The lowest price over the span of the period</value>
-        [DataMember(Name="low", EmitDefaultValue=false)]
+        [DataMember(Name = "low", EmitDefaultValue = false)]
         public decimal? Low { get; set; }
 
         /// <summary>
         /// The price at the end of the period
         /// </summary>
         /// <value>The price at the end of the period</value>
-        [DataMember(Name="close", EmitDefaultValue=false)]
+        [DataMember(Name = "close", EmitDefaultValue = false)]
         public decimal? Close { get; set; }
 
         /// <summary>
         /// The number of shares exchanged during the period
         /// </summary>
         /// <value>The number of shares exchanged during the period</value>
-        [DataMember(Name="volume", EmitDefaultValue=false)]
+        [DataMember(Name = "volume", EmitDefaultValue = false)]
         public decimal? Volume { get; set; }
 
         /// <summary>
         /// The price at the beginning of the period, adjusted for splits and dividends
         /// </summary>
         /// <value>The price at the beginning of the period, adjusted for splits and dividends</value>
-        [DataMember(Name="adj_open", EmitDefaultValue=false)]
+        [DataMember(Name = "adj_open", EmitDefaultValue = false)]
         public decimal? AdjOpen { get; set; }
 
         /// <summary>
         /// The highest price over the span of the period, adjusted for splits and dividends
         /// </summary>
         /// <value>The highest price over the span of the period, adjusted for splits and dividends</value>
-        [DataMember(Name="adj_high", EmitDefaultValue=false)]
+        [DataMember(Name = "adj_high", EmitDefaultValue = false)]
         public decimal? AdjHigh { get; set; }
 
         /// <summary>
         /// The lowest price over the span of the period, adjusted for splits and dividends
         /// </summary>
         /// <value>The lowest price over the span of the period, adjusted for splits and dividends</value>
-        [DataMember(Name="adj_low", EmitDefaultValue=false)]
+        [DataMember(Name = "adj_low", EmitDefaultValue = false)]
         public decimal? AdjLow { get; set; }
 
         /// <summary>
         /// The price at the end of the period, adjusted for splits and dividends
         /// </summary>
         /// <value>The price at the end of the period, adjusted for splits and dividends</value>
-        [DataMember(Name="adj_close", EmitDefaultValue=false)]
+        [DataMember(Name = "adj_close", EmitDefaultValue = false)]
         public decimal? AdjClose { get; set; }
 
         /// <summary>
         /// The number of shares exchanged during the period, adjusted for splits and dividends
         /// </summary>
         /// <value>The number of shares exchanged during the period, adjusted for splits and dividends</value>
-        [DataMember(Name="adj_volume", EmitDefaultValue=false)]
+        [DataMember(Name = "adj_volume", EmitDefaultValue = false)]
         public decimal? AdjVolume { get; set; }
 
         /// <summary>
@@ -192,23 +184,23 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class StockPriceSummary {\n");
-            sb.Append("  Date: ").Append(Date).Append("\n");
-            sb.Append("  Intraperiod: ").Append(Intraperiod).Append("\n");
-            sb.Append("  Frequency: ").Append(Frequency).Append("\n");
-            sb.Append("  Open: ").Append(Open).Append("\n");
-            sb.Append("  High: ").Append(High).Append("\n");
-            sb.Append("  Low: ").Append(Low).Append("\n");
-            sb.Append("  Close: ").Append(Close).Append("\n");
-            sb.Append("  Volume: ").Append(Volume).Append("\n");
-            sb.Append("  AdjOpen: ").Append(AdjOpen).Append("\n");
-            sb.Append("  AdjHigh: ").Append(AdjHigh).Append("\n");
-            sb.Append("  AdjLow: ").Append(AdjLow).Append("\n");
-            sb.Append("  AdjClose: ").Append(AdjClose).Append("\n");
-            sb.Append("  AdjVolume: ").Append(AdjVolume).Append("\n");
+            sb.Append("  Date: ").Append(Date).Append('\n');
+            sb.Append("  Intraperiod: ").Append(Intraperiod).Append('\n');
+            sb.Append("  Frequency: ").Append(Frequency).Append('\n');
+            sb.Append("  Open: ").Append(Open).Append('\n');
+            sb.Append("  High: ").Append(High).Append('\n');
+            sb.Append("  Low: ").Append(Low).Append('\n');
+            sb.Append("  Close: ").Append(Close).Append('\n');
+            sb.Append("  Volume: ").Append(Volume).Append('\n');
+            sb.Append("  AdjOpen: ").Append(AdjOpen).Append('\n');
+            sb.Append("  AdjHigh: ").Append(AdjHigh).Append('\n');
+            sb.Append("  AdjLow: ").Append(AdjLow).Append('\n');
+            sb.Append("  AdjClose: ").Append(AdjClose).Append('\n');
+            sb.Append("  AdjVolume: ").Append(AdjVolume).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -223,9 +215,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as StockPriceSummary);
+            return Equals(obj as StockPriceSummary);
         }
 
         /// <summary>
@@ -238,67 +230,67 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Date == input.Date ||
                     (Date != null &&
                     Date.Equals(input.Date))
-                ) && 
+                ) &&
                 (
                     Intraperiod == input.Intraperiod ||
                     (Intraperiod != null &&
                     Intraperiod.Equals(input.Intraperiod))
-                ) && 
+                ) &&
                 (
                     Frequency == input.Frequency ||
                     (Frequency != null &&
                     Frequency.Equals(input.Frequency))
-                ) && 
+                ) &&
                 (
                     Open == input.Open ||
                     (Open != null &&
                     Open.Equals(input.Open))
-                ) && 
+                ) &&
                 (
                     High == input.High ||
                     (High != null &&
                     High.Equals(input.High))
-                ) && 
+                ) &&
                 (
                     Low == input.Low ||
                     (Low != null &&
                     Low.Equals(input.Low))
-                ) && 
+                ) &&
                 (
                     Close == input.Close ||
                     (Close != null &&
                     Close.Equals(input.Close))
-                ) && 
+                ) &&
                 (
                     Volume == input.Volume ||
                     (Volume != null &&
                     Volume.Equals(input.Volume))
-                ) && 
+                ) &&
                 (
                     AdjOpen == input.AdjOpen ||
                     (AdjOpen != null &&
                     AdjOpen.Equals(input.AdjOpen))
-                ) && 
+                ) &&
                 (
                     AdjHigh == input.AdjHigh ||
                     (AdjHigh != null &&
                     AdjHigh.Equals(input.AdjHigh))
-                ) && 
+                ) &&
                 (
                     AdjLow == input.AdjLow ||
                     (AdjLow != null &&
                     AdjLow.Equals(input.AdjLow))
-                ) && 
+                ) &&
                 (
                     AdjClose == input.AdjClose ||
                     (AdjClose != null &&
                     AdjClose.Equals(input.AdjClose))
-                ) && 
+                ) &&
                 (
                     AdjVolume == input.AdjVolume ||
                     (AdjVolume != null &&
@@ -355,5 +347,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// Realtime factors for calculating stats such as greeks and implied volatility for a specific options contract.
     /// </summary>
     [DataContract]
-    public partial class OptionFactorsRealtime :  IEquatable<OptionFactorsRealtime>, IValidatableObject
+    public sealed partial class OptionFactorsRealtime : IEquatable<OptionFactorsRealtime>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OptionFactorsRealtime" /> class.
@@ -31,7 +22,7 @@ namespace Intrinio.Net.Model
         /// <param name="DaysToExpiration">The number of days to expiration.</param>
         /// <param name="RiskFreeInterestRate">The current risk-free interest rate, as measured by the 3-month Treasury Bill rate.</param>
         /// <param name="DividendYield">The divident yield of the underlying asset (if applicable).</param>
-        public OptionFactorsRealtime(decimal? MarketPrice = default(decimal?), decimal? UnderlyingPrice = default(decimal?), decimal? StrikePrice = default(decimal?), decimal? DaysToExpiration = default(decimal?), decimal? RiskFreeInterestRate = default(decimal?), decimal? DividendYield = default(decimal?))
+        public OptionFactorsRealtime(decimal? MarketPrice = default, decimal? UnderlyingPrice = default, decimal? StrikePrice = default, decimal? DaysToExpiration = default, decimal? RiskFreeInterestRate = default, decimal? DividendYield = default)
         {
             this.MarketPrice = MarketPrice;
             this.UnderlyingPrice = UnderlyingPrice;
@@ -40,47 +31,47 @@ namespace Intrinio.Net.Model
             this.RiskFreeInterestRate = RiskFreeInterestRate;
             this.DividendYield = DividendYield;
         }
-        
+
         /// <summary>
         /// The market price of the options contract
         /// </summary>
         /// <value>The market price of the options contract</value>
-        [DataMember(Name="market_price", EmitDefaultValue=false)]
+        [DataMember(Name = "market_price", EmitDefaultValue = false)]
         public decimal? MarketPrice { get; set; }
 
         /// <summary>
         /// The market price of the underlying asset
         /// </summary>
         /// <value>The market price of the underlying asset</value>
-        [DataMember(Name="underlying_price", EmitDefaultValue=false)]
+        [DataMember(Name = "underlying_price", EmitDefaultValue = false)]
         public decimal? UnderlyingPrice { get; set; }
 
         /// <summary>
         /// The strike price of the options contract
         /// </summary>
         /// <value>The strike price of the options contract</value>
-        [DataMember(Name="strike_price", EmitDefaultValue=false)]
+        [DataMember(Name = "strike_price", EmitDefaultValue = false)]
         public decimal? StrikePrice { get; set; }
 
         /// <summary>
         /// The number of days to expiration
         /// </summary>
         /// <value>The number of days to expiration</value>
-        [DataMember(Name="days_to_expiration", EmitDefaultValue=false)]
+        [DataMember(Name = "days_to_expiration", EmitDefaultValue = false)]
         public decimal? DaysToExpiration { get; set; }
 
         /// <summary>
         /// The current risk-free interest rate, as measured by the 3-month Treasury Bill rate
         /// </summary>
         /// <value>The current risk-free interest rate, as measured by the 3-month Treasury Bill rate</value>
-        [DataMember(Name="risk_free_interest_rate", EmitDefaultValue=false)]
+        [DataMember(Name = "risk_free_interest_rate", EmitDefaultValue = false)]
         public decimal? RiskFreeInterestRate { get; set; }
 
         /// <summary>
         /// The divident yield of the underlying asset (if applicable)
         /// </summary>
         /// <value>The divident yield of the underlying asset (if applicable)</value>
-        [DataMember(Name="dividend_yield", EmitDefaultValue=false)]
+        [DataMember(Name = "dividend_yield", EmitDefaultValue = false)]
         public decimal? DividendYield { get; set; }
 
         /// <summary>
@@ -91,16 +82,16 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OptionFactorsRealtime {\n");
-            sb.Append("  MarketPrice: ").Append(MarketPrice).Append("\n");
-            sb.Append("  UnderlyingPrice: ").Append(UnderlyingPrice).Append("\n");
-            sb.Append("  StrikePrice: ").Append(StrikePrice).Append("\n");
-            sb.Append("  DaysToExpiration: ").Append(DaysToExpiration).Append("\n");
-            sb.Append("  RiskFreeInterestRate: ").Append(RiskFreeInterestRate).Append("\n");
-            sb.Append("  DividendYield: ").Append(DividendYield).Append("\n");
+            sb.Append("  MarketPrice: ").Append(MarketPrice).Append('\n');
+            sb.Append("  UnderlyingPrice: ").Append(UnderlyingPrice).Append('\n');
+            sb.Append("  StrikePrice: ").Append(StrikePrice).Append('\n');
+            sb.Append("  DaysToExpiration: ").Append(DaysToExpiration).Append('\n');
+            sb.Append("  RiskFreeInterestRate: ").Append(RiskFreeInterestRate).Append('\n');
+            sb.Append("  DividendYield: ").Append(DividendYield).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -115,9 +106,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as OptionFactorsRealtime);
+            return Equals(obj as OptionFactorsRealtime);
         }
 
         /// <summary>
@@ -130,32 +121,32 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     MarketPrice == input.MarketPrice ||
                     (MarketPrice != null &&
                     MarketPrice.Equals(input.MarketPrice))
-                ) && 
+                ) &&
                 (
                     UnderlyingPrice == input.UnderlyingPrice ||
                     (UnderlyingPrice != null &&
                     UnderlyingPrice.Equals(input.UnderlyingPrice))
-                ) && 
+                ) &&
                 (
                     StrikePrice == input.StrikePrice ||
                     (StrikePrice != null &&
                     StrikePrice.Equals(input.StrikePrice))
-                ) && 
+                ) &&
                 (
                     DaysToExpiration == input.DaysToExpiration ||
                     (DaysToExpiration != null &&
                     DaysToExpiration.Equals(input.DaysToExpiration))
-                ) && 
+                ) &&
                 (
                     RiskFreeInterestRate == input.RiskFreeInterestRate ||
                     (RiskFreeInterestRate != null &&
                     RiskFreeInterestRate.Equals(input.RiskFreeInterestRate))
-                ) && 
+                ) &&
                 (
                     DividendYield == input.DividendYield ||
                     (DividendYield != null &&
@@ -198,5 +189,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

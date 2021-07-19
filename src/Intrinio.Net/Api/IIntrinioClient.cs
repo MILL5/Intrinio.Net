@@ -1,33 +1,24 @@
+using Intrinio.Net.Model;
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-using Intrinio.Net.Client;
-using Intrinio.Net.Model;
 
 namespace Intrinio.Net.Api
 {
     public interface IIntrinioClient
     {
-        IIntrinioDependencies Dependencies { get; }
-        HttpClient Client { get; }
+        Task<string> GetAsync(string requestUrl);
 
-        string GetQueryParameterString(Dictionary<string, string> queryParams);
-
-        Task<string> Get(string requestUrl);
-
-        string FormatDateString(string inputDateString);
-        
         Task<IEnumerable<CompanySummary>> GetAllCompanySummariesAsync(
-            DateTime? latestFilingDate = null,
+            DateTime? latest_filing_date = null,
             string sic = null,
             string template = null,
             string sector = null,
-            string industryCategory = null,
-            string industryGroup = null,
-            bool? hasFundamentals = null,
-            bool? hasStockPrices = null,
-            int? pageSize = null,
+            string industry_category = null,
+            string industry_group = null,
+            bool? has_fundamentals = null,
+            bool? has_stock_prices = null,
+            int? page_size = null,
             string next_page = null,
             bool expandAbbreviations = false);
 
@@ -35,14 +26,14 @@ namespace Intrinio.Net.Api
 
         Task<IEnumerable<StockPrice>> GetStockPricesByExchangeAsync(
             string identifier,
-            StockPriceSummary.FrequencyEnum? frequency = null,
+            StockPriceSummary.PeriodFrequency? frequency = null,
             int? page_size = null,
             string date = null,
             string next_page = null);
-        
+
         Task<ApiResponseSecurityStockPrices> GetStockPriceSummariesBySecurityAsync(
             string identifier,
-            StockPriceSummary.FrequencyEnum? frequency = null,
+            StockPriceSummary.PeriodFrequency? frequency = null,
             int? page_size = null,
             string start_date = null,
             string end_date = null,
@@ -84,6 +75,5 @@ namespace Intrinio.Net.Api
             int? page_size = null);
 
         Task<StockExchange> LookupExchangeAsync(string identifier);
-
     }
 }

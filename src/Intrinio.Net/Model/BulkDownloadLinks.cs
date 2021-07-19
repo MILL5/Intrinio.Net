@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +11,31 @@ namespace Intrinio.Net.Model
     /// The url and name of a bulk download link
     /// </summary>
     [DataContract]
-    public partial class BulkDownloadLinks :  IEquatable<BulkDownloadLinks>, IValidatableObject
+    public sealed partial class BulkDownloadLinks : IEquatable<BulkDownloadLinks>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkDownloadLinks" /> class.
         /// </summary>
         /// <param name="Name">The name of the file.</param>
         /// <param name="Url">Link for accessing the bulk download. Expires in 24 hours..</param>
-        public BulkDownloadLinks(string Name = default(string), string Url = default(string))
+        public BulkDownloadLinks(string Name = default, string Url = default)
         {
             this.Name = Name;
             this.Url = Url;
         }
-        
+
         /// <summary>
         /// The name of the file
         /// </summary>
         /// <value>The name of the file</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
         /// Link for accessing the bulk download. Expires in 24 hours.
         /// </summary>
         /// <value>Link for accessing the bulk download. Expires in 24 hours.</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
         /// <summary>
@@ -55,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class BulkDownloadLinks {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Url: ").Append(Url).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append('\n');
+            sb.Append("  Url: ").Append(Url).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as BulkDownloadLinks);
+            return Equals(obj as BulkDownloadLinks);
         }
 
         /// <summary>
@@ -90,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Name == input.Name ||
                     (Name != null &&
                     Name.Equals(input.Name))
-                ) && 
+                ) &&
                 (
                     Url == input.Url ||
                     (Url != null &&
@@ -130,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,17 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -19,21 +12,21 @@ namespace Intrinio.Net.Model
     /// ApiResponseDataTagsSearch
     /// </summary>
     [DataContract]
-    public partial class ApiResponseDataTagsSearch :  IEquatable<ApiResponseDataTagsSearch>, IValidatableObject
+    public sealed partial class ApiResponseDataTagsSearch : IEquatable<ApiResponseDataTagsSearch>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseDataTagsSearch" /> class.
         /// </summary>
         /// <param name="Tags">Tags.</param>
-        public ApiResponseDataTagsSearch(List<DataTag> Tags = default(List<DataTag>))
+        public ApiResponseDataTagsSearch(List<DataTag> Tags = default)
         {
             this.Tags = Tags;
         }
-        
+
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
-        [DataMember(Name="tags", EmitDefaultValue=false)]
+        [DataMember(Name = "tags", EmitDefaultValue = false)]
         public List<DataTag> Tags { get; set; }
 
         /// <summary>
@@ -44,11 +37,11 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseDataTagsSearch {\n");
-            sb.Append("  Tags: ").Append(Tags).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -63,9 +56,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseDataTagsSearch);
+            return Equals(obj as ApiResponseDataTagsSearch);
         }
 
         /// <summary>
@@ -78,7 +71,7 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Tags == input.Tags ||
                     Tags != null &&
@@ -111,5 +104,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// A Forex Price
     /// </summary>
     [DataContract]
-    public partial class ForexPrice :  IEquatable<ForexPrice>, IValidatableObject
+    public sealed partial class ForexPrice : IEquatable<ForexPrice>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ForexPrice" /> class.
@@ -35,7 +26,7 @@ namespace Intrinio.Net.Model
         /// <param name="LowAsk">Low ask.</param>
         /// <param name="CloseAsk">Close ask.</param>
         /// <param name="TotalTicks">Total ticks.</param>
-        public ForexPrice(string OccurredAt = default(string), float? OpenBid = default(float?), float? HighBid = default(float?), float? LowBid = default(float?), float? CloseBid = default(float?), float? OpenAsk = default(float?), float? HighAsk = default(float?), float? LowAsk = default(float?), float? CloseAsk = default(float?), int? TotalTicks = default(int?))
+        public ForexPrice(string OccurredAt = default, float? OpenBid = default, float? HighBid = default, float? LowBid = default, float? CloseBid = default, float? OpenAsk = default, float? HighAsk = default, float? LowAsk = default, float? CloseAsk = default, int? TotalTicks = default)
         {
             this.OccurredAt = OccurredAt;
             this.OpenBid = OpenBid;
@@ -48,75 +39,75 @@ namespace Intrinio.Net.Model
             this.CloseAsk = CloseAsk;
             this.TotalTicks = TotalTicks;
         }
-        
+
         /// <summary>
         /// The timestamp of the beginning of the timeframe. The open prices would be at this time, while close prices would be at this time plus the timeframe.
         /// </summary>
         /// <value>The timestamp of the beginning of the timeframe. The open prices would be at this time, while close prices would be at this time plus the timeframe.</value>
-        [DataMember(Name="occurred_at", EmitDefaultValue=false)]
+        [DataMember(Name = "occurred_at", EmitDefaultValue = false)]
         public string OccurredAt { get; set; }
 
         /// <summary>
         /// Open bid
         /// </summary>
         /// <value>Open bid</value>
-        [DataMember(Name="open_bid", EmitDefaultValue=false)]
+        [DataMember(Name = "open_bid", EmitDefaultValue = false)]
         public float? OpenBid { get; set; }
 
         /// <summary>
         /// High bid
         /// </summary>
         /// <value>High bid</value>
-        [DataMember(Name="high_bid", EmitDefaultValue=false)]
+        [DataMember(Name = "high_bid", EmitDefaultValue = false)]
         public float? HighBid { get; set; }
 
         /// <summary>
         /// Low bid
         /// </summary>
         /// <value>Low bid</value>
-        [DataMember(Name="low_bid", EmitDefaultValue=false)]
+        [DataMember(Name = "low_bid", EmitDefaultValue = false)]
         public float? LowBid { get; set; }
 
         /// <summary>
         /// Close bid
         /// </summary>
         /// <value>Close bid</value>
-        [DataMember(Name="close_bid", EmitDefaultValue=false)]
+        [DataMember(Name = "close_bid", EmitDefaultValue = false)]
         public float? CloseBid { get; set; }
 
         /// <summary>
         /// Open ask
         /// </summary>
         /// <value>Open ask</value>
-        [DataMember(Name="open_ask", EmitDefaultValue=false)]
+        [DataMember(Name = "open_ask", EmitDefaultValue = false)]
         public float? OpenAsk { get; set; }
 
         /// <summary>
         /// High ask
         /// </summary>
         /// <value>High ask</value>
-        [DataMember(Name="high_ask", EmitDefaultValue=false)]
+        [DataMember(Name = "high_ask", EmitDefaultValue = false)]
         public float? HighAsk { get; set; }
 
         /// <summary>
         /// Low ask
         /// </summary>
         /// <value>Low ask</value>
-        [DataMember(Name="low_ask", EmitDefaultValue=false)]
+        [DataMember(Name = "low_ask", EmitDefaultValue = false)]
         public float? LowAsk { get; set; }
 
         /// <summary>
         /// Close ask
         /// </summary>
         /// <value>Close ask</value>
-        [DataMember(Name="close_ask", EmitDefaultValue=false)]
+        [DataMember(Name = "close_ask", EmitDefaultValue = false)]
         public float? CloseAsk { get; set; }
 
         /// <summary>
         /// Total ticks
         /// </summary>
         /// <value>Total ticks</value>
-        [DataMember(Name="total_ticks", EmitDefaultValue=false)]
+        [DataMember(Name = "total_ticks", EmitDefaultValue = false)]
         public int? TotalTicks { get; set; }
 
         /// <summary>
@@ -127,20 +118,20 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ForexPrice {\n");
-            sb.Append("  OccurredAt: ").Append(OccurredAt).Append("\n");
-            sb.Append("  OpenBid: ").Append(OpenBid).Append("\n");
-            sb.Append("  HighBid: ").Append(HighBid).Append("\n");
-            sb.Append("  LowBid: ").Append(LowBid).Append("\n");
-            sb.Append("  CloseBid: ").Append(CloseBid).Append("\n");
-            sb.Append("  OpenAsk: ").Append(OpenAsk).Append("\n");
-            sb.Append("  HighAsk: ").Append(HighAsk).Append("\n");
-            sb.Append("  LowAsk: ").Append(LowAsk).Append("\n");
-            sb.Append("  CloseAsk: ").Append(CloseAsk).Append("\n");
-            sb.Append("  TotalTicks: ").Append(TotalTicks).Append("\n");
+            sb.Append("  OccurredAt: ").Append(OccurredAt).Append('\n');
+            sb.Append("  OpenBid: ").Append(OpenBid).Append('\n');
+            sb.Append("  HighBid: ").Append(HighBid).Append('\n');
+            sb.Append("  LowBid: ").Append(LowBid).Append('\n');
+            sb.Append("  CloseBid: ").Append(CloseBid).Append('\n');
+            sb.Append("  OpenAsk: ").Append(OpenAsk).Append('\n');
+            sb.Append("  HighAsk: ").Append(HighAsk).Append('\n');
+            sb.Append("  LowAsk: ").Append(LowAsk).Append('\n');
+            sb.Append("  CloseAsk: ").Append(CloseAsk).Append('\n');
+            sb.Append("  TotalTicks: ").Append(TotalTicks).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -155,9 +146,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ForexPrice);
+            return Equals(obj as ForexPrice);
         }
 
         /// <summary>
@@ -170,52 +161,52 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     OccurredAt == input.OccurredAt ||
                     (OccurredAt != null &&
                     OccurredAt.Equals(input.OccurredAt))
-                ) && 
+                ) &&
                 (
                     OpenBid == input.OpenBid ||
                     (OpenBid != null &&
                     OpenBid.Equals(input.OpenBid))
-                ) && 
+                ) &&
                 (
                     HighBid == input.HighBid ||
                     (HighBid != null &&
                     HighBid.Equals(input.HighBid))
-                ) && 
+                ) &&
                 (
                     LowBid == input.LowBid ||
                     (LowBid != null &&
                     LowBid.Equals(input.LowBid))
-                ) && 
+                ) &&
                 (
                     CloseBid == input.CloseBid ||
                     (CloseBid != null &&
                     CloseBid.Equals(input.CloseBid))
-                ) && 
+                ) &&
                 (
                     OpenAsk == input.OpenAsk ||
                     (OpenAsk != null &&
                     OpenAsk.Equals(input.OpenAsk))
-                ) && 
+                ) &&
                 (
                     HighAsk == input.HighAsk ||
                     (HighAsk != null &&
                     HighAsk.Equals(input.HighAsk))
-                ) && 
+                ) &&
                 (
                     LowAsk == input.LowAsk ||
                     (LowAsk != null &&
                     LowAsk.Equals(input.LowAsk))
-                ) && 
+                ) &&
                 (
                     CloseAsk == input.CloseAsk ||
                     (CloseAsk != null &&
                     CloseAsk.Equals(input.CloseAsk))
-                ) && 
+                ) &&
                 (
                     TotalTicks == input.TotalTicks ||
                     (TotalTicks != null &&
@@ -266,5 +257,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

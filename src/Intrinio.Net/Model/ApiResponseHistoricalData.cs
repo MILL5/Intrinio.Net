@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,30 +12,30 @@ namespace Intrinio.Net.Model
     /// ApiResponseHistoricalData
     /// </summary>
     [DataContract]
-    public partial class ApiResponseHistoricalData :  IEquatable<ApiResponseHistoricalData>, IValidatableObject
+    public sealed partial class ApiResponseHistoricalData : IEquatable<ApiResponseHistoricalData>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseHistoricalData" /> class.
         /// </summary>
         /// <param name="HistoricalData">HistoricalData.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseHistoricalData(List<HistoricalData> HistoricalData = default(List<HistoricalData>), string NextPage = default(string))
+        public ApiResponseHistoricalData(List<HistoricalData> HistoricalData = default, string NextPage = default)
         {
             this.HistoricalData = HistoricalData;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets HistoricalData
         /// </summary>
-        [DataMember(Name="historical_data", EmitDefaultValue=false)]
+        [DataMember(Name = "historical_data", EmitDefaultValue = false)]
         public List<HistoricalData> HistoricalData { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -54,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseHistoricalData {\n");
-            sb.Append("  HistoricalData: ").Append(HistoricalData).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  HistoricalData: ").Append(HistoricalData).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -74,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseHistoricalData);
+            return Equals(obj as ApiResponseHistoricalData);
         }
 
         /// <summary>
@@ -89,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     HistoricalData == input.HistoricalData ||
                     HistoricalData != null &&
                     HistoricalData.SequenceEqual(input.HistoricalData)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -129,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

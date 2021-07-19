@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// An realtime option chain contains an options contract and corresponding price data for that contract on a given date.
     /// </summary>
     [DataContract]
-    public partial class OptionChainRealtime :  IEquatable<OptionChainRealtime>, IValidatableObject
+    public sealed partial class OptionChainRealtime : IEquatable<OptionChainRealtime>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OptionChainRealtime" /> class.
@@ -28,29 +19,29 @@ namespace Intrinio.Net.Model
         /// <param name="Option">Option.</param>
         /// <param name="Price">Price.</param>
         /// <param name="Stats">Stats.</param>
-        public OptionChainRealtime(OptionRealtime Option = default(OptionRealtime), OptionPriceRealtime Price = default(OptionPriceRealtime), OptionStatsRealtime Stats = default(OptionStatsRealtime))
+        public OptionChainRealtime(OptionRealtime Option = default, OptionPriceRealtime Price = default, OptionStatsRealtime Stats = default)
         {
             this.Option = Option;
             this.Price = Price;
             this.Stats = Stats;
         }
-        
+
         /// <summary>
         /// Gets or Sets Option
         /// </summary>
-        [DataMember(Name="option", EmitDefaultValue=false)]
+        [DataMember(Name = "option", EmitDefaultValue = false)]
         public OptionRealtime Option { get; set; }
 
         /// <summary>
         /// Gets or Sets Price
         /// </summary>
-        [DataMember(Name="price", EmitDefaultValue=false)]
+        [DataMember(Name = "price", EmitDefaultValue = false)]
         public OptionPriceRealtime Price { get; set; }
 
         /// <summary>
         /// Gets or Sets Stats
         /// </summary>
-        [DataMember(Name="stats", EmitDefaultValue=false)]
+        [DataMember(Name = "stats", EmitDefaultValue = false)]
         public OptionStatsRealtime Stats { get; set; }
 
         /// <summary>
@@ -61,13 +52,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OptionChainRealtime {\n");
-            sb.Append("  Option: ").Append(Option).Append("\n");
-            sb.Append("  Price: ").Append(Price).Append("\n");
-            sb.Append("  Stats: ").Append(Stats).Append("\n");
+            sb.Append("  Option: ").Append(Option).Append('\n');
+            sb.Append("  Price: ").Append(Price).Append('\n');
+            sb.Append("  Stats: ").Append(Stats).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -82,9 +73,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as OptionChainRealtime);
+            return Equals(obj as OptionChainRealtime);
         }
 
         /// <summary>
@@ -97,17 +88,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Option == input.Option ||
                     (Option != null &&
                     Option.Equals(input.Option))
-                ) && 
+                ) &&
                 (
                     Price == input.Price ||
                     (Price != null &&
                     Price.Equals(input.Price))
-                ) && 
+                ) &&
                 (
                     Stats == input.Stats ||
                     (Stats != null &&
@@ -144,5 +135,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

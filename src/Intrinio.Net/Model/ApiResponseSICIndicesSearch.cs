@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,22 +12,22 @@ namespace Intrinio.Net.Model
     /// ApiResponseSICIndicesSearch
     /// </summary>
     [DataContract]
-    public partial class ApiResponseSICIndicesSearch :  IEquatable<ApiResponseSICIndicesSearch>, IValidatableObject
+    public sealed partial class ApiResponseSicIndicesSearch : IEquatable<ApiResponseSicIndicesSearch>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiResponseSICIndicesSearch" /> class.
+        /// Initializes a new instance of the <see cref="ApiResponseSicIndicesSearch" /> class.
         /// </summary>
         /// <param name="Indices">Indices.</param>
-        public ApiResponseSICIndicesSearch(List<SICIndex> Indices = default(List<SICIndex>))
+        public ApiResponseSicIndicesSearch(List<SicIndex> Indices = default)
         {
             this.Indices = Indices;
         }
-        
+
         /// <summary>
         /// Gets or Sets Indices
         /// </summary>
-        [DataMember(Name="indices", EmitDefaultValue=false)]
-        public List<SICIndex> Indices { get; set; }
+        [DataMember(Name = "indices", EmitDefaultValue = false)]
+        public List<SicIndex> Indices { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -45,11 +37,11 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseSICIndicesSearch {\n");
-            sb.Append("  Indices: ").Append(Indices).Append("\n");
+            sb.Append("  Indices: ").Append(Indices).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -64,9 +56,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseSICIndicesSearch);
+            return Equals(obj as ApiResponseSicIndicesSearch);
         }
 
         /// <summary>
@@ -74,12 +66,12 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Instance of ApiResponseSICIndicesSearch to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ApiResponseSICIndicesSearch input)
+        public bool Equals(ApiResponseSicIndicesSearch input)
         {
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Indices == input.Indices ||
                     Indices != null &&
@@ -112,5 +104,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

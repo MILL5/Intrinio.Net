@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +12,7 @@ namespace Intrinio.Net.Model
     /// A group of clauses and groups combined with a logic operator, used to screen securities
     /// </summary>
     [DataContract]
-    public partial class SecurityScreenGroup :  IEquatable<SecurityScreenGroup>, IValidatableObject
+    public sealed partial class SecurityScreenGroup : IEquatable<SecurityScreenGroup>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SecurityScreenGroup" /> class.
@@ -28,32 +20,32 @@ namespace Intrinio.Net.Model
         /// <param name="Operator">The logic operator for the group (AND, OR, NOT).</param>
         /// <param name="Clauses">The logic clauses in the group.</param>
         /// <param name="Groups">The nested groups within the group.</param>
-        public SecurityScreenGroup(string Operator = default(string), List<SecurityScreenClause> Clauses = default(List<SecurityScreenClause>), List<SecurityScreenGroup> Groups = default(List<SecurityScreenGroup>))
+        public SecurityScreenGroup(string Operator = default, List<SecurityScreenClause> Clauses = default, List<SecurityScreenGroup> Groups = default)
         {
             this.Operator = Operator;
             this.Clauses = Clauses;
             this.Groups = Groups;
         }
-        
+
         /// <summary>
         /// The logic operator for the group (AND, OR, NOT)
         /// </summary>
         /// <value>The logic operator for the group (AND, OR, NOT)</value>
-        [DataMember(Name="operator", EmitDefaultValue=false)]
+        [DataMember(Name = "operator", EmitDefaultValue = false)]
         public string Operator { get; set; }
 
         /// <summary>
         /// The logic clauses in the group
         /// </summary>
         /// <value>The logic clauses in the group</value>
-        [DataMember(Name="clauses", EmitDefaultValue=false)]
+        [DataMember(Name = "clauses", EmitDefaultValue = false)]
         public List<SecurityScreenClause> Clauses { get; set; }
 
         /// <summary>
         /// The nested groups within the group
         /// </summary>
         /// <value>The nested groups within the group</value>
-        [DataMember(Name="groups", EmitDefaultValue=false)]
+        [DataMember(Name = "groups", EmitDefaultValue = false)]
         public List<SecurityScreenGroup> Groups { get; set; }
 
         /// <summary>
@@ -64,13 +56,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SecurityScreenGroup {\n");
-            sb.Append("  Operator: ").Append(Operator).Append("\n");
-            sb.Append("  Clauses: ").Append(Clauses).Append("\n");
-            sb.Append("  Groups: ").Append(Groups).Append("\n");
+            sb.Append("  Operator: ").Append(Operator).Append('\n');
+            sb.Append("  Clauses: ").Append(Clauses).Append('\n');
+            sb.Append("  Groups: ").Append(Groups).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -85,9 +77,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as SecurityScreenGroup);
+            return Equals(obj as SecurityScreenGroup);
         }
 
         /// <summary>
@@ -100,17 +92,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Operator == input.Operator ||
                     (Operator != null &&
                     Operator.Equals(input.Operator))
-                ) && 
+                ) &&
                 (
                     Clauses == input.Clauses ||
                     Clauses != null &&
                     Clauses.SequenceEqual(input.Clauses)
-                ) && 
+                ) &&
                 (
                     Groups == input.Groups ||
                     Groups != null &&
@@ -147,5 +139,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

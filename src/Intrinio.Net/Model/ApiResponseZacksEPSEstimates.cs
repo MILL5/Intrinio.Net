@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +12,31 @@ namespace Intrinio.Net.Model
     /// ApiResponseZacksEPSEstimates
     /// </summary>
     [DataContract]
-    public partial class ApiResponseZacksEPSEstimates :  IEquatable<ApiResponseZacksEPSEstimates>, IValidatableObject
+    public sealed partial class ApiResponseZacksEpsEstimates : IEquatable<ApiResponseZacksEpsEstimates>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiResponseZacksEPSEstimates" /> class.
+        /// Initializes a new instance of the <see cref="ApiResponseZacksEpsEstimates" /> class.
         /// </summary>
         /// <param name="Estimates">Zacks EPS estimate data for a given date range.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseZacksEPSEstimates(List<ZacksEPSEstimate> Estimates = default(List<ZacksEPSEstimate>), string NextPage = default(string))
+        public ApiResponseZacksEpsEstimates(List<ZacksEpsEstimate> Estimates = default, string NextPage = default)
         {
             this.Estimates = Estimates;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Zacks EPS estimate data for a given date range
         /// </summary>
         /// <value>Zacks EPS estimate data for a given date range</value>
-        [DataMember(Name="estimates", EmitDefaultValue=false)]
-        public List<ZacksEPSEstimate> Estimates { get; set; }
+        [DataMember(Name = "estimates", EmitDefaultValue = false)]
+        public List<ZacksEpsEstimate> Estimates { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -55,12 +47,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseZacksEPSEstimates {\n");
-            sb.Append("  Estimates: ").Append(Estimates).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Estimates: ").Append(Estimates).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +67,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseZacksEPSEstimates);
+            return Equals(obj as ApiResponseZacksEpsEstimates);
         }
 
         /// <summary>
@@ -85,17 +77,17 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Instance of ApiResponseZacksEPSEstimates to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ApiResponseZacksEPSEstimates input)
+        public bool Equals(ApiResponseZacksEpsEstimates input)
         {
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Estimates == input.Estimates ||
                     Estimates != null &&
                     Estimates.SequenceEqual(input.Estimates)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -130,5 +122,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

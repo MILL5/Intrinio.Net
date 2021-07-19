@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// A filing submitted to the SEC by a company
     /// </summary>
     [DataContract]
-    public partial class FilingNote :  IEquatable<FilingNote>, IValidatableObject
+    public sealed partial class FilingNote : IEquatable<FilingNote>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FilingNote" /> class.
@@ -29,39 +20,39 @@ namespace Intrinio.Net.Model
         /// <param name="XbrlTag">The XBRL Tag used for the note.</param>
         /// <param name="Content">The plain text (after html has been removed) of the note, or text including html if the content_format parameter has been set to html.</param>
         /// <param name="Filing">Filing.</param>
-        public FilingNote(string Id = default(string), string XbrlTag = default(string), string Content = default(string), FilingNoteFiling Filing = default(FilingNoteFiling))
+        public FilingNote(string Id = default, string XbrlTag = default, string Content = default, FilingNoteFiling Filing = default)
         {
             this.Id = Id;
             this.XbrlTag = XbrlTag;
             this.Content = Content;
             this.Filing = Filing;
         }
-        
+
         /// <summary>
         /// The Intrinio ID of the note
         /// </summary>
         /// <value>The Intrinio ID of the note</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The XBRL Tag used for the note
         /// </summary>
         /// <value>The XBRL Tag used for the note</value>
-        [DataMember(Name="xbrl_tag", EmitDefaultValue=false)]
+        [DataMember(Name = "xbrl_tag", EmitDefaultValue = false)]
         public string XbrlTag { get; set; }
 
         /// <summary>
         /// The plain text (after html has been removed) of the note, or text including html if the content_format parameter has been set to html
         /// </summary>
         /// <value>The plain text (after html has been removed) of the note, or text including html if the content_format parameter has been set to html</value>
-        [DataMember(Name="content", EmitDefaultValue=false)]
+        [DataMember(Name = "content", EmitDefaultValue = false)]
         public string Content { get; set; }
 
         /// <summary>
         /// Gets or Sets Filing
         /// </summary>
-        [DataMember(Name="filing", EmitDefaultValue=false)]
+        [DataMember(Name = "filing", EmitDefaultValue = false)]
         public FilingNoteFiling Filing { get; set; }
 
         /// <summary>
@@ -72,14 +63,14 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class FilingNote {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  XbrlTag: ").Append(XbrlTag).Append("\n");
-            sb.Append("  Content: ").Append(Content).Append("\n");
-            sb.Append("  Filing: ").Append(Filing).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  XbrlTag: ").Append(XbrlTag).Append('\n');
+            sb.Append("  Content: ").Append(Content).Append('\n');
+            sb.Append("  Filing: ").Append(Filing).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -94,9 +85,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as FilingNote);
+            return Equals(obj as FilingNote);
         }
 
         /// <summary>
@@ -109,22 +100,22 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     XbrlTag == input.XbrlTag ||
                     (XbrlTag != null &&
                     XbrlTag.Equals(input.XbrlTag))
-                ) && 
+                ) &&
                 (
                     Content == input.Content ||
                     (Content != null &&
                     Content.Equals(input.Content))
-                ) && 
+                ) &&
                 (
                     Filing == input.Filing ||
                     (Filing != null &&
@@ -163,5 +154,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

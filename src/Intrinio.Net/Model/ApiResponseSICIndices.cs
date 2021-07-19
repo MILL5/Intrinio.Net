@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,30 +12,30 @@ namespace Intrinio.Net.Model
     /// ApiResponseSICIndices
     /// </summary>
     [DataContract]
-    public partial class ApiResponseSICIndices :  IEquatable<ApiResponseSICIndices>, IValidatableObject
+    public sealed partial class ApiResponseSicIndices : IEquatable<ApiResponseSicIndices>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiResponseSICIndices" /> class.
+        /// Initializes a new instance of the <see cref="ApiResponseSicIndices" /> class.
         /// </summary>
         /// <param name="Indices">Indices.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseSICIndices(List<SICIndex> Indices = default(List<SICIndex>), string NextPage = default(string))
+        public ApiResponseSicIndices(List<SicIndex> Indices = default, string NextPage = default)
         {
             this.Indices = Indices;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets Indices
         /// </summary>
-        [DataMember(Name="indices", EmitDefaultValue=false)]
-        public List<SICIndex> Indices { get; set; }
+        [DataMember(Name = "indices", EmitDefaultValue = false)]
+        public List<SicIndex> Indices { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -54,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseSICIndices {\n");
-            sb.Append("  Indices: ").Append(Indices).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Indices: ").Append(Indices).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -74,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseSICIndices);
+            return Equals(obj as ApiResponseSicIndices);
         }
 
         /// <summary>
@@ -84,17 +76,17 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Instance of ApiResponseSICIndices to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ApiResponseSICIndices input)
+        public bool Equals(ApiResponseSicIndices input)
         {
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Indices == input.Indices ||
                     Indices != null &&
                     Indices.SequenceEqual(input.Indices)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -129,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

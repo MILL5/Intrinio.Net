@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +12,31 @@ namespace Intrinio.Net.Model
     /// ApiResponseZacksEPSSurprises
     /// </summary>
     [DataContract]
-    public partial class ApiResponseZacksEPSSurprises :  IEquatable<ApiResponseZacksEPSSurprises>, IValidatableObject
+    public sealed partial class ApiResponseZacksEpsSurprises : IEquatable<ApiResponseZacksEpsSurprises>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiResponseZacksEPSSurprises" /> class.
+        /// Initializes a new instance of the <see cref="ApiResponseZacksEpsSurprises" /> class.
         /// </summary>
         /// <param name="EpsSurprises">Zacks EPS Surprise data for a Security in descending order by actual reported date.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseZacksEPSSurprises(List<ZacksEPSSurprise> EpsSurprises = default(List<ZacksEPSSurprise>), string NextPage = default(string))
+        public ApiResponseZacksEpsSurprises(List<ZacksEpsSurprise> EpsSurprises = default, string NextPage = default)
         {
             this.EpsSurprises = EpsSurprises;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Zacks EPS Surprise data for a Security in descending order by actual reported date
         /// </summary>
         /// <value>Zacks EPS Surprise data for a Security in descending order by actual reported date</value>
-        [DataMember(Name="eps_surprises", EmitDefaultValue=false)]
-        public List<ZacksEPSSurprise> EpsSurprises { get; set; }
+        [DataMember(Name = "eps_surprises", EmitDefaultValue = false)]
+        public List<ZacksEpsSurprise> EpsSurprises { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -55,12 +47,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseZacksEPSSurprises {\n");
-            sb.Append("  EpsSurprises: ").Append(EpsSurprises).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  EpsSurprises: ").Append(EpsSurprises).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +67,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseZacksEPSSurprises);
+            return Equals(obj as ApiResponseZacksEpsSurprises);
         }
 
         /// <summary>
@@ -85,17 +77,17 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Instance of ApiResponseZacksEPSSurprises to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ApiResponseZacksEPSSurprises input)
+        public bool Equals(ApiResponseZacksEpsSurprises input)
         {
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     EpsSurprises == input.EpsSurprises ||
                     EpsSurprises != null &&
                     EpsSurprises.SequenceEqual(input.EpsSurprises)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -130,5 +122,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

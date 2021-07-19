@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
 
 namespace Intrinio.Net.Model
 {
@@ -12,7 +11,7 @@ namespace Intrinio.Net.Model
     /// Zacks Sales Surprises are pre-earnings release consensus sales estimates from analysts for thousands of stocks. Zack’s storied research team aggregates and validates the estimates and compares these estimates to non-GAAP sales reported by the company, providing the amount and percent surprise on release.
     /// </summary>
     [DataContract]
-    public partial class ZacksSalesSurpriseSummary :  IEquatable<ZacksSalesSurpriseSummary>, IValidatableObject
+    public sealed partial class ZacksSalesSurpriseSummary : IEquatable<ZacksSalesSurpriseSummary>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ZacksSalesSurpriseSummary" /> class.
@@ -35,7 +34,7 @@ namespace Intrinio.Net.Model
         /// <param name="SalesPercentDiff">The sales surprise percent difference.</param>
         /// <param name="SalesStdDevEstimate">The pre-earnings release standard deviation of sales estimates.</param>
         /// <param name="Security">The Security of the Zacks Sales Surprise.</param>
-        public ZacksSalesSurpriseSummary(string Id = default(string), decimal? FiscalYear = default(decimal?), string FiscalQuarter = default(string), decimal? CalendarYear = default(decimal?), string CalendarQuarter = default(string), DateTime? ActualReportedDate = default(DateTime?), string ActualReportedTime = default(string), string ActualReportedCode = default(string), string ActualReportedDesc = default(string), DateTime? LastRevDate = default(DateTime?), decimal? SalesActual = default(decimal?), decimal? SalesActualZacksAdj = default(decimal?), decimal? SalesActualGaap = default(decimal?), decimal? SalesMeanEstimate = default(decimal?), decimal? SalesAmountDiff = default(decimal?), decimal? SalesPercentDiff = default(decimal?), decimal? SalesStdDevEstimate = default(decimal?), SecuritySummary Security = default(SecuritySummary))
+        public ZacksSalesSurpriseSummary(string Id = default, decimal? FiscalYear = default, string FiscalQuarter = default, decimal? CalendarYear = default, string CalendarQuarter = default, DateTime? ActualReportedDate = default, string ActualReportedTime = default, string ActualReportedCode = default, string ActualReportedDesc = default, DateTime? LastRevDate = default, decimal? SalesActual = default, decimal? SalesActualZacksAdj = default, decimal? SalesActualGaap = default, decimal? SalesMeanEstimate = default, decimal? SalesAmountDiff = default, decimal? SalesPercentDiff = default, decimal? SalesStdDevEstimate = default, SecuritySummary Security = default)
         {
             this.Id = Id;
             this.FiscalYear = FiscalYear;
@@ -56,133 +55,131 @@ namespace Intrinio.Net.Model
             this.SalesStdDevEstimate = SalesStdDevEstimate;
             this.Security = Security;
         }
-        
+
         /// <summary>
         /// The Intrinio ID for the record
         /// </summary>
         /// <value>The Intrinio ID for the record</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The company’s fiscal year for the reported period
         /// </summary>
         /// <value>The company’s fiscal year for the reported period</value>
-        [DataMember(Name="fiscal_year", EmitDefaultValue=false)]
+        [DataMember(Name = "fiscal_year", EmitDefaultValue = false)]
         public decimal? FiscalYear { get; set; }
 
         /// <summary>
         /// The company’s fiscal quarter for the reported period
         /// </summary>
         /// <value>The company’s fiscal quarter for the reported period</value>
-        [DataMember(Name="fiscal_quarter", EmitDefaultValue=false)]
+        [DataMember(Name = "fiscal_quarter", EmitDefaultValue = false)]
         public string FiscalQuarter { get; set; }
 
         /// <summary>
         /// The closest calendar year for the company’s fiscal year
         /// </summary>
         /// <value>The closest calendar year for the company’s fiscal year</value>
-        [DataMember(Name="calendar_year", EmitDefaultValue=false)]
+        [DataMember(Name = "calendar_year", EmitDefaultValue = false)]
         public decimal? CalendarYear { get; set; }
 
         /// <summary>
         /// The closest calendar quarter for the company’s fiscal year
         /// </summary>
         /// <value>The closest calendar quarter for the company’s fiscal year</value>
-        [DataMember(Name="calendar_quarter", EmitDefaultValue=false)]
+        [DataMember(Name = "calendar_quarter", EmitDefaultValue = false)]
         public string CalendarQuarter { get; set; }
 
         /// <summary>
         /// The actual report date for the earnings release
         /// </summary>
         /// <value>The actual report date for the earnings release</value>
-        [DataMember(Name="actual_reported_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "actual_reported_date", EmitDefaultValue = false)]
         public DateTime? ActualReportedDate { get; set; }
 
         /// <summary>
         /// The actual report time for the earnings release
         /// </summary>
         /// <value>The actual report time for the earnings release</value>
-        [DataMember(Name="actual_reported_time", EmitDefaultValue=false)]
+        [DataMember(Name = "actual_reported_time", EmitDefaultValue = false)]
         public string ActualReportedTime { get; set; }
 
         /// <summary>
         /// The code cooresponding to the earnings release  BTO &#x3D; BEFORE THE OPEN | DTM &#x3D; DURING THE MARKET | AMC &#x3D; AFTER MARKET CLOSE
         /// </summary>
         /// <value>The code cooresponding to the earnings release  BTO &#x3D; BEFORE THE OPEN | DTM &#x3D; DURING THE MARKET | AMC &#x3D; AFTER MARKET CLOSE</value>
-        [DataMember(Name="actual_reported_code", EmitDefaultValue=false)]
+        [DataMember(Name = "actual_reported_code", EmitDefaultValue = false)]
         public string ActualReportedCode { get; set; }
 
         /// <summary>
         /// The description for the type of earnings release
         /// </summary>
         /// <value>The description for the type of earnings release</value>
-        [DataMember(Name="actual_reported_desc", EmitDefaultValue=false)]
+        [DataMember(Name = "actual_reported_desc", EmitDefaultValue = false)]
         public string ActualReportedDesc { get; set; }
 
         /// <summary>
         /// The last revision date for the analyst estimates
         /// </summary>
         /// <value>The last revision date for the analyst estimates</value>
-        [DataMember(Name="last_rev_date", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
+        [DataMember(Name = "last_rev_date", EmitDefaultValue = false)]
         public DateTime? LastRevDate { get; set; }
 
         /// <summary>
         /// The actual Non-GAAP sales figure released by the company, interpreted by Zacks.
         /// </summary>
         /// <value>The actual Non-GAAP sales figure released by the company, interpreted by Zacks.</value>
-        [DataMember(Name="sales_actual", EmitDefaultValue=false)]
+        [DataMember(Name = "sales_actual", EmitDefaultValue = false)]
         public decimal? SalesActual { get; set; }
 
         /// <summary>
         /// The adjustments Zacks made to get to Non-GAAP sales to reconcile with GAAP sales.
         /// </summary>
         /// <value>The adjustments Zacks made to get to Non-GAAP sales to reconcile with GAAP sales.</value>
-        [DataMember(Name="sales_actual_zacks_adj", EmitDefaultValue=false)]
+        [DataMember(Name = "sales_actual_zacks_adj", EmitDefaultValue = false)]
         public decimal? SalesActualZacksAdj { get; set; }
 
         /// <summary>
         /// The actual GAAP sales figured released by the company
         /// </summary>
         /// <value>The actual GAAP sales figured released by the company</value>
-        [DataMember(Name="sales_actual_gaap", EmitDefaultValue=false)]
+        [DataMember(Name = "sales_actual_gaap", EmitDefaultValue = false)]
         public decimal? SalesActualGaap { get; set; }
 
         /// <summary>
         /// The pre-earnings release mean sales estimate for the company sales_count_estimate; the pre-earnings release number of estimates by analysts
         /// </summary>
         /// <value>The pre-earnings release mean sales estimate for the company sales_count_estimate; the pre-earnings release number of estimates by analysts</value>
-        [DataMember(Name="sales_mean_estimate", EmitDefaultValue=false)]
+        [DataMember(Name = "sales_mean_estimate", EmitDefaultValue = false)]
         public decimal? SalesMeanEstimate { get; set; }
 
         /// <summary>
         /// The sales surprise amount difference
         /// </summary>
         /// <value>The sales surprise amount difference</value>
-        [DataMember(Name="sales_amount_diff", EmitDefaultValue=false)]
+        [DataMember(Name = "sales_amount_diff", EmitDefaultValue = false)]
         public decimal? SalesAmountDiff { get; set; }
 
         /// <summary>
         /// The sales surprise percent difference
         /// </summary>
         /// <value>The sales surprise percent difference</value>
-        [DataMember(Name="sales_percent_diff", EmitDefaultValue=false)]
+        [DataMember(Name = "sales_percent_diff", EmitDefaultValue = false)]
         public decimal? SalesPercentDiff { get; set; }
 
         /// <summary>
         /// The pre-earnings release standard deviation of sales estimates
         /// </summary>
         /// <value>The pre-earnings release standard deviation of sales estimates</value>
-        [DataMember(Name="sales_std_dev_estimate", EmitDefaultValue=false)]
+        [DataMember(Name = "sales_std_dev_estimate", EmitDefaultValue = false)]
         public decimal? SalesStdDevEstimate { get; set; }
 
         /// <summary>
         /// The Security of the Zacks Sales Surprise
         /// </summary>
         /// <value>The Security of the Zacks Sales Surprise</value>
-        [DataMember(Name="security", EmitDefaultValue=false)]
+        [DataMember(Name = "security", EmitDefaultValue = false)]
         public SecuritySummary Security { get; set; }
 
         /// <summary>
@@ -193,28 +190,28 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ZacksSalesSurpriseSummary {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  FiscalYear: ").Append(FiscalYear).Append("\n");
-            sb.Append("  FiscalQuarter: ").Append(FiscalQuarter).Append("\n");
-            sb.Append("  CalendarYear: ").Append(CalendarYear).Append("\n");
-            sb.Append("  CalendarQuarter: ").Append(CalendarQuarter).Append("\n");
-            sb.Append("  ActualReportedDate: ").Append(ActualReportedDate).Append("\n");
-            sb.Append("  ActualReportedTime: ").Append(ActualReportedTime).Append("\n");
-            sb.Append("  ActualReportedCode: ").Append(ActualReportedCode).Append("\n");
-            sb.Append("  ActualReportedDesc: ").Append(ActualReportedDesc).Append("\n");
-            sb.Append("  LastRevDate: ").Append(LastRevDate).Append("\n");
-            sb.Append("  SalesActual: ").Append(SalesActual).Append("\n");
-            sb.Append("  SalesActualZacksAdj: ").Append(SalesActualZacksAdj).Append("\n");
-            sb.Append("  SalesActualGaap: ").Append(SalesActualGaap).Append("\n");
-            sb.Append("  SalesMeanEstimate: ").Append(SalesMeanEstimate).Append("\n");
-            sb.Append("  SalesAmountDiff: ").Append(SalesAmountDiff).Append("\n");
-            sb.Append("  SalesPercentDiff: ").Append(SalesPercentDiff).Append("\n");
-            sb.Append("  SalesStdDevEstimate: ").Append(SalesStdDevEstimate).Append("\n");
-            sb.Append("  Security: ").Append(Security).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  FiscalYear: ").Append(FiscalYear).Append('\n');
+            sb.Append("  FiscalQuarter: ").Append(FiscalQuarter).Append('\n');
+            sb.Append("  CalendarYear: ").Append(CalendarYear).Append('\n');
+            sb.Append("  CalendarQuarter: ").Append(CalendarQuarter).Append('\n');
+            sb.Append("  ActualReportedDate: ").Append(ActualReportedDate).Append('\n');
+            sb.Append("  ActualReportedTime: ").Append(ActualReportedTime).Append('\n');
+            sb.Append("  ActualReportedCode: ").Append(ActualReportedCode).Append('\n');
+            sb.Append("  ActualReportedDesc: ").Append(ActualReportedDesc).Append('\n');
+            sb.Append("  LastRevDate: ").Append(LastRevDate).Append('\n');
+            sb.Append("  SalesActual: ").Append(SalesActual).Append('\n');
+            sb.Append("  SalesActualZacksAdj: ").Append(SalesActualZacksAdj).Append('\n');
+            sb.Append("  SalesActualGaap: ").Append(SalesActualGaap).Append('\n');
+            sb.Append("  SalesMeanEstimate: ").Append(SalesMeanEstimate).Append('\n');
+            sb.Append("  SalesAmountDiff: ").Append(SalesAmountDiff).Append('\n');
+            sb.Append("  SalesPercentDiff: ").Append(SalesPercentDiff).Append('\n');
+            sb.Append("  SalesStdDevEstimate: ").Append(SalesStdDevEstimate).Append('\n');
+            sb.Append("  Security: ").Append(Security).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -229,9 +226,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ZacksSalesSurpriseSummary);
+            return Equals(obj as ZacksSalesSurpriseSummary);
         }
 
         /// <summary>
@@ -244,92 +241,92 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     FiscalYear == input.FiscalYear ||
                     (FiscalYear != null &&
                     FiscalYear.Equals(input.FiscalYear))
-                ) && 
+                ) &&
                 (
                     FiscalQuarter == input.FiscalQuarter ||
                     (FiscalQuarter != null &&
                     FiscalQuarter.Equals(input.FiscalQuarter))
-                ) && 
+                ) &&
                 (
                     CalendarYear == input.CalendarYear ||
                     (CalendarYear != null &&
                     CalendarYear.Equals(input.CalendarYear))
-                ) && 
+                ) &&
                 (
                     CalendarQuarter == input.CalendarQuarter ||
                     (CalendarQuarter != null &&
                     CalendarQuarter.Equals(input.CalendarQuarter))
-                ) && 
+                ) &&
                 (
                     ActualReportedDate == input.ActualReportedDate ||
                     (ActualReportedDate != null &&
                     ActualReportedDate.Equals(input.ActualReportedDate))
-                ) && 
+                ) &&
                 (
                     ActualReportedTime == input.ActualReportedTime ||
                     (ActualReportedTime != null &&
                     ActualReportedTime.Equals(input.ActualReportedTime))
-                ) && 
+                ) &&
                 (
                     ActualReportedCode == input.ActualReportedCode ||
                     (ActualReportedCode != null &&
                     ActualReportedCode.Equals(input.ActualReportedCode))
-                ) && 
+                ) &&
                 (
                     ActualReportedDesc == input.ActualReportedDesc ||
                     (ActualReportedDesc != null &&
                     ActualReportedDesc.Equals(input.ActualReportedDesc))
-                ) && 
+                ) &&
                 (
                     LastRevDate == input.LastRevDate ||
                     (LastRevDate != null &&
                     LastRevDate.Equals(input.LastRevDate))
-                ) && 
+                ) &&
                 (
                     SalesActual == input.SalesActual ||
                     (SalesActual != null &&
                     SalesActual.Equals(input.SalesActual))
-                ) && 
+                ) &&
                 (
                     SalesActualZacksAdj == input.SalesActualZacksAdj ||
                     (SalesActualZacksAdj != null &&
                     SalesActualZacksAdj.Equals(input.SalesActualZacksAdj))
-                ) && 
+                ) &&
                 (
                     SalesActualGaap == input.SalesActualGaap ||
                     (SalesActualGaap != null &&
                     SalesActualGaap.Equals(input.SalesActualGaap))
-                ) && 
+                ) &&
                 (
                     SalesMeanEstimate == input.SalesMeanEstimate ||
                     (SalesMeanEstimate != null &&
                     SalesMeanEstimate.Equals(input.SalesMeanEstimate))
-                ) && 
+                ) &&
                 (
                     SalesAmountDiff == input.SalesAmountDiff ||
                     (SalesAmountDiff != null &&
                     SalesAmountDiff.Equals(input.SalesAmountDiff))
-                ) && 
+                ) &&
                 (
                     SalesPercentDiff == input.SalesPercentDiff ||
                     (SalesPercentDiff != null &&
                     SalesPercentDiff.Equals(input.SalesPercentDiff))
-                ) && 
+                ) &&
                 (
                     SalesStdDevEstimate == input.SalesStdDevEstimate ||
                     (SalesStdDevEstimate != null &&
                     SalesStdDevEstimate.Equals(input.SalesStdDevEstimate))
-                ) && 
+                ) &&
                 (
                     Security == input.Security ||
                     (Security != null &&
@@ -396,5 +393,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

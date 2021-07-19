@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// The date_time, negative_vi, and positive_vi values of a Vortex Indicator technical indicator calculation
     /// </summary>
     [DataContract]
-    public partial class VortexIndicatorTechnicalValue :  IEquatable<VortexIndicatorTechnicalValue>, IValidatableObject
+    public sealed partial class VortexIndicatorTechnicalValue : IEquatable<VortexIndicatorTechnicalValue>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="VortexIndicatorTechnicalValue" /> class.
@@ -28,32 +19,32 @@ namespace Intrinio.Net.Model
         /// <param name="DateTime">The date_time of the observation.</param>
         /// <param name="NegativeVi">The negative Vortex Indicator value.</param>
         /// <param name="PositiveVi">The positive Vortex Indicator value.</param>
-        public VortexIndicatorTechnicalValue(DateTime? DateTime = default(DateTime?), float? NegativeVi = default(float?), float? PositiveVi = default(float?))
+        public VortexIndicatorTechnicalValue(DateTime? DateTime = default, float? NegativeVi = default, float? PositiveVi = default)
         {
             this.DateTime = DateTime;
             this.NegativeVi = NegativeVi;
             this.PositiveVi = PositiveVi;
         }
-        
+
         /// <summary>
         /// The date_time of the observation
         /// </summary>
         /// <value>The date_time of the observation</value>
-        [DataMember(Name="date_time", EmitDefaultValue=false)]
+        [DataMember(Name = "date_time", EmitDefaultValue = false)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// The negative Vortex Indicator value
         /// </summary>
         /// <value>The negative Vortex Indicator value</value>
-        [DataMember(Name="negative_vi", EmitDefaultValue=false)]
+        [DataMember(Name = "negative_vi", EmitDefaultValue = false)]
         public float? NegativeVi { get; set; }
 
         /// <summary>
         /// The positive Vortex Indicator value
         /// </summary>
         /// <value>The positive Vortex Indicator value</value>
-        [DataMember(Name="positive_vi", EmitDefaultValue=false)]
+        [DataMember(Name = "positive_vi", EmitDefaultValue = false)]
         public float? PositiveVi { get; set; }
 
         /// <summary>
@@ -64,13 +55,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class VortexIndicatorTechnicalValue {\n");
-            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
-            sb.Append("  NegativeVi: ").Append(NegativeVi).Append("\n");
-            sb.Append("  PositiveVi: ").Append(PositiveVi).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append('\n');
+            sb.Append("  NegativeVi: ").Append(NegativeVi).Append('\n');
+            sb.Append("  PositiveVi: ").Append(PositiveVi).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -85,9 +76,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as VortexIndicatorTechnicalValue);
+            return Equals(obj as VortexIndicatorTechnicalValue);
         }
 
         /// <summary>
@@ -100,17 +91,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DateTime == input.DateTime ||
                     (DateTime != null &&
                     DateTime.Equals(input.DateTime))
-                ) && 
+                ) &&
                 (
                     NegativeVi == input.NegativeVi ||
                     (NegativeVi != null &&
                     NegativeVi.Equals(input.NegativeVi))
-                ) && 
+                ) &&
                 (
                     PositiveVi == input.PositiveVi ||
                     (PositiveVi != null &&
@@ -147,5 +138,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

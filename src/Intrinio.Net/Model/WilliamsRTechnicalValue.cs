@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +11,31 @@ namespace Intrinio.Net.Model
     /// The date_time and wr values of a Willliams %R technical indicator calculation
     /// </summary>
     [DataContract]
-    public partial class WilliamsRTechnicalValue :  IEquatable<WilliamsRTechnicalValue>, IValidatableObject
+    public sealed partial class WilliamsRTechnicalValue : IEquatable<WilliamsRTechnicalValue>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WilliamsRTechnicalValue" /> class.
         /// </summary>
         /// <param name="DateTime">The date_time of the observation.</param>
         /// <param name="Wr">The Willaims %R calculation value.</param>
-        public WilliamsRTechnicalValue(DateTime? DateTime = default(DateTime?), float? Wr = default(float?))
+        public WilliamsRTechnicalValue(DateTime? DateTime = default, float? Wr = default)
         {
             this.DateTime = DateTime;
             this.Wr = Wr;
         }
-        
+
         /// <summary>
         /// The date_time of the observation
         /// </summary>
         /// <value>The date_time of the observation</value>
-        [DataMember(Name="date_time", EmitDefaultValue=false)]
+        [DataMember(Name = "date_time", EmitDefaultValue = false)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// The Willaims %R calculation value
         /// </summary>
         /// <value>The Willaims %R calculation value</value>
-        [DataMember(Name="wr", EmitDefaultValue=false)]
+        [DataMember(Name = "wr", EmitDefaultValue = false)]
         public float? Wr { get; set; }
 
         /// <summary>
@@ -55,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class WilliamsRTechnicalValue {\n");
-            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
-            sb.Append("  Wr: ").Append(Wr).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append('\n');
+            sb.Append("  Wr: ").Append(Wr).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as WilliamsRTechnicalValue);
+            return Equals(obj as WilliamsRTechnicalValue);
         }
 
         /// <summary>
@@ -90,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DateTime == input.DateTime ||
                     (DateTime != null &&
                     DateTime.Equals(input.DateTime))
-                ) && 
+                ) &&
                 (
                     Wr == input.Wr ||
                     (Wr != null &&
@@ -130,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

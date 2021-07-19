@@ -1,17 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -19,30 +12,30 @@ namespace Intrinio.Net.Model
     /// ApiResponseDataTags
     /// </summary>
     [DataContract]
-    public partial class ApiResponseDataTags :  IEquatable<ApiResponseDataTags>, IValidatableObject
+    public sealed partial class ApiResponseDataTags : IEquatable<ApiResponseDataTags>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseDataTags" /> class.
         /// </summary>
         /// <param name="Tags">Tags.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseDataTags(List<DataTag> Tags = default(List<DataTag>), string NextPage = default(string))
+        public ApiResponseDataTags(List<DataTag> Tags = default, string NextPage = default)
         {
             this.Tags = Tags;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
-        [DataMember(Name="tags", EmitDefaultValue=false)]
+        [DataMember(Name = "tags", EmitDefaultValue = false)]
         public List<DataTag> Tags { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -53,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseDataTags {\n");
-            sb.Append("  Tags: ").Append(Tags).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -73,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseDataTags);
+            return Equals(obj as ApiResponseDataTags);
         }
 
         /// <summary>
@@ -88,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Tags == input.Tags ||
                     Tags != null &&
                     Tags.SequenceEqual(input.Tags)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -128,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

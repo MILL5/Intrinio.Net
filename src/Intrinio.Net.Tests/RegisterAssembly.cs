@@ -12,7 +12,7 @@ namespace Intrinio.Net.Tests
             CheckIsNotNull(nameof(services), services);
             CheckIsNotNull(nameof(config), config);
 
-            Client.RegisterAssembly.AddServices(services, config);
+            Net.RegisterAssembly.AddServices(services, config);
         }
     }
 }

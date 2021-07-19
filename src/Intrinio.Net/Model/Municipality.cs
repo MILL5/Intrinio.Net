@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,7 +11,7 @@ namespace Intrinio.Net.Model
     /// A local Municipality
     /// </summary>
     [DataContract]
-    public partial class Municipality :  IEquatable<Municipality>, IValidatableObject
+    public sealed partial class Municipality : IEquatable<Municipality>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Municipality" /> class.
@@ -44,7 +35,7 @@ namespace Intrinio.Net.Model
         /// <param name="AreaType">The type of area of the Municipality.</param>
         /// <param name="Latitude">The latitude of the location of the Municipality.</param>
         /// <param name="Longitude">The longitude of the location of the Municipality.</param>
-        public Municipality(string Id = default(string), decimal? CensusId = default(decimal?), string GovernmentName = default(string), string GovernmentType = default(string), string PrimaryContactType = default(string), string Address1 = default(string), string Address2 = default(string), string City = default(string), string State = default(string), string Zip = default(string), string WebSite = default(string), decimal? Population = default(decimal?), decimal? PopulationAsOfYear = default(decimal?), decimal? Enrollment = default(decimal?), decimal? EnrollmentAsOfYear = default(decimal?), string AreaName = default(string), string AreaType = default(string), float? Latitude = default(float?), float? Longitude = default(float?))
+        public Municipality(string Id = default, decimal? CensusId = default, string GovernmentName = default, string GovernmentType = default, string PrimaryContactType = default, string Address1 = default, string Address2 = default, string City = default, string State = default, string Zip = default, string WebSite = default, decimal? Population = default, decimal? PopulationAsOfYear = default, decimal? Enrollment = default, decimal? EnrollmentAsOfYear = default, string AreaName = default, string AreaType = default, float? Latitude = default, float? Longitude = default)
         {
             this.Id = Id;
             this.CensusId = CensusId;
@@ -66,138 +57,138 @@ namespace Intrinio.Net.Model
             this.Latitude = Latitude;
             this.Longitude = Longitude;
         }
-        
+
         /// <summary>
         /// The Intrinio ID for Municipality
         /// </summary>
         /// <value>The Intrinio ID for Municipality</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
         /// The ID for the census
         /// </summary>
         /// <value>The ID for the census</value>
-        [DataMember(Name="census_id", EmitDefaultValue=false)]
+        [DataMember(Name = "census_id", EmitDefaultValue = false)]
         public decimal? CensusId { get; set; }
 
         /// <summary>
         /// The government name of the Municipality
         /// </summary>
         /// <value>The government name of the Municipality</value>
-        [DataMember(Name="government_name", EmitDefaultValue=false)]
+        [DataMember(Name = "government_name", EmitDefaultValue = false)]
         public string GovernmentName { get; set; }
 
         /// <summary>
         /// The type of government of the Municipality
         /// </summary>
         /// <value>The type of government of the Municipality</value>
-        [DataMember(Name="government_type", EmitDefaultValue=false)]
+        [DataMember(Name = "government_type", EmitDefaultValue = false)]
         public string GovernmentType { get; set; }
 
         /// <summary>
         /// The primary contact type of the Municipality
         /// </summary>
         /// <value>The primary contact type of the Municipality</value>
-        [DataMember(Name="primary_contact_type", EmitDefaultValue=false)]
+        [DataMember(Name = "primary_contact_type", EmitDefaultValue = false)]
         public string PrimaryContactType { get; set; }
 
         /// <summary>
         /// The first line of the address
         /// </summary>
         /// <value>The first line of the address</value>
-        [DataMember(Name="address1", EmitDefaultValue=false)]
+        [DataMember(Name = "address1", EmitDefaultValue = false)]
         public string Address1 { get; set; }
 
         /// <summary>
         /// The second line of the address (i.e. suite number)
         /// </summary>
         /// <value>The second line of the address (i.e. suite number)</value>
-        [DataMember(Name="address2", EmitDefaultValue=false)]
+        [DataMember(Name = "address2", EmitDefaultValue = false)]
         public string Address2 { get; set; }
 
         /// <summary>
         /// The city in which the Municipality is located in
         /// </summary>
         /// <value>The city in which the Municipality is located in</value>
-        [DataMember(Name="city", EmitDefaultValue=false)]
+        [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
         /// <summary>
         /// The state in which the Municipality is located in
         /// </summary>
         /// <value>The state in which the Municipality is located in</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public string State { get; set; }
 
         /// <summary>
         /// The zip code in which the Municipality is located in
         /// </summary>
         /// <value>The zip code in which the Municipality is located in</value>
-        [DataMember(Name="zip", EmitDefaultValue=false)]
+        [DataMember(Name = "zip", EmitDefaultValue = false)]
         public string Zip { get; set; }
 
         /// <summary>
         /// The web site of the Municipality
         /// </summary>
         /// <value>The web site of the Municipality</value>
-        [DataMember(Name="web_site", EmitDefaultValue=false)]
+        [DataMember(Name = "web_site", EmitDefaultValue = false)]
         public string WebSite { get; set; }
 
         /// <summary>
         /// The population of the Municipality
         /// </summary>
         /// <value>The population of the Municipality</value>
-        [DataMember(Name="population", EmitDefaultValue=false)]
+        [DataMember(Name = "population", EmitDefaultValue = false)]
         public decimal? Population { get; set; }
 
         /// <summary>
         /// The year from which the population of the Municipality was measured
         /// </summary>
         /// <value>The year from which the population of the Municipality was measured</value>
-        [DataMember(Name="population_as_of_year", EmitDefaultValue=false)]
+        [DataMember(Name = "population_as_of_year", EmitDefaultValue = false)]
         public decimal? PopulationAsOfYear { get; set; }
 
         /// <summary>
         /// The enrollment of the Municipality
         /// </summary>
         /// <value>The enrollment of the Municipality</value>
-        [DataMember(Name="enrollment", EmitDefaultValue=false)]
+        [DataMember(Name = "enrollment", EmitDefaultValue = false)]
         public decimal? Enrollment { get; set; }
 
         /// <summary>
         /// The year from which the enrollment of the Municipality was measured
         /// </summary>
         /// <value>The year from which the enrollment of the Municipality was measured</value>
-        [DataMember(Name="enrollment_as_of_year", EmitDefaultValue=false)]
+        [DataMember(Name = "enrollment_as_of_year", EmitDefaultValue = false)]
         public decimal? EnrollmentAsOfYear { get; set; }
 
         /// <summary>
         /// The name of the area of the Municipality
         /// </summary>
         /// <value>The name of the area of the Municipality</value>
-        [DataMember(Name="area_name", EmitDefaultValue=false)]
+        [DataMember(Name = "area_name", EmitDefaultValue = false)]
         public string AreaName { get; set; }
 
         /// <summary>
         /// The type of area of the Municipality
         /// </summary>
         /// <value>The type of area of the Municipality</value>
-        [DataMember(Name="area_type", EmitDefaultValue=false)]
+        [DataMember(Name = "area_type", EmitDefaultValue = false)]
         public string AreaType { get; set; }
 
         /// <summary>
         /// The latitude of the location of the Municipality
         /// </summary>
         /// <value>The latitude of the location of the Municipality</value>
-        [DataMember(Name="latitude", EmitDefaultValue=false)]
+        [DataMember(Name = "latitude", EmitDefaultValue = false)]
         public float? Latitude { get; set; }
 
         /// <summary>
         /// The longitude of the location of the Municipality
         /// </summary>
         /// <value>The longitude of the location of the Municipality</value>
-        [DataMember(Name="longitude", EmitDefaultValue=false)]
+        [DataMember(Name = "longitude", EmitDefaultValue = false)]
         public float? Longitude { get; set; }
 
         /// <summary>
@@ -208,29 +199,29 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Municipality {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  CensusId: ").Append(CensusId).Append("\n");
-            sb.Append("  GovernmentName: ").Append(GovernmentName).Append("\n");
-            sb.Append("  GovernmentType: ").Append(GovernmentType).Append("\n");
-            sb.Append("  PrimaryContactType: ").Append(PrimaryContactType).Append("\n");
-            sb.Append("  Address1: ").Append(Address1).Append("\n");
-            sb.Append("  Address2: ").Append(Address2).Append("\n");
-            sb.Append("  City: ").Append(City).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  Zip: ").Append(Zip).Append("\n");
-            sb.Append("  WebSite: ").Append(WebSite).Append("\n");
-            sb.Append("  Population: ").Append(Population).Append("\n");
-            sb.Append("  PopulationAsOfYear: ").Append(PopulationAsOfYear).Append("\n");
-            sb.Append("  Enrollment: ").Append(Enrollment).Append("\n");
-            sb.Append("  EnrollmentAsOfYear: ").Append(EnrollmentAsOfYear).Append("\n");
-            sb.Append("  AreaName: ").Append(AreaName).Append("\n");
-            sb.Append("  AreaType: ").Append(AreaType).Append("\n");
-            sb.Append("  Latitude: ").Append(Latitude).Append("\n");
-            sb.Append("  Longitude: ").Append(Longitude).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append('\n');
+            sb.Append("  CensusId: ").Append(CensusId).Append('\n');
+            sb.Append("  GovernmentName: ").Append(GovernmentName).Append('\n');
+            sb.Append("  GovernmentType: ").Append(GovernmentType).Append('\n');
+            sb.Append("  PrimaryContactType: ").Append(PrimaryContactType).Append('\n');
+            sb.Append("  Address1: ").Append(Address1).Append('\n');
+            sb.Append("  Address2: ").Append(Address2).Append('\n');
+            sb.Append("  City: ").Append(City).Append('\n');
+            sb.Append("  State: ").Append(State).Append('\n');
+            sb.Append("  Zip: ").Append(Zip).Append('\n');
+            sb.Append("  WebSite: ").Append(WebSite).Append('\n');
+            sb.Append("  Population: ").Append(Population).Append('\n');
+            sb.Append("  PopulationAsOfYear: ").Append(PopulationAsOfYear).Append('\n');
+            sb.Append("  Enrollment: ").Append(Enrollment).Append('\n');
+            sb.Append("  EnrollmentAsOfYear: ").Append(EnrollmentAsOfYear).Append('\n');
+            sb.Append("  AreaName: ").Append(AreaName).Append('\n');
+            sb.Append("  AreaType: ").Append(AreaType).Append('\n');
+            sb.Append("  Latitude: ").Append(Latitude).Append('\n');
+            sb.Append("  Longitude: ").Append(Longitude).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -245,9 +236,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as Municipality);
+            return Equals(obj as Municipality);
         }
 
         /// <summary>
@@ -260,97 +251,97 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Id == input.Id ||
                     (Id != null &&
                     Id.Equals(input.Id))
-                ) && 
+                ) &&
                 (
                     CensusId == input.CensusId ||
                     (CensusId != null &&
                     CensusId.Equals(input.CensusId))
-                ) && 
+                ) &&
                 (
                     GovernmentName == input.GovernmentName ||
                     (GovernmentName != null &&
                     GovernmentName.Equals(input.GovernmentName))
-                ) && 
+                ) &&
                 (
                     GovernmentType == input.GovernmentType ||
                     (GovernmentType != null &&
                     GovernmentType.Equals(input.GovernmentType))
-                ) && 
+                ) &&
                 (
                     PrimaryContactType == input.PrimaryContactType ||
                     (PrimaryContactType != null &&
                     PrimaryContactType.Equals(input.PrimaryContactType))
-                ) && 
+                ) &&
                 (
                     Address1 == input.Address1 ||
                     (Address1 != null &&
                     Address1.Equals(input.Address1))
-                ) && 
+                ) &&
                 (
                     Address2 == input.Address2 ||
                     (Address2 != null &&
                     Address2.Equals(input.Address2))
-                ) && 
+                ) &&
                 (
                     City == input.City ||
                     (City != null &&
                     City.Equals(input.City))
-                ) && 
+                ) &&
                 (
                     State == input.State ||
                     (State != null &&
                     State.Equals(input.State))
-                ) && 
+                ) &&
                 (
                     Zip == input.Zip ||
                     (Zip != null &&
                     Zip.Equals(input.Zip))
-                ) && 
+                ) &&
                 (
                     WebSite == input.WebSite ||
                     (WebSite != null &&
                     WebSite.Equals(input.WebSite))
-                ) && 
+                ) &&
                 (
                     Population == input.Population ||
                     (Population != null &&
                     Population.Equals(input.Population))
-                ) && 
+                ) &&
                 (
                     PopulationAsOfYear == input.PopulationAsOfYear ||
                     (PopulationAsOfYear != null &&
                     PopulationAsOfYear.Equals(input.PopulationAsOfYear))
-                ) && 
+                ) &&
                 (
                     Enrollment == input.Enrollment ||
                     (Enrollment != null &&
                     Enrollment.Equals(input.Enrollment))
-                ) && 
+                ) &&
                 (
                     EnrollmentAsOfYear == input.EnrollmentAsOfYear ||
                     (EnrollmentAsOfYear != null &&
                     EnrollmentAsOfYear.Equals(input.EnrollmentAsOfYear))
-                ) && 
+                ) &&
                 (
                     AreaName == input.AreaName ||
                     (AreaName != null &&
                     AreaName.Equals(input.AreaName))
-                ) && 
+                ) &&
                 (
                     AreaType == input.AreaType ||
                     (AreaType != null &&
                     AreaType.Equals(input.AreaType))
-                ) && 
+                ) &&
                 (
                     Latitude == input.Latitude ||
                     (Latitude != null &&
                     Latitude.Equals(input.Latitude))
-                ) && 
+                ) &&
                 (
                     Longitude == input.Longitude ||
                     (Longitude != null &&
@@ -419,5 +410,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

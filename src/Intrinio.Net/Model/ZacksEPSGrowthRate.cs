@@ -11,10 +11,10 @@ namespace Intrinio.Net.Model
     /// Zacks earnings-per-share (EPS) growth rates from analysts for thousands of stocks.  Zacks storied research team aggregates and validates the estimates.  Each Growth Rate includes metadata about the corresponding Company.
     /// </summary>
     [DataContract]
-    public partial class ZacksEPSGrowthRate :  IEquatable<ZacksEPSGrowthRate>, IValidatableObject
+    public sealed partial class ZacksEpsGrowthRate : IEquatable<ZacksEpsGrowthRate>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ZacksEPSGrowthRate" /> class.
+        /// Initializes a new instance of the <see cref="ZacksEpsGrowthRate" /> class.
         /// </summary>
         /// <param name="Ticker">The Zacks common exchange ticker.</param>
         /// <param name="CompanyName">The company name.</param>
@@ -39,7 +39,7 @@ namespace Intrinio.Net.Model
         /// <param name="Sp500LongTermGrowth">The S&amp;P 500&#39;s long term growth rate mean estimate.</param>
         /// <param name="Sp500FiscalYear1PriceToEarnings">The S&amp;P 500&#39;s forward (current fiscal year) price-to-earnings (P/E) ratio.</param>
         /// <param name="Company">Company.</param>
-        public ZacksEPSGrowthRate(string Ticker = default(string), string CompanyName = default(string), string IndustryGroupNumber = default(string), string IndustryGroupName = default(string), int? FiscalYear0 = default(int?), int? FiscalYear1 = default(int?), int? FiscalYear2 = default(int?), decimal? CompanyLast5YearActual = default(decimal?), decimal? CompanyFiscalYear1VsFiscalYear0 = default(decimal?), decimal? CompanyFiscalYear2VsFiscalYear1 = default(decimal?), decimal? CompanyLongTermGrowthMean = default(decimal?), decimal? CompanyFiscalYear1ForwardPriceToEarnings = default(decimal?), decimal? IndustryLast5YearActual = default(decimal?), decimal? IndustryFiscalYear1VsFiscalYear0 = default(decimal?), decimal? IndustryFiscalYear2VsFiscalYear1 = default(decimal?), decimal? IndustryLongTermGrowthMean = default(decimal?), decimal? IndustryFiscalYear1ForwardPriceToEarnings = default(decimal?), decimal? Sp500Last5YearActual = default(decimal?), decimal? Sp500FiscalYear1VsFiscalYear0 = default(decimal?), decimal? Sp500FiscalYear2VsFiscalYear1 = default(decimal?), decimal? Sp500LongTermGrowth = default(decimal?), decimal? Sp500FiscalYear1PriceToEarnings = default(decimal?), CompanySummary Company = default(CompanySummary))
+        public ZacksEpsGrowthRate(string Ticker = default, string CompanyName = default, string IndustryGroupNumber = default, string IndustryGroupName = default, int? FiscalYear0 = default, int? FiscalYear1 = default, int? FiscalYear2 = default, decimal? CompanyLast5YearActual = default, decimal? CompanyFiscalYear1VsFiscalYear0 = default, decimal? CompanyFiscalYear2VsFiscalYear1 = default, decimal? CompanyLongTermGrowthMean = default, decimal? CompanyFiscalYear1ForwardPriceToEarnings = default, decimal? IndustryLast5YearActual = default, decimal? IndustryFiscalYear1VsFiscalYear0 = default, decimal? IndustryFiscalYear2VsFiscalYear1 = default, decimal? IndustryLongTermGrowthMean = default, decimal? IndustryFiscalYear1ForwardPriceToEarnings = default, decimal? Sp500Last5YearActual = default, decimal? Sp500FiscalYear1VsFiscalYear0 = default, decimal? Sp500FiscalYear2VsFiscalYear1 = default, decimal? Sp500LongTermGrowth = default, decimal? Sp500FiscalYear1PriceToEarnings = default, CompanySummary Company = default)
         {
             this.Ticker = Ticker;
             this.CompanyName = CompanyName;
@@ -65,165 +65,165 @@ namespace Intrinio.Net.Model
             this.Sp500FiscalYear1PriceToEarnings = Sp500FiscalYear1PriceToEarnings;
             this.Company = Company;
         }
-        
+
         /// <summary>
         /// The Zacks common exchange ticker
         /// </summary>
         /// <value>The Zacks common exchange ticker</value>
-        [DataMember(Name="ticker", EmitDefaultValue=false)]
+        [DataMember(Name = "ticker", EmitDefaultValue = false)]
         public string Ticker { get; set; }
 
         /// <summary>
         /// The company name
         /// </summary>
         /// <value>The company name</value>
-        [DataMember(Name="company_name", EmitDefaultValue=false)]
+        [DataMember(Name = "company_name", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
         /// <summary>
         /// The Zacks industry group number
         /// </summary>
         /// <value>The Zacks industry group number</value>
-        [DataMember(Name="industry_group_number", EmitDefaultValue=false)]
+        [DataMember(Name = "industry_group_number", EmitDefaultValue = false)]
         public string IndustryGroupNumber { get; set; }
 
         /// <summary>
         /// The Zacks industry group name
         /// </summary>
         /// <value>The Zacks industry group name</value>
-        [DataMember(Name="industry_group_name", EmitDefaultValue=false)]
+        [DataMember(Name = "industry_group_name", EmitDefaultValue = false)]
         public string IndustryGroupName { get; set; }
 
         /// <summary>
         /// The current fiscal year
         /// </summary>
         /// <value>The current fiscal year</value>
-        [DataMember(Name="fiscal_year_0", EmitDefaultValue=false)]
+        [DataMember(Name = "fiscal_year_0", EmitDefaultValue = false)]
         public int? FiscalYear0 { get; set; }
 
         /// <summary>
         /// The next fiscal year
         /// </summary>
         /// <value>The next fiscal year</value>
-        [DataMember(Name="fiscal_year_1", EmitDefaultValue=false)]
+        [DataMember(Name = "fiscal_year_1", EmitDefaultValue = false)]
         public int? FiscalYear1 { get; set; }
 
         /// <summary>
         /// The fiscal year after the next fiscal year
         /// </summary>
         /// <value>The fiscal year after the next fiscal year</value>
-        [DataMember(Name="fiscal_year_2", EmitDefaultValue=false)]
+        [DataMember(Name = "fiscal_year_2", EmitDefaultValue = false)]
         public int? FiscalYear2 { get; set; }
 
         /// <summary>
         /// The company&#39;s last 5 year actual percentage earnings-per-share (EPS) growth rate
         /// </summary>
         /// <value>The company&#39;s last 5 year actual percentage earnings-per-share (EPS) growth rate</value>
-        [DataMember(Name="company_last_5_year_actual", EmitDefaultValue=false)]
+        [DataMember(Name = "company_last_5_year_actual", EmitDefaultValue = false)]
         public decimal? CompanyLast5YearActual { get; set; }
 
         /// <summary>
         /// The company&#39;s current fiscal year / last fiscal year percentage earnings-per-share (EPS) growth rate
         /// </summary>
         /// <value>The company&#39;s current fiscal year / last fiscal year percentage earnings-per-share (EPS) growth rate</value>
-        [DataMember(Name="company_fiscal_year_1_vs_fiscal_year_0", EmitDefaultValue=false)]
+        [DataMember(Name = "company_fiscal_year_1_vs_fiscal_year_0", EmitDefaultValue = false)]
         public decimal? CompanyFiscalYear1VsFiscalYear0 { get; set; }
 
         /// <summary>
         /// The company&#39;s next fiscal year / current fiscal year percentage earnings-per-share (EPS) growth rate
         /// </summary>
         /// <value>The company&#39;s next fiscal year / current fiscal year percentage earnings-per-share (EPS) growth rate</value>
-        [DataMember(Name="company_fiscal_year_2_vs_fiscal_year_1", EmitDefaultValue=false)]
+        [DataMember(Name = "company_fiscal_year_2_vs_fiscal_year_1", EmitDefaultValue = false)]
         public decimal? CompanyFiscalYear2VsFiscalYear1 { get; set; }
 
         /// <summary>
         /// The company&#39;s long term growth rate mean estimate
         /// </summary>
         /// <value>The company&#39;s long term growth rate mean estimate</value>
-        [DataMember(Name="company_long_term_growth_mean", EmitDefaultValue=false)]
+        [DataMember(Name = "company_long_term_growth_mean", EmitDefaultValue = false)]
         public decimal? CompanyLongTermGrowthMean { get; set; }
 
         /// <summary>
         /// The company&#39;s forward (current fiscal year) price-to-earnings (P/E) ratio
         /// </summary>
         /// <value>The company&#39;s forward (current fiscal year) price-to-earnings (P/E) ratio</value>
-        [DataMember(Name="company_fiscal_year_1_forward_price_to_earnings", EmitDefaultValue=false)]
+        [DataMember(Name = "company_fiscal_year_1_forward_price_to_earnings", EmitDefaultValue = false)]
         public decimal? CompanyFiscalYear1ForwardPriceToEarnings { get; set; }
 
         /// <summary>
         /// The industry&#39;s last 5 year actual percentage earnings-per-share (EPS) growth rate
         /// </summary>
         /// <value>The industry&#39;s last 5 year actual percentage earnings-per-share (EPS) growth rate</value>
-        [DataMember(Name="industry_last_5_year_actual", EmitDefaultValue=false)]
+        [DataMember(Name = "industry_last_5_year_actual", EmitDefaultValue = false)]
         public decimal? IndustryLast5YearActual { get; set; }
 
         /// <summary>
         /// The industry&#39;s current fiscal year / last fiscal year percentage earnings-per-share (EPS) growth rate
         /// </summary>
         /// <value>The industry&#39;s current fiscal year / last fiscal year percentage earnings-per-share (EPS) growth rate</value>
-        [DataMember(Name="industry_fiscal_year_1_vs_fiscal_year_0", EmitDefaultValue=false)]
+        [DataMember(Name = "industry_fiscal_year_1_vs_fiscal_year_0", EmitDefaultValue = false)]
         public decimal? IndustryFiscalYear1VsFiscalYear0 { get; set; }
 
         /// <summary>
         /// The industry&#39;s next fiscal year / current fiscal year percentage earnings-per-share (EPS) growth rate
         /// </summary>
         /// <value>The industry&#39;s next fiscal year / current fiscal year percentage earnings-per-share (EPS) growth rate</value>
-        [DataMember(Name="industry_fiscal_year_2_vs_fiscal_year_1", EmitDefaultValue=false)]
+        [DataMember(Name = "industry_fiscal_year_2_vs_fiscal_year_1", EmitDefaultValue = false)]
         public decimal? IndustryFiscalYear2VsFiscalYear1 { get; set; }
 
         /// <summary>
         /// The industry&#39;s long term growth rate mean estimate
         /// </summary>
         /// <value>The industry&#39;s long term growth rate mean estimate</value>
-        [DataMember(Name="industry_long_term_growth_mean", EmitDefaultValue=false)]
+        [DataMember(Name = "industry_long_term_growth_mean", EmitDefaultValue = false)]
         public decimal? IndustryLongTermGrowthMean { get; set; }
 
         /// <summary>
         /// The industry&#39;s forward (current fiscal year) price-to-earnings (P/E) ratio
         /// </summary>
         /// <value>The industry&#39;s forward (current fiscal year) price-to-earnings (P/E) ratio</value>
-        [DataMember(Name="industry_fiscal_year_1_forward_price_to_earnings", EmitDefaultValue=false)]
+        [DataMember(Name = "industry_fiscal_year_1_forward_price_to_earnings", EmitDefaultValue = false)]
         public decimal? IndustryFiscalYear1ForwardPriceToEarnings { get; set; }
 
         /// <summary>
         /// The S&amp;P 500&#39;s last 5 year actual percentage earnings-per-share (EPS) growth rate
         /// </summary>
         /// <value>The S&amp;P 500&#39;s last 5 year actual percentage earnings-per-share (EPS) growth rate</value>
-        [DataMember(Name="sp500_last_5_year_actual", EmitDefaultValue=false)]
+        [DataMember(Name = "sp500_last_5_year_actual", EmitDefaultValue = false)]
         public decimal? Sp500Last5YearActual { get; set; }
 
         /// <summary>
         /// The S&amp;P 500&#39;s current fiscal year / last fiscal year percentage earnings-per-share (EPS) growth rate
         /// </summary>
         /// <value>The S&amp;P 500&#39;s current fiscal year / last fiscal year percentage earnings-per-share (EPS) growth rate</value>
-        [DataMember(Name="sp500_fiscal_year_1_vs_fiscal_year_0", EmitDefaultValue=false)]
+        [DataMember(Name = "sp500_fiscal_year_1_vs_fiscal_year_0", EmitDefaultValue = false)]
         public decimal? Sp500FiscalYear1VsFiscalYear0 { get; set; }
 
         /// <summary>
         /// The S&amp;P 500&#39;s next fiscal year / current fiscal year percentage earnings-per-share (EPS) growth rate
         /// </summary>
         /// <value>The S&amp;P 500&#39;s next fiscal year / current fiscal year percentage earnings-per-share (EPS) growth rate</value>
-        [DataMember(Name="sp500_fiscal_year_2_vs_fiscal_year_1", EmitDefaultValue=false)]
+        [DataMember(Name = "sp500_fiscal_year_2_vs_fiscal_year_1", EmitDefaultValue = false)]
         public decimal? Sp500FiscalYear2VsFiscalYear1 { get; set; }
 
         /// <summary>
         /// The S&amp;P 500&#39;s long term growth rate mean estimate
         /// </summary>
         /// <value>The S&amp;P 500&#39;s long term growth rate mean estimate</value>
-        [DataMember(Name="sp500_long_term_growth", EmitDefaultValue=false)]
+        [DataMember(Name = "sp500_long_term_growth", EmitDefaultValue = false)]
         public decimal? Sp500LongTermGrowth { get; set; }
 
         /// <summary>
         /// The S&amp;P 500&#39;s forward (current fiscal year) price-to-earnings (P/E) ratio
         /// </summary>
         /// <value>The S&amp;P 500&#39;s forward (current fiscal year) price-to-earnings (P/E) ratio</value>
-        [DataMember(Name="sp500_fiscal_year_1_price_to_earnings", EmitDefaultValue=false)]
+        [DataMember(Name = "sp500_fiscal_year_1_price_to_earnings", EmitDefaultValue = false)]
         public decimal? Sp500FiscalYear1PriceToEarnings { get; set; }
 
         /// <summary>
         /// Gets or Sets Company
         /// </summary>
-        [DataMember(Name="company", EmitDefaultValue=false)]
+        [DataMember(Name = "company", EmitDefaultValue = false)]
         public CompanySummary Company { get; set; }
 
         /// <summary>
@@ -234,33 +234,33 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ZacksEPSGrowthRate {\n");
-            sb.Append("  Ticker: ").Append(Ticker).Append("\n");
-            sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
-            sb.Append("  IndustryGroupNumber: ").Append(IndustryGroupNumber).Append("\n");
-            sb.Append("  IndustryGroupName: ").Append(IndustryGroupName).Append("\n");
-            sb.Append("  FiscalYear0: ").Append(FiscalYear0).Append("\n");
-            sb.Append("  FiscalYear1: ").Append(FiscalYear1).Append("\n");
-            sb.Append("  FiscalYear2: ").Append(FiscalYear2).Append("\n");
-            sb.Append("  CompanyLast5YearActual: ").Append(CompanyLast5YearActual).Append("\n");
-            sb.Append("  CompanyFiscalYear1VsFiscalYear0: ").Append(CompanyFiscalYear1VsFiscalYear0).Append("\n");
-            sb.Append("  CompanyFiscalYear2VsFiscalYear1: ").Append(CompanyFiscalYear2VsFiscalYear1).Append("\n");
-            sb.Append("  CompanyLongTermGrowthMean: ").Append(CompanyLongTermGrowthMean).Append("\n");
-            sb.Append("  CompanyFiscalYear1ForwardPriceToEarnings: ").Append(CompanyFiscalYear1ForwardPriceToEarnings).Append("\n");
-            sb.Append("  IndustryLast5YearActual: ").Append(IndustryLast5YearActual).Append("\n");
-            sb.Append("  IndustryFiscalYear1VsFiscalYear0: ").Append(IndustryFiscalYear1VsFiscalYear0).Append("\n");
-            sb.Append("  IndustryFiscalYear2VsFiscalYear1: ").Append(IndustryFiscalYear2VsFiscalYear1).Append("\n");
-            sb.Append("  IndustryLongTermGrowthMean: ").Append(IndustryLongTermGrowthMean).Append("\n");
-            sb.Append("  IndustryFiscalYear1ForwardPriceToEarnings: ").Append(IndustryFiscalYear1ForwardPriceToEarnings).Append("\n");
-            sb.Append("  Sp500Last5YearActual: ").Append(Sp500Last5YearActual).Append("\n");
-            sb.Append("  Sp500FiscalYear1VsFiscalYear0: ").Append(Sp500FiscalYear1VsFiscalYear0).Append("\n");
-            sb.Append("  Sp500FiscalYear2VsFiscalYear1: ").Append(Sp500FiscalYear2VsFiscalYear1).Append("\n");
-            sb.Append("  Sp500LongTermGrowth: ").Append(Sp500LongTermGrowth).Append("\n");
-            sb.Append("  Sp500FiscalYear1PriceToEarnings: ").Append(Sp500FiscalYear1PriceToEarnings).Append("\n");
-            sb.Append("  Company: ").Append(Company).Append("\n");
+            sb.Append("  Ticker: ").Append(Ticker).Append('\n');
+            sb.Append("  CompanyName: ").Append(CompanyName).Append('\n');
+            sb.Append("  IndustryGroupNumber: ").Append(IndustryGroupNumber).Append('\n');
+            sb.Append("  IndustryGroupName: ").Append(IndustryGroupName).Append('\n');
+            sb.Append("  FiscalYear0: ").Append(FiscalYear0).Append('\n');
+            sb.Append("  FiscalYear1: ").Append(FiscalYear1).Append('\n');
+            sb.Append("  FiscalYear2: ").Append(FiscalYear2).Append('\n');
+            sb.Append("  CompanyLast5YearActual: ").Append(CompanyLast5YearActual).Append('\n');
+            sb.Append("  CompanyFiscalYear1VsFiscalYear0: ").Append(CompanyFiscalYear1VsFiscalYear0).Append('\n');
+            sb.Append("  CompanyFiscalYear2VsFiscalYear1: ").Append(CompanyFiscalYear2VsFiscalYear1).Append('\n');
+            sb.Append("  CompanyLongTermGrowthMean: ").Append(CompanyLongTermGrowthMean).Append('\n');
+            sb.Append("  CompanyFiscalYear1ForwardPriceToEarnings: ").Append(CompanyFiscalYear1ForwardPriceToEarnings).Append('\n');
+            sb.Append("  IndustryLast5YearActual: ").Append(IndustryLast5YearActual).Append('\n');
+            sb.Append("  IndustryFiscalYear1VsFiscalYear0: ").Append(IndustryFiscalYear1VsFiscalYear0).Append('\n');
+            sb.Append("  IndustryFiscalYear2VsFiscalYear1: ").Append(IndustryFiscalYear2VsFiscalYear1).Append('\n');
+            sb.Append("  IndustryLongTermGrowthMean: ").Append(IndustryLongTermGrowthMean).Append('\n');
+            sb.Append("  IndustryFiscalYear1ForwardPriceToEarnings: ").Append(IndustryFiscalYear1ForwardPriceToEarnings).Append('\n');
+            sb.Append("  Sp500Last5YearActual: ").Append(Sp500Last5YearActual).Append('\n');
+            sb.Append("  Sp500FiscalYear1VsFiscalYear0: ").Append(Sp500FiscalYear1VsFiscalYear0).Append('\n');
+            sb.Append("  Sp500FiscalYear2VsFiscalYear1: ").Append(Sp500FiscalYear2VsFiscalYear1).Append('\n');
+            sb.Append("  Sp500LongTermGrowth: ").Append(Sp500LongTermGrowth).Append('\n');
+            sb.Append("  Sp500FiscalYear1PriceToEarnings: ").Append(Sp500FiscalYear1PriceToEarnings).Append('\n');
+            sb.Append("  Company: ").Append(Company).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -275,9 +275,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ZacksEPSGrowthRate);
+            return Equals(obj as ZacksEpsGrowthRate);
         }
 
         /// <summary>
@@ -285,122 +285,122 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Instance of ZacksEPSGrowthRate to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ZacksEPSGrowthRate input)
+        public bool Equals(ZacksEpsGrowthRate input)
         {
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Ticker == input.Ticker ||
                     (Ticker != null &&
                     Ticker.Equals(input.Ticker))
-                ) && 
+                ) &&
                 (
                     CompanyName == input.CompanyName ||
                     (CompanyName != null &&
                     CompanyName.Equals(input.CompanyName))
-                ) && 
+                ) &&
                 (
                     IndustryGroupNumber == input.IndustryGroupNumber ||
                     (IndustryGroupNumber != null &&
                     IndustryGroupNumber.Equals(input.IndustryGroupNumber))
-                ) && 
+                ) &&
                 (
                     IndustryGroupName == input.IndustryGroupName ||
                     (IndustryGroupName != null &&
                     IndustryGroupName.Equals(input.IndustryGroupName))
-                ) && 
+                ) &&
                 (
                     FiscalYear0 == input.FiscalYear0 ||
                     (FiscalYear0 != null &&
                     FiscalYear0.Equals(input.FiscalYear0))
-                ) && 
+                ) &&
                 (
                     FiscalYear1 == input.FiscalYear1 ||
                     (FiscalYear1 != null &&
                     FiscalYear1.Equals(input.FiscalYear1))
-                ) && 
+                ) &&
                 (
                     FiscalYear2 == input.FiscalYear2 ||
                     (FiscalYear2 != null &&
                     FiscalYear2.Equals(input.FiscalYear2))
-                ) && 
+                ) &&
                 (
                     CompanyLast5YearActual == input.CompanyLast5YearActual ||
                     (CompanyLast5YearActual != null &&
                     CompanyLast5YearActual.Equals(input.CompanyLast5YearActual))
-                ) && 
+                ) &&
                 (
                     CompanyFiscalYear1VsFiscalYear0 == input.CompanyFiscalYear1VsFiscalYear0 ||
                     (CompanyFiscalYear1VsFiscalYear0 != null &&
                     CompanyFiscalYear1VsFiscalYear0.Equals(input.CompanyFiscalYear1VsFiscalYear0))
-                ) && 
+                ) &&
                 (
                     CompanyFiscalYear2VsFiscalYear1 == input.CompanyFiscalYear2VsFiscalYear1 ||
                     (CompanyFiscalYear2VsFiscalYear1 != null &&
                     CompanyFiscalYear2VsFiscalYear1.Equals(input.CompanyFiscalYear2VsFiscalYear1))
-                ) && 
+                ) &&
                 (
                     CompanyLongTermGrowthMean == input.CompanyLongTermGrowthMean ||
                     (CompanyLongTermGrowthMean != null &&
                     CompanyLongTermGrowthMean.Equals(input.CompanyLongTermGrowthMean))
-                ) && 
+                ) &&
                 (
                     CompanyFiscalYear1ForwardPriceToEarnings == input.CompanyFiscalYear1ForwardPriceToEarnings ||
                     (CompanyFiscalYear1ForwardPriceToEarnings != null &&
                     CompanyFiscalYear1ForwardPriceToEarnings.Equals(input.CompanyFiscalYear1ForwardPriceToEarnings))
-                ) && 
+                ) &&
                 (
                     IndustryLast5YearActual == input.IndustryLast5YearActual ||
                     (IndustryLast5YearActual != null &&
                     IndustryLast5YearActual.Equals(input.IndustryLast5YearActual))
-                ) && 
+                ) &&
                 (
                     IndustryFiscalYear1VsFiscalYear0 == input.IndustryFiscalYear1VsFiscalYear0 ||
                     (IndustryFiscalYear1VsFiscalYear0 != null &&
                     IndustryFiscalYear1VsFiscalYear0.Equals(input.IndustryFiscalYear1VsFiscalYear0))
-                ) && 
+                ) &&
                 (
                     IndustryFiscalYear2VsFiscalYear1 == input.IndustryFiscalYear2VsFiscalYear1 ||
                     (IndustryFiscalYear2VsFiscalYear1 != null &&
                     IndustryFiscalYear2VsFiscalYear1.Equals(input.IndustryFiscalYear2VsFiscalYear1))
-                ) && 
+                ) &&
                 (
                     IndustryLongTermGrowthMean == input.IndustryLongTermGrowthMean ||
                     (IndustryLongTermGrowthMean != null &&
                     IndustryLongTermGrowthMean.Equals(input.IndustryLongTermGrowthMean))
-                ) && 
+                ) &&
                 (
                     IndustryFiscalYear1ForwardPriceToEarnings == input.IndustryFiscalYear1ForwardPriceToEarnings ||
                     (IndustryFiscalYear1ForwardPriceToEarnings != null &&
                     IndustryFiscalYear1ForwardPriceToEarnings.Equals(input.IndustryFiscalYear1ForwardPriceToEarnings))
-                ) && 
+                ) &&
                 (
                     Sp500Last5YearActual == input.Sp500Last5YearActual ||
                     (Sp500Last5YearActual != null &&
                     Sp500Last5YearActual.Equals(input.Sp500Last5YearActual))
-                ) && 
+                ) &&
                 (
                     Sp500FiscalYear1VsFiscalYear0 == input.Sp500FiscalYear1VsFiscalYear0 ||
                     (Sp500FiscalYear1VsFiscalYear0 != null &&
                     Sp500FiscalYear1VsFiscalYear0.Equals(input.Sp500FiscalYear1VsFiscalYear0))
-                ) && 
+                ) &&
                 (
                     Sp500FiscalYear2VsFiscalYear1 == input.Sp500FiscalYear2VsFiscalYear1 ||
                     (Sp500FiscalYear2VsFiscalYear1 != null &&
                     Sp500FiscalYear2VsFiscalYear1.Equals(input.Sp500FiscalYear2VsFiscalYear1))
-                ) && 
+                ) &&
                 (
                     Sp500LongTermGrowth == input.Sp500LongTermGrowth ||
                     (Sp500LongTermGrowth != null &&
                     Sp500LongTermGrowth.Equals(input.Sp500LongTermGrowth))
-                ) && 
+                ) &&
                 (
                     Sp500FiscalYear1PriceToEarnings == input.Sp500FiscalYear1PriceToEarnings ||
                     (Sp500FiscalYear1PriceToEarnings != null &&
                     Sp500FiscalYear1PriceToEarnings.Equals(input.Sp500FiscalYear1PriceToEarnings))
-                ) && 
+                ) &&
                 (
                     Company == input.Company ||
                     (Company != null &&
@@ -477,5 +477,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

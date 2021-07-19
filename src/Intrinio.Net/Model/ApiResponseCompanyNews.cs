@@ -12,7 +12,7 @@ namespace Intrinio.Net.Model
     /// ApiResponseCompanyNews
     /// </summary>
     [DataContract]
-    public partial class ApiResponseCompanyNews :  IEquatable<ApiResponseCompanyNews>, IValidatableObject
+    public sealed partial class ApiResponseCompanyNews : IEquatable<ApiResponseCompanyNews>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiResponseCompanyNews" /> class.
@@ -20,30 +20,30 @@ namespace Intrinio.Net.Model
         /// <param name="News">News.</param>
         /// <param name="Company">Company.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseCompanyNews(List<CompanyNewsSummary> News = default(List<CompanyNewsSummary>), CompanySummary Company = default(CompanySummary), string NextPage = default(string))
+        public ApiResponseCompanyNews(List<CompanyNewsSummary> News = default, CompanySummary Company = default, string NextPage = default)
         {
             this.News = News;
             this.Company = Company;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets News
         /// </summary>
-        [DataMember(Name="news", EmitDefaultValue=false)]
+        [DataMember(Name = "news", EmitDefaultValue = false)]
         public List<CompanyNewsSummary> News { get; set; }
 
         /// <summary>
         /// Gets or Sets Company
         /// </summary>
-        [DataMember(Name="company", EmitDefaultValue=false)]
+        [DataMember(Name = "company", EmitDefaultValue = false)]
         public CompanySummary Company { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -54,13 +54,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseCompanyNews {\n");
-            sb.Append("  News: ").Append(News).Append("\n");
-            sb.Append("  Company: ").Append(Company).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  News: ").Append(News).Append('\n');
+            sb.Append("  Company: ").Append(Company).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +75,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseCompanyNews);
+            return Equals(obj as ApiResponseCompanyNews);
         }
 
         /// <summary>
@@ -90,17 +90,17 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     News == input.News ||
                     News != null &&
                     News.SequenceEqual(input.News)
-                ) && 
+                ) &&
                 (
                     Company == input.Company ||
                     (Company != null &&
                     Company.Equals(input.Company))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -137,5 +137,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

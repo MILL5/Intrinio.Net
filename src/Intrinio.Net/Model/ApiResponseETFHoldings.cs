@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,38 +11,38 @@ namespace Intrinio.Net.Model
     /// ApiResponseETFHoldings
     /// </summary>
     [DataContract]
-    public partial class ApiResponseETFHoldings :  IEquatable<ApiResponseETFHoldings>, IValidatableObject
+    public sealed partial class ApiResponseEtfHoldings : IEquatable<ApiResponseEtfHoldings>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiResponseETFHoldings" /> class.
+        /// Initializes a new instance of the <see cref="ApiResponseEtfHoldings" /> class.
         /// </summary>
         /// <param name="Holdings">Holdings.</param>
         /// <param name="Etf">Etf.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseETFHoldings(object Holdings = default(object), ETFSummary Etf = default(ETFSummary), string NextPage = default(string))
+        public ApiResponseEtfHoldings(object Holdings = default, EtfSummary Etf = default, string NextPage = default)
         {
             this.Holdings = Holdings;
             this.Etf = Etf;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Gets or Sets Holdings
         /// </summary>
-        [DataMember(Name="holdings", EmitDefaultValue=false)]
+        [DataMember(Name = "holdings", EmitDefaultValue = false)]
         public object Holdings { get; set; }
 
         /// <summary>
         /// Gets or Sets Etf
         /// </summary>
-        [DataMember(Name="etf", EmitDefaultValue=false)]
-        public ETFSummary Etf { get; set; }
+        [DataMember(Name = "etf", EmitDefaultValue = false)]
+        public EtfSummary Etf { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -62,13 +53,13 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseETFHoldings {\n");
-            sb.Append("  Holdings: ").Append(Holdings).Append("\n");
-            sb.Append("  Etf: ").Append(Etf).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  Holdings: ").Append(Holdings).Append('\n');
+            sb.Append("  Etf: ").Append(Etf).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -83,9 +74,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseETFHoldings);
+            return Equals(obj as ApiResponseEtfHoldings);
         }
 
         /// <summary>
@@ -93,22 +84,22 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Instance of ApiResponseETFHoldings to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ApiResponseETFHoldings input)
+        public bool Equals(ApiResponseEtfHoldings input)
         {
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     Holdings == input.Holdings ||
                     (Holdings != null &&
                     Holdings.Equals(input.Holdings))
-                ) && 
+                ) &&
                 (
                     Etf == input.Etf ||
                     (Etf != null &&
                     Etf.Equals(input.Etf))
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -145,5 +136,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

@@ -1,18 +1,10 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +12,31 @@ namespace Intrinio.Net.Model
     /// ApiResponseZacksEPSGrowthRates
     /// </summary>
     [DataContract]
-    public partial class ApiResponseZacksEPSGrowthRates :  IEquatable<ApiResponseZacksEPSGrowthRates>, IValidatableObject
+    public sealed partial class ApiResponseZacksEpsGrowthRates : IEquatable<ApiResponseZacksEpsGrowthRates>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiResponseZacksEPSGrowthRates" /> class.
+        /// Initializes a new instance of the <see cref="ApiResponseZacksEpsGrowthRates" /> class.
         /// </summary>
         /// <param name="EpsGrowthRates">Zacks EPS growth rate for the latest date.</param>
         /// <param name="NextPage">The token required to request the next page of the data. If null, no further results are available..</param>
-        public ApiResponseZacksEPSGrowthRates(List<ZacksEPSGrowthRate> EpsGrowthRates = default(List<ZacksEPSGrowthRate>), string NextPage = default(string))
+        public ApiResponseZacksEpsGrowthRates(List<ZacksEpsGrowthRate> EpsGrowthRates = default, string NextPage = default)
         {
             this.EpsGrowthRates = EpsGrowthRates;
             this.NextPage = NextPage;
         }
-        
+
         /// <summary>
         /// Zacks EPS growth rate for the latest date
         /// </summary>
         /// <value>Zacks EPS growth rate for the latest date</value>
-        [DataMember(Name="eps_growth_rates", EmitDefaultValue=false)]
-        public List<ZacksEPSGrowthRate> EpsGrowthRates { get; set; }
+        [DataMember(Name = "eps_growth_rates", EmitDefaultValue = false)]
+        public List<ZacksEpsGrowthRate> EpsGrowthRates { get; set; }
 
         /// <summary>
         /// The token required to request the next page of the data. If null, no further results are available.
         /// </summary>
         /// <value>The token required to request the next page of the data. If null, no further results are available.</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name = "next_page", EmitDefaultValue = false)]
         public string NextPage { get; set; }
 
         /// <summary>
@@ -55,12 +47,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ApiResponseZacksEPSGrowthRates {\n");
-            sb.Append("  EpsGrowthRates: ").Append(EpsGrowthRates).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
+            sb.Append("  EpsGrowthRates: ").Append(EpsGrowthRates).Append('\n');
+            sb.Append("  NextPage: ").Append(NextPage).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +67,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as ApiResponseZacksEPSGrowthRates);
+            return Equals(obj as ApiResponseZacksEpsGrowthRates);
         }
 
         /// <summary>
@@ -85,17 +77,17 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Instance of ApiResponseZacksEPSGrowthRates to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ApiResponseZacksEPSGrowthRates input)
+        public bool Equals(ApiResponseZacksEpsGrowthRates input)
         {
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     EpsGrowthRates == input.EpsGrowthRates ||
                     EpsGrowthRates != null &&
                     EpsGrowthRates.SequenceEqual(input.EpsGrowthRates)
-                ) && 
+                ) &&
                 (
                     NextPage == input.NextPage ||
                     (NextPage != null &&
@@ -130,5 +122,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }

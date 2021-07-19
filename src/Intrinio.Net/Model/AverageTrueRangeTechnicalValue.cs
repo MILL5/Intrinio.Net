@@ -1,18 +1,9 @@
-
-
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = Intrinio.Net.Client.SwaggerDateConverter;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Intrinio.Net.Model
 {
@@ -20,31 +11,31 @@ namespace Intrinio.Net.Model
     /// The date_time and atr values of an Average True range technical indicator calculation
     /// </summary>
     [DataContract]
-    public partial class AverageTrueRangeTechnicalValue :  IEquatable<AverageTrueRangeTechnicalValue>, IValidatableObject
+    public sealed partial class AverageTrueRangeTechnicalValue : IEquatable<AverageTrueRangeTechnicalValue>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AverageTrueRangeTechnicalValue" /> class.
         /// </summary>
         /// <param name="DateTime">The date_time of the observation.</param>
         /// <param name="Atr">The Average True Range calculation value.</param>
-        public AverageTrueRangeTechnicalValue(DateTime? DateTime = default(DateTime?), float? Atr = default(float?))
+        public AverageTrueRangeTechnicalValue(DateTime? DateTime = default, float? Atr = default)
         {
             this.DateTime = DateTime;
             this.Atr = Atr;
         }
-        
+
         /// <summary>
         /// The date_time of the observation
         /// </summary>
         /// <value>The date_time of the observation</value>
-        [DataMember(Name="date_time", EmitDefaultValue=false)]
+        [DataMember(Name = "date_time", EmitDefaultValue = false)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// The Average True Range calculation value
         /// </summary>
         /// <value>The Average True Range calculation value</value>
-        [DataMember(Name="atr", EmitDefaultValue=false)]
+        [DataMember(Name = "atr", EmitDefaultValue = false)]
         public float? Atr { get; set; }
 
         /// <summary>
@@ -55,12 +46,12 @@ namespace Intrinio.Net.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AverageTrueRangeTechnicalValue {\n");
-            sb.Append("  DateTime: ").Append(DateTime).Append("\n");
-            sb.Append("  Atr: ").Append(Atr).Append("\n");
+            sb.Append("  DateTime: ").Append(DateTime).Append('\n');
+            sb.Append("  Atr: ").Append(Atr).Append('\n');
             sb.Append("}\n");
             return sb.ToString();
         }
-  
+
         /// <summary>
         /// Returns the JSON string presentation of the object
         /// </summary>
@@ -75,9 +66,9 @@ namespace Intrinio.Net.Model
         /// </summary>
         /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object input)
+        public override bool Equals(object obj)
         {
-            return Equals(input as AverageTrueRangeTechnicalValue);
+            return Equals(obj as AverageTrueRangeTechnicalValue);
         }
 
         /// <summary>
@@ -90,12 +81,12 @@ namespace Intrinio.Net.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     DateTime == input.DateTime ||
                     (DateTime != null &&
                     DateTime.Equals(input.DateTime))
-                ) && 
+                ) &&
                 (
                     Atr == input.Atr ||
                     (Atr != null &&
@@ -130,5 +121,4 @@ namespace Intrinio.Net.Model
             yield break;
         }
     }
-
 }
