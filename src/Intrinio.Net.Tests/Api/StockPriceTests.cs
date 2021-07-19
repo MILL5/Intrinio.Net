@@ -29,7 +29,7 @@ namespace Intrinio.Net.Tests.Api
 
         [DataTestMethod]
         [DataRow(USCOMP)]
-        [DataRow("sxg_2gB0zb")]
+        [DataRow("sxg_ozMr9y")] // USCOMP intrinio internal id
         public async Task GetStockPricesByExchangeSucceedsAsync(string identifier)
         {
             var result = await IntrinioTestClient.GetStockPricesByExchangeAsync(identifier);
@@ -65,7 +65,7 @@ namespace Intrinio.Net.Tests.Api
         }
 
         [DataTestMethod]
-        [DataRow("XASE", JAN_FIRST_01)]
+        [DataRow(USCOMP, JAN_FIRST_01)]
         public async Task GetStockPricesByExchangeWithDateSucceedsAsync(string identifier, string date)
         {
             var result = await IntrinioTestClient.GetStockPricesByExchangeAsync(identifier, date: date);
