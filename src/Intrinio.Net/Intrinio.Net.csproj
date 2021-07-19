@@ -20,7 +20,12 @@
 	<Version>1.0.11-alpha</Version>
 	<AssemblyVersion>1.0.11.0</AssemblyVersion>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<CodeAnalysisRuleSet>..\..\.sonarlint\intrinio.netcsharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\.sonarlint\intrinio.net\CSharp\SonarLint.xml" Link="SonarLint.xml" />
+  </ItemGroup>
 
   <ItemGroup>
 	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />

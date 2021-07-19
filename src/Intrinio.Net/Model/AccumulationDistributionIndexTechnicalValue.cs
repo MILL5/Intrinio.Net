@@ -74,23 +74,23 @@ namespace Intrinio.Net.Model
         /// <summary>
         /// Returns true if AccumulationDistributionIndexTechnicalValue instances are equal
         /// </summary>
-        /// <param name="input">Instance of AccumulationDistributionIndexTechnicalValue to be compared</param>
+        /// <param name="other">Instance of AccumulationDistributionIndexTechnicalValue to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AccumulationDistributionIndexTechnicalValue input)
+        public bool Equals(AccumulationDistributionIndexTechnicalValue other)
         {
-            if (input == null)
+            if (other == null)
                 return false;
 
             return
                 (
-                    DateTime == input.DateTime ||
+                    DateTime == other.DateTime ||
                     (DateTime != null &&
-                    DateTime.Equals(input.DateTime))
+                    DateTime.Equals(other.DateTime))
                 ) &&
                 (
-                    Adi == input.Adi ||
+                    Adi == other.Adi ||
                     (Adi != null &&
-                    Adi.Equals(input.Adi))
+                    Adi.Equals(other.Adi))
                 );
         }
 

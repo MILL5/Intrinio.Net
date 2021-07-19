@@ -104,7 +104,7 @@ namespace Intrinio.Net.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
         public override bool Equals(object obj)
         {
@@ -114,43 +114,43 @@ namespace Intrinio.Net.Model
         /// <summary>
         /// Returns true if StockPriceAdjustment instances are equal
         /// </summary>
-        /// <param name="input">Instance of StockPriceAdjustment to be compared</param>
+        /// <param name="other">Instance of StockPriceAdjustment to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(StockPriceAdjustment input)
+        public bool Equals(StockPriceAdjustment other)
         {
-            if (input == null)
+            if (other == null)
                 return false;
 
             return
                 (
-                    Date == input.Date ||
+                    Date == other.Date ||
                     (Date != null &&
-                    Date.Equals(input.Date))
+                    Date.Equals(other.Date))
                 ) &&
                 (
-                    Factor == input.Factor ||
+                    Factor == other.Factor ||
                     (Factor != null &&
-                    Factor.Equals(input.Factor))
+                    Factor.Equals(other.Factor))
                 ) &&
                 (
-                    Dividend == input.Dividend ||
+                    Dividend == other.Dividend ||
                     (Dividend != null &&
-                    Dividend.Equals(input.Dividend))
+                    Dividend.Equals(other.Dividend))
                 ) &&
                 (
-                    DividendCurrency == input.DividendCurrency ||
+                    DividendCurrency == other.DividendCurrency ||
                     (DividendCurrency != null &&
-                    DividendCurrency.Equals(input.DividendCurrency))
+                    DividendCurrency.Equals(other.DividendCurrency))
                 ) &&
                 (
-                    SplitRatio == input.SplitRatio ||
+                    SplitRatio == other.SplitRatio ||
                     (SplitRatio != null &&
-                    SplitRatio.Equals(input.SplitRatio))
+                    SplitRatio.Equals(other.SplitRatio))
                 ) &&
                 (
-                    Security == input.Security ||
+                    Security == other.Security ||
                     (Security != null &&
-                    Security.Equals(input.Security))
+                    Security.Equals(other.Security))
                 );
         }
 

@@ -72,7 +72,7 @@ namespace Intrinio.Net.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
         public override bool Equals(object obj)
         {
@@ -82,28 +82,28 @@ namespace Intrinio.Net.Model
         /// <summary>
         /// Returns true if ApiResponseETFHoldings instances are equal
         /// </summary>
-        /// <param name="input">Instance of ApiResponseETFHoldings to be compared</param>
+        /// <param name="other">Instance of ApiResponseETFHoldings to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ApiResponseEtfHoldings input)
+        public bool Equals(ApiResponseEtfHoldings other)
         {
-            if (input == null)
+            if (other == null)
                 return false;
 
             return
                 (
-                    Holdings == input.Holdings ||
+                    Holdings == other.Holdings ||
                     (Holdings != null &&
-                    Holdings.Equals(input.Holdings))
+                    Holdings.Equals(other.Holdings))
                 ) &&
                 (
-                    Etf == input.Etf ||
+                    Etf == other.Etf ||
                     (Etf != null &&
-                    Etf.Equals(input.Etf))
+                    Etf.Equals(other.Etf))
                 ) &&
                 (
-                    NextPage == input.NextPage ||
+                    NextPage == other.NextPage ||
                     (NextPage != null &&
-                    NextPage.Equals(input.NextPage))
+                    NextPage.Equals(other.NextPage))
                 );
         }
 

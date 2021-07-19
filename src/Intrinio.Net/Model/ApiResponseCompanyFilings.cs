@@ -73,7 +73,7 @@ namespace Intrinio.Net.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="input">Object to be compared</param>
+        /// <param name="obj">Object to be compared</param>
         /// <returns>Boolean</returns>
         public override bool Equals(object obj)
         {
@@ -83,28 +83,28 @@ namespace Intrinio.Net.Model
         /// <summary>
         /// Returns true if ApiResponseCompanyFilings instances are equal
         /// </summary>
-        /// <param name="input">Instance of ApiResponseCompanyFilings to be compared</param>
+        /// <param name="other">Instance of ApiResponseCompanyFilings to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ApiResponseCompanyFilings input)
+        public bool Equals(ApiResponseCompanyFilings other)
         {
-            if (input == null)
+            if (other == null)
                 return false;
 
             return
                 (
-                    Filings == input.Filings ||
+                    Filings == other.Filings ||
                     Filings != null &&
-                    Filings.SequenceEqual(input.Filings)
+                    Filings.SequenceEqual(other.Filings)
                 ) &&
                 (
-                    Company == input.Company ||
+                    Company == other.Company ||
                     (Company != null &&
-                    Company.Equals(input.Company))
+                    Company.Equals(other.Company))
                 ) &&
                 (
-                    NextPage == input.NextPage ||
+                    NextPage == other.NextPage ||
                     (NextPage != null &&
-                    NextPage.Equals(input.NextPage))
+                    NextPage.Equals(other.NextPage))
                 );
         }
 
