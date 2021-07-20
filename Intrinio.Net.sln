@@ -5,6 +5,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{80C70EF6-DD47-4F87-A89A-965FF4AAB74C}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\build.yml = .github\workflows\build.yml
+		IntrinioNet.runsettings = IntrinioNet.runsettings
 		README.Intrinio.md = README.Intrinio.md
 		README.md = README.md
 	EndProjectSection

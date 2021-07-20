@@ -25,30 +25,11 @@ namespace Intrinio.Net.Api
             };
 
             var jsonResponse = await GetAsync($"{string.Format(RestApiUrls.Prices.BySecurity, identifier)}{GetQueryParameterString(queryParams)}").ConfigureAwait(false);
-            var securityStockPrices = JsonConvert.DeserializeObject<ApiResponseSecurityStockPrices>(jsonResponse);
-
-            var result = securityStockPrices ?? throw new IntrinioNetException("API Response is Null");
-
-            while (securityStockPrices.NextPage != null)
-            {
-                queryParams[nameof(next_page)] = securityStockPrices.NextPage;
-                jsonResponse = await GetAsync($"{string.Format(RestApiUrls.Prices.BySecurity, identifier)}{GetQueryParameterString(queryParams)}")
-                    .ConfigureAwait(false);
-                securityStockPrices = JsonConvert.DeserializeObject<ApiResponseSecurityStockPrices>(jsonResponse);
-                if (securityStockPrices == null)
-                {
-                    throw new IntrinioNetException("API Response is Null");
-                }
-
-                var newPrices = securityStockPrices.StockPrices;
-                result.StockPrices.AddRange(newPrices);
-                result.NextPage = securityStockPrices.NextPage;
-            }
-
-            return result;
+            
+            return JsonConvert.DeserializeObject<ApiResponseSecurityStockPrices>(jsonResponse);
         }
 
-        public async Task<IEnumerable<StockPrice>> GetStockPricesByExchangeAsync(
+        public async Task<ApiResponseStockExchangeStockPrices> GetStockPricesByExchangeAsync(
             string identifier,
             StockPriceSummary.PeriodFrequency? frequency = null,
             int? page_size = null,
@@ -63,36 +44,10 @@ namespace Intrinio.Net.Api
                 { nameof(next_page), next_page }
             };
 
-            var result = new List<StockPrice>();
-
             var jsonResponse = await GetAsync($"{string.Format(RestApiUrls.Exchanges.PricesByExchange, identifier)}{GetQueryParameterString(queryParams)}")
                 .ConfigureAwait(false);
-            var apiResponse = JsonConvert.DeserializeObject<ApiResponseStockExchangeStockPrices>(jsonResponse);
-
-            if (apiResponse == null)
-            {
-                throw new IntrinioNetException("API Response is Null");
-            }
-
-            var prices = apiResponse.StockPrices;
-
-            result.AddRange(prices);
-
-            while (apiResponse.NextPage != null)
-            {
-                queryParams[nameof(next_page)] = apiResponse.NextPage;
-                jsonResponse = await GetAsync($"{string.Format(RestApiUrls.Exchanges.PricesByExchange, identifier)}{GetQueryParameterString(queryParams)}")
-                    .ConfigureAwait(false);
-                apiResponse = JsonConvert.DeserializeObject<ApiResponseStockExchangeStockPrices>(jsonResponse);
-                if (apiResponse == null)
-                {
-                    throw new IntrinioNetException("API Response is Null");
-                }
-                prices = apiResponse.StockPrices;
-                result.AddRange(prices);
-            }
-
-            return result;
+            
+            return JsonConvert.DeserializeObject<ApiResponseStockExchangeStockPrices>(jsonResponse);
         }
     }
 }

@@ -17,21 +17,37 @@ namespace Intrinio.Net.Tests.Api
         [TestMethod]
         public async Task GetAllCompanySummariesSucceedsAsync()
         {
-            var companies = await IntrinioTestClient.GetAllCompanySummariesAsync();
+            var companiesResponse = await IntrinioTestClient.GetAllCompanySummariesAsync();
 
-            Assert.IsNotNull(companies);
-            Assert.IsTrue(companies.Count() > 1);
+            Assert.IsNotNull(companiesResponse);
+            Assert.IsNotEmpty(companiesResponse.Companies);
+        }
+
+        [TestMethod]
+        public async Task GetAllCompanySummariesPaginationSucceedsAsync()
+        {
+            var companiesResponse1 = await IntrinioTestClient.GetAllCompanySummariesAsync();
+
+            Assert.IsNotNull(companiesResponse1);
+            Assert.IsNotEmpty(companiesResponse1.Companies);
+
+            var companiesResponse2 = await IntrinioTestClient.GetAllCompanySummariesAsync(next_page: companiesResponse1.NextPage);
+
+            Assert.IsNotNull(companiesResponse2);
+            Assert.IsNotEmpty(companiesResponse2.Companies);
+
+            Assert.AreNotEqual(companiesResponse1.Companies.First().Ticker, companiesResponse2.Companies.First().Ticker);
         }
 
         [TestMethod]
         public async Task GetAllCompanySummariesWithExpansionSucceedsAsync()
         {
-            var companies = await IntrinioTestClient.GetAllCompanySummariesAsync(expandAbbreviations: true);
+            var companiesResponse = await IntrinioTestClient.GetAllCompanySummariesAsync(expandAbbreviations: true);
 
-            Assert.IsNotNull(companies);
-            Assert.IsTrue(companies.Count() > 1);
+            Assert.IsNotNull(companiesResponse);
+            Assert.IsTrue(companiesResponse.Companies.Count > 1);
 
-            var apple = companies
+            var apple = companiesResponse.Companies
                 .First(c => c.Ticker == APPLE_TICKER);
 
             Assert.IsNotNull(apple);
@@ -66,10 +82,10 @@ namespace Intrinio.Net.Tests.Api
         [TestMethod]
         public async Task GetAllCompanySummariesPageSizeSuccessfulAsync()
         {
-            var companies = await IntrinioTestClient.GetAllCompanySummariesAsync(page_size: 10000, has_stock_prices: true);
+            var companiesResponse = await IntrinioTestClient.GetAllCompanySummariesAsync(page_size: 10000, has_stock_prices: true);
 
-            Assert.IsNotNull(companies);
-            Assert.IsTrue(companies.Any());
+            Assert.IsNotNull(companiesResponse);
+            Assert.IsTrue(companiesResponse.Companies.Count == 10000);
         }
     }
 }

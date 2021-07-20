@@ -11,7 +11,7 @@ namespace Intrinio.Net.Api
 
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S107:Methods should not have too many parameters", Justification = "API params")]
-        Task<IEnumerable<CompanySummary>> GetAllCompanySummariesAsync(
+        Task<ApiResponseCompanies> GetAllCompanySummariesAsync(
             DateTime? latest_filing_date = null,
             string sic = null,
             string template = null,
@@ -26,7 +26,7 @@ namespace Intrinio.Net.Api
 
         Task<Company> LookupCompanyAsync(string identifier, bool expandAbbreviations = false);
 
-        Task<IEnumerable<StockPrice>> GetStockPricesByExchangeAsync(
+        Task<ApiResponseStockExchangeStockPrices> GetStockPricesByExchangeAsync(
             string identifier,
             StockPriceSummary.PeriodFrequency? frequency = null,
             int? page_size = null,
@@ -49,7 +49,7 @@ namespace Intrinio.Net.Api
             string next_page = null);
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S107:Methods should not have too many parameters", Justification = "API params")]
-        Task<IEnumerable<SecuritySummary>> GetAllSecuritySummariesAsync(
+        Task<ApiResponseSecurities> GetAllSecuritySummariesAsync(
             bool? active = null,
             bool? delisted = null,
             string code = null,
@@ -71,7 +71,7 @@ namespace Intrinio.Net.Api
 
         Task<IEnumerable<SecuritySummary>> GetSecuritiesByCompanyAsync(string identifier);
 
-        Task<IEnumerable<StockExchange>> GetAllExchangesAsync(
+        Task<ApiResponseStockExchanges> GetAllExchangesAsync(
             string city = null,
             string country = null,
             string country_code = null,

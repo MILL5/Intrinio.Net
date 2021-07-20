@@ -9,7 +9,7 @@ namespace Intrinio.Net.Api
 {
     public partial class IntrinioClient
     {
-        public async Task<IEnumerable<CompanySummary>> GetAllCompanySummariesAsync(
+        public async Task<ApiResponseCompanies> GetAllCompanySummariesAsync(
             DateTime? latest_filing_date = null,
             string sic = null,
             string template = null,
@@ -36,8 +36,6 @@ namespace Intrinio.Net.Api
                   { nameof(next_page), next_page }
              };
 
-            var result = new List<CompanySummary>();
-
             var jsonResponse = await GetAsync($"{RestApiUrls.Company.Default}{GetQueryParameterString(queryParams)}").ConfigureAwait(false);
             var apiResponse = JsonConvert.DeserializeObject<ApiResponseCompanies>(jsonResponse);
 
@@ -53,25 +51,7 @@ namespace Intrinio.Net.Api
                 companies = Mapper.Map<List<CompanySummary>>(companies);
             }
 
-            result.AddRange(companies);
-
-            while (apiResponse.NextPage != null)
-            {
-                queryParams[nameof(next_page)] = apiResponse.NextPage;
-                jsonResponse = await GetAsync($"{RestApiUrls.Company.Default}{GetQueryParameterString(queryParams)}")
-                     .ConfigureAwait(false);
-                apiResponse = JsonConvert.DeserializeObject<ApiResponseCompanies>(jsonResponse);
-
-                if (apiResponse == null)
-                {
-                    throw new IntrinioNetException("API Response is Null");
-                }
-
-                companies = apiResponse.Companies;
-                result.AddRange(companies);
-            }
-
-            return result;
+            return new ApiResponseCompanies(companies, apiResponse.NextPage);
         }
 
         public async Task<Company> LookupCompanyAsync(string identifier, bool expandAbbreviations = false)
