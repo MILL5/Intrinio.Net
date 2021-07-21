@@ -1,7 +1,5 @@
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
 using static Intrinio.Net.Tests.TestManager;
 using Assert = NUnit.Framework.Assert;
 
@@ -19,10 +17,22 @@ namespace Intrinio.Net.Tests.Api
         [TestMethod]
         public async Task GetAllExchangesSucceedsAsync()
         {
-            var exchanges = await IntrinioTestClient.GetAllExchangesAsync();
+            var exchangeResponse = await IntrinioTestClient.GetAllExchangesAsync();
             
-            Assert.IsNotNull(exchanges);
-            Assert.IsTrue(exchanges.Count() > 1);
+            Assert.IsNotNull(exchangeResponse);
+            Assert.IsNotEmpty(exchangeResponse.StockExchanges);
+        }
+
+        [TestMethod]
+        // Intrinio accepts page_size as a valid query parameter but it doesn't do anything.
+        public async Task GetAllExchangesPageSizeSucceedsAsync()
+        {
+            var exchangeResponse = await IntrinioTestClient.GetAllExchangesAsync(page_size: 50);
+
+            Assert.IsNotNull(exchangeResponse);
+            Assert.IsNotEmpty(exchangeResponse.StockExchanges);
+
+            Assert.AreNotEqual(17, exchangeResponse.StockExchanges.Count);
         }
 
         [TestMethod]
@@ -41,10 +51,10 @@ namespace Intrinio.Net.Tests.Api
         [DataRow(null, null, KOREA_COUNTRY_CODE)]
         public async Task GetAllExchangesByCountrySucceedsAsync(string city, string country, string countryCode)
         {
-            var exchanges = await IntrinioTestClient.GetAllExchangesAsync(city, country, countryCode);
+            var exchangeResponse = await IntrinioTestClient.GetAllExchangesAsync(city, country, countryCode);
             
-            Assert.IsNotNull(exchanges);
-            Assert.IsNotEmpty(exchanges);
+            Assert.IsNotNull(exchangeResponse);
+            Assert.IsNotEmpty(exchangeResponse.StockExchanges);
         }
     }
 }

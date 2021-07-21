@@ -15,16 +15,43 @@ namespace Intrinio.Net.Tests.Api
         private const string JAN_FIRST_01 = "2021-01-01";
         private const string JAN_FIRST_00 = "2020-01-01";
 
+        [TestMethod]
+        public async Task GetStockPriceSummariesBySecuritySucceedsAsync()
+        {
+            var stockPriceResponse = await IntrinioTestClient.GetStockPriceSummariesBySecurityAsync(APPLE_TICKER);
+
+            Assert.IsNotNull(stockPriceResponse);
+            Assert.IsNotNull(stockPriceResponse.Security);
+            Assert.IsNotEmpty(stockPriceResponse.StockPrices);
+        }
+
+        [TestMethod]
+        public async Task GetStockPriceSummariesPaginationSucceedsAsync()
+        {
+            var stockPriceResponse1 = await IntrinioTestClient.GetStockPriceSummariesBySecurityAsync(APPLE_TICKER);
+
+            Assert.IsNotNull(stockPriceResponse1);
+            Assert.IsNotNull(stockPriceResponse1.Security);
+            Assert.IsNotEmpty(stockPriceResponse1.StockPrices);
+
+            var stockPriceResponse2 = await IntrinioTestClient.GetStockPriceSummariesBySecurityAsync(APPLE_TICKER, next_page: stockPriceResponse1.NextPage);
+
+            Assert.IsNotNull(stockPriceResponse2);
+            Assert.IsNotNull(stockPriceResponse2.Security);
+            Assert.IsNotEmpty(stockPriceResponse2.StockPrices);
+
+            Assert.AreEqual(stockPriceResponse1.Security.Ticker, stockPriceResponse2.Security.Ticker);
+        }
+
         [DataTestMethod]
         [DataRow(APPLE_TICKER)]
         public async Task GetStockPriceSummariesBySecuritySucceedsAsync(string identifier)
         {
-            var result = await IntrinioTestClient.GetStockPriceSummariesBySecurityAsync(identifier);
+            var stockPriceResponse = await IntrinioTestClient.GetStockPriceSummariesBySecurityAsync(identifier);
 
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.Security);
-            Assert.IsNotNull(result.StockPrices);
-            Assert.IsTrue(result.StockPrices.Count > 1);
+            Assert.IsNotNull(stockPriceResponse);
+            Assert.IsNotNull(stockPriceResponse.Security);
+            Assert.IsNotEmpty(stockPriceResponse.StockPrices);
         }
 
         [DataTestMethod]
@@ -32,22 +59,38 @@ namespace Intrinio.Net.Tests.Api
         [DataRow("sxg_ozMr9y")] // USCOMP intrinio internal id
         public async Task GetStockPricesByExchangeSucceedsAsync(string identifier)
         {
-            var result = await IntrinioTestClient.GetStockPricesByExchangeAsync(identifier);
+            var stockPriceResponse = await IntrinioTestClient.GetStockPricesByExchangeAsync(identifier);
 
-            Assert.IsNotNull(result);
-            AssertAllPropertiesNotNull(result.First());
+            Assert.IsNotNull(stockPriceResponse);
+            AssertAllPropertiesNotNull(stockPriceResponse.StockPrices.First());
+        }
+
+        [TestMethod]
+        public async Task GetStockPricesByExchangePaginationSucceedsAsync()
+        {
+            var stockPriceResponse1 = await IntrinioTestClient.GetStockPricesByExchangeAsync(USCOMP);
+
+            Assert.IsNotNull(stockPriceResponse1);
+            AssertAllPropertiesNotNull(stockPriceResponse1.StockPrices.First());
+
+            var stockPriceResponse2 = await IntrinioTestClient.GetStockPricesByExchangeAsync(USCOMP, next_page: stockPriceResponse1.NextPage);
+
+            Assert.IsNotNull(stockPriceResponse2);
+            AssertAllPropertiesNotNull(stockPriceResponse2.StockPrices.First());
+
+            Assert.AreEqual(stockPriceResponse1.StockExchange, stockPriceResponse1.StockExchange);
         }
 
         [DataTestMethod]
         [DataRow(JAN_FIRST_00, JAN_FIRST_01)]
         public async Task GetStockPriceSummariesBySecurityDateRangeSucceedsAsync(string start, string end)
         {
-            var result = await IntrinioTestClient.GetStockPriceSummariesBySecurityAsync(identifier: APPLE_TICKER, start_date: start, end_date: end);
+            var stockPriceResponse = await IntrinioTestClient.GetStockPriceSummariesBySecurityAsync(identifier: APPLE_TICKER, start_date: start, end_date: end);
 
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.Security);
-            Assert.IsNotNull(result.StockPrices);
-            Assert.IsTrue(result.StockPrices.Count > 1);
+            Assert.IsNotNull(stockPriceResponse);
+            Assert.IsNotNull(stockPriceResponse.Security);
+            Assert.IsNotNull(stockPriceResponse.StockPrices);
+            Assert.IsNotEmpty(stockPriceResponse.StockPrices);
         }
 
         [DataTestMethod]
@@ -56,22 +99,22 @@ namespace Intrinio.Net.Tests.Api
         [DataRow(JAN_FIRST_00, JAN_FIRST_01, StockPriceSummary.PeriodFrequency.Monthly)]
         public async Task GetStockPriceSummariesBySecurityDateRangeWithFreqSucceedsAsync(string start, string end, StockPriceSummary.PeriodFrequency freq)
         {
-            var result = await IntrinioTestClient.GetStockPriceSummariesBySecurityAsync(identifier: APPLE_TICKER, start_date: start, end_date: end, frequency: freq);
+            var stockPriceResponse = await IntrinioTestClient.GetStockPriceSummariesBySecurityAsync(identifier: APPLE_TICKER, start_date: start, end_date: end, frequency: freq);
 
-            Assert.IsNotNull(result);
-            Assert.IsNotNull(result.Security);
-            Assert.IsNotNull(result.StockPrices);
-            Assert.IsTrue(result.StockPrices.Count > 1);
+            Assert.IsNotNull(stockPriceResponse);
+            Assert.IsNotNull(stockPriceResponse.Security);
+            Assert.IsNotNull(stockPriceResponse.StockPrices);
+            Assert.IsNotEmpty(stockPriceResponse.StockPrices);
         }
 
         [DataTestMethod]
         [DataRow(USCOMP, JAN_FIRST_01)]
         public async Task GetStockPricesByExchangeWithDateSucceedsAsync(string identifier, string date)
         {
-            var result = await IntrinioTestClient.GetStockPricesByExchangeAsync(identifier, date: date);
+            var stockPriceResponse = await IntrinioTestClient.GetStockPricesByExchangeAsync(identifier, date: date);
 
-            Assert.IsNotNull(result);
-            AssertAllPropertiesNotNull(result.First());
+            Assert.IsNotNull(stockPriceResponse);
+            AssertAllPropertiesNotNull(stockPriceResponse.StockPrices.First());
         }
     }
 }

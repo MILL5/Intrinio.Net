@@ -7,7 +7,7 @@ namespace Intrinio.Net.Api
 {
     public partial class IntrinioClient
     {
-        public async Task<IEnumerable<StockExchange>> GetAllExchangesAsync(
+        public async Task<ApiResponseStockExchanges> GetAllExchangesAsync(
             string city = null,
             string country = null,
             string country_code = null,
@@ -22,19 +22,14 @@ namespace Intrinio.Net.Api
             };
 
             var jsonResponse = await GetAsync($"{RestApiUrls.Exchanges.Default}{GetQueryParameterString(queryParams)}").ConfigureAwait(false);
-            var stockExchanges = JsonConvert.DeserializeObject<ApiResponseStockExchanges>(jsonResponse);
-
-            if (stockExchanges == null)
-            {
-                throw new IntrinioNetException("API Response is Null");
-            }
-
-            return stockExchanges.StockExchanges;
+            
+            return JsonConvert.DeserializeObject<ApiResponseStockExchanges>(jsonResponse);
         }
 
         public async Task<StockExchange> LookupExchangeAsync(string identifier)
         {
             var jsonResponse = await GetAsync($"{RestApiUrls.Exchanges.Default}/{identifier}").ConfigureAwait(false);
+            
             var exchange = JsonConvert.DeserializeObject<StockExchange>(jsonResponse);
 
             if (exchange == null)
