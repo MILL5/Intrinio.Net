@@ -1,10 +1,10 @@
-using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using Intrinio.Net.Api;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using static Pineapple.Common.Preconditions;
 
 namespace Intrinio.Net.Tests
@@ -48,7 +48,7 @@ namespace Intrinio.Net.Tests
                 .CreateLogger(nameof(TestManager));
 
             IntrinioTestClient = serviceProvider.GetService<IIntrinioClient>();
-            
+
             CheckIsNotNull(nameof(IntrinioTestClient), IntrinioTestClient);
         }
 
@@ -60,7 +60,7 @@ namespace Intrinio.Net.Tests
 
         public static void AssertAllPropertiesNotNull<T>(T obj)
         {
-            foreach(var prop in obj.GetType().GetProperties())
+            foreach (var prop in obj.GetType().GetProperties())
             {
                 var value = prop.GetValue(obj);
 
