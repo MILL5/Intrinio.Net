@@ -16,7 +16,7 @@ namespace Intrinio.Net.Api
             var queryParams = new Dictionary<string, string>
             {
                 { nameof(date), date },
-                { nameof(page_size), page_size.ToString().ToLower() },
+                { nameof(page_size), page_size.ToString() },
                 { nameof(next_page), next_page }
             };
 

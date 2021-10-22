@@ -10,7 +10,7 @@ namespace Intrinio.Net.Tests.Api
     public class StockPriceAdjustmentsTests
     {
         private const string USCOMP = "USCOMP";
-        private const string DATE = "2021-10-21";
+        private const string DATE = "2021-10-18";
 
         [TestMethod]
         public async Task GetStockPriceAdjustmentsByExchangeAsync()
@@ -19,6 +19,30 @@ namespace Intrinio.Net.Tests.Api
 
             Assert.IsNotNull(stockPriceAdjustmentResponse);
             Assert.IsNotNull(stockPriceAdjustmentResponse.StockPriceAdjustments.Any());
+            Assert.IsNotNull(stockPriceAdjustmentResponse.StockPriceAdjustments.FirstOrDefault().Security);
+        }
+
+        [TestMethod]
+        public async Task GetStockPriceAdjustmentsByExchangeWithPageAsync()
+        {
+            var stockPriceAdjustmentResponse = await IntrinioTestClient.GetStockPriceAdjustmentsByExchangeAsync(USCOMP, DATE, 1000);
+
+            Assert.IsNotNull(stockPriceAdjustmentResponse);
+            Assert.IsNotNull(stockPriceAdjustmentResponse.StockPriceAdjustments.Any());
+            Assert.IsNotNull(stockPriceAdjustmentResponse.StockPriceAdjustments.FirstOrDefault().Security);
+        }
+
+        [TestMethod]
+        public async Task GetStockPriceAdjustmentsByExchangeWithNextPageAsync()
+        {
+            var stockPriceAdjustmentResponse = await IntrinioTestClient.GetStockPriceAdjustmentsByExchangeAsync(USCOMP, DATE, 10);
+
+            Assert.IsNotNull(stockPriceAdjustmentResponse);
+            Assert.IsNotNull(stockPriceAdjustmentResponse.NextPage);
+
+            stockPriceAdjustmentResponse = await IntrinioTestClient.GetStockPriceAdjustmentsByExchangeAsync(USCOMP, DATE, 10, stockPriceAdjustmentResponse.NextPage);
+
+            Assert.IsNotNull(stockPriceAdjustmentResponse);
             Assert.IsNotNull(stockPriceAdjustmentResponse.StockPriceAdjustments.FirstOrDefault().Security);
         }
     }
