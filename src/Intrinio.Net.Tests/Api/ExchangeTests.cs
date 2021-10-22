@@ -1,5 +1,5 @@
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Threading.Tasks;
 using static Intrinio.Net.Tests.TestManager;
 using Assert = NUnit.Framework.Assert;
 
@@ -8,7 +8,7 @@ namespace Intrinio.Net.Tests.Api
 {
     [TestClass]
     public class ExchangeTests
-    {        
+    {
         private const string USCOMP = "USCOMP";
         private const string SEOUL_CITY = "SEOUL";
         private const string KOREA_COUNTRY_CODE = "KR";
@@ -18,7 +18,7 @@ namespace Intrinio.Net.Tests.Api
         public async Task GetAllExchangesSucceedsAsync()
         {
             var exchangeResponse = await IntrinioTestClient.GetAllExchangesAsync();
-            
+
             Assert.IsNotNull(exchangeResponse);
             Assert.IsNotEmpty(exchangeResponse.StockExchanges);
         }
@@ -39,7 +39,7 @@ namespace Intrinio.Net.Tests.Api
         public async Task LookupExchangeSucceedsAsync()
         {
             var uscomp = await IntrinioTestClient.LookupExchangeAsync(USCOMP);
-            
+
             Assert.IsNotNull(uscomp);
             Assert.IsTrue(uscomp.Mic == USCOMP);
         }
@@ -52,7 +52,7 @@ namespace Intrinio.Net.Tests.Api
         public async Task GetAllExchangesByCountrySucceedsAsync(string city, string country, string countryCode)
         {
             var exchangeResponse = await IntrinioTestClient.GetAllExchangesAsync(city, country, countryCode);
-            
+
             Assert.IsNotNull(exchangeResponse);
             Assert.IsNotEmpty(exchangeResponse.StockExchanges);
         }

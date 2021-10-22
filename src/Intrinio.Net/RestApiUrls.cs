@@ -16,6 +16,7 @@
             public const string Default = BASE_URL + "/stock_exchanges";
             public const string SecuritiesByExchange = Default + "/{0}/securities";
             public const string PricesByExchange = Default + "/{0}/prices";
+            public const string PriceAdjustmentsByExchange = PricesByExchange + "/adjustments";
         }
 
         public static class Securities

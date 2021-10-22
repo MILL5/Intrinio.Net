@@ -9,7 +9,6 @@ namespace Intrinio.Net.Api
     {
         Task<string> GetAsync(string requestUrl);
 
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S107:Methods should not have too many parameters", Justification = "API params")]
         Task<ApiResponseCompanies> GetAllCompanySummariesAsync(
             DateTime? latest_filing_date = null,
@@ -78,5 +77,11 @@ namespace Intrinio.Net.Api
             int? page_size = null);
 
         Task<StockExchange> LookupExchangeAsync(string identifier);
+
+        Task<ApiResponseStockExchangeStockPriceAdjustments> GetStockPriceAdjustmentsByExchangeAsync(
+            string identifier,
+            string date,
+            int? page_size = null,
+            string next_page = null);
     }
 }
