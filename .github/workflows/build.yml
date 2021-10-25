@@ -27,12 +27,11 @@ jobs:
 
       - name: Build
         run: dotnet build --no-restore --configuration Release
-
-      # need to add rate limiting for testing.
-      #- name: Test
-      #  run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:ExcludeByAttribute="Obsolete"
-      #  env:
-      #    IntrinioApiKey: ${{ secrets.INTRINIO_API_KEY }}
+      
+      - name: Test
+        run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:ExcludeByAttribute="Obsolete"
+        env:
+          IntrinioApiKey: ${{ secrets.INTRINIO_API_KEY }}
 
       - name: End SonarQube Scanner
         run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONARQUBE_TOKEN }}"
