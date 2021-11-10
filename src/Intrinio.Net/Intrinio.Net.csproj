@@ -2,7 +2,7 @@
 
   <PropertyGroup>
 	<Title>Intrinio.Net</Title>
-	<TargetFramework>net5.0</TargetFramework>
+	<TargetFramework>net6.0</TargetFramework>
 	<Company>MILL5</Company>
 	<Copyright>Copyright © MILL5, LLC 2021</Copyright>
 	<RepositoryType>git</RepositoryType>
@@ -11,14 +11,14 @@
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<PackageReleaseNotes>This is an initial release recompiled for .NET Standard 2.x.</PackageReleaseNotes>
 	<Authors>MILL5</Authors>
-	<Description>This is a port of the Intrinio.Net to .NET Standard so that it can be used across .NET Framework, .NET Core, and the new .NET 5.0.</Description>
+	<Description>This is a port of the Intrinio.Net to .NET Standard so that it can be used across .NET Framework, .NET Core, .NET 5.0, and the new .NET 6.0.</Description>
 	<PackageTags>intrinio;api;data;stock;price;</PackageTags>
 	<PackageIcon>intrinio.png</PackageIcon>
 	<PublishRepositoryUrl>true</PublishRepositoryUrl>
 	<IncludeSymbols>true</IncludeSymbols>
 	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-	<Version>1.0.14</Version>
-	<AssemblyVersion>1.0.14.0</AssemblyVersion>
+	<Version>1.0.15</Version>
+	<AssemblyVersion>1.0.15.0</AssemblyVersion>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<CodeAnalysisRuleSet>..\..\.sonarlint\intrinio.netcsharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
