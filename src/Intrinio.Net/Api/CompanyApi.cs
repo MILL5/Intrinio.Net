@@ -48,7 +48,7 @@ namespace Intrinio.Net.Api
 
             if (expandAbbreviations)
             {
-                companies = Mapper.Map<List<CompanySummary>>(companies);
+                companies = _mapper.Map<List<CompanySummary>>(companies);
             }
 
             return new ApiResponseCompanies(companies, apiResponse.NextPage);
@@ -64,7 +64,7 @@ namespace Intrinio.Net.Api
             var company = JsonConvert.DeserializeObject<Company>(jsonResponse);
 
             if (!expandAbbreviations) return company;
-            company = Mapper.Map<Company>(company);
+            company = _mapper.Map<Company>(company);
 
             return company;
         }
