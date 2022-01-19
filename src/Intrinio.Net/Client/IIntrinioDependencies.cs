@@ -7,18 +7,16 @@ namespace Intrinio.Net
 {
     public interface IIntrinioDependencies
     {
-        IntrinioSettings Settings { get; }
-        IHttpClientFactory HttpClientFactory { get; }
-        AbbreviationParser AbbreviationParser { get; }
-        IMapper Mapper { get; }
+        IntrinioSettings Settings { get; set; }
+        IHttpClientFactory HttpClientFactory { get; set; }
+        IMapper Mapper { get; set; }
     }
 
     internal class IntrinioDependencies : IIntrinioDependencies
     {
-        public IntrinioSettings Settings { get; }
-        public IHttpClientFactory HttpClientFactory { get; }
-        public AbbreviationParser AbbreviationParser { get; }
-        public IMapper Mapper { get; }
+        public IntrinioSettings Settings { get; set; }
+        public IHttpClientFactory HttpClientFactory { get; set; }
+        public IMapper Mapper { get; set; }
 
         public IntrinioDependencies(IntrinioSettings settings, IHttpClientFactory clientFactory, IMapper mapper)
         {
@@ -27,7 +25,6 @@ namespace Intrinio.Net
 
             Settings = settings;
             HttpClientFactory = clientFactory;
-            AbbreviationParser = new AbbreviationParser();
             Mapper = mapper;
         }
     }

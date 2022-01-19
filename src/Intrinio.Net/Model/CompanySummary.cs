@@ -14,23 +14,6 @@ namespace Intrinio.Net.Model
     public sealed partial class CompanySummary : IEquatable<CompanySummary>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CompanySummary" /> class.
-        /// </summary>
-        /// <param name="Id">The Intrinio ID of the company.</param>
-        /// <param name="Ticker">The stock market ticker symbol associated with the company&#39;s common stock securities.</param>
-        /// <param name="Name">The company&#39;s common name.</param>
-        /// <param name="Lei">The Legal Entity Identifier (LEI) assigned to the company.</param>
-        /// <param name="Cik">The Central Index Key (CIK) assigned to the company.</param>
-        public CompanySummary(string Id = default, string Ticker = default, string Name = default, string Lei = default, string Cik = default)
-        {
-            this.Id = Id;
-            this.Ticker = Ticker;
-            this.Name = Name;
-            this.Lei = Lei;
-            this.Cik = Cik;
-        }
-
-        /// <summary>
         /// The Intrinio ID of the company
         /// </summary>
         /// <value>The Intrinio ID of the company</value>

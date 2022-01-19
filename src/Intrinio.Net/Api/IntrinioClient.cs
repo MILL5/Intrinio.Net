@@ -13,13 +13,13 @@ namespace Intrinio.Net.Api
     {
         public readonly IIntrinioDependencies Dependencies;
         public readonly HttpClient Client;
-        public readonly IMapper Mapper;
+        public readonly IMapper _mapper;
 
         public IntrinioClient(IIntrinioDependencies dependencies)
         {
             Dependencies = dependencies;
             Client = dependencies.HttpClientFactory.CreateClient(IntrinioSettings.HttpClientName);
-            Mapper = dependencies.Mapper;
+            _mapper = dependencies.Mapper;
         }
 
         public async Task<string> GetAsync(string requestUrl)
