@@ -1,10 +1,10 @@
+using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using Intrinio.Net.Api;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using static Pineapple.Common.Preconditions;
 
 namespace Intrinio.Net.Tests

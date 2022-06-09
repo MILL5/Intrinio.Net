@@ -1,10 +1,10 @@
-using AutoMapper;
-using Polly;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using AutoMapper;
+using Polly;
 using static Pineapple.Common.Preconditions;
 
 namespace Intrinio.Net.Api

@@ -1,7 +1,7 @@
-using Intrinio.Net.Model;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Intrinio.Net.Model;
+using Newtonsoft.Json;
 
 namespace Intrinio.Net.Api
 {

@@ -1,10 +1,10 @@
+using System;
+using System.Net;
+using System.Net.Http;
 using Intrinio.Net.Api;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Pineapple.Networking;
-using System;
-using System.Net;
-using System.Net.Http;
 using static Pineapple.Common.Preconditions;
 
 namespace Intrinio.Net

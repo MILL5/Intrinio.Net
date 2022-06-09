@@ -1,5 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static Intrinio.Net.Tests.TestManager;
 using Assert = NUnit.Framework.Assert;
 

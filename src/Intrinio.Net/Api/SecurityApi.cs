@@ -1,7 +1,7 @@
-using Intrinio.Net.Model;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Intrinio.Net.Model;
+using Newtonsoft.Json;
 
 namespace Intrinio.Net.Api
 {
@@ -49,7 +49,7 @@ namespace Intrinio.Net.Api
              };
 
             var jsonResponse = await GetAsync($"{RestApiUrls.Securities.Default}{GetQueryParameterString(queryParams)}").ConfigureAwait(false);
-            
+
             return JsonConvert.DeserializeObject<ApiResponseSecurities>(jsonResponse);
         }
 
@@ -64,9 +64,9 @@ namespace Intrinio.Net.Api
                   { nameof(next_page), next_page }
              };
 
-           
+
             var jsonResponse = await GetAsync($"{string.Format(RestApiUrls.Exchanges.SecuritiesByExchange, identifier)}{GetQueryParameterString(queryParams)}").ConfigureAwait(false);
-            
+
             return JsonConvert.DeserializeObject<ApiResponseStockExchangeSecurities>(jsonResponse);
         }
 
@@ -86,7 +86,7 @@ namespace Intrinio.Net.Api
         public async Task<IEnumerable<SecuritySummary>> GetSecuritiesByCompanyAsync(string identifier)
         {
             var jsonResponse = await GetAsync($"{RestApiUrls.Securities.Default}/{identifier}").ConfigureAwait(false);
-            
+
             var securitySummary = JsonConvert.DeserializeObject<SecuritySummary>(jsonResponse);
 
             if (securitySummary == null)

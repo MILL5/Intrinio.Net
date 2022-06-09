@@ -1,7 +1,7 @@
-using Intrinio.Net.Model;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using System.Threading.Tasks;
+using Intrinio.Net.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static Intrinio.Net.Tests.TestManager;
 using Assert = NUnit.Framework.Assert;
 
