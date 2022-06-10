@@ -1,7 +1,7 @@
-using Intrinio.Net.Model;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Intrinio.Net.Model;
 
 namespace Intrinio.Net.Api
 {

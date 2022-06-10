@@ -1,9 +1,9 @@
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace Intrinio.Net.Model
 {
@@ -102,7 +102,7 @@ namespace Intrinio.Net.Model
         /// The latest date for which data is available
         /// </summary>
         /// <value>The latest date for which data is available</value>
-        [DataMember(Name = "observation_end", EmitDefaultValue = false)]        
+        [DataMember(Name = "observation_end", EmitDefaultValue = false)]
         public DateTime? ObservationEnd { get; set; }
 
         /// <summary>

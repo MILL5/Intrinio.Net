@@ -1,8 +1,8 @@
-using Intrinio.Net.Model;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Intrinio.Net.Model;
+using Newtonsoft.Json;
 using static Pineapple.Common.Preconditions;
 
 namespace Intrinio.Net.Api

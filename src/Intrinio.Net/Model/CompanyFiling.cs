@@ -1,9 +1,9 @@
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace Intrinio.Net.Model
 {
@@ -51,7 +51,7 @@ namespace Intrinio.Net.Model
         /// The date when the filing was submitted to the SEC by the company
         /// </summary>
         /// <value>The date when the filing was submitted to the SEC by the company</value>
-        [DataMember(Name = "filing_date", EmitDefaultValue = false)]        
+        [DataMember(Name = "filing_date", EmitDefaultValue = false)]
         public DateTime? FilingDate { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Intrinio.Net.Model
         /// The ending date of the fiscal period for the filing
         /// </summary>
         /// <value>The ending date of the fiscal period for the filing</value>
-        [DataMember(Name = "period_end_date", EmitDefaultValue = false)]        
+        [DataMember(Name = "period_end_date", EmitDefaultValue = false)]
         public DateTime? PeriodEndDate { get; set; }
 
         /// <summary>

@@ -1,7 +1,7 @@
-using Intrinio.Net.Model;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Intrinio.Net.Model;
+using Newtonsoft.Json;
 
 namespace Intrinio.Net.Api
 {
@@ -25,7 +25,7 @@ namespace Intrinio.Net.Api
             };
 
             var jsonResponse = await GetAsync($"{string.Format(RestApiUrls.Prices.BySecurity, identifier)}{GetQueryParameterString(queryParams)}").ConfigureAwait(false);
-            
+
             return JsonConvert.DeserializeObject<ApiResponseSecurityStockPrices>(jsonResponse);
         }
 
@@ -46,7 +46,7 @@ namespace Intrinio.Net.Api
 
             var jsonResponse = await GetAsync($"{string.Format(RestApiUrls.Exchanges.PricesByExchange, identifier)}{GetQueryParameterString(queryParams)}")
                 .ConfigureAwait(false);
-            
+
             return JsonConvert.DeserializeObject<ApiResponseStockExchangeStockPrices>(jsonResponse);
         }
     }

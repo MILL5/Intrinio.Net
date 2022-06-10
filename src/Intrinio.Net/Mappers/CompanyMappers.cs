@@ -7,7 +7,7 @@ namespace Intrinio.Net.Mappers
     public class CompanyMappers : Profile
     {
         private readonly AbbreviationParser _parser;
-        
+
         public CompanyMappers()
         {
             ConfigureMappings();
@@ -22,7 +22,7 @@ namespace Intrinio.Net.Mappers
             CreateMap<CompanySummary, CompanySummary>()
                 .ForMember(dest => dest.Name,
                     map => map.MapFrom(src => _parser.ExpandAllAbbreviationsFromString(src.Name, true)));
-            
+
         }
     }
 }

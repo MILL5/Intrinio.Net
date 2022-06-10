@@ -1,6 +1,5 @@
-using AutoMapper;
-using M5.FinancialDataSanitizer;
 using System.Net.Http;
+using AutoMapper;
 using static Pineapple.Common.Preconditions;
 
 namespace Intrinio.Net

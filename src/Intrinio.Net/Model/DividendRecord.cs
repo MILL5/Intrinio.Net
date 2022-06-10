@@ -1,10 +1,10 @@
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Intrinio.Net.Model
 {
@@ -100,7 +100,7 @@ namespace Intrinio.Net.Model
         /// Date dividend was announced
         /// </summary>
         /// <value>Date dividend was announced</value>
-        [DataMember(Name = "announcement_date", EmitDefaultValue = false)]        
+        [DataMember(Name = "announcement_date", EmitDefaultValue = false)]
         public DateTime? AnnouncementDate { get; set; }
 
         /// <summary>
