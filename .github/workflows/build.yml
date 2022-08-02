@@ -13,6 +13,9 @@ jobs:
   tests:
     runs-on: ubuntu-latest
 
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
     steps:
       - uses: actions/checkout@v2
 
@@ -22,11 +25,27 @@ jobs:
           dotnet-version: '6.0.x'
           include-prerelease: true
 
-      - name: Install SonarQube Scanner
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v1
+        with:
+          path: ~\sonar\cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+
+      - name: Cache SonarCloud scanner
+        id: cache-sonar-scanner
+        uses: actions/cache@v1
+        with:
+          path: .\.sonar\scanner
+          key: ${{ runner.os }}-sonar-scanner
+          restore-keys: ${{ runner.os }}-sonar-scanner
+
+      - name: Install SonarCloud scanner
+        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         run: dotnet tool install --global dotnet-sonarscanner
 
-      - name: Begin SonarQube Scanner
-        run: dotnet sonarscanner begin /key:"Intrinio.Net" /d:sonar.host.url="${{ secrets.SONARQUBE_HOST }}" /d:sonar.login="${{ secrets.SONARQUBE_TOKEN }}" /d:sonar.scm.disabled=false /d:sonar.scm.provider=git /d:sonar.links.scm="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" /d:sonar.cs.opencover.reportsPaths='**/coverage.opencover.xml'
+      - name: Begin SonarCloud Scanner
+        run: dotnet-sonarscanner begin /k:"MILL5_Intrinio.Net" /o:"mill5-sonarcloud" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scm.disabled=false /d:sonar.scm.provider=git /d:sonar.links.scm="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" /d:sonar.cs.opencover.reportsPaths='**/coverage.opencover.xml'
 
       - name: Restore Dependencies
         run: dotnet restore Intrinio.Net.sln
@@ -39,5 +58,5 @@ jobs:
         env:
           IntrinioApiKey: ${{ secrets.INTRINIO_API_KEY }}
 
-      - name: End SonarQube Scanner
-        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONARQUBE_TOKEN }}"
+      - name: End SonarCloud Scanner
+        run: dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
