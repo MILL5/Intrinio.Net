@@ -58,4 +58,4 @@ jobs:
           IntrinioApiKey: ${{ secrets.INTRINIO_API_KEY }}
 
       - name: ☁️ End SonarCloud Scanner
-        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONARQUBE_TOKEN }}"
+        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
