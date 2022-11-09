@@ -5,7 +5,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{80C70EF6-DD47-4F87-A89A-965FF4AAB74C}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		.github\workflows\build.yml = .github\workflows\build.yml
+		.gitignore = .gitignore
 		IntrinioNet.runsettings = IntrinioNet.runsettings
 		README.Intrinio.md = README.Intrinio.md
 		README.md = README.md
@@ -14,6 +14,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intrinio.Net", "src\Intrinio.Net\Intrinio.Net.csproj", "{3B5D1D2E-D4D8-4DAB-99D7-5780F5816084}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intrinio.Net.Tests", "src\Intrinio.Net.Tests\Intrinio.Net.Tests.csproj", "{051F1682-F9DE-435D-A6C6-229E64A47DB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{E2528E41-D4F8-4ED2-B4EE-1476C4CD81A1}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\buildTest.yml = .github\workflows\buildTest.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +37,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E2528E41-D4F8-4ED2-B4EE-1476C4CD81A1} = {80C70EF6-DD47-4F87-A89A-965FF4AAB74C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D7897A9-4CA8-4983-859E-2B478C0A7856}
