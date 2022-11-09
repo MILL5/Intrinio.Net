@@ -1,6 +1,6 @@
-using AutoMapper;
+﻿using AutoMapper;
 using Intrinio.Net.Model;
-using M5.FinancialDataSanitizer;
+using Cph.FinancialDataSanitizer;
 
 namespace Intrinio.Net.Mappers
 {
