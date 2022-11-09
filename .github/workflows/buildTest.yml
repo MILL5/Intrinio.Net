@@ -10,7 +10,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  tests:
+
+  buildTest:
+    name: Build and Test
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +28,7 @@ jobs:
         run: dotnet tool install --global dotnet-sonarscanner
 
       - name: Begin SonarQube Scanner
-        run: dotnet sonarscanner begin /key:"Intrinio.Net" /d:sonar.host.url="${{ secrets.SONARQUBE_HOST }}" /d:sonar.login="${{ secrets.SONARQUBE_TOKEN }}" /d:sonar.scm.disabled=false /d:sonar.scm.provider=git /d:sonar.links.scm="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" /d:sonar.cs.opencover.reportsPaths='**/coverage.opencover.xml'
+        run: dotnet-sonarscanner begin /k:"MILL5_Intrinio.Net" /o:"mill5-sonarcloud" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scm.disabled=false /d:sonar.scm.provider=git /d:sonar.links.scm="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" /d:sonar.cs.opencover.reportsPaths='**/coverage.opencover.xml'
 
       - name: Restore Dependencies
         run: dotnet restore Intrinio.Net.sln
