@@ -39,8 +39,11 @@ jobs:
       - name: ☁️ Install SonarCloud scanner
         run: dotnet tool install --global dotnet-sonarscanner
 
+      - name: 🪛 Install dotnet-coverage
+        run: dotnet tool install -g dotnet-coverage
+
       - name: ☁️ Begin SonarCloud Scanner
-        run: dotnet-sonarscanner begin /k:"MILL5_Intrinio.Net" /o:"mill5-sonarcloud" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scm.disabled=false /d:sonar.scm.provider=git /d:sonar.links.scm="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" /d:sonar.cs.opencover.reportsPaths='**/coverage.opencover.xml'
+        run: dotnet-sonarscanner begin /k:"MILL5_Intrinio.Net" /o:"mill5-sonarcloud" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scm.disabled=false /d:sonar.scm.provider=git /d:sonar.links.scm="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" /d:sonar.cs.vscoveragexml.reportsPaths='**/coverage.xml'
 
       - name: 📦 Add GitHub Nuget Source
         run: |
@@ -53,7 +56,7 @@ jobs:
         run: dotnet build --no-restore --configuration Release
       
       - name: 🧪 Run Tests
-        run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:ExcludeByAttribute="Obsolete"
+        run: dotnet-coverage collect 'dotnet test --verbosity minimal' -f xml  -o 'coverage.xml'
         env:
           IntrinioApiKey: ${{ secrets.INTRINIO_API_KEY }}
 
