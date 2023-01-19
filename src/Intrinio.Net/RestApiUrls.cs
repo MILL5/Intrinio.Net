@@ -5,6 +5,9 @@
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S1075:URIs should not be hardcoded", Justification = "need to use const to build Urls")]
         public const string BASE_URL = "https://api-v2.intrinio.com";
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S1075:URIs should not be hardcoded", Justification = "need to use const to build Urls")]
+        public const string SECURITY_CODES_URL = "https://docs.intrinio.com/documentation/security_codes";
+
         public static class Company
         {
             public const string Default = BASE_URL + "/companies";

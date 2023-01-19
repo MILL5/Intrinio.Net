@@ -1,8 +1,7 @@
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static Intrinio.Net.Tests.TestManager;
 using Assert = NUnit.Framework.Assert;
-
 
 namespace Intrinio.Net.Tests.Api
 {
@@ -24,7 +23,6 @@ namespace Intrinio.Net.Tests.Api
         }
 
         [TestMethod]
-        // Intrinio accepts page_size as a valid query parameter but it doesn't do anything.
         public async Task GetAllExchangesPageSizeSucceedsAsync()
         {
             var exchangeResponse = await IntrinioTestClient.GetAllExchangesAsync(page_size: 50);

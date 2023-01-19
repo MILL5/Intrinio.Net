@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Net;
 using System.Net.Http;
 using Intrinio.Net.Api;
@@ -26,12 +26,13 @@ namespace Intrinio.Net
             };
 
             services.AddSingleton(settings);
-            services.AddTransient<IIntrinioDependencies, IntrinioDependencies>();
-            services.AddTransient<IIntrinioClient, IntrinioClient>();
-
-            services.AddAutoMapper(typeof(RegisterAssembly));
 
             AddHttpClient(services);
+            services.AddAutoMapper(typeof(RegisterAssembly));
+
+            services.AddTransient<IIntrinioDependencies, IntrinioDependencies>();
+
+            services.AddTransient<IIntrinioClient, IntrinioClient>();
         }
 
         private static void AddHttpClient(IServiceCollection services)

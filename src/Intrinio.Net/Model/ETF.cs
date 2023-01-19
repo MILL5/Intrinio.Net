@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -341,6 +341,7 @@ namespace Intrinio.Net.Model
         /// <value>Inception Date for the ETF as published by the ETF sponsor</value>
         [DataMember(Name = "inception_date", EmitDefaultValue = false)]
         public DateTime? InceptionDate { get; set; }
+
         /// <summary>
         /// The last date on which there was a change in a classifications data field for this ETF
         /// </summary>

@@ -1,5 +1,7 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using HtmlAgilityPack;
 using Intrinio.Net.Model;
 using Newtonsoft.Json;
 
@@ -64,7 +66,6 @@ namespace Intrinio.Net.Api
                   { nameof(next_page), next_page }
              };
 
-
             var jsonResponse = await GetAsync($"{string.Format(RestApiUrls.Exchanges.SecuritiesByExchange, identifier)}{GetQueryParameterString(queryParams)}").ConfigureAwait(false);
 
             return JsonConvert.DeserializeObject<ApiResponseStockExchangeSecurities>(jsonResponse);
@@ -95,6 +96,25 @@ namespace Intrinio.Net.Api
             }
 
             return new List<SecuritySummary>() { securitySummary };
+        }
+
+        public async Task<IEnumerable<SecurityType>> GetSecurityTypesAsync(string url = RestApiUrls.SECURITY_CODES_URL)
+        {
+            var web = new HtmlWeb();
+            var doc = await web.LoadFromWebAsync(url);
+
+            var types = doc.DocumentNode
+                .SelectSingleNode("//table")
+                    .Descendants("tr").Skip(1)
+                    .Where(tr => tr.Elements("td").Count() == 2)
+                    .Select(tr => new SecurityType()
+                    {
+                        Code = tr.Elements("td").FirstOrDefault()!.InnerText.Trim(),
+                        Name = tr.Elements("td").LastOrDefault()!.InnerText.Trim()
+                    })
+                    .ToList();
+
+            return types;
         }
     }
 }

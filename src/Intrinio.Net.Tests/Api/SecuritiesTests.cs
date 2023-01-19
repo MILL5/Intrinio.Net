@@ -1,5 +1,6 @@
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
+using Intrinio.Net.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using static Intrinio.Net.Tests.TestManager;
 using Assert = NUnit.Framework.Assert;
@@ -113,6 +114,19 @@ namespace Intrinio.Net.Tests.Api
 
             Assert.IsNotNull(securitiesResponse);
             Assert.IsNotEmpty(securitiesResponse.Securities);
+        }
+
+        [TestMethod]
+        public async Task GetSecurityTypesSuceedsAsync()
+        {
+            var securities = await IntrinioTestClient.GetSecurityTypesAsync();
+
+            Assert.IsNotNull(securities);
+            Assert.IsNotEmpty(securities);
+            Assert.GreaterOrEqual(securities.Count(), 60);
+
+            var eqsType = new SecurityType() { Code = "EQS", Name = "Equity Shares" };
+            Assert.Contains(eqsType, securities.ToList());
         }
     }
 }
