@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Intrinio.Net.Model;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using static Pineapple.Common.Preconditions;
 
@@ -57,6 +58,7 @@ namespace Intrinio.Net.Api
         public async Task<Company> LookupCompanyAsync(string identifier, bool expandAbbreviations = false)
         {
             CheckIsNotNullOrWhitespace(nameof(identifier), identifier);
+            Dependencies.Logger.LogTrace("Lookup company {id}", identifier);
 
             var requestUrl = string.Format(RestApiUrls.Company.Lookup, identifier);
 

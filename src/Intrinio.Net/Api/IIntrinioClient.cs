@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Intrinio.Net.Model;
@@ -83,5 +83,7 @@ namespace Intrinio.Net.Api
             string date,
             int? page_size = null,
             string next_page = null);
+
+        Task<IEnumerable<SecurityType>> GetSecurityTypesAsync(string url = RestApiUrls.SECURITY_CODES_URL);
     }
 }

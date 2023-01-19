@@ -1,4 +1,4 @@
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using Intrinio.Net.Api;
 using Microsoft.Extensions.Configuration;
@@ -24,21 +24,16 @@ namespace Intrinio.Net.Tests
         {
             Configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", true)
-                .AddJsonFile("appsettings.local.json", true)
                 .AddEnvironmentVariables()
                 .Build();
 
             var services = new ServiceCollection();
 
-            services.AddSingleton<ILoggerFactory, LoggerFactory>();
-            services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
             services.AddLogging(loggingBuilder => loggingBuilder
                 .AddConsole()
                 .AddDebug()
                 .SetMinimumLevel(LogLevel.Debug));
 
-            services.AddSingleton(Configuration);
             services.AddApplication(Configuration);
 
             var serviceProvider = services.BuildServiceProvider();

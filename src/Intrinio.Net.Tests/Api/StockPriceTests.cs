@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Intrinio.Net.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

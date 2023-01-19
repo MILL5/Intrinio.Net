@@ -17,11 +17,200 @@
 	<PublishRepositoryUrl>true</PublishRepositoryUrl>
 	<IncludeSymbols>true</IncludeSymbols>
 	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-	<Version>1.0.19</Version>
-	<AssemblyVersion>1.0.19.0</AssemblyVersion>
+	<Version>1.1.0</Version>
+	<AssemblyVersion>1.1.0.0</AssemblyVersion>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<CodeAnalysisRuleSet>..\..\.sonarlint\intrinio.netcsharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Model\ApiResponseBulkDownloadLinks.cs" />
+    <Compile Remove="Model\ApiResponseCompaniesSearch.cs" />
+    <Compile Remove="Model\ApiResponseCompanyFilings.cs" />
+    <Compile Remove="Model\ApiResponseCompanyFundamentals.cs" />
+    <Compile Remove="Model\ApiResponseCompanyHistoricalData.cs" />
+    <Compile Remove="Model\ApiResponseCompanyNews.cs" />
+    <Compile Remove="Model\ApiResponseCompanySecurities.cs" />
+    <Compile Remove="Model\ApiResponseDataTags.cs" />
+    <Compile Remove="Model\ApiResponseDataTagsSearch.cs" />
+    <Compile Remove="Model\ApiResponseEconomicIndexHistoricalData.cs" />
+    <Compile Remove="Model\ApiResponseEconomicIndices.cs" />
+    <Compile Remove="Model\ApiResponseEconomicIndicesSearch.cs" />
+    <Compile Remove="Model\ApiResponseETFHoldings.cs" />
+    <Compile Remove="Model\ApiResponseETFs.cs" />
+    <Compile Remove="Model\ApiResponseFilingFundamentals.cs" />
+    <Compile Remove="Model\ApiResponseFilingNotes.cs" />
+    <Compile Remove="Model\ApiResponseFilingNotesSearch.cs" />
+    <Compile Remove="Model\ApiResponseFilings.cs" />
+    <Compile Remove="Model\ApiResponseForexCurrencies.cs" />
+    <Compile Remove="Model\ApiResponseForexPairs.cs" />
+    <Compile Remove="Model\ApiResponseForexPrices.cs" />
+    <Compile Remove="Model\ApiResponseHistoricalData.cs" />
+    <Compile Remove="Model\ApiResponseInitialPublicOfferings.cs" />
+    <Compile Remove="Model\ApiResponseMunicipalities.cs" />
+    <Compile Remove="Model\ApiResponseMunicipalitiyFinancials.cs" />
+    <Compile Remove="Model\ApiResponseOptionPrices.cs" />
+    <Compile Remove="Model\ApiResponseOptions.cs" />
+    <Compile Remove="Model\ApiResponseOptionsChain.cs" />
+    <Compile Remove="Model\ApiResponseOptionsChainRealtime.cs" />
+    <Compile Remove="Model\ApiResponseOptionsExpirations.cs" />
+    <Compile Remove="Model\ApiResponseOptionsPriceRealtime.cs" />
+    <Compile Remove="Model\ApiResponseOptionsStatsRealtime.cs" />
+    <Compile Remove="Model\ApiResponseReportedFinancials.cs" />
+    <Compile Remove="Model\ApiResponseSecuritiesSearch.cs" />
+    <Compile Remove="Model\ApiResponseSecurityAccumulationDistributionIndex.cs" />
+    <Compile Remove="Model\ApiResponseSecurityAverageDailyTradingVolume.cs" />
+    <Compile Remove="Model\ApiResponseSecurityAverageDirectionalIndex.cs" />
+    <Compile Remove="Model\ApiResponseSecurityAverageTrueRange.cs" />
+    <Compile Remove="Model\ApiResponseSecurityAwesomeOscillator.cs" />
+    <Compile Remove="Model\ApiResponseSecurityBollingerBands.cs" />
+    <Compile Remove="Model\ApiResponseSecurityChaikinMoneyFlow.cs" />
+    <Compile Remove="Model\ApiResponseSecurityCommodityChannelIndex.cs" />
+    <Compile Remove="Model\ApiResponseSecurityDetrendedPriceOscillator.cs" />
+    <Compile Remove="Model\ApiResponseSecurityDonchianChannel.cs" />
+    <Compile Remove="Model\ApiResponseSecurityEaseOfMovement.cs" />
+    <Compile Remove="Model\ApiResponseSecurityForceIndex.cs" />
+    <Compile Remove="Model\ApiResponseSecurityHistoricalData.cs" />
+    <Compile Remove="Model\ApiResponseSecurityIchimokuKinkoHyo.cs" />
+    <Compile Remove="Model\ApiResponseSecurityIntervalPrices.cs" />
+    <Compile Remove="Model\ApiResponseSecurityIntradayPrices.cs" />
+    <Compile Remove="Model\ApiResponseSecurityKeltnerChannel.cs" />
+    <Compile Remove="Model\ApiResponseSecurityKnowSureThing.cs" />
+    <Compile Remove="Model\ApiResponseSecurityMassIndex.cs" />
+    <Compile Remove="Model\ApiResponseSecurityMoneyFlowIndex.cs" />
+    <Compile Remove="Model\ApiResponseSecurityMovingAverageConvergenceDivergence.cs" />
+    <Compile Remove="Model\ApiResponseSecurityNegativeVolumeIndex.cs" />
+    <Compile Remove="Model\ApiResponseSecurityOnBalanceVolume.cs" />
+    <Compile Remove="Model\ApiResponseSecurityOnBalanceVolumeMean.cs" />
+    <Compile Remove="Model\ApiResponseSecurityRelativeStrengthIndex.cs" />
+    <Compile Remove="Model\ApiResponseSecuritySimpleMovingAverage.cs" />
+    <Compile Remove="Model\ApiResponseSecurityStochasticOscillator.cs" />
+    <Compile Remove="Model\ApiResponseSecurityStockPriceAdjustments.cs" />
+    <Compile Remove="Model\ApiResponseSecurityTripleExponentialAverage.cs" />
+    <Compile Remove="Model\ApiResponseSecurityTrueStrengthIndex.cs" />
+    <Compile Remove="Model\ApiResponseSecurityUltimateOscillator.cs" />
+    <Compile Remove="Model\ApiResponseSecurityVolumePriceTrend.cs" />
+    <Compile Remove="Model\ApiResponseSecurityVolumeWeightedAveragePrice.cs" />
+    <Compile Remove="Model\ApiResponseSecurityVortexIndicator.cs" />
+    <Compile Remove="Model\ApiResponseSecurityWilliamsR.cs" />
+    <Compile Remove="Model\ApiResponseSecurityZacksAnalystRatings.cs" />
+    <Compile Remove="Model\ApiResponseSecurityZacksAnalystRatingsSnapshot.cs" />
+    <Compile Remove="Model\ApiResponseSecurityZacksEPSSurprises.cs" />
+    <Compile Remove="Model\ApiResponseSecurityZacksSalesSurprises.cs" />
+    <Compile Remove="Model\ApiResponseSICIndexHistoricalData.cs" />
+    <Compile Remove="Model\ApiResponseSICIndices.cs" />
+    <Compile Remove="Model\ApiResponseSICIndicesSearch.cs" />
+    <Compile Remove="Model\ApiResponseStandardizedFinancials.cs" />
+    <Compile Remove="Model\ApiResponseStockExchangeRealtimeStockPrices.cs" />
+    <Compile Remove="Model\ApiResponseStockMarketIndexHistoricalData.cs" />
+    <Compile Remove="Model\ApiResponseStockMarketIndices.cs" />
+    <Compile Remove="Model\ApiResponseStockMarketIndicesSearch.cs" />
+    <Compile Remove="Model\ApiResponseZacksAnalystRatings.cs" />
+    <Compile Remove="Model\ApiResponseZacksEPSEstimates.cs" />
+    <Compile Remove="Model\ApiResponseZacksEPSGrowthRates.cs" />
+    <Compile Remove="Model\ApiResponseZacksEPSSurprises.cs" />
+    <Compile Remove="Model\ApiResponseZacksETFHoldings.cs" />
+    <Compile Remove="Model\ApiResponseZacksInstitutionalHoldingCompanies.cs" />
+    <Compile Remove="Model\ApiResponseZacksInstitutionalHoldingOwners.cs" />
+    <Compile Remove="Model\ApiResponseZacksInstitutionalHoldings.cs" />
+    <Compile Remove="Model\ApiResponseZacksLongTermGrowthRates.cs" />
+    <Compile Remove="Model\ApiResponseZacksSalesSurprises.cs" />
+    <Compile Remove="Model\ApiResponseZacksTargetPriceConsensuses.cs" />
+    <Compile Remove="Model\AverageDailyTradingVolumeTechnicalValue.cs" />
+    <Compile Remove="Model\AverageDirectionalIndexTechnicalValue.cs" />
+    <Compile Remove="Model\AverageTrueRangeTechnicalValue.cs" />
+    <Compile Remove="Model\AwesomeOscillatorTechnicalValue.cs" />
+    <Compile Remove="Model\BollingerBandsTechnicalValue.cs" />
+    <Compile Remove="Model\BulkDownloadLinks.cs" />
+    <Compile Remove="Model\BulkDownloadSummary.cs" />
+    <Compile Remove="Model\ChaikinMoneyFlowTechnicalValue.cs" />
+    <Compile Remove="Model\CommodityChannelIndexTechnicalValue.cs" />
+    <Compile Remove="Model\CompanyFiling.cs" />
+    <Compile Remove="Model\CompanyInitialPublicOffering.cs" />
+    <Compile Remove="Model\DataTag.cs" />
+    <Compile Remove="Model\DetrendedPriceOscillatorTechnicalValue.cs" />
+    <Compile Remove="Model\DividendRecord.cs" />
+    <Compile Remove="Model\DonchianChannelTechnicalValue.cs" />
+    <Compile Remove="Model\EarningsRecord.cs" />
+    <Compile Remove="Model\EaseOfMovementTechnicalValue.cs" />
+    <Compile Remove="Model\EconomicIndex.cs" />
+    <Compile Remove="Model\EconomicIndexSummary.cs" />
+    <Compile Remove="Model\ETFAnalytics.cs" />
+    <Compile Remove="Model\ETFHolding.cs" />
+    <Compile Remove="Model\ETFStats.cs" />
+    <Compile Remove="Model\Filing.cs" />
+    <Compile Remove="Model\FilingNote.cs" />
+    <Compile Remove="Model\FilingNoteFiling.cs" />
+    <Compile Remove="Model\FilingNoteSummary.cs" />
+    <Compile Remove="Model\FilingSummary.cs" />
+    <Compile Remove="Model\ForceIndexTechnicalValue.cs" />
+    <Compile Remove="Model\ForexCurrency.cs" />
+    <Compile Remove="Model\ForexPair.cs" />
+    <Compile Remove="Model\ForexPrice.cs" />
+    <Compile Remove="Model\IchimokuKinkoHyoTechnicalValue.cs" />
+    <Compile Remove="Model\IntradayStockPrice.cs" />
+    <Compile Remove="Model\KeltnerChannelTechnicalValue.cs" />
+    <Compile Remove="Model\KnowSureThingTechnicalValue.cs" />
+    <Compile Remove="Model\MassIndexTechnicalValue.cs" />
+    <Compile Remove="Model\MoneyFlowIndexTechnicalValue.cs" />
+    <Compile Remove="Model\MovingAverageConvergenceDivergenceTechnicalValue.cs" />
+    <Compile Remove="Model\Municipality.cs" />
+    <Compile Remove="Model\MunicipalityFinancial.cs" />
+    <Compile Remove="Model\NegativeVolumeIndexTechnicalValue.cs" />
+    <Compile Remove="Model\OnBalanceVolumeMeanTechnicalValue.cs" />
+    <Compile Remove="Model\OnBalanceVolumeTechnicalValue.cs" />
+    <Compile Remove="Model\Option.cs" />
+    <Compile Remove="Model\OptionChain.cs" />
+    <Compile Remove="Model\OptionChainRealtime.cs" />
+    <Compile Remove="Model\OptionFactorsRealtime.cs" />
+    <Compile Remove="Model\OptionPrice.cs" />
+    <Compile Remove="Model\OptionPriceRealtime.cs" />
+    <Compile Remove="Model\OptionRealtime.cs" />
+    <Compile Remove="Model\OptionStatsRealtime.cs" />
+    <Compile Remove="Model\RealtimeStockPrice.cs" />
+    <Compile Remove="Model\RealtimeStockPriceSecurity.cs" />
+    <Compile Remove="Model\RelativeStrengthIndexTechnicalValue.cs" />
+    <Compile Remove="Model\ReportedFinancial.cs" />
+    <Compile Remove="Model\ReportedFinancialDimension.cs" />
+    <Compile Remove="Model\ReportedTag.cs" />
+    <Compile Remove="Model\SecurityScreenClause.cs" />
+    <Compile Remove="Model\SecurityScreenGroup.cs" />
+    <Compile Remove="Model\SecurityScreenResult.cs" />
+    <Compile Remove="Model\SecurityScreenResultData.cs" />
+    <Compile Remove="Model\SICIndex.cs" />
+    <Compile Remove="Model\SimpleMovingAverageTechnicalValue.cs" />
+    <Compile Remove="Model\StandardizedFinancial.cs" />
+    <Compile Remove="Model\StochasticOscillatorTechnicalValue.cs" />
+    <Compile Remove="Model\StockMarketIndex.cs" />
+    <Compile Remove="Model\StockMarketIndexSummary.cs" />
+    <Compile Remove="Model\StockPriceInterval.cs" />
+    <Compile Remove="Model\TechnicalIndicator.cs" />
+    <Compile Remove="Model\TripleExponentialAverageTechnicalValue.cs" />
+    <Compile Remove="Model\TrueStrengthIndexTechnicalValue.cs" />
+    <Compile Remove="Model\UltimateOscillatorTechnicalValue.cs" />
+    <Compile Remove="Model\VolumePriceTrendTechnicalValue.cs" />
+    <Compile Remove="Model\VolumeWeightedAveragePriceValue.cs" />
+    <Compile Remove="Model\VortexIndicatorTechnicalValue.cs" />
+    <Compile Remove="Model\WilliamsRTechnicalValue.cs" />
+    <Compile Remove="Model\ZacksAnalystRating.cs" />
+    <Compile Remove="Model\ZacksAnalystRatingSnapshot.cs" />
+    <Compile Remove="Model\ZacksAnalystRatingSummary.cs" />
+    <Compile Remove="Model\ZacksEPSEstimate.cs" />
+    <Compile Remove="Model\ZacksEPSGrowthRate.cs" />
+    <Compile Remove="Model\ZacksEPSSurprise.cs" />
+    <Compile Remove="Model\ZacksEPSSurpriseSummary.cs" />
+    <Compile Remove="Model\ZacksETFHolding.cs" />
+    <Compile Remove="Model\ZacksInstitutionalHolding.cs" />
+    <Compile Remove="Model\ZacksInstitutionalHoldingCompanyDetail.cs" />
+    <Compile Remove="Model\ZacksInstitutionalHoldingCompanySummary.cs" />
+    <Compile Remove="Model\ZacksInstitutionalHoldingHistoricalSummary.cs" />
+    <Compile Remove="Model\ZacksInstitutionalHoldingOwnerDetail.cs" />
+    <Compile Remove="Model\ZacksInstitutionalHoldingOwnerSummary.cs" />
+    <Compile Remove="Model\ZacksLongTermGrowthRate.cs" />
+    <Compile Remove="Model\ZacksSalesSurprise.cs" />
+    <Compile Remove="Model\ZacksSalesSurpriseSummary.cs" />
+    <Compile Remove="Model\ZacksTargetPriceConsensus.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <AdditionalFiles Include="..\..\.sonarlint\intrinio.net\CSharp\SonarLint.xml" Link="SonarLint.xml" />
@@ -29,11 +218,12 @@
 
   <ItemGroup>
 	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+	<PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
 	<PackageReference Include="Cph.FinancialDataSanitizer" Version="1.0.17" />
-	<PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta3" />
+	<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
 	<PackageReference Include="Pineapple" Version="1.0.41" />
 	<PackageReference Include="Polly" Version="7.2.3" />
-	<PackageReference Include="System.ComponentModel.Annotations" Version="6.0.0-preview.4.21253.7" />
+	<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>

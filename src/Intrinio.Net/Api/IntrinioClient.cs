@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -26,7 +26,7 @@ namespace Intrinio.Net.Api
         {
             CheckIsNotNullOrWhitespace(nameof(requestUrl), requestUrl);
 
-            var url = new Uri($"{requestUrl}{(requestUrl.Contains('?') ? "&" : "?")}api_key={ Dependencies.Settings.ApiKey }");
+            var url = new Uri($"{requestUrl}{(requestUrl.Contains('?') ? "&" : "?")}api_key={Dependencies.Settings.ApiKey}");
 
             HttpResponseMessage response = null;
 
