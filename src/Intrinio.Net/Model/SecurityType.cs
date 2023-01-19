@@ -1,4 +1,9 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Intrinio.Net.Model
 {
@@ -6,7 +11,7 @@ namespace Intrinio.Net.Model
     /// The summary of a financial instrument representing shares of ownership in a publicly-traded company
     /// </summary>
     [DataContract]
-    public sealed partial class SecurityType
+    public sealed partial class SecurityType : IEquatable<SecurityType>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SecurityType" /> class.
@@ -33,5 +38,38 @@ namespace Intrinio.Net.Model
         /// <value>The name of the Security</value>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="obj">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as SecurityType);
+        }
+
+        /// <summary>
+        /// Returns true if SecurityType instances are equal
+        /// </summary>
+        /// <param name="input">Instance of SecurityType to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(SecurityType input)
+        {
+            if (input == null)
+                return false;
+
+            return
+                (
+                    Name == input.Name ||
+                    (Name != null &&
+                    Name.Equals(input.Name))
+                ) &&
+                (
+                    Code == input.Code ||
+                    (Code != null &&
+                    Code.Equals(input.Code))
+                );
+        }        
     }
 }
