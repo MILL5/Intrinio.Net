@@ -24,4 +24,15 @@ public class SecurityTypeTests
 
         Assert.IsFalse(actual.Equals(expected));
     }
+
+    [TestMethod]
+    public void SecurityTypeHashCodeSucceed()
+    {
+        var actual = new SecurityType() { Code = "EQS", Name = "Equity Shares" };
+        var actualHashCode = actual.GetHashCode();
+
+        var expected = 773831831;
+
+        Assert.AreEqual(expected, actualHashCode);
+    }
 }
