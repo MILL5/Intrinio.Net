@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.Extensions.Logging;
 using Polly;
 using static Pineapple.Common.Preconditions;
 
@@ -14,12 +15,14 @@ namespace Intrinio.Net.Api
         public readonly IIntrinioDependencies Dependencies;
         public readonly HttpClient Client;
         public readonly IMapper _mapper;
+        public readonly ILogger _logger;
 
         public IntrinioClient(IIntrinioDependencies dependencies)
         {
             Dependencies = dependencies;
             Client = dependencies.HttpClientFactory.CreateClient(IntrinioSettings.HttpClientName);
             _mapper = dependencies.Mapper;
+            _logger = dependencies.Logger;
         }
 
         public async Task<string> GetAsync(string requestUrl)
@@ -35,7 +38,16 @@ namespace Intrinio.Net.Api
                 .Or<InvalidOperationException>()
                 .Or<HttpRequestException>()
                 .Or<TaskCanceledException>()
-                .RetryAsync(3)
+                .WaitAndRetryAsync(
+                    IntrinioSettings.NumberOfRetries,
+                    retryAttempt => TimeSpan.FromSeconds(Math.Pow(4, retryAttempt)),
+                    (exception, timeSpan, retryCount, context) =>
+                    {
+                        _logger.LogInformation("Retrying due to {message}. Try {count} of {total}.",
+                            exception.Message,
+                            retryCount,
+                            IntrinioSettings.NumberOfRetries);
+                    })
                 .ExecuteAsync(async () =>
                 {
                     var request = new HttpRequestMessage(HttpMethod.Get, url);
@@ -48,7 +60,7 @@ namespace Intrinio.Net.Api
                     }
                 }).ConfigureAwait(false);
 
-            return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            return await response!.Content.ReadAsStringAsync().ConfigureAwait(false);
         }
 
         public static string GetQueryParameterString(Dictionary<string, string> parameters)
