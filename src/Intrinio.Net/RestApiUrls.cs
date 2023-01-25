@@ -32,5 +32,11 @@
             public const string Default = BASE_URL + "/securities";
             public const string BySecurity = Default + "/{0}/prices";
         }
+
+        public static class DataPoint
+        {
+            public const string Default = BASE_URL + "/data_point";
+            public const string Number = Default + "/{0}/{1}/number";
+        }
     }
 }
