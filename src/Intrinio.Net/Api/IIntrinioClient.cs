@@ -40,7 +40,7 @@ namespace Intrinio.Net.Api
             string end_date = null,
             string next_page = null);
 
-        Task<IEnumerable<Security>> LookupSecurityAsync(string identifier);
+        Task<Security> LookupSecurityAsync(string identifier);
 
         Task<ApiResponseStockExchangeSecurities> GetAllSecuritySummariesByExchangeAsync(
             string identifier,

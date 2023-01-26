@@ -82,7 +82,6 @@ namespace Intrinio.Net.Tests.Api
             var securities = await IntrinioTestClient.LookupSecurityAsync(APPLE_TICKER);
 
             Assert.IsNotNull(securities);
-            Assert.IsNotEmpty(securities);
         }
 
         [DataTestMethod]
