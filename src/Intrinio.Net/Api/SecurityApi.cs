@@ -71,7 +71,7 @@ namespace Intrinio.Net.Api
             return JsonConvert.DeserializeObject<ApiResponseStockExchangeSecurities>(jsonResponse);
         }
 
-        public async Task<IEnumerable<Security>> LookupSecurityAsync(string identifier)
+        public async Task<Security> LookupSecurityAsync(string identifier)
         {
             var jsonResponse = await GetAsync($"{RestApiUrls.Securities.Default}/{identifier}").ConfigureAwait(false);
             var security = JsonConvert.DeserializeObject<Security>(jsonResponse);
@@ -81,7 +81,7 @@ namespace Intrinio.Net.Api
                 throw new IntrinioNetException("API Response is Null");
             }
 
-            return new List<Security>() { security };
+            return security;
         }
 
         public async Task<IEnumerable<SecuritySummary>> GetSecuritiesByCompanyAsync(string identifier)
