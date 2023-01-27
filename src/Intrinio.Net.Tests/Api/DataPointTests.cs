@@ -20,10 +20,16 @@ namespace Intrinio.Net.Tests.Api
         }
 
         [TestMethod]
-        public void GetDataPointNumberBadTickerAsync()
+        public async Task GetDataPointNumberBadTickerAsync()
         {
-            Assert.ThrowsAsync<IntrinioNetException>(
-                async () => await IntrinioTestClient.GetDataPointNumberAsync(BAD_TICKER, MARKET_CAP_TAG));
+            try
+            {
+                _ = await IntrinioTestClient.GetDataPointNumberAsync(BAD_TICKER, MARKET_CAP_TAG);
+            }
+            catch (IntrinioNetException ie)
+            {
+                Assert.IsTrue(ie.StatusCode == System.Net.HttpStatusCode.NotFound);
+            }
         }
     }
 }

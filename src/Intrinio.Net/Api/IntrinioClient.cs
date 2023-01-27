@@ -44,11 +44,11 @@ namespace Intrinio.Net.Api
                     if (!response.IsSuccessStatusCode)
                     {
                         var errorContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                        throw new IntrinioNetException($"{response.StatusCode} - {errorContent}");
+                        throw new IntrinioNetException(response.StatusCode, $"{response.StatusCode} - {errorContent}");
                     }
                 }).ConfigureAwait(false);
 
-            return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            return await response!.Content.ReadAsStringAsync().ConfigureAwait(false);
         }
 
         public static string GetQueryParameterString(Dictionary<string, string> parameters)
