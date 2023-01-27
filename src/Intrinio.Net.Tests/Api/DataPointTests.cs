@@ -1,5 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System.Net;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using static Intrinio.Net.Tests.TestManager;
 using Assert = NUnit.Framework.Assert;
 
@@ -20,16 +22,12 @@ namespace Intrinio.Net.Tests.Api
         }
 
         [TestMethod]
-        public async Task GetDataPointNumberBadTickerAsync()
+        public void GetDataPointNumberBadTickerAsync()
         {
-            try
-            {
-                _ = await IntrinioTestClient.GetDataPointNumberAsync(BAD_TICKER, MARKET_CAP_TAG);
-            }
-            catch (IntrinioNetException ie)
-            {
-                Assert.IsTrue(ie.StatusCode == System.Net.HttpStatusCode.NotFound);
-            }
+            IntrinioNetException ex = Assert.ThrowsAsync<IntrinioNetException>(async () => await IntrinioTestClient.GetDataPointNumberAsync(BAD_TICKER, MARKET_CAP_TAG));
+
+            Assert.That(ex.StatusCode, Is.EqualTo(HttpStatusCode.NotFound));
+            Assert.That(ex.Message, Is.EqualTo("Cannot look up this item/identifier combination"));
         }
     }
 }

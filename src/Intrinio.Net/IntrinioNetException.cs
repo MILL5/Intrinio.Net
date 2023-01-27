@@ -26,7 +26,7 @@ namespace Intrinio.Net
         public IntrinioNetException(HttpStatusCode statusCode, string message)
             : base(message)
         {
-            StatusCode= statusCode;
+            StatusCode = statusCode;
         }
 
         protected IntrinioNetException(SerializationInfo serializationInfo, StreamingContext streamingContext)
