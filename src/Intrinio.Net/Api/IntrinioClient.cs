@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using AutoMapper;
+using Intrinio.Net.Model;
+using Newtonsoft.Json;
 using Polly;
 using static Pineapple.Common.Preconditions;
 
@@ -44,11 +46,12 @@ namespace Intrinio.Net.Api
                     if (!response.IsSuccessStatusCode)
                     {
                         var errorContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                        throw new IntrinioNetException($"{response.StatusCode} - {errorContent}");
+                        var jsonContent = JsonConvert.DeserializeObject<ApiResponseError>(errorContent);
+                        throw new IntrinioNetException(response.StatusCode, jsonContent.Error);
                     }
                 }).ConfigureAwait(false);
 
-            return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            return await response!.Content.ReadAsStringAsync().ConfigureAwait(false);
         }
 
         public static string GetQueryParameterString(Dictionary<string, string> parameters)
