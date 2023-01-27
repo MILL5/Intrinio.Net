@@ -44,7 +44,7 @@ namespace Intrinio.Net.Api
                     if (!response.IsSuccessStatusCode)
                     {
                         var errorContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                        throw new IntrinioNetException(response.StatusCode, $"{response.StatusCode} - {errorContent}");
+                        throw new IntrinioNetException(response.StatusCode, errorContent);
                     }
                 }).ConfigureAwait(false);
 
