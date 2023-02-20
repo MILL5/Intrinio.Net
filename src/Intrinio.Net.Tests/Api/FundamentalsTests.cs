@@ -63,4 +63,24 @@ public class FundamentalsTests
 
         Assert.IsTrue(expected.Equals(actual));
     }
+
+    [TestMethod]
+    public void StandardizeObjectsAreEqualNullObject()
+    {
+        var dataTag = new DataTagSummary() { Id = "tag_HTRswR", Name = "Operating Revenue", Tag = "operatingrevenue", Parent = "totalrevenue", Sequence = 1, Factor = "+", Balance = "credit", Unit = "usd" };
+        var expected = new StandardizedFinancial() { DataTag = dataTag, Value = 2.35m };
+        StandardizedFinancial actual = null;
+
+        Assert.IsTrue(expected.Equals(actual));
+    }
+
+    [TestMethod]
+    public void StandardizeObjectsGetHashCodeEquals()
+    {
+        var dataTag = new DataTagSummary() { Id = "tag_HTRswR", Name = "Operating Revenue", Tag = "operatingrevenue", Parent = "totalrevenue", Sequence = 1, Factor = "+", Balance = "credit", Unit = "usd" };
+        var expected = new StandardizedFinancial() { DataTag = dataTag, Value = 2.35m };
+        StandardizedFinancial actual = null;
+
+        Assert.AreEqual(expected.GetHashCode(), actual.GetHashCode());
+    }
 }
