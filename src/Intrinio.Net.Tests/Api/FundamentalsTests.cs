@@ -32,7 +32,7 @@ public class FundamentalsTests
         Assert.AreEqual(id.Split('-')[3], standardizedFinancials.Fundamental.FiscalPeriod);
         Assert.AreEqual(id.Split('-')[2], standardizedFinancials.Fundamental.FiscalYear.ToString());
         Assert.AreEqual(id.Split('-')[1], standardizedFinancials.Fundamental.StatementCode);
-        Assert.AreEqual(id.Split('-')[1], standardizedFinancials.Fundamental.Company.Ticker);
+        Assert.AreEqual(id.Split('-')[0], standardizedFinancials.Fundamental.Company.Ticker);
     }
 
     [DataTestMethod]
