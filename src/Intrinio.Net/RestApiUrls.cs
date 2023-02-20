@@ -38,5 +38,11 @@
             public const string Default = BASE_URL + "/data_point";
             public const string Number = Default + "/{0}/{1}/number";
         }
+
+        public static class Fundamentals
+        {
+            public const string Default = BASE_URL + "/fundamentals";
+            public const string Standardized = Default + "/{0}/standardized_financials";
+        }
     }
 }
