@@ -30,7 +30,7 @@ public class FundamentalsTests
     {
         var standardizedFinancials = await IntrinioTestClient.GetFundamentalStandardizedFinancials(id);
         Assert.AreEqual(id.Split('-')[3], standardizedFinancials.Fundamental.FiscalPeriod);
-        Assert.AreEqual(id.Split('-')[2], standardizedFinancials.Fundamental.FiscalYear);
+        Assert.AreEqual(id.Split('-')[2], standardizedFinancials.Fundamental.FiscalYear.ToString());
         Assert.AreEqual(id.Split('-')[1], standardizedFinancials.Fundamental.StatementCode);
         Assert.AreEqual(id.Split('-')[1], standardizedFinancials.Fundamental.Company.Ticker);
     }
