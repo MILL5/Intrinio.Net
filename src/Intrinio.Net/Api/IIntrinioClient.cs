@@ -87,5 +87,7 @@ namespace Intrinio.Net.Api
         Task<IEnumerable<SecurityType>> GetSecurityTypesAsync(string url = RestApiUrls.SECURITY_CODES_URL);
 
         Task<decimal?> GetDataPointNumberAsync(string identifier, string tag);
+
+        Task<ApiResponseStandardizedFinancials> GetFundamentalStandardizedFinancials(string id);
     }
 }
