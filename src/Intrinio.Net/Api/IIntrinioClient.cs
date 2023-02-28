@@ -89,5 +89,7 @@ namespace Intrinio.Net.Api
         Task<decimal?> GetDataPointNumberAsync(string identifier, string tag);
 
         Task<ApiResponseStandardizedFinancials> GetFundamentalStandardizedFinancials(string id);
+
+        Task<ApiResponseNews> GetNewsAsync(int? page_size = null, string next_page = null);
     }
 }
