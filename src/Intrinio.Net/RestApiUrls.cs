@@ -44,5 +44,11 @@
             public const string Default = BASE_URL + "/fundamentals";
             public const string Standardized = Default + "/{0}/standardized_financials";
         }
+
+        public static class News
+        {
+            public const string Default = BASE_URL + "/companies/news";
+            public const string Lookup = Default + "/{0}";
+        }
     }
 }

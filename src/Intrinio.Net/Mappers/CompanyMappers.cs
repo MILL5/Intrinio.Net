@@ -22,6 +22,7 @@ namespace Intrinio.Net.Mappers
             CreateMap<CompanySummary, CompanySummary>()
                 .ForMember(dest => dest.Name,
                     map => map.MapFrom(src => _parser.ExpandAllAbbreviationsFromString(src.Name, true)));
+            CreateMap<CompanyNews, CompanyNews>();
         }
     }
 }
