@@ -45,7 +45,7 @@ public sealed partial class ApiResponseDataTags : IEquatable<ApiResponseDataTags
     public override string ToString()
     {
         var sb = new StringBuilder();
-        sb.Append("class ApiResponseCompanies {\n");
+        sb.Append("class ApiResponseDataTags {\n");
         sb.Append("  Tags: ").Append(Tags).Append('\n');
         sb.Append("  NextPage: ").Append(NextPage).Append('\n');
         sb.Append("}\n");
