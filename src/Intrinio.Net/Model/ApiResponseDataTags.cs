@@ -104,7 +104,12 @@ public sealed partial class ApiResponseDataTags : IEquatable<ApiResponseDataTags
         {
             int hashCode = 41;
             if (Tags != null)
-                hashCode = hashCode * 59 + Tags.GetHashCode();
+            {
+                foreach (var tag in Tags)
+                {
+                    hashCode += tag.GetHashCode();
+                }
+            }
             if (NextPage != null)
                 hashCode = hashCode * 59 + NextPage.GetHashCode();
             return hashCode;

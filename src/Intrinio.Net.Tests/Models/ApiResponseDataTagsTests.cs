@@ -47,11 +47,14 @@ public class ApiResponseDataTagsTests
     [TestMethod]
     public void ApiResponseDataTagsHashCodeSucceed()
     {
-        var dataTags = new List<DataTag> { DataTags[0], DataTags[1], DataTags[2] };
-        var actual = new ApiResponseDataTags() { Tags = dataTags };
-        var actualHashCode = actual.GetHashCode();
+        var dataTags = new List<DataTag>{ DataTags[0], DataTags[1] };
+        var dataTags2 = new List<DataTag>{ DataTags[0], DataTags[1] };
 
-        var expected = 15600946;
+        var actualObj = new ApiResponseDataTags() { Tags = dataTags };
+        var expectedObj = new ApiResponseDataTags() { Tags = dataTags2 };
+
+        var actualHashCode = actualObj.GetHashCode();
+        var expected = expectedObj.GetHashCode();
 
         Assert.AreEqual(expected, actualHashCode);
     }
