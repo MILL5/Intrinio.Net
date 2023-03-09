@@ -68,7 +68,7 @@ public sealed partial class ApiResponseDataTags : IEquatable<ApiResponseDataTags
     /// <returns>Boolean</returns>
     public override bool Equals(object obj)
     {
-        return Equals(obj as ApiResponseCompanies);
+        return Equals(obj as ApiResponseDataTags);
     }
 
     /// <summary>
