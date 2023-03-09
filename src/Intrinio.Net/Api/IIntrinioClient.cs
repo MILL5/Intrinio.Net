@@ -91,5 +91,7 @@ namespace Intrinio.Net.Api
         Task<ApiResponseStandardizedFinancials> GetFundamentalStandardizedFinancials(string id);
 
         Task<ApiResponseNews> GetNewsAsync(int? page_size = null, string next_page = null);
+
+        Task<ApiResponseNews> GetNewsByCompanyAsync(string indentifier, int? page_size = null, string next_page = null);
     }
 }

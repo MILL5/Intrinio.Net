@@ -17,8 +17,8 @@
 	<PublishRepositoryUrl>true</PublishRepositoryUrl>
 	<IncludeSymbols>true</IncludeSymbols>
 	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-	<Version>1.3.0</Version>
-	<AssemblyVersion>1.3.0.0</AssemblyVersion>
+	<Version>1.3.1</Version>
+	<AssemblyVersion>1.3.1.0</AssemblyVersion>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<CodeAnalysisRuleSet>..\..\.sonarlint\intrinio.netcsharp.ruleset</CodeAnalysisRuleSet>
 	<UserSecretsId>a0208f94-4031-45c5-a6a8-24ad2ddfe947</UserSecretsId>
