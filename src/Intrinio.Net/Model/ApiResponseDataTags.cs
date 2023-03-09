@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using Newtonsoft.Json;
+using HashCode = Pineapple.Common.HashCode;
 
 namespace Intrinio.Net.Model;
 
@@ -100,15 +101,18 @@ public sealed partial class ApiResponseDataTags : IEquatable<ApiResponseDataTags
     /// <returns>Hash code</returns>
     public override int GetHashCode()
     {
-        unchecked // Overflow is fine, just wrap
+        var hash = new HashCode();
+        ComputeHash(hash);
+        return hash.ToHashCode();
+    }
+
+    private void ComputeHash(HashCode hash)
+    {
+        foreach (var item in Tags)
         {
-            int hashCode = 41;
-            if (Tags != null)
-                hashCode = hashCode * 59 + Tags.GetHashCode();
-            if (NextPage != null)
-                hashCode = hashCode * 59 + NextPage.GetHashCode();
-            return hashCode;
+            hash.Add(item.GetHashCode());
         }
+        hash.Add(NextPage);
     }
 
     /// <summary>
