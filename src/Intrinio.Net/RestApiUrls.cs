@@ -47,8 +47,9 @@
 
         public static class News
         {
-            public const string Default = BASE_URL + "/companies/news";
-            public const string Lookup = Default + "/{0}";
+            public const string Default       = BASE_URL + "/companies";
+            public const string AllsNews      = Default + "/news";
+            public const string NewsByCompany = Default + "/{0}/news";
         }
     }
 }
