@@ -93,5 +93,20 @@ namespace Intrinio.Net.Api
         Task<ApiResponseNews> GetNewsAsync(int? page_size = null, string next_page = null);
 
         Task<ApiResponseNews> GetNewsByCompanyAsync(string indentifier, int? page_size = null, string next_page = null);
+
+        Task<ApiResponseDataTags> GetAllDataTagsAsync(
+            string tag = null,
+            string type = null,
+            string parent = null,
+            string statement_code = null,
+            string fs_template = null,
+            int? page_size = null,
+            string next_page = null);
+
+        Task<ApiResponseDataTags> SearchDataTagsAsync(
+            string query = null,
+            int? page_size = null);
+
+        Task<DataTag> LookupDataTagAsync(string identifier);
     }
 }
