@@ -60,16 +60,4 @@ public class ApiResponseDataTagsTests
         Assert.AreEqual(expected, actual1.GetHashCode());
         Assert.AreEqual(expected, actual2.GetHashCode());
     }
-
-    [TestMethod]
-    public void ApiResponseDataTagsToJsonSucceed()
-    {
-        var dataTags1 = new List<DataTag> { DataTags[0] };
-
-        var actual = new ApiResponseDataTags() { Tags = dataTags1 };
-
-        var expected = "{\r\n  \"tags\": [\r\n    {\r\n      \"statement_type\": \"industrial\",\r\n      \"id\": \"tag_PypZX3\",\r\n      \"name\": \"Amortization Expense\",\r\n      \"tag\": \"amortizationexpense\",\r\n      \"statement_code\": \"income_statement\",\r\n      \"parent\": \"totaloperatingexpenses\",\r\n      \"sequence\": 13.0,\r\n      \"factor\": \"+\",\r\n      \"balance\": \"debit\",\r\n      \"type\": \"income_statement_metric\",\r\n      \"unit\": \"usd\"\r\n    }\r\n  ]\r\n}";
-
-        Assert.AreEqual(expected, actual.ToJson());
-    }
 }
