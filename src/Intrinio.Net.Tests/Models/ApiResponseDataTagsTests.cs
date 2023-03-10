@@ -60,4 +60,40 @@ public class ApiResponseDataTagsTests
         Assert.AreEqual(expected, actual1.GetHashCode());
         Assert.AreEqual(expected, actual2.GetHashCode());
     }
+
+    [TestMethod]
+    public void ApiResponseDataTagsToStringSucceed()
+    {
+        var dataTags = new List<DataTag> { DataTags[0], DataTags[1] };
+
+        var apiResponseDataTags = new ApiResponseDataTags() { Tags = dataTags };
+
+        var expected = "class ApiResponseDataTags {  Tags: System.Collections.Generic.List`1[Intrinio.Net.Model.DataTag]  NextPage: }";
+
+        // server and local process \r\n differently some remove those before testing
+        var actual = apiResponseDataTags.ToString().Replace("\r","").Replace("\n","");
+
+        Assert.AreEqual(expected, actual);
+    }
+
+    [TestMethod]
+    public void ApiResponseDataTagsToJsonSucceed()
+    {
+        var dataTags = new List<DataTag> { DataTags[0], DataTags[1] };
+
+        var apiResponseDataTags = new ApiResponseDataTags() { Tags = dataTags };
+
+        var expected = "{  \"tags\": [    {      \"statement_type\": \"industrial\"," +
+            "      \"id\": \"tag_PypZX3\",      \"name\": \"Amortization Expense\"," +
+            "      \"tag\": \"amortizationexpense\",      \"statement_code\": \"income_statement\"," +
+            "      \"parent\": \"totaloperatingexpenses\",      \"sequence\": 13.0," +
+            "      \"factor\": \"+\",      \"balance\": \"debit\",      \"type\": \"income_statement_metric\"," +
+            "      \"unit\": \"usd\"    },    {      \"id\": \"tag_Dzomng\"," +
+            "      \"name\": \"Amortization Expense\",      \"tag\": \"amortizationexpense\"    }  ]}";
+
+        // server and local process \r\n differently some remove those before testing
+        var actual = apiResponseDataTags.ToJson().Replace("\r", "").Replace("\n", "");
+
+        Assert.AreEqual(expected, actual);
+    }
 }
