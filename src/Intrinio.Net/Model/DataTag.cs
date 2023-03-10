@@ -1,10 +1,11 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using HashCode = Pineapple.Common.HashCode;
 
 namespace Intrinio.Net.Model
 {
@@ -15,7 +16,7 @@ namespace Intrinio.Net.Model
     public sealed partial class DataTag : IEquatable<DataTag>, IValidatableObject
     {
         /// <summary>
-        /// The format of the financial statment to which this Data Tag belongs
+        /// The format of the financial statement to which this Data Tag belongs
         /// </summary>
         /// <value>The format of the financial statment to which this Data Tag belongs</value>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -35,9 +36,9 @@ namespace Intrinio.Net.Model
         }
 
         /// <summary>
-        /// The format of the financial statment to which this Data Tag belongs
+        /// The format of the financial statement to which this Data Tag belongs
         /// </summary>
-        /// <value>The format of the financial statment to which this Data Tag belongs</value>
+        /// <value>The format of the financial statement to which this Data Tag belongs</value>
         [DataMember(Name = "statement_type", EmitDefaultValue = false)]
         public FinancialStatementType? StatementType { get; set; }
 
@@ -256,33 +257,24 @@ namespace Intrinio.Net.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            unchecked // Overflow is fine, just wrap
-            {
-                int hashCode = 41;
-                if (Id != null)
-                    hashCode = hashCode * 59 + Id.GetHashCode();
-                if (Name != null)
-                    hashCode = hashCode * 59 + Name.GetHashCode();
-                if (Tag != null)
-                    hashCode = hashCode * 59 + Tag.GetHashCode();
-                if (StatementCode != null)
-                    hashCode = hashCode * 59 + StatementCode.GetHashCode();
-                if (StatementType != null)
-                    hashCode = hashCode * 59 + StatementType.GetHashCode();
-                if (Parent != null)
-                    hashCode = hashCode * 59 + Parent.GetHashCode();
-                if (Sequence != null)
-                    hashCode = hashCode * 59 + Sequence.GetHashCode();
-                if (Factor != null)
-                    hashCode = hashCode * 59 + Factor.GetHashCode();
-                if (Balance != null)
-                    hashCode = hashCode * 59 + Balance.GetHashCode();
-                if (Type != null)
-                    hashCode = hashCode * 59 + Type.GetHashCode();
-                if (Unit != null)
-                    hashCode = hashCode * 59 + Unit.GetHashCode();
-                return hashCode;
-            }
+            var hash = new HashCode();
+            ComputeHash(hash);
+            return hash.ToHashCode();
+        }
+
+        private void ComputeHash(HashCode hash)
+        {
+            hash.Add(Id);
+            hash.Add(Name);
+            hash.Add(Tag);
+            hash.Add(StatementCode);
+            hash.Add((int)(StatementType??0));
+            hash.Add(Parent);
+            hash.Add(Sequence);
+            hash.Add(Factor);
+            hash.Add(Balance);
+            hash.Add(Type);
+            hash.Add(Unit);
         }
 
         /// <summary>

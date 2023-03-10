@@ -51,5 +51,12 @@
             public const string AllsNews      = Default + "/news";
             public const string NewsByCompany = Default + "/{0}/news";
         }
+
+        public static class DataTags
+        {
+            public const string Default = BASE_URL + "/data_tags";
+            public const string Search = Default + "/search";
+            public const string Lookup = Default + "/{0}";
+        }
     }
 }
